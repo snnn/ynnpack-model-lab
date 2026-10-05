@@ -43,9 +43,11 @@ running them needs no private compiler or Python authoring package. See
 The checked-in model builders use the `target_views` offline preparation policy:
 shared constant deduplication and graph simplification, scheduled attention masks,
 and eligible reshape-to-view lowering. Each generated `model.json` records the
-policy and operation counts. Building and running these artifacts needs no
-compiler; model weights, quantization profiles, and invocation flags are the
-same as the documented controls.
+policy and operation counts. Decode attention transposes that only move singleton
+dimensions are replaced by reshapes/views; fully connected weight-layout
+transposes remain available to backend packing. Building and running these
+artifacts needs no compiler; model weights, quantization profiles, and invocation
+flags are the same as the documented controls.
 
 The [original E2B measurements](docs/MEASUREMENTS.md) include per-request timings,
 portable command records, artifact hashes, and sampled kernel summaries in

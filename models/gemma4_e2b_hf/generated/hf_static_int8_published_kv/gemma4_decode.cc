@@ -4,10 +4,10 @@
 
 std::unique_ptr<lab_ynn::Graph> BuildGemma4Decode(
     const std::function<const void*(const char*, size_t)>& weights) {
-  auto g = std::make_unique<lab_ynn::Graph>(7052);
+  auto g = std::make_unique<lab_ynn::Graph>(7122);
   BuildGemma4DecodeSource::Context ctx{g.get(), weights};
   BuildGemma4DecodeSource::BuildDefineValues(ctx);
-  const slinky::expr s3 = g->Axis(6343, 2);
+  const slinky::expr s3 = g->Axis(6413, 2);
   const slinky::expr s2 = g->Parameter("position", int64_t{0}, int64_t{32768});
   ctx.s3 = s3;
   ctx.s2 = s2;
