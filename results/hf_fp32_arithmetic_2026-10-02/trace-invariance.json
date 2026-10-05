@@ -1,0 +1,12 @@
+[
+  {
+    "profile": "fp32",
+    "files": 93,
+    "byte_identical": 93
+  },
+  {
+    "profile": "static",
+    "files": 93,
+    "byte_identical": 93
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "runtime_and_other_files": {
+    "Rss_kib": 12372,
+    "Pss_kib": 8982,
+    "Private_Dirty_kib": 172,
+    "Swap_kib": 0
+  },
+  "anonymous": {
+    "Rss_kib": 985008,
+    "Pss_kib": 984996,
+    "Private_Dirty_kib": 984996,
+    "Swap_kib": 0
+  },
+  "source_weights_and_embeddings": {
+    "Rss_kib": 768736,
+    "Pss_kib": 768732,
+    "Private_Dirty_kib": 0,
+    "Swap_kib": 0
+  },
+  "parameters": {
+    "Rss_kib": 5164,
+    "Pss_kib": 5164,
+    "Private_Dirty_kib": 0,
+    "Swap_kib": 0
+  }
+}

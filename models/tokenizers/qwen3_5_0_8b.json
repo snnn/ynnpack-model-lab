@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "format": "hf_json",
+  "vocab_size": 248070,
+  "prefix_ids": [],
+  "suffix_ids": [],
+  "source": {
+    "repo": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "path": "tokenizer.json",
+    "bytes": 12807982,
+    "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+  },
+  "payload": {
+    "file": "tokenizer.json",
+    "bytes": 12807982,
+    "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "recorded_utc": "2026-10-02T15:17:47.417217+00:00",
+  "scope": "Historical published-bundle E2B comparison, before the current standalone builder preparation policy; not a fresh benchmark of the current checkout.",
+  "measurements": 75,
+  "measured_requests": 225,
+  "warmup_requests": 75,
+  "devices": {
+    "host": {
+      "cpu": "Intel Core i9-12900K",
+      "platform": "Linux x86_64",
+      "threads": [
+        1,
+        4
+      ],
+      "affinity_masks": {
+        "1": "40",
+        "4": "55"
+      }
+    },
+    "tecno": {
+      "model": "TECNO LJ9",
+      "platform": "Android",
+      "threads": [
+        4
+      ],
+      "affinity_mask": "f0"
+    },
+    "pixel": {
+      "model": "Pixel 8",
+      "platform": "Android",
+      "threads": [
+        4
+      ],
+      "affinity_mask": "1e0"
+    }
+  },
+  "workload": {
+    "prompt_tokens": [
+      17,
+      128,
+      1024
+    ],
+    "forced_continuations": 32,
+    "cache_capacities": [
+      2048,
+      8448
+    ],
+    "warmup_runs": 1,
+    "measured_runs": 3,
+    "max_prefill_rows": 128,
+    "output_dumps": false,
+    "sme_enabled": false
+  },
+  "ynnpack_base_revision": "35997e71119d191c807068a4d2aa28bf6048b59b",
+  "measurement_binary_sha256": {
+    "ynn.android": "af8ff4f2f1dfaaed7d559aac4ea8fce8855d1cb86d85b017d45d6ebced3776e2",
+    "ynn.host": "35850197e0961acc327a18946821481d06e8b991c9292a5781afda018fdad564",
+    "litert.host": "188efd8b221c4c0f360357a4715f9731f262d14b55bbb1b92471c9797ee2152a"
+  },
+  "phone_artifact_sha256": {
+    "tecno_lj9": {
+      "litert": "ba88c2b7b880bb4c14b5307e6ae3d6422cc59cba782d94981227a398adac34a9",
+      "native": "66df329632af5008c61f04b7f026c6cef0464c01b572ebbd8dd900b114153aa5",
+      "packed_prefill.tflite": "c92c5850581ac565ff73a4624bb5683228a63ad7e3cad7c6aaf37870a098d3fe",
+      "dynamic.tflite": "5e55a17f49104fc34bfbcc4a573aa1df5fd6687520dd374dc39c8ad3385c4d18",
+      "ynn": "af8ff4f2f1dfaaed7d559aac4ea8fce8855d1cb86d85b017d45d6ebced3776e2"
+    },
+    "pixel8": {
+      "litert": "ba88c2b7b880bb4c14b5307e6ae3d6422cc59cba782d94981227a398adac34a9",
+      "native": "66df329632af5008c61f04b7f026c6cef0464c01b572ebbd8dd900b114153aa5",
+      "packed_prefill.tflite": "c92c5850581ac565ff73a4624bb5683228a63ad7e3cad7c6aaf37870a098d3fe",
+      "dynamic.tflite": "5e55a17f49104fc34bfbcc4a573aa1df5fd6687520dd374dc39c8ad3385c4d18",
+      "ynn": "af8ff4f2f1dfaaed7d559aac4ea8fce8855d1cb86d85b017d45d6ebced3776e2"
+    }
+  },
+  "historical_generated_artifact_sha256": {
+    "gemma4_prefill.h": "050fe3e97d8a45325f059734ed3f09a0f5a8c2962d7afb7362b74775f9ff85cf",
+    "gemma4_decode.h": "908323b046fc2ae8032d0015f7f4237dcc1589d6d5d93aa40b0dd392069ed9b0",
+    "ynnpack_support.h": "bb575f084836e5d76a9caad3db7d5c7c1e032275533370270bd2b808d1699657"
+  },
+  "historical_runtime_source_sha256": {
+    "gemma4_main.cc": "f09266a314face44678f92e394912467689c5a10b8eadb263af0d9b35768d67f",
+    "quantized_fc_test.cc": "2d777b91a2a0b6265c76128a93cafad6c56d8b8f9cdaf19639c0a118b4f4a5e3",
+    "ynnpack-symbolic-runtime.patch": "f6d03c9925ebdbe69fdfeb9ffd2d02ecd47467da0e9e1e7ce263042dfca0dc0a"
+  },
+  "fixture_sha256": {
+    "p1024-d32.tsv": "5e5eddc6f73a9913e8dfefcc358668bf9fb86700c6b0d10d0135c44e034bc291",
+    "p17-d32.tsv": "1228941b116f27231114bfd25e7c80126fc4f78051843891654431379ebec77b",
+    "correctness.tsv": "a2f8ae88d8ab4efe451acdacc1c5e4259f2016121154fdd3537ba4a009568ce8",
+    "p128-d32.tsv": "e1d2ab58421b2f71425fe30cf777562e882d19ae3418e35241b3448fc97ecb0f",
+    "performance.tsv": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  "retained_evidence_sha256": {
+    "requests.json": "bcfa8e897b29cf2e26eb20e895b06506818ae68c9aa2f2d5a7e3fac46ede7e5a",
+    "profile-ynn-flat.txt": "0a46c8e0b6201a8886b1d9b6f3e0b24b631304111f0fb50dcb82a86e2d18570a",
+    "profile-litert-static-flat.txt": "95ce09cded1d488f97dd61684a8cde63ce9359ed1365e1e02df7f87375ae6a9e",
+    "profile-litert-packed-flat.txt": "257f0327528df0ae051ab22490dc7d92034bee77a1199b0b03a267f78942ce43"
+  },
+  "notes": [
+    "Artifact keys are labels and SHA-256 identities, not local filesystem references. Control binaries, TFLite files, large dumps, private graph authors, and private compiler provenance are not distributed.",
+    "commands.json preserves recorded flags and affinity, with executable/model/bundle/fixture/cache locations replaced by documented placeholders. It includes the original cold-cache host packed command and the later cache-warm command; metrics.json and requests.json use the cache-warm run.",
+    "The supplied per-prompt TSV files match the original fixture hashes; performance.tsv and correctness.tsv are in models/gemma4_e2b/fixtures/.",
+    "YNNPACK and the static-QAT controls retain the source activation contract; packed-dynamic XNNPACK changes only W4 prefill activation/FC lowering. Decode retains the static graph.",
+    "Harness -O1; setup-only generated builder optimization disabled; backend kernel libraries optimized. These are historical settings, not current split-builder settings.",
+    "Controls reuse preserved binaries/models; dependency revisions are not forced equal. Native short-prompt chunk settings are retained in commands.json.",
+    "TTFT excludes loading and preparation. The native runner includes KV allocation/reset within its prompt timer; YNNPACK and LiteRT reset preallocated state before prefix timing. This matters most for short prompts and large capacity.",
+    "Phone processes ran sequentially with cooldowns; clocks were not locked. Small differences are not a reliable universal ranking.",
+    "No task-quality evaluation; logit comparisons characterize numerical differences.",
+    "Flat kernel reports have trailing whitespace removed; sample counts, cycle shares, and symbols are unchanged. Original report byte hashes are retained separately."
+  ],
+  "kernel_profile_source_sha256": {
+    "profile-litert-packed-flat.txt": "d4fedd76d3de5509970e00c8259f9c50b218ff95ed3a4e27230be31842599af8",
+    "profile-litert-static-flat.txt": "72073c8584920a74d4d500cd2bc7fb74eb2bffac1a451d4fd50d5a901d74f6bb",
+    "profile-ynn-flat.txt": "aaecc6411392a7d7a5def1141a70e784c53cabfcd35cd305e2c0aee884e2c773"
+  }
+}

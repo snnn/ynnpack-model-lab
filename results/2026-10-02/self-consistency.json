@@ -1,0 +1,194 @@
+[
+  {
+    "test": "self-c8448",
+    "case": "p1.decode_0001.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 669,
+    "got_argmax": 669
+  },
+  {
+    "test": "self-c8448",
+    "case": "p1.decode_0002.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 669,
+    "got_argmax": 669
+  },
+  {
+    "test": "self-c8448",
+    "case": "p1.prefill.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 236769,
+    "got_argmax": 236769
+  },
+  {
+    "test": "self-c8448",
+    "case": "p1024.decode_0001.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 160144,
+    "got_argmax": 160144
+  },
+  {
+    "test": "self-c8448",
+    "case": "p1024.decode_0002.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 33934,
+    "got_argmax": 33934
+  },
+  {
+    "test": "self-c8448",
+    "case": "p1024.prefill.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 236772,
+    "got_argmax": 236772
+  },
+  {
+    "test": "self-c8448",
+    "case": "p128.decode_0001.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 44602,
+    "got_argmax": 44602
+  },
+  {
+    "test": "self-c8448",
+    "case": "p128.decode_0002.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 33934,
+    "got_argmax": 33934
+  },
+  {
+    "test": "self-c8448",
+    "case": "p128.prefill.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 2897,
+    "got_argmax": 2897
+  },
+  {
+    "test": "self-c8448",
+    "case": "p129.decode_0001.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 44602,
+    "got_argmax": 44602
+  },
+  {
+    "test": "self-c8448",
+    "case": "p129.decode_0002.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 33934,
+    "got_argmax": 33934
+  },
+  {
+    "test": "self-c8448",
+    "case": "p129.prefill.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 2342,
+    "got_argmax": 2342
+  },
+  {
+    "test": "self-chunk17",
+    "case": "p1.decode_0001.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 669,
+    "got_argmax": 669
+  },
+  {
+    "test": "self-chunk17",
+    "case": "p1.decode_0002.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 669,
+    "got_argmax": 669
+  },
+  {
+    "test": "self-chunk17",
+    "case": "p1.prefill.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 236769,
+    "got_argmax": 236769
+  },
+  {
+    "test": "self-chunk17",
+    "case": "p1024.decode_0001.f32",
+    "max_abs": 4.5445098876953125,
+    "rms": 1.1446399855550446,
+    "ref_argmax": 160144,
+    "got_argmax": 160144
+  },
+  {
+    "test": "self-chunk17",
+    "case": "p1024.decode_0002.f32",
+    "max_abs": 2.3817408084869385,
+    "rms": 0.53351941639926,
+    "ref_argmax": 33934,
+    "got_argmax": 33934
+  },
+  {
+    "test": "self-chunk17",
+    "case": "p1024.prefill.f32",
+    "max_abs": 3.714605391025543,
+    "rms": 0.9776416924181922,
+    "ref_argmax": 236772,
+    "got_argmax": 236772
+  },
+  {
+    "test": "self-chunk17",
+    "case": "p128.decode_0001.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 44602,
+    "got_argmax": 44602
+  },
+  {
+    "test": "self-chunk17",
+    "case": "p128.decode_0002.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 33934,
+    "got_argmax": 33934
+  },
+  {
+    "test": "self-chunk17",
+    "case": "p128.prefill.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 2897,
+    "got_argmax": 2897
+  },
+  {
+    "test": "self-chunk17",
+    "case": "p129.decode_0001.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 44602,
+    "got_argmax": 44602
+  },
+  {
+    "test": "self-chunk17",
+    "case": "p129.decode_0002.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 33934,
+    "got_argmax": 33934
+  },
+  {
+    "test": "self-chunk17",
+    "case": "p129.prefill.f32",
+    "max_abs": 0.0,
+    "rms": 0.0,
+    "ref_argmax": 2342,
+    "got_argmax": 2342
+  }
+]

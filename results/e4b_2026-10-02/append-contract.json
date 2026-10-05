@@ -1,0 +1,42 @@
+[
+  {
+    "record": "host-c2048-correctness.jsonl",
+    "invocations": 27,
+    "processed_tokens": 2974,
+    "append_bytes": 85270528,
+    "bytes_per_token": 28672,
+    "view_copy_bytes": 0
+  },
+  {
+    "record": "host-c8448-correctness.jsonl",
+    "invocations": 27,
+    "processed_tokens": 2974,
+    "append_bytes": 85270528,
+    "bytes_per_token": 28672,
+    "view_copy_bytes": 0
+  },
+  {
+    "record": "tecno-correctness.jsonl",
+    "invocations": 27,
+    "processed_tokens": 2974,
+    "append_bytes": 85270528,
+    "bytes_per_token": 28672,
+    "view_copy_bytes": 0
+  },
+  {
+    "record": "e4b-host-performance.jsonl",
+    "invocations": 204,
+    "processed_tokens": 4868,
+    "append_bytes": 139575296,
+    "bytes_per_token": 28672,
+    "view_copy_bytes": 0
+  },
+  {
+    "record": "e4b-tecno-performance.jsonl",
+    "invocations": 204,
+    "processed_tokens": 4868,
+    "append_bytes": 139575296,
+    "bytes_per_token": 28672,
+    "view_copy_bytes": 0
+  }
+]

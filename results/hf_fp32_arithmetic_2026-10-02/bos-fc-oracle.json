@@ -1,0 +1,310 @@
+[
+  {
+    "module": "model.layers.0.self_attn.k_proj",
+    "static_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 20.534333545714766,
+      "cosine": 1.0
+    },
+    "static_output_codes": {
+      "elements": 256,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 18.379251208904023,
+      "cosine": 1.0
+    },
+    "fp32_dot_vs_fp64_oracle": {
+      "elements": 256,
+      "different": 236,
+      "max_abs_error": 4.57763671875e-05,
+      "rms_error": 5.812795516754289e-06,
+      "reference_rms": 28.30798794548178,
+      "cosine": 0.999999999999979
+    },
+    "fp32_output_quantization": {
+      "elements": 256,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 28.220109759409308,
+      "cosine": 1.0
+    },
+    "static_vs_fp32_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 20.534333545714766,
+      "cosine": 1.0
+    },
+    "fp32_input_saturation": 3
+  },
+  {
+    "module": "model.layers.0.self_attn.v_proj",
+    "static_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 20.534333545714766,
+      "cosine": 1.0
+    },
+    "static_output_codes": {
+      "elements": 256,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 15.236161754195182,
+      "cosine": 1.0
+    },
+    "fp32_dot_vs_fp64_oracle": {
+      "elements": 256,
+      "different": 234,
+      "max_abs_error": 0.0001220703125,
+      "rms_error": 8.638202489400443e-06,
+      "reference_rms": 28.41918966157286,
+      "cosine": 0.9999999999999684
+    },
+    "fp32_output_quantization": {
+      "elements": 256,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 23.394106533913064,
+      "cosine": 1.0
+    },
+    "static_vs_fp32_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 20.534333545714766,
+      "cosine": 1.0
+    },
+    "fp32_input_saturation": 3
+  },
+  {
+    "module": "model.layers.0.self_attn.q_proj",
+    "static_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 20.534333545714766,
+      "cosine": 1.0
+    },
+    "static_output_codes": {
+      "elements": 2048,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 5.872048793330144,
+      "cosine": 1.0000000000000002
+    },
+    "fp32_dot_vs_fp64_oracle": {
+      "elements": 2048,
+      "different": 1850,
+      "max_abs_error": 6.103515625e-05,
+      "rms_error": 5.1152771329420756e-06,
+      "reference_rms": 18.306987431781877,
+      "cosine": 0.9999999999999617
+    },
+    "fp32_output_quantization": {
+      "elements": 2048,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 18.309695012341688,
+      "cosine": 1.0000000000000004
+    },
+    "static_vs_fp32_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 20.534333545714766,
+      "cosine": 1.0
+    },
+    "fp32_input_saturation": 3
+  },
+  {
+    "module": "model.layers.0.self_attn.o_proj",
+    "static_input_codes": {
+      "elements": 2048,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 23.99324449193981,
+      "cosine": 1.0
+    },
+    "static_output_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 8.561131277465613,
+      "cosine": 1.0000000000000002
+    },
+    "fp32_dot_vs_fp64_oracle": {
+      "elements": 1536,
+      "different": 1430,
+      "max_abs_error": 9.5367431640625e-06,
+      "rms_error": 7.343212101629369e-07,
+      "reference_rms": 1.800447198588852,
+      "cosine": 0.9999999999999171
+    },
+    "fp32_output_quantization": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 1.8026946484528412,
+      "cosine": 1.0000000000000004
+    },
+    "static_vs_fp32_input_codes": {
+      "elements": 2048,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 23.99324449193981,
+      "cosine": 1.0
+    },
+    "fp32_input_saturation": 32
+  },
+  {
+    "module": "model.layers.0.mlp.up_proj",
+    "static_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 5.71701362528258,
+      "cosine": 1.0000000000000002
+    },
+    "static_output_codes": {
+      "elements": 6144,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 9.033205166103373,
+      "cosine": 0.9999999999999999
+    },
+    "fp32_dot_vs_fp64_oracle": {
+      "elements": 6144,
+      "different": 5697,
+      "max_abs_error": 6.103515625e-05,
+      "rms_error": 2.5457846061473923e-06,
+      "reference_rms": 5.618520122669471,
+      "cosine": 0.9999999999998987
+    },
+    "fp32_output_quantization": {
+      "elements": 6144,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 5.5835165913343054,
+      "cosine": 0.9999999999999996
+    },
+    "static_vs_fp32_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 5.71701362528258,
+      "cosine": 1.0000000000000002
+    },
+    "fp32_input_saturation": 0
+  },
+  {
+    "module": "model.layers.0.mlp.gate_proj",
+    "static_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 5.71701362528258,
+      "cosine": 1.0000000000000002
+    },
+    "static_output_codes": {
+      "elements": 6144,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 11.993535313781198,
+      "cosine": 1.0
+    },
+    "fp32_dot_vs_fp64_oracle": {
+      "elements": 6144,
+      "different": 5671,
+      "max_abs_error": 2.384185791015625e-05,
+      "rms_error": 2.8633744137190097e-06,
+      "reference_rms": 7.413904757288336,
+      "cosine": 0.9999999999999263
+    },
+    "fp32_output_quantization": {
+      "elements": 6144,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 7.413326969972962,
+      "cosine": 1.0000000000000013
+    },
+    "static_vs_fp32_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 5.71701362528258,
+      "cosine": 1.0000000000000002
+    },
+    "fp32_input_saturation": 0
+  },
+  {
+    "module": "model.layers.0.mlp.down_proj",
+    "static_input_codes": {
+      "elements": 6144,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 2.3529679839159168,
+      "cosine": 1.0
+    },
+    "static_output_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 6.210605009444196,
+      "cosine": 1.0
+    },
+    "fp32_dot_vs_fp64_oracle": {
+      "elements": 1536,
+      "different": 1103,
+      "max_abs_error": 6.103515625e-05,
+      "rms_error": 8.964676261255837e-06,
+      "reference_rms": 103.07456654623152,
+      "cosine": 0.9999999999999966
+    },
+    "fp32_output_quantization": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 103.35736427570559,
+      "cosine": 1.0000000000000004
+    },
+    "static_vs_fp32_input_codes": {
+      "elements": 6144,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 2.3529679839159168,
+      "cosine": 1.0
+    },
+    "fp32_input_saturation": 1
+  }
+]

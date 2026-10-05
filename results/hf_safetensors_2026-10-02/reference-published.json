@@ -1,0 +1,11 @@
+{
+  "profile": "hf_bf16_int8_published_kv",
+  "source_identity": "b454fea4385836b70181ce7f8d797413d695d7f916b21ed3dd49896cdad6d579",
+  "torch": "2.14.0+rocm7.2",
+  "transformers": "5.12.1",
+  "load_seconds": 1.855139875318855,
+  "prefill_rows": 128,
+  "attention": "eager",
+  "dtype": "bfloat16",
+  "int8_kv_reference": "FP32 divide/RNE/clamp/dequantize then BF16"
+}

@@ -1,0 +1,126 @@
+diff --git a/ynnpack/subgraph/reduce.cc b/ynnpack/subgraph/reduce.cc
+index 1b809cea4d..df1d64a708 100644
+--- a/ynnpack/subgraph/reduce.cc
++++ b/ynnpack/subgraph/reduce.cc
+@@ -127,6 +127,12 @@ auto make_unary_reduce_impl(const ynn_node::reduce& op, reduce_kernel kernel) {
+       }
+     }
+ 
++    // Cropping to an empty logical view can clear the base pointer. Detect
++    // empty axes before slicing any earlier nonempty axis in the loop below.
++    for (size_t d = 0; d < a.rank; ++d) {
++      if (a.dim(d).empty()) return 0;
++    }
++
+     // Slice off the "channel" dimension if any.
+     slinky::index_t c_stride_m = 0;
+     if (op.op == ynn_reduce_min_max) {
+@@ -549,12 +555,33 @@ void define_reduce(ynn_subgraph& subgraph, ynn_node& node,
+                                     input_a.buffer->elem_size(), split_factors);
+     }
+ 
+-    auto func = slinky::func::make(
+-        make_unary_reduce_impl(op, kernel),
++    // An internal slice_like may retain a larger physical backing buffer.
++    // input_crop applies only to Slinky copies, not callbacks. Crop the logical
++    // input explicitly, including empty reductions which still initialize c.
++    auto reduce_impl = make_unary_reduce_impl(op, kernel);
++    auto callback = [reduce_impl](const slinky::call_stmt* call,
++                                 slinky::eval_context& ctx) -> slinky::index_t {
++      slinky::buffer<const void, max_tensor_rank> a(
++          *ctx.lookup_buffer(call->inputs[0]));
++      for (size_t d = 0; d < call->scalars.size(); ++d) {
++        a.crop(d, 0, slinky::evaluate(call->scalars[d], ctx) - 1);
++      }
++      return reduce_impl(
++          a, ctx.lookup_buffer(call->inputs[1])->cast<const void>(),
++          ctx.lookup_buffer(call->outputs[0])->cast<void>(),
++          *ctx.lookup_buffer(call->outputs[1]));
++    };
++    auto logical_extents = input_a.physical_extents();
++    for (auto& extent : logical_extents) {
++      if (!extent.defined()) extent = 1;
++    }
++    auto func = slinky::func(
++        std::move(callback),
+         {{input_a.buffer, std::move(a_bounds), std::move(a_crop)},
+          {input_c.buffer, std::move(c_bounds)}},
+         {{output.buffer, std::move(output_dims)},
+          {reduction_buffer, std::move(reduction_dims)}},
++        std::move(logical_extents),
+         std::move(attrs));
+ 
+     func.user_data() = sched.get();
+diff --git a/ynnpack/subgraph/runtime.cc b/ynnpack/subgraph/runtime.cc
+index c59a4a1796..6ac2bed277 100644
+--- a/ynnpack/subgraph/runtime.cc
++++ b/ynnpack/subgraph/runtime.cc
+@@ -1210,7 +1210,8 @@ ynn_status ynn_runtime::build() {
+   options.no_checks = true;
+ #endif
+ 
+-  pipeline = slinky::build_pipeline(globals.symbols, {}, inputs, outputs,
++  scalar_parameter_values.resize(subgraph->scalar_parameters.size(), 0);
++  pipeline = slinky::build_pipeline(globals.symbols, subgraph->scalar_parameters, inputs, outputs,
+                                     globals.lets, options);
+ 
+   slinky::call_stmt::attributes attrs;
+@@ -1243,7 +1244,7 @@ ynn_status ynn_runtime::setup() {
+     }
+   }
+ 
+-  pipeline.setup(inputs, outputs, eval_context);
++  pipeline.setup(scalar_parameter_values, inputs, outputs, eval_context);
+   return ynn_status_success;
+ }
+ 
+diff --git a/ynnpack/subgraph/runtime.h b/ynnpack/subgraph/runtime.h
+index 2c4e9ce1c4..83919b311a 100644
+--- a/ynnpack/subgraph/runtime.h
++++ b/ynnpack/subgraph/runtime.h
+@@ -60,6 +60,7 @@ struct ynn_runtime {
+   // The evaluateable slinky pipeline, and the context to run it.
+   slinky::pipeline pipeline;
+   slinky::eval_context eval_context;
++  std::vector<slinky::index_t> scalar_parameter_values;
+ 
+   const ynn_runtime_value& value(uint32_t id) const {
+     assert(id < values.size());
+diff --git a/ynnpack/subgraph/subgraph.cc b/ynnpack/subgraph/subgraph.cc
+index 393ff048a5..2a341fdc62 100644
+--- a/ynnpack/subgraph/subgraph.cc
++++ b/ynnpack/subgraph/subgraph.cc
+@@ -709,6 +709,8 @@ ynn_status ynn_subgraph::fold_constants(slinky::thread_pool* threadpool) {
+   std::vector<int> static_refs(values.size(), 0);
+   for (ynn_node& node : nodes) {
+     if (!node.is_valid()) continue;
++    // Opaque callbacks can depend on frontend scalar parameters or state.
++    if (std::holds_alternative<ynn_node::opaque>(node.op)) continue;
+     if (std::any_of(node.inputs.begin(), node.inputs.end(), [&](uint32_t i) {
+           return i != YNN_INVALID_VALUE_ID && !value_is_static[i];
+         })) {
+@@ -1012,6 +1014,9 @@ ynn_status ynn_subgraph::eliminate_common_subgraphs() {
+       }
+     }
+ 
++    // The callback/parameter semantics are not represented in the opaque key.
++    if (std::holds_alternative<ynn_node::opaque>(node.op)) continue;
++
+     // If the node produces an external output, we don't want to replace it in
+     // order to preserve the graph's public interface.
+     const bool produces_external_output = std::any_of(
+diff --git a/ynnpack/subgraph/subgraph.h b/ynnpack/subgraph/subgraph.h
+index 87b22aadc9..f24d8dc66e 100644
+--- a/ynnpack/subgraph/subgraph.h
++++ b/ynnpack/subgraph/subgraph.h
+@@ -660,6 +660,10 @@ struct ynn_subgraph : public ynn::ref_counted<ynn_subgraph> {
+ 
+   ynn::slinky_globals globals;
+ 
++  // Experimental frontend-bound scalar symbols. Their values are supplied
++  // when setting up a runtime, not specialized during graph construction.
++  std::vector<slinky::var> scalar_parameters;
++
+   bool is_valid_value(uint32_t id) const {
+     return id < values.size() && values[id].is_valid();
+   }

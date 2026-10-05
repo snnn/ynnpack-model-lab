@@ -1,0 +1,16 @@
+# Build, dependency, asset, and output directories.
+/build*/
+/.deps/
+/assets/
+/out/
+/models/**/parameters/
+
+# Python environments and caches.
+/.venv/
+__pycache__/
+*.pyc
+/.ruff_cache/
+
+# Local-only files and directories.
+/AGENTS.md
+/private/

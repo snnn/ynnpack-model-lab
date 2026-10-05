@@ -1,0 +1,6 @@
+*.patch whitespace=-blank-at-eol
+*.csv text eol=lf
+models/*/generated/* linguist-generated=true
+tests/generated/* linguist-generated=true
+models/*/asset_recipe.json linguist-generated=true
+models/*/bundle_manifest.json linguist-generated=true

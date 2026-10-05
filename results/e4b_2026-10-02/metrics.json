@@ -1,0 +1,110 @@
+[
+  {
+    "device": "host",
+    "engine": "ynn",
+    "prompt": 17,
+    "capacity": 2048,
+    "threads": 4,
+    "ttft_ms": 152.59362,
+    "prefill_tok_s": 187.60526047495438,
+    "decode_tok_s": 14.884337861806612,
+    "peak_rss_mib": 4543.91796875,
+    "setup_ms": 35491.514584
+  },
+  {
+    "device": "host",
+    "engine": "ynn",
+    "prompt": 128,
+    "capacity": 2048,
+    "threads": 4,
+    "ttft_ms": 752.381967,
+    "prefill_tok_s": 186.14808896890747,
+    "decode_tok_s": 14.40358910938002,
+    "peak_rss_mib": 4553.171875,
+    "setup_ms": 35491.514584
+  },
+  {
+    "device": "host",
+    "engine": "ynn",
+    "prompt": 1024,
+    "capacity": 2048,
+    "threads": 4,
+    "ttft_ms": 6018.673387,
+    "prefill_tok_s": 172.25538532779217,
+    "decode_tok_s": 12.576856274557947,
+    "peak_rss_mib": 4692.265625,
+    "setup_ms": 35491.514584
+  },
+  {
+    "device": "host",
+    "engine": "litert_xnn_static",
+    "prompt": 17,
+    "capacity": 2048,
+    "threads": 4,
+    "ttft_ms": 139.63799,
+    "prefill_tok_s": 208.94010028158465,
+    "decode_tok_s": 15.845688155040795,
+    "peak_rss_mib": 2391.015625,
+    "setup_ms": 288.572293
+  },
+  {
+    "device": "host",
+    "engine": "litert_xnn_static",
+    "prompt": 128,
+    "capacity": 2048,
+    "threads": 4,
+    "ttft_ms": 483.95950100000005,
+    "prefill_tok_s": 302.4060535234236,
+    "decode_tok_s": 15.582279314631727,
+    "peak_rss_mib": 2453.640625,
+    "setup_ms": 288.572293
+  },
+  {
+    "device": "host",
+    "engine": "litert_xnn_static",
+    "prompt": 1024,
+    "capacity": 2048,
+    "threads": 4,
+    "ttft_ms": 3650.470983,
+    "prefill_tok_s": 285.51663611522366,
+    "decode_tok_s": 14.607574597672086,
+    "peak_rss_mib": 2578.89453125,
+    "setup_ms": 288.572293
+  },
+  {
+    "device": "tecno_lj9",
+    "engine": "ynn",
+    "prompt": 17,
+    "capacity": 2048,
+    "threads": 4,
+    "ttft_ms": 257.518846,
+    "prefill_tok_s": 99.73665720039041,
+    "decode_tok_s": 11.065947028796716,
+    "peak_rss_mib": 4414.7265625,
+    "setup_ms": 124865.701238
+  },
+  {
+    "device": "tecno_lj9",
+    "engine": "ynn",
+    "prompt": 128,
+    "capacity": 2048,
+    "threads": 4,
+    "ttft_ms": 1624.8580769999999,
+    "prefill_tok_s": 83.31211001064204,
+    "decode_tok_s": 9.45768800094765,
+    "peak_rss_mib": 4475.53125,
+    "setup_ms": 124865.701238
+  },
+  {
+    "device": "tecno_lj9",
+    "engine": "ynn",
+    "prompt": 1024,
+    "capacity": 2048,
+    "threads": 4,
+    "ttft_ms": 14446.690462,
+    "prefill_tok_s": 71.49617764405924,
+    "decode_tok_s": 7.070422702382782,
+    "peak_rss_mib": 4525.58984375,
+    "setup_ms": 124865.701238
+  }
+]

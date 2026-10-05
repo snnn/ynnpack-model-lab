@@ -1,0 +1,46 @@
+{
+  "cooldown_seconds": 0,
+  "jobs": [
+    {
+      "name": "fp32",
+      "engine": "ynn",
+      "argv": [
+        "build-hf/gemma4_e2b_hf_fp32_trace",
+        "--hf_model_dir=assets/hf-checkpoint",
+        "--asset_manifest=assets/gemma4_e2b_hf/manifest.json",
+        "--cache_dir=assets/gemma4_e2b_hf/derived",
+        "--parameter_dir=assets/gemma4_e2b_hf/parameters",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--cases_file=out/hf-fp32-experiment/bos.tsv",
+        "--output_dir={output}",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs",
+        "--trace_plan=out/hf-fp32-experiment/trace-plan-fp32"
+      ]
+    },
+    {
+      "name": "static",
+      "engine": "ynn",
+      "argv": [
+        "build-hf/gemma4_e2b_hf_static_trace",
+        "--hf_model_dir=assets/hf-checkpoint",
+        "--asset_manifest=assets/gemma4_e2b_hf/manifest.json",
+        "--cache_dir=assets/gemma4_e2b_hf/derived",
+        "--parameter_dir=assets/gemma4_e2b_hf/parameters",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--cases_file=out/hf-fp32-experiment/bos.tsv",
+        "--output_dir={output}",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs",
+        "--trace_plan=out/hf-fp32-experiment/trace-plan-static"
+      ]
+    }
+  ],
+  "note": "Repository-relative reproduction commands. Source/build/asset locations normalized; original command arrays retained with ignored local captures."
+}

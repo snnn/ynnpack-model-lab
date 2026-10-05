@@ -1,0 +1,14 @@
+# Copyright 2026 @snnn
+# SPDX-License-Identifier: Apache-2.0
+
+[project]
+name = "ynnpack-model-lab"
+version = "0.0.0"
+description = "Research tools and publication checks for the YNNPACK model lab."
+requires-python = ">=3.11"
+dependencies = [
+    "email-validator==2.3.0",
+]
+
+[tool.uv]
+package = false

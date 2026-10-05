@@ -1,0 +1,41 @@
+{
+  "profile": "hf_static_int8_published_kv",
+  "source_identity": "b454fea4385836b70181ce7f8d797413d695d7f916b21ed3dd49896cdad6d579",
+  "graphs": [
+    {
+      "phase": "prefill",
+      "ops": 2736,
+      "values": 3340,
+      "builder_sources": [
+        "gemma4_prefill.cc",
+        "gemma4_prefill_DefineValues_0.cc",
+        "gemma4_prefill_DefineValuesToLayer0_1.cc",
+        "gemma4_prefill_Layer1ToLayer8_2.cc",
+        "gemma4_prefill_Layer9ToLayer14_3.cc"
+      ]
+    },
+    {
+      "phase": "decode",
+      "ops": 5756,
+      "values": 7052,
+      "builder_sources": [
+        "gemma4_decode.cc",
+        "gemma4_decode_DefineValues_0.cc",
+        "gemma4_decode_DefineValues_1.cc",
+        "gemma4_decode_DefineValues_2.cc",
+        "gemma4_decode_DefineValuesToInputProjection_3.cc",
+        "gemma4_decode_Layer0ToLayer7_4.cc",
+        "gemma4_decode_Layer8ToLayer15_5.cc",
+        "gemma4_decode_Layer16ToLayer26_6.cc",
+        "gemma4_decode_Layer27ToFinalNormAndHead_7.cc"
+      ]
+    }
+  ],
+  "kv_bytes_per_token": 9216,
+  "arithmetic": "f32",
+  "integer_fc": true,
+  "head_policy": "dynamic_int8",
+  "adapter_contract": "resource-state-v1",
+  "optimization": "target_views",
+  "global_layout": true
+}

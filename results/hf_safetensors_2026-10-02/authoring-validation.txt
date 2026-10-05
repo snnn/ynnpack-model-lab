@@ -1,0 +1,5 @@
+Python safetensors tests: 4 passed
+Optional Core IR authoring tests: 10 passed
+All three HF generated builder sets, config headers, metadata, and recipes reproduce byte-for-byte.
+Published-source E2B generated builders reproduce byte-for-byte.
+Fresh manifest preparation: 1601 text tensor descriptors; 470 parameter files; audited identity unchanged.

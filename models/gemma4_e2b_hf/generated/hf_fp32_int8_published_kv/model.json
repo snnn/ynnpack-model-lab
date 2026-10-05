@@ -1,0 +1,44 @@
+{
+  "profile": "hf_fp32_int8_published_kv",
+  "source_identity": "b454fea4385836b70181ce7f8d797413d695d7f916b21ed3dd49896cdad6d579",
+  "graphs": [
+    {
+      "phase": "prefill",
+      "ops": 3332,
+      "values": 3937,
+      "builder_sources": [
+        "gemma4_prefill.cc",
+        "gemma4_prefill_DefineValues_0.cc",
+        "gemma4_prefill_DefineValues_1.cc",
+        "gemma4_prefill_DefineValuesToLayer4_2.cc",
+        "gemma4_prefill_Layer5ToLayer11_3.cc",
+        "gemma4_prefill_Layer12ToLayer14_4.cc"
+      ]
+    },
+    {
+      "phase": "decode",
+      "ops": 7139,
+      "values": 8435,
+      "builder_sources": [
+        "gemma4_decode.cc",
+        "gemma4_decode_DefineValues_0.cc",
+        "gemma4_decode_DefineValues_1.cc",
+        "gemma4_decode_DefineValues_2.cc",
+        "gemma4_decode_DefineValues_3.cc",
+        "gemma4_decode_DefineValuesToLayer0_4.cc",
+        "gemma4_decode_Layer1ToLayer7_5.cc",
+        "gemma4_decode_Layer8ToLayer14_6.cc",
+        "gemma4_decode_Layer15ToLayer23_7.cc",
+        "gemma4_decode_Layer24ToLayer32_8.cc",
+        "gemma4_decode_Layer33ToFinalNormAndHead_9.cc"
+      ]
+    }
+  ],
+  "kv_bytes_per_token": 9216,
+  "arithmetic": "f32",
+  "integer_fc": false,
+  "head_policy": "floating_no_srq",
+  "adapter_contract": "resource-state-v1",
+  "optimization": "target_views",
+  "global_layout": true
+}

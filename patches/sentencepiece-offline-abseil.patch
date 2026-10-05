@@ -1,0 +1,32 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -185,19 +185,16 @@
+ endif()
+ 
+ if (SPM_ABSL_PROVIDER STREQUAL "module")
+-  include(FetchContent)
+-  FetchContent_Populate(abseil-cpp
+-        GIT_REPOSITORY  https://github.com/abseil/abseil-cpp.git
+-        SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/third_party/abseil-cpp
+-        GIT_PROGRESS TRUE
+-        GIT_TAG 20260107.1)
+-  add_subdirectory(third_party/abseil-cpp)
+-  if (NOT EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/third_party/absl)
+-    file(CREATE_LINK
+-         ${CMAKE_CURRENT_SOURCE_DIR}/third_party/abseil-cpp/absl
+-         ${CMAKE_CURRENT_SOURCE_DIR}/third_party/absl
+-         SYMBOLIC)
+-  endif()
++  # Copyright 2026 @snnn. SPDX-License-Identifier: Apache-2.0
++  # The lab bootstraps hash-verified sources; configure must never fetch them.
++  if (NOT EXISTS "${SPM_LAB_ABSL_DIR}/CMakeLists.txt")
++    message(FATAL_ERROR "Set SPM_LAB_ABSL_DIR to the bootstrapped Abseil source")
++  endif()
++  add_subdirectory("${SPM_LAB_ABSL_DIR}" abseil-cpp)
++  file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/include/third_party")
++  file(CREATE_LINK "${SPM_LAB_ABSL_DIR}/absl"
++       "${CMAKE_CURRENT_BINARY_DIR}/include/third_party/absl" SYMBOLIC)
++  include_directories(BEFORE "${CMAKE_CURRENT_BINARY_DIR}/include" "${SPM_LAB_ABSL_DIR}")
+ elseif (SPM_ABSL_PROVIDER STREQUAL "package")
+   find_package(absl REQUIRED)
+   get_target_property(ABSL_INCLUDE_DIRS absl::base INTERFACE_INCLUDE_DIRECTORIES)

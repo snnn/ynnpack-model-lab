@@ -1,0 +1,1 @@
+{"profile":"hf_bf16","source_identity":"b454fea4385836b70181ce7f8d797413d695d7f916b21ed3dd49896cdad6d579","kv_element_bytes":2,"cache_capacity":8448,"prefill_rows":128,"threads":4,"warmups":1,"repetitions":3}

@@ -1,0 +1,57 @@
+{
+  "xnn-vs-hf": {
+    "outputs": 27,
+    "greedy_agreement": 25,
+    "minimum_centered_cosine": 0.8490991643710377,
+    "maximum_kl": 2.5879795201245654,
+    "maximum_absolute_logit_error": 31.713638305664062,
+    "byte_identical_files": 0,
+    "files": 837,
+    "different_kv_codes": 60210017,
+    "kv_elements": 82225152
+  },
+  "xnn-vs-control": {
+    "outputs": 27,
+    "greedy_agreement": 27,
+    "minimum_centered_cosine": 0.9619153865647803,
+    "maximum_kl": 0.2146221415884756,
+    "maximum_absolute_logit_error": 9.458721399307251,
+    "byte_identical_files": 101,
+    "files": 837,
+    "different_kv_codes": 54260672,
+    "kv_elements": 82225152
+  },
+  "control-vs-hf": {
+    "outputs": 27,
+    "greedy_agreement": 25,
+    "minimum_centered_cosine": 0.8501093472181418,
+    "maximum_kl": 1.6804652588172857,
+    "maximum_absolute_logit_error": 31.09029197692871,
+    "byte_identical_files": 0,
+    "files": 837,
+    "different_kv_codes": 60228393,
+    "kv_elements": 82225152
+  },
+  "hf-chunk": {
+    "outputs": 27,
+    "greedy_agreement": 27,
+    "minimum_centered_cosine": 0.9697989556333574,
+    "maximum_kl": 0.0710964709228357,
+    "maximum_absolute_logit_error": 3.453125,
+    "byte_identical_files": 798,
+    "files": 837,
+    "different_kv_codes": 1512232,
+    "kv_elements": 82225152
+  },
+  "control-chunk": {
+    "outputs": 27,
+    "greedy_agreement": 26,
+    "minimum_centered_cosine": 0.9635506105371383,
+    "maximum_kl": 0.16371039494592987,
+    "maximum_absolute_logit_error": 5.323653936386108,
+    "byte_identical_files": 792,
+    "files": 837,
+    "different_kv_codes": 2956422,
+    "kv_elements": 82225152
+  }
+}

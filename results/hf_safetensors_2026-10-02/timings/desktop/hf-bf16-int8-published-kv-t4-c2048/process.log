@@ -1,0 +1,18 @@
+Authoring prefill
+Preparing 0 values, author_ms=2890.62 rss_kib=1869724
+Prepared 0 ms=12543.2 rss_kib=1971184 peak=1981216
+Authoring decode
+Preparing 1 values, author_ms=5138.35 rss_kib=2940084
+Prepared 1 ms=39790.7 rss_kib=3070784 peak=3073780
+p17 rep=-1 prefix_ms=194.718
+p17 rep=0 prefix_ms=191.437
+p17 rep=1 prefix_ms=196.376
+p17 rep=2 prefix_ms=194.097
+p128 rep=-1 prefix_ms=521.231
+p128 rep=0 prefix_ms=520.995
+p128 rep=1 prefix_ms=520.582
+p128 rep=2 prefix_ms=532.584
+p1024 rep=-1 prefix_ms=4471.33
+p1024 rep=0 prefix_ms=4457.76
+p1024 rep=1 prefix_ms=4456.99
+p1024 rep=2 prefix_ms=4418.85

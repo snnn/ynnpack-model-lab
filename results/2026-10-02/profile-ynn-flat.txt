@@ -1,0 +1,34 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 21K of event 'cpu_core/cycles/u'
+# Event count (approx.): 501962792003
+#
+#     Overhead  Symbol                                                                                                                                                                                IPC   [IPC Coverage]
+# ............  ....................................................................................................................................................................................  ....................
+#
+        71.66%  [.] ynn::dot_uint8_int4_int32_3x16x32_1x8x8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*  -      -
+         8.21%  [.] ynn::dot_fp32_6x16x1_1x8x1_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned lo  -      -
+         5.80%  [.] ynn::dot_int8_int8_int32_6x8x4_1x8x4_avx2(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, u  -      -
+         1.69%  [.] core_ynn::Graph::Mask(unsigned int, unsigned int, slinky::expr, slinky::expr, int)::{lambda(ynn_node const&, ynn_runtime&)#1}::operator()(ynn_node const&, ynn_runtime&) const::  -      -
+         1.64%  [.] long slinky::raw_buffer::flat_offset_bytes_impl<long, long, int>(slinky::dim const*, unsigned long, long, long, long, int)                                                        -      -
+         1.08%  [.] ynn::dequantize_int8_to_fp32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned lo  -      -
+         1.01%  [.] pthread_mutex_lock@@GLIBC_2.2.5                                                                                                                                                   -      -
+         0.77%  [.] ynn::quantize_fp32_to_int8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long  -      -
+         0.69%  [.] ynn::dot_uint8_int2_int32_1x32x16_1x8x16_avx2(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const  -      -
+         0.62%  [.] ynn::dot_uint8_int4_int32_1x16x32_1x8x8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*  -      -
+         0.54%  [.] ynn::tanh_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)                                                -      -
+         0.49%  [.] ynn::quantize_fp32_to_uint8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned lon  -      -
+         0.43%  [.] litert::tensor::examples::gemma4::(anonymous namespace)::QuantizedGemmaEmbeddingTable::DecodeRow(int, int, int, float*) const                                                     -      -
+         0.42%  [k] 0xffffffffafe00080                                                                                                                                                                -      -
+         0.38%  [.] ynn::multiply_fp32_fp32_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned lon  -      -
+         0.37%  [.] ynn::exp_subtract_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::  -      -
+         0.36%  [.] void ynn::run_dot<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long)::$_0::operator()(slinky::raw_buffer, slinky::raw_buffer, slink  -      -
+         0.36%  [.] ynn::multiply_int32_fp32_fp32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned l  -      -
+
+
+#
+# (Tip: Compare performance results with: perf diff [<old file> <new file>])
+#

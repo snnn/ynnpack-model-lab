@@ -1,0 +1,254 @@
+[
+  {
+    "profile": "control",
+    "label": "Published-source YNNPACK",
+    "case": "p17",
+    "prompt_tokens": 17,
+    "ttft_ms": 47.486671,
+    "prefix_ms": 22.864005,
+    "prefill_tok_s": 699.7899099479729,
+    "decode_ms": 24.29443075,
+    "decode_tok_s": 41.16169711035522,
+    "setup_ms": 12053.47804,
+    "peak_rss_mib": 1690.1875,
+    "ttft_ms_range": [
+      47.450404,
+      47.517016
+    ],
+    "decode_tok_s_range": [
+      41.04374300014996,
+      41.18614533491019
+    ]
+  },
+  {
+    "profile": "control",
+    "label": "Published-source YNNPACK",
+    "case": "p128",
+    "prompt_tokens": 128,
+    "ttft_ms": 208.784358,
+    "prefix_ms": 182.881269,
+    "prefill_tok_s": 694.4396257442854,
+    "decode_ms": 25.088525750000002,
+    "decode_tok_s": 39.85885858598128,
+    "setup_ms": 12053.47804,
+    "peak_rss_mib": 1690.1875,
+    "ttft_ms_range": [
+      207.891093,
+      209.070693
+    ],
+    "decode_tok_s_range": [
+      39.597037579311134,
+      39.90017972537205
+    ]
+  },
+  {
+    "profile": "control",
+    "label": "Published-source YNNPACK",
+    "case": "p1024",
+    "prompt_tokens": 1024,
+    "ttft_ms": 1721.068067,
+    "prefix_ms": 1692.548351,
+    "prefill_tok_s": 604.414047844238,
+    "decode_ms": 27.591776499999998,
+    "decode_tok_s": 36.242682670323894,
+    "setup_ms": 12053.47804,
+    "peak_rss_mib": 1690.1875,
+    "ttft_ms_range": [
+      1718.781189,
+      1722.776603
+    ],
+    "decode_tok_s_range": [
+      36.20521730848885,
+      36.274835237204464
+    ]
+  },
+  {
+    "profile": "bf16",
+    "label": "Safetensors BF16",
+    "case": "p17",
+    "prompt_tokens": 17,
+    "ttft_ms": 903.214385,
+    "prefix_ms": 193.640784,
+    "prefill_tok_s": 82.62722175303732,
+    "decode_ms": 708.16883325,
+    "decode_tok_s": 1.4120926437989354,
+    "setup_ms": 61324.992451,
+    "peak_rss_mib": 3044.38671875,
+    "ttft_ms_range": [
+      894.087893,
+      904.1678280000001
+    ],
+    "decode_tok_s_range": [
+      1.4107936974933855,
+      1.4279456329277398
+    ]
+  },
+  {
+    "profile": "bf16",
+    "label": "Safetensors BF16",
+    "case": "p128",
+    "prompt_tokens": 128,
+    "ttft_ms": 1205.333314,
+    "prefix_ms": 512.009361,
+    "prefill_tok_s": 248.04233999151432,
+    "decode_ms": 698.691846875,
+    "decode_tok_s": 1.4312461272772026,
+    "setup_ms": 61324.992451,
+    "peak_rss_mib": 3045.88671875,
+    "ttft_ms_range": [
+      1204.163742,
+      1227.649275
+    ],
+    "decode_tok_s_range": [
+      1.419521127390266,
+      1.4335981045493424
+    ]
+  },
+  {
+    "profile": "bf16",
+    "label": "Safetensors BF16",
+    "case": "p1024",
+    "prompt_tokens": 1024,
+    "ttft_ms": 5188.824895,
+    "prefix_ms": 4474.398004,
+    "prefill_tok_s": 228.6341087863582,
+    "decode_ms": 714.2910151250001,
+    "decode_tok_s": 1.3999896104321028,
+    "setup_ms": 61324.992451,
+    "peak_rss_mib": 3046.44921875,
+    "ttft_ms_range": [
+      5176.727183,
+      5190.096159
+    ],
+    "decode_tok_s_range": [
+      1.3970363527518153,
+      1.4001035753571864
+    ]
+  },
+  {
+    "profile": "fp32",
+    "label": "Safetensors FP32",
+    "case": "p17",
+    "prompt_tokens": 17,
+    "ttft_ms": 1102.138935,
+    "prefix_ms": 114.640087,
+    "prefill_tok_s": 139.5672353249348,
+    "decode_ms": 974.165591875,
+    "decode_tok_s": 1.0265195243400826,
+    "setup_ms": 38281.162439,
+    "peak_rss_mib": 2991.6484375,
+    "ttft_ms_range": [
+      1082.5265,
+      1103.91814
+    ],
+    "decode_tok_s_range": [
+      1.0094998254231573,
+      1.030508985072956
+    ]
+  },
+  {
+    "profile": "fp32",
+    "label": "Safetensors FP32",
+    "case": "p128",
+    "prompt_tokens": 128,
+    "ttft_ms": 1329.6415550000002,
+    "prefix_ms": 340.505537,
+    "prefill_tok_s": 372.9748453400333,
+    "decode_ms": 984.408829375,
+    "decode_tok_s": 1.0158381052259546,
+    "setup_ms": 38281.162439,
+    "peak_rss_mib": 2992.4375,
+    "ttft_ms_range": [
+      1319.5068390000001,
+      1332.315979
+    ],
+    "decode_tok_s_range": [
+      1.0131023974590685,
+      1.016662634309431
+    ]
+  },
+  {
+    "profile": "fp32",
+    "label": "Safetensors FP32",
+    "case": "p1024",
+    "prompt_tokens": 1024,
+    "ttft_ms": 3999.049105,
+    "prefix_ms": 3004.895431,
+    "prefill_tok_s": 340.4444592135293,
+    "decode_ms": 993.633624,
+    "decode_tok_s": 1.0064071664305916,
+    "setup_ms": 38281.162439,
+    "peak_rss_mib": 2998.90625,
+    "ttft_ms_range": [
+      3962.725646,
+      4002.749735
+    ],
+    "decode_tok_s_range": [
+      1.0049038254042972,
+      1.008319967309581
+    ]
+  },
+  {
+    "profile": "static",
+    "label": "Safetensors integer FC",
+    "case": "p17",
+    "prompt_tokens": 17,
+    "ttft_ms": 50.365562,
+    "prefix_ms": 23.625556,
+    "prefill_tok_s": 677.232738988238,
+    "decode_ms": 26.552352,
+    "decode_tok_s": 37.66144709139138,
+    "setup_ms": 29381.514905,
+    "peak_rss_mib": 3625.640625,
+    "ttft_ms_range": [
+      50.310860000000005,
+      50.459732
+    ],
+    "decode_tok_s_range": [
+      37.6409138779137,
+      37.769445156228
+    ]
+  },
+  {
+    "profile": "static",
+    "label": "Safetensors integer FC",
+    "case": "p128",
+    "prompt_tokens": 128,
+    "ttft_ms": 211.54799599999998,
+    "prefix_ms": 183.72419,
+    "prefill_tok_s": 691.2535578466832,
+    "decode_ms": 27.35139025,
+    "decode_tok_s": 36.56121282537,
+    "setup_ms": 29381.514905,
+    "peak_rss_mib": 3625.640625,
+    "ttft_ms_range": [
+      209.415746,
+      213.06751500000001
+    ],
+    "decode_tok_s_range": [
+      36.35809092844953,
+      36.98522672736855
+    ]
+  },
+  {
+    "profile": "static",
+    "label": "Safetensors integer FC",
+    "case": "p1024",
+    "prompt_tokens": 1024,
+    "ttft_ms": 1746.8879610000001,
+    "prefix_ms": 1716.739835,
+    "prefill_tok_s": 595.8969315813656,
+    "decode_ms": 29.55193975,
+    "decode_tok_s": 33.83872627176699,
+    "setup_ms": 29381.514905,
+    "peak_rss_mib": 3625.640625,
+    "ttft_ms_range": [
+      1745.045367,
+      1749.491959
+    ],
+    "decode_tok_s_range": [
+      33.797633534481776,
+      33.86869150638837
+    ]
+  }
+]

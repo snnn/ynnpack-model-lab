@@ -1,0 +1,136 @@
+--- a/rust/Cargo.toml
++++ b/rust/Cargo.toml
+@@ -8,7 +8,7 @@
+ 
+ [dependencies]
+ 
+-tokenizers = { version = "0.21.2", default-features = false, features = ["onig"] }
++tokenizers = { version = "=0.22.2", default-features = false, features = ["onig"] }
+ serde = { version = "1.0", features = [ "derive" ] }
+ serde_json = "1.0"
+ ahash = "0.8.12"
+--- a/rust/src/lib.rs
++++ b/rust/src/lib.rs
+@@ -2,7 +2,7 @@
+ use ahash::AHashMap;
+ use serde_json::Value;
+ use std::str::FromStr;
+-use tokenizers::models::bpe::BPE;
++use tokenizers::models::bpe::{Vocab as BpeVocab, BPE};
+ use tokenizers::pre_tokenizers::byte_level::ByteLevel;
+ use tokenizers::tokenizer::Tokenizer;
+ 
+@@ -36,7 +36,7 @@
+         added_tokens: &str,
+     ) -> TokenizerWrapper {
+         let vocab_json: Value = serde_json::from_str(vocab).unwrap();
+-        let mut vocab = ahash::AHashMap::new();
++        let mut vocab = BpeVocab::default();
+         match vocab_json {
+             Value::Object(m) => {
+                 for (token, id) in m {
+@@ -271,3 +271,104 @@
+         };
+     }
+ }
++
++
++// Copyright 2026 @snnn. SPDX-License-Identifier: Apache-2.0
++// Checked entry points for the lab. Errors and panics stay inside Rust.
++use std::cell::RefCell;
++use std::ffi::{c_char, CString};
++use std::panic::{catch_unwind, AssertUnwindSafe};
++
++thread_local! {
++    static LAB_ERROR: RefCell<CString> = RefCell::new(CString::default());
++}
++
++fn lab_error(message: String) {
++    LAB_ERROR.with(|error| {
++        *error.borrow_mut() = CString::new(message.replace('\0', "\\0")).unwrap();
++    });
++}
++
++fn lab_checked<T>(operation: impl FnOnce() -> Result<T, String>) -> Option<T> {
++    match catch_unwind(AssertUnwindSafe(operation)) {
++        Ok(Ok(value)) => Some(value),
++        Ok(Err(error)) => { lab_error(error); None }
++        Err(_) => { lab_error("Tokenizer panicked".into()); None }
++    }
++}
++
++unsafe fn lab_bytes<'a>(ptr: *const u8, len: usize) -> Result<&'a [u8], String> {
++    if len == 0 { return Ok(&[]); }
++    if ptr.is_null() { return Err("Null input".into()); }
++    Ok(std::slice::from_raw_parts(ptr, len))
++}
++
++#[no_mangle]
++extern "C" fn lab_tokenizers_last_error() -> *const c_char {
++    LAB_ERROR.with(|error| error.borrow().as_ptr())
++}
++
++#[no_mangle]
++extern "C" fn lab_tokenizers_new(ptr: *const u8, len: usize) -> *mut TokenizerWrapper {
++    lab_checked(|| unsafe {
++        let text = std::str::from_utf8(lab_bytes(ptr, len)?).map_err(|e| e.to_string())?;
++        let mut tokenizer = Tokenizer::from_str(text).map_err(|e| e.to_string())?;
++        // The benchmark owns lengths and special-token policy. Reject hidden
++        // padding/truncation rather than silently changing the token stream.
++        if tokenizer.get_padding().is_some() || tokenizer.get_truncation().is_some() {
++            return Err("Tokenizer JSON must disable padding and truncation".into());
++        }
++        tokenizer.with_padding(None);
++        Ok(Box::into_raw(Box::new(TokenizerWrapper {
++            tokenizer, decode_str: String::new(), id_to_token_result: String::new(),
++        })))
++    }).unwrap_or(std::ptr::null_mut())
++}
++
++#[no_mangle]
++extern "C" fn lab_tokenizers_encode(
++    handle: *mut TokenizerWrapper, ptr: *const u8, len: usize,
++    out: *mut TokenizerEncodeResult,
++) -> i32 {
++    if out.is_null() { lab_error("Null result".into()); return 1; }
++    unsafe { *out = TokenizerEncodeResult { token_ids: std::ptr::null_mut(), len: 0 }; }
++    if lab_checked(|| unsafe {
++        if handle.is_null() { return Err("Null tokenizer".into()); }
++        let text = std::str::from_utf8(lab_bytes(ptr, len)?).map_err(|e| e.to_string())?;
++        let ids = (*handle).tokenizer.encode(text, false)
++            .map_err(|e| e.to_string())?.get_ids().to_vec();
++        *out = TokenizerEncodeResult {
++            len: ids.len(), token_ids: Box::into_raw(ids.into_boxed_slice()) as *mut u32,
++        };
++        Ok(())
++    }).is_some() { 0 } else { 1 }
++}
++
++#[no_mangle]
++extern "C" fn lab_tokenizers_decode(
++    handle: *mut TokenizerWrapper, ids: *const u32, len: usize,
++    skip_special_tokens: i32,
++) -> i32 {
++    if lab_checked(|| unsafe {
++        if handle.is_null() || (len != 0 && ids.is_null()) {
++            return Err("Null tokenizer or IDs".into());
++        }
++        let input = if len == 0 { &[] } else { std::slice::from_raw_parts(ids, len) };
++        if input.iter().any(|id| (*handle).tokenizer.id_to_token(*id).is_none()) {
++            return Err("Unknown token ID".into());
++        }
++        (*handle).decode_str = (*handle).tokenizer.decode(input, skip_special_tokens != 0)
++            .map_err(|e| e.to_string())?;
++        Ok(())
++    }).is_some() { 0 } else { 1 }
++}
++
++
++#[no_mangle]
++extern "C" fn lab_tokenizers_vocab_size(handle: *mut TokenizerWrapper) -> usize {
++    lab_checked(|| unsafe {
++        if handle.is_null() { return Err("Null tokenizer".into()); }
++        Ok((*handle).tokenizer.get_vocab(true).values()
++            .map(|id| *id as usize + 1).max().unwrap_or(0))
++    }).unwrap_or(0)
++}

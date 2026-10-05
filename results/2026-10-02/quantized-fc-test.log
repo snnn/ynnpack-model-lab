@@ -1,0 +1,9 @@
+bits=2 rows=1 max_code_error=0
+bits=2 rows=17 max_code_error=0
+bits=2 rows=128 max_code_error=1
+bits=4 rows=1 max_code_error=0
+bits=4 rows=17 max_code_error=0
+bits=4 rows=128 max_code_error=0
+bits=8 rows=1 max_code_error=0
+bits=8 rows=17 max_code_error=0
+bits=8 rows=128 max_code_error=1

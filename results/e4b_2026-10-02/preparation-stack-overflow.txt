@@ -1,0 +1,13 @@
+Android/TECNO E4B decode preparation, before the stack workaround.
+Signal: SIGSEGV, SEGV_MAPERR.
+Crash report: "stack pointer is in a non-existent map; likely due to stack overflow."
+Shell stack limit: 8192 KiB.
+The 512-frame capped backtrace repeats these symbolized Slinky frames:
+  simplifier::mutate_with_buffer
+  simplifier::visit(slinky::make_buffer const*)
+  slinky::stmt::accept(slinky::stmt_visitor*) const
+  simplifier::mutate_and_set_result(slinky::stmt const&)
+
+The E4B executable now uses a 64-MiB execution-thread stack reservation.
+Full TECNO correctness completes with the workaround. No Slinky traversal
+algorithm was changed. E2B keeps its original execution thread.

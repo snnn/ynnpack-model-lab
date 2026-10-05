@@ -1,0 +1,5 @@
+safetensors_assets_test:
+All packed byte patterns, warm cache, corruption, and unaligned coefficients passed
+
+hf_bf16_test:
+BF16 packed weights, dot, and rounding boundaries passed

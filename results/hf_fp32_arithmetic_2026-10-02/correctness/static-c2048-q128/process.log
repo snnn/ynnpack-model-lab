@@ -1,0 +1,15 @@
+Authoring prefill
+Preparing 0 values, author_ms=3028.36 rss_kib=1860812
+Prepared 0 ms=7027.75 rss_kib=2151744 peak=2157832
+Authoring decode
+Preparing 1 values, author_ms=5401.71 rss_kib=3114820
+Prepared 1 ms=15295.6 rss_kib=3641032 peak=3711824
+p1 rep=0 prefix_ms=2.8e-05
+p17 rep=0 prefix_ms=27.3909
+p128 rep=0 prefix_ms=185.392
+p129 rep=0 prefix_ms=183.654
+p130 rep=0 prefix_ms=196.122
+p511 rep=0 prefix_ms=798.637
+p512 rep=0 prefix_ms=806.645
+p513 rep=0 prefix_ms=807.172
+p1024 rep=0 prefix_ms=1729.65

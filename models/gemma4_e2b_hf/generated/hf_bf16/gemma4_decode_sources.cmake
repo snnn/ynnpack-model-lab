@@ -1,0 +1,21 @@
+# Generated YNNPACK builder sources; do not edit.
+set(YNNPACK_BUILDER_SOURCES
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_DefineValues_0.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_DefineValues_1.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_DefineValues_2.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_DefineValues_3.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_DefineValues_4.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_DefineValues_5.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_DefineValues_6.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_DefineValues_7.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_DefineValuesToLayer1_8.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer2ToLayer5_9.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer6ToLayer9_10.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer10ToLayer13_11.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer14ToLayer17_12.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer18ToLayer22_13.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer23ToLayer27_14.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer28ToLayer32_15.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer33ToFinalNormAndHead_16.cc"
+)

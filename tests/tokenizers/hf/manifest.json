@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "format": "hf_json",
+  "file": "tokenizer.json",
+  "bytes": 10175,
+  "sha256": "b9f6a1ad2f4da27a0c794f3faca0abf9f446bd7e208717747fd3a7ace48e6fc1",
+  "vocab_size": 320,
+  "source": {
+    "repo": "lab/test-fixtures",
+    "revision": "v1"
+  },
+  "prefix_ids": [
+    1
+  ],
+  "suffix_ids": []
+}

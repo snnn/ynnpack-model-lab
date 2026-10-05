@@ -1,0 +1,242 @@
+[
+  {
+    "owner": 0,
+    "side": "k",
+    "elements": 256,
+    "different": 15,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.001836382755696054
+  },
+  {
+    "owner": 0,
+    "side": "v",
+    "elements": 256,
+    "different": 21,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.019807693388901995
+  },
+  {
+    "owner": 1,
+    "side": "k",
+    "elements": 256,
+    "different": 97,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.0038109889192196175
+  },
+  {
+    "owner": 1,
+    "side": "v",
+    "elements": 256,
+    "different": 114,
+    "max_code_difference": 3,
+    "dequantized_rms_error": 0.0505430514391014
+  },
+  {
+    "owner": 2,
+    "side": "k",
+    "elements": 256,
+    "different": 93,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.0034811580639547163
+  },
+  {
+    "owner": 2,
+    "side": "v",
+    "elements": 256,
+    "different": 92,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.02967483649913356
+  },
+  {
+    "owner": 3,
+    "side": "k",
+    "elements": 256,
+    "different": 92,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.0037093215599652606
+  },
+  {
+    "owner": 3,
+    "side": "v",
+    "elements": 256,
+    "different": 123,
+    "max_code_difference": 3,
+    "dequantized_rms_error": 0.040914595531733426
+  },
+  {
+    "owner": 4,
+    "side": "k",
+    "elements": 512,
+    "different": 380,
+    "max_code_difference": 7,
+    "dequantized_rms_error": 0.0021944906719246022
+  },
+  {
+    "owner": 4,
+    "side": "v",
+    "elements": 512,
+    "different": 367,
+    "max_code_difference": 8,
+    "dequantized_rms_error": 0.044872458463487766
+  },
+  {
+    "owner": 5,
+    "side": "k",
+    "elements": 256,
+    "different": 95,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.004046816035386883
+  },
+  {
+    "owner": 5,
+    "side": "v",
+    "elements": 256,
+    "different": 155,
+    "max_code_difference": 3,
+    "dequantized_rms_error": 0.049760738592769096
+  },
+  {
+    "owner": 6,
+    "side": "k",
+    "elements": 256,
+    "different": 112,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.004252243849197826
+  },
+  {
+    "owner": 6,
+    "side": "v",
+    "elements": 256,
+    "different": 155,
+    "max_code_difference": 4,
+    "dequantized_rms_error": 0.04967305440377481
+  },
+  {
+    "owner": 7,
+    "side": "k",
+    "elements": 256,
+    "different": 78,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.0034215511039824317
+  },
+  {
+    "owner": 7,
+    "side": "v",
+    "elements": 256,
+    "different": 113,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.0360429875722261
+  },
+  {
+    "owner": 8,
+    "side": "k",
+    "elements": 256,
+    "different": 78,
+    "max_code_difference": 1,
+    "dequantized_rms_error": 0.0034308650024874737
+  },
+  {
+    "owner": 8,
+    "side": "v",
+    "elements": 256,
+    "different": 111,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.0327476547892505
+  },
+  {
+    "owner": 9,
+    "side": "k",
+    "elements": 512,
+    "different": 346,
+    "max_code_difference": 6,
+    "dequantized_rms_error": 0.0020947502200163192
+  },
+  {
+    "owner": 9,
+    "side": "v",
+    "elements": 512,
+    "different": 448,
+    "max_code_difference": 18,
+    "dequantized_rms_error": 0.0903328701833289
+  },
+  {
+    "owner": 10,
+    "side": "k",
+    "elements": 256,
+    "different": 85,
+    "max_code_difference": 3,
+    "dequantized_rms_error": 0.0034982781030088476
+  },
+  {
+    "owner": 10,
+    "side": "v",
+    "elements": 256,
+    "different": 141,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.043094063732414756
+  },
+  {
+    "owner": 11,
+    "side": "k",
+    "elements": 256,
+    "different": 75,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.003383922359744862
+  },
+  {
+    "owner": 11,
+    "side": "v",
+    "elements": 256,
+    "different": 122,
+    "max_code_difference": 3,
+    "dequantized_rms_error": 0.03939468652699182
+  },
+  {
+    "owner": 12,
+    "side": "k",
+    "elements": 256,
+    "different": 104,
+    "max_code_difference": 2,
+    "dequantized_rms_error": 0.003995964623167899
+  },
+  {
+    "owner": 12,
+    "side": "v",
+    "elements": 256,
+    "different": 180,
+    "max_code_difference": 5,
+    "dequantized_rms_error": 0.07545434240575995
+  },
+  {
+    "owner": 13,
+    "side": "k",
+    "elements": 256,
+    "different": 111,
+    "max_code_difference": 3,
+    "dequantized_rms_error": 0.00485293387903676
+  },
+  {
+    "owner": 13,
+    "side": "v",
+    "elements": 256,
+    "different": 122,
+    "max_code_difference": 4,
+    "dequantized_rms_error": 0.047059196342182315
+  },
+  {
+    "owner": 14,
+    "side": "k",
+    "elements": 512,
+    "different": 344,
+    "max_code_difference": 7,
+    "dequantized_rms_error": 0.0019994866027691406
+  },
+  {
+    "owner": 14,
+    "side": "v",
+    "elements": 512,
+    "different": 303,
+    "max_code_difference": 7,
+    "dequantized_rms_error": 0.032767676143184564
+  }
+]

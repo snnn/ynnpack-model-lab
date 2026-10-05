@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "format": "sentencepiece",
+  "file": "tokenizer.model",
+  "bytes": 5110,
+  "sha256": "f5c9536ce63ebc9a4e8aa6827631ebba12dd3541f9a06e7cd305589eb1fa191e",
+  "vocab_size": 320,
+  "source": {
+    "repo": "lab/test-fixtures",
+    "revision": "v1"
+  },
+  "prefix_ids": [
+    1
+  ],
+  "suffix_ids": []
+}

@@ -1,0 +1,310 @@
+[
+  {
+    "module": "model.layers.0.self_attn.k_proj",
+    "static_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 20.535506598328663,
+      "cosine": 1.0
+    },
+    "static_output_codes": {
+      "elements": 256,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 18.3810576749544,
+      "cosine": 1.0
+    },
+    "bf16_dot_vs_fp64_oracle": {
+      "elements": 256,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 28.30021421104356,
+      "cosine": 1.0000000000000002
+    },
+    "bf16_output_quantization": {
+      "elements": 256,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 28.219081851364006,
+      "cosine": 0.9999999999999999
+    },
+    "static_vs_bf16_input_codes": {
+      "elements": 1536,
+      "different": 62,
+      "max_abs_error": 1.0,
+      "rms_error": 0.2009093908540199,
+      "reference_rms": 20.535506598328663,
+      "cosine": 0.9999529068934541
+    },
+    "bf16_input_saturation": 3
+  },
+  {
+    "module": "model.layers.0.self_attn.v_proj",
+    "static_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 20.535506598328663,
+      "cosine": 1.0
+    },
+    "static_output_codes": {
+      "elements": 256,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 15.22859666055937,
+      "cosine": 1.0
+    },
+    "bf16_dot_vs_fp64_oracle": {
+      "elements": 256,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 28.465104685936886,
+      "cosine": 1.0000000000000002
+    },
+    "bf16_output_quantization": {
+      "elements": 256,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 23.381684729504578,
+      "cosine": 1.0
+    },
+    "static_vs_bf16_input_codes": {
+      "elements": 1536,
+      "different": 62,
+      "max_abs_error": 1.0,
+      "rms_error": 0.2009093908540199,
+      "reference_rms": 20.535506598328663,
+      "cosine": 0.9999529068934541
+    },
+    "bf16_input_saturation": 3
+  },
+  {
+    "module": "model.layers.0.self_attn.q_proj",
+    "static_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 20.535506598328663,
+      "cosine": 1.0
+    },
+    "static_output_codes": {
+      "elements": 2048,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 5.8755402012283096,
+      "cosine": 1.0
+    },
+    "bf16_dot_vs_fp64_oracle": {
+      "elements": 2048,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 18.31500632061445,
+      "cosine": 1.0
+    },
+    "bf16_output_quantization": {
+      "elements": 2048,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 18.3200555519028,
+      "cosine": 1.0000000000000002
+    },
+    "static_vs_bf16_input_codes": {
+      "elements": 1536,
+      "different": 62,
+      "max_abs_error": 1.0,
+      "rms_error": 0.2009093908540199,
+      "reference_rms": 20.535506598328663,
+      "cosine": 0.9999529068934541
+    },
+    "bf16_input_saturation": 3
+  },
+  {
+    "module": "model.layers.0.self_attn.o_proj",
+    "static_input_codes": {
+      "elements": 2048,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 24.02448295489416,
+      "cosine": 1.0000000000000002
+    },
+    "static_output_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 8.564400640636409,
+      "cosine": 1.0
+    },
+    "bf16_dot_vs_fp64_oracle": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 1.7968934411685906,
+      "cosine": 1.0
+    },
+    "bf16_output_quantization": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 1.7980580402132305,
+      "cosine": 1.0000000000000002
+    },
+    "static_vs_bf16_input_codes": {
+      "elements": 2048,
+      "different": 184,
+      "max_abs_error": 4.0,
+      "rms_error": 0.6817945071647321,
+      "reference_rms": 24.02448295489416,
+      "cosine": 0.9995972308973042
+    },
+    "bf16_input_saturation": 32
+  },
+  {
+    "module": "model.layers.0.mlp.up_proj",
+    "static_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 5.711031904714477,
+      "cosine": 1.0
+    },
+    "static_output_codes": {
+      "elements": 6144,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 9.033033993349079,
+      "cosine": 0.9999999999999999
+    },
+    "bf16_dot_vs_fp64_oracle": {
+      "elements": 6144,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 5.600297042683834,
+      "cosine": 1.0
+    },
+    "bf16_output_quantization": {
+      "elements": 6144,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 5.562041305710222,
+      "cosine": 1.0
+    },
+    "static_vs_bf16_input_codes": {
+      "elements": 1536,
+      "different": 124,
+      "max_abs_error": 3.0,
+      "rms_error": 0.38443004348429033,
+      "reference_rms": 5.711031904714477,
+      "cosine": 0.9977347706012919
+    },
+    "bf16_input_saturation": 0
+  },
+  {
+    "module": "model.layers.0.mlp.gate_proj",
+    "static_input_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 5.711031904714477,
+      "cosine": 1.0
+    },
+    "static_output_codes": {
+      "elements": 6144,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 12.002488619986968,
+      "cosine": 1.0000000000000002
+    },
+    "bf16_dot_vs_fp64_oracle": {
+      "elements": 6144,
+      "different": 1,
+      "max_abs_error": 0.0009765625,
+      "rms_error": 1.2458749098628632e-05,
+      "reference_rms": 7.3849345839390015,
+      "cosine": 0.9999999999985769
+    },
+    "bf16_output_quantization": {
+      "elements": 6144,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 7.38449713309603,
+      "cosine": 1.0000000000000002
+    },
+    "static_vs_bf16_input_codes": {
+      "elements": 1536,
+      "different": 124,
+      "max_abs_error": 3.0,
+      "rms_error": 0.38443004348429033,
+      "reference_rms": 5.711031904714477,
+      "cosine": 0.9977347706012919
+    },
+    "bf16_input_saturation": 0
+  },
+  {
+    "module": "model.layers.0.mlp.down_proj",
+    "static_input_codes": {
+      "elements": 6144,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 2.354938571828007,
+      "cosine": 1.0000000000000002
+    },
+    "static_output_codes": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 6.206987410035027,
+      "cosine": 1.0
+    },
+    "bf16_dot_vs_fp64_oracle": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 103.61699094557217,
+      "cosine": 1.0000000000000002
+    },
+    "bf16_output_quantization": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 104.01771668381586,
+      "cosine": 1.0
+    },
+    "static_vs_bf16_input_codes": {
+      "elements": 6144,
+      "different": 65,
+      "max_abs_error": 1.0,
+      "rms_error": 0.1028563419694349,
+      "reference_rms": 2.354938571828007,
+      "cosine": 0.999054714334885
+    },
+    "bf16_input_saturation": 1
+  }
+]

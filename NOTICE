@@ -1,0 +1,26 @@
+YNNPACK model lab
+Copyright 2026 @snnn.
+
+This project includes adapted code from LiteRT. Original Google LLC / LiteRT
+notices are retained in those files. See LICENSE for Apache-2.0 and
+third_party/core-ir-LICENSE for the Core IR repository's MIT license.
+
+third_party/minijson.h and minijson.cc are adapted from LiteRT's JSON helper,
+which contains MIT-licensed code from Syoyo Fujita, Niels Lohmann, and Florian
+Loitsch. See third_party/minijson-LICENSE and the retained source notices.
+
+XNNPACK/YNNPACK, Slinky, and CPUINFO are fetched rather than vendored. Their
+upstream LICENSE files remain in the corresponding dependency directories.
+Patches identify their upstream files and are distributed with this project.
+The XNNPACK BSD license is also retained in third_party/XNNPACK-LICENSE.
+
+Native tokenization uses fetched mlc-ai/tokenizers-cpp (Apache-2.0), Hugging
+Face tokenizers (Apache-2.0), SentencePiece (Apache-2.0), and Abseil (Apache-2.0).
+Their original notices and LICENSE files remain in the bootstrapped sources
+and Cargo cache. SentencePiece retains its embedded protobuf-lite notices.
+Cargo dependency versions and checksums are recorded in
+patches/tokenizers.Cargo.lock. The tokenizer FFI and offline-build patches
+retain upstream file provenance.
+
+Model weights are not distributed. Their use is governed by the model
+publisher's terms, independently of this project's source-code license.

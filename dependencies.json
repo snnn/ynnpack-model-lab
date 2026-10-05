@@ -1,0 +1,47 @@
+[
+  {
+    "name": "XNNPACK",
+    "repository": "google/XNNPACK",
+    "revision": "35997e71119d191c807068a4d2aa28bf6048b59b",
+    "url": "https://codeload.github.com/google/XNNPACK/zip/35997e71119d191c807068a4d2aa28bf6048b59b",
+    "sha256": "989b33b609b2172073ad03ca1acd99f1ecf8c50d626d673ee1858e9771ca4b57"
+  },
+  {
+    "name": "slinky",
+    "repository": "dsharlet/slinky",
+    "revision": "97c346749bf0f7fbdc2b0b8e6ff0c380806a32e2",
+    "url": "https://codeload.github.com/dsharlet/slinky/zip/97c346749bf0f7fbdc2b0b8e6ff0c380806a32e2",
+    "sha256": "e6125bb88be445bb3ccbaf609accdaf5ae4f0563b93775f1824fd4388609b402"
+  },
+  {
+    "name": "cpuinfo",
+    "repository": "pytorch/cpuinfo",
+    "revision": "8ce83db858065145192c97af90cb668ad72a12e9",
+    "url": "https://codeload.github.com/pytorch/cpuinfo/zip/8ce83db858065145192c97af90cb668ad72a12e9",
+    "sha256": "fe2aa43254838a2eb5658d1742696473a1d834a57f2a0b38d533346bcd212482"
+  },
+  {
+    "name": "tokenizers-cpp",
+    "repository": "mlc-ai/tokenizers-cpp",
+    "revision": "c586c52f93f7b060753bd2388eb96a105cb7374d",
+    "url": "https://codeload.github.com/mlc-ai/tokenizers-cpp/zip/c586c52f93f7b060753bd2388eb96a105cb7374d",
+    "sha256": "4c217141592091601a4d818999a5ea92f1a3ff61a8ae1d00e9d16d943bb5a248",
+    "feature": "tokenizers"
+  },
+  {
+    "name": "sentencepiece",
+    "repository": "google/sentencepiece",
+    "revision": "e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+    "url": "https://codeload.github.com/google/sentencepiece/zip/e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+    "sha256": "f47359a9c786bca379a0c34663dd5e417dbc0104924f7cab50fdaa493217d57f",
+    "feature": "tokenizers"
+  },
+  {
+    "name": "abseil",
+    "revision": "255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+    "url": "https://codeload.github.com/abseil/abseil-cpp/zip/255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+    "sha256": "e945549b45648c00cb07119fb7697e13762da3e0b8cdb244d8e6550bbe1e53cd",
+    "feature": "tokenizers",
+    "repository": "abseil/abseil-cpp"
+  }
+]

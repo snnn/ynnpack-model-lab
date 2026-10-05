@@ -1,0 +1,74 @@
+[
+  {
+    "profile": "control",
+    "case": "p17",
+    "repeated_greedy_identical": true,
+    "first_three_match_correctness": true
+  },
+  {
+    "profile": "control",
+    "case": "p128",
+    "repeated_greedy_identical": true,
+    "first_three_match_correctness": true
+  },
+  {
+    "profile": "control",
+    "case": "p1024",
+    "repeated_greedy_identical": true,
+    "first_three_match_correctness": true
+  },
+  {
+    "profile": "bf16",
+    "case": "p17",
+    "repeated_greedy_identical": true,
+    "first_three_match_correctness": true
+  },
+  {
+    "profile": "bf16",
+    "case": "p128",
+    "repeated_greedy_identical": true,
+    "first_three_match_correctness": true
+  },
+  {
+    "profile": "bf16",
+    "case": "p1024",
+    "repeated_greedy_identical": true,
+    "first_three_match_correctness": true
+  },
+  {
+    "profile": "fp32",
+    "case": "p17",
+    "repeated_greedy_identical": true,
+    "first_three_match_correctness": true
+  },
+  {
+    "profile": "fp32",
+    "case": "p128",
+    "repeated_greedy_identical": true,
+    "first_three_match_correctness": true
+  },
+  {
+    "profile": "fp32",
+    "case": "p1024",
+    "repeated_greedy_identical": true,
+    "first_three_match_correctness": true
+  },
+  {
+    "profile": "static",
+    "case": "p17",
+    "repeated_greedy_identical": true,
+    "first_three_match_correctness": true
+  },
+  {
+    "profile": "static",
+    "case": "p128",
+    "repeated_greedy_identical": true,
+    "first_three_match_correctness": true
+  },
+  {
+    "profile": "static",
+    "case": "p1024",
+    "repeated_greedy_identical": true,
+    "first_three_match_correctness": true
+  }
+]

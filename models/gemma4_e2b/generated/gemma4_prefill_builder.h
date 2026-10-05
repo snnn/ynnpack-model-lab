@@ -1,0 +1,171 @@
+// Generated YNNPACK builder; do not edit.
+#pragma once
+#include "runtime/ynnpack_support.h"
+
+#if defined(_MSC_VER)
+#define LAB_YNN_BUILDER_NOINLINE __declspec(noinline)
+#elif defined(__clang__) || defined(__GNUC__)
+#define LAB_YNN_BUILDER_NOINLINE __attribute__((noinline))
+#else
+#define LAB_YNN_BUILDER_NOINLINE
+#endif
+
+namespace BuildGemma4PrefillSource {
+struct Context {
+  lab_ynn::Graph* g;
+  const std::function<const void*(const char*, size_t)>& weights;
+  slinky::expr s3;
+  slinky::expr s1;
+  slinky::expr s2;
+};
+
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart0(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart1(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart2(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart3(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart4(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart5(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart6(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart7(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart8(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart9(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart10(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart11(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart12(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart13(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValues(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildBindInvocation(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildRopeTables(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildInputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer0AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer0AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer0AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer0AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer0AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer0Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer0Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer0PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer0(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer1AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer1AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer1AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer1AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer1AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer1Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer1Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer1PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer1(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer2AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer2AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer2AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer2AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer2AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer2Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer2Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer2PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer2(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer3AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer3AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer3AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer3AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer3AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer3Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer3Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer3PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer3(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer4AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer4AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer4AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer4AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer4AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer4Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer4Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer4PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer4(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer5AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer5AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer5AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer5AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer5AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer5Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer5Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer5PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer5(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer6AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer6AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer6AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer6AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer6AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer6Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer6Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer6PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer6(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer7AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer7AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer7AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer7AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer7AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer7Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer7Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer7PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer7(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer8AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer8AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer8AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer8AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer8AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer8Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer8Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer8PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer8(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer9AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer9AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer9AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer9AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer9AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer9Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer9Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer9PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer9(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer10AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer10AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer10AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer10AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer10AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer10Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer10Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer10PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer10(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer11AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer11AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer11AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer11AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer11AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer11Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer11Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer11PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer11(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer12AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer12AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer12AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer12AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer12AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer12Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer12Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer12PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer12(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer13AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer13AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer13AttentionQueryProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer13AttentionSdpa(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer13AttentionOutputProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer13Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer13Mlp(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer13PerLayerEmbedding(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer13(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer14AttentionKvProjection(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer14AttentionCacheUpdate(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer14Attention(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildLayer14(Context& ctx);
+}  // namespace BuildGemma4PrefillSource

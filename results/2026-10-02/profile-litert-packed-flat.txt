@@ -1,0 +1,34 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 45K of event 'cpu_core/cycles/u'
+# Event count (approx.): 448056893561
+#
+#     Overhead  Symbol                                                                                                                                                                                IPC   [IPC Coverage]
+# ............  ....................................................................................................................................................................................  ....................
+#
+        67.97%  [.] xnn_qd8_f32_qc4w_gemm_minmax_ukernel_5x8c8__avxvnni_prfm                                                                                                                          -      -
+        16.02%  [.] xnn_f32_qc8w_gemm_minmax_ukernel_5x16__avx2_broadcast                                                                                                                             -      -
+         3.55%  [.] xnn_qs8_qc8w_gemm_minmax_fp32_ukernel_5x8c8__avxvnni_prfm                                                                                                                         -      -
+         1.67%  [.] thread_main                                                                                                                                                                       -      -
+         1.13%  [.] xnn_qs8_qc4w_gemm_minmax_fp32_ukernel_1x8c8__avxvnni_prfm                                                                                                                         -      -
+         1.12%  [.] xnn_f32_vmul_ukernel__avx_u16                                                                                                                                                     -      -
+         0.93%  [.] xnn_qs8_qc2w_gemm_minmax_fp32_ukernel_1x8c8__avxvnni                                                                                                                              -      -
+         0.92%  [.] __memmove_avx_unaligned_erms                                                                                                                                                      -      -
+         0.74%  [.] litert::tensor::examples::gemma4::(anonymous namespace)::QuantizedGemmaEmbeddingTable::DecodeRow(int, int, int, float*) const                                                     -      -
+         0.66%  [.] xnn_f32_vapproxgelu_ukernel__fma3_rational_12_10_div_u16                                                                                                                          -      -
+         0.65%  [.] xnn_f32_vmulc_ukernel__avx_u16                                                                                                                                                    -      -
+         0.62%  [.] xnn_f32_vadd_ukernel__avx_u16                                                                                                                                                     -      -
+         0.40%  [.] xnn_f32_rminmax_ukernel__avx_u32_acc4                                                                                                                                             -      -
+         0.38%  [.] pthreadpool_parallelize                                                                                                                                                           -      -
+         0.37%  [.] xnn_f32_rsum2_ukernel__avx_u32_acc4                                                                                                                                               -      -
+         0.36%  [.] xnn_qd8_f32_qc2w_gemm_minmax_ukernel_1x8c8__avxvnni                                                                                                                               -      -
+         0.31%  [.] xnn_f32_raddstoreexpminusmax_ukernel__avx2_rr2_p5_u32_acc2                                                                                                                        -      -
+         0.30%  [.] xnn_f32_qu8_vcvt_ukernel__avx2_u64                                                                                                                                                -      -
+
+
+#
+# (Tip: Compare performance results with: perf diff [<old file> <new file>])
+#

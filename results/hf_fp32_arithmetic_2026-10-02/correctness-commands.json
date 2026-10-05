@@ -1,0 +1,156 @@
+{
+  "cooldown_seconds": 0,
+  "jobs": [
+    {
+      "name": "fp32-c2048-q128",
+      "engine": "ynn",
+      "argv": [
+        "build-hf/gemma4_e2b_hf_fp32_int8_published_kv",
+        "--hf_model_dir=assets/hf-checkpoint",
+        "--asset_manifest=assets/gemma4_e2b_hf/manifest.json",
+        "--cache_dir=assets/gemma4_e2b_hf/derived",
+        "--parameter_dir=assets/gemma4_e2b_hf/parameters",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/correctness.tsv",
+        "--output_dir={output}",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "name": "fp32-c8448-q128",
+      "engine": "ynn",
+      "argv": [
+        "build-hf/gemma4_e2b_hf_fp32_int8_published_kv",
+        "--hf_model_dir=assets/hf-checkpoint",
+        "--asset_manifest=assets/gemma4_e2b_hf/manifest.json",
+        "--cache_dir=assets/gemma4_e2b_hf/derived",
+        "--parameter_dir=assets/gemma4_e2b_hf/parameters",
+        "--cache_capacity=8448",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/correctness.tsv",
+        "--output_dir={output}",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "name": "fp32-c2048-q64",
+      "engine": "ynn",
+      "argv": [
+        "build-hf/gemma4_e2b_hf_fp32_int8_published_kv",
+        "--hf_model_dir=assets/hf-checkpoint",
+        "--asset_manifest=assets/gemma4_e2b_hf/manifest.json",
+        "--cache_dir=assets/gemma4_e2b_hf/derived",
+        "--parameter_dir=assets/gemma4_e2b_hf/parameters",
+        "--cache_capacity=2048",
+        "--prefill_rows=64",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/correctness.tsv",
+        "--output_dir={output}",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "name": "static-c2048-q128",
+      "engine": "ynn",
+      "argv": [
+        "build-hf/gemma4_e2b_hf_static_int8_published_kv",
+        "--hf_model_dir=assets/hf-checkpoint",
+        "--asset_manifest=assets/gemma4_e2b_hf/manifest.json",
+        "--cache_dir=assets/gemma4_e2b_hf/derived",
+        "--parameter_dir=assets/gemma4_e2b_hf/parameters",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/correctness.tsv",
+        "--output_dir={output}",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "name": "static-c8448-q128",
+      "engine": "ynn",
+      "argv": [
+        "build-hf/gemma4_e2b_hf_static_int8_published_kv",
+        "--hf_model_dir=assets/hf-checkpoint",
+        "--asset_manifest=assets/gemma4_e2b_hf/manifest.json",
+        "--cache_dir=assets/gemma4_e2b_hf/derived",
+        "--parameter_dir=assets/gemma4_e2b_hf/parameters",
+        "--cache_capacity=8448",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/correctness.tsv",
+        "--output_dir={output}",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "name": "static-c2048-q64",
+      "engine": "ynn",
+      "argv": [
+        "build-hf/gemma4_e2b_hf_static_int8_published_kv",
+        "--hf_model_dir=assets/hf-checkpoint",
+        "--asset_manifest=assets/gemma4_e2b_hf/manifest.json",
+        "--cache_dir=assets/gemma4_e2b_hf/derived",
+        "--parameter_dir=assets/gemma4_e2b_hf/parameters",
+        "--cache_capacity=2048",
+        "--prefill_rows=64",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/correctness.tsv",
+        "--output_dir={output}",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "name": "bf16-c2048-q128",
+      "engine": "ynn",
+      "argv": [
+        "build-hf/gemma4_e2b_hf_bf16_int8_published_kv",
+        "--hf_model_dir=assets/hf-checkpoint",
+        "--asset_manifest=assets/gemma4_e2b_hf/manifest.json",
+        "--cache_dir=assets/gemma4_e2b_hf/derived",
+        "--parameter_dir=assets/gemma4_e2b_hf/parameters",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/correctness.tsv",
+        "--output_dir={output}",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "name": "control-c2048-q128",
+      "engine": "ynn",
+      "argv": [
+        "build-hf/gemma4_e2b",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/correctness.tsv",
+        "--output_dir={output}",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    }
+  ],
+  "note": "Repository-relative reproduction commands. Source/build/asset locations normalized; original command arrays retained with ignored local captures."
+}

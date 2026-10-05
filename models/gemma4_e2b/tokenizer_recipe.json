@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "format": "sentencepiece",
+  "vocab_size": 262144,
+  "prefix_ids": [
+    2
+  ],
+  "suffix_ids": [],
+  "source": {
+    "bytes": 2583085056,
+    "path": "gemma-4-E2B-it.litertlm",
+    "sha256": "ab7838cdfc8f77e54d8ca45eadceb20452d9f01e4bfade03e5dce27911b27e42",
+    "repo": "litert-community/gemma-4-E2B-it-litert-lm",
+    "revision": "2a101e00c47f942975ce8b493c2498311ed9900d"
+  },
+  "payload": {
+    "file": "tokenizer.model",
+    "offset": 32768,
+    "bytes": 4689013,
+    "sha256": "e594c8a90eb08d8bda498ff4747977dc827ae0c3c56b5c0d41a605a22d02ef03"
+  }
+}

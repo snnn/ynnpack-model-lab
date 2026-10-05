@@ -1,0 +1,54 @@
+{
+  "cpu": "Intel Core i9-12900K",
+  "os": "Linux x86_64",
+  "compiler": "clang version 22.1.8 (Fedora 22.1.8-4.fc44)",
+  "dependency_config": [
+    {
+      "name": "XNNPACK",
+      "repository": "google/XNNPACK",
+      "revision": "35997e71119d191c807068a4d2aa28bf6048b59b",
+      "url": "https://codeload.github.com/google/XNNPACK/zip/35997e71119d191c807068a4d2aa28bf6048b59b",
+      "sha256": "989b33b609b2172073ad03ca1acd99f1ecf8c50d626d673ee1858e9771ca4b57"
+    },
+    {
+      "name": "slinky",
+      "repository": "dsharlet/slinky",
+      "revision": "97c346749bf0f7fbdc2b0b8e6ff0c380806a32e2",
+      "url": "https://codeload.github.com/dsharlet/slinky/zip/97c346749bf0f7fbdc2b0b8e6ff0c380806a32e2",
+      "sha256": "e6125bb88be445bb3ccbaf609accdaf5ae4f0563b93775f1824fd4388609b402"
+    },
+    {
+      "name": "cpuinfo",
+      "repository": "pytorch/cpuinfo",
+      "revision": "8ce83db858065145192c97af90cb668ad72a12e9",
+      "url": "https://codeload.github.com/pytorch/cpuinfo/zip/8ce83db858065145192c97af90cb668ad72a12e9",
+      "sha256": "fe2aa43254838a2eb5658d1742696473a1d834a57f2a0b38d533346bcd212482"
+    }
+  ],
+  "source_identity": "b454fea4385836b70181ce7f8d797413d695d7f916b21ed3dd49896cdad6d579",
+  "affinity_performance": [
+    0,
+    2,
+    4,
+    6
+  ],
+  "threads": 4,
+  "capacity": 2048,
+  "chunk": 128,
+  "build_flags": {
+    "runner": "-O1 -ffp-contract=off",
+    "backend": "Release; dependency kernel target options",
+    "SME": false
+  },
+  "binaries": {
+    "gemma4_e2b": "7e172fd71916b89d40b5ddb7a7e88e1cd6df6bc2528325a9860f0a56fc506cb3",
+    "gemma4_e2b_hf_bf16_int8_published_kv": "401c3f12740780227e5c437e96d10abcffb2e075fe26e5725ec0b56d2dca0a91",
+    "gemma4_e2b_hf_fp32_int8_published_kv": "a6196a3d0b905241f23378b510cd639758eb7c0237e2e9af8f60a126e7e94c0b",
+    "gemma4_e2b_hf_static_int8_published_kv": "958227f8f1127ba7d4077812f88e80ddbd57503cc9c3dc2d53516078bed9ff6c"
+  },
+  "bf16_patch_sha256": "7ec8e44c54edba92675bf8c8428e541bf7f20ca70778dc66b5c4496469b97eb9",
+  "fixtures": {
+    "correctness": "28b841952d294f1405932122eae416e150f0adb643c2ea18a9dc5e6dade13b6f",
+    "performance": "600d8426a67d1f617657600ecc9ea69cf4006537d0ccda9a7c0732dc64ccd881"
+  }
+}

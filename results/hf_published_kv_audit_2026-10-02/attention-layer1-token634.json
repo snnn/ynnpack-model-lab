@@ -1,0 +1,144 @@
+{
+  "layer": 1,
+  "token": 634,
+  "reference_bounds": {
+    "chunk_position": 512,
+    "query_rows": 128,
+    "history_begin": 1,
+    "history_end": 640,
+    "valid_begin": 123,
+    "valid_end": 635,
+    "active_key_extent": 639,
+    "nonzero_masked_probabilities": 0,
+    "masked_scores_not_negative_infinity": 0
+  },
+  "candidate_bounds": {
+    "chunk_position": 576,
+    "query_rows": 64,
+    "history_begin": 65,
+    "history_end": 640,
+    "valid_begin": 123,
+    "valid_end": 635,
+    "active_key_extent": 575,
+    "nonzero_masked_probabilities": 0,
+    "masked_scores_not_negative_infinity": 0
+  },
+  "comparison": {
+    "query": {
+      "elements": 2048,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 1.0235592227795092,
+      "cosine": 1.0000000000000002
+    },
+    "keys": {
+      "elements": 131072,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 0.12203465826410834,
+      "cosine": 1.0000000000000002
+    },
+    "values": {
+      "elements": 131072,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 0.9973320736754386,
+      "cosine": 0.9999999999999999
+    },
+    "scores": {
+      "elements": 4096,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 6.385622553818264,
+      "cosine": 0.9999999999999998
+    },
+    "masked_scores": {
+      "elements": 4096,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 6.385622553818264,
+      "cosine": 0.9999999999999998
+    },
+    "probabilities_fp32": {
+      "elements": 4096,
+      "different": 901,
+      "max_abs_error": 1.4901161193847656e-08,
+      "rms_error": 4.1090213323415747e-10,
+      "reference_rms": 0.019740709466093846,
+      "cosine": 0.9999999999999996
+    },
+    "probabilities": {
+      "elements": 4096,
+      "different": 5,
+      "max_abs_error": 7.62939453125e-06,
+      "rms_error": 2.6656007498500226e-07,
+      "reference_rms": 0.019741420010832803,
+      "cosine": 0.999999999908841
+    },
+    "context": {
+      "elements": 2048,
+      "different": 7,
+      "max_abs_error": 0.001953125,
+      "rms_error": 4.856429029599614e-05,
+      "reference_rms": 0.5152946724710575,
+      "cosine": 0.9999999955603833
+    }
+  },
+  "reference_vs_fp64_oracle": {
+    "scores": {
+      "elements": 4096,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 6.385622553818264,
+      "cosine": 0.9999999999999998
+    },
+    "probabilities": {
+      "elements": 4096,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 0.019741420010832803,
+      "cosine": 1.0
+    },
+    "context": {
+      "elements": 2048,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 0.5152946724710575,
+      "cosine": 1.0
+    }
+  },
+  "candidate_vs_fp64_oracle": {
+    "scores": {
+      "elements": 4096,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 6.385622553818264,
+      "cosine": 0.9999999999999998
+    },
+    "probabilities": {
+      "elements": 4096,
+      "different": 5,
+      "max_abs_error": 7.62939453125e-06,
+      "rms_error": 2.6656007498500226e-07,
+      "reference_rms": 0.019741420010832803,
+      "cosine": 0.999999999908841
+    },
+    "context": {
+      "elements": 2048,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 0.515293775813795,
+      "cosine": 1.0
+    }
+  }
+}

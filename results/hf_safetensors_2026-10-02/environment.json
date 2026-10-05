@@ -1,0 +1,132 @@
+{
+  "working_tree": "Historical measured build; public runtime/generated artifact hashes identify the captured version. Later checkout artifacts may differ.",
+  "dependencies": [
+    {
+      "name": "XNNPACK",
+      "repository": "google/XNNPACK",
+      "revision": "35997e71119d191c807068a4d2aa28bf6048b59b",
+      "url": "https://codeload.github.com/google/XNNPACK/zip/35997e71119d191c807068a4d2aa28bf6048b59b",
+      "sha256": "989b33b609b2172073ad03ca1acd99f1ecf8c50d626d673ee1858e9771ca4b57"
+    },
+    {
+      "name": "slinky",
+      "repository": "dsharlet/slinky",
+      "revision": "97c346749bf0f7fbdc2b0b8e6ff0c380806a32e2",
+      "url": "https://codeload.github.com/dsharlet/slinky/zip/97c346749bf0f7fbdc2b0b8e6ff0c380806a32e2",
+      "sha256": "e6125bb88be445bb3ccbaf609accdaf5ae4f0563b93775f1824fd4388609b402"
+    },
+    {
+      "name": "cpuinfo",
+      "repository": "pytorch/cpuinfo",
+      "revision": "8ce83db858065145192c97af90cb668ad72a12e9",
+      "url": "https://codeload.github.com/pytorch/cpuinfo/zip/8ce83db858065145192c97af90cb668ad72a12e9",
+      "sha256": "fe2aa43254838a2eb5658d1742696473a1d834a57f2a0b38d533346bcd212482"
+    }
+  ],
+  "binaries": {
+    "build-hf-fixed/gemma4_e2b_hf_bf16_int8_raw_kv": {
+      "bytes": 38785376,
+      "sha256": "9b42e00e0e3d177faa53c8e557521fa35c76cec4bd1a8624120dfbfa76407a97"
+    },
+    "build-hf-fixed/gemma4_e4b": {
+      "bytes": 29928808,
+      "sha256": "589b932a7971abd94758db495ff4fc61dd958c0a016bb6aa62afde479be683b5"
+    },
+    "build-hf-fixed/gemma4_e2b": {
+      "bytes": 26655744,
+      "sha256": "a8ff042974665b1d7aea70a9f24cea05595b98a24be20a226a4153c60d9bd94c"
+    },
+    "build-hf-fixed/gemma4_e2b_hf_bf16": {
+      "bytes": 38649928,
+      "sha256": "5321f4d72e35ef45e23f44ab777faf1b2fa4220375de8b5f96203012004981dd"
+    },
+    "build-hf-fixed/gemma4_e2b_hf_bf16_int8_published_kv": {
+      "bytes": 38785376,
+      "sha256": "75297ea685ebb549303e78c9b65383c5a737b88449248854c02d956e89fa9542"
+    },
+    "build-android-hf/gemma4_e2b_hf_bf16_int8_raw_kv": {
+      "bytes": 90102944,
+      "sha256": "cd8bba5fbafe55d40fe3bdbef1eec124ba32e549cf5371b7db220a735cf65066"
+    },
+    "build-android-hf/gemma4_e2b_hf_bf16": {
+      "bytes": 89898064,
+      "sha256": "9634957e0febfe4367c58096df9ee32abba3c82ef12f6720fb64a3f347b28633"
+    },
+    "build-android-hf/gemma4_e2b_hf_bf16_int8_published_kv": {
+      "bytes": 90102960,
+      "sha256": "8ee8b0c27e456a2e03872580e4ef3d2531b28a229de7951cdb863f9a2f943a2f"
+    }
+  },
+  "files": {
+    "models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/model.json": "0553a62e82e3f68f96894280cbe5190a8e5c9e83444c92941aabaf4440acb2bb",
+    "models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/gemma4_prefill.h": "efa079d12de8381a2793d19f4b0c2e90c486dd697e0c1bf2c3fc1c12bf322fdd",
+    "models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/gemma4_hf_config.h": "6e75731f492d583dce814f9b17837afb2036cf553feecb0dff2d9df8df660f9b",
+    "models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/gemma4_decode.h": "a4b0a2949ec0977945ab5f05c8c02fe62b199449a9e524817014a83c61bbd2cb",
+    "models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/asset_recipe.json": "4657102f2feae06c0d9a5e0da7b4f54eb482d1f6b3a870a02cb41d5f86357d18",
+    "models/gemma4_e2b_hf/generated/hf_bf16/model.json": "26b954a284804e187ca82ef8d6c3abf196bd379161ec7751b3a0a334bc6d5a62",
+    "models/gemma4_e2b_hf/generated/hf_bf16/gemma4_prefill.h": "554a5e6dc4798312a0da1cda70a456a2fbbe877650c224eb1ff89c4a1eacda4e",
+    "models/gemma4_e2b_hf/generated/hf_bf16/gemma4_hf_config.h": "cba3ec15acd14ae094aa4ad68ae302b5ec358972142c92f56e789ce5503eef26",
+    "models/gemma4_e2b_hf/generated/hf_bf16/gemma4_decode.h": "6272f3df85b9bfff1f7ef39322ff4e78458d0f08b213d80feed32efe9ba93ffe",
+    "models/gemma4_e2b_hf/generated/hf_bf16/asset_recipe.json": "4657102f2feae06c0d9a5e0da7b4f54eb482d1f6b3a870a02cb41d5f86357d18",
+    "models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/model.json": "92046be29c24b37eba40038d1d921cdace7ad65012aa5aac80289fe5cffbaee7",
+    "models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/gemma4_prefill.h": "26fc7c0d515734ee3bc069ba1425cfc55a988b0c1e9eaf8461f1a30583343fb8",
+    "models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/gemma4_hf_config.h": "7623b65db6f5c8ddcbc7d24e069170581e5482dbc448459e4fa84cf5480b8b69",
+    "models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/gemma4_decode.h": "ab398781612783d46e49238a300e7abd348ffd117ab7448bd2cf7709b9e66d8d",
+    "models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/asset_recipe.json": "4657102f2feae06c0d9a5e0da7b4f54eb482d1f6b3a870a02cb41d5f86357d18",
+    "patches/ynnpack-symbolic-runtime.patch": "f6d03c9925ebdbe69fdfeb9ffd2d02ecd47467da0e9e1e7ce263042dfca0dc0a",
+    "patches/ynnpack-cmake-subproject.patch": "0e8ddf6950189236c098d4f9e2e83672c81c8fcb3eb546b86606d636efd8a546",
+    "patches/hf-ynnpack-bf16-rounding.patch": "7ec8e44c54edba92675bf8c8428e541bf7f20ca70778dc66b5c4496469b97eb9",
+    "patches/README.md": "e7a1688e7df20e78f8e0c7353aee9803c9abeaa6b75179d2c0c6bded6163b604",
+    "models/gemma4/runner.cc": "6a9b95e642a88d1f700efd94f6b41b32823cc982e8e517952dbc9c6bd4c9fa69",
+    "models/gemma4/authoring/hf_graph.py": "062f6c62d55313a2a5e06366505dbdbaa5d39b5b1e7b8268ba97dca051ae5bb8",
+    "runtime/ynnpack_support.h": "8d7d9438ed317b75712fdd083686923b579cda98c6b1237a811a22cb3f7e04db",
+    "runtime/safetensors_assets.h": "d7968c17f6306e85d1bd1a2ffd3ff4554aee363c5dd4554688caa9d505591e50",
+    "models/gemma4/hf_assets.h": "c288b45c7b33b8701fd2b1facf341e87678845c607054fb651219d2739fbaadb"
+  },
+  "cpu": "Intel Core i9-12900K",
+  "sme": false,
+  "prefill_max_rows": 128,
+  "precision_flags": [
+    "YNN_FLAG_NO_EXCESS_PRECISION"
+  ],
+  "consistent_arithmetic": false,
+  "fast_math": false,
+  "build-hf-fixed_settings": {
+    "CMAKE_BUILD_TYPE:STRING": "Release",
+    "CMAKE_CXX_COMPILER:STRING": "/usr/bin/clang++",
+    "CMAKE_CXX_FLAGS:STRING": "",
+    "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O3 -DNDEBUG",
+    "LAB_ENABLE_SME:BOOL": "OFF"
+  },
+  "build-hf-fixed_compile_flags": [
+    "FLAGS = -O3 -DNDEBUG -std=gnu++17 -O1 -ffp-contract=off"
+  ],
+  "build-android-hf_settings": {
+    "ANDROID_ABI:UNINITIALIZED": "arm64-v8a",
+    "ANDROID_PLATFORM:UNINITIALIZED": "android-28",
+    "ANDROID_STL:UNINITIALIZED": "c++_static",
+    "CMAKE_BUILD_TYPE:STRING": "Release",
+    "CMAKE_CXX_FLAGS:STRING": "",
+    "CMAKE_CXX_FLAGS_RELEASE:STRING": "",
+    "LAB_ENABLE_SME:BOOL": "OFF"
+  },
+  "build-android-hf_compile_flags": [
+    "FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -O3 -DNDEBUG  -std=gnu++17 -fPIE -O1 -ffp-contract=off",
+    "FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-rtti -O3 -DNDEBUG  -std=c++17 -fPIC -O2",
+    "LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-rtti -O3 -DNDEBUG"
+  ],
+  "host_compiler": "clang version 22.1.8 (Fedora 22.1.8-4.fc44)",
+  "ndk_compiler": "Android (13624864, +pgo, +bolt, +lto, +mlgo, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)",
+  "post_measurement_build_note": "Final review added input-dimension rejection in HfEmbedding on Android and additional Python source-layout validation. No authored arithmetic or state graph changes; all generated files reproduce exactly. Measured binary hashes above are preserved.",
+  "reviewed_binary_sha256": {
+    "build-hf-fixed/gemma4_e2b_hf_bf16_int8_raw_kv": "9b42e00e0e3d177faa53c8e557521fa35c76cec4bd1a8624120dfbfa76407a97",
+    "build-hf-fixed/gemma4_e4b": "589b932a7971abd94758db495ff4fc61dd958c0a016bb6aa62afde479be683b5",
+    "build-hf-fixed/gemma4_e2b": "a8ff042974665b1d7aea70a9f24cea05595b98a24be20a226a4153c60d9bd94c",
+    "build-hf-fixed/gemma4_e2b_hf_bf16": "5321f4d72e35ef45e23f44ab777faf1b2fa4220375de8b5f96203012004981dd",
+    "build-hf-fixed/gemma4_e2b_hf_bf16_int8_published_kv": "75297ea685ebb549303e78c9b65383c5a737b88449248854c02d956e89fa9542",
+    "build-android-hf/gemma4_e2b_hf_bf16_int8_raw_kv": "d5f2588b60e36aee15c1b2cbfa9d9739bd3357d0d1a80db803cfc3b3c3b7444f",
+    "build-android-hf/gemma4_e2b_hf_bf16": "04337006934eececca0cfa507b76466eae0bd925e427d56e0fd11cf3cc946010",
+    "build-android-hf/gemma4_e2b_hf_bf16_int8_published_kv": "c1954ac2baefa0d7250402a3ad1014942ead94e2123dbc7757a75f53599132ea"
+  },
+  "provenance_note": "Private compiler provenance omitted; public runtime/model/dependency hashes retained."
+}

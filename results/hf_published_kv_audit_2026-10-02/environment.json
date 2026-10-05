@@ -1,0 +1,29 @@
+{
+  "platform": "Linux-7.1.10-200.fc44.x86_64-x86_64-with-glibc2.43",
+  "threads": 4,
+  "capacity": 2048,
+  "chunks": [
+    128,
+    64
+  ],
+  "precision": "HF BF16 + published INT8 KV policy; controls retain static QAT graph",
+  "warmups": 0,
+  "measured_runs": 1,
+  "performance_claim": false,
+  "baseline": "Preserved fully delegated LiteRT/XNNPACK static-QAT runner; not upstream LiteRT-LM",
+  "fixture_sha256": "28b841952d294f1405932122eae416e150f0adb643c2ea18a9dc5e6dade13b6f",
+  "xnn_model_sha256": "855be64fd3b22ad1acd8465731fe0c5080349daa90bbff1f6908a4e269f40978",
+  "binaries": {
+    "published_ynn_control": "a8ff042974665b1d7aea70a9f24cea05595b98a24be20a226a4153c60d9bd94c",
+    "hf_published_kv": "75297ea685ebb549303e78c9b65383c5a737b88449248854c02d956e89fa9542",
+    "published_ynn_trace": "c4ddba8a59efca4d5ab62bece80eba5940bcf9335bb963f34f7a1cb2fbdf7ecc",
+    "hf_trace": "772c00a9cffb53fa97ffb73e81d0f60f01a4978257b5076f3bebfcf675927e4f",
+    "litert_xnn_static_control": "188efd8b221c4c0f360357a4715f9731f262d14b55bbb1b92471c9797ee2152a"
+  },
+  "trace_note": "Measured trace binaries precede help-text and formatting-only changes.",
+  "source_identity": "b454fea4385836b70181ce7f8d797413d695d7f916b21ed3dd49896cdad6d579",
+  "final_trace_binary_sha256": {
+    "published": "14752dd1f1eaaaae578015b440484f6b03a49697844cd908ebeb879a5b7a32b4",
+    "hf": "1f86988b0429401ead2e7d68959ce03dcd570f25bacf940be908b8f2f078eb8a"
+  }
+}

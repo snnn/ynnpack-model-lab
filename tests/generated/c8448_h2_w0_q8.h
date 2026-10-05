@@ -1,0 +1,123 @@
+// Generated YNNPACK builder; do not edit.
+#pragma once
+#include "runtime/ynnpack_support.h"
+// Construction only: avoid quadratic optimizer work on large generated builders.
+#if defined(__clang__)
+__attribute__((optnone))
+#elif defined(__GNUC__)
+__attribute__((optimize("O0")))
+#endif
+inline std::unique_ptr<lab_ynn::Graph> Build_c8448_h2_w0_q8() {
+  auto g = std::make_unique<lab_ynn::Graph>(47);
+  alignas(64) static const unsigned char c0[] = {243,4,181,62};
+  g->Tensor(0, "__ynn/op15/beta", ynn_type_fp32, {1}, 0, c0);
+  g->Tensor(1, "__ynn/op15/centered", ynn_type_fp32, {1,4,0,0}, 0, nullptr);
+  g->Tensor(2, "__ynn/op15/exp", ynn_type_fp32, {1,4,0,0}, 0, nullptr);
+  g->Tensor(3, "__ynn/op15/inverse", ynn_type_fp32, {1,4,0,1}, 0, nullptr);
+  g->Tensor(4, "__ynn/op15/max", ynn_type_fp32, {1,4,0,1}, 0, nullptr);
+  alignas(64) static const unsigned char c5[] = {0,0,128,63};
+  g->Tensor(5, "__ynn/op15/one", ynn_type_fp32, {1}, 0, c5);
+  g->Tensor(6, "__ynn/op15/scaled", ynn_type_fp32, {1,4,0,0}, 0, nullptr);
+  g->Tensor(7, "__ynn/op15/sum", ynn_type_fp32, {1,4,0,1}, 0, nullptr);
+  g->Tensor(8, "__ynn/op22/centered", ynn_type_fp32, {1,4,0,0}, 0, nullptr);
+  g->Tensor(9, "__ynn/op22/exp", ynn_type_fp32, {1,4,0,0}, 0, nullptr);
+  g->Tensor(10, "__ynn/op22/inverse", ynn_type_fp32, {1,4,0,1}, 0, nullptr);
+  g->Tensor(11, "__ynn/op22/max", ynn_type_fp32, {1,4,0,1}, 0, nullptr);
+  g->Tensor(12, "__ynn/op22/scaled", ynn_type_fp32, {1,4,0,0}, 0, nullptr);
+  g->Tensor(13, "__ynn/op22/sum", ynn_type_fp32, {1,4,0,1}, 0, nullptr);
+  g->Tensor(14, "context", ynn_type_fp32, {1,8,0,8}, 0, nullptr);
+  g->Tensor(15, "context0", ynn_type_fp32, {1,4,0,8}, 0, nullptr);
+  g->Tensor(16, "context1", ynn_type_fp32, {1,4,0,8}, 0, nullptr);
+  g->Tensor(17, "fresh", ynn_type_fp32, {1,2,0,8}, 1, nullptr);
+  g->Tensor(18, "k0", ynn_type_fp32, {1,1,0,8}, 0, nullptr);
+  g->Tensor(19, "k1", ynn_type_fp32, {1,1,0,8}, 0, nullptr);
+  g->Tensor(20, "kcache", ynn_type_int8, {1,2,8448,8}, 1, nullptr);
+  g->Tensor(21, "kf", ynn_type_fp32, {1,2,0,8}, 0, nullptr);
+  g->Tensor(22, "knew", ynn_type_int8, {1,2,0,8}, 2, nullptr);
+  g->Tensor(23, "kupdated", ynn_type_int8, {1,2,8448,8}, 2, nullptr);
+  g->Tensor(24, "kview", ynn_type_int8, {1,2,0,8}, 0, nullptr);
+  g->Tensor(25, "masked0", ynn_type_fp32, {1,4,0,0}, 0, nullptr);
+  g->Tensor(26, "masked1", ynn_type_fp32, {1,4,0,0}, 0, nullptr);
+  g->Tensor(27, "onlycache", ynn_type_int8, {1,2,8448,8}, 1, nullptr);
+  g->Tensor(28, "onlyupdated", ynn_type_int8, {1,2,8448,8}, 2, nullptr);
+  g->Tensor(29, "probs0", ynn_type_fp32, {1,4,0,0}, 0, nullptr);
+  g->Tensor(30, "probs1", ynn_type_fp32, {1,4,0,0}, 0, nullptr);
+  g->Tensor(31, "projected", ynn_type_fp32, {1,8,0,8}, 0, nullptr);
+  g->Tensor(32, "q", ynn_type_fp32, {1,8,0,8}, 1, nullptr);
+  g->Tensor(33, "q0", ynn_type_fp32, {1,4,0,8}, 0, nullptr);
+  g->Tensor(34, "q1", ynn_type_fp32, {1,4,0,8}, 0, nullptr);
+  g->Tensor(35, "result", ynn_type_fp32, {1,8,0,8}, 2, nullptr);
+  g->Tensor(36, "scores0", ynn_type_fp32, {1,4,0,0}, 0, nullptr);
+  g->Tensor(37, "scores1", ynn_type_fp32, {1,4,0,0}, 0, nullptr);
+  g->Tensor(38, "v0", ynn_type_fp32, {1,1,0,8}, 0, nullptr);
+  g->Tensor(39, "v1", ynn_type_fp32, {1,1,0,8}, 0, nullptr);
+  g->Tensor(40, "vcache", ynn_type_int8, {1,2,8448,8}, 1, nullptr);
+  g->Tensor(41, "vf", ynn_type_fp32, {1,2,0,8}, 0, nullptr);
+  g->Tensor(42, "vnew", ynn_type_int8, {1,2,0,8}, 2, nullptr);
+  g->Tensor(43, "vsrc", ynn_type_fp32, {1,2,0,8}, 0, nullptr);
+  g->Tensor(44, "vupdated", ynn_type_int8, {1,2,8448,8}, 2, nullptr);
+  g->Tensor(45, "vview", ynn_type_int8, {1,2,0,8}, 0, nullptr);
+  alignas(64) static const unsigned char c46[] = {205,204,76,62,10,215,35,188,10,215,163,188,143,194,245,188,10,215,35,189,205,204,76,189,143,194,117,189,41,92,143,189,10,215,35,60,205,204,76,62,10,215,35,188,10,215,163,188,143,194,245,188,10,215,35,189,205,204,76,189,143,194,117,189,10,215,163,60,10,215,35,60,205,204,76,62,10,215,35,188,10,215,163,188,143,194,245,188,10,215,35,189,205,204,76,189,143,194,245,60,10,215,163,60,10,215,35,60,205,204,76,62,10,215,35,188,10,215,163,188,143,194,245,188,10,215,35,189,10,215,35,61,143,194,245,60,10,215,163,60,10,215,35,60,205,204,76,62,10,215,35,188,10,215,163,188,143,194,245,188,205,204,76,61,10,215,35,61,143,194,245,60,10,215,163,60,10,215,35,60,205,204,76,62,10,215,35,188,10,215,163,188,143,194,117,61,205,204,76,61,10,215,35,61,143,194,245,60,10,215,163,60,10,215,35,60,205,204,76,62,10,215,35,188,41,92,143,61,143,194,117,61,205,204,76,61,10,215,35,61,143,194,245,60,10,215,163,60,10,215,35,60,205,204,76,62};
+  g->Tensor(46, "weight", ynn_type_fp32, {8,8}, 0, c46);
+  const slinky::expr s1 = g->Axis(32, 2);
+  const slinky::expr s2 = g->Parameter("position", int64_t{0}, int64_t{8448});
+  g->InputShape(32, {slinky::expr(int64_t{1}),slinky::expr(int64_t{8}),s1,slinky::expr(int64_t{8})});
+  g->InputShape(17, {slinky::expr(int64_t{1}),slinky::expr(int64_t{2}),s1,slinky::expr(int64_t{8})});
+  g->InputShape(20, {slinky::expr(int64_t{1}),slinky::expr(int64_t{2}),slinky::expr(int64_t{8448}),slinky::expr(int64_t{8})});
+  g->InputShape(40, {slinky::expr(int64_t{1}),slinky::expr(int64_t{2}),slinky::expr(int64_t{8448}),slinky::expr(int64_t{8})});
+  g->InputShape(27, {slinky::expr(int64_t{1}),slinky::expr(int64_t{2}),slinky::expr(int64_t{8448}),slinky::expr(int64_t{8})});
+  static_assert(lab_ynn::kResourceStateContract == 1, "incompatible resource-state adapter");
+  g->Resource(20, "kcache", 2, s2, "{\"axis\":-1,\"dtype\":\"i8\",\"scale\":[0.03125],\"zero_point\":[0]}");
+  g->Resource(27, "onlycache", 2, s2, "{\"axis\":-1,\"dtype\":\"i8\",\"scale\":[0.03125],\"zero_point\":[0]}");
+  g->Resource(40, "vcache", 2, s2, "{\"axis\":-1,\"dtype\":\"i8\",\"scale\":[0.03125],\"zero_point\":[0]}");
+  g->RequireBounds(slinky::expr(int64_t{1}) <= s1, "symbol 1 lower bound");
+  g->RequireBounds(s1 <= slinky::expr(int64_t{128}), "symbol 1 upper bound");
+  g->RequireBounds(slinky::expr(int64_t{0}) <= s2, "symbol 2 lower bound");
+  g->RequireBounds(s2 <= slinky::expr(int64_t{8448}), "symbol 2 upper bound");
+  g->Require((slinky::expr(int64_t{0}) + (slinky::expr(int64_t{1}) * s1) + (slinky::expr(int64_t{1}) * s2)) <= slinky::expr(int64_t{8448}), "append capacity");
+  g->Require((slinky::expr(int64_t{0}) + (slinky::expr(int64_t{1}) * s1) + (slinky::expr(int64_t{1}) * s2)) <= (slinky::expr(int64_t{0}) + (slinky::expr(int64_t{1}) * s1) + (slinky::expr(int64_t{1}) * s2)), "view reads uninitialized history");
+  g->Require(s1 <= s1, "slice bounds");
+  g->Quantize(17, 22, 0.03125, 0);
+  g->ResultShape(22, {slinky::expr(int64_t{1}),slinky::expr(int64_t{2}),s1,slinky::expr(int64_t{8})});
+  g->Binary(ynn_binary_add, 17, 17, 43);
+  g->Quantize(43, 42, 0.03125, 0);
+  g->ResultShape(42, {slinky::expr(int64_t{1}),slinky::expr(int64_t{2}),s1,slinky::expr(int64_t{8})});
+  g->Append(20, 22, 23, 2, s2, s1);
+  g->Append(40, 42, 44, 2, s2, s1);
+  g->Append(27, 22, 28, 2, s2, s1);
+  g->View(23, 24, 2, slinky::expr(int64_t{0}), (slinky::expr(int64_t{0}) + (slinky::expr(int64_t{1}) * s1) + (slinky::expr(int64_t{1}) * s2)));
+  g->View(44, 45, 2, slinky::expr(int64_t{0}), (slinky::expr(int64_t{0}) + (slinky::expr(int64_t{1}) * s1) + (slinky::expr(int64_t{1}) * s2)));
+  g->Dequantize(24, 21, 0.03125, 0);
+  g->Dequantize(45, 41, 0.03125, 0);
+  g->Slice(32, 33, {0,0,0,0}, {-1,4,-1,-1});
+  g->Slice(21, 18, {0,0,0,0}, {-1,1,-1,-1});
+  g->Slice(41, 38, {0,0,0,0}, {-1,1,-1,-1});
+  g->Matmul(33, 18, 36, false, true);
+  g->Mask(36, 25, s2, slinky::expr(int64_t{0}), 0, true);
+  g->Binary(ynn_binary_multiply, 25, 0, 6);
+  g->Reduce(ynn_reduce_max, 6, 4, {-1}, true);
+  g->Binary(ynn_binary_subtract, 6, 4, 1);
+  g->Unary(ynn_unary_exp, 1, 2);
+  g->Reduce(ynn_reduce_sum, 2, 7, {-1}, true);
+  g->Binary(ynn_binary_divide, 5, 7, 3);
+  g->Binary(ynn_binary_multiply, 2, 3, 29);
+  g->Matmul(29, 38, 15, false, false);
+  g->Slice(32, 34, {0,4,0,0}, {-1,4,-1,-1});
+  g->Slice(21, 19, {0,1,0,0}, {-1,1,-1,-1});
+  g->Slice(41, 39, {0,1,0,0}, {-1,1,-1,-1});
+  g->Matmul(34, 19, 37, false, true);
+  g->Mask(37, 26, s2, slinky::expr(int64_t{0}), 0, true);
+  g->Binary(ynn_binary_multiply, 26, 0, 12);
+  g->Reduce(ynn_reduce_max, 12, 11, {-1}, true);
+  g->Binary(ynn_binary_subtract, 12, 11, 8);
+  g->Unary(ynn_unary_exp, 8, 9);
+  g->Reduce(ynn_reduce_sum, 9, 13, {-1}, true);
+  g->Binary(ynn_binary_divide, 5, 13, 10);
+  g->Binary(ynn_binary_multiply, 9, 10, 30);
+  g->Matmul(30, 39, 16, false, false);
+  g->Concat({15,16}, 14, 1);
+  g->Matmul(32, 46, 31, false, false);
+  g->Binary(ynn_binary_add, 14, 31, 35);
+  g->ResultShape(35, {slinky::expr(int64_t{1}),slinky::expr(int64_t{8}),s1,slinky::expr(int64_t{8})});
+  return g;
+}

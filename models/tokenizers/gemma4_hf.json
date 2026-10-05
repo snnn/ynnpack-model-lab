@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "format": "hf_json",
+  "vocab_size": 262144,
+  "prefix_ids": [
+    2
+  ],
+  "suffix_ids": [],
+  "source": {
+    "repo": "google/gemma-4-E2B-it",
+    "revision": "4742fe843cc01b9aed62122f6e0ddd13ea48b3d3",
+    "path": "tokenizer.json",
+    "bytes": 32169626,
+    "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+  },
+  "payload": {
+    "file": "tokenizer.json",
+    "bytes": 32169626,
+    "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+  }
+}

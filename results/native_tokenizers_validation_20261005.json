@@ -1,0 +1,463 @@
+{
+  "purpose": "Native tokenizer/frontend implementation correctness; no controlled latency comparison",
+  "date": "2026-10-05",
+  "build": {
+    "cxx_standard": 17,
+    "configuration": "Release",
+    "runner_optimization": "-O1",
+    "generated_builder_optimization": "-O2",
+    "tokenizers_enabled": true,
+    "sme_enabled": false,
+    "android_abi": "arm64-v8a",
+    "android_api": 28,
+    "android_stl": "c++_static",
+    "android_ndk": "28.2.13676358",
+    "android_rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+    "versions": {
+      "host-compiler.txt": "clang version 22.1.8 (Fedora 22.1.8-4.fc44)\nTarget: x86_64-redhat-linux-gnu\nThread model: posix",
+      "host-rust.txt": "rustc 1.98.1 (48a229cea 2026-09-01) (Fedora 1.98.1-1.fc44)",
+      "android-compiler.txt": "Android (13624864, +pgo, +bolt, +lto, +mlgo, based on r530567e) clang version 19.0.1 (https://android.googlesource.com/toolchain/llvm-project 97a699bf4812a18fb657c2779f5296a4ab2694d2)\nTarget: x86_64-unknown-linux-gnu\nThread model: posix",
+      "base-revision.txt": "e03a89466de4256bc29198ed872ffacacc8f71f6"
+    },
+    "runner_fp_contract": "off"
+  },
+  "dependencies": [
+    {
+      "name": "XNNPACK",
+      "repository": "google/XNNPACK",
+      "revision": "35997e71119d191c807068a4d2aa28bf6048b59b",
+      "url": "https://codeload.github.com/google/XNNPACK/zip/35997e71119d191c807068a4d2aa28bf6048b59b",
+      "sha256": "989b33b609b2172073ad03ca1acd99f1ecf8c50d626d673ee1858e9771ca4b57"
+    },
+    {
+      "name": "slinky",
+      "repository": "dsharlet/slinky",
+      "revision": "97c346749bf0f7fbdc2b0b8e6ff0c380806a32e2",
+      "url": "https://codeload.github.com/dsharlet/slinky/zip/97c346749bf0f7fbdc2b0b8e6ff0c380806a32e2",
+      "sha256": "e6125bb88be445bb3ccbaf609accdaf5ae4f0563b93775f1824fd4388609b402"
+    },
+    {
+      "name": "cpuinfo",
+      "repository": "pytorch/cpuinfo",
+      "revision": "8ce83db858065145192c97af90cb668ad72a12e9",
+      "url": "https://codeload.github.com/pytorch/cpuinfo/zip/8ce83db858065145192c97af90cb668ad72a12e9",
+      "sha256": "fe2aa43254838a2eb5658d1742696473a1d834a57f2a0b38d533346bcd212482"
+    },
+    {
+      "name": "tokenizers-cpp",
+      "repository": "mlc-ai/tokenizers-cpp",
+      "revision": "c586c52f93f7b060753bd2388eb96a105cb7374d",
+      "url": "https://codeload.github.com/mlc-ai/tokenizers-cpp/zip/c586c52f93f7b060753bd2388eb96a105cb7374d",
+      "sha256": "4c217141592091601a4d818999a5ea92f1a3ff61a8ae1d00e9d16d943bb5a248",
+      "feature": "tokenizers"
+    },
+    {
+      "name": "sentencepiece",
+      "repository": "google/sentencepiece",
+      "revision": "e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+      "url": "https://codeload.github.com/google/sentencepiece/zip/e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+      "sha256": "f47359a9c786bca379a0c34663dd5e417dbc0104924f7cab50fdaa493217d57f",
+      "feature": "tokenizers"
+    },
+    {
+      "name": "abseil",
+      "revision": "255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+      "url": "https://codeload.github.com/abseil/abseil-cpp/zip/255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+      "sha256": "e945549b45648c00cb07119fb7697e13762da3e0b8cdb244d8e6550bbe1e53cd",
+      "feature": "tokenizers",
+      "repository": "abseil/abseil-cpp"
+    }
+  ],
+  "source_hashes": {
+    "patches/tokenizers.Cargo.lock": "9879ff57086e2b1f0e4e011cc47af89286887b100f457972abe3822a26f6897d",
+    "patches/tokenizers-safe-ffi.patch": "4fbf3931f3b8c1dd5c03a2826cbe76f8edc476d6cb00ff2f4ff865fadffb7430",
+    "patches/sentencepiece-offline-abseil.patch": "6ab434b5e90b2538f14bd64b173e1fb465f4cef911a495c96cdc13cb3968b815",
+    "runtime/benchmark_cases.cc": "8b739bc402ead683a439315b652cfe46b6fdb7026e9625ceab2536ae96c49488",
+    "runtime/tokenizer.cc": "76120316dcd02a578a7f067fb7ed425f766421b7f65f45d2d4e2f258ce340388",
+    "models/gemma4_e2b/generated/model.json": "a12ea547dacf29c7a7800d3c944da9c4e5cfcf8d0cd2f8468de9c0688237fd2b",
+    "models/gemma4_e4b/generated/model.json": "92a56cb1abf61f084dc0ac363c7bcc2d64f6122677e59923abdcadd210407753"
+  },
+  "host_ctest": {
+    "tests": 10,
+    "passed": 10,
+    "command": [
+      "ctest",
+      "--test-dir",
+      "build-tokenizers",
+      "--output-on-failure"
+    ]
+  },
+  "android_native_tests": {
+    "device": "TECNO_LJ9",
+    "passed": [
+      "tokenizer_test",
+      "benchmark_cases_test",
+      "state_views_test",
+      "quantized_fc_test",
+      "model_assets_test"
+    ]
+  },
+  "real_asset_parity": [
+    {
+      "asset": "gemma4_e2b",
+      "reference": "sentencepiece 0.2.1",
+      "explicit_cases": 24,
+      "corpus_lengths": [
+        1,
+        128,
+        129,
+        130,
+        511,
+        512,
+        513,
+        1024
+      ],
+      "exact_ids": true,
+      "manifest": {
+        "version": 1,
+        "format": "sentencepiece",
+        "vocab_size": 262144,
+        "prefix_ids": [
+          2
+        ],
+        "suffix_ids": [],
+        "source": {
+          "bytes": 2583085056,
+          "path": "gemma-4-E2B-it.litertlm",
+          "sha256": "ab7838cdfc8f77e54d8ca45eadceb20452d9f01e4bfade03e5dce27911b27e42",
+          "repo": "litert-community/gemma-4-E2B-it-litert-lm",
+          "revision": "2a101e00c47f942975ce8b493c2498311ed9900d"
+        },
+        "file": "tokenizer.model",
+        "bytes": 4689013,
+        "sha256": "e594c8a90eb08d8bda498ff4747977dc827ae0c3c56b5c0d41a605a22d02ef03"
+      }
+    },
+    {
+      "asset": "gemma4_e4b",
+      "reference": "sentencepiece 0.2.1",
+      "explicit_cases": 24,
+      "corpus_lengths": [
+        1,
+        128,
+        129,
+        130,
+        511,
+        512,
+        513,
+        1024
+      ],
+      "exact_ids": true,
+      "manifest": {
+        "version": 1,
+        "format": "sentencepiece",
+        "vocab_size": 262144,
+        "prefix_ids": [
+          2
+        ],
+        "suffix_ids": [],
+        "source": {
+          "bytes": 3654467584,
+          "path": "gemma-4-E4B-it.litertlm",
+          "sha256": "f335f2bfd1b758dc6476db16c0f41854bd6237e2658d604cbe566bcefd00a7bc",
+          "repo": "litert-community/gemma-4-E4B-it-litert-lm",
+          "revision": "1a64948b38efa40cd88a820e1e7cc1a6179ae05e"
+        },
+        "file": "tokenizer.model",
+        "bytes": 4689013,
+        "sha256": "e594c8a90eb08d8bda498ff4747977dc827ae0c3c56b5c0d41a605a22d02ef03"
+      }
+    },
+    {
+      "asset": "gemma4_hf",
+      "reference": "tokenizers 0.22.2",
+      "explicit_cases": 24,
+      "corpus_lengths": [
+        1,
+        128,
+        129,
+        130,
+        511,
+        512,
+        513,
+        1024
+      ],
+      "exact_ids": true,
+      "manifest": {
+        "version": 1,
+        "format": "hf_json",
+        "vocab_size": 262144,
+        "prefix_ids": [
+          2
+        ],
+        "suffix_ids": [],
+        "source": {
+          "repo": "google/gemma-4-E2B-it",
+          "revision": "4742fe843cc01b9aed62122f6e0ddd13ea48b3d3",
+          "path": "tokenizer.json",
+          "bytes": 32169626,
+          "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+        },
+        "file": "tokenizer.json",
+        "bytes": 32169626,
+        "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f"
+      }
+    },
+    {
+      "asset": "qwen3_0_6b",
+      "reference": "tokenizers 0.22.2",
+      "explicit_cases": 23,
+      "corpus_lengths": [
+        1,
+        128,
+        129,
+        130,
+        511,
+        512,
+        513,
+        1024
+      ],
+      "exact_ids": true,
+      "manifest": {
+        "version": 1,
+        "format": "hf_json",
+        "vocab_size": 151669,
+        "prefix_ids": [],
+        "suffix_ids": [],
+        "source": {
+          "repo": "Qwen/Qwen3-0.6B",
+          "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+          "path": "tokenizer.json",
+          "bytes": 11422654,
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        },
+        "file": "tokenizer.json",
+        "bytes": 11422654,
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      }
+    },
+    {
+      "asset": "qwen3_5_0_8b",
+      "reference": "tokenizers 0.22.2",
+      "explicit_cases": 23,
+      "corpus_lengths": [
+        1,
+        128,
+        129,
+        130,
+        511,
+        512,
+        513,
+        1024
+      ],
+      "exact_ids": true,
+      "manifest": {
+        "version": 1,
+        "format": "hf_json",
+        "vocab_size": 248070,
+        "prefix_ids": [],
+        "suffix_ids": [],
+        "source": {
+          "repo": "Qwen/Qwen3.5-0.8B",
+          "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+          "path": "tokenizer.json",
+          "bytes": 12807982,
+          "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+        },
+        "file": "tokenizer.json",
+        "bytes": 12807982,
+        "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+      }
+    }
+  ],
+  "android_real_asset_parity": {
+    "assets": [
+      "gemma4_e2b",
+      "gemma4_e4b",
+      "gemma4_hf",
+      "qwen3_0_6b",
+      "qwen3_5_0_8b"
+    ],
+    "exact_ids_against_host_and_python": true
+  },
+  "model_matrix": {
+    "cache_capacity": 1026,
+    "num_threads": 4,
+    "prefill_rows": 128,
+    "warmup_runs": 0,
+    "measured_runs": 2,
+    "dump_outputs": true,
+    "comparisons": [
+      {
+        "files": 744,
+        "byte_identical": 744,
+        "logit_outputs": 24,
+        "kv_outputs": 720,
+        "prompt_lengths": [
+          1,
+          128,
+          129,
+          130,
+          511,
+          512,
+          513,
+          1024
+        ],
+        "forced_continuations": 2,
+        "repetitions": 2,
+        "repeated_argmax_equal": true,
+        "view_copy_bytes": 0,
+        "first_plus_subsequent_steps_per_request": 3,
+        "platform": "linux",
+        "model": "gemma4_e2b"
+      },
+      {
+        "files": 2328,
+        "byte_identical": 2328,
+        "logit_outputs": 24,
+        "kv_outputs": 2304,
+        "prompt_lengths": [
+          1,
+          128,
+          129,
+          130,
+          511,
+          512,
+          513,
+          1024
+        ],
+        "forced_continuations": 2,
+        "repetitions": 2,
+        "repeated_argmax_equal": true,
+        "view_copy_bytes": 0,
+        "first_plus_subsequent_steps_per_request": 3,
+        "platform": "linux",
+        "model": "gemma4_e4b"
+      },
+      {
+        "files": 744,
+        "byte_identical": 744,
+        "logit_outputs": 24,
+        "kv_outputs": 720,
+        "prompt_lengths": [
+          1,
+          128,
+          129,
+          130,
+          511,
+          512,
+          513,
+          1024
+        ],
+        "forced_continuations": 2,
+        "repetitions": 2,
+        "repeated_argmax_equal": true,
+        "view_copy_bytes": 0,
+        "first_plus_subsequent_steps_per_request": 3,
+        "platform": "android",
+        "model": "gemma4_e2b"
+      },
+      {
+        "files": 2328,
+        "byte_identical": 2328,
+        "logit_outputs": 24,
+        "kv_outputs": 2304,
+        "prompt_lengths": [
+          1,
+          128,
+          129,
+          130,
+          511,
+          512,
+          513,
+          1024
+        ],
+        "forced_continuations": 2,
+        "repetitions": 2,
+        "repeated_argmax_equal": true,
+        "view_copy_bytes": 0,
+        "first_plus_subsequent_steps_per_request": 3,
+        "platform": "android",
+        "model": "gemma4_e4b"
+      }
+    ]
+  },
+  "matrix_binary_identities": [
+    {
+      "bytes": 44482320,
+      "sha256": "92d4845d6fb3da5542a1e1781303efd60862409ca894cdf09d535ce63b21838b",
+      "artifact": "linux-x86_64/gemma4_e2b"
+    },
+    {
+      "bytes": 46247432,
+      "sha256": "88b6fc076af578b8c6a5a43550a186208662be4562942ebee5da0d3b0f4a2d14",
+      "artifact": "linux-x86_64/gemma4_e4b"
+    },
+    {
+      "bytes": 11203544,
+      "sha256": "c40869855e9258dff2b08baa3c041223b60e3edeb817a43bc426adbc4116eec4",
+      "artifact": "android-arm64/gemma4_e2b"
+    },
+    {
+      "bytes": 12637240,
+      "sha256": "595057e612506a03efba5db79e6023d412660363280c4b680b8ffe7dfca0a054",
+      "artifact": "android-arm64/gemma4_e4b"
+    }
+  ],
+  "final_binary_identities": [
+    {
+      "bytes": 44482320,
+      "sha256": "ccb7065cb9ee762445567d02dd2cf52b366e07b1f210387c25be453f8fe5c0a6",
+      "artifact": "linux-x86_64/gemma4_e2b"
+    },
+    {
+      "bytes": 46247432,
+      "sha256": "420a2e7e16ada11dc13acba197456430e80d5002dbd270b2fe9bcf073039d3eb",
+      "artifact": "linux-x86_64/gemma4_e4b"
+    },
+    {
+      "bytes": 11203752,
+      "sha256": "1bbba5d055036c772a2a27d954b8df5183804ad15b6ef2dd36c74f04fab05502",
+      "artifact": "android-arm64/gemma4_e2b"
+    },
+    {
+      "bytes": 12637480,
+      "sha256": "6ec5164131ccad9d391d079013f4022c49349e365d11dd3607b120c89bbaf1a9",
+      "artifact": "android-arm64/gemma4_e4b"
+    }
+  ],
+  "final_explicit_prompt": {
+    "prompt": "The cat sat",
+    "continuation": " on the mat.",
+    "linux": {
+      "files": 155,
+      "byte_identical": 155
+    },
+    "android": {
+      "files": 155,
+      "byte_identical": 155
+    }
+  },
+  "tokenizers_disabled": {
+    "input_tests_passed": true,
+    "text_rejected_before_model_setup": true,
+    "short_tsv_replay": {
+      "files": 93,
+      "byte_identical": 93
+    }
+  },
+  "clean_dependency_build": {
+    "fresh_archives_verified": true,
+    "offline_cargo": true,
+    "tokenizer_probe_passed": true,
+    "native_reference_test_passed": true
+  },
+  "notes": [
+    "Full model matrices use the same binary and IDs for text and TSV replay; this is a frontend self-consistency check, not a generation-quality evaluation.",
+    "The matrix preceded a weights-free metadata adjustment and a clean-build Abseil include-path correction. The final builds passed host/Android native tests and real-asset parity; a final explicit-prompt replay was also checked.",
+    "Qwen tokenizers are validated here; Qwen execution graphs are outside this change.",
+    "Full extraction of the hash-pinned E2B source produced its tokenizer directory successfully. On-device E2B used this fresh extraction; E4B reused a matching bundle manifest with current parameters.",
+    "Raw commands, observations, failed setup logs, timings, dumps, compiler details, and parity outputs remain local and are excluded from publication.",
+    "Device serial and compiler installation paths are omitted. Binary identities use platform/artifact labels; measured hashes and validation outcomes are unchanged."
+  ]
+}

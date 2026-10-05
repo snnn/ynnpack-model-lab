@@ -1,0 +1,117 @@
+--- a/ynnpack/subgraph/fusion.cc
++++ b/ynnpack/subgraph/fusion.cc
+@@ -319,6 +319,15 @@
+   return false;
+ }
+ 
++// A replacement kernel must not bypass a requested intermediate rounding.
++bool preserves_intermediate_precision(const ynn_subgraph& subgraph,
++                                      const ynn_value& intermediate,
++                                      ynn_type replacement_type) {
++  return ((subgraph.flags & YNN_FLAG_NO_EXCESS_PRECISION) == 0 &&
++          (intermediate.flags & YNN_VALUE_FLAG_NO_EXCESS_PRECISION) == 0) ||
++         is_convert_lossless(replacement_type, intermediate.type);
++}
++
+ // We rewrite outer(inner(op[0], op[1]), op[2]) or
+ // outer(op[2], inner(op[0], op[1])) to
+ // ternary(op[a], op[b], op[c])
+@@ -382,6 +391,11 @@
+     }
+ 
+     if (analysis.consumers[producer->outputs[0]].size() != 1) continue;
++    const auto& intermediate = subgraph.value(producer->outputs[0]);
++    if ((intermediate.type == ynn_type_bf16 || intermediate.type == ynn_type_fp16) &&
++        !preserves_intermediate_precision(subgraph, intermediate, ynn_type_fp32)) {
++      continue;
++    }
+ 
+     ternary_rewrite r = get_ternary_rewrite(outer->op, inner);
+     if (r.op == ternary_op::invalid) continue;
+@@ -445,6 +459,13 @@
+   bool is_convert[2] = {
+       producers[0] && is_unary_node(*producers[0], ynn_unary_convert),
+       producers[1] && is_unary_node(*producers[1], ynn_unary_convert)};
++  for (int i = 0; i < 2; ++i) {
++    if (is_convert[i] && !preserves_intermediate_precision(
++            subgraph, subgraph.value(node.inputs[i]),
++            subgraph.value(producers[i]->inputs[0]).type)) {
++      is_convert[i] = false;
++    }
++  }
+ 
+   if (!is_convert[0] && !is_convert[1]) {
+     return false;
+@@ -517,6 +538,11 @@
+ bool rewrite_convert_elementwise(ynn_subgraph& subgraph, ynn_node& node,
+                                  subgraph_analysis& analysis) {
+   if (!is_unary_node(node, ynn_unary_convert)) return false;
++  if (!preserves_intermediate_precision(subgraph,
++                                       subgraph.value(node.inputs[0]),
++                                       subgraph.value(node.outputs[0]).type)) {
++    return false;
++  }
+ 
+   ynn_node* producer = analysis.producer_of(node.inputs[0]);
+   if (!producer) return false;
+@@ -1257,6 +1283,10 @@
+   }
+ 
+   const ynn_value& x = subgraph.value(convert->inputs[0]);
++  if (!preserves_intermediate_precision(subgraph,
++                                       subgraph.value(node.inputs[0]), x.type)) {
++    return false;
++  }
+ 
+   const ynn_value& output = subgraph.value(node.outputs[0]);
+   reduce_kernel kernel = get_reduce_kernel(reduce_op->op, x.type, output.type);
+@@ -1491,6 +1521,11 @@
+   if (!is_unary_node(node, ynn_unary_convert)) {
+     return false;
+   }
++  if (!preserves_intermediate_precision(subgraph,
++                                       subgraph.value(node.inputs[0]),
++                                       subgraph.value(node.outputs[0]).type)) {
++    return false;
++  }
+ 
+   uint32_t dequantize_dot_output_id = node.inputs[0];
+   ynn_node* dequantize_dot_node =
+@@ -1539,6 +1574,13 @@
+       producers[0] && is_unary_node(*producers[0], ynn_unary_convert),
+       producers[1] && is_unary_node(*producers[1], ynn_unary_convert),
+       producers[2] && is_unary_node(*producers[2], ynn_unary_convert)};
++  for (int i = 0; i < 3; ++i) {
++    if (is_convert[i] && !preserves_intermediate_precision(
++            subgraph, subgraph.value(node.inputs[i]),
++            subgraph.value(producers[i]->inputs[0]).type)) {
++      is_convert[i] = false;
++    }
++  }
+ 
+   if (!is_convert[0] && !is_convert[1] && !is_convert[2]) {
+     return false;
+@@ -1635,6 +1677,11 @@
+     uint32_t x_id = mul->x_id;
+     ynn_type input_type = subgraph.value(x_id).type;
+     ynn_type folded_type = subgraph.value(node.inputs[0]).type;
++    if ((folded_type == ynn_type_bf16 || folded_type == ynn_type_fp16) &&
++        !preserves_intermediate_precision(subgraph,
++                                         subgraph.value(node.inputs[0]), ynn_type_fp32)) {
++      return false;
++    }
+ 
+     unary_kernel_fn convert_kernel = nullptr;
+     if (input_type != folded_type) {
+@@ -1723,6 +1770,11 @@
+   if (analysis.consumers[producer->outputs[0]].size() != 1) return false;
+ 
+   ynn_type folded_type = subgraph.value(producer->outputs[0]).type;
++  if ((folded_type == ynn_type_bf16 || folded_type == ynn_type_fp16) &&
++      !preserves_intermediate_precision(subgraph,
++                                       subgraph.value(producer->outputs[0]), ynn_type_fp32)) {
++    return false;
++  }
+   ynn_type output_type = subgraph.value(node.outputs[0]).type;
+ 
+   unary_kernel_fn convert_kernel = nullptr;

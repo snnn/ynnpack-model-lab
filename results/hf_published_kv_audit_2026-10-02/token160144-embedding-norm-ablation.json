@@ -1,0 +1,201 @@
+{
+  "token_id": 160144,
+  "embedding": {
+    "source_scale": 0.02552272379398346,
+    "bf16_scale": 0.0255126953125,
+    "multiplier": 39.191837310791016,
+    "published_unit_code_value": 1.0002824068069458,
+    "hf_unit_code_value": 1.0,
+    "nonzero_ratios": [
+      0.999717652797699
+    ],
+    "published_calculation_vs_trace": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 0.9453749234555415,
+      "cosine": 1.0
+    },
+    "hf_calculation_vs_trace": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 0.9451080185178129,
+      "cosine": 0.9999999999999999
+    },
+    "published_vs_hf": {
+      "elements": 1536,
+      "different": 967,
+      "max_abs_error": 0.0005648136138916016,
+      "rms_error": 0.00026690493772848833,
+      "reference_rms": 0.9453749234555415,
+      "cosine": 0.9999999999999999
+    }
+  },
+  "norm": {
+    "fp32_calculation_vs_trace": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 12.781038154257757,
+      "cosine": 1.0000000000000009
+    },
+    "ablations": {
+      "embedding_only": {
+        "versus_published_trace": {
+          "elements": 1536,
+          "different": 0,
+          "max_abs_error": 0.0,
+          "rms_error": 0.0,
+          "reference_rms": 12.781038154257757,
+          "cosine": 1.0000000000000009
+        },
+        "versus_hf_trace": {
+          "elements": 1536,
+          "different": 967,
+          "max_abs_error": 0.40045928955078125,
+          "rms_error": 0.02999848905288817,
+          "reference_rms": 12.783584642654734,
+          "cosine": 0.999997265932722
+        }
+      },
+      "coefficients_only": {
+        "versus_published_trace": {
+          "elements": 1536,
+          "different": 967,
+          "max_abs_error": 0.2564239501953125,
+          "rms_error": 0.02220696016905716,
+          "reference_rms": 12.781038154257757,
+          "cosine": 0.9999984969749984
+        },
+        "versus_hf_trace": {
+          "elements": 1536,
+          "different": 967,
+          "max_abs_error": 0.1753997802734375,
+          "rms_error": 0.019490325056101737,
+          "reference_rms": 12.783584642654734,
+          "cosine": 0.9999988414628949
+        }
+      },
+      "output_rounding_only": {
+        "versus_published_trace": {
+          "elements": 1536,
+          "different": 967,
+          "max_abs_error": 0.24155426025390625,
+          "rms_error": 0.020288348252279802,
+          "reference_rms": 12.781038154257757,
+          "cosine": 0.9999987441669098
+        },
+        "versus_hf_trace": {
+          "elements": 1536,
+          "different": 244,
+          "max_abs_error": 0.5,
+          "rms_error": 0.03780528942957806,
+          "reference_rms": 12.783584642654734,
+          "cosine": 0.9999956680264747
+        }
+      },
+      "embedding_and_coefficients": {
+        "versus_published_trace": {
+          "elements": 1536,
+          "different": 967,
+          "max_abs_error": 0.2564239501953125,
+          "rms_error": 0.02220696016905716,
+          "reference_rms": 12.781038154257757,
+          "cosine": 0.9999984969749984
+        },
+        "versus_hf_trace": {
+          "elements": 1536,
+          "different": 967,
+          "max_abs_error": 0.1753997802734375,
+          "rms_error": 0.019490325056101737,
+          "reference_rms": 12.783584642654734,
+          "cosine": 0.9999988414628949
+        }
+      },
+      "embedding_coefficients_and_output": {
+        "versus_published_trace": {
+          "elements": 1536,
+          "different": 967,
+          "max_abs_error": 0.40045928955078125,
+          "rms_error": 0.02999848905288817,
+          "reference_rms": 12.781038154257757,
+          "cosine": 0.999997265932722
+        },
+        "versus_hf_trace": {
+          "elements": 1536,
+          "different": 0,
+          "max_abs_error": 0.0,
+          "rms_error": 0.0,
+          "reference_rms": 12.783584642654734,
+          "cosine": 0.9999999999999999
+        }
+      }
+    },
+    "coefficient_rounding": {
+      "elements": 1536,
+      "different": 1536,
+      "max_abs_error": 0.24234771728515625,
+      "rms_error": 0.021619160697361868,
+      "reference_rms": 12.368776887328021,
+      "cosine": 0.999998478244352
+    },
+    "worst_coordinate": {
+      "index": 262,
+      "published": -79.09954071044922,
+      "hf": -79.5,
+      "published_coefficient": 74.75765228271484,
+      "hf_coefficient": 75.0
+    }
+  },
+  "activation_quantization": {
+    "source_scale": 0.6088034510612488,
+    "bf16_scale": 0.609375,
+    "static_codes_vs_trace": {
+      "elements": 1536,
+      "different": 0,
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "reference_rms": 20.94067140160506,
+      "cosine": 1.0
+    },
+    "stages": {
+      "hf_norm_only": {
+        "versus_static": {
+          "elements": 1536,
+          "different": 44,
+          "max_abs_error": 1.0,
+          "rms_error": 0.1692508000965825,
+          "reference_rms": 20.94067140160506,
+          "cosine": 0.9999673546878902
+        },
+        "codes_changed_from_previous_step": 44
+      },
+      "hf_norm_and_scale_rounding": {
+        "versus_static": {
+          "elements": 1536,
+          "different": 55,
+          "max_abs_error": 1.0,
+          "rms_error": 0.18922814713109323,
+          "reference_rms": 20.94067140160506,
+          "cosine": 0.9999595886221766
+        },
+        "codes_changed_from_previous_step": 21
+      },
+      "hf_norm_scale_and_division_rounding": {
+        "versus_static": {
+          "elements": 1536,
+          "different": 50,
+          "max_abs_error": 1.0,
+          "rms_error": 0.18042195912175807,
+          "reference_rms": 20.94067140160506,
+          "cosine": 0.9999630974067246
+        },
+        "codes_changed_from_previous_step": 59
+      }
+    }
+  }
+}

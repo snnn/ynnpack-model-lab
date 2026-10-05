@@ -1,0 +1,32 @@
+[
+  {
+    "check": "bos-hf",
+    "files": 93,
+    "byte_identical": 93
+  },
+  {
+    "check": "bos-control",
+    "files": 93,
+    "byte_identical": 93
+  },
+  {
+    "check": "prefix-hf-q128",
+    "files": 93,
+    "byte_identical": 93
+  },
+  {
+    "check": "prefix-hf-q64",
+    "files": 93,
+    "byte_identical": 93
+  },
+  {
+    "check": "attention-hf-q128",
+    "files": 93,
+    "byte_identical": 93
+  },
+  {
+    "check": "attention-hf-q64",
+    "files": 93,
+    "byte_identical": 93
+  }
+]
