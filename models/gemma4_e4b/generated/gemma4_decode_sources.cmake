@@ -10,6 +10,6 @@ set(YNNPACK_BUILDER_SOURCES
   "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer4ToLayer10_6.cc"
   "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer11ToLayer17_7.cc"
   "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer18ToLayer25_8.cc"
-  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer26ToLayer35_9.cc"
-  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer36ToFinalNormAndHead_10.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer26ToLayer34_9.cc"
+  "${CMAKE_CURRENT_LIST_DIR}/gemma4_decode_Layer35ToFinalNormAndHead_10.cc"
 )

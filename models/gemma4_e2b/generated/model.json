@@ -35,15 +35,15 @@
     },
     {
       "phase": "decode",
-      "ops": 5845,
-      "values": 7145,
+      "ops": 5915,
+      "values": 7215,
       "builder_sources": [
         "gemma4_decode.cc",
         "gemma4_decode_DefineValues_0.cc",
         "gemma4_decode_DefineValues_1.cc",
         "gemma4_decode_DefineValues_2.cc",
-        "gemma4_decode_DefineValuesToInputProjection_3.cc",
-        "gemma4_decode_Layer0ToLayer7_4.cc",
+        "gemma4_decode_DefineValuesToEmbedding_3.cc",
+        "gemma4_decode_RopeTablesToLayer7_4.cc",
         "gemma4_decode_Layer8ToLayer15_5.cc",
         "gemma4_decode_Layer16ToLayer25_6.cc",
         "gemma4_decode_Layer26ToFinalNormAndHead_7.cc"
@@ -1428,8 +1428,9 @@
   },
   "activation_mode": "published_static_qat_with_dynamic_head",
   "prefill_rows": 128,
-  "author_seconds": 1.6225160309986677,
+  "author_seconds": 1.6832685720000882,
   "adapter_contract": "resource-state-v1",
   "optimization": "target_views",
-  "global_layout": true
+  "global_layout": true,
+  "decode_transpose_cleanup": true
 }

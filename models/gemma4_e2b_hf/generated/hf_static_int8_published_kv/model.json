@@ -16,8 +16,8 @@
     },
     {
       "phase": "decode",
-      "ops": 5756,
-      "values": 7052,
+      "ops": 5826,
+      "values": 7122,
       "builder_sources": [
         "gemma4_decode.cc",
         "gemma4_decode_DefineValues_0.cc",
@@ -37,5 +37,6 @@
   "head_policy": "dynamic_int8",
   "adapter_contract": "resource-state-v1",
   "optimization": "target_views",
-  "global_layout": true
+  "global_layout": true,
+  "decode_transpose_cleanup": true
 }
