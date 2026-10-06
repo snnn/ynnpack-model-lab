@@ -48,6 +48,11 @@ wrappers. Functions construct one shared graph per phase, preserving operation
 order and shared values. They introduce no per-layer host execution calls,
 backend fusion boundaries, or separate memory plans.
 
+E2B builders also emit presentation-only operation labels for execution
+profiling. The adapter carries these through optimized backend lowering and
+times scheduled callbacks; see [PROFILING.md](PROFILING.md). Labels do not create
+execution boundaries or change intermediate output visibility.
+
 Generated construction sources use `-O2` by default and prevent helper inlining.
 `-DLAB_BUILDER_OPTIMIZATION=0`, `1`, `2`, or `3` controls that compilation level
 separately from the runner and backend kernels. Builder libraries are reused by

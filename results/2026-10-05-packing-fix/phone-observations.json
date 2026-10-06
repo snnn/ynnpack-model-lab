@@ -1,0 +1,26 @@
+[
+  {
+    "device": "tecno",
+    "job": "e2b-before-c2048-t4",
+    "before_battery_c": 29.3,
+    "after_battery_c": 30.0
+  },
+  {
+    "device": "tecno",
+    "job": "e2b-fixed-c2048-t4",
+    "before_battery_c": 30.8,
+    "after_battery_c": 31.5
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-fixed-c2048-t4",
+    "before_battery_c": 31.7,
+    "after_battery_c": 33.0
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-before-c2048-t4",
+    "before_battery_c": 33.5,
+    "after_battery_c": 34.5
+  }
+]

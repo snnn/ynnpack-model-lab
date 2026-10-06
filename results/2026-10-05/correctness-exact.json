@@ -1,0 +1,14 @@
+{
+  "e2b": {
+    "capacity_files": 372,
+    "capacity_byte_identical": 372,
+    "previous_backend_files": 372,
+    "previous_backend_byte_identical": 372
+  },
+  "e4b": {
+    "capacity_files": 2619,
+    "capacity_byte_identical": 2619,
+    "previous_backend_files": 2619,
+    "previous_backend_byte_identical": 2534
+  }
+}

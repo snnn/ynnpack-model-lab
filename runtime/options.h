@@ -23,6 +23,7 @@ struct Options {
   std::string bundle_dir, parameter_dir, cases_file, output_dir;
   std::string hf_model_dir, asset_manifest, cache_dir;
   std::string trace_plan;
+  std::string profile_execution = "none";
   std::string tokenizer_dir, text_cases_file, corpus_file;
   std::string prompt, prompt_file, continuation, continuation_file;
   std::string prompt_lengths = "17,128,1024";
@@ -80,6 +81,7 @@ inline Options ParseOptions(int argc, char** argv, bool require_model = true) {
              "--prefill_rows=128\n"
           << "         --warmup_runs=1 --measured_runs=3 --dump_outputs "
              "--dump_pipeline --report_memory\n"
+          << "         --profile_execution=none|decode (diagnostic timings)\n"
           << "HF builds: replace --bundle_dir with --hf_model_dir=DIR "
              "--asset_manifest=FILE --cache_dir=DIR\n";
 #if defined(LAB_ENABLE_VALUE_TRACE)
@@ -173,6 +175,8 @@ inline Options ParseOptions(int argc, char** argv, bool require_model = true) {
       o.dump_pipeline = boolean();
     else if (key == "--report_memory")
       o.report_memory = boolean();
+    else if (key == "--profile_execution")
+      o.profile_execution = value;
     else
       throw std::invalid_argument("Unknown option: " + key);
   }
@@ -185,6 +189,10 @@ inline Options ParseOptions(int argc, char** argv, bool require_model = true) {
       o.num_threads > 256 || o.prefill_rows < 1 || o.prefill_rows > 128)
     throw std::invalid_argument("Invalid/missing options; use --help");
   ValidateInputOptions(o);
+  if (o.profile_execution != "none" && o.profile_execution != "decode")
+    throw std::invalid_argument("--profile_execution must be none or decode");
+  if (!require_model && o.profile_execution != "none")
+    throw std::invalid_argument("Execution profiling requires a model runner");
   return o;
 }
 }  // namespace lab

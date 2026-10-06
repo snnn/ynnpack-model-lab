@@ -1,0 +1,523 @@
+{
+  "cooldown_seconds": 25,
+  "jobs": [
+    {
+      "job": "a-t1-short-none",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=none",
+        "taskset",
+        "80",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "a-t1-short-int2",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=int2",
+        "taskset",
+        "80",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "a-t1-short-int4",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=int4",
+        "taskset",
+        "80",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "a-t1-short-both",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=both",
+        "taskset",
+        "80",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "b-t1-short-both",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=both",
+        "taskset",
+        "80",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "b-t1-short-int4",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=int4",
+        "taskset",
+        "80",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "b-t1-short-int2",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=int2",
+        "taskset",
+        "80",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "b-t1-short-none",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=none",
+        "taskset",
+        "80",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "a-t4-short-none",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=none",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "a-t4-short-int2",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=int2",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "a-t4-short-int4",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=int4",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "a-t4-short-both",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=both",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "b-t4-short-both",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=both",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "b-t4-short-int4",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=int4",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "b-t4-short-int2",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=int2",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "b-t4-short-none",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=none",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p17.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "a-t4-long-none",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=none",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p1024.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "a-t4-long-int2",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=int2",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p1024.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "a-t4-long-int4",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=int4",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p1024.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "a-t4-long-both",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=both",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p1024.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "b-t4-long-both",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=both",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p1024.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "b-t4-long-int4",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=int4",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p1024.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "b-t4-long-int2",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=int2",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p1024.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    },
+    {
+      "job": "b-t4-long-none",
+      "engine": "ynn",
+      "argv": [
+        "env",
+        "LAB_EXPERIMENT_ONE_ROW_DOT=none",
+        "taskset",
+        "f0",
+        "$YNN_EXPERIMENT_BINARY",
+        "--bundle_dir=$YNN_BUNDLE_DIR",
+        "--parameter_dir=$PARAMETER_DIR",
+        "--cases_file=$FIXTURE_DIR/p1024.tsv",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--prefill_rows=128",
+        "--profile_execution=none",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir=$OUTPUT_DIR"
+      ]
+    }
+  ],
+  "kernel_argv": [
+    "taskset",
+    "80",
+    "$DOT_BENCHMARK_BINARY",
+    "--trials=7",
+    "--seconds=0.1",
+    "--stream_bytes=33554432",
+    "--shape=384,256",
+    "--shape=256,1536",
+    "--shape=256,2048",
+    "--shape=256,4096",
+    "--shape=256,6144",
+    "--shape=256,12288"
+  ]
+}

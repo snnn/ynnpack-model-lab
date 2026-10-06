@@ -1,0 +1,1118 @@
+[
+  {
+    "case": "p1024",
+    "repetition": -1,
+    "warmup": true,
+    "prompt_tokens": 1024,
+    "ttft_ms": 3272.955363,
+    "prefix_ms": 3196.034136,
+    "prefill_tok_s": 320.08419074032065,
+    "prompt_over_ttft_tok_s": 312.8670838521301,
+    "decode_ms": 77.0610780625,
+    "decode_tok_s": 12.976719572868614,
+    "decode_token_ms": [
+      77.072236,
+      76.870485,
+      77.143904,
+      77.207739,
+      77.019338,
+      77.185745,
+      77.121149,
+      77.09249,
+      76.719628,
+      77.067043,
+      77.07401,
+      76.986391,
+      77.05815,
+      77.317273,
+      76.966512,
+      77.075156
+    ],
+    "setup_ms": 35061.158477,
+    "peak_rss_mib": 4546.25390625,
+    "argmax": [
+      236772,
+      212373,
+      33934,
+      160144,
+      33934,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669
+    ],
+    "last_append_bytes": 50118656,
+    "view_copy_bytes": 0,
+    "frontend": {
+      "version": 1,
+      "mode": "token_ids",
+      "tokenizer": null,
+      "model_vocab_size": 262144,
+      "inputs": [
+        {
+          "role": "cases",
+          "path": "models/gemma4_e4b/fixtures/performance.tsv",
+          "bytes": 6247,
+          "sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+        }
+      ],
+      "cases": [
+        {
+          "name": "p17",
+          "prompt_tokens": 17,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p128",
+          "prompt_tokens": 128,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p1024",
+          "prompt_tokens": 1024,
+          "continuation_tokens": 16
+        }
+      ],
+      "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+      "tokenizer_load_ms": 0,
+      "tokenizer_encode_ms": 0,
+      "tokenizer_encode_calls": 0,
+      "frontend_total_ms": 1.382169,
+      "rss_before_kib": 4100,
+      "rss_after_release_kib": 4384,
+      "peak_rss_before_kib": 18056,
+      "peak_rss_after_release_kib": 18056
+    }
+  },
+  {
+    "case": "p1024",
+    "repetition": 0,
+    "warmup": false,
+    "prompt_tokens": 1024,
+    "ttft_ms": 3274.174202,
+    "prefix_ms": 3196.887587,
+    "prefill_tok_s": 319.99874007455986,
+    "prompt_over_ttft_tok_s": 312.7506164377261,
+    "decode_ms": 77.1071143125,
+    "decode_tok_s": 12.968971915447337,
+    "decode_token_ms": [
+      76.939972,
+      77.072878,
+      77.276888,
+      76.921671,
+      77.135691,
+      76.919521,
+      77.000751,
+      77.206084,
+      76.922639,
+      77.18753,
+      77.257168,
+      77.145132,
+      77.171499,
+      77.413468,
+      77.018244,
+      77.124693
+    ],
+    "setup_ms": 35061.158477,
+    "peak_rss_mib": 4546.25390625,
+    "argmax": [
+      236772,
+      212373,
+      33934,
+      160144,
+      33934,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669
+    ],
+    "last_append_bytes": 79937536,
+    "view_copy_bytes": 0,
+    "frontend": {
+      "version": 1,
+      "mode": "token_ids",
+      "tokenizer": null,
+      "model_vocab_size": 262144,
+      "inputs": [
+        {
+          "role": "cases",
+          "path": "models/gemma4_e4b/fixtures/performance.tsv",
+          "bytes": 6247,
+          "sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+        }
+      ],
+      "cases": [
+        {
+          "name": "p17",
+          "prompt_tokens": 17,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p128",
+          "prompt_tokens": 128,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p1024",
+          "prompt_tokens": 1024,
+          "continuation_tokens": 16
+        }
+      ],
+      "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+      "tokenizer_load_ms": 0,
+      "tokenizer_encode_ms": 0,
+      "tokenizer_encode_calls": 0,
+      "frontend_total_ms": 1.382169,
+      "rss_before_kib": 4100,
+      "rss_after_release_kib": 4384,
+      "peak_rss_before_kib": 18056,
+      "peak_rss_after_release_kib": 18056
+    }
+  },
+  {
+    "case": "p1024",
+    "repetition": 1,
+    "warmup": false,
+    "prompt_tokens": 1024,
+    "ttft_ms": 3283.712965,
+    "prefix_ms": 3206.68604,
+    "prefill_tok_s": 319.0209416323152,
+    "prompt_over_ttft_tok_s": 311.84211620031164,
+    "decode_ms": 77.250622875,
+    "decode_tok_s": 12.944879442824815,
+    "decode_token_ms": [
+      77.189422,
+      76.869212,
+      77.314181,
+      77.155933,
+      77.201355,
+      77.396543,
+      77.315705,
+      77.279715,
+      77.346134,
+      77.173068,
+      77.333965,
+      77.23469,
+      77.953405,
+      77.098196,
+      77.068111,
+      77.080331
+    ],
+    "setup_ms": 35061.158477,
+    "peak_rss_mib": 4546.25390625,
+    "argmax": [
+      236772,
+      212373,
+      33934,
+      160144,
+      33934,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669
+    ],
+    "last_append_bytes": 109756416,
+    "view_copy_bytes": 0,
+    "frontend": {
+      "version": 1,
+      "mode": "token_ids",
+      "tokenizer": null,
+      "model_vocab_size": 262144,
+      "inputs": [
+        {
+          "role": "cases",
+          "path": "models/gemma4_e4b/fixtures/performance.tsv",
+          "bytes": 6247,
+          "sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+        }
+      ],
+      "cases": [
+        {
+          "name": "p17",
+          "prompt_tokens": 17,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p128",
+          "prompt_tokens": 128,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p1024",
+          "prompt_tokens": 1024,
+          "continuation_tokens": 16
+        }
+      ],
+      "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+      "tokenizer_load_ms": 0,
+      "tokenizer_encode_ms": 0,
+      "tokenizer_encode_calls": 0,
+      "frontend_total_ms": 1.382169,
+      "rss_before_kib": 4100,
+      "rss_after_release_kib": 4384,
+      "peak_rss_before_kib": 18056,
+      "peak_rss_after_release_kib": 18056
+    }
+  },
+  {
+    "case": "p1024",
+    "repetition": 2,
+    "warmup": false,
+    "prompt_tokens": 1024,
+    "ttft_ms": 3283.836457,
+    "prefix_ms": 3206.432569,
+    "prefill_tok_s": 319.04616048702565,
+    "prompt_over_ttft_tok_s": 311.83038906130275,
+    "decode_ms": 77.487255125,
+    "decode_tok_s": 12.905348090945168,
+    "decode_token_ms": [
+      77.156924,
+      77.411841,
+      77.178921,
+      78.229318,
+      77.192694,
+      77.102636,
+      77.513439,
+      77.683612,
+      77.528127,
+      77.783992,
+      77.188781,
+      77.963893,
+      77.866085,
+      77.350252,
+      77.289807,
+      77.35576
+    ],
+    "setup_ms": 35061.158477,
+    "peak_rss_mib": 4546.25390625,
+    "argmax": [
+      236772,
+      212373,
+      33934,
+      160144,
+      33934,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669
+    ],
+    "last_append_bytes": 139575296,
+    "view_copy_bytes": 0,
+    "frontend": {
+      "version": 1,
+      "mode": "token_ids",
+      "tokenizer": null,
+      "model_vocab_size": 262144,
+      "inputs": [
+        {
+          "role": "cases",
+          "path": "models/gemma4_e4b/fixtures/performance.tsv",
+          "bytes": 6247,
+          "sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+        }
+      ],
+      "cases": [
+        {
+          "name": "p17",
+          "prompt_tokens": 17,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p128",
+          "prompt_tokens": 128,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p1024",
+          "prompt_tokens": 1024,
+          "continuation_tokens": 16
+        }
+      ],
+      "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+      "tokenizer_load_ms": 0,
+      "tokenizer_encode_ms": 0,
+      "tokenizer_encode_calls": 0,
+      "frontend_total_ms": 1.382169,
+      "rss_before_kib": 4100,
+      "rss_after_release_kib": 4384,
+      "peak_rss_before_kib": 18056,
+      "peak_rss_after_release_kib": 18056
+    }
+  },
+  {
+    "case": "p128",
+    "repetition": -1,
+    "warmup": true,
+    "prompt_tokens": 128,
+    "ttft_ms": 433.673936,
+    "prefix_ms": 365.659459,
+    "prefill_tok_s": 347.3176937561459,
+    "prompt_over_ttft_tok_s": 295.1526236061371,
+    "decode_ms": 67.7142814375,
+    "decode_tok_s": 14.767933422183557,
+    "decode_token_ms": [
+      67.686262,
+      67.624215,
+      67.6821,
+      67.657599,
+      67.928787,
+      67.657375,
+      67.640076,
+      67.561005,
+      67.771037,
+      67.648703,
+      67.813153,
+      67.63292,
+      67.671448,
+      67.862155,
+      67.856298,
+      67.73537
+    ],
+    "setup_ms": 35061.158477,
+    "peak_rss_mib": 4546.25390625,
+    "argmax": [
+      145399,
+      145399,
+      33934,
+      669,
+      669,
+      669,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669
+    ],
+    "last_append_bytes": 7913472,
+    "view_copy_bytes": 0,
+    "frontend": {
+      "version": 1,
+      "mode": "token_ids",
+      "tokenizer": null,
+      "model_vocab_size": 262144,
+      "inputs": [
+        {
+          "role": "cases",
+          "path": "models/gemma4_e4b/fixtures/performance.tsv",
+          "bytes": 6247,
+          "sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+        }
+      ],
+      "cases": [
+        {
+          "name": "p17",
+          "prompt_tokens": 17,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p128",
+          "prompt_tokens": 128,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p1024",
+          "prompt_tokens": 1024,
+          "continuation_tokens": 16
+        }
+      ],
+      "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+      "tokenizer_load_ms": 0,
+      "tokenizer_encode_ms": 0,
+      "tokenizer_encode_calls": 0,
+      "frontend_total_ms": 1.382169,
+      "rss_before_kib": 4100,
+      "rss_after_release_kib": 4384,
+      "peak_rss_before_kib": 18056,
+      "peak_rss_after_release_kib": 18056
+    }
+  },
+  {
+    "case": "p128",
+    "repetition": 0,
+    "warmup": false,
+    "prompt_tokens": 128,
+    "ttft_ms": 434.87041899999997,
+    "prefix_ms": 366.37415,
+    "prefill_tok_s": 346.6401764425793,
+    "prompt_over_ttft_tok_s": 294.3405538926758,
+    "decode_ms": 67.89096075,
+    "decode_tok_s": 14.72950137916556,
+    "decode_token_ms": [
+      67.760961,
+      67.73525,
+      68.022441,
+      67.880705,
+      67.925448,
+      68.05344,
+      67.87509,
+      68.244792,
+      67.990745,
+      67.967122,
+      67.651347,
+      67.720693,
+      67.633301,
+      67.828368,
+      68.105952,
+      67.859717
+    ],
+    "setup_ms": 35061.158477,
+    "peak_rss_mib": 4546.25390625,
+    "argmax": [
+      145399,
+      145399,
+      33934,
+      669,
+      669,
+      669,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669
+    ],
+    "last_append_bytes": 12042240,
+    "view_copy_bytes": 0,
+    "frontend": {
+      "version": 1,
+      "mode": "token_ids",
+      "tokenizer": null,
+      "model_vocab_size": 262144,
+      "inputs": [
+        {
+          "role": "cases",
+          "path": "models/gemma4_e4b/fixtures/performance.tsv",
+          "bytes": 6247,
+          "sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+        }
+      ],
+      "cases": [
+        {
+          "name": "p17",
+          "prompt_tokens": 17,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p128",
+          "prompt_tokens": 128,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p1024",
+          "prompt_tokens": 1024,
+          "continuation_tokens": 16
+        }
+      ],
+      "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+      "tokenizer_load_ms": 0,
+      "tokenizer_encode_ms": 0,
+      "tokenizer_encode_calls": 0,
+      "frontend_total_ms": 1.382169,
+      "rss_before_kib": 4100,
+      "rss_after_release_kib": 4384,
+      "peak_rss_before_kib": 18056,
+      "peak_rss_after_release_kib": 18056
+    }
+  },
+  {
+    "case": "p128",
+    "repetition": 1,
+    "warmup": false,
+    "prompt_tokens": 128,
+    "ttft_ms": 435.095894,
+    "prefix_ms": 367.232415,
+    "prefill_tok_s": 345.8300379066483,
+    "prompt_over_ttft_tok_s": 294.1880209975045,
+    "decode_ms": 67.7351486875,
+    "decode_tok_s": 14.763383846893987,
+    "decode_token_ms": [
+      67.563789,
+      67.733192,
+      67.554404,
+      67.959754,
+      67.918876,
+      67.907135,
+      67.650927,
+      67.613409,
+      67.675064,
+      67.668233,
+      67.888388,
+      67.729925,
+      67.725641,
+      67.870647,
+      67.61661,
+      67.686385
+    ],
+    "setup_ms": 35061.158477,
+    "peak_rss_mib": 4546.25390625,
+    "argmax": [
+      145399,
+      145399,
+      33934,
+      669,
+      669,
+      669,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669
+    ],
+    "last_append_bytes": 16171008,
+    "view_copy_bytes": 0,
+    "frontend": {
+      "version": 1,
+      "mode": "token_ids",
+      "tokenizer": null,
+      "model_vocab_size": 262144,
+      "inputs": [
+        {
+          "role": "cases",
+          "path": "models/gemma4_e4b/fixtures/performance.tsv",
+          "bytes": 6247,
+          "sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+        }
+      ],
+      "cases": [
+        {
+          "name": "p17",
+          "prompt_tokens": 17,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p128",
+          "prompt_tokens": 128,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p1024",
+          "prompt_tokens": 1024,
+          "continuation_tokens": 16
+        }
+      ],
+      "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+      "tokenizer_load_ms": 0,
+      "tokenizer_encode_ms": 0,
+      "tokenizer_encode_calls": 0,
+      "frontend_total_ms": 1.382169,
+      "rss_before_kib": 4100,
+      "rss_after_release_kib": 4384,
+      "peak_rss_before_kib": 18056,
+      "peak_rss_after_release_kib": 18056
+    }
+  },
+  {
+    "case": "p128",
+    "repetition": 2,
+    "warmup": false,
+    "prompt_tokens": 128,
+    "ttft_ms": 434.82289599999996,
+    "prefix_ms": 366.890837,
+    "prefill_tok_s": 346.1520081516781,
+    "prompt_over_ttft_tok_s": 294.37272318797125,
+    "decode_ms": 67.745179375,
+    "decode_tok_s": 14.761197907006057,
+    "decode_token_ms": [
+      67.726881,
+      67.570153,
+      68.049141,
+      67.599255,
+      67.629441,
+      67.942667,
+      67.77406,
+      67.709313,
+      67.825954,
+      67.807186,
+      67.789876,
+      67.772635,
+      67.765628,
+      67.737662,
+      67.608842,
+      67.614176
+    ],
+    "setup_ms": 35061.158477,
+    "peak_rss_mib": 4546.25390625,
+    "argmax": [
+      145399,
+      145399,
+      33934,
+      669,
+      669,
+      669,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669
+    ],
+    "last_append_bytes": 20299776,
+    "view_copy_bytes": 0,
+    "frontend": {
+      "version": 1,
+      "mode": "token_ids",
+      "tokenizer": null,
+      "model_vocab_size": 262144,
+      "inputs": [
+        {
+          "role": "cases",
+          "path": "models/gemma4_e4b/fixtures/performance.tsv",
+          "bytes": 6247,
+          "sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+        }
+      ],
+      "cases": [
+        {
+          "name": "p17",
+          "prompt_tokens": 17,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p128",
+          "prompt_tokens": 128,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p1024",
+          "prompt_tokens": 1024,
+          "continuation_tokens": 16
+        }
+      ],
+      "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+      "tokenizer_load_ms": 0,
+      "tokenizer_encode_ms": 0,
+      "tokenizer_encode_calls": 0,
+      "frontend_total_ms": 1.382169,
+      "rss_before_kib": 4100,
+      "rss_after_release_kib": 4384,
+      "peak_rss_before_kib": 18056,
+      "peak_rss_after_release_kib": 18056
+    }
+  },
+  {
+    "case": "p17",
+    "repetition": -1,
+    "warmup": true,
+    "prompt_tokens": 17,
+    "ttft_ms": 130.014504,
+    "prefix_ms": 63.456079,
+    "prefill_tok_s": 252.1429034403465,
+    "prompt_over_ttft_tok_s": 130.75464257433924,
+    "decode_ms": 65.91221475,
+    "decode_tok_s": 15.17169471232189,
+    "decode_token_ms": [
+      65.667906,
+      65.875432,
+      65.841262,
+      65.738052,
+      65.878671,
+      65.730493,
+      65.902698,
+      65.965428,
+      65.61334,
+      65.79895,
+      65.937587,
+      65.760637,
+      66.132316,
+      66.405097,
+      65.994057,
+      66.35351
+    ],
+    "setup_ms": 35061.158477,
+    "peak_rss_mib": 4546.25390625,
+    "argmax": [
+      236743,
+      669,
+      33934,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669
+    ],
+    "last_append_bytes": 946176,
+    "view_copy_bytes": 0,
+    "frontend": {
+      "version": 1,
+      "mode": "token_ids",
+      "tokenizer": null,
+      "model_vocab_size": 262144,
+      "inputs": [
+        {
+          "role": "cases",
+          "path": "models/gemma4_e4b/fixtures/performance.tsv",
+          "bytes": 6247,
+          "sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+        }
+      ],
+      "cases": [
+        {
+          "name": "p17",
+          "prompt_tokens": 17,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p128",
+          "prompt_tokens": 128,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p1024",
+          "prompt_tokens": 1024,
+          "continuation_tokens": 16
+        }
+      ],
+      "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+      "tokenizer_load_ms": 0,
+      "tokenizer_encode_ms": 0,
+      "tokenizer_encode_calls": 0,
+      "frontend_total_ms": 1.382169,
+      "rss_before_kib": 4100,
+      "rss_after_release_kib": 4384,
+      "peak_rss_before_kib": 18056,
+      "peak_rss_after_release_kib": 18056
+    }
+  },
+  {
+    "case": "p17",
+    "repetition": 0,
+    "warmup": false,
+    "prompt_tokens": 17,
+    "ttft_ms": 127.43308,
+    "prefix_ms": 61.50026,
+    "prefill_tok_s": 260.16150175625273,
+    "prompt_over_ttft_tok_s": 133.4033517827553,
+    "decode_ms": 66.1476064375,
+    "decode_tok_s": 15.11770499125855,
+    "decode_token_ms": [
+      65.956159,
+      65.973298,
+      65.981101,
+      65.927762,
+      65.772606,
+      65.831566,
+      65.955764,
+      65.84378,
+      66.204594,
+      66.432964,
+      67.336561,
+      65.97917,
+      65.882629,
+      65.862306,
+      65.957943,
+      67.4635
+    ],
+    "setup_ms": 35061.158477,
+    "peak_rss_mib": 4546.25390625,
+    "argmax": [
+      236743,
+      669,
+      33934,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669
+    ],
+    "last_append_bytes": 1892352,
+    "view_copy_bytes": 0,
+    "frontend": {
+      "version": 1,
+      "mode": "token_ids",
+      "tokenizer": null,
+      "model_vocab_size": 262144,
+      "inputs": [
+        {
+          "role": "cases",
+          "path": "models/gemma4_e4b/fixtures/performance.tsv",
+          "bytes": 6247,
+          "sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+        }
+      ],
+      "cases": [
+        {
+          "name": "p17",
+          "prompt_tokens": 17,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p128",
+          "prompt_tokens": 128,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p1024",
+          "prompt_tokens": 1024,
+          "continuation_tokens": 16
+        }
+      ],
+      "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+      "tokenizer_load_ms": 0,
+      "tokenizer_encode_ms": 0,
+      "tokenizer_encode_calls": 0,
+      "frontend_total_ms": 1.382169,
+      "rss_before_kib": 4100,
+      "rss_after_release_kib": 4384,
+      "peak_rss_before_kib": 18056,
+      "peak_rss_after_release_kib": 18056
+    }
+  },
+  {
+    "case": "p17",
+    "repetition": 1,
+    "warmup": false,
+    "prompt_tokens": 17,
+    "ttft_ms": 127.94625199999999,
+    "prefix_ms": 61.945068,
+    "prefill_tok_s": 258.2933640495802,
+    "prompt_over_ttft_tok_s": 132.86829222633267,
+    "decode_ms": 65.84214862500001,
+    "decode_tok_s": 15.187839717920504,
+    "decode_token_ms": [
+      65.587984,
+      65.742435,
+      65.863197,
+      65.692259,
+      65.750606,
+      65.988948,
+      65.75808,
+      65.886779,
+      65.80076,
+      65.833938,
+      65.776132,
+      65.910076,
+      65.864948,
+      65.862222,
+      65.937025,
+      66.218989
+    ],
+    "setup_ms": 35061.158477,
+    "peak_rss_mib": 4546.25390625,
+    "argmax": [
+      236743,
+      669,
+      33934,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669
+    ],
+    "last_append_bytes": 2838528,
+    "view_copy_bytes": 0,
+    "frontend": {
+      "version": 1,
+      "mode": "token_ids",
+      "tokenizer": null,
+      "model_vocab_size": 262144,
+      "inputs": [
+        {
+          "role": "cases",
+          "path": "models/gemma4_e4b/fixtures/performance.tsv",
+          "bytes": 6247,
+          "sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+        }
+      ],
+      "cases": [
+        {
+          "name": "p17",
+          "prompt_tokens": 17,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p128",
+          "prompt_tokens": 128,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p1024",
+          "prompt_tokens": 1024,
+          "continuation_tokens": 16
+        }
+      ],
+      "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+      "tokenizer_load_ms": 0,
+      "tokenizer_encode_ms": 0,
+      "tokenizer_encode_calls": 0,
+      "frontend_total_ms": 1.382169,
+      "rss_before_kib": 4100,
+      "rss_after_release_kib": 4384,
+      "peak_rss_before_kib": 18056,
+      "peak_rss_after_release_kib": 18056
+    }
+  },
+  {
+    "case": "p17",
+    "repetition": 2,
+    "warmup": false,
+    "prompt_tokens": 17,
+    "ttft_ms": 127.41337200000001,
+    "prefix_ms": 61.537598,
+    "prefill_tok_s": 260.0036485011976,
+    "prompt_over_ttft_tok_s": 133.42398629870652,
+    "decode_ms": 65.821347625,
+    "decode_tok_s": 15.192639410806958,
+    "decode_token_ms": [
+      65.656734,
+      65.639775,
+      65.806212,
+      65.743447,
+      65.749569,
+      65.791112,
+      65.816489,
+      65.846736,
+      65.758715,
+      65.847487,
+      65.93033,
+      65.825465,
+      65.829202,
+      65.95092,
+      65.798939,
+      66.15043
+    ],
+    "setup_ms": 35061.158477,
+    "peak_rss_mib": 4546.25390625,
+    "argmax": [
+      236743,
+      669,
+      33934,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669,
+      160144,
+      669
+    ],
+    "last_append_bytes": 3784704,
+    "view_copy_bytes": 0,
+    "frontend": {
+      "version": 1,
+      "mode": "token_ids",
+      "tokenizer": null,
+      "model_vocab_size": 262144,
+      "inputs": [
+        {
+          "role": "cases",
+          "path": "models/gemma4_e4b/fixtures/performance.tsv",
+          "bytes": 6247,
+          "sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+        }
+      ],
+      "cases": [
+        {
+          "name": "p17",
+          "prompt_tokens": 17,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p128",
+          "prompt_tokens": 128,
+          "continuation_tokens": 16
+        },
+        {
+          "name": "p1024",
+          "prompt_tokens": 1024,
+          "continuation_tokens": 16
+        }
+      ],
+      "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+      "tokenizer_load_ms": 0,
+      "tokenizer_encode_ms": 0,
+      "tokenizer_encode_calls": 0,
+      "frontend_total_ms": 1.382169,
+      "rss_before_kib": 4100,
+      "rss_after_release_kib": 4384,
+      "peak_rss_before_kib": 18056,
+      "peak_rss_after_release_kib": 18056
+    }
+  }
+]

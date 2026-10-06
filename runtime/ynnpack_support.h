@@ -34,6 +34,7 @@
 #include <utility>
 #include <vector>
 
+#include "execution_profile.h"
 #include "packed_routing.h"
 #include "checked_index.h"
 #include "resource_state.h"
@@ -201,6 +202,32 @@ class Graph {
       completion_coverage_.emplace(token, coverage);
     }
     operation_open_ = false;
+  }
+
+  void BeginProfileOperation(const char* scope, const char* kind,
+                             std::vector<uint32_t> inputs,
+                             std::vector<uint32_t> outputs,
+                             std::vector<std::string> input_names = {}) {
+    if (profile_open_) throw std::logic_error("nested profile label");
+    profile_open_ = true;
+    profile_node_begin_ = graph_->nodes.size();
+    profile_operations_.push_back({scope, kind, std::move(inputs), std::move(outputs), std::move(input_names)});
+  }
+  void EndProfileOperation() {
+    if (!profile_open_) throw std::logic_error("missing profile label");
+    auto& outputs = profile_operations_.back().outputs;
+    for (size_t i = profile_node_begin_; i < graph_->nodes.size(); ++i)
+      for (auto id : graph_->nodes[i].outputs)
+        if (id != YNN_INVALID_VALUE_ID) outputs.push_back(id);
+    std::sort(outputs.begin(), outputs.end());
+    outputs.erase(std::unique(outputs.begin(), outputs.end()), outputs.end());
+    profile_open_ = false;
+  }
+  std::shared_ptr<ExecutionProfile> TrackExecution(size_t event_limit = 65536) {
+    if (runtime_ || execution_profile_)
+      throw std::logic_error("enable execution profiling before Compile");
+    execution_profile_ = std::make_shared<ExecutionProfile>(profile_operations_, event_limit);
+    return execution_profile_;
   }
 
   void Tensor(uint32_t id, const std::string& name, ynn_type type,
@@ -1016,6 +1043,7 @@ class Graph {
       }
     }
     Check(ynn_optimize_subgraph(graph_.get(), nullptr, 0));
+    if (execution_profile_) execution_profile_->AttachCreators(*graph_);
     if (threads > 1)
       pool_ = std::make_unique<slinky::thread_pool_impl>(threads - 1);
     ynn_runtime_t runtime = nullptr;
@@ -1023,6 +1051,8 @@ class Graph {
                              reinterpret_cast<ynn_threadpool_t>(pool_.get()), 0,
                              &runtime));
     runtime_.reset(runtime);
+    if (execution_profile_)
+      runtime_->pipeline.body = execution_profile_->Instrument(runtime_->pipeline.body);
     for (const auto& [name, value] : instance_values_) {
       runtime_->scalar_parameter_values.at(parameters_.at(name)) = value;
       scalar_bound_.insert(name);
@@ -1126,6 +1156,7 @@ class Graph {
   }
   public:
   void Run() {
+    ExecutionProfile::Span profile_span(execution_profile_.get(), 0);
     if (!runtime_) throw std::logic_error("uncompiled graph");
     if (failed_)
       throw std::logic_error("failed stateful runtime must be recreated");
@@ -1301,6 +1332,10 @@ class Graph {
   std::unique_ptr<ynn_runtime, decltype(&ynn_delete_runtime)> runtime_{
       nullptr, ynn_delete_runtime};
   std::map<std::string, uint32_t> names_;
+  std::vector<ProfileOperation> profile_operations_;
+  size_t profile_node_begin_ = 0;
+  bool profile_open_ = false;
+  std::shared_ptr<ExecutionProfile> execution_profile_;
   std::map<std::string, size_t> parameters_;
   std::map<std::string, std::pair<int64_t, int64_t>> parameter_ranges_;
   std::set<std::string> instance_parameters_;

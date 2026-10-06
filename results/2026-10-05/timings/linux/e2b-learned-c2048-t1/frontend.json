@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "mode": "token_ids",
+  "tokenizer": null,
+  "model_vocab_size": 262144,
+  "inputs": [
+    {
+      "role": "cases",
+      "path": "models/gemma4_e2b/fixtures/performance.tsv",
+      "bytes": 6493,
+      "sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+    }
+  ],
+  "cases": [
+    {
+      "name": "p17",
+      "prompt_tokens": 17,
+      "continuation_tokens": 32
+    },
+    {
+      "name": "p128",
+      "prompt_tokens": 128,
+      "continuation_tokens": 32
+    },
+    {
+      "name": "p1024",
+      "prompt_tokens": 1024,
+      "continuation_tokens": 32
+    }
+  ],
+  "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+  "tokenizer_load_ms": 0,
+  "tokenizer_encode_ms": 0,
+  "tokenizer_encode_calls": 0,
+  "frontend_total_ms": 1.275982,
+  "rss_before_kib": 4028,
+  "rss_after_release_kib": 4428,
+  "peak_rss_before_kib": 18116,
+  "peak_rss_after_release_kib": 18116
+}

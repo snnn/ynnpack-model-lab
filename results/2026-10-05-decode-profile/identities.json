@@ -1,0 +1,135 @@
+{
+  "binaries_sha256": {
+    "ynn-profile": "fa816215827f81e7b6a80c492e7c2343e94baa73d99a77c4850db2beb5a2c785",
+    "ynn-profile-v2": "b639bfd3390b0da480bdc77ac6f7aa2d4af5bdab864e0a20d93118f7674ff27c",
+    "ynn-final": "aaf0205c0723f6a653914af48d985c2fd22f67a3787e9d389d72cf4066a31e67",
+    "native-control": "66df329632af5008c61f04b7f026c6cef0464c01b572ebbd8dd900b114153aa5",
+    "native-profile": "4da482163d7bf8ac58c3de5625091685fa516f51cf7a7bcd7514d0e8bbc08d50",
+    "native-final": "381e6ef4733d5dc1aa1b466600eca649764f23d10fd20fe36b383280bae7bf8a"
+  },
+  "source_sha256": {
+    "runtime/execution_profile.h": "ccf31c75f56ce367d79d1a2ef18f4416dfd99522fe9b8088d9133349c2c08f54",
+    "runtime/ynnpack_support.h": "8bbd95bb10b489748e344c913a27d286f4b355292dd465adf39f6b1e3d8cd55c",
+    "models/gemma4/runner.cc": "132f0420f644140e41945b6c423fef1c15de86770173ee18c6bf9e7389107305",
+    "tools/native_xnnpack_profile.h": "5bf0b816551304b892c7ccebd6f126669bd20f7ccf0d942e93b94ff7318aba21",
+    "models/gemma4_e2b/generated/gemma4_decode.cc": "4fea39902b60c1136c9bafed76f041812531d61e2241586b57c0f743e8b8e67e",
+    "models/gemma4_e2b/generated/gemma4_decode.h": "414689ac783e4bea744ec49999bcb94edb4279a0f38194383706ce2416452c29",
+    "models/gemma4_e2b/generated/gemma4_decode_DefineValuesToEmbedding_3.cc": "693f1340b7df38f830c38f9323f0fb8594bb20fb9f33a6fb85ac2f8750e65225",
+    "models/gemma4_e2b/generated/gemma4_decode_DefineValues_0.cc": "f46e1993b9331f8516ef250f75d619e7ca6842f15a7f2da7df3413eb4922ed1a",
+    "models/gemma4_e2b/generated/gemma4_decode_DefineValues_1.cc": "5e1885fbc67047e7ddd3db0efd84e8a050e5321028df781f9fb91d3fbb5a1fea",
+    "models/gemma4_e2b/generated/gemma4_decode_DefineValues_2.cc": "e278a8cc52d6922beeabc3d16804f0c60c2cdba4008eb82ae4527ffd097478f8",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer12ToLayer14_8.cc": "3c10b626d3f5bdae67749a0f9b144aaf31a0b5455d27e949c858e88df476674d",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer15ToLayer18_9.cc": "287fc52ba7b43c20df2aba47cded24937e13a826641d26c2fcc85271f9f257e3",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer19ToLayer22_10.cc": "f211edf08ef45aa97504b38d428f8e8611ef313cca98ba0527ff060af372c128",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer23ToLayer26_11.cc": "8d873a536273d845bdb5ee7c7f4d916a9953adc294f050eac5fe39fec2553cf0",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer27ToLayer30_12.cc": "4185024eb3630ca90cd642043abcb2666f9d53e838ea8c3140bb494ef2143fb3",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer31ToFinalNormAndHead_13.cc": "48bb43c6aedc8f6abace5b3358d04560db2c716e7c5d7cd0fd5f9ee6e3911d8c",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer3ToLayer5_5.cc": "72546eeafdebab0f207560418c0e057086661178b3264ffc3ce03a0f9c2371a2",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer6ToLayer8_6.cc": "d48b1b60946bccaa56ef609a53e9eb36fb7f1a6de4d841f364659e7bdeb651f7",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer9ToLayer11_7.cc": "e7f810666779030ba4209adef2ebcec1008b0c310d2aa87a4f77f1685311d411",
+    "models/gemma4_e2b/generated/gemma4_decode_RopeTablesToLayer2_4.cc": "cdb6df0e98fa25e1c34ceb3669061b55ca70fd89b5ecdbcacaf052db1c15d9cc",
+    "models/gemma4_e2b/generated/gemma4_decode_builder.h": "bf3134743c810859216f621dad7204fe8b73ec77c957af12ed6cde1d2c6270b0",
+    "models/gemma4_e2b/generated/gemma4_decode_sources.cmake": "8e899ce25d0d16b3fbaa2b9dedf5523b869a6ae3c5cbcb9c4278cb82d7ccde5f",
+    "models/gemma4_e2b/generated/gemma4_prefill.cc": "34d609a756340f795b4cf8952f7cbb31fc3b1d2985a6fd4c650615a32db24db6",
+    "models/gemma4_e2b/generated/gemma4_prefill.h": "19601784cb615a824dac76d0a1052f397d5247df7a1e99f5004f8ad9f3953dcb",
+    "models/gemma4_e2b/generated/gemma4_prefill_DefineValuesToInputProjection_1.cc": "db39f540d6b6a03bfb4f6ede41c46e9c68bb6ac2f4cb80429ba372465ab067a6",
+    "models/gemma4_e2b/generated/gemma4_prefill_DefineValues_0.cc": "cd5e48e2ef12ec9b3ed98954f0ec5fd54ac0c529f38b3ca0f1497b726bd31935",
+    "models/gemma4_e2b/generated/gemma4_prefill_Layer0ToLayer2_2.cc": "ac8e7d322e2a408a8775288cefcd346a1799b18a06b370254c959be98e967358",
+    "models/gemma4_e2b/generated/gemma4_prefill_Layer12ToLayer14_6.cc": "7975ed9dc7217d1a186736785167bab5d055e8767e5500259f9ece2eda7ed1f3",
+    "models/gemma4_e2b/generated/gemma4_prefill_Layer3ToLayer5_3.cc": "6e2b2e1f3a85516f2084444d0ee0c396ea309794135d99878f02d641416edff4",
+    "models/gemma4_e2b/generated/gemma4_prefill_Layer6ToLayer8_4.cc": "43e39eebfa0d790deea80d5913ac79104e058754509438dbc8cb2d582b7a2a68",
+    "models/gemma4_e2b/generated/gemma4_prefill_Layer9ToLayer11_5.cc": "d9c86dd391bf452c2178bf4bfc3bc5e8b15c266f33e0e645fbdaaaba60f52e70",
+    "models/gemma4_e2b/generated/gemma4_prefill_builder.h": "0c7c9e9e9f97791f40c9eecd91f4ae587a1d4fb33ef158b845a612e0e9cbadf9",
+    "models/gemma4_e2b/generated/gemma4_prefill_sources.cmake": "adfe14e432324ee815eb678db91366807d04a52c7fe8ea5b8fc723d79cd1829b",
+    "models/gemma4_e2b/generated/model.json": "b3a9f64504bd733b9c7f5d8037304e63620beda6282a7585e566f1314134d0af"
+  },
+  "dependencies": [
+    {
+      "name": "XNNPACK",
+      "repository": "google/XNNPACK",
+      "revision": "f5122810ee8bb7461ed73efe7a678a472866cee3",
+      "url": "https://codeload.github.com/google/XNNPACK/zip/f5122810ee8bb7461ed73efe7a678a472866cee3",
+      "sha256": "47122c5f125d5fbadc5d1e6de057ea546828895d7c0ca60027bfc4d53f221268"
+    },
+    {
+      "name": "slinky",
+      "repository": "dsharlet/slinky",
+      "revision": "d18c98551c77f366857f125e3a0f7886deb82a47",
+      "url": "https://codeload.github.com/dsharlet/slinky/zip/d18c98551c77f366857f125e3a0f7886deb82a47",
+      "sha256": "e0f98371b2a89918bcac16e906966de36de62a80f56a2e17eb3b6cbb12fa17fe"
+    },
+    {
+      "name": "cpuinfo",
+      "repository": "pytorch/cpuinfo",
+      "revision": "8ce83db858065145192c97af90cb668ad72a12e9",
+      "url": "https://codeload.github.com/pytorch/cpuinfo/zip/8ce83db858065145192c97af90cb668ad72a12e9",
+      "sha256": "fe2aa43254838a2eb5658d1742696473a1d834a57f2a0b38d533346bcd212482"
+    },
+    {
+      "name": "tokenizers-cpp",
+      "repository": "mlc-ai/tokenizers-cpp",
+      "revision": "c586c52f93f7b060753bd2388eb96a105cb7374d",
+      "url": "https://codeload.github.com/mlc-ai/tokenizers-cpp/zip/c586c52f93f7b060753bd2388eb96a105cb7374d",
+      "sha256": "4c217141592091601a4d818999a5ea92f1a3ff61a8ae1d00e9d16d943bb5a248",
+      "feature": "tokenizers"
+    },
+    {
+      "name": "sentencepiece",
+      "repository": "google/sentencepiece",
+      "revision": "e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+      "url": "https://codeload.github.com/google/sentencepiece/zip/e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+      "sha256": "f47359a9c786bca379a0c34663dd5e417dbc0104924f7cab50fdaa493217d57f",
+      "feature": "tokenizers"
+    },
+    {
+      "name": "abseil",
+      "revision": "255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+      "url": "https://codeload.github.com/abseil/abseil-cpp/zip/255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+      "sha256": "e945549b45648c00cb07119fb7697e13762da3e0b8cdb244d8e6550bbe1e53cd",
+      "feature": "tokenizers",
+      "repository": "abseil/abseil-cpp"
+    }
+  ],
+  "native_xnnpack_archive_sha256": "03415fd5bda574d2c4923fd99ad5adb8f4a61120d8e274d9da7c08b7c5ffac33",
+  "lab_commit_at_start": "7c3a9caec93a05e6a72288b4387795e189d89e06",
+  "lab_changes": "Generated operation labels, execution profiler and retained known-row packing correction. Final source formatting occurred after the main campaign; final binaries receive separate correctness validation. The native profiling helper subsequently received an attribution-only comment.",
+  "fixtures_sha256": {
+    "long.tsv": "39bbd18a036f9574edb41fc57557f745b7574dc395c6d81292ec1181c3aa31bd",
+    "p1024.tsv": "5e5eddc6f73a9913e8dfefcc358668bf9fb86700c6b0d10d0135c44e034bc291",
+    "p128.tsv": "e1d2ab58421b2f71425fe30cf777562e882d19ae3418e35241b3448fc97ecb0f",
+    "p17.tsv": "1228941b116f27231114bfd25e7c80126fc4f78051843891654431379ebec77b",
+    "pilot.tsv": "fd8d40b3a1c81e67a7aa04657620c3a7af09a60321c8378b30346770d2893880",
+    "correctness.tsv": "a2f8ae88d8ab4efe451acdacc1c5e4259f2016121154fdd3537ba4a009568ce8"
+  },
+  "ynn_build": {
+    "ndk": "r28c (28.2.13676358)",
+    "abi": "arm64-v8a",
+    "android_api": 28,
+    "libcxx": "static",
+    "release": true,
+    "runner_optimization": "-O1",
+    "floating_point_contract": "off",
+    "rtti": false,
+    "cpuinfo": true,
+    "dotprod": true,
+    "i8mm": true,
+    "sme": false,
+    "sme2": false,
+    "tokenizers": false
+  },
+  "native_driver_build": {
+    "target": "aarch64-none-linux-android24",
+    "optimization": "-O2",
+    "floating_point_contract": "off",
+    "debug_info": true,
+    "libraries": "exact archived linker inputs; XNNPACK archive hash recorded separately"
+  },
+  "binaries_usage": {
+    "ynn-profile": "Samsung main unprofiled latency campaign, profile_execution=none; early disabled label implementation",
+    "ynn-profile-v2": "Samsung attribution profiles and Pixel/TECNO latency and profiles; corrected pre-recycling attribution",
+    "ynn-final": "Samsung profiling-overhead and final correctness checks; final source formatting",
+    "native-control": "All main unprofiled native latency measurements and control correctness",
+    "native-profile": "All attribution profiles; archived libraries unchanged",
+    "native-final": "Final source formatting/relink validation; archived libraries unchanged"
+  }
+}

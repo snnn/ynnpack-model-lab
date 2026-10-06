@@ -1,0 +1,133 @@
+{
+  "lab_commit_at_start": "7c3a9caec93a05e6a72288b4387795e189d89e06",
+  "dependencies": [
+    {
+      "name": "XNNPACK",
+      "repository": "google/XNNPACK",
+      "revision": "f5122810ee8bb7461ed73efe7a678a472866cee3",
+      "url": "https://codeload.github.com/google/XNNPACK/zip/f5122810ee8bb7461ed73efe7a678a472866cee3",
+      "sha256": "47122c5f125d5fbadc5d1e6de057ea546828895d7c0ca60027bfc4d53f221268"
+    },
+    {
+      "name": "slinky",
+      "repository": "dsharlet/slinky",
+      "revision": "d18c98551c77f366857f125e3a0f7886deb82a47",
+      "url": "https://codeload.github.com/dsharlet/slinky/zip/d18c98551c77f366857f125e3a0f7886deb82a47",
+      "sha256": "e0f98371b2a89918bcac16e906966de36de62a80f56a2e17eb3b6cbb12fa17fe"
+    },
+    {
+      "name": "cpuinfo",
+      "repository": "pytorch/cpuinfo",
+      "revision": "8ce83db858065145192c97af90cb668ad72a12e9",
+      "url": "https://codeload.github.com/pytorch/cpuinfo/zip/8ce83db858065145192c97af90cb668ad72a12e9",
+      "sha256": "fe2aa43254838a2eb5658d1742696473a1d834a57f2a0b38d533346bcd212482"
+    },
+    {
+      "name": "tokenizers-cpp",
+      "repository": "mlc-ai/tokenizers-cpp",
+      "revision": "c586c52f93f7b060753bd2388eb96a105cb7374d",
+      "url": "https://codeload.github.com/mlc-ai/tokenizers-cpp/zip/c586c52f93f7b060753bd2388eb96a105cb7374d",
+      "sha256": "4c217141592091601a4d818999a5ea92f1a3ff61a8ae1d00e9d16d943bb5a248",
+      "feature": "tokenizers"
+    },
+    {
+      "name": "sentencepiece",
+      "repository": "google/sentencepiece",
+      "revision": "e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+      "url": "https://codeload.github.com/google/sentencepiece/zip/e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+      "sha256": "f47359a9c786bca379a0c34663dd5e417dbc0104924f7cab50fdaa493217d57f",
+      "feature": "tokenizers"
+    },
+    {
+      "name": "abseil",
+      "revision": "255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+      "url": "https://codeload.github.com/abseil/abseil-cpp/zip/255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+      "sha256": "e945549b45648c00cb07119fb7697e13762da3e0b8cdb244d8e6550bbe1e53cd",
+      "feature": "tokenizers",
+      "repository": "abseil/abseil-cpp"
+    }
+  ],
+  "binaries_sha256": {
+    "gemma4_e2b": "d39644430ad866b546d083c6079212050fd862e7df1b94b78ade78d6e69f24ff",
+    "dot_decode_bench": "ae3aefacc6e17509d34f7e6cc6240c1cae4ba7e63998d0457f3ca4865153e303"
+  },
+  "retained_baseline_binary_sha256": "aaf0205c0723f6a653914af48d985c2fd22f67a3787e9d389d72cf4066a31e67",
+  "source_sha256": {
+    "tools/dot_decode_bench.cc": "fce6bb95ee0cb73d0c4e9b4a2bee9f811bf62c4793ca91e1d3380f738c55b7f0",
+    "patches/experiments/ynnpack-one-row-dotprod.patch": "3ec8990ffe384be49c68708ba30a58cc4e2a81f31ee143016edfb5611bda2715"
+  },
+  "compiled_backend_dot_sha256": "088c9eeb4ed62e2b598f45dcde9c881685a877f960752e66d5ee1b9c95af5c6d",
+  "patch_note": "The compiled experimental dot.cc has the same code as the portable patch, with includes sorted by the lab formatter. The normal dependency pins and patches are unchanged.",
+  "build": {
+    "ndk": "r28c (28.2.13676358)",
+    "abi": "arm64-v8a",
+    "android_api": 28,
+    "libcxx": "static",
+    "release": true,
+    "runner_optimization": "-O1",
+    "floating_point_contract": "off",
+    "rtti": false,
+    "cpuinfo": true,
+    "dotprod": true,
+    "i8mm": true,
+    "sme": false,
+    "sme2": false,
+    "tokenizers": false
+  },
+  "fixtures_sha256": {
+    "p1024.tsv": "5e5eddc6f73a9913e8dfefcc358668bf9fb86700c6b0d10d0135c44e034bc291",
+    "p17.tsv": "1228941b116f27231114bfd25e7c80126fc4f78051843891654431379ebec77b",
+    "correctness.tsv": "a2f8ae88d8ab4efe451acdacc1c5e4259f2016121154fdd3537ba4a009568ce8"
+  },
+  "source_control_note": "Working tree includes the retained profiling and known-row packing changes.",
+  "actual_compile_flags": {
+    "dot_benchmark": [
+      "-O3",
+      "-DNDEBUG",
+      "-std=gnu++17",
+      "-O2",
+      "-ffp-contract=off",
+      "-fno-rtti"
+    ],
+    "int2_i8mm": [
+      "-fno-rtti",
+      "-O3",
+      "-DNDEBUG",
+      "-std=c++17",
+      "-O2",
+      "-march=armv8.2-a+i8mm"
+    ],
+    "int2_dotprod": [
+      "-fno-rtti",
+      "-O3",
+      "-DNDEBUG",
+      "-std=c++17",
+      "-O2",
+      "-march=armv8.2-a+dotprod"
+    ],
+    "int4_i8mm": [
+      "-fno-rtti",
+      "-O3",
+      "-DNDEBUG",
+      "-std=c++17",
+      "-O2",
+      "-march=armv8.2-a+i8mm"
+    ],
+    "int4_dotprod": [
+      "-fno-rtti",
+      "-O3",
+      "-DNDEBUG",
+      "-std=c++17",
+      "-O2",
+      "-march=armv8.2-a+dotprod"
+    ],
+    "runner": [
+      "-O3",
+      "-DNDEBUG",
+      "-std=gnu++17",
+      "-O1",
+      "-ffp-contract=off",
+      "-fno-rtti"
+    ]
+  }
+}

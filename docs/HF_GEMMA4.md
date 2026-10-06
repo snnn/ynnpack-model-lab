@@ -271,6 +271,16 @@ profiles. Use the published-source runners and comparisons of logits, KV,
 capacity, and chunk size to evaluate the new arithmetic policies. Preserve the
 BF16 profile as a control while assessing these candidates.
 
+The [October 5 backend refresh](../results/2026-10-05/README.md) retimes the
+preferred integer-FC, BF16, and FP32 profiles with the adopted dependencies and
+identical HF token fixtures. It preserves the source and KV policies described
+here.
+
+Those HF timings predate the later
+[packing correction](../results/2026-10-05-packing-fix/README.md). Its follow-up
+measures the published-bundle controls; HF profiles have not been retimed with
+that additional patch.
+
 The [FP32/integer-FC measurement record](../results/hf_fp32_arithmetic_2026-10-02/README.md)
 contains the desktop comparison, numerical audit, and capacity/chunk checks.
 The integer variant is the preferred candidate and approaches the published-source

@@ -118,6 +118,8 @@ must be new. An external baseline can be another job if its output format is
 one supported by `summarize`; otherwise add a parser with explicit metric scope.
 
 For regressions, retain raw observations and binary/dependency/model hashes.
+For per-layer and operator execution diagnosis, see [PROFILING.md](PROFILING.md).
+Profiled timing records are diagnostic; collect unprofiled latency separately.
 Separate authoring, backend packing, kernel selection, and thermal changes before
 attributing a difference to “dynamic shapes.” The historical comparison in
 `MEASUREMENTS.md` includes different activation contracts in its static versus

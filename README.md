@@ -12,12 +12,34 @@ views, preparation costs, and memory use. Classical vision workloads are planned
 as the lab expands.
 
 Start with the [performance gaps and investigation priorities](docs/PERFORMANCE_GAPS.md)
-and the [measurement index](results/README.md). The original comparison shows
-slower YNNPACK prefill and decode than the established XNNPACK controls, with
-explicit differences in activation contracts, packing, and runtime ownership.
-Those historical measurements are separate from validation of the current
-builders. The [publication guide](docs/PUBLICATION.md) identifies the source and
-evidence to share and the local material to exclude.
+and the [measurement index](results/README.md). The
+[October 5 backend refresh](results/2026-10-05/README.md) compares the previous
+and adopted dependencies using identical current builders and token IDs. The
+adopted backend selects AVX-VNNI INT4/INT8 and substantially improves desktop
+prefill. Its initial E2B phone runs show a decode regression. The retained
+[packing correction](results/2026-10-05-packing-fix/README.md) uses the known
+decode row count and restores one-row DOTPROD selection on both tested phones,
+with higher observed decode throughput. Desktop speed is essentially unchanged;
+desktop numerical differences, phone thermal effects, INT2 decode, preparation,
+and memory remain investigation targets. The
+original comparisons against XNNPACK retain their historical configurations and
+activation contracts. The [publication guide](docs/PUBLICATION.md) identifies
+the source and evidence to share and the local material to exclude.
+
+The [fresh phone decode comparison](results/2026-10-05-decode-profile/README.md)
+adds Samsung SM-S937U1 and repeats focused Pixel/TECNO cases against the preserved
+native Tensor API/XNNPACK runner. Separate execution profiles identify FC,
+live-history attention/packing, and outside-callback work. Samsung CPUinfo
+correctly detects Oryon; its I8MM selection differs from the native DOTPROD
+control. Use the [execution profiling guide](docs/PROFILING.md) to collect and
+analyze diagnostic data alongside unprofiled latency measurements.
+
+The [Samsung Oryon kernel-selection study](results/2026-10-05-oryon-dot-selection/README.md)
+traces the native DOTPROD tables and YNNPACK's learned I8MM ranking. Its fitting
+script excludes one-row DOTPROD kernels, and the I8MM training benchmark uses
+full row tiles. Compatible one-row kernel and model experiments examine the
+resulting decode choices. The selection restriction is an optional experiment;
+the normal dependency baseline retains its recorded configuration.
 
 **Direct safetensors loading is supported for Gemma4 E2B.** The native C++
 runner reads the downloaded
@@ -26,7 +48,7 @@ from its original safetensors storage. The
 [safetensors quickstart below](#run-gemma4-e2b-directly-from-safetensors) uses
 **`hf_static_int8_published_kv`**, the preferred integer-FC profile for ongoing
 compiler/dynamism work. BF16 and FP32 profiles remain arithmetic controls.
-The [integer-FC measurements](results/hf_fp32_arithmetic_2026-10-02/README.md)
+The [refreshed integer-FC measurements](results/2026-10-05/README.md)
 approach the published-source YNNPACK control's warm x86-64 speed. Higher RSS,
 cross-implementation numerical differences, and the global KV scale convention
 remain open questions; see the [HF design and validation](docs/HF_GEMMA4.md).
@@ -85,6 +107,11 @@ never changes a system installation. Use `tools/bootstrap.py --no-tokenizers`
 and `-DLAB_ENABLE_TOKENIZERS=OFF` for a token-ID-only build without Rust.
 Dependencies live in the ignored `.deps/` directory. The repository and runtime
 dependencies are public.
+
+The backend pins include the learned dot cost model from
+[XNNPACK #11568](https://github.com/google/XNNPACK/pull/11568), still open when
+adopted on October 5, 2026. Existing checkouts should use a fresh dependency and
+build directory; see [dependency update instructions](patches/README.md).
 
 ## Run Gemma4 E2B directly from safetensors
 
@@ -258,6 +285,7 @@ chunked attention, not online-softmax/FlashAttention.
 - [Design and model extension](docs/DESIGN.md)
 - [Standalone builder artifacts](docs/AUTHORING.md)
 - [Benchmarking](docs/BENCHMARKING.md)
+- [Execution profiling](docs/PROFILING.md)
 - [Earlier comparative measurements](docs/MEASUREMENTS.md)
 - [Standalone validation](docs/VALIDATION.md)
 - [Dependency patches](patches/README.md)

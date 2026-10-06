@@ -37,8 +37,8 @@
 
 #if defined(LAB_GEMMA4_HF)
 #include "gemma4_decode.h"
-#include "gemma4_prefill.h"
 #include "gemma4_hf_config.h"
+#include "gemma4_prefill.h"
 #include "models/gemma4/hf_assets.h"
 #elif defined(LAB_GENERATED_OVERRIDE)
 #include "gemma4_decode.h"
@@ -114,18 +114,22 @@ class Runner {
  public:
   Runner()
 #if defined(LAB_GEMMA4_HF)
-      : weights_(options.hf_model_dir, options.asset_manifest, options.cache_dir, options.parameter_dir),
+      : weights_(options.hf_model_dir, options.asset_manifest,
+                 options.cache_dir, options.parameter_dir),
 #else
       : weights_(options.bundle_dir, options.parameter_dir),
 #endif
         capacity_(options.cache_capacity),
         max_rows_(options.prefill_rows) {
 #if defined(LAB_GEMMA4_HF)
-    if (options.hf_model_dir.empty() || options.asset_manifest.empty() || options.cache_dir.empty())
-      throw std::invalid_argument("HF build needs source, manifest, and derived cache paths");
+    if (options.hf_model_dir.empty() || options.asset_manifest.empty() ||
+        options.cache_dir.empty())
+      throw std::invalid_argument(
+          "HF build needs source, manifest, and derived cache paths");
 #else
     if (!options.hf_model_dir.empty())
-      throw std::invalid_argument("Use a Gemma4 HF executable for safetensors assets");
+      throw std::invalid_argument(
+          "Use a Gemma4 HF executable for safetensors assets");
 #endif
     if (capacity_ <= 0 || capacity_ > 32768 || max_rows_ < 1 ||
         max_rows_ > 128 || options.num_threads < 1)
@@ -133,15 +137,17 @@ class Runner {
 #if defined(LAB_GEMMA4_HF)
     embeddings_ = std::make_unique<ModelAssets>(weights_, kHfSourceIdentity);
 #else
-    embeddings_ = std::make_unique<ModelAssets>(options.bundle_dir,
-                                                     weights_, ModelConfig());
+    embeddings_ = std::make_unique<ModelAssets>(options.bundle_dir, weights_,
+                                                ModelConfig());
 #endif
     for (auto s : embeddings_->owners) {
       caches_.push_back(
           {s,
-           std::vector<int8_t>(kKvElementBytes * size_t(capacity_) * s.head_dim * s.num_heads +
+           std::vector<int8_t>(kKvElementBytes * size_t(capacity_) *
+                                   s.head_dim * s.num_heads +
                                64),
-           std::vector<int8_t>(kKvElementBytes * size_t(capacity_) * s.head_dim * s.num_heads +
+           std::vector<int8_t>(kKvElementBytes * size_t(capacity_) *
+                                   s.head_dim * s.num_heads +
                                64)});
     }
     auto resolver = [&](const char* p, size_t n) { return weights_.Get(p, n); };
@@ -153,10 +159,13 @@ class Runner {
 #if defined(LAB_ENABLE_VALUE_TRACE)
       if (!options.trace_plan.empty())
         trace_[i] = std::make_unique<lab::ValueTrace>(
-            *graph_[i], options.trace_plan + (i ? "/decode.tsv" : "/prefill.tsv"));
+            *graph_[i],
+            options.trace_plan + (i ? "/decode.tsv" : "/prefill.tsv"));
 #endif
       std::cerr << "Preparing " << i << " values, author_ms=" << Ms(at)
                 << " rss_kib=" << Rss() << "\n";
+      if (i && options.profile_execution == "decode")
+        execution_profile_ = graph_[i]->TrackExecution();
       graph_[i]->Compile(options.num_threads);
       if (options.report_memory)
         scratch_[i] = graph_[i]->TrackScratchAllocations();
@@ -191,13 +200,17 @@ class Runner {
     }
   }
   void Decode(int32_t token) { Chunk(&token, 1, true); }
+  std::shared_ptr<lab_ynn::ExecutionProfile> execution_profile() const {
+    return execution_profile_;
+  }
   void Save(const std::string& path) const {
     Dump(path, logits_.data(), ModelConfig().vocab_size * sizeof(float));
     for (const auto& c : caches_) {
       for (int head = 0; head < c.spec.num_heads; ++head) {
         auto prefix = path + ".owner" + std::to_string(c.spec.owner);
         if (c.spec.num_heads > 1) prefix += ".head" + std::to_string(head);
-        size_t offset = kKvElementBytes * size_t(head) * capacity_ * c.spec.head_dim;
+        size_t offset =
+            kKvElementBytes * size_t(head) * capacity_ * c.spec.head_dim;
         const std::string suffix = kKvElementBytes == 2 ? ".bf16" : ".i8";
         Dump(prefix + ".k" + suffix, c.k.data() + offset,
              kKvElementBytes * size_t(position_) * c.spec.head_dim);
@@ -225,10 +238,11 @@ class Runner {
     for (int i = 0; i < 2; ++i) {
       const char* name = i ? "decode" : "prefill";
       if (!scratch_[i]) continue;
-      output << ",\"" << name << "_scratch_live_bytes\":" << scratch_[i]->live.load()
-             << ",\"" << name << "_scratch_peak_bytes\":" << scratch_[i]->peak.load()
-             << ",\"" << name << "_scratch_allocated_bytes\":"
-             << scratch_[i]->allocated.load()
+      output << ",\"" << name
+             << "_scratch_live_bytes\":" << scratch_[i]->live.load() << ",\""
+             << name << "_scratch_peak_bytes\":" << scratch_[i]->peak.load()
+             << ",\"" << name
+             << "_scratch_allocated_bytes\":" << scratch_[i]->allocated.load()
              << ",\"" << name << "_scratch_allocation_calls\":"
              << scratch_[i]->allocations.load();
     }
@@ -249,7 +263,8 @@ class Runner {
       if (name == "Anonymous:" || name == "Private_Dirty:" ||
           name == "Private_Clean:" || name == "Shared_Clean:" ||
           name == "Swap:")
-        output << ",\"" << name.substr(0, name.size() - 1) << "_kib\":" << value;
+        output << ",\"" << name.substr(0, name.size() - 1)
+               << "_kib\":" << value;
     }
     output << "}\n";
     output.flush();
@@ -273,7 +288,8 @@ class Runner {
     auto& g = *graph_[decode];
     for (size_t i = 0; i < count; ++i) positions_[i] = position_ + i;
     g.ScalarValue("position", position_);
-    g.Bind("embedded_input", embedded_.data(), embedded_.size() * sizeof(Activation),
+    g.Bind("embedded_input", embedded_.data(),
+           embedded_.size() * sizeof(Activation),
            {1, count, size_t(config.embed_dim)});
     g.Bind("positions", positions_.data(), positions_.size() * sizeof(float),
            {1, 1, count, 1});
@@ -290,11 +306,16 @@ class Runner {
                               size_t(c.spec.head_dim)};
       const auto key_name = "cache_key_" + std::to_string(c.spec.owner);
       const auto value_name = "cache_value_" + std::to_string(c.spec.owner);
-      if (!c.key_state) c.key_state = g.NewResourceState(key_name, c.k.data(), c.k.size(), shape);
-      if (!c.value_state) c.value_state = g.NewResourceState(value_name, c.v.data(), c.v.size(), shape);
+      if (!c.key_state)
+        c.key_state =
+            g.NewResourceState(key_name, c.k.data(), c.k.size(), shape);
+      if (!c.value_state)
+        c.value_state =
+            g.NewResourceState(value_name, c.v.data(), c.v.size(), shape);
       g.BindResource(key_name, c.key_state);
       g.BindResource(value_name, c.value_state);
-      expected_bytes += kKvElementBytes * 2 * count * c.spec.head_dim * c.spec.num_heads;
+      expected_bytes +=
+          kKvElementBytes * 2 * count * c.spec.head_dim * c.spec.num_heads;
     }
     if (decode)
       g.Bind("logits", logits_.data(), logits_.size() * sizeof(float));
@@ -302,9 +323,10 @@ class Runner {
     g.Run();
 #if defined(LAB_ENABLE_VALUE_TRACE)
     if (trace_[decode]) {
-      const auto directory = options.output_dir + "/trace/" +
-          std::to_string(trace_call_++) + (decode ? "-decode-p" : "-prefill-p") +
-          std::to_string(position_) + "-q" + std::to_string(count);
+      const auto directory =
+          options.output_dir + "/trace/" + std::to_string(trace_call_++) +
+          (decode ? "-decode-p" : "-prefill-p") + std::to_string(position_) +
+          "-q" + std::to_string(count);
       trace_[decode]->Save(directory);
     }
 #endif
@@ -320,6 +342,7 @@ class Runner {
   int capacity_, max_rows_, position_ = 0;
   std::vector<Cache> caches_;
   std::unique_ptr<lab_ynn::Graph> graph_[2];
+  std::shared_ptr<lab_ynn::ExecutionProfile> execution_profile_;
 #if defined(LAB_ENABLE_VALUE_TRACE)
   std::unique_ptr<lab::ValueTrace> trace_[2];
   size_t trace_call_ = 0;
@@ -350,13 +373,29 @@ void Main() {
              << ",\"prefill_rows\":" << options.prefill_rows
              << ",\"threads\":" << options.num_threads
              << ",\"warmups\":" << options.warmup_runs
-             << ",\"report_memory\":" << (options.report_memory ? "true" : "false")
+             << ",\"profile_execution\":"
+             << lab_ynn::ProfileJson(options.profile_execution)
+             << ",\"timings_valid_for_benchmark\":"
+             << (options.profile_execution == "none" &&
+                         !options.report_memory && !options.dump_outputs
+                     ? "true"
+                     : "false")
+             << ",\"report_memory\":"
+             << (options.report_memory ? "true" : "false")
              << ",\"repetitions\":" << options.measured_runs << "}\n";
   }
   auto start = Clock::now();
   Runner runner;
   const double setup_ms = Ms(start);
   const long setup_rss = Rss();
+  auto profile = runner.execution_profile();
+  std::ofstream profile_output;
+  if (profile) {
+    profile_output.open(output + "/execution_profile.jsonl");
+    if (!profile_output)
+      throw std::runtime_error("cannot open execution profile");
+    profile->WriteMetadata(profile_output);
+  }
   std::ofstream memory;
   if (options.report_memory) {
     memory.open(output + "/memory.jsonl");
@@ -378,6 +417,23 @@ void Main() {
       if (options.report_memory)
         runner.ReportMemory(request + "/prefix", memory);
       for (size_t step = 0; step < decode.size(); ++step) {
+        const bool collect = profile && rep >= 0 && step > 0;
+        if (collect)
+          profile->BeginStep(benchmark_case.name, rep, step, runner.position());
+        // Flush a failed step as incomplete; state must be discarded on error.
+        struct ProfileStep {
+          lab_ynn::ExecutionProfile* profile;
+          std::ostream& output;
+          bool complete = false;
+          ~ProfileStep() {
+            if (profile && !complete) {
+              try {
+                profile->EndStep(output, false);
+              } catch (...) {
+              }
+            }
+          }
+        } profile_step{collect ? profile.get() : nullptr, profile_output};
         start = Clock::now();
         runner.Decode(decode[step]);
         const double decode_ms = Ms(start);
@@ -389,10 +445,14 @@ void Main() {
             std::max_element(logits, logits + ModelConfig().vocab_size) -
             logits;
         const auto token_ms = Ms(start);
+        if (collect) {
+          profile_step.complete = true;
+          profile->EndStep(profile_output);
+        }
         auto c = runner.counters();
         timings << "{\"case\":\"" << benchmark_case.name
-                << "\",\"repetition\":" << rep
-                << ",\"step\":" << step << ",\"setup_ms\":" << setup_ms
+                << "\",\"repetition\":" << rep << ",\"step\":" << step
+                << ",\"setup_ms\":" << setup_ms
                 << ",\"setup_rss_kib\":" << setup_rss
                 << ",\"prefix_ms\":" << prefix_ms
                 << ",\"decode_ms\":" << decode_ms
@@ -416,8 +476,7 @@ void Main() {
         }
       }
       std::cerr << benchmark_case.name << " rep=" << rep
-                << " prefix_ms=" << prefix_ms
-                << "\n";
+                << " prefix_ms=" << prefix_ms << "\n";
     }
   }
 }

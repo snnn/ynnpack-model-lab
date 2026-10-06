@@ -1,9 +1,54 @@
 # Dependency patches
 
 `tools/bootstrap.py` downloads the exact revisions/hashes in `dependencies.json`
-and applies the two `ynnpack-*.patch` files. Repeating it checks that the patches
+and applies the three `ynnpack-*.patch` files. Repeating it checks that the patches
 are already applied. It refuses an unmanaged dependency directory or a different
 revision instead of resetting local work.
+
+The normal baseline deliberately adopts XNNPACK
+`f5122810ee8bb7461ed73efe7a678a472866cee3`: merged AVX-VNNI kernels from
+[#11521](https://github.com/google/XNNPACK/pull/11521) plus the learned dot cost
+models from [#11568](https://github.com/google/XNNPACK/pull/11568).
+The latter PR was still open when adopted on October 5, 2026. This is an exact,
+hash-verified snapshot, not a claim that the change has merged. Slinky
+`d18c98551c77f366857f125e3a0f7886deb82a47` supplies the required per-context
+initialization interface. CPUinfo and tokenizer dependencies retain their pins.
+
+Use a fresh dependency/build directory when updating an existing checkout:
+
+```sh
+uv sync --locked
+uv run --locked python tools/bootstrap.py --directory .deps/vnni
+uv run --locked cmake -S . -B build-vnni -G Ninja -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ \
+  -DLAB_DEPS="$PWD/.deps/vnni"
+uv run --locked cmake --build build-vnni --parallel 8
+uv run --locked ctest --test-dir build-vnni --output-on-failure
+```
+
+The older dependency trees and measurement records remain useful controls.
+VNNI is selected by the backend cost model on supported x86 CPUs; it is not
+forced globally, and ARM measurements do not use VNNI.
+
+## `ynnpack-dot-packing-shape.patch`
+
+Before choosing a dot packing layout, infer the row count M from activation
+tensor A when its logical row extent is constant. The previous code learned
+only N/K from weight tensor B, so it used the unknown-row fallback even for a
+statically one-row decode graph. The resulting layout can exclude the kernel
+that the cost model prefers for the actual row count.
+
+The patch uses `a.extent(num_k_dims)`, which also handles implicit singleton
+rows in rank-one and broadcast inputs. Symbolic row counts retain the existing
+fallback and packing-size caps. It changes neither arithmetic contracts nor
+the cost model, and does not force an ISA or modify CPU detection. See the
+[packing investigation](../docs/PERFORMANCE_GAPS.md#known-bug-packing-ignores-the-known-decode-row-count).
+The [matched validation and timing record](../results/2026-10-05-packing-fix/README.md)
+documents phone DOTPROD selection, observed decode gains, and desktop numerical
+differences.
+
+Use a fresh dependency/build directory for the patched baseline, as in the
+update commands above. Preserve older binaries and measurements as controls.
 
 ## `ynnpack-symbolic-runtime.patch`
 
@@ -26,8 +71,6 @@ Build-system-only fixes for the pinned YNNPACK revision:
 
 - Resolve Python generator paths relative to YNNPACK's project, allowing it to
   be included as a CMake subdirectory outside the XNNPACK root build.
-- Register missing x86 dot generator outputs/families, including symmetric INT8,
-  low-bit INT2/INT4, and FP32 k8.
 - Generate each script's full output list while compiling only enabled ISA
   variants; the scripts require all their output arguments.
 - Order dot-header generation before sources that include the common kernel
@@ -36,7 +79,20 @@ Build-system-only fixes for the pinned YNNPACK revision:
 The lab's root CMake config disables SME/SME2 by default and FP8 for compatibility
 with the tested NDK. Disabling SME is an experiment choice, not a conclusion that
 those kernels are universally bad. This extraction does not change dot arithmetic
-or tune kernel selection.
+or tune kernel selection. Previously missing x86 generator families are now
+registered upstream, so their old patch hunks have been removed.
 
 Graph-authoring integration and compiler binding patches are maintained outside
 this repository. Bootstrap fetches and patches only public runtime dependencies.
+
+## Optional one-row selection experiment
+
+[`experiments/ynnpack-one-row-dotprod.patch`](experiments/ynnpack-one-row-dotprod.patch)
+restricts compatible preparation and execution choices for known-M=1
+INT8/INT2 and INT8/INT4 dots. It is used by the
+[Samsung Oryon study](../results/2026-10-05-oryon-dot-selection/README.md).
+`LAB_EXPERIMENT_ONE_ROW_DOT=none|int2|int4|both` selects the restriction;
+unset or `none` retains normal selection. Apply it to a fresh dependency copy
+after the normal patches and select that copy with `LAB_DEPS`.
+Bootstrap does not apply patches under `experiments/`. The study documents
+arithmetic checks, actual selected kernels, timing scope and reproduction.

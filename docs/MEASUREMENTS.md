@@ -14,10 +14,19 @@ These are the **original integrated experiment measurements**, retained as the
 performance record. Standalone CMake extraction validation is documented
 separately in [VALIDATION.md](VALIDATION.md); it is not a new timing campaign.
 
-Measured October 2, 2026. **The current YNNPACK integration is slower than our
+The [October 5 backend refresh](../results/2026-10-05/README.md) records the
+current builders with AVX-VNNI and learned kernel selection, including a fresh
+previous-backend control. Its timings and kernel profiles are separate from
+the original cross-runtime comparisons below.
+
+The [packing correction](../results/2026-10-05-packing-fix/README.md) then
+compares the same adopted pin with known row counts used for layout selection.
+It improves observed E2B phone decode and records desktop numerical changes.
+
+Measured October 2, 2026. **That YNNPACK integration was slower than our
 packed-dynamic XNNPACK path, including when model loading and preparation are
-excluded.** Symbolic state handling works, but it does not compensate for the
-current execution costs. Keep the established runner defaults.
+excluded.** Symbolic state handling worked, but did not compensate for the
+execution costs in that campaign.
 
 ## What is integrated
 

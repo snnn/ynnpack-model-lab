@@ -1,0 +1,890 @@
+[
+  {
+    "measurement": "exclusive_instruction_pointer_cpu_cycles",
+    "recorded_samples": 17899,
+    "included_samples": 1286,
+    "included_cycles": 5676585935,
+    "samples_by_cpu": {
+      "7": 1286
+    },
+    "symbols": [
+      {
+        "symbol": "ynn::dot_int8_int2_int32_2x32x8_2x4x8_neoni8mm(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 745,
+        "cycles": 3322246190,
+        "cycle_percent": 58.52542757286735
+      },
+      {
+        "symbol": "ynn::dot_int8_int4_int32_2x32x8_2x4x8_neoni8mm(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 312,
+        "cycles": 1357661732,
+        "cycle_percent": 23.91687094225237
+      },
+      {
+        "symbol": "ynn::dot_int8_int8_int32_2x32x8_2x4x8_neoni8mm(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 41,
+        "cycles": 176258684,
+        "cycle_percent": 3.105012167846271
+      },
+      {
+        "symbol": "lab_ynn::Graph::Run()",
+        "binary": "ynn-experiment",
+        "samples": 23,
+        "cycles": 96989239,
+        "cycle_percent": 1.7085839994422634
+      },
+      {
+        "symbol": "std::__ndk1::chrono::steady_clock::now()",
+        "binary": "ynn-experiment",
+        "samples": 15,
+        "cycles": 66198574,
+        "cycle_percent": 1.1661687986055302
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0>(ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&), std::__ndk1::allocator<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0>(ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&)>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 14,
+        "cycles": 61442926,
+        "cycle_percent": 1.0823922460358208
+      },
+      {
+        "symbol": "ynn::tanh_fp32_neonfma(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 13,
+        "cycles": 57785606,
+        "cycle_percent": 1.017964083723503
+      },
+      {
+        "symbol": "ynn::transpose_x64_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+        "binary": "ynn-experiment",
+        "samples": 8,
+        "cycles": 35552309,
+        "cycle_percent": 0.6262973802756322
+      },
+      {
+        "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::allocate>(slinky::allocate const*, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 8,
+        "cycles": 35262612,
+        "cycle_percent": 0.6211940135105168
+      },
+      {
+        "symbol": "ynn::quantize_fp32_to_int8_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 7,
+        "cycles": 30842939,
+        "cycle_percent": 0.5433360712436743
+      },
+      {
+        "symbol": "void slinky::internal::for_each_element_impl<2ul>(slinky::span<slinky::raw_buffer const*, 2ul>, slinky::function_ref<void (void**, long, long const*)>)",
+        "binary": "ynn-experiment",
+        "samples": 5,
+        "cycles": 22145571,
+        "cycle_percent": 0.39012130272630147
+      },
+      {
+        "symbol": "ynn::dequantize_int8_to_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 5,
+        "cycles": 21934092,
+        "cycle_percent": 0.386395841640685
+      },
+      {
+        "symbol": "ynn::dot_fp32_1x64x4_1x4x1_neon(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 5,
+        "cycles": 21784531,
+        "cycle_percent": 0.3837611418103195
+      },
+      {
+        "symbol": "wmemchr",
+        "binary": "libc.so",
+        "samples": 5,
+        "cycles": 20995997,
+        "cycle_percent": 0.3698701515385409
+      },
+      {
+        "symbol": "ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int, unsigned long)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const",
+        "binary": "ynn-experiment",
+        "samples": 4,
+        "cycles": 17872680,
+        "cycle_percent": 0.3148491048079236
+      },
+      {
+        "symbol": "void slinky::internal::for_each_element_impl<4ul>(slinky::span<slinky::raw_buffer const*, 4ul>, slinky::function_ref<void (void**, long, long const*)>)",
+        "binary": "ynn-experiment",
+        "samples": 4,
+        "cycles": 17757519,
+        "cycle_percent": 0.3128204030262778
+      },
+      {
+        "symbol": "ynn::multiply_int32_fp32_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 4,
+        "cycles": 17560602,
+        "cycle_percent": 0.3093514693704712
+      },
+      {
+        "symbol": "ynn::multiply_fp32_fp32_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 13308781,
+        "cycle_percent": 0.23445044525693418
+      },
+      {
+        "symbol": "clock_gettime",
+        "binary": "libc.so",
+        "samples": 3,
+        "cycles": 13258099,
+        "cycle_percent": 0.23355761987596863
+      },
+      {
+        "symbol": "void slinky::function_ref<void (void**, long, long const*)>::get_impl<void slinky::for_each_element<ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0::operator()(slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer) const::'lambda'(void*, void const*, void const*, void const*), slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer>(ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0::operator()(slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer) const::'lambda'(void*, void const*, void const*, void const*) const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&)::'lambda'(void**, long, long const*)>(void const*, void**, long, long const*)",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 13201118,
+        "cycle_percent": 0.23255382991044246
+      },
+      {
+        "symbol": "slinky::raw_buffer::init_strides_impl(long)",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 13123050,
+        "cycle_percent": 0.23117856666429557
+      },
+      {
+        "symbol": "ynn::dot_fp32_1x8x4_1x4x1_neon(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 13036651,
+        "cycle_percent": 0.22965654266977992
+      },
+      {
+        "symbol": "ynn::get_dot_kernel(ynn::dot_type const&, ynn::dot_cost_models const&, ynn::dot_shape const&, ynn::dot_packed_shape, unsigned int, std::__ndk1::optional<bool>, unsigned long, int)",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 12972462,
+        "cycle_percent": 0.22852577497358015
+      },
+      {
+        "symbol": "@plt",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 12907791,
+        "cycle_percent": 0.22738651625820935
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<(anonymous namespace)::make_reshape_impl(ynn_runtime*)::$_0, std::__ndk1::allocator<(anonymous namespace)::make_reshape_impl(ynn_runtime*)::$_0>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 12633832,
+        "cycle_percent": 0.22256039360038332
+      },
+      {
+        "symbol": "ynn::add_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8927292,
+        "cycle_percent": 0.15726516082417064
+      },
+      {
+        "symbol": "void ynn::internal::fuse_and_slice_leading_dims<slinky::dim*&, slinky::raw_buffer&>(int, slinky::dim*, slinky::raw_buffer&, slinky::dim*&, slinky::raw_buffer&)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8909376,
+        "cycle_percent": 0.15694954858461066
+      },
+      {
+        "symbol": "void slinky::function_ref<void (void**, long, long const*)>::get_impl<void slinky::for_each_element<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int, unsigned long)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::'lambda'(void*, void const*, void const*, void const*), slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer>(ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int, unsigned long)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::'lambda'(void*, void const*, void const*, void const*) const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&)::'lambda'(void**, long, long const*)>(void const*, void**, long, long const*)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8862478,
+        "cycle_percent": 0.1561233829890043
+      },
+      {
+        "symbol": "ynn::get_supported_arch_flags()",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8784274,
+        "cycle_percent": 0.15474572393661826
+      },
+      {
+        "symbol": "__memcpy_aarch64_nt",
+        "binary": "libc.so",
+        "samples": 2,
+        "cycles": 8708365,
+        "cycle_percent": 0.15340849411451746
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<ynn::define_reduce(ynn_subgraph&, ynn_node&, ynn_reduce_operator, ynn::axes_set const&, unsigned int, unsigned int, unsigned int*, bool, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>>)::$_1::operator()(ynn_node const&, ynn_runtime&) const::'lambda'(slinky::call_stmt const*, slinky::eval_context&), std::__ndk1::allocator<ynn::define_reduce(ynn_subgraph&, ynn_node&, ynn_reduce_operator, ynn::axes_set const&, unsigned int, unsigned int, unsigned int*, bool, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>>)::$_1::operator()(ynn_node const&, ynn_runtime&) const::'lambda'(slinky::call_stmt const*, slinky::eval_context&)>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8690964,
+        "cycle_percent": 0.15310195422946593
+      },
+      {
+        "symbol": "__kernel_clock_gettime",
+        "binary": "[vdso]",
+        "samples": 2,
+        "cycles": 8611461,
+        "cycle_percent": 0.15170141170425178
+      },
+      {
+        "symbol": "slinky::(anonymous namespace)::eval_non_inlined(slinky::expr_ref, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8433353,
+        "cycle_percent": 0.14856382157456055
+      },
+      {
+        "symbol": "void slinky::internal::for_each_element_impl<18446744073709551615ul>(slinky::span<slinky::raw_buffer const*, 18446744073709551615ul>, slinky::function_ref<void (void**, long, long const*)>)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4473400,
+        "cycle_percent": 0.07880440904485311
+      },
+      {
+        "symbol": "void slinky::function_ref<void (void**, long, long const*)>::get_impl<void slinky::for_each_element<ynn::(anonymous namespace)::make_dequantize_dot_impl(void (*)(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dequantize_dot_params const*), ynn::dequantize_dot_params)::$_0::operator()(slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer) const::'lambda'(void*, void const*, void const*, void const*, void const*, void const*, void const*), slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer>(ynn::(anonymous namespace)::make_dequantize_dot_impl(void (*)(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dequantize_dot_params const*), ynn::dequantize_dot_params)::$_0::operator()(slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer) const::'lambda'(void*, void const*, void const*, void const*, void const*, void const*, void const*) const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&)::'lambda'(void**, long, long const*)>(void const*, void**, long, long const*)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4471639,
+        "cycle_percent": 0.07877338687730093
+      },
+      {
+        "symbol": "void ynn::internal::fuse_and_slice_leading_dims<slinky::dim*&, slinky::raw_buffer&, slinky::dim*&, slinky::raw_buffer&, slinky::dim*&, slinky::raw_buffer&>(int, slinky::dim*, slinky::raw_buffer&, slinky::dim*&, slinky::raw_buffer&, slinky::dim*&, slinky::raw_buffer&, slinky::dim*&, slinky::raw_buffer&)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4470553,
+        "cycle_percent": 0.07875425565983261
+      },
+      {
+        "symbol": "void slinky::function_ref<void (long, void**, long, long const*)>::get_impl<void slinky::for_each_contiguous_slice<slinky::raw_buffer, slinky::(anonymous namespace)::copy_impl(slinky::raw_buffer&, slinky::raw_buffer&)::$_0, slinky::raw_buffer>(slinky::raw_buffer const&, slinky::(anonymous namespace)::copy_impl(slinky::raw_buffer&, slinky::raw_buffer&)::$_0 const&, slinky::raw_buffer const&)::'lambda'(long, void**, long, long const*)>(void const*, long, void**, long, long const*)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4469258,
+        "cycle_percent": 0.0787314426518939
+      },
+      {
+        "symbol": "int slinky::optimize_dims<>(slinky::raw_buffer&)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4469024,
+        "cycle_percent": 0.07872732045586482
+      },
+      {
+        "symbol": "ynn::multiply_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4468188,
+        "cycle_percent": 0.07871259329398314
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int, unsigned long)::$_0, std::__ndk1::allocator<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int, unsigned long)::$_0>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4467924,
+        "cycle_percent": 0.07870794261128367
+      }
+    ],
+    "scope": "measured_subsequent_decode_graph_run",
+    "interval_count": 32,
+    "policy": "none",
+    "frequency_hz": 499,
+    "record_sha256": "2319f108c6fb032fd8bc3864d22241578bf9e71b1193f987b8a88594198ef1fe"
+  },
+  {
+    "measurement": "exclusive_instruction_pointer_cpu_cycles",
+    "recorded_samples": 15710,
+    "included_samples": 1012,
+    "included_cycles": 4452654509,
+    "samples_by_cpu": {
+      "7": 1012
+    },
+    "symbols": [
+      {
+        "symbol": "ynn::dot_int8_int2_int32_1x32x16_1x4x16_neondot(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 458,
+        "cycles": 2038852837,
+        "cycle_percent": 45.78960332266821
+      },
+      {
+        "symbol": "ynn::dot_int8_int4_int32_2x32x8_2x4x8_neoni8mm(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 302,
+        "cycles": 1314642820,
+        "cycle_percent": 29.524923106941195
+      },
+      {
+        "symbol": "ynn::dot_int8_int8_int32_2x32x8_2x4x8_neoni8mm(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 32,
+        "cycles": 137269065,
+        "cycle_percent": 3.0828591062374744
+      },
+      {
+        "symbol": "lab_ynn::Graph::Run()",
+        "binary": "ynn-experiment",
+        "samples": 30,
+        "cycles": 126520006,
+        "cycle_percent": 2.841451222956315
+      },
+      {
+        "symbol": "ynn::tanh_fp32_neonfma(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 17,
+        "cycles": 75195604,
+        "cycle_percent": 1.6887814639112393
+      },
+      {
+        "symbol": "ynn::multiply_int32_fp32_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 16,
+        "cycles": 70364385,
+        "cycle_percent": 1.580279468298626
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0>(ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&), std::__ndk1::allocator<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0>(ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&)>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 15,
+        "cycles": 66124957,
+        "cycle_percent": 1.48506821866246
+      },
+      {
+        "symbol": "std::__ndk1::chrono::steady_clock::now()",
+        "binary": "ynn-experiment",
+        "samples": 13,
+        "cycles": 57740145,
+        "cycle_percent": 1.2967578078041266
+      },
+      {
+        "symbol": "ynn::quantize_fp32_to_int8_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 13,
+        "cycles": 55978749,
+        "cycle_percent": 1.2571994725135769
+      },
+      {
+        "symbol": "ynn::dequantize_int8_to_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 10,
+        "cycles": 44318852,
+        "cycle_percent": 0.9953355219997375
+      },
+      {
+        "symbol": "slinky::raw_buffer::init_strides_impl(long)",
+        "binary": "ynn-experiment",
+        "samples": 8,
+        "cycles": 35083310,
+        "cycle_percent": 0.7879189802192668
+      },
+      {
+        "symbol": "ynn::get_dot_kernel(ynn::dot_type const&, ynn::dot_cost_models const&, ynn::dot_shape const&, ynn::dot_packed_shape, unsigned int, std::__ndk1::optional<bool>, unsigned long, int)",
+        "binary": "ynn-experiment",
+        "samples": 7,
+        "cycles": 30860577,
+        "cycle_percent": 0.6930826754607293
+      },
+      {
+        "symbol": "void ynn::run_dot<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int, unsigned long)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::'lambda'(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)>(slinky::span<ynn::dot_loop, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, void const*, unsigned long, void const*, unsigned long, unsigned long, void*, ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int, unsigned long)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::'lambda'(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*) const&, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 6,
+        "cycles": 26535108,
+        "cycle_percent": 0.595939072891586
+      },
+      {
+        "symbol": "ynn::multiply_fp32_fp32_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 6,
+        "cycles": 26479803,
+        "cycle_percent": 0.5946970048198725
+      },
+      {
+        "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::allocate>(slinky::allocate const*, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 6,
+        "cycles": 26479574,
+        "cycle_percent": 0.594691861820353
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_binary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*))::$_0>(ynn::(anonymous namespace)::make_binary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*))::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&), std::__ndk1::allocator<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_binary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*))::$_0>(ynn::(anonymous namespace)::make_binary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*))::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&)>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 4,
+        "cycles": 17786943,
+        "cycle_percent": 0.39946829389183136
+      },
+      {
+        "symbol": "ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int, unsigned long)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const",
+        "binary": "ynn-experiment",
+        "samples": 4,
+        "cycles": 17413315,
+        "cycle_percent": 0.3910771645274309
+      },
+      {
+        "symbol": "ynn::dequantize_dot_f32_neon(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dequantize_dot_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 13395461,
+        "cycle_percent": 0.30084213749178623
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<ynn::define_reduce(ynn_subgraph&, ynn_node&, ynn_reduce_operator, ynn::axes_set const&, unsigned int, unsigned int, unsigned int*, bool, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>>)::$_1::operator()(ynn_node const&, ynn_runtime&) const::'lambda'(slinky::call_stmt const*, slinky::eval_context&), std::__ndk1::allocator<ynn::define_reduce(ynn_subgraph&, ynn_node&, ynn_reduce_operator, ynn::axes_set const&, unsigned int, unsigned int, unsigned int*, bool, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>>)::$_1::operator()(ynn_node const&, ynn_runtime&) const::'lambda'(slinky::call_stmt const*, slinky::eval_context&)>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 13337445,
+        "cycle_percent": 0.2995391843908274
+      },
+      {
+        "symbol": "void slinky::function_ref<void (void**, long, long const*)>::get_impl<void slinky::for_each_element<ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0::operator()(slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer) const::'lambda'(void*, void const*, void const*, void const*), slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer>(ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0::operator()(slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer) const::'lambda'(void*, void const*, void const*, void const*) const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&)::'lambda'(void**, long, long const*)>(void const*, void**, long, long const*)",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 13291108,
+        "cycle_percent": 0.2984985242653597
+      },
+      {
+        "symbol": "ynn::dot_fp32_1x64x4_1x4x1_neon(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 13277829,
+        "cycle_percent": 0.29820029766877204
+      },
+      {
+        "symbol": "ynn::transpose_x64_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 12997499,
+        "cycle_percent": 0.2919045026675345
+      },
+      {
+        "symbol": "@plt",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 12771210,
+        "cycle_percent": 0.28682238817734423
+      },
+      {
+        "symbol": "clock_gettime",
+        "binary": "libc.so",
+        "samples": 2,
+        "cycles": 8929671,
+        "cycle_percent": 0.20054713389396725
+      },
+      {
+        "symbol": "ynn::multiply_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8873600,
+        "cycle_percent": 0.1992878626011538
+      },
+      {
+        "symbol": "void slinky::internal::for_each_element_impl<4ul>(slinky::span<slinky::raw_buffer const*, 4ul>, slinky::function_ref<void (void**, long, long const*)>)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8864599,
+        "cycle_percent": 0.19908571352397286
+      },
+      {
+        "symbol": "lab_ynn::Graph::Mask(unsigned int, unsigned int, slinky::expr, slinky::expr, int, bool)::'lambda'(ynn_node const&, ynn_runtime&)::operator()(ynn_node const&, ynn_runtime&) const::'lambda'(slinky::call_stmt const*, slinky::eval_context&)::operator()(slinky::call_stmt const*, slinky::eval_context&) const",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8864586,
+        "cycle_percent": 0.19908542156330145
+      },
+      {
+        "symbol": "slinky::(anonymous namespace)::copy_impl(slinky::raw_buffer&, slinky::raw_buffer&)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8813222,
+        "cycle_percent": 0.19793186249205125
+      },
+      {
+        "symbol": "ynn::dot_fp32_1x16x4_1x4x1_neon(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8792532,
+        "cycle_percent": 0.1974671958542472
+      },
+      {
+        "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::make_buffer>(slinky::make_buffer const*, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8780284,
+        "cycle_percent": 0.19719212398475355
+      },
+      {
+        "symbol": "void slinky::function_ref<void (void**, long, long const*)>::get_impl<void slinky::for_each_element<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int, unsigned long)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::'lambda'(void*, void const*, void const*, void const*), slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer>(ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int, unsigned long)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::'lambda'(void*, void const*, void const*, void const*) const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&)::'lambda'(void**, long, long const*)>(void const*, void**, long, long const*)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8770438,
+        "cycle_percent": 0.196970997463931
+      },
+      {
+        "symbol": "lab_ynn::ExecutionProfile::Record(unsigned long, unsigned long, unsigned long)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8769817,
+        "cycle_percent": 0.19695705072724293
+      },
+      {
+        "symbol": "ynn::dot_fp32_1x8x4_1x4x1_neon(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8764257,
+        "cycle_percent": 0.19683218139393263
+      },
+      {
+        "symbol": "__kernel_clock_gettime",
+        "binary": "[vdso]",
+        "samples": 2,
+        "cycles": 8739854,
+        "cycle_percent": 0.19628412629667155
+      },
+      {
+        "symbol": "__emutls_get_address",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8661915,
+        "cycle_percent": 0.19453373223752177
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_unary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*), ynn::unary_params, ynn_type, ynn_type)::$_0>(ynn::(anonymous namespace)::make_unary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*), ynn::unary_params, ynn_type, ynn_type)::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&), std::__ndk1::allocator<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_unary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*), ynn::unary_params, ynn_type, ynn_type)::$_0>(ynn::(anonymous namespace)::make_unary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*), ynn::unary_params, ynn_type, ynn_type)::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&)>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4472823,
+        "cycle_percent": 0.10045295432105128
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_reshape(ynn_runtime&, slinky::ref_count<slinky::buffer_expr>, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>> const&, slinky::ref_count<slinky::buffer_expr>, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>> const&)::$_0>(ynn::(anonymous namespace)::make_reshape(ynn_runtime&, slinky::ref_count<slinky::buffer_expr>, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>> const&, slinky::ref_count<slinky::buffer_expr>, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>> const&)::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&), std::__ndk1::allocator<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_reshape(ynn_runtime&, slinky::ref_count<slinky::buffer_expr>, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>> const&, slinky::ref_count<slinky::buffer_expr>, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>> const&)::$_0>(ynn::(anonymous namespace)::make_reshape(ynn_runtime&, slinky::ref_count<slinky::buffer_expr>, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>> const&, slinky::ref_count<slinky::buffer_expr>, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>> const&)::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&)>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4467195,
+        "cycle_percent": 0.10032655780884436
+      },
+      {
+        "symbol": "int slinky::optimize_dims<slinky::raw_buffer>(slinky::raw_buffer&, slinky::raw_buffer&)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4467070,
+        "cycle_percent": 0.10032375049469619
+      },
+      {
+        "symbol": "ynn::dot_fp32_1x32x4_1x4x1_neon(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4466429,
+        "cycle_percent": 0.10030935458774441
+      },
+      {
+        "symbol": "void slinky::internal::for_each_element_impl<18446744073709551615ul>(slinky::span<slinky::raw_buffer const*, 18446744073709551615ul>, slinky::function_ref<void (void**, long, long const*)>)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4465379,
+        "cycle_percent": 0.10028577314889985
+      }
+    ],
+    "scope": "measured_subsequent_decode_graph_run",
+    "interval_count": 32,
+    "policy": "int2",
+    "frequency_hz": 499,
+    "record_sha256": "a996609bd634e51655ca6077e85b822fe9f2a4b273655d8236a43a7d1db018ea"
+  },
+  {
+    "measurement": "exclusive_instruction_pointer_cpu_cycles",
+    "recorded_samples": 16281,
+    "included_samples": 942,
+    "included_cycles": 4139274365,
+    "samples_by_cpu": {
+      "7": 942
+    },
+    "symbols": [
+      {
+        "symbol": "ynn::dot_int8_int2_int32_1x32x16_1x4x16_neondot(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 476,
+        "cycles": 2116840358,
+        "cycle_percent": 51.14037319920445
+      },
+      {
+        "symbol": "ynn::dot_int8_int4_int32_1x32x8_1x4x8_neondot(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 240,
+        "cycles": 1039638320,
+        "cycle_percent": 25.116438977583936
+      },
+      {
+        "symbol": "ynn::dot_int8_int8_int32_2x32x8_2x4x8_neoni8mm(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 43,
+        "cycles": 185471390,
+        "cycle_percent": 4.480770628984387
+      },
+      {
+        "symbol": "lab_ynn::Graph::Run()",
+        "binary": "ynn-experiment",
+        "samples": 25,
+        "cycles": 105432137,
+        "cycle_percent": 2.5471164195224834
+      },
+      {
+        "symbol": "ynn::tanh_fp32_neonfma(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 15,
+        "cycles": 66612144,
+        "cycle_percent": 1.6092710491298878
+      },
+      {
+        "symbol": "ynn::quantize_fp32_to_int8_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 12,
+        "cycles": 52493198,
+        "cycle_percent": 1.268173920623887
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0>(ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&), std::__ndk1::allocator<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0>(ynn::(anonymous namespace)::make_ternary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*))::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&)>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 9,
+        "cycles": 39527234,
+        "cycle_percent": 0.9549314810882318
+      },
+      {
+        "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::allocate>(slinky::allocate const*, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 9,
+        "cycles": 39237565,
+        "cycle_percent": 0.9479334187599812
+      },
+      {
+        "symbol": "ynn::dequantize_int8_to_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 8,
+        "cycles": 35151666,
+        "cycle_percent": 0.8492229047977108
+      },
+      {
+        "symbol": "ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int, unsigned long)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const",
+        "binary": "ynn-experiment",
+        "samples": 8,
+        "cycles": 35143572,
+        "cycle_percent": 0.8490273632779595
+      },
+      {
+        "symbol": "std::__ndk1::chrono::steady_clock::now()",
+        "binary": "ynn-experiment",
+        "samples": 8,
+        "cycles": 34485474,
+        "cycle_percent": 0.8331284896598053
+      },
+      {
+        "symbol": "ynn::multiply_int32_fp32_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 6,
+        "cycles": 26428338,
+        "cycle_percent": 0.6384775607886045
+      },
+      {
+        "symbol": "ynn::get_dot_kernel(ynn::dot_type const&, ynn::dot_cost_models const&, ynn::dot_shape const&, ynn::dot_packed_shape, unsigned int, std::__ndk1::optional<bool>, unsigned long, int)",
+        "binary": "ynn-experiment",
+        "samples": 6,
+        "cycles": 25961267,
+        "cycle_percent": 0.6271936748024675
+      },
+      {
+        "symbol": "ynn::dot_fp32_1x8x4_1x4x1_neon(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 5,
+        "cycles": 22068660,
+        "cycle_percent": 0.5331528682080972
+      },
+      {
+        "symbol": "ynn::multiply_fp32_fp32_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 5,
+        "cycles": 21668607,
+        "cycle_percent": 0.5234880582746778
+      },
+      {
+        "symbol": "slinky::raw_buffer::init_strides_impl(long)",
+        "binary": "ynn-experiment",
+        "samples": 4,
+        "cycles": 17753046,
+        "cycle_percent": 0.4288927100390457
+      },
+      {
+        "symbol": "@plt",
+        "binary": "ynn-experiment",
+        "samples": 4,
+        "cycles": 16831221,
+        "cycle_percent": 0.4066225022993855
+      },
+      {
+        "symbol": "clock_gettime",
+        "binary": "libc.so",
+        "samples": 3,
+        "cycles": 13274720,
+        "cycle_percent": 0.320701621333574
+      },
+      {
+        "symbol": "ynn::dot_fp32_1x64x4_1x4x1_neon(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 13140199,
+        "cycle_percent": 0.3174517521986006
+      },
+      {
+        "symbol": "ynn::dot_fp32_1x16x4_1x4x1_neon(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 13122506,
+        "cycle_percent": 0.31702431012929483
+      },
+      {
+        "symbol": "lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::'lambda'(slinky::call_stmt const*, slinky::eval_context&)::operator()(slinky::call_stmt const*, slinky::eval_context&) const",
+        "binary": "ynn-experiment",
+        "samples": 3,
+        "cycles": 13014403,
+        "cycle_percent": 0.31441266880118973
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_binary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*))::$_0>(ynn::(anonymous namespace)::make_binary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*))::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&), std::__ndk1::allocator<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_binary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*))::$_0>(ynn::(anonymous namespace)::make_binary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*))::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&)>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8943153,
+        "cycle_percent": 0.2160560574486103
+      },
+      {
+        "symbol": "void slinky::internal::for_each_element_impl<4ul>(slinky::span<slinky::raw_buffer const*, 4ul>, slinky::function_ref<void (void**, long, long const*)>)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8929177,
+        "cycle_percent": 0.21571841372732972
+      },
+      {
+        "symbol": "void slinky::function_ref<void (void**, long, long const*)>::get_impl<void slinky::for_each_element<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int, unsigned long)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::'lambda'(void*, void const*, void const*, void const*), slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer>(ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int, unsigned long)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::'lambda'(void*, void const*, void const*, void const*) const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&)::'lambda'(void**, long, long const*)>(void const*, void**, long, long const*)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8929085,
+        "cycle_percent": 0.2157161911155411
+      },
+      {
+        "symbol": "__emutls_get_address",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8917798,
+        "cycle_percent": 0.21544351047143018
+      },
+      {
+        "symbol": "void slinky::internal::for_each_element_impl<3ul>(slinky::span<slinky::raw_buffer const*, 3ul>, slinky::function_ref<void (void**, long, long const*)>)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8911057,
+        "cycle_percent": 0.21528065584026584
+      },
+      {
+        "symbol": "ynn::poly3_fp32_neonfma(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8893129,
+        "cycle_percent": 0.21484753644736956
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_unary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*), ynn::unary_params, ynn_type, ynn_type)::$_0>(ynn::(anonymous namespace)::make_unary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*), ynn::unary_params, ynn_type, ynn_type)::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&), std::__ndk1::allocator<slinky::func slinky::func::make<ynn::(anonymous namespace)::make_unary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*), ynn::unary_params, ynn_type, ynn_type)::$_0>(ynn::(anonymous namespace)::make_unary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*), ynn::unary_params, ynn_type, ynn_type)::$_0&&, std::__ndk1::vector<slinky::func::input, std::__ndk1::allocator<slinky::func::input>>, std::__ndk1::vector<slinky::func::output, std::__ndk1::allocator<slinky::func::output>>, slinky::call_stmt::attributes)::'lambda'(slinky::call_stmt const*, slinky::eval_context&)>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8873975,
+        "cycle_percent": 0.21438479833650748
+      },
+      {
+        "symbol": "ynn::multiply_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8847749,
+        "cycle_percent": 0.21375120902380676
+      },
+      {
+        "symbol": "ynn::add_fp32_neon(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8810910,
+        "cycle_percent": 0.2128612221142292
+      },
+      {
+        "symbol": "ynn::dot_fp32_1x32x4_1x4x1_neon(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8808511,
+        "cycle_percent": 0.21280326509595843
+      },
+      {
+        "symbol": "slinky::raw_buffer::slice(slinky::span<unsigned long, 18446744073709551615ul>)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8577650,
+        "cycle_percent": 0.20722593487711463
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<ynn::define_reduce(ynn_subgraph&, ynn_node&, ynn_reduce_operator, ynn::axes_set const&, unsigned int, unsigned int, unsigned int*, bool, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>>)::$_1::operator()(ynn_node const&, ynn_runtime&) const::'lambda'(slinky::call_stmt const*, slinky::eval_context&), std::__ndk1::allocator<ynn::define_reduce(ynn_subgraph&, ynn_node&, ynn_reduce_operator, ynn::axes_set const&, unsigned int, unsigned int, unsigned int*, bool, std::__ndk1::vector<slinky::expr, std::__ndk1::allocator<slinky::expr>>)::$_1::operator()(ynn_node const&, ynn_runtime&) const::'lambda'(slinky::call_stmt const*, slinky::eval_context&)>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8514213,
+        "cycle_percent": 0.2056933715723867
+      },
+      {
+        "symbol": "std::__ndk1::__function::__func<(anonymous namespace)::make_reshape_impl(ynn_runtime*)::$_0, std::__ndk1::allocator<(anonymous namespace)::make_reshape_impl(ynn_runtime*)::$_0>, long (slinky::call_stmt const*, slinky::eval_context&)>::operator()(slinky::call_stmt const*&&, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 2,
+        "cycles": 8424303,
+        "cycle_percent": 0.20352125172548208
+      },
+      {
+        "symbol": "wmemchr",
+        "binary": "libc.so",
+        "samples": 2,
+        "cycles": 8422780,
+        "cycle_percent": 0.20348445783685082
+      },
+      {
+        "symbol": "ynn::packer::packer(bool, unsigned long, unsigned long, unsigned long)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4473478,
+        "cycle_percent": 0.1080739667277407
+      },
+      {
+        "symbol": "__aarch64_ldadd4_rel",
+        "binary": "libc.so",
+        "samples": 1,
+        "cycles": 4470363,
+        "cycle_percent": 0.10799871199163673
+      },
+      {
+        "symbol": "scudo::HybridMutex::tryLock()",
+        "binary": "libc.so",
+        "samples": 1,
+        "cycles": 4470055,
+        "cycle_percent": 0.10799127107390959
+      },
+      {
+        "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::make_buffer>(slinky::make_buffer const*, slinky::eval_context&)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4468625,
+        "cycle_percent": 0.10795672395589076
+      },
+      {
+        "symbol": "void slinky::function_ref<void (void**, long, long const*)>::get_impl<void slinky::for_each_element<ynn::(anonymous namespace)::make_binary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*))::$_0::operator()(slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer) const::'lambda'(void*, void const*, void const*), slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer>(ynn::(anonymous namespace)::make_binary_elementwise_impl(void (*)(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*))::$_0::operator()(slinky::raw_buffer, slinky::raw_buffer, slinky::raw_buffer) const::'lambda'(void*, void const*, void const*) const&, slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&)::'lambda'(void**, long, long const*)>(void const*, void**, long, long const*)",
+        "binary": "ynn-experiment",
+        "samples": 1,
+        "cycles": 4463188,
+        "cycle_percent": 0.10782537243094781
+      }
+    ],
+    "scope": "measured_subsequent_decode_graph_run",
+    "interval_count": 32,
+    "policy": "both",
+    "frequency_hz": 499,
+    "record_sha256": "b9a7c7e08863cb4058d6736cf4c25a91156f6e510aab4f276f3c62133780a34f"
+  }
+]

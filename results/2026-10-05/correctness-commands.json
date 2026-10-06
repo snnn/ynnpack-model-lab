@@ -1,0 +1,233 @@
+[
+  {
+    "device": "linux",
+    "model": "e2b",
+    "engine": "ynn_learned",
+    "job": "e2b-learned-c2048",
+    "argv": [
+      "taskset",
+      "55",
+      "${YNN_BINARY}",
+      "--bundle_dir=${BUNDLE_DIR}",
+      "--parameter_dir=${PARAMETER_DIR}",
+      "--cases_file=models/gemma4_e2b/fixtures/correctness.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--warmup_runs=0",
+      "--measured_runs=1",
+      "--dump_outputs"
+    ]
+  },
+  {
+    "device": "linux",
+    "model": "e2b",
+    "engine": "ynn_learned",
+    "job": "e2b-learned-c8448",
+    "argv": [
+      "taskset",
+      "55",
+      "${YNN_BINARY}",
+      "--bundle_dir=${BUNDLE_DIR}",
+      "--parameter_dir=${PARAMETER_DIR}",
+      "--cases_file=models/gemma4_e2b/fixtures/correctness.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=8448",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--warmup_runs=0",
+      "--measured_runs=1",
+      "--dump_outputs"
+    ]
+  },
+  {
+    "device": "linux",
+    "model": "e4b",
+    "engine": "ynn_learned",
+    "job": "e4b-learned-c2048",
+    "argv": [
+      "taskset",
+      "55",
+      "${YNN_BINARY}",
+      "--bundle_dir=${BUNDLE_DIR}",
+      "--parameter_dir=${PARAMETER_DIR}",
+      "--cases_file=models/gemma4_e4b/fixtures/correctness.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--warmup_runs=0",
+      "--measured_runs=1",
+      "--dump_outputs"
+    ]
+  },
+  {
+    "device": "linux",
+    "model": "e4b",
+    "engine": "ynn_learned",
+    "job": "e4b-learned-c8448",
+    "argv": [
+      "taskset",
+      "55",
+      "${YNN_BINARY}",
+      "--bundle_dir=${BUNDLE_DIR}",
+      "--parameter_dir=${PARAMETER_DIR}",
+      "--cases_file=models/gemma4_e4b/fixtures/correctness.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=8448",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--warmup_runs=0",
+      "--measured_runs=1",
+      "--dump_outputs"
+    ]
+  },
+  {
+    "device": "linux",
+    "model": "e2b",
+    "engine": "ynn_previous",
+    "job": "e2b-previous",
+    "argv": [
+      "taskset",
+      "55",
+      "${YNN_BINARY}",
+      "--bundle_dir=${BUNDLE_DIR}",
+      "--parameter_dir=${PARAMETER_DIR}",
+      "--cases_file=models/gemma4_e2b/fixtures/correctness.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--warmup_runs=0",
+      "--measured_runs=1",
+      "--dump_outputs"
+    ]
+  },
+  {
+    "device": "linux",
+    "model": "e4b",
+    "engine": "ynn_previous",
+    "job": "e4b-previous",
+    "argv": [
+      "taskset",
+      "55",
+      "${YNN_BINARY}",
+      "--bundle_dir=${BUNDLE_DIR}",
+      "--parameter_dir=${PARAMETER_DIR}",
+      "--cases_file=models/gemma4_e4b/fixtures/correctness.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--warmup_runs=0",
+      "--measured_runs=1",
+      "--dump_outputs"
+    ]
+  },
+  {
+    "device": "tecno",
+    "model": "e2b",
+    "engine": "ynn_learned",
+    "job": "e2b-correctness",
+    "argv": [
+      "taskset",
+      "f0",
+      "${YNN_BINARY}",
+      "--bundle_dir=${BUNDLE_DIR}",
+      "--parameter_dir=${PARAMETER_DIR}",
+      "--cases_file=models/gemma4_e2b/fixtures/correctness.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--warmup_runs=0",
+      "--measured_runs=1",
+      "--dump_outputs"
+    ]
+  },
+  {
+    "device": "tecno",
+    "model": "e4b",
+    "engine": "ynn_learned",
+    "job": "e4b-correctness",
+    "argv": [
+      "taskset",
+      "f0",
+      "${YNN_BINARY}",
+      "--bundle_dir=${BUNDLE_DIR}",
+      "--parameter_dir=${PARAMETER_DIR}",
+      "--cases_file=models/gemma4_e4b/fixtures/correctness.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--warmup_runs=0",
+      "--measured_runs=1",
+      "--dump_outputs"
+    ]
+  },
+  {
+    "device": "pixel",
+    "model": "e2b",
+    "engine": "ynn_learned",
+    "job": "e2b-correctness",
+    "argv": [
+      "taskset",
+      "1e0",
+      "${YNN_BINARY}",
+      "--bundle_dir=${BUNDLE_DIR}",
+      "--parameter_dir=${PARAMETER_DIR}",
+      "--cases_file=models/gemma4_e2b/fixtures/correctness.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--warmup_runs=0",
+      "--measured_runs=1",
+      "--dump_outputs"
+    ]
+  },
+  {
+    "device": "tecno",
+    "model": "e2b",
+    "engine": "ynn_previous",
+    "job": "e2b-previous-correctness",
+    "argv": [
+      "taskset",
+      "f0",
+      "${YNN_BINARY}",
+      "--bundle_dir=${BUNDLE_DIR}",
+      "--parameter_dir=${PARAMETER_DIR}",
+      "--cases_file=models/gemma4_e2b/fixtures/correctness.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--warmup_runs=0",
+      "--measured_runs=1",
+      "--dump_outputs"
+    ]
+  },
+  {
+    "device": "pixel",
+    "model": "e2b",
+    "engine": "ynn_previous",
+    "job": "e2b-previous-correctness",
+    "argv": [
+      "taskset",
+      "1e0",
+      "${YNN_BINARY}",
+      "--bundle_dir=${BUNDLE_DIR}",
+      "--parameter_dir=${PARAMETER_DIR}",
+      "--cases_file=models/gemma4_e2b/fixtures/correctness.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--warmup_runs=0",
+      "--measured_runs=1",
+      "--dump_outputs"
+    ]
+  }
+]
