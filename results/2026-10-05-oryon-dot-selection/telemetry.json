@@ -1,0 +1,95 @@
+{
+  "frequency_lock": false,
+  "governor": "walt",
+  "clock_sample_scope": "Periodic samples include graph setup, requests and cooldown. These are not execution-window frequency averages.",
+  "clock_sample_interval_seconds": 3,
+  "clock_samples": 579,
+  "clocks_by_cpu": {
+    "4": {
+      "min_khz": 556800,
+      "max_khz": 3532800,
+      "observed_khz": [
+        556800,
+        748800,
+        960000,
+        1152000,
+        1363200,
+        1555200,
+        1996800,
+        2227200,
+        2400000,
+        2745600,
+        2918400,
+        3072000,
+        3321600,
+        3532800
+      ]
+    },
+    "5": {
+      "min_khz": 556800,
+      "max_khz": 3532800,
+      "observed_khz": [
+        556800,
+        748800,
+        960000,
+        1152000,
+        1363200,
+        1555200,
+        1996800,
+        2227200,
+        2400000,
+        2745600,
+        2918400,
+        3072000,
+        3321600,
+        3532800
+      ]
+    },
+    "6": {
+      "min_khz": 1017600,
+      "max_khz": 4473600,
+      "observed_khz": [
+        1017600,
+        1958400,
+        2246400,
+        2438400,
+        2649600,
+        2841600,
+        3072000,
+        3283200,
+        3513600,
+        3840000,
+        4089600,
+        4281600,
+        4473600
+      ]
+    },
+    "7": {
+      "min_khz": 1017600,
+      "max_khz": 4473600,
+      "observed_khz": [
+        1017600,
+        1958400,
+        2246400,
+        2438400,
+        2649600,
+        2841600,
+        3072000,
+        3283200,
+        3513600,
+        3840000,
+        4089600,
+        4281600,
+        4473600
+      ]
+    }
+  },
+  "latency_battery_temperature_range_c": [
+    35.3,
+    38.4
+  ],
+  "kernel_battery_temperature_c": {
+    "before": 30.7,
+    "after": 33.0
+  }
+}

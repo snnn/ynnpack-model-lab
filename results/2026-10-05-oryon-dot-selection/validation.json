@@ -1,0 +1,99 @@
+{
+  "self_consistency": [
+    {
+      "policy": "none",
+      "compared_files": 372,
+      "logit_arrays": 12,
+      "kv_codes": 35555328,
+      "mismatches": []
+    },
+    {
+      "policy": "int2",
+      "compared_files": 372,
+      "logit_arrays": 12,
+      "kv_codes": 35555328,
+      "mismatches": []
+    },
+    {
+      "policy": "int4",
+      "compared_files": 372,
+      "logit_arrays": 12,
+      "kv_codes": 35555328,
+      "mismatches": []
+    },
+    {
+      "policy": "both",
+      "compared_files": 372,
+      "logit_arrays": 12,
+      "kv_codes": 35555328,
+      "mismatches": []
+    }
+  ],
+  "pipelines": {
+    "normalization": "Replace printed pointer addresses only; preserve dimensions, strides, bounds and statements.",
+    "checks": [
+      {
+        "policy": "none",
+        "prefill_matches_retained": true,
+        "prefill_normalized_sha256": "8d832b91e1592faa8958f6a52f12f93770ba756979e4d90753ca4db147683fcf",
+        "decode_matches_retained": true
+      },
+      {
+        "policy": "int2",
+        "prefill_matches_retained": true,
+        "prefill_normalized_sha256": "8d832b91e1592faa8958f6a52f12f93770ba756979e4d90753ca4db147683fcf",
+        "decode_matches_retained": false
+      },
+      {
+        "policy": "int4",
+        "prefill_matches_retained": true,
+        "prefill_normalized_sha256": "8d832b91e1592faa8958f6a52f12f93770ba756979e4d90753ca4db147683fcf",
+        "decode_matches_retained": false
+      },
+      {
+        "policy": "both",
+        "prefill_matches_retained": true,
+        "prefill_normalized_sha256": "8d832b91e1592faa8958f6a52f12f93770ba756979e4d90753ca4db147683fcf",
+        "decode_matches_retained": false
+      }
+    ]
+  },
+  "kernel_arithmetic": {
+    "shape_type_pairs": 12,
+    "kernels_per_pair": 2,
+    "independent_reference": "Signed INT8 activations and signed packed INT2/INT4 weights accumulated with a scalar INT32 dot reference before any timing. All columns checked.",
+    "all_exact": true
+  },
+  "host_ctest": {
+    "passed": 12,
+    "failed": 0
+  },
+  "portable_patch": {
+    "applies_to_retained_baseline": true,
+    "compiled_code_matches_after_include_order_normalization": true
+  },
+  "latency": {
+    "measured_requests": 72,
+    "processes": 24,
+    "unique_policy_configurations": 12,
+    "all_timings_valid": true,
+    "profiling_and_dumps_disabled": true,
+    "token_ids_match_public_fixture": true,
+    "all_history_view_copy_counters_zero": true
+  },
+  "kernel_execution": {
+    "policies_sampled": [
+      "none",
+      "int2",
+      "both"
+    ],
+    "int2_dotprod_observed": true,
+    "int4_dotprod_observed": true,
+    "int8_i8mm_preserved": true,
+    "sample_scope": "Measured subsequent decode Graph::Run intervals; setup and prefill excluded."
+  },
+  "publication": {
+    "files_scanned": 887,
+    "findings": 0
+  }
+}

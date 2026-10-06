@@ -1,0 +1,24 @@
+{
+  "model": "e4b",
+  "reference_engine": "ynn_previous",
+  "candidate_engine": "ynn_learned",
+  "capacity": 2048,
+  "threads": 4,
+  "cases_with_changed_dumps": [
+    "p1"
+  ],
+  "changed_logit_files": [
+    "p1.decode_0002.f32"
+  ],
+  "changed_kv_files": 84,
+  "first_changed_owner": 3,
+  "first_changed_owner_files": [
+    "p1.decode_0002.f32.owner3.head0.k.i8",
+    "p1.decode_0002.f32.owner3.head0.v.i8",
+    "p1.decode_0002.f32.owner3.head1.k.i8",
+    "p1.decode_0002.f32.owner3.head1.v.i8"
+  ],
+  "other_cases_byte_identical": true,
+  "cause_isolated": false,
+  "note": "The differing output is the second forced continuation of the BOS-only case. This localization does not identify a specific kernel or establish generation-quality equivalence."
+}

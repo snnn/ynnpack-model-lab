@@ -1,0 +1,38 @@
+{
+  "native_source_files_sha256": {
+    "src/configs/gemm-config.c": "0967ea0d1d9aba4c0efc2bf64f2c4683201e2e34f6d7f8b1bb74aa3b93fd7fb1",
+    "src/operators/fully-connected-nc.c": "45203d5ac42138a8c286a6190a08e3e403b125aac2bf75e4fad7ff7a7ea93425"
+  },
+  "native_dispatch": {
+    "static_int2": "init_qs8_qc2w_gemm_config",
+    "static_int4": "init_qs8_qc4w_gemm_config",
+    "dynamic_head_int2": "init_qd8_f32_qc2w_gemm_config",
+    "arm64_rule": "DOTPROD configuration tables; no I8MM candidate in these preserved initialization functions.",
+    "one_row_rule": "reshape_fully_connected_nc selects mr=1 for batch_size=1 when gemm_cases[0] is populated."
+  },
+  "ynn_selection": {
+    "packing_source": "ynnpack/subgraph/dot.cc",
+    "execution_selector": "ynnpack/kernels/dot/dot.cc",
+    "fitter": "ynnpack/kernels/dot/cost_model/fit_cost_models.py",
+    "trained_coefficients": "ynnpack/kernels/dot/cost_model/oryon.h",
+    "training_data": "ynnpack/kernels/dot/cost_model/data/oryon.csv",
+    "packing_query_clip": {
+      "m": 480,
+      "n": 384,
+      "k": 256
+    },
+    "retained_packing_correction": "Known one-row M is used before clipping and packing. Samsung still selects I8MM under the Oryon model.",
+    "fitting_exclusion": "If any kernel in the cost-model family has block_m > 1, records for kernels with block_m == 1 are skipped.",
+    "runtime_constraints": "Packed tile_k, block_n and activation transpose constrain later kernel selection.",
+    "training_benchmark": "ynnpack/kernels/dot/cost_model/bench.cc",
+    "training_shape_m": "block_m",
+    "training_working_set_limit_bytes": 24576
+  },
+  "ynn_source_sha256": {
+    "ynnpack/kernels/dot/cost_model/fit_cost_models.py": "1735617578e4f5dc120795f154269794d9312a4b17b93b57a56b2ee8a6c8f013",
+    "ynnpack/kernels/dot/cost_model/bench.cc": "5489f4bb279d9f53edb6a67c3d191a7b45e7a0c25d2c204544f20a477acb3844",
+    "ynnpack/kernels/dot/cost_model/oryon.h": "eacbec7825c6d7a365ffce76a1a4a1b620ade200a0f5b7fb0aac0ef8bbfcd0c9",
+    "ynnpack/kernels/dot/cost_model/data/oryon.csv": "31b0415a0626a224bcc93819133414a0ebebf4bdb6f2512e676b8f4f2a0ca845",
+    "ynnpack/kernels/dot/dot.cc": "b6f23fdae8559b8e686e9081903aa2629619ab0fb0283e5b4d37ea8a00d306c7"
+  }
+}

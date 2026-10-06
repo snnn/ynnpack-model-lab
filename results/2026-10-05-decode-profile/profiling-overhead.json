@@ -1,0 +1,48 @@
+[
+  {
+    "device": "samsung",
+    "threads": 4,
+    "prompt_tokens": 17,
+    "capacity": 2048,
+    "continuations": 32,
+    "cpu_sampling": false,
+    "profile_off_request_decode_ms": [
+      29.30535965625,
+      29.66595703125,
+      29.021733375
+    ],
+    "profile_on_request_decode_ms": [
+      37.43540534375,
+      34.53167465625,
+      38.030012937500004
+    ],
+    "profile_off_mean_decode_ms": 29.3310166875,
+    "profile_on_mean_decode_ms": 36.66569764583333,
+    "observed_mean_increase_percent": 25.006569109004516,
+    "argmax_sequences_identical": true,
+    "clocks_locked": false
+  },
+  {
+    "device": "samsung",
+    "threads": 4,
+    "prompt_tokens": 1024,
+    "capacity": 2048,
+    "continuations": 32,
+    "cpu_sampling": false,
+    "profile_off_request_decode_ms": [
+      49.5636215625,
+      48.95211759375,
+      50.12305975
+    ],
+    "profile_on_request_decode_ms": [
+      52.62823075,
+      53.32125825,
+      61.89372884375
+    ],
+    "profile_off_mean_decode_ms": 49.54626630208334,
+    "profile_on_mean_decode_ms": 55.94773928125,
+    "observed_mean_increase_percent": 12.920192492683324,
+    "argmax_sequences_identical": true,
+    "clocks_locked": false
+  }
+]

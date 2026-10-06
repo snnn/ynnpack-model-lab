@@ -1,0 +1,597 @@
+{
+  "ctest_host": {
+    "adopted": {
+      "passed": 10,
+      "failed": 0,
+      "tokenizer_execution_enabled": false,
+      "test_names": [
+        "benchmark_cases",
+        "safetensors_assets",
+        "model_assets",
+        "publication",
+        "tokenizer_recipes",
+        "benchmark_summary",
+        "safetensors",
+        "asset_recipes",
+        "state_views",
+        "quantized_fc"
+      ]
+    },
+    "previous": {
+      "passed": 10,
+      "failed": 0,
+      "tokenizer_execution_enabled": false,
+      "test_names": [
+        "benchmark_cases",
+        "safetensors_assets",
+        "model_assets",
+        "publication",
+        "tokenizer_recipes",
+        "benchmark_summary",
+        "safetensors",
+        "asset_recipes",
+        "state_views",
+        "quantized_fc"
+      ]
+    }
+  },
+  "hf_bf16_arithmetic": {
+    "passed": true
+  },
+  "android": {
+    "tecno": {
+      "state_views": {
+        "passed": true,
+        "observations": [
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 8,
+            "window": 512,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 3.28629e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 8448,
+            "heads": 2,
+            "query_heads": 8,
+            "window": 0,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 1.54449e-06,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 1,
+            "query_heads": 1,
+            "window": 512,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 2.62273e-07,
+            "append_bytes": 16272,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 512,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 2.92525e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 8448,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 512,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 3.14644e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 8448,
+            "heads": 4,
+            "query_heads": 4,
+            "window": 512,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 3.53826e-07,
+            "append_bytes": 65088,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 0,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 7.825e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 1,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 8.73208e-08,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 1,
+            "query_heads": 4,
+            "window": 512,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 3.28629e-07,
+            "append_bytes": 16272,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 8,
+            "window": 512,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 3.28629e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 8448,
+            "heads": 2,
+            "query_heads": 8,
+            "window": 0,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 1.54449e-06,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 1,
+            "query_heads": 1,
+            "window": 512,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 2.62273e-07,
+            "append_bytes": 16272,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 512,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 2.92525e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 8448,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 512,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 3.14644e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 8448,
+            "heads": 4,
+            "query_heads": 4,
+            "window": 512,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 3.53826e-07,
+            "append_bytes": 65088,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 0,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 7.825e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 1,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 8.73208e-08,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 1,
+            "query_heads": 4,
+            "window": 512,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 3.28629e-07,
+            "append_bytes": 16272,
+            "view_copy_bytes": 0
+          }
+        ]
+      },
+      "quantized_fc": {
+        "passed": true,
+        "observations": [
+          {
+            "bits": 2,
+            "rows": 1,
+            "max_code_error": 0
+          },
+          {
+            "bits": 2,
+            "rows": 17,
+            "max_code_error": 0
+          },
+          {
+            "bits": 2,
+            "rows": 128,
+            "max_code_error": 1
+          },
+          {
+            "bits": 4,
+            "rows": 1,
+            "max_code_error": 0
+          },
+          {
+            "bits": 4,
+            "rows": 17,
+            "max_code_error": 0
+          },
+          {
+            "bits": 4,
+            "rows": 128,
+            "max_code_error": 0
+          },
+          {
+            "bits": 8,
+            "rows": 1,
+            "max_code_error": 0
+          },
+          {
+            "bits": 8,
+            "rows": 17,
+            "max_code_error": 0
+          },
+          {
+            "bits": 8,
+            "rows": 128,
+            "max_code_error": 1
+          }
+        ],
+        "reference": "independent integer dot/scales; tolerance at most one code as enforced by the existing test"
+      },
+      "model_assets": {
+        "passed": true
+      }
+    },
+    "pixel": {
+      "state_views": {
+        "passed": true,
+        "observations": [
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 8,
+            "window": 512,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 3.28629e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 8448,
+            "heads": 2,
+            "query_heads": 8,
+            "window": 0,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 1.54449e-06,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 1,
+            "query_heads": 1,
+            "window": 512,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 2.62273e-07,
+            "append_bytes": 16272,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 512,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 2.92525e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 8448,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 512,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 3.14644e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 8448,
+            "heads": 4,
+            "query_heads": 4,
+            "window": 512,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 3.53826e-07,
+            "append_bytes": 65088,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 0,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 7.825e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 1,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 8.73208e-08,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 1,
+            "query_heads": 4,
+            "window": 512,
+            "threads": 1,
+            "requests": 11,
+            "max_error": 3.28629e-07,
+            "append_bytes": 16272,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 8,
+            "window": 512,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 3.28629e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 8448,
+            "heads": 2,
+            "query_heads": 8,
+            "window": 0,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 1.54449e-06,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 1,
+            "query_heads": 1,
+            "window": 512,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 2.62273e-07,
+            "append_bytes": 16272,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 512,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 2.92525e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 8448,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 512,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 3.14644e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 8448,
+            "heads": 4,
+            "query_heads": 4,
+            "window": 512,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 3.53826e-07,
+            "append_bytes": 65088,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 0,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 7.825e-07,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 2,
+            "query_heads": 2,
+            "window": 1,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 8.73208e-08,
+            "append_bytes": 32544,
+            "view_copy_bytes": 0
+          },
+          {
+            "capacity": 2048,
+            "heads": 1,
+            "query_heads": 4,
+            "window": 512,
+            "threads": 4,
+            "requests": 11,
+            "max_error": 3.28629e-07,
+            "append_bytes": 16272,
+            "view_copy_bytes": 0
+          }
+        ]
+      },
+      "quantized_fc": {
+        "passed": true,
+        "observations": [
+          {
+            "bits": 2,
+            "rows": 1,
+            "max_code_error": 0
+          },
+          {
+            "bits": 2,
+            "rows": 17,
+            "max_code_error": 0
+          },
+          {
+            "bits": 2,
+            "rows": 128,
+            "max_code_error": 1
+          },
+          {
+            "bits": 4,
+            "rows": 1,
+            "max_code_error": 0
+          },
+          {
+            "bits": 4,
+            "rows": 17,
+            "max_code_error": 0
+          },
+          {
+            "bits": 4,
+            "rows": 128,
+            "max_code_error": 0
+          },
+          {
+            "bits": 8,
+            "rows": 1,
+            "max_code_error": 0
+          },
+          {
+            "bits": 8,
+            "rows": 17,
+            "max_code_error": 0
+          },
+          {
+            "bits": 8,
+            "rows": 128,
+            "max_code_error": 1
+          }
+        ],
+        "reference": "independent integer dot/scales; tolerance at most one code as enforced by the existing test"
+      },
+      "model_assets": {
+        "passed": true
+      }
+    }
+  },
+  "correctness_exact": {
+    "e2b": {
+      "capacity_files": 372,
+      "capacity_byte_identical": 372,
+      "previous_backend_files": 372,
+      "previous_backend_byte_identical": 372
+    },
+    "e4b": {
+      "capacity_files": 2619,
+      "capacity_byte_identical": 2619,
+      "previous_backend_files": 2619,
+      "previous_backend_byte_identical": 2534
+    }
+  },
+  "e2b_adopted_tecno_pixel": {
+    "files": 372,
+    "byte_identical": 372
+  },
+  "performance_argmax_repeatable_including_warmup": true,
+  "configurations": 87,
+  "measured_requests": 261,
+  "warmup_requests": 87,
+  "fresh_kv_append_bytes_per_token": {
+    "e2b": 9216,
+    "e4b": 28672
+  },
+  "explicit_history_view_copy_bytes": 0,
+  "numerics": "Full logit/KV metrics are in numerics/. Greedy agreement is teacher-forced and does not establish equivalent free generation quality.",
+  "retained_latency_integrity": {
+    "processes": 29,
+    "token_records": 8604,
+    "measured_continuation_token_records": 6192,
+    "fresh_append_payload_checks": true,
+    "live_context_and_capacity_checks": true,
+    "complete_request_steps": true
+  }
+}

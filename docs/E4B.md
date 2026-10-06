@@ -139,11 +139,22 @@ separate from the large weight-packing footprint.
 
 ## Measurements
 
-See `results/e4b_2026-10-02/` for raw summaries, capacity consistency, and
-cross-backend numerical records. Warm timing excludes preparation, uses real
-chunks up to 128, one warmup and three measured requests, and 16 forced decode
-tokens per request. Desktop uses an i9-12900K, four physical P cores, affinity
-mask `55`; TECNO uses four big cores, mask `f0`. No SME/SME2 paths are enabled.
+The [October 5 backend refresh](../results/2026-10-05/README.md) contains updated
+E4B timings, a fresh previous-backend desktop control, selected kernel evidence,
+and capacity checks. The table below retains the October 2 configuration and
+its historical LiteRT/XNNPACK control.
+
+The later [packing correction](../results/2026-10-05-packing-fix/README.md)
+keeps desktop E4B speed essentially unchanged and capacity outputs exact, but
+changes numerical outputs and one argmax versus the unpatched control. The
+follow-up records those differences separately; it does not retime E4B on phones.
+
+See `results/e4b_2026-10-02/` for those original raw summaries, capacity
+consistency, and cross-backend numerical records. Warm timing excludes
+preparation, uses real chunks up to 128, one warmup and three measured requests,
+and 16 forced decode tokens per request. Desktop uses an i9-12900K, four physical
+P cores, affinity mask `55`; TECNO uses four big cores, mask `f0`. No SME/SME2
+paths are enabled.
 
 Capacity is 2048 throughout this timing table. TTFT includes processing the last
 prompt token through the full decode graph. Prefill throughput counts the other

@@ -1,0 +1,22 @@
+{
+  "model": "SM-S937U1",
+  "soc": "SM8750",
+  "cores": 8,
+  "cpuinfo_uarch": "oryon",
+  "cpuinfo_uarch_hex": "0x00400105",
+  "max_frequency_khz": {
+    "0-5": 3532800,
+    "6-7": 4473600
+  },
+  "one_thread_cpus": [
+    7
+  ],
+  "four_thread_cpus": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "governor": "walt",
+  "frequency_locked": false
+}

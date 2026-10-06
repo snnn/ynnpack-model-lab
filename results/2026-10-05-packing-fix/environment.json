@@ -1,0 +1,316 @@
+{
+  "source_commit": "7c3a9caec93a05e6a72288b4387795e189d89e06",
+  "dependencies": [
+    {
+      "name": "XNNPACK",
+      "repository": "google/XNNPACK",
+      "revision": "f5122810ee8bb7461ed73efe7a678a472866cee3",
+      "url": "https://codeload.github.com/google/XNNPACK/zip/f5122810ee8bb7461ed73efe7a678a472866cee3",
+      "sha256": "47122c5f125d5fbadc5d1e6de057ea546828895d7c0ca60027bfc4d53f221268"
+    },
+    {
+      "name": "slinky",
+      "repository": "dsharlet/slinky",
+      "revision": "d18c98551c77f366857f125e3a0f7886deb82a47",
+      "url": "https://codeload.github.com/dsharlet/slinky/zip/d18c98551c77f366857f125e3a0f7886deb82a47",
+      "sha256": "e0f98371b2a89918bcac16e906966de36de62a80f56a2e17eb3b6cbb12fa17fe"
+    },
+    {
+      "name": "cpuinfo",
+      "repository": "pytorch/cpuinfo",
+      "revision": "8ce83db858065145192c97af90cb668ad72a12e9",
+      "url": "https://codeload.github.com/pytorch/cpuinfo/zip/8ce83db858065145192c97af90cb668ad72a12e9",
+      "sha256": "fe2aa43254838a2eb5658d1742696473a1d834a57f2a0b38d533346bcd212482"
+    },
+    {
+      "name": "tokenizers-cpp",
+      "repository": "mlc-ai/tokenizers-cpp",
+      "revision": "c586c52f93f7b060753bd2388eb96a105cb7374d",
+      "url": "https://codeload.github.com/mlc-ai/tokenizers-cpp/zip/c586c52f93f7b060753bd2388eb96a105cb7374d",
+      "sha256": "4c217141592091601a4d818999a5ea92f1a3ff61a8ae1d00e9d16d943bb5a248",
+      "feature": "tokenizers"
+    },
+    {
+      "name": "sentencepiece",
+      "repository": "google/sentencepiece",
+      "revision": "e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+      "url": "https://codeload.github.com/google/sentencepiece/zip/e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+      "sha256": "f47359a9c786bca379a0c34663dd5e417dbc0104924f7cab50fdaa493217d57f",
+      "feature": "tokenizers"
+    },
+    {
+      "name": "abseil",
+      "revision": "255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+      "url": "https://codeload.github.com/abseil/abseil-cpp/zip/255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+      "sha256": "e945549b45648c00cb07119fb7697e13762da3e0b8cdb244d8e6550bbe1e53cd",
+      "feature": "tokenizers",
+      "repository": "abseil/abseil-cpp"
+    }
+  ],
+  "fixtures": {
+    "models/gemma4_e2b/fixtures/correctness.tsv": "a2f8ae88d8ab4efe451acdacc1c5e4259f2016121154fdd3537ba4a009568ce8",
+    "models/gemma4_e2b/fixtures/performance.tsv": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "models/gemma4_e4b/fixtures/correctness.tsv": "2bbb154936ace29809bf6cb0bd4f4786d985a1f8c4ddd90275e739ff8de93b64",
+    "models/gemma4_e4b/fixtures/performance.tsv": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+    "models/gemma4_e2b_hf/fixtures/correctness.tsv": "28b841952d294f1405932122eae416e150f0adb643c2ea18a9dc5e6dade13b6f",
+    "models/gemma4_e2b_hf/fixtures/performance.tsv": "600d8426a67d1f617657600ecc9ea69cf4006537d0ccda9a7c0732dc64ccd881"
+  },
+  "builders": {
+    "models/gemma4_e4b/generated/model.json": "0bd28a073eef96a79dd70a0a9ba2b6f5180acbe65e04496a58e60b952aa8863d",
+    "models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/model.json": "42a79dc456b59bd6938345e5041ef81e37fa6752fcba3e680b150683ef3b36a8",
+    "models/gemma4_e2b_hf/generated/hf_bf16/model.json": "31473ebd9adb3da0770032bf86aef124c3b7db58f89cc58e0f2aab451c240bbb",
+    "models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv/model.json": "d2eaf091ed411c48b774716a13c3dff817baaedfbd7abea72c7fd8ad04f7793c",
+    "models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/model.json": "c816444810c4c2769cfb0881b39a901a313f3ca5367d0d2497eb4dddb9c3edf5",
+    "models/gemma4_e2b_hf/generated/hf_static_int8_published_kv/model.json": "8f1f55f2bf2e8874795cd0b4666588fa71a5e27b9d6df1fd9873f4fbfe14411d",
+    "models/gemma4_e2b/generated/model.json": "b806cf690ac88ee622cf84ae2271bb7bd892f25d90b74d8bcfd9d94686490f09"
+  },
+  "build_options": {
+    "release": true,
+    "tokenizers": false,
+    "runner_optimization": "-O1",
+    "builders_optimization": "-O2",
+    "dot_selector_optimization": "-O2",
+    "subgraph_optimization": "-O3",
+    "generated_kernels_optimization": "-O2",
+    "runner_builder_fp_contract": "off",
+    "sme": false,
+    "sme2": false,
+    "cpuinfo": true,
+    "arm_dotprod": true,
+    "arm_i8mm": true,
+    "android_ndk": "r28c (28.2.13676358)",
+    "android_api": 28,
+    "android_stl": "c++_static"
+  },
+  "assets": {
+    "e2b": {
+      "source_bundle": {
+        "path": "gemma-4-E2B-it.litertlm",
+        "bytes": 2583085056,
+        "sha256": "ab7838cdfc8f77e54d8ca45eadceb20452d9f01e4bfade03e5dce27911b27e42"
+      },
+      "asset_recipe": "models/gemma4_e2b/asset_recipe.json",
+      "asset_recipe_sha256": "a48afde44c9290a96e58d5f051b1fb1bfe8ba5a11317b2dd164cf0295605e689",
+      "verified_payload_count": 1369,
+      "prepared_model_metadata_sha256": "0295dcb605dc418db5f48b3badf9eba23391ef4f8110bfd975fc3383566ede36",
+      "bundle_manifest_sha256": "e6a1f0c01def6569511d01c03c6da2bd528f7f08250d60e8561eef36d9aebbc3"
+    },
+    "e4b": {
+      "source_bundle": {
+        "path": "gemma-4-E4B-it.litertlm",
+        "bytes": 3654467584,
+        "sha256": "f335f2bfd1b758dc6476db16c0f41854bd6237e2658d604cbe566bcefd00a7bc"
+      },
+      "asset_recipe": "models/gemma4_e4b/asset_recipe.json",
+      "asset_recipe_sha256": "e9f91db58fccf67db120b11295aebc0a13903fc9af2f68218bf898f68118abd4",
+      "verified_payload_count": 1695,
+      "prepared_model_metadata_sha256": "62550c8d41bd6c43f58141190a010a60fa3dc6aafd7eeb935642396d104c0064",
+      "bundle_manifest_sha256": "3958d2e209388fa21f666d5afca76df623b94ee1bd9a16902006de5e35ea5862"
+    },
+    "hf": {
+      "source_repo": "google/gemma-4-E2B-it-qat-mobile-transformers",
+      "source_revision": "dd693ff40353f057ca5f07e945ad867f4afbf2ec",
+      "source_identity": "b454fea4385836b70181ce7f8d797413d695d7f916b21ed3dd49896cdad6d579",
+      "config_sha256": "cf6d7dc22738b5e6beb364bac833d78b869f5a6ffd57dfc96c6be3f2abc80424",
+      "shards": {
+        "model.safetensors": {
+          "bytes": 2458111846,
+          "header_sha256": "8fd4ebc21f5e9c579d9498bb6712167249cb6480c750a7738690c20ecb0e8c34"
+        }
+      },
+      "manifest_sha256": "8056757729653a6181cb0add38c0d819f96022d6ccdb8d599350ea0c56df2b9a"
+    }
+  },
+  "source_tree_note": "Same checked-in runtime/builders as the backend refresh; dependency pin updates and the retained patches identify this pending baseline.",
+  "record_created_utc": "2026-10-06T02:11:19.233295+00:00",
+  "binaries": {
+    "build-vnni/gemma4_e2b": "06ce050cadf41cffab27fabfa8f1fe997d034df86d04eb408cb3e70a39e90db2",
+    "build-vnni/gemma4_e4b": "224b2db89e414bf9bad811d79219b23b2fc0109a243f61e21c620aa26a7f5ec1",
+    "build-packing-fix/gemma4_e2b": "83e9f0e2c9c016c0220cd55cfaa2b62395540f59e7cc31af8d0430b791875937",
+    "build-packing-fix/gemma4_e4b": "1e3011ceb724d23c9455b456be5c7e5f18d1f1b65f7c45b5fd4453a0a8159bd3",
+    "build-android-vnni/gemma4_e2b": "96d86f7b5a8a7e60c36fd17bac95741deb9252487cf0ae7c96208035c355e764",
+    "build-android-packing-fix/gemma4_e2b": "676496d6a055804ae3665e662971292644684ab3087417338f01911734601da6"
+  },
+  "patches_before": {
+    "ynnpack-symbolic-runtime.patch": "f6d03c9925ebdbe69fdfeb9ffd2d02ecd47467da0e9e1e7ce263042dfca0dc0a",
+    "ynnpack-cmake-subproject.patch": "af4510e2cbebf9e0ef39abd253644a1a36d5335439797697db81adad9758b43f"
+  },
+  "patches_fixed": {
+    "ynnpack-symbolic-runtime.patch": "f6d03c9925ebdbe69fdfeb9ffd2d02ecd47467da0e9e1e7ce263042dfca0dc0a",
+    "ynnpack-cmake-subproject.patch": "af4510e2cbebf9e0ef39abd253644a1a36d5335439797697db81adad9758b43f",
+    "ynnpack-dot-packing-shape.patch": "f78544b08a4a6a34a0dbddcf8d743cc3ff33319a88ea118d043eac34da3d644d"
+  },
+  "host": {
+    "cpu": "Intel Core i9-12900K",
+    "isa_avx_vnni": true,
+    "affinity": {
+      "1_thread": {
+        "mask": "40",
+        "logical_cpus": [
+          6
+        ]
+      },
+      "4_threads": {
+        "mask": "55",
+        "logical_cpus": [
+          0,
+          2,
+          4,
+          6
+        ]
+      }
+    },
+    "clocks_locked": false,
+    "governor": "powersave",
+    "frequency_driver": "intel_pstate",
+    "compiler": "clang version 22.1.8 (Fedora 22.1.8-4.fc44)",
+    "kernel": "7.2.8-200.fc44.x86_64",
+    "observations_note": "Ten-second package/core temperature and frequency samples span all host timing jobs.",
+    "selected_cpu_topology": {
+      "0": {
+        "physical_package_id": 0,
+        "core_id": 0,
+        "max_frequency_khz": 5100000
+      },
+      "2": {
+        "physical_package_id": 0,
+        "core_id": 4,
+        "max_frequency_khz": 5100000
+      },
+      "4": {
+        "physical_package_id": 0,
+        "core_id": 8,
+        "max_frequency_khz": 5100000
+      },
+      "6": {
+        "physical_package_id": 0,
+        "core_id": 12,
+        "max_frequency_khz": 5100000
+      }
+    }
+  },
+  "devices": {
+    "tecno": {
+      "model": "TECNO LJ9",
+      "soc": "MT6897",
+      "firmware": "TECNO/LJ9-OP/TECNO-LJ9:15/AP3A.240905.015.A2/154010:user/release-keys",
+      "affinity_mask": "f0",
+      "logical_cpus": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "clocks_locked": false,
+      "cpu_governors": [
+        null,
+        null,
+        null,
+        "sugov_ext"
+      ],
+      "initial_available_memory_kib": 8440468,
+      "cpu_detection_note": "Pinned CPUinfo reports A715 on the tested cores."
+    },
+    "pixel": {
+      "model": "Pixel 8",
+      "soc": "Tensor G3",
+      "firmware": "google/shiba/shiba:17/CP2A.260805.005/15828068:user/release-keys",
+      "affinity_mask": "1e0",
+      "logical_cpus": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "clocks_locked": false,
+      "cpu_governors": [
+        "sched_pixel",
+        "sched_pixel",
+        "sched_pixel",
+        "sched_pixel"
+      ],
+      "initial_available_memory_kib": 3628192,
+      "cpu_detection_note": "Pinned CPUinfo reports A510, including actual A715/X3 cores; this separate detection issue is unchanged."
+    }
+  },
+  "scope": "Published static-QAT E2B on host/phones and E4B on host, C2048/T4. C8448 is correctness-only. No fresh HF, E4B-phone, one-thread, or cross-runtime latency measurements.",
+  "compile_flags": {
+    "build-vnni": {
+      "runner": [
+        "-O3",
+        "-O1",
+        "-ffp-contract=off"
+      ],
+      "builder": [
+        "-O3",
+        "-O2",
+        "-ffp-contract=off"
+      ],
+      "selector": [
+        "-O3",
+        "-O2"
+      ],
+      "subgraph": [
+        "-O3"
+      ]
+    },
+    "build-packing-fix": {
+      "runner": [
+        "-O3",
+        "-O1",
+        "-ffp-contract=off"
+      ],
+      "builder": [
+        "-O3",
+        "-O2",
+        "-ffp-contract=off"
+      ],
+      "selector": [
+        "-O3",
+        "-O2"
+      ],
+      "subgraph": [
+        "-O3"
+      ]
+    },
+    "build-android-vnni": {
+      "runner": [
+        "-O3",
+        "-O1",
+        "-ffp-contract=off"
+      ],
+      "builder": [
+        "-O3",
+        "-O2",
+        "-ffp-contract=off"
+      ],
+      "selector": [
+        "-O3",
+        "-O2"
+      ],
+      "subgraph": [
+        "-O3"
+      ]
+    },
+    "build-android-packing-fix": {
+      "runner": [
+        "-O3",
+        "-O1",
+        "-ffp-contract=off"
+      ],
+      "builder": [
+        "-O3",
+        "-O2",
+        "-ffp-contract=off"
+      ],
+      "selector": [
+        "-O3",
+        "-O2"
+      ],
+      "subgraph": [
+        "-O3"
+      ]
+    }
+  },
+  "capture_convention": "Frontend input paths are normalized to the checked-in fixtures; IDs, byte counts, and input hashes are unchanged. Commands use configurable device directories."
+}
