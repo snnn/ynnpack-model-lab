@@ -2038,7 +2038,9 @@ LAB_YNN_BUILDER_NOINLINE void BuildBindInvocation(Context& ctx) {
 // Scope: "Embedding"
 LAB_YNN_BUILDER_NOINLINE void BuildEmbedding(Context& ctx) {
   auto* g = ctx.g;
+  g->BeginProfileOperation("Embedding", "core.mul", {6535,6538}, {0}, {"embedded_input","literal/f32/5e24ec443a1f93accb32e2f2133d1edb52cc54e03c03f38116362501ebc43097"});
   g->Binary(ynn_binary_multiply, 6535, 6538, 0);
+  g->EndProfileOperation();
 }
 
 }  // namespace BuildGemma4DecodeSource

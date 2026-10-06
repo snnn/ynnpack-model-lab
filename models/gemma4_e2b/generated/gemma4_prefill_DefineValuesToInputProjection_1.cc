@@ -1722,281 +1722,73 @@ LAB_YNN_BUILDER_NOINLINE void BuildBindInvocation(Context& ctx) {
 // Scope: "Embedding"
 LAB_YNN_BUILDER_NOINLINE void BuildEmbedding(Context& ctx) {
   auto* g = ctx.g;
+  g->BeginProfileOperation("Embedding", "core.mul", {3013,3015}, {0}, {"embedded_input","literal/f32/5e24ec443a1f93accb32e2f2133d1edb52cc54e03c03f38116362501ebc43097"});
   g->Binary(ynn_binary_multiply, 3013, 3015, 0);
+  g->EndProfileOperation();
 }
 
 // Scope: "RopeTables"
 LAB_YNN_BUILDER_NOINLINE void BuildRopeTables(Context& ctx) {
   auto* g = ctx.g;
+  g->BeginProfileOperation("RopeTables", "core.mul", {3292,3018}, {1}, {"positions","literal/f32/bacc54276d6082de53e4188d94fa7ee50121dffcbe75a5d0e54eacc135660190"});
   g->Binary(ynn_binary_multiply, 3292, 3018, 1);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("RopeTables", "core.cos", {1}, {885}, {"0/1/Mul"});
   g->Unary(ynn_unary_cos, 1, 885);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("RopeTables", "core.sin", {1}, {993}, {"0/1/Mul"});
   g->Unary(ynn_unary_sin, 1, 993);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("RopeTables", "core.concat", {885,885}, {1096}, {"0/2/Cos","0/2/Cos"});
   g->Concat({885,885}, 1096, 3);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("RopeTables", "core.concat", {993,993}, {1199}, {"0/3/Sin","0/3/Sin"});
   g->Concat({993,993}, 1199, 3);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("RopeTables", "core.mul", {3292,3017}, {1298}, {"positions","literal/f32/babfb4aa3fa74c61c18fb3df4f7e59954018787ccd2119dda35c3b1b5bc0d01a"});
   g->Binary(ynn_binary_multiply, 3292, 3017, 1298);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("RopeTables", "core.cos", {1298}, {1402}, {"0/6/Mul"});
   g->Unary(ynn_unary_cos, 1298, 1402);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("RopeTables", "core.sin", {1298}, {1510}, {"0/6/Mul"});
   g->Unary(ynn_unary_sin, 1298, 1510);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("RopeTables", "core.concat", {1402,1402}, {1613}, {"0/7/Cos","0/7/Cos"});
   g->Concat({1402,1402}, 1613, 3);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("RopeTables", "core.concat", {1510,1510}, {2}, {"0/8/Sin","0/8/Sin"});
   g->Concat({1510,1510}, 2, 3);
+  g->EndProfileOperation();
 }
 
 // Scope: "InputProjection"
 LAB_YNN_BUILDER_NOINLINE void BuildInputProjection(Context& ctx) {
   auto* g = ctx.g;
+  g->BeginProfileOperation("InputProjection", "core.quantize", {0}, {105}, {"0/0/Mul"});
   g->Quantize(0, 105, 0.03887796401977539, 0);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("InputProjection", "core.transpose", {3276}, {1826}, {"tensors/model.per_layer_model_projection.weight.i8@i8"});
   g->Transpose(3276, 1826, {1,0});
+  g->EndProfileOperation();
+  g->BeginProfileOperation("InputProjection", "core.mul", {1823,1825}, {1821}, {"__ynn/fc12/input_scale","__ynn/fc12/weight_scale"});
   g->Binary(ynn_binary_multiply, 1823, 1825, 1821);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("InputProjection", "ynn.dot", {105,1826}, {1820}, {"0/11/Quantize","tensors/model.per_layer_model_projection.weight.i8@i8"});
   g->Dot(105, 1826, YNN_INVALID_VALUE_ID, 1820, 1);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("InputProjection", "ynn.dequantize", {1820,1821}, {1822}, {"__ynn/fc12/accumulator","__ynn/fc12/accumulator_scale"});
   g->DequantizeTensor(1820, YNN_INVALID_VALUE_ID, 1821, 1822);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("InputProjection", "ynn.quantize", {1822,2982,1824}, {209}, {"__ynn/fc12/float","__ynn/zero","__ynn/fc12/output_scale"});
   g->QuantizeTensor(1822, 2982, 1824, 209);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("InputProjection", "core.dequantize", {209}, {318}, {"0/12/FullyConnected"});
   g->Dequantize(209, 318, 0.002352987416088581, 0);
+  g->EndProfileOperation();
+  g->BeginProfileOperation("InputProjection", "ynn.split_dim", {318}, {421}, {"0/13/Dequantize"});
   g->SplitDim(318, 421, 2, {35,256});
-}
-
-// Scope: "Layer0 / Attention / KvProjection"
-LAB_YNN_BUILDER_NOINLINE void BuildLayer0AttentionKvProjection(Context& ctx) {
-  auto* g = ctx.g;
-  g->Quantize(886, 896, 0.6088034510612488, 0);
-  g->Transpose(3046, 2154, {1,0});
-  g->Binary(ynn_binary_multiply, 2151, 2153, 2149);
-  g->Dot(896, 2154, YNN_INVALID_VALUE_ID, 2148, 1);
-  g->DequantizeTensor(2148, YNN_INVALID_VALUE_ID, 2149, 2150);
-  g->QuantizeTensor(2150, 2982, 2152, 907);
-  g->Dequantize(907, 917, 1.535433053970337, 0);
-  g->Reshape(917, 928, {1,0,1,256});
-  g->Transpose(928, 939, {0,2,1,3});
-  g->Unary(ynn_unary_square, 939, 950);
-  g->Reduce(ynn_reduce_sum, 950, 2790, {3}, true);
-  g->ShapeProduct(950, 2789, {3});
-  g->Binary(ynn_binary_divide, 2790, 2789, 961);
-  g->Binary(ynn_binary_add, 961, 3016, 972);
-  g->Unary(ynn_unary_rsqrt, 972, 983);
-  g->Binary(ynn_binary_multiply, 939, 983, 994);
-  g->Binary(ynn_binary_multiply, 994, 3045, 1000);
-  g->Slice(1000, 1011, {0,0,0,0}, {-1,-1,-1,128});
-  g->Slice(1000, 1022, {0,0,0,128}, {-1,-1,-1,128});
-  g->Unary(ynn_unary_negate, 1022, 1032);
-  g->Concat({1032,1011}, 1043, 3);
-  g->Binary(ynn_binary_multiply, 1000, 1096, 1053);
-  g->Binary(ynn_binary_multiply, 1043, 1199, 1064);
-  g->Binary(ynn_binary_add, 1053, 1064, 1075);
-  g->Transpose(3050, 2250, {1,0});
-  g->Binary(ynn_binary_multiply, 2151, 2249, 2247);
-  g->Dot(896, 2250, YNN_INVALID_VALUE_ID, 2246, 1);
-  g->DequantizeTensor(2246, YNN_INVALID_VALUE_ID, 2247, 2248);
-  g->QuantizeTensor(2248, 2982, 2152, 1097);
-  g->Dequantize(1097, 1108, 1.535433053970337, 0);
-  g->Reshape(1108, 1119, {1,0,1,256});
-  g->Transpose(1119, 1129, {0,2,1,3});
-  g->Unary(ynn_unary_square, 1129, 1135);
-  g->Reduce(ynn_reduce_sum, 1135, 2831, {3}, true);
-  g->ShapeProduct(1135, 2830, {3});
-  g->Binary(ynn_binary_divide, 2831, 2830, 1146);
-  g->Binary(ynn_binary_add, 1146, 3016, 1156);
-  g->Unary(ynn_unary_rsqrt, 1156, 1167);
-  g->Binary(ynn_binary_multiply, 1129, 1167, 1178);
-}
-
-// Scope: "Layer0 / Attention / CacheUpdate"
-LAB_YNN_BUILDER_NOINLINE void BuildLayer0AttentionCacheUpdate(Context& ctx) {
-  auto* g = ctx.g;
-  const slinky::expr& s1 = ctx.s1;
-  const slinky::expr& s2 = ctx.s2;
-  g->Quantize(1075, 1188, 0.005997600965201855, 0);
-  g->Append(2983, 1188, 3293, 2, s2, s1);
-  g->View(3293, 3323, 2, slinky::max(slinky::expr(int64_t{0}), (slinky::expr(int64_t{-511}) + (slinky::expr(int64_t{1}) * s2))), (slinky::expr(int64_t{0}) + (slinky::expr(int64_t{1}) * s1) + (slinky::expr(int64_t{1}) * s2)));
-  g->Quantize(1178, 1220, 0.047244105488061905, 0);
-  g->Append(2998, 1220, 3308, 2, s2, s1);
-  g->View(3308, 3337, 2, slinky::max(slinky::expr(int64_t{0}), (slinky::expr(int64_t{-511}) + (slinky::expr(int64_t{1}) * s2))), (slinky::expr(int64_t{0}) + (slinky::expr(int64_t{1}) * s1) + (slinky::expr(int64_t{1}) * s2)));
-}
-
-// Scope: "Layer0 / Attention / QueryProjection"
-LAB_YNN_BUILDER_NOINLINE void BuildLayer0AttentionQueryProjection(Context& ctx) {
-  auto* g = ctx.g;
-  g->Transpose(3049, 2326, {1,0});
-  g->Binary(ynn_binary_multiply, 2151, 2325, 2322);
-  g->Dot(896, 2326, YNN_INVALID_VALUE_ID, 2321, 1);
-  g->DequantizeTensor(2321, YNN_INVALID_VALUE_ID, 2322, 2323);
-  g->QuantizeTensor(2323, 2982, 2324, 1258);
-  g->Dequantize(1258, 1266, 3.118110179901123, 0);
-  g->SplitDim(1266, 1277, 2, {8,256});
-  g->Transpose(1277, 1287, {0,2,1,3});
-  g->Unary(ynn_unary_square, 1287, 1299);
-  g->Reduce(ynn_reduce_sum, 1299, 2873, {3}, true);
-  g->ShapeProduct(1299, 2872, {3});
-  g->Binary(ynn_binary_divide, 2873, 2872, 1309);
-  g->Binary(ynn_binary_add, 1309, 3016, 1320);
-  g->Unary(ynn_unary_rsqrt, 1320, 1331);
-  g->Binary(ynn_binary_multiply, 1287, 1331, 1342);
-  g->Binary(ynn_binary_multiply, 1342, 3048, 1353);
-  g->Slice(1353, 1364, {0,0,0,0}, {-1,-1,-1,128});
-  g->Slice(1353, 1375, {0,0,0,128}, {-1,-1,-1,128});
-  g->Unary(ynn_unary_negate, 1375, 1385);
-  g->Concat({1385,1364}, 1392, 3);
-  g->Binary(ynn_binary_multiply, 1353, 1096, 1403);
-  g->Binary(ynn_binary_multiply, 1392, 1199, 1414);
-  g->Binary(ynn_binary_add, 1403, 1414, 1424);
-}
-
-// Scope: "Layer0 / Attention / Sdpa"
-LAB_YNN_BUILDER_NOINLINE void BuildLayer0AttentionSdpa(Context& ctx) {
-  auto* g = ctx.g;
-  const slinky::expr& s2 = ctx.s2;
-  g->Dequantize(3323, 1435, 0.005997600965201855, 0);
-  g->Dequantize(3337, 1445, 0.047244105488061905, 0);
-  g->Matmul(1424, 1435, 1456, false, true);
-  g->Mask(1456, 3020, s2, slinky::max(slinky::expr(int64_t{0}), (slinky::expr(int64_t{-511}) + (slinky::expr(int64_t{1}) * s2))), 512, true);
-  g->Reduce(ynn_reduce_max, 3020, 2920, {-1}, true);
-  g->Binary(ynn_binary_subtract, 3020, 2920, 2917);
-  g->Unary(ynn_unary_exp, 2917, 2918);
-  g->Reduce(ynn_reduce_sum, 2918, 2921, {-1}, true);
-  g->Binary(ynn_binary_divide, 2545, 2921, 2919);
-  g->Binary(ynn_binary_multiply, 2918, 2919, 1477);
-  g->Matmul(1477, 1445, 1488, false, false);
-}
-
-// Scope: "Layer0 / Attention / OutputProjection"
-LAB_YNN_BUILDER_NOINLINE void BuildLayer0AttentionOutputProjection(Context& ctx) {
-  auto* g = ctx.g;
-  g->Transpose(1488, 1499, {0,2,1,3});
-  g->FuseDims(1499, 1511, 2, 2);
-  g->Quantize(1511, 1521, 0.03026575781404972, 0);
-  g->Transpose(3047, 2452, {1,0});
-  g->Binary(ynn_binary_multiply, 2449, 2451, 2447);
-  g->Dot(1521, 2452, YNN_INVALID_VALUE_ID, 2446, 1);
-  g->DequantizeTensor(2446, YNN_INVALID_VALUE_ID, 2447, 2448);
-  g->QuantizeTensor(2448, 2982, 2450, 1527);
-  g->Dequantize(1527, 1538, 0.21056734025478363, 0);
-}
-
-// Scope: "Layer0 / Attention"
-LAB_YNN_BUILDER_NOINLINE void BuildLayer0Attention(Context& ctx) {
-  auto* g = ctx.g;
-  g->Unary(ynn_unary_square, 0, 524);
-  g->Reduce(ynn_reduce_sum, 524, 2701, {2}, true);
-  g->ShapeProduct(524, 2700, {2});
-  g->Binary(ynn_binary_divide, 2701, 2700, 629);
-  g->Binary(ynn_binary_add, 629, 3016, 736);
-  g->Unary(ynn_unary_rsqrt, 736, 838);
-  g->Binary(ynn_binary_multiply, 0, 838, 874);
-  g->Binary(ynn_binary_multiply, 874, 3034, 886);
-  BuildLayer0AttentionKvProjection(ctx);
-  BuildLayer0AttentionCacheUpdate(ctx);
-  BuildLayer0AttentionQueryProjection(ctx);
-  BuildLayer0AttentionSdpa(ctx);
-  BuildLayer0AttentionOutputProjection(ctx);
-  g->Unary(ynn_unary_square, 1538, 1548);
-  g->Reduce(ynn_reduce_sum, 1548, 2940, {2}, true);
-  g->ShapeProduct(1548, 2939, {2});
-  g->Binary(ynn_binary_divide, 2940, 2939, 1559);
-  g->Binary(ynn_binary_add, 1559, 3016, 1570);
-  g->Unary(ynn_unary_rsqrt, 1570, 1580);
-  g->Binary(ynn_binary_multiply, 1538, 1580, 1591);
-  g->Binary(ynn_binary_multiply, 1591, 3041, 1602);
-  g->Binary(ynn_binary_add, 1602, 0, 1614);
-}
-
-// Scope: "Layer0 / Mlp"
-LAB_YNN_BUILDER_NOINLINE void BuildLayer0Mlp(Context& ctx) {
-  auto* g = ctx.g;
-  g->Unary(ynn_unary_square, 1614, 1625);
-  g->Reduce(ynn_reduce_sum, 1625, 2962, {2}, true);
-  g->ShapeProduct(1625, 2961, {2});
-  g->Binary(ynn_binary_divide, 2962, 2961, 1636);
-  g->Binary(ynn_binary_add, 1636, 3016, 1646);
-  g->Unary(ynn_unary_rsqrt, 1646, 1656);
-  g->Binary(ynn_binary_multiply, 1614, 1656, 1663);
-  g->Binary(ynn_binary_multiply, 1663, 3044, 1674);
-  g->Quantize(1674, 1684, 0.9406865835189819, 0);
-  g->Transpose(3038, 2520, {1,0});
-  g->Binary(ynn_binary_multiply, 1719, 2519, 2517);
-  g->Dot(1684, 2520, YNN_INVALID_VALUE_ID, 2516, 1);
-  g->DequantizeTensor(2516, YNN_INVALID_VALUE_ID, 2517, 2518);
-  g->QuantizeTensor(2518, 2982, 1720, 1695);
-  g->Dequantize(1695, 1705, 0.6181102395057678, 0);
-  g->Transpose(3037, 1722, {1,0});
-  g->Binary(ynn_binary_multiply, 1719, 1721, 1717);
-  g->Dot(1684, 1722, YNN_INVALID_VALUE_ID, 1716, 1);
-  g->DequantizeTensor(1716, YNN_INVALID_VALUE_ID, 1717, 1718);
-  g->QuantizeTensor(1718, 2982, 1720, 13);
-  g->Dequantize(13, 24, 0.6181102395057678, 0);
-  g->Polynomial(24, 2552, {0.0,0.7978845608028654,0.0,0.035677408136300125});
-  g->Unary(ynn_unary_tanh, 2552, 2553);
-  g->Binary(ynn_binary_add, 2553, 2545, 2550);
-  g->Binary(ynn_binary_multiply, 24, 2543, 2551);
-  g->Binary(ynn_binary_multiply, 2551, 2550, 35);
-  g->Binary(ynn_binary_multiply, 1705, 35, 46);
-  g->Quantize(46, 57, 27.842519760131836, 0);
-  g->Transpose(3036, 1755, {1,0});
-  g->Binary(ynn_binary_multiply, 1752, 1754, 1750);
-  g->Dot(57, 1755, YNN_INVALID_VALUE_ID, 1749, 1);
-  g->DequantizeTensor(1749, YNN_INVALID_VALUE_ID, 1750, 1751);
-  g->QuantizeTensor(1751, 2982, 1753, 67);
-  g->Dequantize(67, 75, 16.64207649230957, 0);
-  g->Unary(ynn_unary_square, 75, 84);
-  g->Reduce(ynn_reduce_sum, 84, 2563, {2}, true);
-  g->ShapeProduct(84, 2562, {2});
-  g->Binary(ynn_binary_divide, 2563, 2562, 95);
-  g->Binary(ynn_binary_add, 95, 3016, 106);
-  g->Unary(ynn_unary_rsqrt, 106, 117);
-  g->Binary(ynn_binary_multiply, 75, 117, 127);
-  g->Binary(ynn_binary_multiply, 127, 3042, 138);
-  g->Binary(ynn_binary_add, 138, 1614, 149);
-}
-
-// Scope: "Layer0 / PerLayerEmbedding"
-LAB_YNN_BUILDER_NOINLINE void BuildLayer0PerLayerEmbedding(Context& ctx) {
-  auto* g = ctx.g;
-  g->Slice(421, 160, {0,0,0,0}, {-1,-1,1,-1});
-  g->Reshape(160, 171, {1,0,256});
-  g->Unary(ynn_unary_square, 171, 182);
-  g->Reduce(ynn_reduce_sum, 182, 2592, {2}, true);
-  g->ShapeProduct(182, 2591, {2});
-  g->Binary(ynn_binary_divide, 2592, 2591, 193);
-  g->Binary(ynn_binary_add, 193, 3016, 203);
-  g->Unary(ynn_unary_rsqrt, 203, 210);
-  g->Binary(ynn_binary_multiply, 171, 210, 221);
-  g->Binary(ynn_binary_multiply, 221, 3277, 231);
-  g->Binary(ynn_binary_multiply, 3278, 3019, 242);
-  g->Binary(ynn_binary_add, 231, 242, 253);
-  g->Binary(ynn_binary_multiply, 253, 3014, 263);
-  g->Quantize(149, 274, 3.334678888320923, 0);
-  g->Transpose(3039, 1859, {1,0});
-  g->Binary(ynn_binary_multiply, 1856, 1858, 1854);
-  g->Dot(274, 1859, YNN_INVALID_VALUE_ID, 1853, 1);
-  g->DequantizeTensor(1853, YNN_INVALID_VALUE_ID, 1854, 1855);
-  g->QuantizeTensor(1855, 2982, 1857, 285);
-  g->Dequantize(285, 296, 0.01857776567339897, 0);
-  g->Polynomial(296, 2624, {0.0,0.7978845608028654,0.0,0.035677408136300125});
-  g->Unary(ynn_unary_tanh, 2624, 2625);
-  g->Binary(ynn_binary_add, 2625, 2545, 2622);
-  g->Binary(ynn_binary_multiply, 296, 2543, 2623);
-  g->Binary(ynn_binary_multiply, 2623, 2622, 307);
-  g->Binary(ynn_binary_multiply, 307, 263, 319);
-  g->Quantize(319, 329, 0.03764764964580536, 0);
-  g->Transpose(3040, 1892, {1,0});
-  g->Binary(ynn_binary_multiply, 1889, 1891, 1887);
-  g->Dot(329, 1892, YNN_INVALID_VALUE_ID, 1886, 1);
-  g->DequantizeTensor(1886, YNN_INVALID_VALUE_ID, 1887, 1888);
-  g->QuantizeTensor(1888, 2982, 1890, 340);
-  g->Dequantize(340, 346, 0.03129800781607628, 0);
-  g->Unary(ynn_unary_square, 346, 357);
-  g->Reduce(ynn_reduce_sum, 357, 2638, {2}, true);
-  g->ShapeProduct(357, 2637, {2});
-  g->Binary(ynn_binary_divide, 2638, 2637, 367);
-  g->Binary(ynn_binary_add, 367, 3016, 378);
-  g->Unary(ynn_unary_rsqrt, 378, 389);
-  g->Binary(ynn_binary_multiply, 346, 389, 399);
-  g->Binary(ynn_binary_multiply, 399, 3043, 410);
-  g->Binary(ynn_binary_add, 149, 410, 422);
-  g->Binary(ynn_binary_multiply, 422, 3035, 433);
-}
-
-// Scope: "Layer0"
-LAB_YNN_BUILDER_NOINLINE void BuildLayer0(Context& ctx) {
-  BuildLayer0Attention(ctx);
-  BuildLayer0Mlp(ctx);
-  BuildLayer0PerLayerEmbedding(ctx);
+  g->EndProfileOperation();
 }
 
 }  // namespace BuildGemma4PrefillSource

@@ -19,7 +19,7 @@
      SET(ARCH_LIB "ynnpack_kernels_binary_${NAME}")
 --- a/ynnpack/kernels/dot/CMakeLists.txt
 +++ b/ynnpack/kernels/dot/CMakeLists.txt
-@@ -14,17 +14,18 @@
+@@ -14,10 +14,11 @@
      LIST(APPEND OUTPUTS "${CMAKE_BINARY_DIR}/ynnpack/kernels/dot/${NAME}.cc" "${CMAKE_BINARY_DIR}/ynnpack/kernels/dot/${NAME}.inc")
    ENDFOREACH()
  
@@ -32,15 +32,16 @@
              ${Python3_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/generator/${SCRIPT}.py" ${OUTPUTS}
      DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/generator/${SCRIPT}.py"
              "${CMAKE_CURRENT_SOURCE_DIR}/generator/dot_base.py"
-             "${CMAKE_CURRENT_SOURCE_DIR}/generator/x86.py"
+@@ -25,7 +26,7 @@
              "${CMAKE_CURRENT_SOURCE_DIR}/generator/arm.py"
              "${CMAKE_CURRENT_SOURCE_DIR}/generator/wasm.py"
+             "${CMAKE_CURRENT_SOURCE_DIR}/generator/hexagon.py"
 -    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
 +    WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}/.."
    )
  ENDFUNCTION()
  
-@@ -39,6 +40,7 @@
+@@ -40,6 +41,7 @@
  # Helper to collect variants and generate them if any are enabled.
  FUNCTION(YNN_ADD_DOT_KERNELS SCRIPT)
    SET(ACTIVE_VARIANTS)
@@ -48,7 +49,7 @@
    SET(ACTIVE_ARCHS)
    # Arguments after SCRIPT are pairs of (ARCH, VARIANT_NAME)
    SET(INDEX 0)
-@@ -49,6 +51,7 @@
+@@ -50,6 +52,7 @@
      LIST(GET ARGN ${INDEX} VARIANT_NAME)
      MATH(EXPR INDEX "${INDEX} + 1")
  
@@ -56,7 +57,7 @@
      YNN_CHECK_ARCH_ENABLED(${ARCH_NAME} ENABLED)
      IF(ENABLED)
        LIST(APPEND ACTIVE_VARIANTS ${VARIANT_NAME})
-@@ -57,7 +60,7 @@
+@@ -58,7 +61,7 @@
    ENDWHILE()
  
    IF(ACTIVE_VARIANTS)
@@ -65,31 +66,7 @@
  
      LIST(LENGTH ACTIVE_VARIANTS LEN)
      MATH(EXPR LIMIT "${LEN} - 1")
-@@ -140,7 +143,23 @@
- 
- YNN_ADD_DOT_KERNELS(x86_int8_int8_int32
-   x86_avx2 x86_avx2_int8_int8_int32
-+  x86_avx2 x86_avx2_int8_int8_int32_symmetric_b
-   x86_avx512 x86_avx512_int8_int8_int32
-+  x86_avx512 x86_avx512_int8_int8_int32_symmetric_b
-+)
-+
-+YNN_ADD_DOT_KERNELS(x86_fp32_k8
-+  x86_avx2_fma3 x86_avx2_fma3_fp32_k8
-+)
-+YNN_ADD_DOT_KERNELS(x86_uint8_int2_int32
-+  x86_avx2 x86_avx2_uint8_int2_int32
-+  x86_avx512 x86_avx512_uint8_int2_int32
-+  x86_avx512vnni x86_avx512vnni_uint8_int2_int32
-+)
-+YNN_ADD_DOT_KERNELS(x86_uint8_int4_int32
-+  x86_avx2 x86_avx2_uint8_int4_int32
-+  x86_avx512 x86_avx512_uint8_int4_int32
-+  x86_avx512vnni x86_avx512vnni_uint8_int4_int32
- )
- 
- YNN_ADD_DOT_KERNELS(x86_int8_int8_int32_k1
-@@ -263,3 +282,14 @@
+@@ -290,3 +293,14 @@
    ADD_EXECUTABLE(ynnpack_kernels_dot_schedule_bench schedule_bench.cc)
    TARGET_LINK_LIBRARIES(ynnpack_kernels_dot_schedule_bench ynnpack_kernels_dot ynnpack_base ynnpack_base_test_tensor benchmark::benchmark gtest)
  ENDIF()

@@ -99,6 +99,20 @@ def summarize(directory):
             # Frontend setup belongs to this process, not to each timed request.
             # Do not add it to warm TTFT or decode latency.
             row["frontend"] = frontend
+    run_file = directory / "run.json"
+    validity = json.loads(run_file.read_text()).get("timings_valid_for_benchmark", True) if run_file.exists() else None
+    flags = []
+    if validity is None:
+        for path in directory.glob("*.json"):
+            record = json.loads(path.read_text())
+            if isinstance(record, dict) and "passes" in record and "timings_valid_for_benchmark" in record:
+                flags.append(record["timings_valid_for_benchmark"])
+    for row in rows:
+        if validity is not None:
+            row["timings_valid_for_benchmark"] = validity
+        else:
+            # External native runners carry this field in each request record.
+            row["timings_valid_for_benchmark"] = all(flags) if flags else True
     if not rows:
         raise RuntimeError("No runner measurements found")
     return rows

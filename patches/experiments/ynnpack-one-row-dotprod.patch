@@ -1,0 +1,98 @@
+diff --git a/ynnpack/subgraph/dot.cc b/ynnpack/subgraph/dot.cc
+--- a/ynnpack/subgraph/dot.cc
++++ b/ynnpack/subgraph/dot.cc
+@@ -10,6 +10,7 @@
+ #include <cassert>
+ #include <cstddef>
+ #include <cstdint>
++#include <cstdlib>
+ #include <cstring>
+ #include <memory>
+ #include <optional>
+@@ -258,7 +259,7 @@
+ // on some buffers.
+ auto make_dot_impl(dot_type type, bool consistent_arithmetic, bool symmetric_b,
+                    bool transposed_a, bool pack_b, size_t num_k_dims,
+-                   int thread_count) {
++                   int thread_count, uint64_t arch_flags) {
+   uint32_t kernel_flags = 0;
+   if (consistent_arithmetic) {
+     kernel_flags |= dot_flag::consistent_arithmetic;
+@@ -269,7 +270,6 @@
+   if (!pack_b) {
+     kernel_flags |= dot_flag::unaligned_b;
+   }
+-  uint64_t arch_flags = get_supported_arch_flags();
+ 
+   return [type, kernel_flags, transposed_a, pack_b, num_k_dims, arch_flags,
+           thread_count](const slinky::call_stmt* call,
+@@ -1290,6 +1290,26 @@
+     kernel_flags |= dot_flag::symmetric_b;
+   }
+   const dot_cost_models& cost_models = ynn::get_dot_cost_models();
++  uint64_t arch_flags = get_supported_arch_flags();
++#ifdef YNN_ARCH_ARM
++  // Local experiment: change both preparation and execution for known M=1.
++  // Unknown-row prefill graphs and all other arithmetic keep normal dispatch.
++  const char* policy = std::getenv("LAB_EXPERIMENT_ONE_ROW_DOT");
++  if (policy && std::strcmp(policy, "none") != 0 &&
++      std::strcmp(policy, "int2") != 0 && std::strcmp(policy, "int4") != 0 &&
++      std::strcmp(policy, "both") != 0) {
++    std::abort();
++  }
++  const bool force_dot =
++      policy && shape.m == 1 && type.a == ynn_type_int8 &&
++      ((type.b == ynn_type_int2 && (std::strcmp(policy, "int2") == 0 ||
++                                    std::strcmp(policy, "both") == 0)) ||
++       (type.b == ynn_type_int4 && (std::strcmp(policy, "int4") == 0 ||
++                                    std::strcmp(policy, "both") == 0)));
++  if (force_dot) {
++    arch_flags &= ~static_cast<uint64_t>(arch_flag::neoni8mm);
++  }
++#endif
+ 
+   // Dot kernel selection assumes we are operating on a small tile, limit the
+   // shape passed to get_dot_kernel.
+@@ -1297,8 +1317,8 @@
+   shape.n = std::min<size_t>(shape.n, 384);
+   shape.k1 = std::min<size_t>(shape.k1, 256);
+ 
+-  dot_kernel kernel =
+-      get_dot_kernel(type, cost_models, shape, packed_shape, kernel_flags);
++  dot_kernel kernel = get_dot_kernel(type, cost_models, shape, packed_shape,
++                                     kernel_flags, std::nullopt, arch_flags);
+   dot_kernel unpacked_kernel;
+   if (b_transposed) {
+     // If b is transposed, we might as well use the packing to do it.
+@@ -1312,7 +1332,8 @@
+     unpacked_kernel = kernel;
+     if (kernel.tile_k != 1) {
+       unpacked_kernel = get_dot_kernel(type, cost_models, shape, no_tile_k,
+-                                       kernel_flags | dot_flag::unaligned_b);
++                                       kernel_flags | dot_flag::unaligned_b,
++                                       std::nullopt, arch_flags);
+     }
+   }
+ 
+@@ -1405,9 +1426,9 @@
+                             : std::max<int>(YNN_CACHE_LINE_SIZE / b_elem_size,
+                                             unpacked_kernel.block_n);
+   node.create = [consistent_arithmetic, symmetric_b, pack_b, transpose_a,
+-                 block_n_unpacked, tile_k = kernel.tile_k,
+-                 tile_m = kernel.tile_m](
+-                    const ynn_node& node, ynn_runtime& runtime) {
++                 arch_flags, block_n_unpacked, tile_k = kernel.tile_k,
++                 tile_m = kernel.tile_m](const ynn_node& node,
++                                         ynn_runtime& runtime) {
+     const ynn_node::dot& op = std::get<ynn_node::dot>(node.op);
+     const size_t num_k_dims = op.num_k_dims;
+     ynn_runtime_value& input_a = runtime.value(node.inputs[0]);
+@@ -1559,7 +1580,7 @@
+         runtime.threadpool() ? runtime.threadpool()->thread_count() + 1 : 1;
+     auto func = slinky::func(
+         make_dot_impl(dot_type, consistent_arithmetic, symmetric_b, transpose_a,
+-                      pack_b, num_k_dims, thread_count),
++                      pack_b, num_k_dims, thread_count, arch_flags),
+         {{input_a.buffer, std::move(a_bounds)},
+          {packed_b.buffer, std::move(b_bounds)},
+          {input_c.buffer, std::move(c_bounds)}},

@@ -28,9 +28,12 @@
       "builder_sources": [
         "gemma4_prefill.cc",
         "gemma4_prefill_DefineValues_0.cc",
-        "gemma4_prefill_DefineValuesToLayer0_1.cc",
-        "gemma4_prefill_Layer1ToLayer8_2.cc",
-        "gemma4_prefill_Layer9ToLayer14_3.cc"
+        "gemma4_prefill_DefineValuesToInputProjection_1.cc",
+        "gemma4_prefill_Layer0ToLayer2_2.cc",
+        "gemma4_prefill_Layer3ToLayer5_3.cc",
+        "gemma4_prefill_Layer6ToLayer8_4.cc",
+        "gemma4_prefill_Layer9ToLayer11_5.cc",
+        "gemma4_prefill_Layer12ToLayer14_6.cc"
       ]
     },
     {
@@ -43,10 +46,16 @@
         "gemma4_decode_DefineValues_1.cc",
         "gemma4_decode_DefineValues_2.cc",
         "gemma4_decode_DefineValuesToEmbedding_3.cc",
-        "gemma4_decode_RopeTablesToLayer7_4.cc",
-        "gemma4_decode_Layer8ToLayer15_5.cc",
-        "gemma4_decode_Layer16ToLayer25_6.cc",
-        "gemma4_decode_Layer26ToFinalNormAndHead_7.cc"
+        "gemma4_decode_RopeTablesToLayer2_4.cc",
+        "gemma4_decode_Layer3ToLayer5_5.cc",
+        "gemma4_decode_Layer6ToLayer8_6.cc",
+        "gemma4_decode_Layer9ToLayer11_7.cc",
+        "gemma4_decode_Layer12ToLayer14_8.cc",
+        "gemma4_decode_Layer15ToLayer18_9.cc",
+        "gemma4_decode_Layer19ToLayer22_10.cc",
+        "gemma4_decode_Layer23ToLayer26_11.cc",
+        "gemma4_decode_Layer27ToLayer30_12.cc",
+        "gemma4_decode_Layer31ToFinalNormAndHead_13.cc"
       ]
     }
   ],
@@ -1428,7 +1437,7 @@
   },
   "activation_mode": "published_static_qat_with_dynamic_head",
   "prefill_rows": 128,
-  "author_seconds": 1.6832685720000882,
+  "author_seconds": 1.822042253013933,
   "adapter_contract": "resource-state-v1",
   "optimization": "target_views",
   "global_layout": true,

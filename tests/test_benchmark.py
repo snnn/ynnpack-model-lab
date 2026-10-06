@@ -29,6 +29,8 @@ class BenchmarkSummaryTest(unittest.TestCase):
             self.assertEqual(row["decode_ms"], 6)
             self.assertEqual(row["prefill_tok_s"], 12900)
             self.assertAlmostEqual(row["decode_tok_s"], 1000 / 6)
+            (root / "run.json").write_text(json.dumps({"timings_valid_for_benchmark": False}))
+            self.assertFalse(summarize(root)[0]["timings_valid_for_benchmark"])
             (root / "frontend.json").unlink()
             self.assertNotIn("frontend", summarize(root)[0])
 
