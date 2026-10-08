@@ -75,6 +75,8 @@ kernels. Keeping grouped query heads as separate batch entries can expose
 one-row matmuls; combining heads that share KV into matrix rows can permit
 reuse across queries. Neither a different layout nor a quantized-KV kernel is
 an established optimization until measured and numerically validated.
+The retained [Samsung history investigation](../results/2026-10-08-kv-history/README.md)
+shows this accounting, the matrix-layout difference and the thermal limitations.
 
 Events use bounded per-worker buffers, flushed after the timed step. Event loss
 invalidates the trace and fails the diagnostic run. A failed request produces an

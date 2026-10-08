@@ -21,6 +21,12 @@ Linux and host-only HF timings were skipped because the host was busy. Upstream
 now disables INT2 I8MM pending a compatible packing layout; the known-row packing
 correction remains applied.
 
+The [Samsung KV-history investigation](results/2026-10-08-kv-history/README.md)
+adds a fixed-capacity history sweep and attention accounting. Separate KV
+dequantization/packing contributes about 55% of long-history attention worker
+time. Query-head matrix layout and conversion/packing fusion are concrete next
+experiments; their speedups are unmeasured. Thermal/order effects remain large.
+
 The historical
 [October 5 backend refresh](results/2026-10-05/README.md) compares the previous
 and adopted dependencies using identical current builders and token IDs. The
@@ -38,7 +44,7 @@ the source and evidence to share and the local material to exclude.
 The [fresh phone decode comparison](results/2026-10-05-decode-profile/README.md)
 adds Samsung SM-S937U1 and repeats focused Pixel/TECNO cases against the preserved
 native Tensor API/XNNPACK runner. Separate execution profiles identify FC,
-live-history attention/packing, and outside-callback work. Samsung CPUinfo
+KV conversion/packing, attention matmuls, and outside-callback work. Samsung CPUinfo
 correctly detects Oryon; its I8MM selection differs from the native DOTPROD
 control. Use the [execution profiling guide](docs/PROFILING.md) to collect and
 analyze diagnostic data alongside unprofiled latency measurements.

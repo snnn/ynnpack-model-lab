@@ -18,11 +18,23 @@ The runners also retain different FC activation contracts.
 
 Actual Samsung decode samples show INT2 DOTPROD and INT4 I8MM in the new normal
 baseline, while native uses DOTPROD for both low-bit FC paths. Separate profiles
-identify INT4 FC and live-history attention/dequantization/packing as remaining
+identify INT4 FC, KV conversion/packing and attention matmuls as remaining
 investigation targets. Cached INT4 kernel tests favor DOTPROD, but streaming
 results depend on shape; a cached kernel win alone does not justify a universal
 selection rule. Profile worker time and native operator wall time have different
 scopes and must not be compared as interchangeable timings.
+
+The [October 8 KV-history investigation](../results/2026-10-08-kv-history/README.md)
+adds 84 unprofiled Samsung requests and separate attention diagnostics at fixed
+capacity. It finds two concrete differences: YNNPACK converts INT8 KV to FP32
+before packing, and keeps query heads as separate one-row batch entries. Native
+combines the heads into matrix rows and executes F32×QC8W attention. Fresh
+long-history conversion/packing contributes 54.8% of YNNPACK attention worker
+time; that fraction is not a full-model speedup estimate. KV preparation is
+already shared by cache owners, and local-attention call counts saturate at
+the window. Strong thermal effects prevent treating raw history-sweep slopes
+as isolated kernel costs. Test query-head row layout and conversion/packing
+fusion independently, with numerical/state validation, before combining them.
 
 TECNO E4B's prompt-1024, four-thread warm TTFT improves from 15.55 to 12.06 s,
 while decode remains approximately 152 ms per token. Linux and HF results below
