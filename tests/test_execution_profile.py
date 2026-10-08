@@ -5,7 +5,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from tools.analyze_execution_profile import summarize_ynn, union_ns
+from tools.analyze_execution_profile import attention_category, summarize_ynn, union_ns
 from tools.analyze_cpu_samples import decode_intervals, merge_intervals
 
 
@@ -52,6 +52,66 @@ class ProfileAccountingTest(unittest.TestCase):
             self.assertEqual(intervals, [(10, 90)])
             self.assertEqual(scope, "measured_subsequent_decode_graph_run")
         self.assertEqual(merge_intervals([(10, 30), (15, 20), (25, 40)]), [(10, 40)])
+
+    def test_attention_overlap_and_history_accounting(self):
+        operations = [
+            {"id": 0, "scope": "Layer0/Attention/Sdpa", "kind": "core.dequantize"},
+            {"id": 1, "scope": "Layer0/Attention/Sdpa", "kind": "core.matmul",
+             "input_names": ["query", "dequantized_key"]},
+        ]
+        metadata = {"scope": "scheduled_callback_worker_work", "operations": operations,
+                    "calls": [
+                        {"id": 0, "name": "graph_run", "envelope": True, "origins": []},
+                        {"id": 1, "name": "dequantize", "envelope": False, "origins": [0]},
+                        {"id": 2, "name": "dot", "envelope": False, "origins": [1]},
+                        {"id": 3, "name": "unknown", "envelope": False, "origins": []},
+                    ]}
+        # Attention covers [2,16], other callbacks [10,22] and [28,30].
+        # Their shared [10,16] interval must be charged only once.
+        first = {"type": "step", "complete": True, "dropped_events": 0,
+                 "case": "short", "repetition": 0, "step": 1, "position": 128,
+                 "history": 129, "start_ns": 0, "end_ns": 40_000_000,
+                 "events": [[0, 0, 0, 40_000_000], [0, 1, 2_000_000, 12_000_000],
+                            [1, 2, 6_000_000, 16_000_000],
+                            [2, 3, 10_000_000, 22_000_000],
+                            [0, 3, 28_000_000, 30_000_000]]}
+        second = {**first, "case": "long", "position": 1024, "history": 1025,
+                  "events": [[0, 0, 0, 40_000_000], [0, 3, 0, 40_000_000]]}
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "trace.jsonl"
+            path.write_text("\n".join(json.dumps(r) for r in [metadata, first, second]) + "\n")
+            result = summarize_ynn(path)
+        step = result["steps"][0]
+        self.assertEqual(step["attention_callback_worker_ms"], 20)
+        self.assertEqual(step["attention_callback_busy_wall_ms"], 14)
+        self.assertEqual(step["wall_partition"], {
+            "attention_only_ms": 8, "other_callbacks_only_ms": 8,
+            "attention_other_overlap_ms": 6, "outside_callbacks_ms": 18})
+        self.assertEqual(sum(step["wall_partition"].values()), step["wall_ms"])
+        summary = result["attention"]["all_steps"]
+        self.assertEqual(summary["mean_attention_callback_worker_ms"], 10)
+        self.assertEqual(summary["history_min"], 129)
+        self.assertEqual(summary["history_max"], 1025)
+        self.assertEqual(summary["categories"][0]["mean_calls_per_step"], 0.5)
+        cases = {r["case"]: r for r in result["attention"]["cases"]}
+        self.assertEqual(cases["short"]["mean_attention_callback_busy_wall_ms"], 14)
+        self.assertEqual(cases["long"]["mean_attention_callback_busy_wall_ms"], 0)
+
+    def test_fused_attention_origins_are_counted_once(self):
+        operations = {
+            0: {"scope": "Layer0/Attention/Sdpa", "kind": "core.dequantize"},
+            1: {"scope": "Layer0/Attention/Sdpa", "kind": "core.matmul",
+                "input_names": ["query", "dequantized_key"]},
+            2: {"scope": "Layer0/Attention/Sdpa", "kind": "core.matmul",
+                "input_names": ["Softmax", "dequantized_value"]},
+            3: {"scope": "Layer0/Attention/QueryProjection", "kind": "core.mul"},
+        }
+        self.assertEqual(attention_category({"name": "dot", "origins": [0, 1]}, operations), "qk")
+        self.assertEqual(attention_category({"name": "dot", "origins": [0, 2]}, operations), "pv")
+        self.assertEqual(attention_category({"name": "pack_b", "origins": [1]}, operations), "packing")
+        self.assertEqual(attention_category({"name": "dequantize", "origins": [0]}, operations), "dequantization")
+        self.assertEqual(attention_category({"name": "multiply", "origins": [0, 3]}, operations), "mixed_origins")
+        self.assertIsNone(attention_category({"name": "unknown", "origins": []}, operations))
 
     def test_native_sampling_stops_at_last_operator(self):
         with tempfile.TemporaryDirectory() as temporary:

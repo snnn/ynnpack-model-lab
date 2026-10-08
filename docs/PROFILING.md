@@ -49,6 +49,33 @@ time outside callbacks. Categories and layers can overlap; their interval
 unions are not additive. Time outside callbacks includes interpreter/dispatch,
 allocation and synchronization, embedding/host work, and profiler overhead.
 
+The analyzer also emits an `attention` summary for all steps and separately for
+each case, including the actual history range. It separates scheduled SDPA
+dequantization, packing, QK, PV, and mask/softmax/other work. A dot retaining a
+fused dequantization origin is counted as a dot once; it does not become an
+additional dequantization event. Calls with both attention and other origins
+remain explicitly mixed. These labels describe callback work, not every
+instruction executed inside a kernel.
+
+Each step's `wall_partition` divides its wall interval into attention callbacks
+only, other callbacks only, their overlap, and time outside callbacks. These
+four fields sum to the step interval. The attention fields include callbacks
+with mixed origins; inspect that category before treating the coverage as
+exclusively attention. This accounting avoids adding overlapping category
+unions or dividing worker time by the thread count. It does not assign gaps to
+attention or establish the critical path. Profiled wall coverage is diagnostic;
+use separate unprofiled runs for throughput and to check instrumentation cost.
+
+For a history-length investigation, hold capacity, threads, affinity, assets and
+continuations fixed, and replay exact token IDs at several prompt lengths.
+Reverse case and runner order in another round. Inspect local-window and global
+attention separately: local work should saturate at its window, while global
+work continues growing. Check the authored matmul shapes as well as selected
+kernels. Keeping grouped query heads as separate batch entries can expose
+one-row matmuls; combining heads that share KV into matrix rows can permit
+reuse across queries. Neither a different layout nor a quantized-KV kernel is
+an established optimization until measured and numerically validated.
+
 Events use bounded per-worker buffers, flushed after the timed step. Event loss
 invalidates the trace and fails the diagnostic run. A failed request produces an
 incomplete step and must be discarded; profiling does not make state updates
