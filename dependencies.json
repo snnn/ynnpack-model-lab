@@ -2,9 +2,9 @@
   {
     "name": "XNNPACK",
     "repository": "google/XNNPACK",
-    "revision": "f5122810ee8bb7461ed73efe7a678a472866cee3",
-    "url": "https://codeload.github.com/google/XNNPACK/zip/f5122810ee8bb7461ed73efe7a678a472866cee3",
-    "sha256": "47122c5f125d5fbadc5d1e6de057ea546828895d7c0ca60027bfc4d53f221268"
+    "revision": "d297c798ea530c12a1878bb3a3a811bdf05d715b",
+    "url": "https://codeload.github.com/google/XNNPACK/zip/d297c798ea530c12a1878bb3a3a811bdf05d715b",
+    "sha256": "f1a222b4447bc04a94ddd8d7ad32cb2ec4c99383c34dd74cb6b07bd7c8e80cae"
   },
   {
     "name": "slinky",

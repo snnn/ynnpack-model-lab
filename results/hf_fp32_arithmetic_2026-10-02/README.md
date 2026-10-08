@@ -235,9 +235,11 @@ For numerical captures use `fixtures/correctness.tsv`, zero warmups, one measure
 request, and `--dump_outputs`. Repeat at capacity 8,448 and chunk size 64, then
 use `tools/compare_outputs.py`. Keep these captures separate from timing.
 
-Small records alongside this report retain comparisons, raw timing/summary
-records, test results, source/binary identities, and the first-layer oracle.
-Large weights, traces, and logits remain outside Git.
+Small records alongside this report retain comparisons, per-request summaries
+and run settings in `performance/`, test results, source/binary identities, and
+the first-layer oracle. Duplicate per-step timing/process logs have been pruned
+under the [retention policy](../README.md#retention). Large weights, traces, and
+logits remain outside Git.
 
 The optional trace command manifest also requires `LAB_BUILD_VALUE_TRACES=ON`
 and building `gemma4_e2b_hf_fp32_trace` and `gemma4_e2b_hf_static_trace`.

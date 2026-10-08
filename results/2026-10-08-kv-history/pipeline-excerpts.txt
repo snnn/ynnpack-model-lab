@@ -1,0 +1,93 @@
+Scheduled decode pipeline excerpts. Copyright 2026 @snnn. SPDX-License-Identifier: Apache-2.0
+
+Full artifact hash and external-buffer provenance are in record.json.
+Common leading indentation is removed; text is otherwise unchanged.
+Dotted local symbols are recycled: they do not identify layers.
+The external buffers below are identified using captured append metadata,
+not by guessing local symbol numbers.
+
+
+Local owner-0 key preparation; append output out7155
+Original decode.ir.txt lines 2136 through 2155:
+.2014 = make_buffer(buffer_at(out7155, <>, ((buffer_min(out7155, 1) - (buffer_min(out7155, 1) - max(position, 511))) + -511)), buffer_elem_size(out7155), {
+  {[buffer_min(out7155, 0), buffer_max(out7155, 0)], buffer_stride(out7155, 0), buffer_fold_factor(out7155, 0)},
+  {[0, min(min(position, ((((min(position, 511) / max(.1730, 4)) + 1) * max(.1730, 4)) + -1)), 511)], buffer_stride(out7155, 1), buffer_fold_factor(out7155, 1)},
+  {[buffer_min(out7155, 2), buffer_max(out7155, 2)], buffer_stride(out7155, 2), buffer_fold_factor(out7155, 2)},
+  {[buffer_min(out7155, 3), buffer_max(out7155, 3)], buffer_stride(out7155, 3), buffer_fold_factor(out7155, 3)}
+}) {
+ .2015 = loop(parallel, [0, (min(position, 511) / max(.1730, 4))], .1975) {
+  closure {position, .76, .90, .1730, .1975, .2013, .2014, .2015} in {
+   .2016 = crop_dim(.2013, 3, [.2015, ((.2015 + .1975) + -1)]) {
+    .2017 = allocate(automatic, 4, {
+      {[0, 255], <>, <>},
+      {[(.2015 * max(.1730, 4)), min(min(position, (((buffer_max(.2016, 3) + 1) * max(.1730, 4)) + -1)), 511)], <>, <>}
+    }) {
+     call(dequantize, {.2014, .76, .90}, {.2017}, {})
+     .2017 = transpose(.2017, {1, 0}) {
+      call(pack_b, {.2017}, {.2016}, {})
+     }
+    }
+   }
+  }
+
+
+Local owner-0 value preparation; append output out7170
+Original decode.ir.txt lines 2193 through 2209:
+.2016 = loop(parallel, [0, (255 / .1731)], .1738) {
+ closure {position, .75, .76, .1731, .1734, .1738, .1976, .2014, .2015, .2016} in {
+  .2017 = crop_dim(.2014, 3, [.2016, ((.2016 + .1738) + -1)]) {
+   .2018 = allocate(automatic, 4, {
+     {[(.2016 * .1731), (min((.1731 * (buffer_max(.2017, 3) + 1)), 256) + -1)], <>, <>},
+     {[0, buffer_max(.2017, 2)], <>, <>}
+   }) {
+    .2019 = loop(select((1 < .1976), 2147483647, 1), [0, min(position, 511)], .1734) {
+     closure {.75, .76, .1734, .2015, .2018, .2019} in {
+      .2020 = crop_dim(.2018, 1, [.2019, ((.2019 + .1734) + -1)]) {
+       call(dequantize, {.2015, .76, .75}, {.2020}, {})
+      }
+     }
+    }
+    call(pack_b, {.2018}, {.2017}, {})
+   }
+  }
+
+
+Global owner-4 key preparation; append output out7164
+Original decode.ir.txt lines 4507 through 4521:
+.2014 = loop(parallel, [0, (position / max(.1732, 4))], .1972) {
+ closure {position, .76, .316, .1732, .1972, .2013, .2014, out7164} in {
+  .2015 = crop_dim(.2013, 3, [.2014, ((.2014 + .1972) + -1)]) {
+   .2016 = allocate(automatic, 4, {
+     {[0, 511], <>, <>},
+     {[(.2014 * max(.1732, 4)), min(position, (((buffer_max(.2015, 3) + 1) * max(.1732, 4)) + -1))], <>, <>}
+   }) {
+    call(dequantize, {out7164, .76, .316}, {.2016}, {})
+    .2016 = transpose(.2016, {1, 0}) {
+     call(pack_b, {.2016}, {.2015}, {})
+    }
+   }
+  }
+ }
+}
+
+
+Global owner-4 value preparation; append output out7179
+Original decode.ir.txt lines 4567 through 4584:
+.2016 = loop(parallel, [0, (511 / .1733)], .1766) {
+ closure {position, .76, .303, .1733, .1761, .1766, .1973, .2014, .2015, .2016} in {
+  .2017 = crop_dim(.2014, 3, [.2016, ((.2016 + .1766) + -1)]) {
+   .2018 = allocate(automatic, 4, {
+     {[(.2016 * .1733), (min((.1733 * (buffer_max(.2017, 3) + 1)), 512) + -1)], <>, <>},
+     {[0, position], <>, <>}
+   }) {
+    .2019 = loop(select((1 < .1973), 2147483647, 1), [0, position], .1761) {
+     closure {.76, .303, .1761, .2015, .2018, .2019} in {
+      .2020 = crop_dim(.2018, 1, [.2019, ((.2019 + .1761) + -1)]) {
+       call(dequantize, {.2015, .76, .303}, {.2020}, {})
+      }
+     }
+    }
+    call(pack_b, {.2018}, {.2017}, {})
+   }
+  }
+ }

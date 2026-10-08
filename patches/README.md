@@ -5,12 +5,13 @@ and applies the three `ynnpack-*.patch` files. Repeating it checks that the patc
 are already applied. It refuses an unmanaged dependency directory or a different
 revision instead of resetting local work.
 
-The normal baseline deliberately adopts XNNPACK
-`f5122810ee8bb7461ed73efe7a678a472866cee3`: merged AVX-VNNI kernels from
-[#11521](https://github.com/google/XNNPACK/pull/11521) plus the learned dot cost
-models from [#11568](https://github.com/google/XNNPACK/pull/11568).
-The latter PR was still open when adopted on October 5, 2026. This is an exact,
-hash-verified snapshot, not a claim that the change has merged. Slinky
+The normal baseline adopts upstream XNNPACK
+`d297c798ea530c12a1878bb3a3a811bdf05d715b`, captured on October 7, 2026. It includes
+merged AVX-VNNI kernels from [#11521](https://github.com/google/XNNPACK/pull/11521)
+and the learned dot cost models from
+[#11568](https://github.com/google/XNNPACK/pull/11568), merged on October 7.
+The October 5 records retain the earlier premerge snapshot
+`f5122810ee8bb7461ed73efe7a678a472866cee3` and its exact configuration. Slinky
 `d18c98551c77f366857f125e3a0f7886deb82a47` supplies the required per-context
 initialization interface. CPUinfo and tokenizer dependencies retain their pins.
 
@@ -18,12 +19,12 @@ Use a fresh dependency/build directory when updating an existing checkout:
 
 ```sh
 uv sync --locked
-uv run --locked python tools/bootstrap.py --directory .deps/vnni
-uv run --locked cmake -S . -B build-vnni -G Ninja -DCMAKE_BUILD_TYPE=Release \
+uv run --locked python tools/bootstrap.py --directory .deps/upstream
+uv run --locked cmake -S . -B build-upstream -G Ninja -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ \
-  -DLAB_DEPS="$PWD/.deps/vnni"
-uv run --locked cmake --build build-vnni --parallel 8
-uv run --locked ctest --test-dir build-vnni --output-on-failure
+  -DLAB_DEPS="$PWD/.deps/upstream"
+uv run --locked cmake --build build-upstream --parallel 8
+uv run --locked ctest --test-dir build-upstream --output-on-failure
 ```
 
 The older dependency trees and measurement records remain useful controls.
@@ -46,6 +47,11 @@ the cost model, and does not force an ISA or modify CPU detection. See the
 The [matched validation and timing record](../results/2026-10-05-packing-fix/README.md)
 documents phone DOTPROD selection, observed decode gains, and desktop numerical
 differences.
+
+The October 7 upstream revision still needs this correction. Upstream separately
+disables INT2 I8MM kernels until their packing uses the same `tile_k=16` as other
+INT2 kernels. That removes the former INT2 layout conflict from current ARM
+dispatch; it does not make unknown-row packing correct for every other dot type.
 
 Use a fresh dependency/build directory for the patched baseline, as in the
 update commands above. Preserve older binaries and measurements as controls.
@@ -75,6 +81,9 @@ Build-system-only fixes for the pinned YNNPACK revision:
   variants; the scripts require all their output arguments.
 - Order dot-header generation before sources that include the common kernel
   declaration header, including handwritten AMX sources.
+- Remove the stale INT2 I8MM CMake variant: the pinned upstream generator and
+  kernel registry disable it, so its generated source no longer exists. This
+  keeps CMake consistent with upstream's kernel availability.
 
 The lab's root CMake config disables SME/SME2 by default and FP8 for compatibility
 with the tested NDK. Disabling SME is an experiment choice, not a conclusion that
@@ -96,3 +105,9 @@ unset or `none` retains normal selection. Apply it to a fresh dependency copy
 after the normal patches and select that copy with `LAB_DEPS`.
 Bootstrap does not apply patches under `experiments/`. The study documents
 arithmetic checks, actual selected kernels, timing scope and reproduction.
+The patch context is updated for the October 7 pin. INT2 I8MM is unavailable in
+that pin; an INT2-only restriction therefore no longer provides an I8MM/DOTPROD
+comparison. The optional kernel benchmark reports candidate availability and
+uses `null` for an unavailable I8MM prediction.
+To replay the October 5 study, obtain its patch from the recorded lab revision;
+the current patch context targets the October 7 upstream source.

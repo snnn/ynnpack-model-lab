@@ -4,223 +4,9 @@
 namespace BuildGemma4PrefillSource {
 
 // Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart7(Context& ctx) {
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart8(Context& ctx) {
   auto* g = ctx.g;
   const auto& weights = ctx.weights;
-  g->Tensor(1792, "__ynn/fc1143/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/3bfad88755a46dc372b4b3bba1a14d8b1be2d222fc894bfbb51c8155d706903e.bin", 4));
-  g->Tensor(1793, "__ynn/fc1143/weight_scale", ynn_type_fp32, {256}, 0, weights("@parameters/71ba6f9866ae91d421085a5be342ca9be4db762a5bde6aece06b19ca186e3ccf.bin", 1024));
-  g->Tensor(1794, "__ynn/fc1143/weight_transpose", ynn_type_int8, {1536,256}, 0, nullptr);
-  g->Tensor(1795, "__ynn/fc1148/accumulator", ynn_type_int32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1796, "__ynn/fc1148/accumulator_scale", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1797, "__ynn/fc1148/float", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1798, "__ynn/fc1148/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/03237517969a8313c550dcfc73fc957ac039e68fe3a208fb89e63a33ac69740d.bin", 4));
-  g->Tensor(1799, "__ynn/fc1148/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/7b88d1de2dafba779e4f6541ed394284e0fb4481916ec4917793414017775dcf.bin", 4));
-  g->Tensor(1800, "__ynn/fc1148/weight_scale", ynn_type_fp32, {1536}, 0, weights("@parameters/f673288efb089579674acee1237866fde8a7c3ae3d60db5e780171a2be7738c5.bin", 6144));
-  g->Tensor(1801, "__ynn/fc1148/weight_transpose", ynn_type_int8, {256,1536}, 0, nullptr);
-  g->Tensor(1802, "__ynn/fc1165/accumulator", ynn_type_int32, {1,0,512}, 0, nullptr);
-  g->Tensor(1803, "__ynn/fc1165/accumulator_scale", ynn_type_fp32, {512}, 0, nullptr);
-  g->Tensor(1804, "__ynn/fc1165/float", ynn_type_fp32, {1,0,512}, 0, nullptr);
-  g->Tensor(1805, "__ynn/fc1165/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/423b78ec027d19f682b8290b8b568f9ddc120fcdbb1366b6ffb21209abddb407.bin", 4));
-  g->Tensor(1806, "__ynn/fc1165/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/417fc9b2cbffff5be87a348e7e26e12a13acbf5fdc6bfccb4b0b008eb2044f76.bin", 4));
-  g->Tensor(1807, "__ynn/fc1165/weight_scale", ynn_type_fp32, {512}, 0, weights("@parameters/5ccf31c7d5bb61d3318d176dbc542a173ee7de73a70906f0702585cbc5ac981a.bin", 2048));
-  g->Tensor(1808, "__ynn/fc1165/weight_transpose", ynn_type_int4, {1536,512}, 0, nullptr);
-  g->Tensor(1809, "__ynn/fc1183/accumulator", ynn_type_int32, {1,0,512}, 0, nullptr);
-  g->Tensor(1810, "__ynn/fc1183/accumulator_scale", ynn_type_fp32, {512}, 0, nullptr);
-  g->Tensor(1811, "__ynn/fc1183/float", ynn_type_fp32, {1,0,512}, 0, nullptr);
-  g->Tensor(1812, "__ynn/fc1183/weight_scale", ynn_type_fp32, {512}, 0, weights("@parameters/2dda60b63b172e46b8aae87e04c59b237fb8c0618e3b217c028e5bf8b1b3f224.bin", 2048));
-  g->Tensor(1813, "__ynn/fc1183/weight_transpose", ynn_type_int4, {1536,512}, 0, nullptr);
-  g->Tensor(1814, "__ynn/fc1199/accumulator", ynn_type_int32, {1,0,4096}, 0, nullptr);
-  g->Tensor(1815, "__ynn/fc1199/accumulator_scale", ynn_type_fp32, {4096}, 0, nullptr);
-  g->Tensor(1816, "__ynn/fc1199/float", ynn_type_fp32, {1,0,4096}, 0, nullptr);
-  g->Tensor(1817, "__ynn/fc1199/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/3648981aec29781c0853c67de8039d1630eb978c7eb6bbc1ee97eef6eded216a.bin", 4));
-  g->Tensor(1818, "__ynn/fc1199/weight_scale", ynn_type_fp32, {4096}, 0, weights("@parameters/5deb45a6f59e5f6825f685540626da8f1633ccb4b62f1e707da49babb2ce2a1a.bin", 16384));
-  g->Tensor(1819, "__ynn/fc1199/weight_transpose", ynn_type_int4, {1536,4096}, 0, nullptr);
-  g->Tensor(1820, "__ynn/fc12/accumulator", ynn_type_int32, {1,0,8960}, 0, nullptr);
-  g->Tensor(1821, "__ynn/fc12/accumulator_scale", ynn_type_fp32, {8960}, 0, nullptr);
-  g->Tensor(1822, "__ynn/fc12/float", ynn_type_fp32, {1,0,8960}, 0, nullptr);
-  g->Tensor(1823, "__ynn/fc12/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/94edebd9d4f3ede379604449be75b9fdbe347a3722c50287c1e8baad66b7b853.bin", 4));
-  g->Tensor(1824, "__ynn/fc12/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/84d37d5fbf69a1b25e69ea8818d6869060c045a2a280e7b3983334c79abe63c5.bin", 4));
-  g->Tensor(1825, "__ynn/fc12/weight_scale", ynn_type_fp32, {8960}, 0, weights("@parameters/4da516f791c9a16dc16ca3b891d77849899fd3bd4031a1e747e2499784f43e47.bin", 35840));
-  g->Tensor(1826, "__ynn/fc12/weight_transpose", ynn_type_int8, {1536,8960}, 0, nullptr);
-  g->Tensor(1827, "__ynn/fc1225/accumulator", ynn_type_int32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1828, "__ynn/fc1225/accumulator_scale", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1829, "__ynn/fc1225/float", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1830, "__ynn/fc1225/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/13094eb58b8d6460e2d76cd6e9c1c5a983b1608a5b4e6337112772b1ffc07f18.bin", 4));
-  g->Tensor(1831, "__ynn/fc1225/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/97a3651ce67ddade20d0e0d69cfaa7ee1e600f32390cec6e5751bbc59f3d865c.bin", 4));
-  g->Tensor(1832, "__ynn/fc1225/weight_scale", ynn_type_fp32, {1536}, 0, weights("@parameters/2317798c1eec896909959fe898fa62052e8bf8bc939a3676ea9d1544d6bae49f.bin", 6144));
-  g->Tensor(1833, "__ynn/fc1225/weight_transpose", ynn_type_int4, {4096,1536}, 0, nullptr);
-  g->Tensor(1834, "__ynn/fc1241/accumulator", ynn_type_int32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1835, "__ynn/fc1241/accumulator_scale", ynn_type_fp32, {6144}, 0, nullptr);
-  g->Tensor(1836, "__ynn/fc1241/float", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1837, "__ynn/fc1241/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/ae8f9757fefd553e2c4b9a81894589afe4f2c079d48395b8c36ac07365816f9a.bin", 4));
-  g->Tensor(1838, "__ynn/fc1241/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/fa8f4b16fc1f8a6b51687ad2d4cd41e2a0265a500bc4b0264e7dde9e04c9bb35.bin", 4));
-  g->Tensor(1839, "__ynn/fc1241/weight_scale", ynn_type_fp32, {6144}, 0, weights("@parameters/33dd1a6ea42df499b5ecc650bef3ae2ad85ea2b7bcab308b7477292fe6c9d44a.bin", 24576));
-  g->Tensor(1840, "__ynn/fc1241/weight_transpose", ynn_type_int4, {1536,6144}, 0, nullptr);
-  g->Tensor(1841, "__ynn/fc1244/accumulator", ynn_type_int32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1842, "__ynn/fc1244/accumulator_scale", ynn_type_fp32, {6144}, 0, nullptr);
-  g->Tensor(1843, "__ynn/fc1244/float", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1844, "__ynn/fc1244/weight_scale", ynn_type_fp32, {6144}, 0, weights("@parameters/2b4f2006ce7ff0766c66cca8a3e1116ce6db589f292b708b3315b7bbf19ed357.bin", 24576));
-  g->Tensor(1845, "__ynn/fc1244/weight_transpose", ynn_type_int4, {1536,6144}, 0, nullptr);
-  g->Tensor(1846, "__ynn/fc1249/accumulator", ynn_type_int32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1847, "__ynn/fc1249/accumulator_scale", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1848, "__ynn/fc1249/float", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1849, "__ynn/fc1249/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/12cf75c56ae38e122790ca9aba6d7a42a8ef0e1386077d8228fdf0bde3b26f96.bin", 4));
-  g->Tensor(1850, "__ynn/fc1249/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/41b9e1dc5f248a73f47ec18a75cdb76a2e567fadf40a91b5c1dac8041513c68f.bin", 4));
-  g->Tensor(1851, "__ynn/fc1249/weight_scale", ynn_type_fp32, {1536}, 0, weights("@parameters/f6a45f77e78f8dd9bd3fff9e285d71452745b9be1da0c352513fa529dad7fbaa.bin", 6144));
-  g->Tensor(1852, "__ynn/fc1249/weight_transpose", ynn_type_int4, {6144,1536}, 0, nullptr);
-  g->Tensor(1853, "__ynn/fc127/accumulator", ynn_type_int32, {1,0,256}, 0, nullptr);
-  g->Tensor(1854, "__ynn/fc127/accumulator_scale", ynn_type_fp32, {256}, 0, nullptr);
-  g->Tensor(1855, "__ynn/fc127/float", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1856, "__ynn/fc127/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/d30fbf80a1ca4ec145905af8ca378fb4ce9e2676c1119c3f67ec2ae4367b4f5d.bin", 4));
-  g->Tensor(1857, "__ynn/fc127/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/49d5209f4896c422a7522bc63dd68fe6f2fd11ab3825db56c28c88d866e5b151.bin", 4));
-  g->Tensor(1858, "__ynn/fc127/weight_scale", ynn_type_fp32, {256}, 0, weights("@parameters/bce6660a271879991f8562a2470a0443b0e1847771ed48ea9b6551d07bee570b.bin", 1024));
-  g->Tensor(1859, "__ynn/fc127/weight_transpose", ynn_type_int8, {1536,256}, 0, nullptr);
-  g->Tensor(1860, "__ynn/fc1270/accumulator", ynn_type_int32, {1,0,256}, 0, nullptr);
-  g->Tensor(1861, "__ynn/fc1270/accumulator_scale", ynn_type_fp32, {256}, 0, nullptr);
-  g->Tensor(1862, "__ynn/fc1270/float", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1863, "__ynn/fc1270/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/2531fe48265292cdd8bab400674dedd71d84465a002b74d0786908b63e4c50f3.bin", 4));
-  g->Tensor(1864, "__ynn/fc1270/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/52fca5087a2d892bdc6cb59d0303ff6d650c6b520d4c7db00d13ebed5e65861f.bin", 4));
-  g->Tensor(1865, "__ynn/fc1270/weight_scale", ynn_type_fp32, {256}, 0, weights("@parameters/29a22285af7c21be3b8cf1a235f34b84f94e2408107237b204207888594fb583.bin", 1024));
-  g->Tensor(1866, "__ynn/fc1270/weight_transpose", ynn_type_int8, {1536,256}, 0, nullptr);
-  g->Tensor(1867, "__ynn/fc1275/accumulator", ynn_type_int32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1868, "__ynn/fc1275/accumulator_scale", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1869, "__ynn/fc1275/float", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1870, "__ynn/fc1275/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/75ac3e076a8c387dbe36bfb0c90886a3ac81853924725534c7d3d10414e7ff1d.bin", 4));
-  g->Tensor(1871, "__ynn/fc1275/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/0e072a594ff4e2cfffa8caf5333c977afcbb74bd2e52ec18b23e2e6ad27f96dd.bin", 4));
-  g->Tensor(1872, "__ynn/fc1275/weight_scale", ynn_type_fp32, {1536}, 0, weights("@parameters/83ea9a57ced6d1ea7e7e2079104f424db5f011b304b8e6243ca26de881bc9831.bin", 6144));
-  g->Tensor(1873, "__ynn/fc1275/weight_transpose", ynn_type_int8, {256,1536}, 0, nullptr);
-  g->Tensor(1874, "__ynn/fc1292/accumulator", ynn_type_int32, {1,0,256}, 0, nullptr);
-  g->Tensor(1875, "__ynn/fc1292/accumulator_scale", ynn_type_fp32, {256}, 0, nullptr);
-  g->Tensor(1876, "__ynn/fc1292/float", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1877, "__ynn/fc1292/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/6bd52f496716e904b227bb80aabb67f0e57dbee2e774a747352e321013e00a8c.bin", 4));
-  g->Tensor(1878, "__ynn/fc1292/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/8c47b6fcdef6d51e4618e378ba1d9309869ce1bac3382caef43d258fd6d1132c.bin", 4));
-  g->Tensor(1879, "__ynn/fc1292/weight_scale", ynn_type_fp32, {256}, 0, weights("@parameters/4a285aba2c3e00f8466e53c4926e4323e71baef94b47fd69af7b77bd220985e6.bin", 1024));
-  g->Tensor(1880, "__ynn/fc1292/weight_transpose", ynn_type_int4, {1536,256}, 0, nullptr);
-  g->Tensor(1881, "__ynn/fc1310/accumulator", ynn_type_int32, {1,0,256}, 0, nullptr);
-  g->Tensor(1882, "__ynn/fc1310/accumulator_scale", ynn_type_fp32, {256}, 0, nullptr);
-  g->Tensor(1883, "__ynn/fc1310/float", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1884, "__ynn/fc1310/weight_scale", ynn_type_fp32, {256}, 0, weights("@parameters/4d57bf1ba4678be7802d0480020c4f2b7eb969b5c4eec949799983976ce29ce0.bin", 1024));
-  g->Tensor(1885, "__ynn/fc1310/weight_transpose", ynn_type_int4, {1536,256}, 0, nullptr);
-  g->Tensor(1886, "__ynn/fc132/accumulator", ynn_type_int32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1887, "__ynn/fc132/accumulator_scale", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1888, "__ynn/fc132/float", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1889, "__ynn/fc132/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/579a07487ae3ec5e5fb7d2a6ba9161814a300520deccd3ee39da3fea7894b5dd.bin", 4));
-  g->Tensor(1890, "__ynn/fc132/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/f37c94595d6f85c738664ca4f44625ce409ae59474ab0d6a37fde24b1c39319f.bin", 4));
-  g->Tensor(1891, "__ynn/fc132/weight_scale", ynn_type_fp32, {1536}, 0, weights("@parameters/47a9b9245e70db8e7569bfa4c0aa1f7dc169ef11f733f92692e6f91b74ef988c.bin", 6144));
-  g->Tensor(1892, "__ynn/fc132/weight_transpose", ynn_type_int8, {256,1536}, 0, nullptr);
-  g->Tensor(1893, "__ynn/fc1326/accumulator", ynn_type_int32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1894, "__ynn/fc1326/accumulator_scale", ynn_type_fp32, {2048}, 0, nullptr);
-  g->Tensor(1895, "__ynn/fc1326/float", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1896, "__ynn/fc1326/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/a19058b467314f3e96359c03f07100c5c2a4aebd16338dd17c316c9365420842.bin", 4));
-  g->Tensor(1897, "__ynn/fc1326/weight_scale", ynn_type_fp32, {2048}, 0, weights("@parameters/91bfa0b1296ce0c9a879b614f4556b9592f2de4125d1ee1aeb9790e9076c127a.bin", 8192));
-  g->Tensor(1898, "__ynn/fc1326/weight_transpose", ynn_type_int4, {1536,2048}, 0, nullptr);
-  g->Tensor(1899, "__ynn/fc1352/accumulator", ynn_type_int32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1900, "__ynn/fc1352/accumulator_scale", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1901, "__ynn/fc1352/float", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1902, "__ynn/fc1352/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/22386206cd72491e278e6bd88a58804827c7f0311afa3976e86f912d3d67db41.bin", 4));
-  g->Tensor(1903, "__ynn/fc1352/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/40a73cbcb147a4113bcf90c6585392d82512b8bb1d067a85a9986c57522e4d74.bin", 4));
-  g->Tensor(1904, "__ynn/fc1352/weight_scale", ynn_type_fp32, {1536}, 0, weights("@parameters/04f366fa2f5d92de7b0b3edc4c3de3a0da47baec8099ae5f399fc75cb489fb4c.bin", 6144));
-  g->Tensor(1905, "__ynn/fc1352/weight_transpose", ynn_type_int4, {2048,1536}, 0, nullptr);
-  g->Tensor(1906, "__ynn/fc1368/accumulator", ynn_type_int32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1907, "__ynn/fc1368/accumulator_scale", ynn_type_fp32, {6144}, 0, nullptr);
-  g->Tensor(1908, "__ynn/fc1368/float", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1909, "__ynn/fc1368/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/43bbe683ad69c84d65910589be9e287e2d6aef57cb137ef959440b4dbde11c6d.bin", 4));
-  g->Tensor(1910, "__ynn/fc1368/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/fee883da1975c27da673b9816f4963ca2f19ff5cb9a73ec5bdb6bc8fd4585021.bin", 4));
-  g->Tensor(1911, "__ynn/fc1368/weight_scale", ynn_type_fp32, {6144}, 0, weights("@parameters/77a38bfe2e6523fa6452d21f17f1882bb439ff93df0d47212a534fc6361bfa42.bin", 24576));
-  g->Tensor(1912, "__ynn/fc1368/weight_transpose", ynn_type_int4, {1536,6144}, 0, nullptr);
-  g->Tensor(1913, "__ynn/fc1371/accumulator", ynn_type_int32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1914, "__ynn/fc1371/accumulator_scale", ynn_type_fp32, {6144}, 0, nullptr);
-  g->Tensor(1915, "__ynn/fc1371/float", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1916, "__ynn/fc1371/weight_scale", ynn_type_fp32, {6144}, 0, weights("@parameters/bacbba895632e4a58a5b5ee017c721a1794f19c872cebe1d5fecb89960f23848.bin", 24576));
-  g->Tensor(1917, "__ynn/fc1371/weight_transpose", ynn_type_int4, {1536,6144}, 0, nullptr);
-  g->Tensor(1918, "__ynn/fc1376/accumulator", ynn_type_int32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1919, "__ynn/fc1376/accumulator_scale", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1920, "__ynn/fc1376/float", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1921, "__ynn/fc1376/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/e180bfc6da7c201c6d071b11453ad9c7bcf975627a93788f97996fc71ca9fc44.bin", 4));
-  g->Tensor(1922, "__ynn/fc1376/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/f2abea3489f65234b216af01582af9baf163e50e0477a0c4eff7c19cc2334938.bin", 4));
-  g->Tensor(1923, "__ynn/fc1376/weight_scale", ynn_type_fp32, {1536}, 0, weights("@parameters/56959d265d5936698eaa8a860dab283a8712c3f80dd4ef9f145cfa7b455be500.bin", 6144));
-  g->Tensor(1924, "__ynn/fc1376/weight_transpose", ynn_type_int4, {6144,1536}, 0, nullptr);
-  g->Tensor(1925, "__ynn/fc1397/accumulator", ynn_type_int32, {1,0,256}, 0, nullptr);
-  g->Tensor(1926, "__ynn/fc1397/accumulator_scale", ynn_type_fp32, {256}, 0, nullptr);
-  g->Tensor(1927, "__ynn/fc1397/float", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1928, "__ynn/fc1397/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/6272b945a7b9d221dd7a875117170816bdb0359629a378f74aae7827a72fc4d7.bin", 4));
-  g->Tensor(1929, "__ynn/fc1397/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/9089d130dfab6531662c1a2941df49113a0c917193565e24c48dca6e71c8fa18.bin", 4));
-  g->Tensor(1930, "__ynn/fc1397/weight_scale", ynn_type_fp32, {256}, 0, weights("@parameters/cb471dd2b6732d9b32a5a5d5f9bdfbb8e48ee0ecd9b1153e1f8fe183fb355ed9.bin", 1024));
-  g->Tensor(1931, "__ynn/fc1397/weight_transpose", ynn_type_int8, {1536,256}, 0, nullptr);
-  g->Tensor(1932, "__ynn/fc1402/accumulator", ynn_type_int32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1933, "__ynn/fc1402/accumulator_scale", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1934, "__ynn/fc1402/float", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1935, "__ynn/fc1402/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/f27ebe3f798c43ce04ba4f1d8b42fb9506ce451999790f70283de0e33f757f95.bin", 4));
-  g->Tensor(1936, "__ynn/fc1402/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/80394d575cee9808bac958097b54eadbc12f798e7c536ca6a2cf11903c449d43.bin", 4));
-  g->Tensor(1937, "__ynn/fc1402/weight_scale", ynn_type_fp32, {1536}, 0, weights("@parameters/03851fe459a51db3ded0c54b6ac3b229deafad3f356e4cc25885a54b6572583d.bin", 6144));
-  g->Tensor(1938, "__ynn/fc1402/weight_transpose", ynn_type_int8, {256,1536}, 0, nullptr);
-  g->Tensor(1939, "__ynn/fc1419/accumulator", ynn_type_int32, {1,0,256}, 0, nullptr);
-  g->Tensor(1940, "__ynn/fc1419/accumulator_scale", ynn_type_fp32, {256}, 0, nullptr);
-  g->Tensor(1941, "__ynn/fc1419/float", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1942, "__ynn/fc1419/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/065965e45c30410bdf0d6d8a6a7779232a81d16c136e772b7e51be61d5725612.bin", 4));
-  g->Tensor(1943, "__ynn/fc1419/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/b7557442755a4521915ca2f0d7cd246b24ee2f7e5934bab7238f6543173ffed2.bin", 4));
-  g->Tensor(1944, "__ynn/fc1419/weight_scale", ynn_type_fp32, {256}, 0, weights("@parameters/34f98a54d65994415644ea9e2421f2e6cc41ab54117532a2d60c888b03db61a0.bin", 1024));
-  g->Tensor(1945, "__ynn/fc1419/weight_transpose", ynn_type_int4, {1536,256}, 0, nullptr);
-  g->Tensor(1946, "__ynn/fc1437/accumulator", ynn_type_int32, {1,0,256}, 0, nullptr);
-  g->Tensor(1947, "__ynn/fc1437/accumulator_scale", ynn_type_fp32, {256}, 0, nullptr);
-  g->Tensor(1948, "__ynn/fc1437/float", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1949, "__ynn/fc1437/weight_scale", ynn_type_fp32, {256}, 0, weights("@parameters/7053fea4b0bbea2ed7404e242c0e87609a51478d0cf40b8830f0b0357b8e2dc0.bin", 1024));
-  g->Tensor(1950, "__ynn/fc1437/weight_transpose", ynn_type_int4, {1536,256}, 0, nullptr);
-  g->Tensor(1951, "__ynn/fc1453/accumulator", ynn_type_int32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1952, "__ynn/fc1453/accumulator_scale", ynn_type_fp32, {2048}, 0, nullptr);
-  g->Tensor(1953, "__ynn/fc1453/float", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1954, "__ynn/fc1453/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/c89b4535348cf2ec4b7bbf318c605b712910933fc090cf627728be0507bba0e8.bin", 4));
-  g->Tensor(1955, "__ynn/fc1453/weight_scale", ynn_type_fp32, {2048}, 0, weights("@parameters/35000a739fe1248f16ba7a38e639c3d14d8abfc81dbcce4a2d35744ceecf0229.bin", 8192));
-  g->Tensor(1956, "__ynn/fc1453/weight_transpose", ynn_type_int4, {1536,2048}, 0, nullptr);
-  g->Tensor(1957, "__ynn/fc1479/accumulator", ynn_type_int32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1958, "__ynn/fc1479/accumulator_scale", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1959, "__ynn/fc1479/float", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1960, "__ynn/fc1479/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/76d939de459b84f53507aeaaad3dcee3dfd73d1b8b460dcbc426c49bdfe5cfc5.bin", 4));
-  g->Tensor(1961, "__ynn/fc1479/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/044d37be9c968d2ab0f2a40d238e6c306c7aad345c44832f42aec1cc6522969e.bin", 4));
-  g->Tensor(1962, "__ynn/fc1479/weight_scale", ynn_type_fp32, {1536}, 0, weights("@parameters/88e5953fb2a24ae89b87878c1586219f43080256439423b245860d56ced86a83.bin", 6144));
-  g->Tensor(1963, "__ynn/fc1479/weight_transpose", ynn_type_int4, {2048,1536}, 0, nullptr);
-  g->Tensor(1964, "__ynn/fc149/accumulator", ynn_type_int32, {1,0,256}, 0, nullptr);
-  g->Tensor(1965, "__ynn/fc149/accumulator_scale", ynn_type_fp32, {256}, 0, nullptr);
-  g->Tensor(1966, "__ynn/fc149/float", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1967, "__ynn/fc149/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/d6de2eeee60073c6156f76fe20709f3464a38331c3f6322cb3655eb33b5f62d5.bin", 4));
-  g->Tensor(1968, "__ynn/fc149/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/11b6e1d27b7020bc973da5c41f058e6c388057589a58adccfc6a18bfc5ace874.bin", 4));
-  g->Tensor(1969, "__ynn/fc149/weight_scale", ynn_type_fp32, {256}, 0, weights("@parameters/6191a4010a2ec13f51aace09436973d1489fee37bb0065843782940f33cf1cf2.bin", 1024));
-  g->Tensor(1970, "__ynn/fc149/weight_transpose", ynn_type_int4, {1536,256}, 0, nullptr);
-  g->Tensor(1971, "__ynn/fc1495/accumulator", ynn_type_int32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1972, "__ynn/fc1495/accumulator_scale", ynn_type_fp32, {6144}, 0, nullptr);
-  g->Tensor(1973, "__ynn/fc1495/float", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1974, "__ynn/fc1495/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/1e37f4c4aa2807f04cbb14989fdc00f6824025f544357da550fe463853bd7c08.bin", 4));
-  g->Tensor(1975, "__ynn/fc1495/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/99e5a0415088a296fb41091ea898e2660a2b25820c6207723b426f92ab64940a.bin", 4));
-  g->Tensor(1976, "__ynn/fc1495/weight_scale", ynn_type_fp32, {6144}, 0, weights("@parameters/bc3f749f44b12965de0875f06c74d1a8b3677b0b2a622c7c2b13de8b55c19bf2.bin", 24576));
-  g->Tensor(1977, "__ynn/fc1495/weight_transpose", ynn_type_int4, {1536,6144}, 0, nullptr);
-  g->Tensor(1978, "__ynn/fc1498/accumulator", ynn_type_int32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1979, "__ynn/fc1498/accumulator_scale", ynn_type_fp32, {6144}, 0, nullptr);
-  g->Tensor(1980, "__ynn/fc1498/float", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1981, "__ynn/fc1498/weight_scale", ynn_type_fp32, {6144}, 0, weights("@parameters/8a9680544e172db88e7c0a81da3da1d7944a39db5143e81e61f678cd345656d6.bin", 24576));
-  g->Tensor(1982, "__ynn/fc1498/weight_transpose", ynn_type_int4, {1536,6144}, 0, nullptr);
-  g->Tensor(1983, "__ynn/fc1503/accumulator", ynn_type_int32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1984, "__ynn/fc1503/accumulator_scale", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1985, "__ynn/fc1503/float", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1986, "__ynn/fc1503/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/c69e37a4462d80f511cab4ca2a2d76db359be47afe364f155385522c6241e5b0.bin", 4));
-  g->Tensor(1987, "__ynn/fc1503/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/f6e57f17a162f8be861b427a0f104e632e14d017a152c3ef26f7107c33a98168.bin", 4));
-  g->Tensor(1988, "__ynn/fc1503/weight_scale", ynn_type_fp32, {1536}, 0, weights("@parameters/cbef0754910f2036a2e9ab9c88b0b46c3737ecee1fadc21612bf648bbf60fa91.bin", 6144));
-  g->Tensor(1989, "__ynn/fc1503/weight_transpose", ynn_type_int4, {6144,1536}, 0, nullptr);
-  g->Tensor(1990, "__ynn/fc1524/accumulator", ynn_type_int32, {1,0,256}, 0, nullptr);
-  g->Tensor(1991, "__ynn/fc1524/accumulator_scale", ynn_type_fp32, {256}, 0, nullptr);
-  g->Tensor(1992, "__ynn/fc1524/float", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1993, "__ynn/fc1524/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/0b2d1635bb4fc26b5e9d89d2d015d14a83bf251d7bc9976131dbe8b63902e7e0.bin", 4));
-  g->Tensor(1994, "__ynn/fc1524/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/db6161abb690d33632afe5c15d9398c072c2e2b5fe3b87298c830069a1cc0740.bin", 4));
-  g->Tensor(1995, "__ynn/fc1524/weight_scale", ynn_type_fp32, {256}, 0, weights("@parameters/d960ca9d34f2c5fca18cefc35cd7c9f5dffea49778be700abd4003d8eab231ee.bin", 1024));
-  g->Tensor(1996, "__ynn/fc1524/weight_transpose", ynn_type_int8, {1536,256}, 0, nullptr);
-  g->Tensor(1997, "__ynn/fc1529/accumulator", ynn_type_int32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1998, "__ynn/fc1529/accumulator_scale", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1999, "__ynn/fc1529/float", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(2000, "__ynn/fc1529/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/50804a33b4d8584755b0c030ac50dc56cb449240add5e42d9691e8c8b002ea05.bin", 4));
-  g->Tensor(2001, "__ynn/fc1529/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/79df9778b0c8c1df6a12b80f97773db5dc85565d7fa3abb27d5314e5eb53d3d0.bin", 4));
-  g->Tensor(2002, "__ynn/fc1529/weight_scale", ynn_type_fp32, {1536}, 0, weights("@parameters/7b054b1132a80de639b41e88a1e17a1ae3f123d6f2203b452047314095f00fb9.bin", 6144));
-  g->Tensor(2003, "__ynn/fc1529/weight_transpose", ynn_type_int8, {256,1536}, 0, nullptr);
-  g->Tensor(2004, "__ynn/fc1546/accumulator", ynn_type_int32, {1,0,256}, 0, nullptr);
-  g->Tensor(2005, "__ynn/fc1546/accumulator_scale", ynn_type_fp32, {256}, 0, nullptr);
   g->Tensor(2006, "__ynn/fc1546/float", ynn_type_fp32, {1,0,256}, 0, nullptr);
   g->Tensor(2007, "__ynn/fc1546/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/12e754a807f7171faeba99bbca550a7c9281866949ac829a6b6ea028b4e3613f.bin", 4));
   g->Tensor(2008, "__ynn/fc1546/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/56091b5880608b3c9fced15a02e8f0e1678dc4d30ad113c89293d6a714c18050.bin", 4));
@@ -263,12 +49,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart7(Context& ctx) {
   g->Tensor(2045, "__ynn/fc1630/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/d21e652c7f3dec053304d76047996209906a79ec1f712e3f2de4edf200cdf6cd.bin", 4));
   g->Tensor(2046, "__ynn/fc1630/weight_scale", ynn_type_fp32, {1536}, 0, weights("@parameters/33aa0d6666b583e8003d572203237d12918851176630509c1a174991c56035f1.bin", 6144));
   g->Tensor(2047, "__ynn/fc1630/weight_transpose", ynn_type_int4, {6144,1536}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart8(Context& ctx) {
-  auto* g = ctx.g;
-  const auto& weights = ctx.weights;
   g->Tensor(2048, "__ynn/fc1651/accumulator", ynn_type_int32, {1,0,256}, 0, nullptr);
   g->Tensor(2049, "__ynn/fc1651/accumulator_scale", ynn_type_fp32, {256}, 0, nullptr);
   g->Tensor(2050, "__ynn/fc1651/float", ynn_type_fp32, {1,0,256}, 0, nullptr);
@@ -477,6 +257,12 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart8(Context& ctx) {
   g->Tensor(2253, "__ynn/fc403/float", ynn_type_fp32, {1,0,256}, 0, nullptr);
   g->Tensor(2254, "__ynn/fc403/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/82ff42dd20ab246e95257f93ab365a597a918daf58b68e2b78c8e284a7405d10.bin", 4));
   g->Tensor(2255, "__ynn/fc403/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/63ce79fd5ca76f1d17a82282a52e49b6be50763cc038186c7fbb40e00fae4adb.bin", 4));
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart9(Context& ctx) {
+  auto* g = ctx.g;
+  const auto& weights = ctx.weights;
   g->Tensor(2256, "__ynn/fc403/weight_scale", ynn_type_fp32, {256}, 0, weights("@parameters/06c08b901249cd99dc5efc7d523dcdce4d52aba187375d2ed825c0c7eb0fdaca.bin", 1024));
   g->Tensor(2257, "__ynn/fc403/weight_transpose", ynn_type_int4, {1536,256}, 0, nullptr);
   g->Tensor(2258, "__ynn/fc421/accumulator", ynn_type_int32, {1,0,256}, 0, nullptr);
@@ -525,12 +311,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart8(Context& ctx) {
   g->Tensor(2301, "__ynn/fc508/weight_transpose", ynn_type_int8, {1536,256}, 0, nullptr);
   g->Tensor(2302, "__ynn/fc513/accumulator", ynn_type_int32, {1,0,1536}, 0, nullptr);
   g->Tensor(2303, "__ynn/fc513/accumulator_scale", ynn_type_fp32, {1536}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart9(Context& ctx) {
-  auto* g = ctx.g;
-  const auto& weights = ctx.weights;
   g->Tensor(2304, "__ynn/fc513/float", ynn_type_fp32, {1,0,1536}, 0, nullptr);
   g->Tensor(2305, "__ynn/fc513/input_scale", ynn_type_fp32, {1}, 0, weights("@parameters/5c2912e4929368ee29011397e9a0860d02fb60322d96d5ce650cb00f452d88a8.bin", 4));
   g->Tensor(2306, "__ynn/fc513/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/51dfb4a7b57d0ca3222455ae3e91570fbeab7c1c9476c8f28ccdad3ec1abdb83.bin", 4));
@@ -733,6 +513,12 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart9(Context& ctx) {
   g->Tensor(2503, "__ynn/fc945/accumulator", ynn_type_int32, {1,0,2048}, 0, nullptr);
   g->Tensor(2504, "__ynn/fc945/accumulator_scale", ynn_type_fp32, {2048}, 0, nullptr);
   g->Tensor(2505, "__ynn/fc945/float", ynn_type_fp32, {1,0,2048}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart10(Context& ctx) {
+  auto* g = ctx.g;
+  const auto& weights = ctx.weights;
   g->Tensor(2506, "__ynn/fc945/output_scale", ynn_type_fp32, {1}, 0, weights("@parameters/d04407f943192b01246b062fb62589cc2bb297a40846f6facb7974ed2e2e5d30.bin", 4));
   g->Tensor(2507, "__ynn/fc945/weight_scale", ynn_type_fp32, {2048}, 0, weights("@parameters/8cf8ca31b3292e0ba65e2b4f6e9bb525c02d4f4297c333bad2452610becf7bf6.bin", 8192));
   g->Tensor(2508, "__ynn/fc945/weight_transpose", ynn_type_int4, {1536,2048}, 0, nullptr);
@@ -787,11 +573,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart9(Context& ctx) {
   g->Tensor(2557, "__ynn/op1043/sum", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
   g->Tensor(2558, "__ynn/op1061/divisor", ynn_type_fp32, {}, 0, nullptr);
   g->Tensor(2559, "__ynn/op1061/sum", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart10(Context& ctx) {
-  auto* g = ctx.g;
   g->Tensor(2560, "__ynn/op1077/divisor", ynn_type_fp32, {}, 0, nullptr);
   g->Tensor(2561, "__ynn/op1077/sum", ynn_type_fp32, {1,8,0,1}, 0, nullptr);
   g->Tensor(2562, "__ynn/op109/divisor", ynn_type_fp32, {}, 0, nullptr);
@@ -988,6 +769,12 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart10(Context& ctx) {
   g->Tensor(2753, "__ynn/op1780/half_input", ynn_type_fp32, {1,0,256}, 0, nullptr);
   g->Tensor(2754, "__ynn/op1780/polynomial", ynn_type_fp32, {1,0,256}, 0, nullptr);
   g->Tensor(2755, "__ynn/op1780/tanh", ynn_type_fp32, {1,0,256}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart11(Context& ctx) {
+  auto* g = ctx.g;
+  const auto& weights = ctx.weights;
   g->Tensor(2756, "__ynn/op1786/divisor", ynn_type_fp32, {}, 0, nullptr);
   g->Tensor(2757, "__ynn/op1786/sum", ynn_type_fp32, {1,0,1}, 0, nullptr);
   g->Tensor(2758, "__ynn/op1794/divisor", ynn_type_fp32, {}, 0, nullptr);
@@ -1048,12 +835,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart10(Context& ctx) {
   g->Tensor(2813, "__ynn/op363/sum", ynn_type_fp32, {1,0,1}, 0, nullptr);
   g->Tensor(2814, "__ynn/op372/divisor", ynn_type_fp32, {}, 0, nullptr);
   g->Tensor(2815, "__ynn/op372/sum", ynn_type_fp32, {1,0,1}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart11(Context& ctx) {
-  auto* g = ctx.g;
-  const auto& weights = ctx.weights;
   g->Tensor(2816, "__ynn/op383/factor", ynn_type_fp32, {1,0,256}, 0, nullptr);
   g->Tensor(2817, "__ynn/op383/half_input", ynn_type_fp32, {1,0,256}, 0, nullptr);
   g->Tensor(2818, "__ynn/op383/polynomial", ynn_type_fp32, {1,0,256}, 0, nullptr);
@@ -1244,6 +1025,12 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart11(Context& ctx) {
   g->Tensor(3003, "cache_value_13", ynn_type_int8, {1,1,0,256}, 1, nullptr);
   g->Tensor(3004, "cache_value_14", ynn_type_int8, {1,1,0,512}, 1, nullptr);
   g->Tensor(3005, "cache_value_2", ynn_type_int8, {1,1,0,256}, 1, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart12(Context& ctx) {
+  auto* g = ctx.g;
+  const auto& weights = ctx.weights;
   g->Tensor(3006, "cache_value_3", ynn_type_int8, {1,1,0,256}, 1, nullptr);
   g->Tensor(3007, "cache_value_4", ynn_type_int8, {1,1,0,512}, 1, nullptr);
   g->Tensor(3008, "cache_value_5", ynn_type_int8, {1,1,0,256}, 1, nullptr);
@@ -1310,12 +1097,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart11(Context& ctx) {
   g->Tensor(3069, "model.layers.10.layer_scalar", ynn_type_fp32, {1}, 0, weights("tensors/model.layers.10.layer_scalar.f32", 4));
   g->Tensor(3070, "model.layers.10.mlp.down_proj.weight", ynn_type_int4, {1536,6144}, 0, weights("tensors/model.layers.10.mlp.down_proj.weight.i4", 4718592));
   g->Tensor(3071, "model.layers.10.mlp.gate_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("tensors/model.layers.10.mlp.gate_proj.weight.i4", 4718592));
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart12(Context& ctx) {
-  auto* g = ctx.g;
-  const auto& weights = ctx.weights;
   g->Tensor(3072, "model.layers.10.mlp.up_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("tensors/model.layers.10.mlp.up_proj.weight.i4", 4718592));
   g->Tensor(3073, "model.layers.10.per_layer_input_gate.weight", ynn_type_int8, {256,1536}, 0, weights("tensors/model.layers.10.per_layer_input_gate.weight.i8", 393216));
   g->Tensor(3074, "model.layers.10.per_layer_projection.weight", ynn_type_int8, {1536,256}, 0, weights("tensors/model.layers.10.per_layer_projection.weight.i8", 393216));
@@ -1500,6 +1281,12 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart12(Context& ctx) {
   g->Tensor(3253, "model.layers.8.self_attn.k_norm.weight", ynn_type_fp32, {256}, 0, weights("tensors/model.layers.8.self_attn.k_norm.weight.f32", 1024));
   g->Tensor(3254, "model.layers.8.self_attn.k_proj.weight", ynn_type_int4, {256,1536}, 0, weights("tensors/model.layers.8.self_attn.k_proj.weight.i4", 196608));
   g->Tensor(3255, "model.layers.8.self_attn.o_proj.weight", ynn_type_int4, {1536,2048}, 0, weights("tensors/model.layers.8.self_attn.o_proj.weight.i4", 1572864));
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart13(Context& ctx) {
+  auto* g = ctx.g;
+  const auto& weights = ctx.weights;
   g->Tensor(3256, "model.layers.8.self_attn.q_norm.weight", ynn_type_fp32, {256}, 0, weights("tensors/model.layers.8.self_attn.q_norm.weight.f32", 1024));
   g->Tensor(3257, "model.layers.8.self_attn.q_proj.weight", ynn_type_int4, {2048,1536}, 0, weights("tensors/model.layers.8.self_attn.q_proj.weight.i4", 1572864));
   g->Tensor(3258, "model.layers.8.self_attn.v_proj.weight", ynn_type_int4, {256,1536}, 0, weights("tensors/model.layers.8.self_attn.v_proj.weight.i4", 196608));
@@ -1572,11 +1359,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart12(Context& ctx) {
   g->Tensor(3325, "view_key_10", ynn_type_int8, {1,1,0,256}, 0, nullptr);
   g->Tensor(3326, "view_key_11", ynn_type_int8, {1,1,0,256}, 0, nullptr);
   g->Tensor(3327, "view_key_12", ynn_type_int8, {1,1,0,256}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart13(Context& ctx) {
-  auto* g = ctx.g;
   g->Tensor(3328, "view_key_13", ynn_type_int8, {1,1,0,256}, 0, nullptr);
   g->Tensor(3329, "view_key_2", ynn_type_int8, {1,1,0,256}, 0, nullptr);
   g->Tensor(3330, "view_key_3", ynn_type_int8, {1,1,0,256}, 0, nullptr);

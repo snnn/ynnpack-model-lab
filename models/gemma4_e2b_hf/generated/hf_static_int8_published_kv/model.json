@@ -9,9 +9,12 @@
       "builder_sources": [
         "gemma4_prefill.cc",
         "gemma4_prefill_DefineValues_0.cc",
-        "gemma4_prefill_DefineValuesToLayer0_1.cc",
-        "gemma4_prefill_Layer1ToLayer8_2.cc",
-        "gemma4_prefill_Layer9ToLayer14_3.cc"
+        "gemma4_prefill_DefineValuesToInputProjection_1.cc",
+        "gemma4_prefill_Layer0ToLayer2_2.cc",
+        "gemma4_prefill_Layer3ToLayer5_3.cc",
+        "gemma4_prefill_Layer6ToLayer8_4.cc",
+        "gemma4_prefill_Layer9ToLayer11_5.cc",
+        "gemma4_prefill_Layer12ToLayer14_6.cc"
       ]
     },
     {
@@ -23,11 +26,17 @@
         "gemma4_decode_DefineValues_0.cc",
         "gemma4_decode_DefineValues_1.cc",
         "gemma4_decode_DefineValues_2.cc",
-        "gemma4_decode_DefineValuesToInputProjection_3.cc",
-        "gemma4_decode_Layer0ToLayer7_4.cc",
-        "gemma4_decode_Layer8ToLayer15_5.cc",
-        "gemma4_decode_Layer16ToLayer26_6.cc",
-        "gemma4_decode_Layer27ToFinalNormAndHead_7.cc"
+        "gemma4_decode_DefineValuesToLayer0_3.cc",
+        "gemma4_decode_Layer1ToLayer3_4.cc",
+        "gemma4_decode_Layer4ToLayer6_5.cc",
+        "gemma4_decode_Layer7ToLayer9_6.cc",
+        "gemma4_decode_Layer10ToLayer12_7.cc",
+        "gemma4_decode_Layer13ToLayer15_8.cc",
+        "gemma4_decode_Layer16ToLayer19_9.cc",
+        "gemma4_decode_Layer20ToLayer23_10.cc",
+        "gemma4_decode_Layer24ToLayer27_11.cc",
+        "gemma4_decode_Layer28ToLayer31_12.cc",
+        "gemma4_decode_Layer32ToFinalNormAndHead_13.cc"
       ]
     }
   ],

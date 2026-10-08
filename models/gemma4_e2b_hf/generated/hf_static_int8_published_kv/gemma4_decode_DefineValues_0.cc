@@ -257,16 +257,16 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart0(Context& ctx) {
   g->Tensor(248, "1/1232/Concatenation", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
   g->Tensor(249, "1/1233/Mul", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
   g->Tensor(250, "1/1234/Mul", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
-  g->Tensor(251, "1/1235/Add", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
-  g->Tensor(252, "1/1236/BatchMatMul", ynn_type_fp32, {1,8,1,0}, 0, nullptr);
-  g->Tensor(253, "1/1238/Softmax", ynn_type_fp32, {1,8,1,0}, 0, nullptr);
-  g->Tensor(254, "1/1239/BatchMatMul", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
-  g->Tensor(255, "1/124/Cast", ynn_type_fp32, {1536}, 0, nullptr);
 }
 
 // Scope: "DefineValues"
 LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart1(Context& ctx) {
   auto* g = ctx.g;
+  g->Tensor(251, "1/1235/Add", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
+  g->Tensor(252, "1/1236/BatchMatMul", ynn_type_fp32, {1,8,1,0}, 0, nullptr);
+  g->Tensor(253, "1/1238/Softmax", ynn_type_fp32, {1,8,1,0}, 0, nullptr);
+  g->Tensor(254, "1/1239/BatchMatMul", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
+  g->Tensor(255, "1/124/Cast", ynn_type_fp32, {1536}, 0, nullptr);
   g->Tensor(256, "1/1240/Transpose", ynn_type_fp32, {1,1,8,512}, 0, nullptr);
   g->Tensor(257, "1/1240/Transpose/fused", ynn_type_fp32, {1,8,512}, 0, nullptr);
   g->Tensor(258, "1/1241/Reshape", ynn_type_fp32, {1,1,4096}, 0, nullptr);
@@ -513,6 +513,11 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart1(Context& ctx) {
   g->Tensor(499, "1/1468/Dequantize", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
   g->Tensor(500, "1/1469/Quantize", ynn_type_int8, {1,1,1,256}, 0, nullptr);
   g->Tensor(501, "1/147/Cast", ynn_type_fp32, {1}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart2(Context& ctx) {
+  auto* g = ctx.g;
   g->Tensor(502, "1/1472/Dequantize", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
   g->Tensor(503, "1/1474/FullyConnected", ynn_type_int8, {1,1,2048}, 0, nullptr);
   g->Tensor(504, "1/1475/Dequantize", ynn_type_fp32, {1,1,2048}, 0, nullptr);
@@ -523,11 +528,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart1(Context& ctx) {
   g->Tensor(509, "1/1479/Mean", ynn_type_fp32, {1,8,1,1}, 0, nullptr);
   g->Tensor(510, "1/148/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
   g->Tensor(511, "1/1480/Add", ynn_type_fp32, {1,8,1,1}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart2(Context& ctx) {
-  auto* g = ctx.g;
   g->Tensor(512, "1/1481/Pow", ynn_type_fp32, {1,8,1,1}, 0, nullptr);
   g->Tensor(513, "1/1482/Mul", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
   g->Tensor(514, "1/1483/Cast", ynn_type_fp32, {256}, 0, nullptr);
@@ -769,6 +769,11 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart2(Context& ctx) {
   g->Tensor(750, "1/1701/Mul", ynn_type_fp32, {1,1,1,256}, 0, nullptr);
   g->Tensor(751, "1/1702/Cast", ynn_type_fp32, {256}, 0, nullptr);
   g->Tensor(752, "1/1703/Mul", ynn_type_fp32, {1,1,1,256}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart3(Context& ctx) {
+  auto* g = ctx.g;
   g->Tensor(753, "1/1704/Slice", ynn_type_fp32, {1,1,1,128}, 0, nullptr);
   g->Tensor(754, "1/1705/Slice", ynn_type_fp32, {1,1,1,128}, 0, nullptr);
   g->Tensor(755, "1/1706/Neg", ynn_type_fp32, {1,1,1,128}, 0, nullptr);
@@ -784,11 +789,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart2(Context& ctx) {
   g->Tensor(765, "1/1716/Square", ynn_type_fp32, {1,1,1,256}, 0, nullptr);
   g->Tensor(766, "1/1717/Mean", ynn_type_fp32, {1,1,1,1}, 0, nullptr);
   g->Tensor(767, "1/1718/Add", ynn_type_fp32, {1,1,1,1}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart3(Context& ctx) {
-  auto* g = ctx.g;
   g->Tensor(768, "1/1719/Pow", ynn_type_fp32, {1,1,1,1}, 0, nullptr);
   g->Tensor(769, "1/172/Mul", ynn_type_fp32, {1,1,1,256}, 0, nullptr);
   g->Tensor(770, "1/1720/Mul", ynn_type_fp32, {1,1,1,256}, 0, nullptr);
@@ -1025,6 +1025,11 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart3(Context& ctx) {
   g->Tensor(1001, "1/1944/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
   g->Tensor(1002, "1/1945/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
   g->Tensor(1003, "1/1946/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart4(Context& ctx) {
+  auto* g = ctx.g;
   g->Tensor(1004, "1/1947/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
   g->Tensor(1005, "1/1948/Quantize", ynn_type_int8, {1,1,1536}, 0, nullptr);
   g->Tensor(1006, "1/1949/FullyConnected", ynn_type_int8, {1,1,2048}, 0, nullptr);
@@ -1045,11 +1050,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart3(Context& ctx) {
   g->Tensor(1021, "1/1961/Slice", ynn_type_fp32, {1,8,1,128}, 0, nullptr);
   g->Tensor(1022, "1/1962/Neg", ynn_type_fp32, {1,8,1,128}, 0, nullptr);
   g->Tensor(1023, "1/1963/Concatenation", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart4(Context& ctx) {
-  auto* g = ctx.g;
   g->Tensor(1024, "1/1964/Mul", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
   g->Tensor(1025, "1/1965/Mul", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
   g->Tensor(1026, "1/1966/Add", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
@@ -1281,6 +1281,11 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart4(Context& ctx) {
   g->Tensor(1252, "1/2168/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
   g->Tensor(1253, "1/2169/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
   g->Tensor(1254, "1/217/Reshape", ynn_type_fp32, {1,1,2048}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart5(Context& ctx) {
+  auto* g = ctx.g;
   g->Tensor(1255, "1/2170/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
   g->Tensor(1256, "1/2171/Cast", ynn_type_fp32, {1536}, 0, nullptr);
   g->Tensor(1257, "1/2172/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
@@ -1306,11 +1311,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart4(Context& ctx) {
   g->Tensor(1277, "1/2191/Add", ynn_type_fp32, {1,1,1536}, 0, nullptr);
   g->Tensor(1278, "1/2192/Slice", ynn_type_fp32, {1,1,1,256}, 0, nullptr);
   g->Tensor(1279, "1/2193/Reshape", ynn_type_fp32, {1,1,256}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart5(Context& ctx) {
-  auto* g = ctx.g;
   g->Tensor(1280, "1/2194/Add", ynn_type_fp32, {1,1,256}, 0, nullptr);
   g->Tensor(1281, "1/2195/Mul", ynn_type_fp32, {1,1,256}, 0, nullptr);
   g->Tensor(1282, "1/2196/Quantize", ynn_type_int8, {1,1,1536}, 0, nullptr);
@@ -1537,6 +1537,11 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart5(Context& ctx) {
   g->Tensor(1503, "1/2396/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
   g->Tensor(1504, "1/2397/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
   g->Tensor(1505, "1/2398/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart6(Context& ctx) {
+  auto* g = ctx.g;
   g->Tensor(1506, "1/2399/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
   g->Tensor(1507, "1/24/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
   g->Tensor(1508, "1/240/FullyConnected", ynn_type_int8, {1,1,6144}, 0, nullptr);
@@ -1567,11 +1572,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart5(Context& ctx) {
   g->Tensor(1533, "1/2421/Add", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
   g->Tensor(1534, "1/2422/BatchMatMul", ynn_type_fp32, {1,8,1,0}, 0, nullptr);
   g->Tensor(1535, "1/2424/Softmax", ynn_type_fp32, {1,8,1,0}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart6(Context& ctx) {
-  auto* g = ctx.g;
   g->Tensor(1536, "1/2425/BatchMatMul", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
   g->Tensor(1537, "1/2426/Transpose", ynn_type_fp32, {1,1,8,256}, 0, nullptr);
   g->Tensor(1538, "1/2426/Transpose/fused", ynn_type_fp32, {1,8,256}, 0, nullptr);
@@ -1793,6 +1793,11 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart6(Context& ctx) {
   g->Tensor(1754, "1/2620/Add", ynn_type_fp32, {1,1,1536}, 0, nullptr);
   g->Tensor(1755, "1/2621/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
   g->Tensor(1756, "1/2622/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart7(Context& ctx) {
+  auto* g = ctx.g;
   g->Tensor(1757, "1/2623/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
   g->Tensor(1758, "1/2624/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
   g->Tensor(1759, "1/2625/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
@@ -1828,6 +1833,222 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart6(Context& ctx) {
   g->Tensor(1789, "1/2653/Dequantize", ynn_type_fp32, {1,1,256}, 0, nullptr);
   g->Tensor(1790, "1/2654/Gelu", ynn_type_fp32, {1,1,256}, 0, nullptr);
   g->Tensor(1791, "1/2655/Mul", ynn_type_fp32, {1,1,256}, 0, nullptr);
+  g->Tensor(1792, "1/2656/Quantize", ynn_type_int8, {1,1,256}, 0, nullptr);
+  g->Tensor(1793, "1/2657/FullyConnected", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1794, "1/2658/Dequantize", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1795, "1/2659/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1796, "1/266/Dequantize", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1797, "1/2660/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1798, "1/2661/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1799, "1/2662/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1800, "1/2663/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1801, "1/2664/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+  g->Tensor(1802, "1/2665/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1803, "1/2666/Add", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1804, "1/2667/Cast", ynn_type_fp32, {1}, 0, nullptr);
+  g->Tensor(1805, "1/2668/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1806, "1/2669/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1807, "1/267/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1808, "1/2670/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1809, "1/2671/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1810, "1/2672/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1811, "1/2673/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1812, "1/2674/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+  g->Tensor(1813, "1/2675/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1814, "1/2676/Quantize", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1815, "1/2677/FullyConnected", ynn_type_int8, {1,1,2048}, 0, nullptr);
+  g->Tensor(1816, "1/2678/Dequantize", ynn_type_fp32, {1,1,2048}, 0, nullptr);
+  g->Tensor(1817, "1/2679/Reshape", ynn_type_fp32, {1,1,8,256}, 0, nullptr);
+  g->Tensor(1818, "1/268/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1819, "1/2680/Transpose", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
+  g->Tensor(1820, "1/2680/Transpose/fused", ynn_type_fp32, {1,8,256}, 0, nullptr);
+  g->Tensor(1821, "1/2681/Square", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
+  g->Tensor(1822, "1/2682/Mean", ynn_type_fp32, {1,8,1,1}, 0, nullptr);
+  g->Tensor(1823, "1/2683/Add", ynn_type_fp32, {1,8,1,1}, 0, nullptr);
+  g->Tensor(1824, "1/2684/Pow", ynn_type_fp32, {1,8,1,1}, 0, nullptr);
+  g->Tensor(1825, "1/2685/Mul", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
+  g->Tensor(1826, "1/2686/Cast", ynn_type_fp32, {256}, 0, nullptr);
+  g->Tensor(1827, "1/2687/Mul", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
+  g->Tensor(1828, "1/2688/Slice", ynn_type_fp32, {1,8,1,128}, 0, nullptr);
+  g->Tensor(1829, "1/2689/Slice", ynn_type_fp32, {1,8,1,128}, 0, nullptr);
+  g->Tensor(1830, "1/269/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1831, "1/2690/Neg", ynn_type_fp32, {1,8,1,128}, 0, nullptr);
+  g->Tensor(1832, "1/2691/Concatenation", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
+  g->Tensor(1833, "1/2692/Mul", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
+  g->Tensor(1834, "1/2693/Mul", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
+  g->Tensor(1835, "1/2694/Add", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
+  g->Tensor(1836, "1/2695/BatchMatMul", ynn_type_fp32, {1,8,1,0}, 0, nullptr);
+  g->Tensor(1837, "1/2697/Softmax", ynn_type_fp32, {1,8,1,0}, 0, nullptr);
+  g->Tensor(1838, "1/2698/BatchMatMul", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
+  g->Tensor(1839, "1/2699/Transpose", ynn_type_fp32, {1,1,8,256}, 0, nullptr);
+  g->Tensor(1840, "1/2699/Transpose/fused", ynn_type_fp32, {1,8,256}, 0, nullptr);
+  g->Tensor(1841, "1/27/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1842, "1/270/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1843, "1/2700/Reshape", ynn_type_fp32, {1,1,2048}, 0, nullptr);
+  g->Tensor(1844, "1/2701/Quantize", ynn_type_int8, {1,1,2048}, 0, nullptr);
+  g->Tensor(1845, "1/2702/FullyConnected", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1846, "1/2703/Dequantize", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1847, "1/2704/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1848, "1/2705/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1849, "1/2706/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1850, "1/2707/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1851, "1/2708/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1852, "1/2709/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+  g->Tensor(1853, "1/271/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1854, "1/2710/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1855, "1/2711/Add", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1856, "1/2712/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1857, "1/2713/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1858, "1/2714/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1859, "1/2715/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1860, "1/2716/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1861, "1/2717/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+  g->Tensor(1862, "1/2718/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1863, "1/2719/Quantize", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1864, "1/272/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+  g->Tensor(1865, "1/2720/FullyConnected", ynn_type_int8, {1,1,12288}, 0, nullptr);
+  g->Tensor(1866, "1/2721/Dequantize", ynn_type_fp32, {1,1,12288}, 0, nullptr);
+  g->Tensor(1867, "1/2723/FullyConnected", ynn_type_int8, {1,1,12288}, 0, nullptr);
+  g->Tensor(1868, "1/2724/Dequantize", ynn_type_fp32, {1,1,12288}, 0, nullptr);
+  g->Tensor(1869, "1/2725/Gelu", ynn_type_fp32, {1,1,12288}, 0, nullptr);
+  g->Tensor(1870, "1/2726/Mul", ynn_type_fp32, {1,1,12288}, 0, nullptr);
+  g->Tensor(1871, "1/2727/Quantize", ynn_type_int8, {1,1,12288}, 0, nullptr);
+  g->Tensor(1872, "1/2728/FullyConnected", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1873, "1/2729/Dequantize", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1874, "1/273/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1875, "1/2730/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1876, "1/2731/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1877, "1/2732/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1878, "1/2733/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1879, "1/2734/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1880, "1/2735/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+  g->Tensor(1881, "1/2736/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1882, "1/2737/Add", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1883, "1/2738/Slice", ynn_type_fp32, {1,1,1,256}, 0, nullptr);
+  g->Tensor(1884, "1/2739/Reshape", ynn_type_fp32, {1,1,256}, 0, nullptr);
+  g->Tensor(1885, "1/274/Add", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1886, "1/2740/Add", ynn_type_fp32, {1,1,256}, 0, nullptr);
+  g->Tensor(1887, "1/2741/Mul", ynn_type_fp32, {1,1,256}, 0, nullptr);
+  g->Tensor(1888, "1/2742/Quantize", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1889, "1/2743/FullyConnected", ynn_type_int8, {1,1,256}, 0, nullptr);
+  g->Tensor(1890, "1/2744/Dequantize", ynn_type_fp32, {1,1,256}, 0, nullptr);
+  g->Tensor(1891, "1/2745/Gelu", ynn_type_fp32, {1,1,256}, 0, nullptr);
+  g->Tensor(1892, "1/2746/Mul", ynn_type_fp32, {1,1,256}, 0, nullptr);
+  g->Tensor(1893, "1/2747/Quantize", ynn_type_int8, {1,1,256}, 0, nullptr);
+  g->Tensor(1894, "1/2748/FullyConnected", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1895, "1/2749/Dequantize", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1896, "1/275/Cast", ynn_type_fp32, {1}, 0, nullptr);
+  g->Tensor(1897, "1/2750/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1898, "1/2751/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1899, "1/2752/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1900, "1/2753/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1901, "1/2754/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1902, "1/2755/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+  g->Tensor(1903, "1/2756/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1904, "1/2757/Add", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1905, "1/2758/Cast", ynn_type_fp32, {1}, 0, nullptr);
+  g->Tensor(1906, "1/2759/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1907, "1/276/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1908, "1/2760/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1909, "1/2761/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1910, "1/2762/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1911, "1/2763/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1912, "1/2764/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1913, "1/2765/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+  g->Tensor(1914, "1/2766/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1915, "1/2767/Quantize", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1916, "1/2768/FullyConnected", ynn_type_int8, {1,1,4096}, 0, nullptr);
+  g->Tensor(1917, "1/2769/Dequantize", ynn_type_fp32, {1,1,4096}, 0, nullptr);
+  g->Tensor(1918, "1/277/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1919, "1/2770/Reshape", ynn_type_fp32, {1,1,8,512}, 0, nullptr);
+  g->Tensor(1920, "1/2771/Transpose", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
+  g->Tensor(1921, "1/2771/Transpose/fused", ynn_type_fp32, {1,8,512}, 0, nullptr);
+  g->Tensor(1922, "1/2772/Square", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
+  g->Tensor(1923, "1/2773/Mean", ynn_type_fp32, {1,8,1,1}, 0, nullptr);
+  g->Tensor(1924, "1/2774/Add", ynn_type_fp32, {1,8,1,1}, 0, nullptr);
+  g->Tensor(1925, "1/2775/Pow", ynn_type_fp32, {1,8,1,1}, 0, nullptr);
+  g->Tensor(1926, "1/2776/Mul", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
+  g->Tensor(1927, "1/2777/Cast", ynn_type_fp32, {512}, 0, nullptr);
+  g->Tensor(1928, "1/2778/Mul", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
+  g->Tensor(1929, "1/2779/Slice", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
+  g->Tensor(1930, "1/278/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1931, "1/2780/Slice", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
+  g->Tensor(1932, "1/2781/Neg", ynn_type_fp32, {1,8,1,256}, 0, nullptr);
+  g->Tensor(1933, "1/2782/Concatenation", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
+  g->Tensor(1934, "1/2783/Mul", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
+  g->Tensor(1935, "1/2784/Mul", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
+  g->Tensor(1936, "1/2785/Add", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
+  g->Tensor(1937, "1/2786/BatchMatMul", ynn_type_fp32, {1,8,1,0}, 0, nullptr);
+  g->Tensor(1938, "1/2788/Softmax", ynn_type_fp32, {1,8,1,0}, 0, nullptr);
+  g->Tensor(1939, "1/2789/BatchMatMul", ynn_type_fp32, {1,8,1,512}, 0, nullptr);
+  g->Tensor(1940, "1/279/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1941, "1/2790/Transpose", ynn_type_fp32, {1,1,8,512}, 0, nullptr);
+  g->Tensor(1942, "1/2790/Transpose/fused", ynn_type_fp32, {1,8,512}, 0, nullptr);
+  g->Tensor(1943, "1/2791/Reshape", ynn_type_fp32, {1,1,4096}, 0, nullptr);
+  g->Tensor(1944, "1/2792/Quantize", ynn_type_int8, {1,1,4096}, 0, nullptr);
+  g->Tensor(1945, "1/2793/FullyConnected", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1946, "1/2794/Dequantize", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1947, "1/2795/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1948, "1/2796/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1949, "1/2797/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1950, "1/2798/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1951, "1/2799/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1952, "1/28/Quantize", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1953, "1/280/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1954, "1/2800/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+  g->Tensor(1955, "1/2801/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1956, "1/2802/Add", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1957, "1/2803/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1958, "1/2804/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1959, "1/2805/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1960, "1/2806/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1961, "1/2807/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1962, "1/2808/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+  g->Tensor(1963, "1/2809/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1964, "1/281/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1965, "1/2810/Quantize", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1966, "1/2811/FullyConnected", ynn_type_int8, {1,1,12288}, 0, nullptr);
+  g->Tensor(1967, "1/2812/Dequantize", ynn_type_fp32, {1,1,12288}, 0, nullptr);
+  g->Tensor(1968, "1/2814/FullyConnected", ynn_type_int8, {1,1,12288}, 0, nullptr);
+  g->Tensor(1969, "1/2815/Dequantize", ynn_type_fp32, {1,1,12288}, 0, nullptr);
+  g->Tensor(1970, "1/2816/Gelu", ynn_type_fp32, {1,1,12288}, 0, nullptr);
+  g->Tensor(1971, "1/2817/Mul", ynn_type_fp32, {1,1,12288}, 0, nullptr);
+  g->Tensor(1972, "1/2818/Quantize", ynn_type_int8, {1,1,12288}, 0, nullptr);
+  g->Tensor(1973, "1/2819/FullyConnected", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1974, "1/282/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+  g->Tensor(1975, "1/2820/Dequantize", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1976, "1/2821/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1977, "1/2822/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1978, "1/2823/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1979, "1/2824/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(1980, "1/2825/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1981, "1/2826/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+  g->Tensor(1982, "1/2827/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1983, "1/2828/Add", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1984, "1/2829/Slice", ynn_type_fp32, {1,1,1,256}, 0, nullptr);
+  g->Tensor(1985, "1/283/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1986, "1/2830/Reshape", ynn_type_fp32, {1,1,256}, 0, nullptr);
+  g->Tensor(1987, "1/2831/Add", ynn_type_fp32, {1,1,256}, 0, nullptr);
+  g->Tensor(1988, "1/2832/Mul", ynn_type_fp32, {1,1,256}, 0, nullptr);
+  g->Tensor(1989, "1/2833/Quantize", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1990, "1/2834/FullyConnected", ynn_type_int8, {1,1,256}, 0, nullptr);
+  g->Tensor(1991, "1/2835/Dequantize", ynn_type_fp32, {1,1,256}, 0, nullptr);
+  g->Tensor(1992, "1/2836/Gelu", ynn_type_fp32, {1,1,256}, 0, nullptr);
+  g->Tensor(1993, "1/2837/Mul", ynn_type_fp32, {1,1,256}, 0, nullptr);
+  g->Tensor(1994, "1/2838/Quantize", ynn_type_int8, {1,1,256}, 0, nullptr);
+  g->Tensor(1995, "1/2839/FullyConnected", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1996, "1/284/Quantize", ynn_type_int8, {1,1,1536}, 0, nullptr);
+  g->Tensor(1997, "1/2840/Dequantize", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1998, "1/2841/Square", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(1999, "1/2842/Mean", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(2000, "1/2843/Add", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(2001, "1/2844/Pow", ynn_type_fp32, {1,1,1}, 0, nullptr);
+  g->Tensor(2002, "1/2845/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(2003, "1/2846/Cast", ynn_type_fp32, {1536}, 0, nullptr);
+  g->Tensor(2004, "1/2847/Mul", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(2005, "1/2848/Add", ynn_type_fp32, {1,1,1536}, 0, nullptr);
+  g->Tensor(2006, "1/2849/Cast", ynn_type_fp32, {1}, 0, nullptr);
+  g->Tensor(2007, "1/285/FullyConnected", ynn_type_int8, {1,1,256}, 0, nullptr);
 }
 
 }  // namespace BuildGemma4DecodeSource

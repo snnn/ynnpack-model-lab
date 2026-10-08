@@ -46,6 +46,7 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart24(Context& ctx);
 LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart25(Context& ctx);
 LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart26(Context& ctx);
 LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart27(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart28(Context& ctx);
 LAB_YNN_BUILDER_NOINLINE void BuildDefineValues(Context& ctx);
 LAB_YNN_BUILDER_NOINLINE void BuildBindInvocation(Context& ctx);
 LAB_YNN_BUILDER_NOINLINE void BuildRopeTables(Context& ctx);

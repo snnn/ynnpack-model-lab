@@ -9,6 +9,11 @@ The C++ runner also accepts text and corpus inputs; see
 `frontend.json`, including tokenizer/input identities and resolved counts.
 Replay the exported TSV to compare the exact IDs across frontends or runtimes.
 
+The native C++ runners, Python command-matrix orchestration, and measurement
+analyzers form a small benchmark harness. CTest covers arithmetic, state and
+harness behavior without weights. Full-model performance checks run explicitly
+on the selected device with its model assets and recorded conditions.
+
 Start with prompts 17, 128, and 1024, capacities 2048/8448, and one/four threads.
 The checked-in performance TSV has 32 forced continuation tokens per prompt.
 Use one warmup and three measured repetitions initially. For chunk-boundary
@@ -124,6 +129,90 @@ Separate authoring, backend packing, kernel selection, and thermal changes befor
 attributing a difference to “dynamic shapes.” The historical comparison in
 `MEASUREMENTS.md` includes different activation contracts in its static versus
 packed-dynamic rows, and is labeled accordingly.
+
+## Capacity invariance check
+
+At fixed prompt and continuation IDs, increasing reserved KV capacity should
+leave warm prefill/decode latency approximately unchanged. Attention still uses
+the valid history and window. Setup and KV storage can grow; these are reported
+separately and do not enter the latency check. Different physical strides,
+cache/TLB behavior and unlocked clocks can still affect timings, so a threshold
+crossing needs investigation rather than immediately proving excess attention
+work.
+
+Add `capacity_sweep` to a normal benchmark configuration and use the literal
+`--cache_capacity={capacity}` argument:
+
+```json
+{
+  "initial_cooldown_seconds": 60,
+  "cooldown_seconds": 60,
+  "capacity_sweep": {
+    "capacities": [2048, 8448],
+    "rounds": 2,
+    "max_latency_change_percent": 10
+  },
+  "jobs": [{
+    "name": "ynn-t4",
+    "engine": "ynn",
+    "argv": [
+      "./build/gemma4_e2b",
+      "--bundle_dir=assets/gemma4_e2b/bundle",
+      "--parameter_dir=assets/gemma4_e2b/parameters",
+      "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+      "--output_dir={output}",
+      "--cache_capacity={capacity}", "--num_threads=4",
+      "--prefill_rows=128", "--warmup_runs=1", "--measured_runs=3"
+    ]
+  }]
+}
+```
+
+Save as `out/capacity.json` and run:
+
+```sh
+uv run --locked python tools/benchmark.py \
+  --config out/capacity.json --output out/capacity-results
+```
+
+Select affinity from the device's topology and prepend `taskset` plus that mask
+to the argument array. For Android, add an explicit `serial` and a prepared
+`remote_root`, and supply on-device binary, asset and fixture paths. Only
+`{capacity}` and `{output}` are substituted. Each job runs all capacities in
+forward then reverse order: with two capacities and two rounds, the process
+order is 2048/8448/8448/2048. Add independent one-thread or other-model jobs to
+the same configuration. Rounds must be even and at least two.
+
+The harness writes `capacity-check.json` and exits nonzero if a latency ratio
+falls outside the configured band. It compares prefix time, warm TTFT and mean
+subsequent-token latency separately, excluding warmups and the first-token step
+from decode. For each case/capacity, the ratio is the median of the paired
+rounds' mean-latency ratios against the smallest capacity. Per-round request
+ranges and process setup/RSS remain in the report. Both large slowdowns and
+speedups flag capacity sensitivity; either can reflect thermal/order bias.
+Ten percent is an initial configurable tolerance, not a universal performance
+guarantee or a shared-CI timing gate.
+
+Checks require matching resolved token-ID files, arguments, model profile,
+chunk/thread settings and complete measured requests. Dumps, execution profiling
+and memory-hook timings are rejected. Argmax sequences and zero history-view
+copy counters must agree; exact logit/KV comparisons still belong in separate
+correctness runs. One warmup and at least three measured requests are required.
+Android sweeps retain battery, frequency/governor and accessible thermal-zone
+snapshots before and after each process. They do not change frequency controls;
+snapshots are not execution-window averages. Raw device captures stay in ignored
+outputs.
+
+Recheck an existing sweep without executing the model again:
+
+```sh
+uv run --locked python tools/capacity_sweep.py out/capacity-results
+```
+
+The retained [Samsung E2B follow-up](../results/2026-10-08-capacity-sweep/README.md)
+exercises this harness with 36 measured requests. Its paired latency changes
+stay within 5.2%, while the individual rounds retain meaningful thermal/order
+variation. It is evidence for that recorded model/device configuration.
 
 ## What belongs in the repository
 

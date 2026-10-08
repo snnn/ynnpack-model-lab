@@ -2,6 +2,53 @@
 
 # Performance gaps for backend investigation
 
+The current [October 7 mobile baseline](../results/2026-10-07-upstream-refresh/README.md)
+adopts merged upstream `d297c798ea53` and records fresh previous-pin/native
+comparisons on the three phones, E4B on TECNO, cooled follow-ups, numerical checks
+and separate execution/kernel profiles. Linux and host-only HF timings were
+skipped because the host was busy. Upstream disables INT2 I8MM until its packing
+matches other INT2 kernels; this change is separate from the learned cost model.
+
+The Samsung four-thread repeat is close to the preserved native runner at prompt
+17: 20.08 versus 19.71 ms per subsequent token. At prompt 1024, the gap remains
+40.39 versus 25.69 ms, or 1.57 times the native latency. The previous-pin repeat
+takes 24.41 and 41.38 ms respectively. This points to history-dependent work as
+an important remaining target; it does not establish parity across workloads.
+The runners also retain different FC activation contracts.
+
+Actual Samsung decode samples show INT2 DOTPROD and INT4 I8MM in the new normal
+baseline, while native uses DOTPROD for both low-bit FC paths. Separate profiles
+identify INT4 FC, KV conversion/packing and attention matmuls as remaining
+investigation targets. Cached INT4 kernel tests favor DOTPROD, but streaming
+results depend on shape; a cached kernel win alone does not justify a universal
+selection rule. Profile worker time and native operator wall time have different
+scopes and must not be compared as interchangeable timings.
+
+The [October 8 KV-history investigation](../results/2026-10-08-kv-history/README.md)
+adds 84 unprofiled Samsung requests and separate attention diagnostics at fixed
+capacity. It finds two concrete differences: YNNPACK converts INT8 KV to FP32
+before packing, and keeps query heads as separate one-row batch entries. Native
+combines the heads into matrix rows and executes F32×QC8W attention. Fresh
+long-history conversion/packing contributes 54.8% of YNNPACK attention worker
+time; that fraction is not a full-model speedup estimate. KV preparation is
+already shared by cache owners, and local-attention call counts saturate at
+the window. Strong thermal effects prevent treating raw history-sweep slopes
+as isolated kernel costs. Test query-head row layout and conversion/packing
+fusion independently, with numerical/state validation, before combining them.
+
+TECNO E4B's prompt-1024, four-thread warm TTFT improves from 15.55 to 12.06 s,
+while decode remains approximately 152 ms per token. Linux and HF results below
+retain their historical configurations and were not refreshed in this campaign.
+TECNO E2B's corresponding warm TTFT improves from 4.31 to 3.58 s, while decode
+moves from 57.72 to 60.19 ms per token. Clocks were unlocked, so the small
+decode change is not an isolated estimate of an upstream regression.
+
+Pixel's one-thread repeats show large thermal variation and frequency caps in
+both versions. After additional rest before each four-thread prompt-1024 process,
+previous/new decode is 85.76/86.16 ms per token, essentially unchanged within the
+observed variation. These measurements do not establish a new Pixel decode
+regression; the report preserves the throttled runs and their limitations.
+
 The [October 5 backend refresh](../results/2026-10-05/README.md) substantially
 improves desktop prefill and records actual AVX-VNNI execution. Decode,
 preparation, memory, ARM performance, and numerical differences remain useful
@@ -73,8 +120,9 @@ safetensors arithmetic controls, observed ranges, setup, and RSS.
 **Status:** the selector behavior is reproduced and a local fix is validated in
 [`ynnpack-dot-packing-shape.patch`](../patches/ynnpack-dot-packing-shape.patch).
 It is applied by normal bootstrap and has not been submitted upstream. The
-affected adopted XNNPACK revision is
-`f5122810ee8bb7461ed73efe7a678a472866cee3`.
+behavior remains in upstream `d297c798ea530c12a1878bb3a3a811bdf05d715b`.
+The original reproduction below uses
+`f5122810ee8bb7461ed73efe7a678a472866cee3`; its measurements retain that identity.
 
 The lab builds and prepares separate prefill and decode graphs. Decode FC inputs
 already have a constant row count of one at graph construction. For example,
@@ -98,6 +146,12 @@ At execution, kernel selection sees the actual M but must remain compatible with
 the previously chosen weight layout and activation transpose. INT2 I8MM uses
 `tile_k=8`; the one-row DOTPROD kernel uses `tile_k=16`. Packing for the former
 therefore excludes the latter from subsequent selection.
+
+The October 7 upstream pin disables those INT2 I8MM kernels, so this particular
+INT2 layout conflict no longer occurs in its ARM dispatch. The general omission
+of A's known row count remains, and the retained correction still supplies that
+information for other types/layout decisions. The following selector and timing
+observations describe the original revision, where both INT2 candidates existed.
 
 A minimal selector reproduction uses INT8 activations, INT2 weights, INT32
 output, and the adopted backend's detected CPU cost model on each phone:

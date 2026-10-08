@@ -4,224 +4,8 @@
 namespace BuildGemma4PrefillSource {
 
 // Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart7(Context& ctx) {
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart8(Context& ctx) {
   auto* g = ctx.g;
-  g->Tensor(1792, "0/2762/Cast", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1793, "0/2763/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1794, "0/2764/Div", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1795, "0/2765/Round", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1796, "0/2766/Maximum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1797, "0/2767/Minimum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1798, "0/2768/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1799, "0/2769/Cast", ynn_type_fp32, {6144,1536}, 0, nullptr);
-  g->Tensor(1800, "0/2770/Mul", ynn_type_fp32, {6144,1536}, 0, nullptr);
-  g->Tensor(1801, "0/2771/BatchMatMul", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1802, "0/2772/Div", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1803, "0/2773/Round", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1804, "0/2774/Maximum", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1805, "0/2775/Minimum", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1806, "0/2776/Mul", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1807, "0/2782/Cast", ynn_type_fp32, {6144,1536}, 0, nullptr);
-  g->Tensor(1808, "0/2783/Mul", ynn_type_fp32, {6144,1536}, 0, nullptr);
-  g->Tensor(1809, "0/2784/BatchMatMul", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1810, "0/2785/Div", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1811, "0/2786/Round", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1812, "0/2787/Maximum", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1813, "0/2788/Minimum", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1814, "0/2789/Mul", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1815, "0/2790/Gelu", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1816, "0/2791/Mul", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1817, "0/2792/Div", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1818, "0/2793/Round", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1819, "0/2794/Maximum", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1820, "0/2795/Minimum", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1821, "0/2796/Mul", ynn_type_fp32, {1,0,6144}, 0, nullptr);
-  g->Tensor(1822, "0/2797/Cast", ynn_type_fp32, {1536,6144}, 0, nullptr);
-  g->Tensor(1823, "0/2798/Mul", ynn_type_fp32, {1536,6144}, 0, nullptr);
-  g->Tensor(1824, "0/2799/BatchMatMul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1825, "0/28/Div", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1826, "0/280/Cast", ynn_type_fp32, {256,1536}, 0, nullptr);
-  g->Tensor(1827, "0/2800/Div", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1828, "0/2801/Round", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1829, "0/2802/Maximum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1830, "0/2803/Minimum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1831, "0/2804/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1832, "0/2805/Square", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1833, "0/2806/Mean", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(1834, "0/2807/Add", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(1835, "0/2808/Pow", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(1836, "0/2809/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1837, "0/281/Mul", ynn_type_fp32, {256,1536}, 0, nullptr);
-  g->Tensor(1838, "0/2810/Cast", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1839, "0/2811/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1840, "0/2812/Add", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1841, "0/2813/Slice", ynn_type_fp32, {1,0,1,256}, 0, nullptr);
-  g->Tensor(1842, "0/2814/Reshape", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1843, "0/2815/Add", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1844, "0/2816/Mul", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1845, "0/2817/Div", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1846, "0/2818/Round", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1847, "0/2819/Maximum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1848, "0/282/BatchMatMul", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1849, "0/2820/Minimum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1850, "0/2821/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1851, "0/2822/Cast", ynn_type_fp32, {256,1536}, 0, nullptr);
-  g->Tensor(1852, "0/2823/Mul", ynn_type_fp32, {256,1536}, 0, nullptr);
-  g->Tensor(1853, "0/2824/BatchMatMul", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1854, "0/2825/Div", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1855, "0/2826/Round", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1856, "0/2827/Maximum", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1857, "0/2828/Minimum", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1858, "0/2829/Mul", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1859, "0/283/Div", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1860, "0/2830/Gelu", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1861, "0/2831/Mul", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1862, "0/2832/Div", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1863, "0/2833/Round", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1864, "0/2834/Maximum", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1865, "0/2835/Minimum", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1866, "0/2836/Mul", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1867, "0/2837/Cast", ynn_type_fp32, {1536,256}, 0, nullptr);
-  g->Tensor(1868, "0/2838/Mul", ynn_type_fp32, {1536,256}, 0, nullptr);
-  g->Tensor(1869, "0/2839/BatchMatMul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1870, "0/284/Round", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1871, "0/2840/Div", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1872, "0/2841/Round", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1873, "0/2842/Maximum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1874, "0/2843/Minimum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1875, "0/2844/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1876, "0/2845/Square", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1877, "0/2846/Mean", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(1878, "0/2847/Add", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(1879, "0/2848/Pow", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(1880, "0/2849/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1881, "0/285/Maximum", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1882, "0/2850/Cast", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1883, "0/2851/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1884, "0/2852/Add", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1885, "0/2853/Cast", ynn_type_fp32, {1}, 0, nullptr);
-  g->Tensor(1886, "0/2854/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1887, "0/2855/Square", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1888, "0/2856/Mean", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(1889, "0/2857/Add", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(1890, "0/2858/Pow", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(1891, "0/2859/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1892, "0/286/Minimum", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1893, "0/2860/Cast", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(1894, "0/2861/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1895, "0/2862/Div", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1896, "0/2863/Round", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1897, "0/2864/Maximum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1898, "0/2865/Minimum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1899, "0/2866/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1900, "0/2867/Cast", ynn_type_fp32, {256,1536}, 0, nullptr);
-  g->Tensor(1901, "0/2868/Mul", ynn_type_fp32, {256,1536}, 0, nullptr);
-  g->Tensor(1902, "0/2869/BatchMatMul", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1903, "0/287/Mul", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1904, "0/2870/Div", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1905, "0/2871/Round", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1906, "0/2872/Maximum", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1907, "0/2873/Minimum", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1908, "0/2874/Mul", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1909, "0/2875/Reshape", ynn_type_fp32, {1,0,1,256}, 0, nullptr);
-  g->Tensor(1910, "0/2876/Transpose", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1911, "0/2877/Square", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1912, "0/2878/Mean", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
-  g->Tensor(1913, "0/2879/Add", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
-  g->Tensor(1914, "0/288/Reshape", ynn_type_fp32, {1,0,1,256}, 0, nullptr);
-  g->Tensor(1915, "0/2880/Pow", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
-  g->Tensor(1916, "0/2881/Mul", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1917, "0/2882/Cast", ynn_type_fp32, {256}, 0, nullptr);
-  g->Tensor(1918, "0/2883/Mul", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1919, "0/2884/Slice", ynn_type_fp32, {1,1,0,128}, 0, nullptr);
-  g->Tensor(1920, "0/2885/Slice", ynn_type_fp32, {1,1,0,128}, 0, nullptr);
-  g->Tensor(1921, "0/2886/Neg", ynn_type_fp32, {1,1,0,128}, 0, nullptr);
-  g->Tensor(1922, "0/2887/Concatenation", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1923, "0/2888/Mul", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1924, "0/2889/Mul", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1925, "0/289/Transpose", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1926, "0/2890/Add", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1927, "0/2896/Cast", ynn_type_fp32, {256,1536}, 0, nullptr);
-  g->Tensor(1928, "0/2897/Mul", ynn_type_fp32, {256,1536}, 0, nullptr);
-  g->Tensor(1929, "0/2898/BatchMatMul", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1930, "0/2899/Div", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1931, "0/29/Round", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1932, "0/290/Square", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1933, "0/2900/Round", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1934, "0/2901/Maximum", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1935, "0/2902/Minimum", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1936, "0/2903/Mul", ynn_type_fp32, {1,0,256}, 0, nullptr);
-  g->Tensor(1937, "0/2904/Reshape", ynn_type_fp32, {1,0,1,256}, 0, nullptr);
-  g->Tensor(1938, "0/2905/Transpose", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1939, "0/2906/Square", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1940, "0/2907/Mean", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
-  g->Tensor(1941, "0/2908/Add", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
-  g->Tensor(1942, "0/2909/Pow", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
-  g->Tensor(1943, "0/291/Mean", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
-  g->Tensor(1944, "0/2910/Mul", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1945, "0/2911/Quantize", ynn_type_int8, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1946, "0/2914/Dequantize", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1947, "0/2915/Quantize", ynn_type_int8, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1948, "0/2918/Dequantize", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1949, "0/292/Add", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
-  g->Tensor(1950, "0/2924/Cast", ynn_type_fp32, {2048,1536}, 0, nullptr);
-  g->Tensor(1951, "0/2925/Mul", ynn_type_fp32, {2048,1536}, 0, nullptr);
-  g->Tensor(1952, "0/2926/BatchMatMul", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1953, "0/2927/Div", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1954, "0/2928/Round", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1955, "0/2929/Maximum", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1956, "0/293/Pow", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
-  g->Tensor(1957, "0/2930/Minimum", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1958, "0/2931/Mul", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1959, "0/2932/Reshape", ynn_type_fp32, {1,0,8,256}, 0, nullptr);
-  g->Tensor(1960, "0/2933/Transpose", ynn_type_fp32, {1,8,0,256}, 0, nullptr);
-  g->Tensor(1961, "0/2934/Square", ynn_type_fp32, {1,8,0,256}, 0, nullptr);
-  g->Tensor(1962, "0/2935/Mean", ynn_type_fp32, {1,8,0,1}, 0, nullptr);
-  g->Tensor(1963, "0/2936/Add", ynn_type_fp32, {1,8,0,1}, 0, nullptr);
-  g->Tensor(1964, "0/2937/Pow", ynn_type_fp32, {1,8,0,1}, 0, nullptr);
-  g->Tensor(1965, "0/2938/Mul", ynn_type_fp32, {1,8,0,256}, 0, nullptr);
-  g->Tensor(1966, "0/2939/Cast", ynn_type_fp32, {256}, 0, nullptr);
-  g->Tensor(1967, "0/294/Mul", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1968, "0/2940/Mul", ynn_type_fp32, {1,8,0,256}, 0, nullptr);
-  g->Tensor(1969, "0/2941/Slice", ynn_type_fp32, {1,8,0,128}, 0, nullptr);
-  g->Tensor(1970, "0/2942/Slice", ynn_type_fp32, {1,8,0,128}, 0, nullptr);
-  g->Tensor(1971, "0/2943/Neg", ynn_type_fp32, {1,8,0,128}, 0, nullptr);
-  g->Tensor(1972, "0/2944/Concatenation", ynn_type_fp32, {1,8,0,256}, 0, nullptr);
-  g->Tensor(1973, "0/2945/Mul", ynn_type_fp32, {1,8,0,256}, 0, nullptr);
-  g->Tensor(1974, "0/2946/Mul", ynn_type_fp32, {1,8,0,256}, 0, nullptr);
-  g->Tensor(1975, "0/2947/Add", ynn_type_fp32, {1,8,0,256}, 0, nullptr);
-  g->Tensor(1976, "0/2948/BatchMatMul", ynn_type_fp32, {1,8,0,0}, 0, nullptr);
-  g->Tensor(1977, "0/295/Quantize", ynn_type_int8, {1,1,0,256}, 0, nullptr);
-  g->Tensor(1978, "0/2950/Softmax", ynn_type_fp32, {1,8,0,0}, 0, nullptr);
-  g->Tensor(1979, "0/2951/BatchMatMul", ynn_type_fp32, {1,8,0,256}, 0, nullptr);
-  g->Tensor(1980, "0/2952/Transpose", ynn_type_fp32, {1,0,8,256}, 0, nullptr);
-  g->Tensor(1981, "0/2953/Reshape", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1982, "0/2954/Div", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1983, "0/2955/Round", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1984, "0/2956/Maximum", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1985, "0/2957/Minimum", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1986, "0/2958/Mul", ynn_type_fp32, {1,0,2048}, 0, nullptr);
-  g->Tensor(1987, "0/2959/Cast", ynn_type_fp32, {1536,2048}, 0, nullptr);
-  g->Tensor(1988, "0/2960/Mul", ynn_type_fp32, {1536,2048}, 0, nullptr);
-  g->Tensor(1989, "0/2961/BatchMatMul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1990, "0/2962/Div", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1991, "0/2963/Round", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1992, "0/2964/Maximum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1993, "0/2965/Minimum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1994, "0/2966/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1995, "0/2967/Square", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(1996, "0/2968/Mean", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(1997, "0/2969/Add", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(1998, "0/2970/Pow", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(1999, "0/2971/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(2000, "0/2972/Cast", ynn_type_fp32, {1536}, 0, nullptr);
-  g->Tensor(2001, "0/2973/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(2002, "0/2974/Add", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(2003, "0/2975/Square", ynn_type_fp32, {1,0,1536}, 0, nullptr);
-  g->Tensor(2004, "0/2976/Mean", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(2005, "0/2977/Add", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(2006, "0/2978/Pow", ynn_type_fp32, {1,0,1}, 0, nullptr);
-  g->Tensor(2007, "0/2979/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
   g->Tensor(2008, "0/298/Dequantize", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
   g->Tensor(2009, "0/2980/Cast", ynn_type_fp32, {1536}, 0, nullptr);
   g->Tensor(2010, "0/2981/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
@@ -262,11 +46,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart7(Context& ctx) {
   g->Tensor(2045, "0/3018/Div", ynn_type_fp32, {1,0,1536}, 0, nullptr);
   g->Tensor(2046, "0/3019/Round", ynn_type_fp32, {1,0,1536}, 0, nullptr);
   g->Tensor(2047, "0/302/Dequantize", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart8(Context& ctx) {
-  auto* g = ctx.g;
   g->Tensor(2048, "0/3020/Maximum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
   g->Tensor(2049, "0/3021/Minimum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
   g->Tensor(2050, "0/3022/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
@@ -478,6 +257,11 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart8(Context& ctx) {
   g->Tensor(2256, "0/405/Minimum", ynn_type_fp32, {1,0,1536}, 0, nullptr);
   g->Tensor(2257, "0/406/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
   g->Tensor(2258, "0/407/Square", ynn_type_fp32, {1,0,1536}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart9(Context& ctx) {
+  auto* g = ctx.g;
   g->Tensor(2259, "0/408/Mean", ynn_type_fp32, {1,0,1}, 0, nullptr);
   g->Tensor(2260, "0/409/Add", ynn_type_fp32, {1,0,1}, 0, nullptr);
   g->Tensor(2261, "0/41/Reshape", ynn_type_fp32, {1,0,1,256}, 0, nullptr);
@@ -523,11 +307,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart8(Context& ctx) {
   g->Tensor(2301, "0/446/Mul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
   g->Tensor(2302, "0/447/Square", ynn_type_fp32, {1,0,1536}, 0, nullptr);
   g->Tensor(2303, "0/448/Mean", ynn_type_fp32, {1,0,1}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart9(Context& ctx) {
-  auto* g = ctx.g;
   g->Tensor(2304, "0/449/Add", ynn_type_fp32, {1,0,1}, 0, nullptr);
   g->Tensor(2305, "0/45/Add", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
   g->Tensor(2306, "0/450/Pow", ynn_type_fp32, {1,0,1}, 0, nullptr);
@@ -734,6 +513,11 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart9(Context& ctx) {
   g->Tensor(2507, "0/654/Maximum", ynn_type_fp32, {1,0,256}, 0, nullptr);
   g->Tensor(2508, "0/655/Minimum", ynn_type_fp32, {1,0,256}, 0, nullptr);
   g->Tensor(2509, "0/656/Mul", ynn_type_fp32, {1,0,256}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart10(Context& ctx) {
+  auto* g = ctx.g;
   g->Tensor(2510, "0/657/Cast", ynn_type_fp32, {1536,256}, 0, nullptr);
   g->Tensor(2511, "0/658/Mul", ynn_type_fp32, {1536,256}, 0, nullptr);
   g->Tensor(2512, "0/659/BatchMatMul", ynn_type_fp32, {1,0,1536}, 0, nullptr);
@@ -784,11 +568,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart9(Context& ctx) {
   g->Tensor(2557, "0/7/Sin", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
   g->Tensor(2558, "0/70/Reshape", ynn_type_fp32, {1,0,1,256}, 0, nullptr);
   g->Tensor(2559, "0/700/Pow", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart10(Context& ctx) {
-  auto* g = ctx.g;
   g->Tensor(2560, "0/701/Mul", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
   g->Tensor(2561, "0/702/Cast", ynn_type_fp32, {256}, 0, nullptr);
   g->Tensor(2562, "0/703/Mul", ynn_type_fp32, {1,1,0,256}, 0, nullptr);
@@ -990,6 +769,12 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart10(Context& ctx) {
   g->Tensor(2758, "0/906/Mul", ynn_type_fp32, {512,1536}, 0, nullptr);
   g->Tensor(2759, "0/907/BatchMatMul", ynn_type_fp32, {1,0,512}, 0, nullptr);
   g->Tensor(2760, "0/908/Div", ynn_type_fp32, {1,0,512}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart11(Context& ctx) {
+  auto* g = ctx.g;
+  const auto& weights = ctx.weights;
   g->Tensor(2761, "0/909/Round", ynn_type_fp32, {1,0,512}, 0, nullptr);
   g->Tensor(2762, "0/91/Mul", ynn_type_fp32, {2048,1536}, 0, nullptr);
   g->Tensor(2763, "0/910/Maximum", ynn_type_fp32, {1,0,512}, 0, nullptr);
@@ -1045,12 +830,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart10(Context& ctx) {
   g->Tensor(2813, "0/969/Mul", ynn_type_fp32, {1,0,4096}, 0, nullptr);
   g->Tensor(2814, "0/97/Mul", ynn_type_fp32, {1,0,2048}, 0, nullptr);
   g->Tensor(2815, "0/970/Reshape", ynn_type_fp32, {1,0,8,512}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart11(Context& ctx) {
-  auto* g = ctx.g;
-  const auto& weights = ctx.weights;
   g->Tensor(2816, "0/971/Transpose", ynn_type_fp32, {1,8,0,512}, 0, nullptr);
   g->Tensor(2817, "0/972/Square", ynn_type_fp32, {1,8,0,512}, 0, nullptr);
   g->Tensor(2818, "0/973/Mean", ynn_type_fp32, {1,8,0,1}, 0, nullptr);
@@ -1246,6 +1025,11 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart11(Context& ctx) {
   g->Tensor(3008, "__ynn/op2078/exp", ynn_type_fp32, {1,8,0,0}, 0, nullptr);
   g->Tensor(3009, "__ynn/op2078/inverse", ynn_type_fp32, {1,8,0,1}, 0, nullptr);
   g->Tensor(3010, "__ynn/op2078/max", ynn_type_fp32, {1,8,0,1}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart12(Context& ctx) {
+  auto* g = ctx.g;
   g->Tensor(3011, "__ynn/op2078/sum", ynn_type_fp32, {1,8,0,1}, 0, nullptr);
   g->Tensor(3012, "__ynn/op2096/divisor", ynn_type_fp32, {}, 0, nullptr);
   g->Tensor(3013, "__ynn/op2096/sum", ynn_type_fp32, {1,0,1}, 0, nullptr);
@@ -1307,12 +1091,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart11(Context& ctx) {
   g->Tensor(3069, "__ynn/op2442/divisor", ynn_type_fp32, {}, 0, nullptr);
   g->Tensor(3070, "__ynn/op2442/sum", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
   g->Tensor(3071, "__ynn/op2471/divisor", ynn_type_fp32, {}, 0, nullptr);
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart12(Context& ctx) {
-  auto* g = ctx.g;
-  const auto& weights = ctx.weights;
   g->Tensor(3072, "__ynn/op2471/sum", ynn_type_fp32, {1,1,0,1}, 0, nullptr);
   g->Tensor(3073, "__ynn/op2499/divisor", ynn_type_fp32, {}, 0, nullptr);
   g->Tensor(3074, "__ynn/op2499/sum", ynn_type_fp32, {1,8,0,1}, 0, nullptr);
@@ -1503,6 +1281,12 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart12(Context& ctx) {
   g->Tensor(3259, "__ynn/op988/inverse", ynn_type_fp32, {1,8,0,1}, 0, nullptr);
   g->Tensor(3260, "__ynn/op988/max", ynn_type_fp32, {1,8,0,1}, 0, nullptr);
   g->Tensor(3261, "__ynn/op988/sum", ynn_type_fp32, {1,8,0,1}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart13(Context& ctx) {
+  auto* g = ctx.g;
+  const auto& weights = ctx.weights;
   g->Tensor(3262, "cache_key_0", ynn_type_int8, {1,1,0,256}, 1, nullptr);
   g->Tensor(3263, "cache_key_1", ynn_type_int8, {1,1,0,256}, 1, nullptr);
   g->Tensor(3264, "cache_key_10", ynn_type_int8, {1,1,0,256}, 1, nullptr);
@@ -1569,12 +1353,6 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart12(Context& ctx) {
   g->Tensor(3325, "literal/f32/3e5ef43d998d46c56f1633f40e753deba9f4369680bcc486905127f57c96f4a7", ynn_type_fp32, {1}, 0, weights("@parameters/d6de2eeee60073c6156f76fe20709f3464a38331c3f6322cb3655eb33b5f62d5.bin", 4));
   g->Tensor(3326, "literal/f32/3f7582763223cfe0f56ed98daecd61da552764f822fec1526feb90c3de328a9d", ynn_type_fp32, {1}, 0, weights("@parameters/f27ebe3f798c43ce04ba4f1d8b42fb9506ce451999790f70283de0e33f757f95.bin", 4));
   g->Tensor(3327, "literal/f32/3fc4d039ae4a38854408d42d3cf7a346ecc51165972fa1feda4c130e3bbc47a6", ynn_type_fp32, {1}, 0, weights("@parameters/f93821c30e99270e21e5bf0d5bcde92b86936ab77d3cffff3e50d06f630eebff.bin", 4));
-}
-
-// Scope: "DefineValues"
-LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart13(Context& ctx) {
-  auto* g = ctx.g;
-  const auto& weights = ctx.weights;
   g->Tensor(3328, "literal/f32/3fcbaa8b91cce444123993e0832f20a3b759cec417759a7cab06a45d066826f4", ynn_type_fp32, {1}, 0, weights("@parameters/ab845e4cab8b003fccd7f71a35f9c1e6b200104ca9bcf2f3943fe10326d5228e.bin", 4));
   g->Tensor(3329, "literal/f32/40dcdc04ed2008caacda10777997e4fa9854f9cbc5e93526b0e0f9ff77eb84c4", ynn_type_fp32, {1}, 0, weights("@parameters/e1190690b036731c20f2cb7d67b7f5193ad722c7f396d1309d248e6b547558fd.bin", 4));
   g->Tensor(3330, "literal/f32/40ef42b74e45def85adaf02cdcf0c8ef6cbf8438c9b42159da31af61b53e449e", ynn_type_fp32, {1}, 0, weights("@parameters/9af5d54528660a63597eab1ff6424cd6b736593c0912033ece41d9fafc8be7c1.bin", 4));
@@ -1759,6 +1537,12 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart13(Context& ctx) {
   g->Tensor(3509, "model.layers.0.self_attn.k_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.0.self_attn.k_proj.weight", 196608));
   g->Tensor(3510, "model.layers.0.self_attn.k_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.0.self_attn.k_proj.weight_scale", 1024));
   g->Tensor(3511, "model.layers.0.self_attn.o_proj.weight", ynn_type_int4, {1536,2048}, 0, weights("@hf/model.layers.0.self_attn.o_proj.weight", 1572864));
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart14(Context& ctx) {
+  auto* g = ctx.g;
+  const auto& weights = ctx.weights;
   g->Tensor(3512, "model.layers.0.self_attn.o_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.0.self_attn.o_proj.weight_scale", 6144));
   g->Tensor(3513, "model.layers.0.self_attn.q_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.0.self_attn.q_norm.weight", 512));
   g->Tensor(3514, "model.layers.0.self_attn.q_proj.weight", ynn_type_int4, {2048,1536}, 0, weights("@hf/model.layers.0.self_attn.q_proj.weight", 1572864));
@@ -1831,6 +1615,385 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart13(Context& ctx) {
   g->Tensor(3581, "model.layers.11.per_layer_projection.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.11.per_layer_projection.weight_scale", 6144));
   g->Tensor(3582, "model.layers.11.post_attention_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.11.post_attention_layernorm.weight", 3072));
   g->Tensor(3583, "model.layers.11.post_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.11.post_feedforward_layernorm.weight", 3072));
+  g->Tensor(3584, "model.layers.11.post_per_layer_input_norm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.11.post_per_layer_input_norm.weight", 3072));
+  g->Tensor(3585, "model.layers.11.pre_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.11.pre_feedforward_layernorm.weight", 3072));
+  g->Tensor(3586, "model.layers.11.self_attn.k_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.11.self_attn.k_norm.weight", 512));
+  g->Tensor(3587, "model.layers.11.self_attn.k_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.11.self_attn.k_proj.weight", 196608));
+  g->Tensor(3588, "model.layers.11.self_attn.k_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.11.self_attn.k_proj.weight_scale", 1024));
+  g->Tensor(3589, "model.layers.11.self_attn.o_proj.weight", ynn_type_int4, {1536,2048}, 0, weights("@hf/model.layers.11.self_attn.o_proj.weight", 1572864));
+  g->Tensor(3590, "model.layers.11.self_attn.o_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.11.self_attn.o_proj.weight_scale", 6144));
+  g->Tensor(3591, "model.layers.11.self_attn.q_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.11.self_attn.q_norm.weight", 512));
+  g->Tensor(3592, "model.layers.11.self_attn.q_proj.weight", ynn_type_int4, {2048,1536}, 0, weights("@hf/model.layers.11.self_attn.q_proj.weight", 1572864));
+  g->Tensor(3593, "model.layers.11.self_attn.q_proj.weight_scale", ynn_type_fp32, {2048,1}, 0, weights("@hf/model.layers.11.self_attn.q_proj.weight_scale", 8192));
+  g->Tensor(3594, "model.layers.11.self_attn.v_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.11.self_attn.v_proj.weight", 196608));
+  g->Tensor(3595, "model.layers.11.self_attn.v_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.11.self_attn.v_proj.weight_scale", 1024));
+  g->Tensor(3596, "model.layers.12.input_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.12.input_layernorm.weight", 3072));
+  g->Tensor(3597, "model.layers.12.layer_scalar", ynn_type_bf16, {1}, 0, weights("@hf/model.layers.12.layer_scalar", 2));
+  g->Tensor(3598, "model.layers.12.mlp.down_proj.weight", ynn_type_int4, {1536,6144}, 0, weights("@hf/model.layers.12.mlp.down_proj.weight", 4718592));
+  g->Tensor(3599, "model.layers.12.mlp.down_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.12.mlp.down_proj.weight_scale", 6144));
+  g->Tensor(3600, "model.layers.12.mlp.gate_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.12.mlp.gate_proj.weight", 4718592));
+  g->Tensor(3601, "model.layers.12.mlp.gate_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.12.mlp.gate_proj.weight_scale", 24576));
+  g->Tensor(3602, "model.layers.12.mlp.up_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.12.mlp.up_proj.weight", 4718592));
+  g->Tensor(3603, "model.layers.12.mlp.up_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.12.mlp.up_proj.weight_scale", 24576));
+  g->Tensor(3604, "model.layers.12.per_layer_input_gate.weight", ynn_type_int8, {256,1536}, 0, weights("@hf/model.layers.12.per_layer_input_gate.weight", 393216));
+  g->Tensor(3605, "model.layers.12.per_layer_input_gate.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.12.per_layer_input_gate.weight_scale", 1024));
+  g->Tensor(3606, "model.layers.12.per_layer_projection.weight", ynn_type_int8, {1536,256}, 0, weights("@hf/model.layers.12.per_layer_projection.weight", 393216));
+  g->Tensor(3607, "model.layers.12.per_layer_projection.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.12.per_layer_projection.weight_scale", 6144));
+  g->Tensor(3608, "model.layers.12.post_attention_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.12.post_attention_layernorm.weight", 3072));
+  g->Tensor(3609, "model.layers.12.post_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.12.post_feedforward_layernorm.weight", 3072));
+  g->Tensor(3610, "model.layers.12.post_per_layer_input_norm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.12.post_per_layer_input_norm.weight", 3072));
+  g->Tensor(3611, "model.layers.12.pre_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.12.pre_feedforward_layernorm.weight", 3072));
+  g->Tensor(3612, "model.layers.12.self_attn.k_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.12.self_attn.k_norm.weight", 512));
+  g->Tensor(3613, "model.layers.12.self_attn.k_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.12.self_attn.k_proj.weight", 196608));
+  g->Tensor(3614, "model.layers.12.self_attn.k_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.12.self_attn.k_proj.weight_scale", 1024));
+  g->Tensor(3615, "model.layers.12.self_attn.o_proj.weight", ynn_type_int4, {1536,2048}, 0, weights("@hf/model.layers.12.self_attn.o_proj.weight", 1572864));
+  g->Tensor(3616, "model.layers.12.self_attn.o_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.12.self_attn.o_proj.weight_scale", 6144));
+  g->Tensor(3617, "model.layers.12.self_attn.q_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.12.self_attn.q_norm.weight", 512));
+  g->Tensor(3618, "model.layers.12.self_attn.q_proj.weight", ynn_type_int4, {2048,1536}, 0, weights("@hf/model.layers.12.self_attn.q_proj.weight", 1572864));
+  g->Tensor(3619, "model.layers.12.self_attn.q_proj.weight_scale", ynn_type_fp32, {2048,1}, 0, weights("@hf/model.layers.12.self_attn.q_proj.weight_scale", 8192));
+  g->Tensor(3620, "model.layers.12.self_attn.v_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.12.self_attn.v_proj.weight", 196608));
+  g->Tensor(3621, "model.layers.12.self_attn.v_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.12.self_attn.v_proj.weight_scale", 1024));
+  g->Tensor(3622, "model.layers.13.input_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.13.input_layernorm.weight", 3072));
+  g->Tensor(3623, "model.layers.13.layer_scalar", ynn_type_bf16, {1}, 0, weights("@hf/model.layers.13.layer_scalar", 2));
+  g->Tensor(3624, "model.layers.13.mlp.down_proj.weight", ynn_type_int4, {1536,6144}, 0, weights("@hf/model.layers.13.mlp.down_proj.weight", 4718592));
+  g->Tensor(3625, "model.layers.13.mlp.down_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.13.mlp.down_proj.weight_scale", 6144));
+  g->Tensor(3626, "model.layers.13.mlp.gate_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.13.mlp.gate_proj.weight", 4718592));
+  g->Tensor(3627, "model.layers.13.mlp.gate_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.13.mlp.gate_proj.weight_scale", 24576));
+  g->Tensor(3628, "model.layers.13.mlp.up_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.13.mlp.up_proj.weight", 4718592));
+  g->Tensor(3629, "model.layers.13.mlp.up_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.13.mlp.up_proj.weight_scale", 24576));
+  g->Tensor(3630, "model.layers.13.per_layer_input_gate.weight", ynn_type_int8, {256,1536}, 0, weights("@hf/model.layers.13.per_layer_input_gate.weight", 393216));
+  g->Tensor(3631, "model.layers.13.per_layer_input_gate.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.13.per_layer_input_gate.weight_scale", 1024));
+  g->Tensor(3632, "model.layers.13.per_layer_projection.weight", ynn_type_int8, {1536,256}, 0, weights("@hf/model.layers.13.per_layer_projection.weight", 393216));
+  g->Tensor(3633, "model.layers.13.per_layer_projection.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.13.per_layer_projection.weight_scale", 6144));
+  g->Tensor(3634, "model.layers.13.post_attention_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.13.post_attention_layernorm.weight", 3072));
+  g->Tensor(3635, "model.layers.13.post_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.13.post_feedforward_layernorm.weight", 3072));
+  g->Tensor(3636, "model.layers.13.post_per_layer_input_norm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.13.post_per_layer_input_norm.weight", 3072));
+  g->Tensor(3637, "model.layers.13.pre_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.13.pre_feedforward_layernorm.weight", 3072));
+  g->Tensor(3638, "model.layers.13.self_attn.k_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.13.self_attn.k_norm.weight", 512));
+  g->Tensor(3639, "model.layers.13.self_attn.k_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.13.self_attn.k_proj.weight", 196608));
+  g->Tensor(3640, "model.layers.13.self_attn.k_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.13.self_attn.k_proj.weight_scale", 1024));
+  g->Tensor(3641, "model.layers.13.self_attn.o_proj.weight", ynn_type_int4, {1536,2048}, 0, weights("@hf/model.layers.13.self_attn.o_proj.weight", 1572864));
+  g->Tensor(3642, "model.layers.13.self_attn.o_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.13.self_attn.o_proj.weight_scale", 6144));
+  g->Tensor(3643, "model.layers.13.self_attn.q_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.13.self_attn.q_norm.weight", 512));
+  g->Tensor(3644, "model.layers.13.self_attn.q_proj.weight", ynn_type_int4, {2048,1536}, 0, weights("@hf/model.layers.13.self_attn.q_proj.weight", 1572864));
+  g->Tensor(3645, "model.layers.13.self_attn.q_proj.weight_scale", ynn_type_fp32, {2048,1}, 0, weights("@hf/model.layers.13.self_attn.q_proj.weight_scale", 8192));
+  g->Tensor(3646, "model.layers.13.self_attn.v_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.13.self_attn.v_proj.weight", 196608));
+  g->Tensor(3647, "model.layers.13.self_attn.v_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.13.self_attn.v_proj.weight_scale", 1024));
+  g->Tensor(3648, "model.layers.14.input_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.14.input_layernorm.weight", 3072));
+  g->Tensor(3649, "model.layers.14.self_attn.k_norm.weight", ynn_type_bf16, {512}, 0, weights("@hf/model.layers.14.self_attn.k_norm.weight", 1024));
+  g->Tensor(3650, "model.layers.14.self_attn.k_proj.weight", ynn_type_int4, {512,1536}, 0, weights("@hf/model.layers.14.self_attn.k_proj.weight", 393216));
+  g->Tensor(3651, "model.layers.14.self_attn.k_proj.weight_scale", ynn_type_fp32, {512,1}, 0, weights("@hf/model.layers.14.self_attn.k_proj.weight_scale", 2048));
+  g->Tensor(3652, "model.layers.14.self_attn.v_proj.weight", ynn_type_int4, {512,1536}, 0, weights("@hf/model.layers.14.self_attn.v_proj.weight", 393216));
+  g->Tensor(3653, "model.layers.14.self_attn.v_proj.weight_scale", ynn_type_fp32, {512,1}, 0, weights("@hf/model.layers.14.self_attn.v_proj.weight_scale", 2048));
+  g->Tensor(3654, "model.layers.2.input_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.2.input_layernorm.weight", 3072));
+  g->Tensor(3655, "model.layers.2.layer_scalar", ynn_type_bf16, {1}, 0, weights("@hf/model.layers.2.layer_scalar", 2));
+  g->Tensor(3656, "model.layers.2.mlp.down_proj.weight", ynn_type_int4, {1536,6144}, 0, weights("@hf/model.layers.2.mlp.down_proj.weight", 4718592));
+  g->Tensor(3657, "model.layers.2.mlp.down_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.2.mlp.down_proj.weight_scale", 6144));
+  g->Tensor(3658, "model.layers.2.mlp.gate_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.2.mlp.gate_proj.weight", 4718592));
+  g->Tensor(3659, "model.layers.2.mlp.gate_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.2.mlp.gate_proj.weight_scale", 24576));
+  g->Tensor(3660, "model.layers.2.mlp.up_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.2.mlp.up_proj.weight", 4718592));
+  g->Tensor(3661, "model.layers.2.mlp.up_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.2.mlp.up_proj.weight_scale", 24576));
+  g->Tensor(3662, "model.layers.2.per_layer_input_gate.weight", ynn_type_int8, {256,1536}, 0, weights("@hf/model.layers.2.per_layer_input_gate.weight", 393216));
+  g->Tensor(3663, "model.layers.2.per_layer_input_gate.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.2.per_layer_input_gate.weight_scale", 1024));
+  g->Tensor(3664, "model.layers.2.per_layer_projection.weight", ynn_type_int8, {1536,256}, 0, weights("@hf/model.layers.2.per_layer_projection.weight", 393216));
+  g->Tensor(3665, "model.layers.2.per_layer_projection.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.2.per_layer_projection.weight_scale", 6144));
+  g->Tensor(3666, "model.layers.2.post_attention_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.2.post_attention_layernorm.weight", 3072));
+  g->Tensor(3667, "model.layers.2.post_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.2.post_feedforward_layernorm.weight", 3072));
+  g->Tensor(3668, "model.layers.2.post_per_layer_input_norm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.2.post_per_layer_input_norm.weight", 3072));
+  g->Tensor(3669, "model.layers.2.pre_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.2.pre_feedforward_layernorm.weight", 3072));
+  g->Tensor(3670, "model.layers.2.self_attn.k_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.2.self_attn.k_norm.weight", 512));
+  g->Tensor(3671, "model.layers.2.self_attn.k_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.2.self_attn.k_proj.weight", 196608));
+  g->Tensor(3672, "model.layers.2.self_attn.k_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.2.self_attn.k_proj.weight_scale", 1024));
+  g->Tensor(3673, "model.layers.2.self_attn.o_proj.weight", ynn_type_int4, {1536,2048}, 0, weights("@hf/model.layers.2.self_attn.o_proj.weight", 1572864));
+  g->Tensor(3674, "model.layers.2.self_attn.o_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.2.self_attn.o_proj.weight_scale", 6144));
+  g->Tensor(3675, "model.layers.2.self_attn.q_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.2.self_attn.q_norm.weight", 512));
+  g->Tensor(3676, "model.layers.2.self_attn.q_proj.weight", ynn_type_int4, {2048,1536}, 0, weights("@hf/model.layers.2.self_attn.q_proj.weight", 1572864));
+  g->Tensor(3677, "model.layers.2.self_attn.q_proj.weight_scale", ynn_type_fp32, {2048,1}, 0, weights("@hf/model.layers.2.self_attn.q_proj.weight_scale", 8192));
+  g->Tensor(3678, "model.layers.2.self_attn.v_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.2.self_attn.v_proj.weight", 196608));
+  g->Tensor(3679, "model.layers.2.self_attn.v_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.2.self_attn.v_proj.weight_scale", 1024));
+  g->Tensor(3680, "model.layers.3.input_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.3.input_layernorm.weight", 3072));
+  g->Tensor(3681, "model.layers.3.layer_scalar", ynn_type_bf16, {1}, 0, weights("@hf/model.layers.3.layer_scalar", 2));
+  g->Tensor(3682, "model.layers.3.mlp.down_proj.weight", ynn_type_int4, {1536,6144}, 0, weights("@hf/model.layers.3.mlp.down_proj.weight", 4718592));
+  g->Tensor(3683, "model.layers.3.mlp.down_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.3.mlp.down_proj.weight_scale", 6144));
+  g->Tensor(3684, "model.layers.3.mlp.gate_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.3.mlp.gate_proj.weight", 4718592));
+  g->Tensor(3685, "model.layers.3.mlp.gate_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.3.mlp.gate_proj.weight_scale", 24576));
+  g->Tensor(3686, "model.layers.3.mlp.up_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.3.mlp.up_proj.weight", 4718592));
+  g->Tensor(3687, "model.layers.3.mlp.up_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.3.mlp.up_proj.weight_scale", 24576));
+  g->Tensor(3688, "model.layers.3.per_layer_input_gate.weight", ynn_type_int8, {256,1536}, 0, weights("@hf/model.layers.3.per_layer_input_gate.weight", 393216));
+  g->Tensor(3689, "model.layers.3.per_layer_input_gate.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.3.per_layer_input_gate.weight_scale", 1024));
+  g->Tensor(3690, "model.layers.3.per_layer_projection.weight", ynn_type_int8, {1536,256}, 0, weights("@hf/model.layers.3.per_layer_projection.weight", 393216));
+  g->Tensor(3691, "model.layers.3.per_layer_projection.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.3.per_layer_projection.weight_scale", 6144));
+  g->Tensor(3692, "model.layers.3.post_attention_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.3.post_attention_layernorm.weight", 3072));
+  g->Tensor(3693, "model.layers.3.post_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.3.post_feedforward_layernorm.weight", 3072));
+  g->Tensor(3694, "model.layers.3.post_per_layer_input_norm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.3.post_per_layer_input_norm.weight", 3072));
+  g->Tensor(3695, "model.layers.3.pre_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.3.pre_feedforward_layernorm.weight", 3072));
+  g->Tensor(3696, "model.layers.3.self_attn.k_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.3.self_attn.k_norm.weight", 512));
+  g->Tensor(3697, "model.layers.3.self_attn.k_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.3.self_attn.k_proj.weight", 196608));
+  g->Tensor(3698, "model.layers.3.self_attn.k_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.3.self_attn.k_proj.weight_scale", 1024));
+  g->Tensor(3699, "model.layers.3.self_attn.o_proj.weight", ynn_type_int4, {1536,2048}, 0, weights("@hf/model.layers.3.self_attn.o_proj.weight", 1572864));
+  g->Tensor(3700, "model.layers.3.self_attn.o_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.3.self_attn.o_proj.weight_scale", 6144));
+  g->Tensor(3701, "model.layers.3.self_attn.q_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.3.self_attn.q_norm.weight", 512));
+  g->Tensor(3702, "model.layers.3.self_attn.q_proj.weight", ynn_type_int4, {2048,1536}, 0, weights("@hf/model.layers.3.self_attn.q_proj.weight", 1572864));
+  g->Tensor(3703, "model.layers.3.self_attn.q_proj.weight_scale", ynn_type_fp32, {2048,1}, 0, weights("@hf/model.layers.3.self_attn.q_proj.weight_scale", 8192));
+  g->Tensor(3704, "model.layers.3.self_attn.v_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.3.self_attn.v_proj.weight", 196608));
+  g->Tensor(3705, "model.layers.3.self_attn.v_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.3.self_attn.v_proj.weight_scale", 1024));
+  g->Tensor(3706, "model.layers.4.input_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.4.input_layernorm.weight", 3072));
+  g->Tensor(3707, "model.layers.4.layer_scalar", ynn_type_bf16, {1}, 0, weights("@hf/model.layers.4.layer_scalar", 2));
+  g->Tensor(3708, "model.layers.4.mlp.down_proj.weight", ynn_type_int4, {1536,6144}, 0, weights("@hf/model.layers.4.mlp.down_proj.weight", 4718592));
+  g->Tensor(3709, "model.layers.4.mlp.down_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.4.mlp.down_proj.weight_scale", 6144));
+  g->Tensor(3710, "model.layers.4.mlp.gate_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.4.mlp.gate_proj.weight", 4718592));
+  g->Tensor(3711, "model.layers.4.mlp.gate_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.4.mlp.gate_proj.weight_scale", 24576));
+  g->Tensor(3712, "model.layers.4.mlp.up_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.4.mlp.up_proj.weight", 4718592));
+  g->Tensor(3713, "model.layers.4.mlp.up_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.4.mlp.up_proj.weight_scale", 24576));
+  g->Tensor(3714, "model.layers.4.per_layer_input_gate.weight", ynn_type_int8, {256,1536}, 0, weights("@hf/model.layers.4.per_layer_input_gate.weight", 393216));
+  g->Tensor(3715, "model.layers.4.per_layer_input_gate.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.4.per_layer_input_gate.weight_scale", 1024));
+  g->Tensor(3716, "model.layers.4.per_layer_projection.weight", ynn_type_int8, {1536,256}, 0, weights("@hf/model.layers.4.per_layer_projection.weight", 393216));
+  g->Tensor(3717, "model.layers.4.per_layer_projection.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.4.per_layer_projection.weight_scale", 6144));
+  g->Tensor(3718, "model.layers.4.post_attention_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.4.post_attention_layernorm.weight", 3072));
+  g->Tensor(3719, "model.layers.4.post_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.4.post_feedforward_layernorm.weight", 3072));
+  g->Tensor(3720, "model.layers.4.post_per_layer_input_norm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.4.post_per_layer_input_norm.weight", 3072));
+  g->Tensor(3721, "model.layers.4.pre_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.4.pre_feedforward_layernorm.weight", 3072));
+  g->Tensor(3722, "model.layers.4.self_attn.k_norm.weight", ynn_type_bf16, {512}, 0, weights("@hf/model.layers.4.self_attn.k_norm.weight", 1024));
+  g->Tensor(3723, "model.layers.4.self_attn.k_proj.weight", ynn_type_int4, {512,1536}, 0, weights("@hf/model.layers.4.self_attn.k_proj.weight", 393216));
+  g->Tensor(3724, "model.layers.4.self_attn.k_proj.weight_scale", ynn_type_fp32, {512,1}, 0, weights("@hf/model.layers.4.self_attn.k_proj.weight_scale", 2048));
+  g->Tensor(3725, "model.layers.4.self_attn.o_proj.weight", ynn_type_int4, {1536,4096}, 0, weights("@hf/model.layers.4.self_attn.o_proj.weight", 3145728));
+  g->Tensor(3726, "model.layers.4.self_attn.o_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.4.self_attn.o_proj.weight_scale", 6144));
+  g->Tensor(3727, "model.layers.4.self_attn.q_norm.weight", ynn_type_bf16, {512}, 0, weights("@hf/model.layers.4.self_attn.q_norm.weight", 1024));
+  g->Tensor(3728, "model.layers.4.self_attn.q_proj.weight", ynn_type_int4, {4096,1536}, 0, weights("@hf/model.layers.4.self_attn.q_proj.weight", 3145728));
+  g->Tensor(3729, "model.layers.4.self_attn.q_proj.weight_scale", ynn_type_fp32, {4096,1}, 0, weights("@hf/model.layers.4.self_attn.q_proj.weight_scale", 16384));
+  g->Tensor(3730, "model.layers.4.self_attn.v_proj.weight", ynn_type_int4, {512,1536}, 0, weights("@hf/model.layers.4.self_attn.v_proj.weight", 393216));
+  g->Tensor(3731, "model.layers.4.self_attn.v_proj.weight_scale", ynn_type_fp32, {512,1}, 0, weights("@hf/model.layers.4.self_attn.v_proj.weight_scale", 2048));
+  g->Tensor(3732, "model.layers.5.input_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.5.input_layernorm.weight", 3072));
+  g->Tensor(3733, "model.layers.5.layer_scalar", ynn_type_bf16, {1}, 0, weights("@hf/model.layers.5.layer_scalar", 2));
+  g->Tensor(3734, "model.layers.5.mlp.down_proj.weight", ynn_type_int4, {1536,6144}, 0, weights("@hf/model.layers.5.mlp.down_proj.weight", 4718592));
+  g->Tensor(3735, "model.layers.5.mlp.down_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.5.mlp.down_proj.weight_scale", 6144));
+  g->Tensor(3736, "model.layers.5.mlp.gate_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.5.mlp.gate_proj.weight", 4718592));
+  g->Tensor(3737, "model.layers.5.mlp.gate_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.5.mlp.gate_proj.weight_scale", 24576));
+  g->Tensor(3738, "model.layers.5.mlp.up_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.5.mlp.up_proj.weight", 4718592));
+  g->Tensor(3739, "model.layers.5.mlp.up_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.5.mlp.up_proj.weight_scale", 24576));
+  g->Tensor(3740, "model.layers.5.per_layer_input_gate.weight", ynn_type_int8, {256,1536}, 0, weights("@hf/model.layers.5.per_layer_input_gate.weight", 393216));
+  g->Tensor(3741, "model.layers.5.per_layer_input_gate.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.5.per_layer_input_gate.weight_scale", 1024));
+  g->Tensor(3742, "model.layers.5.per_layer_projection.weight", ynn_type_int8, {1536,256}, 0, weights("@hf/model.layers.5.per_layer_projection.weight", 393216));
+  g->Tensor(3743, "model.layers.5.per_layer_projection.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.5.per_layer_projection.weight_scale", 6144));
+  g->Tensor(3744, "model.layers.5.post_attention_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.5.post_attention_layernorm.weight", 3072));
+  g->Tensor(3745, "model.layers.5.post_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.5.post_feedforward_layernorm.weight", 3072));
+  g->Tensor(3746, "model.layers.5.post_per_layer_input_norm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.5.post_per_layer_input_norm.weight", 3072));
+  g->Tensor(3747, "model.layers.5.pre_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.5.pre_feedforward_layernorm.weight", 3072));
+  g->Tensor(3748, "model.layers.5.self_attn.k_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.5.self_attn.k_norm.weight", 512));
+  g->Tensor(3749, "model.layers.5.self_attn.k_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.5.self_attn.k_proj.weight", 196608));
+  g->Tensor(3750, "model.layers.5.self_attn.k_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.5.self_attn.k_proj.weight_scale", 1024));
+  g->Tensor(3751, "model.layers.5.self_attn.o_proj.weight", ynn_type_int4, {1536,2048}, 0, weights("@hf/model.layers.5.self_attn.o_proj.weight", 1572864));
+  g->Tensor(3752, "model.layers.5.self_attn.o_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.5.self_attn.o_proj.weight_scale", 6144));
+  g->Tensor(3753, "model.layers.5.self_attn.q_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.5.self_attn.q_norm.weight", 512));
+  g->Tensor(3754, "model.layers.5.self_attn.q_proj.weight", ynn_type_int4, {2048,1536}, 0, weights("@hf/model.layers.5.self_attn.q_proj.weight", 1572864));
+  g->Tensor(3755, "model.layers.5.self_attn.q_proj.weight_scale", ynn_type_fp32, {2048,1}, 0, weights("@hf/model.layers.5.self_attn.q_proj.weight_scale", 8192));
+  g->Tensor(3756, "model.layers.5.self_attn.v_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.5.self_attn.v_proj.weight", 196608));
+  g->Tensor(3757, "model.layers.5.self_attn.v_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.5.self_attn.v_proj.weight_scale", 1024));
+  g->Tensor(3758, "model.layers.6.input_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.6.input_layernorm.weight", 3072));
+  g->Tensor(3759, "model.layers.6.layer_scalar", ynn_type_bf16, {1}, 0, weights("@hf/model.layers.6.layer_scalar", 2));
+  g->Tensor(3760, "model.layers.6.mlp.down_proj.weight", ynn_type_int4, {1536,6144}, 0, weights("@hf/model.layers.6.mlp.down_proj.weight", 4718592));
+  g->Tensor(3761, "model.layers.6.mlp.down_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.6.mlp.down_proj.weight_scale", 6144));
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart15(Context& ctx) {
+  auto* g = ctx.g;
+  const auto& weights = ctx.weights;
+  g->Tensor(3762, "model.layers.6.mlp.gate_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.6.mlp.gate_proj.weight", 4718592));
+  g->Tensor(3763, "model.layers.6.mlp.gate_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.6.mlp.gate_proj.weight_scale", 24576));
+  g->Tensor(3764, "model.layers.6.mlp.up_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.6.mlp.up_proj.weight", 4718592));
+  g->Tensor(3765, "model.layers.6.mlp.up_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.6.mlp.up_proj.weight_scale", 24576));
+  g->Tensor(3766, "model.layers.6.per_layer_input_gate.weight", ynn_type_int8, {256,1536}, 0, weights("@hf/model.layers.6.per_layer_input_gate.weight", 393216));
+  g->Tensor(3767, "model.layers.6.per_layer_input_gate.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.6.per_layer_input_gate.weight_scale", 1024));
+  g->Tensor(3768, "model.layers.6.per_layer_projection.weight", ynn_type_int8, {1536,256}, 0, weights("@hf/model.layers.6.per_layer_projection.weight", 393216));
+  g->Tensor(3769, "model.layers.6.per_layer_projection.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.6.per_layer_projection.weight_scale", 6144));
+  g->Tensor(3770, "model.layers.6.post_attention_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.6.post_attention_layernorm.weight", 3072));
+  g->Tensor(3771, "model.layers.6.post_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.6.post_feedforward_layernorm.weight", 3072));
+  g->Tensor(3772, "model.layers.6.post_per_layer_input_norm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.6.post_per_layer_input_norm.weight", 3072));
+  g->Tensor(3773, "model.layers.6.pre_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.6.pre_feedforward_layernorm.weight", 3072));
+  g->Tensor(3774, "model.layers.6.self_attn.k_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.6.self_attn.k_norm.weight", 512));
+  g->Tensor(3775, "model.layers.6.self_attn.k_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.6.self_attn.k_proj.weight", 196608));
+  g->Tensor(3776, "model.layers.6.self_attn.k_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.6.self_attn.k_proj.weight_scale", 1024));
+  g->Tensor(3777, "model.layers.6.self_attn.o_proj.weight", ynn_type_int4, {1536,2048}, 0, weights("@hf/model.layers.6.self_attn.o_proj.weight", 1572864));
+  g->Tensor(3778, "model.layers.6.self_attn.o_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.6.self_attn.o_proj.weight_scale", 6144));
+  g->Tensor(3779, "model.layers.6.self_attn.q_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.6.self_attn.q_norm.weight", 512));
+  g->Tensor(3780, "model.layers.6.self_attn.q_proj.weight", ynn_type_int4, {2048,1536}, 0, weights("@hf/model.layers.6.self_attn.q_proj.weight", 1572864));
+  g->Tensor(3781, "model.layers.6.self_attn.q_proj.weight_scale", ynn_type_fp32, {2048,1}, 0, weights("@hf/model.layers.6.self_attn.q_proj.weight_scale", 8192));
+  g->Tensor(3782, "model.layers.6.self_attn.v_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.6.self_attn.v_proj.weight", 196608));
+  g->Tensor(3783, "model.layers.6.self_attn.v_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.6.self_attn.v_proj.weight_scale", 1024));
+  g->Tensor(3784, "model.layers.7.input_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.7.input_layernorm.weight", 3072));
+  g->Tensor(3785, "model.layers.7.layer_scalar", ynn_type_bf16, {1}, 0, weights("@hf/model.layers.7.layer_scalar", 2));
+  g->Tensor(3786, "model.layers.7.mlp.down_proj.weight", ynn_type_int4, {1536,6144}, 0, weights("@hf/model.layers.7.mlp.down_proj.weight", 4718592));
+  g->Tensor(3787, "model.layers.7.mlp.down_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.7.mlp.down_proj.weight_scale", 6144));
+  g->Tensor(3788, "model.layers.7.mlp.gate_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.7.mlp.gate_proj.weight", 4718592));
+  g->Tensor(3789, "model.layers.7.mlp.gate_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.7.mlp.gate_proj.weight_scale", 24576));
+  g->Tensor(3790, "model.layers.7.mlp.up_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.7.mlp.up_proj.weight", 4718592));
+  g->Tensor(3791, "model.layers.7.mlp.up_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.7.mlp.up_proj.weight_scale", 24576));
+  g->Tensor(3792, "model.layers.7.per_layer_input_gate.weight", ynn_type_int8, {256,1536}, 0, weights("@hf/model.layers.7.per_layer_input_gate.weight", 393216));
+  g->Tensor(3793, "model.layers.7.per_layer_input_gate.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.7.per_layer_input_gate.weight_scale", 1024));
+  g->Tensor(3794, "model.layers.7.per_layer_projection.weight", ynn_type_int8, {1536,256}, 0, weights("@hf/model.layers.7.per_layer_projection.weight", 393216));
+  g->Tensor(3795, "model.layers.7.per_layer_projection.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.7.per_layer_projection.weight_scale", 6144));
+  g->Tensor(3796, "model.layers.7.post_attention_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.7.post_attention_layernorm.weight", 3072));
+  g->Tensor(3797, "model.layers.7.post_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.7.post_feedforward_layernorm.weight", 3072));
+  g->Tensor(3798, "model.layers.7.post_per_layer_input_norm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.7.post_per_layer_input_norm.weight", 3072));
+  g->Tensor(3799, "model.layers.7.pre_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.7.pre_feedforward_layernorm.weight", 3072));
+  g->Tensor(3800, "model.layers.7.self_attn.k_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.7.self_attn.k_norm.weight", 512));
+  g->Tensor(3801, "model.layers.7.self_attn.k_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.7.self_attn.k_proj.weight", 196608));
+  g->Tensor(3802, "model.layers.7.self_attn.k_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.7.self_attn.k_proj.weight_scale", 1024));
+  g->Tensor(3803, "model.layers.7.self_attn.o_proj.weight", ynn_type_int4, {1536,2048}, 0, weights("@hf/model.layers.7.self_attn.o_proj.weight", 1572864));
+  g->Tensor(3804, "model.layers.7.self_attn.o_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.7.self_attn.o_proj.weight_scale", 6144));
+  g->Tensor(3805, "model.layers.7.self_attn.q_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.7.self_attn.q_norm.weight", 512));
+  g->Tensor(3806, "model.layers.7.self_attn.q_proj.weight", ynn_type_int4, {2048,1536}, 0, weights("@hf/model.layers.7.self_attn.q_proj.weight", 1572864));
+  g->Tensor(3807, "model.layers.7.self_attn.q_proj.weight_scale", ynn_type_fp32, {2048,1}, 0, weights("@hf/model.layers.7.self_attn.q_proj.weight_scale", 8192));
+  g->Tensor(3808, "model.layers.7.self_attn.v_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.7.self_attn.v_proj.weight", 196608));
+  g->Tensor(3809, "model.layers.7.self_attn.v_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.7.self_attn.v_proj.weight_scale", 1024));
+  g->Tensor(3810, "model.layers.8.input_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.8.input_layernorm.weight", 3072));
+  g->Tensor(3811, "model.layers.8.layer_scalar", ynn_type_bf16, {1}, 0, weights("@hf/model.layers.8.layer_scalar", 2));
+  g->Tensor(3812, "model.layers.8.mlp.down_proj.weight", ynn_type_int4, {1536,6144}, 0, weights("@hf/model.layers.8.mlp.down_proj.weight", 4718592));
+  g->Tensor(3813, "model.layers.8.mlp.down_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.8.mlp.down_proj.weight_scale", 6144));
+  g->Tensor(3814, "model.layers.8.mlp.gate_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.8.mlp.gate_proj.weight", 4718592));
+  g->Tensor(3815, "model.layers.8.mlp.gate_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.8.mlp.gate_proj.weight_scale", 24576));
+  g->Tensor(3816, "model.layers.8.mlp.up_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.8.mlp.up_proj.weight", 4718592));
+  g->Tensor(3817, "model.layers.8.mlp.up_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.8.mlp.up_proj.weight_scale", 24576));
+  g->Tensor(3818, "model.layers.8.per_layer_input_gate.weight", ynn_type_int8, {256,1536}, 0, weights("@hf/model.layers.8.per_layer_input_gate.weight", 393216));
+  g->Tensor(3819, "model.layers.8.per_layer_input_gate.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.8.per_layer_input_gate.weight_scale", 1024));
+  g->Tensor(3820, "model.layers.8.per_layer_projection.weight", ynn_type_int8, {1536,256}, 0, weights("@hf/model.layers.8.per_layer_projection.weight", 393216));
+  g->Tensor(3821, "model.layers.8.per_layer_projection.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.8.per_layer_projection.weight_scale", 6144));
+  g->Tensor(3822, "model.layers.8.post_attention_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.8.post_attention_layernorm.weight", 3072));
+  g->Tensor(3823, "model.layers.8.post_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.8.post_feedforward_layernorm.weight", 3072));
+  g->Tensor(3824, "model.layers.8.post_per_layer_input_norm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.8.post_per_layer_input_norm.weight", 3072));
+  g->Tensor(3825, "model.layers.8.pre_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.8.pre_feedforward_layernorm.weight", 3072));
+  g->Tensor(3826, "model.layers.8.self_attn.k_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.8.self_attn.k_norm.weight", 512));
+  g->Tensor(3827, "model.layers.8.self_attn.k_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.8.self_attn.k_proj.weight", 196608));
+  g->Tensor(3828, "model.layers.8.self_attn.k_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.8.self_attn.k_proj.weight_scale", 1024));
+  g->Tensor(3829, "model.layers.8.self_attn.o_proj.weight", ynn_type_int4, {1536,2048}, 0, weights("@hf/model.layers.8.self_attn.o_proj.weight", 1572864));
+  g->Tensor(3830, "model.layers.8.self_attn.o_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.8.self_attn.o_proj.weight_scale", 6144));
+  g->Tensor(3831, "model.layers.8.self_attn.q_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.layers.8.self_attn.q_norm.weight", 512));
+  g->Tensor(3832, "model.layers.8.self_attn.q_proj.weight", ynn_type_int4, {2048,1536}, 0, weights("@hf/model.layers.8.self_attn.q_proj.weight", 1572864));
+  g->Tensor(3833, "model.layers.8.self_attn.q_proj.weight_scale", ynn_type_fp32, {2048,1}, 0, weights("@hf/model.layers.8.self_attn.q_proj.weight_scale", 8192));
+  g->Tensor(3834, "model.layers.8.self_attn.v_proj.weight", ynn_type_int4, {256,1536}, 0, weights("@hf/model.layers.8.self_attn.v_proj.weight", 196608));
+  g->Tensor(3835, "model.layers.8.self_attn.v_proj.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.8.self_attn.v_proj.weight_scale", 1024));
+  g->Tensor(3836, "model.layers.9.input_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.9.input_layernorm.weight", 3072));
+  g->Tensor(3837, "model.layers.9.layer_scalar", ynn_type_bf16, {1}, 0, weights("@hf/model.layers.9.layer_scalar", 2));
+  g->Tensor(3838, "model.layers.9.mlp.down_proj.weight", ynn_type_int4, {1536,6144}, 0, weights("@hf/model.layers.9.mlp.down_proj.weight", 4718592));
+  g->Tensor(3839, "model.layers.9.mlp.down_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.9.mlp.down_proj.weight_scale", 6144));
+  g->Tensor(3840, "model.layers.9.mlp.gate_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.9.mlp.gate_proj.weight", 4718592));
+  g->Tensor(3841, "model.layers.9.mlp.gate_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.9.mlp.gate_proj.weight_scale", 24576));
+  g->Tensor(3842, "model.layers.9.mlp.up_proj.weight", ynn_type_int4, {6144,1536}, 0, weights("@hf/model.layers.9.mlp.up_proj.weight", 4718592));
+  g->Tensor(3843, "model.layers.9.mlp.up_proj.weight_scale", ynn_type_fp32, {6144,1}, 0, weights("@hf/model.layers.9.mlp.up_proj.weight_scale", 24576));
+  g->Tensor(3844, "model.layers.9.per_layer_input_gate.weight", ynn_type_int8, {256,1536}, 0, weights("@hf/model.layers.9.per_layer_input_gate.weight", 393216));
+  g->Tensor(3845, "model.layers.9.per_layer_input_gate.weight_scale", ynn_type_fp32, {256,1}, 0, weights("@hf/model.layers.9.per_layer_input_gate.weight_scale", 1024));
+  g->Tensor(3846, "model.layers.9.per_layer_projection.weight", ynn_type_int8, {1536,256}, 0, weights("@hf/model.layers.9.per_layer_projection.weight", 393216));
+  g->Tensor(3847, "model.layers.9.per_layer_projection.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.9.per_layer_projection.weight_scale", 6144));
+  g->Tensor(3848, "model.layers.9.post_attention_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.9.post_attention_layernorm.weight", 3072));
+  g->Tensor(3849, "model.layers.9.post_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.9.post_feedforward_layernorm.weight", 3072));
+  g->Tensor(3850, "model.layers.9.post_per_layer_input_norm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.9.post_per_layer_input_norm.weight", 3072));
+  g->Tensor(3851, "model.layers.9.pre_feedforward_layernorm.weight", ynn_type_bf16, {1536}, 0, weights("@hf/model.layers.9.pre_feedforward_layernorm.weight", 3072));
+  g->Tensor(3852, "model.layers.9.self_attn.k_norm.weight", ynn_type_bf16, {512}, 0, weights("@hf/model.layers.9.self_attn.k_norm.weight", 1024));
+  g->Tensor(3853, "model.layers.9.self_attn.k_proj.weight", ynn_type_int4, {512,1536}, 0, weights("@hf/model.layers.9.self_attn.k_proj.weight", 393216));
+  g->Tensor(3854, "model.layers.9.self_attn.k_proj.weight_scale", ynn_type_fp32, {512,1}, 0, weights("@hf/model.layers.9.self_attn.k_proj.weight_scale", 2048));
+  g->Tensor(3855, "model.layers.9.self_attn.o_proj.weight", ynn_type_int4, {1536,4096}, 0, weights("@hf/model.layers.9.self_attn.o_proj.weight", 3145728));
+  g->Tensor(3856, "model.layers.9.self_attn.o_proj.weight_scale", ynn_type_fp32, {1536,1}, 0, weights("@hf/model.layers.9.self_attn.o_proj.weight_scale", 6144));
+  g->Tensor(3857, "model.layers.9.self_attn.q_norm.weight", ynn_type_bf16, {512}, 0, weights("@hf/model.layers.9.self_attn.q_norm.weight", 1024));
+  g->Tensor(3858, "model.layers.9.self_attn.q_proj.weight", ynn_type_int4, {4096,1536}, 0, weights("@hf/model.layers.9.self_attn.q_proj.weight", 3145728));
+  g->Tensor(3859, "model.layers.9.self_attn.q_proj.weight_scale", ynn_type_fp32, {4096,1}, 0, weights("@hf/model.layers.9.self_attn.q_proj.weight_scale", 16384));
+  g->Tensor(3860, "model.layers.9.self_attn.v_proj.weight", ynn_type_int4, {512,1536}, 0, weights("@hf/model.layers.9.self_attn.v_proj.weight", 393216));
+  g->Tensor(3861, "model.layers.9.self_attn.v_proj.weight_scale", ynn_type_fp32, {512,1}, 0, weights("@hf/model.layers.9.self_attn.v_proj.weight_scale", 2048));
+  g->Tensor(3862, "model.per_layer_model_projection.weight", ynn_type_bf16, {8960,1536}, 0, weights("@hf/model.per_layer_model_projection.weight", 27525120));
+  g->Tensor(3863, "model.per_layer_projection_norm.weight", ynn_type_bf16, {256}, 0, weights("@hf/model.per_layer_projection_norm.weight", 512));
+  g->Tensor(3864, "per_layer_token_embedding_0", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3865, "per_layer_token_embedding_1", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3866, "per_layer_token_embedding_10", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3867, "per_layer_token_embedding_11", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3868, "per_layer_token_embedding_12", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3869, "per_layer_token_embedding_13", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3870, "per_layer_token_embedding_2", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3871, "per_layer_token_embedding_3", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3872, "per_layer_token_embedding_4", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3873, "per_layer_token_embedding_5", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3874, "per_layer_token_embedding_6", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3875, "per_layer_token_embedding_7", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3876, "per_layer_token_embedding_8", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3877, "per_layer_token_embedding_9", ynn_type_fp32, {1,0,256}, 1, nullptr);
+  g->Tensor(3878, "positions", ynn_type_fp32, {1,1,0,1}, 1, nullptr);
+  g->Tensor(3879, "updated_key_0", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3880, "updated_key_1", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3881, "updated_key_10", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3882, "updated_key_11", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3883, "updated_key_12", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3884, "updated_key_13", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3885, "updated_key_14", ynn_type_int8, {1,1,0,512}, 2, nullptr);
+  g->Tensor(3886, "updated_key_2", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3887, "updated_key_3", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3888, "updated_key_4", ynn_type_int8, {1,1,0,512}, 2, nullptr);
+  g->Tensor(3889, "updated_key_5", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3890, "updated_key_6", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3891, "updated_key_7", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3892, "updated_key_8", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3893, "updated_key_9", ynn_type_int8, {1,1,0,512}, 2, nullptr);
+  g->Tensor(3894, "updated_value_0", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3895, "updated_value_1", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3896, "updated_value_10", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3897, "updated_value_11", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3898, "updated_value_12", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3899, "updated_value_13", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3900, "updated_value_14", ynn_type_int8, {1,1,0,512}, 2, nullptr);
+  g->Tensor(3901, "updated_value_2", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3902, "updated_value_3", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3903, "updated_value_4", ynn_type_int8, {1,1,0,512}, 2, nullptr);
+  g->Tensor(3904, "updated_value_5", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3905, "updated_value_6", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3906, "updated_value_7", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3907, "updated_value_8", ynn_type_int8, {1,1,0,256}, 2, nullptr);
+  g->Tensor(3908, "updated_value_9", ynn_type_int8, {1,1,0,512}, 2, nullptr);
+  g->Tensor(3909, "view_key_0", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3910, "view_key_1", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3911, "view_key_10", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3912, "view_key_11", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3913, "view_key_12", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3914, "view_key_13", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3915, "view_key_2", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3916, "view_key_3", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3917, "view_key_4", ynn_type_int8, {1,1,0,512}, 0, nullptr);
+  g->Tensor(3918, "view_key_5", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3919, "view_key_6", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3920, "view_key_7", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3921, "view_key_8", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3922, "view_key_9", ynn_type_int8, {1,1,0,512}, 0, nullptr);
+  g->Tensor(3923, "view_value_0", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3924, "view_value_1", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3925, "view_value_10", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3926, "view_value_11", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3927, "view_value_12", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3928, "view_value_13", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3929, "view_value_2", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3930, "view_value_3", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3931, "view_value_4", ynn_type_int8, {1,1,0,512}, 0, nullptr);
+  g->Tensor(3932, "view_value_5", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3933, "view_value_6", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3934, "view_value_7", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3935, "view_value_8", ynn_type_int8, {1,1,0,256}, 0, nullptr);
+  g->Tensor(3936, "view_value_9", ynn_type_int8, {1,1,0,512}, 0, nullptr);
+}
+
+// Scope: "DefineValues"
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValues(Context& ctx) {
+  BuildDefineValuesPart0(ctx);
+  BuildDefineValuesPart1(ctx);
+  BuildDefineValuesPart2(ctx);
+  BuildDefineValuesPart3(ctx);
+  BuildDefineValuesPart4(ctx);
+  BuildDefineValuesPart5(ctx);
+  BuildDefineValuesPart6(ctx);
+  BuildDefineValuesPart7(ctx);
+  BuildDefineValuesPart8(ctx);
+  BuildDefineValuesPart9(ctx);
+  BuildDefineValuesPart10(ctx);
+  BuildDefineValuesPart11(ctx);
+  BuildDefineValuesPart12(ctx);
+  BuildDefineValuesPart13(ctx);
+  BuildDefineValuesPart14(ctx);
+  BuildDefineValuesPart15(ctx);
 }
 
 }  // namespace BuildGemma4PrefillSource

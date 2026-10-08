@@ -1,0 +1,168 @@
+[
+  {
+    "device": "tecno",
+    "tests": [
+      {
+        "name": "state_views_test",
+        "returncode": 0,
+        "stdout": "capacity=2048,heads=2,query_heads=8,window=512,threads=1,requests=11,max_error=3.28629e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=2,query_heads=8,window=0,threads=1,requests=11,max_error=1.54449e-06,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=1,query_heads=1,window=512,threads=1,requests=11,max_error=2.62273e-07,append_bytes=16272,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=512,threads=1,requests=11,max_error=2.92525e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=2,query_heads=2,window=512,threads=1,requests=11,max_error=3.14644e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=4,query_heads=4,window=512,threads=1,requests=11,max_error=3.53826e-07,append_bytes=65088,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=0,threads=1,requests=11,max_error=7.825e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=1,threads=1,requests=11,max_error=8.73208e-08,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=1,query_heads=4,window=512,threads=1,requests=11,max_error=3.28629e-07,append_bytes=16272,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=8,window=512,threads=4,requests=11,max_error=3.28629e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=2,query_heads=8,window=0,threads=4,requests=11,max_error=1.54449e-06,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=1,query_heads=1,window=512,threads=4,requests=11,max_error=2.62273e-07,append_bytes=16272,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=512,threads=4,requests=11,max_error=2.92525e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=2,query_heads=2,window=512,threads=4,requests=11,max_error=3.14644e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=4,query_heads=4,window=512,threads=4,requests=11,max_error=3.53826e-07,append_bytes=65088,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=0,threads=4,requests=11,max_error=7.825e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=1,threads=4,requests=11,max_error=8.73208e-08,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=1,query_heads=4,window=512,threads=4,requests=11,max_error=3.28629e-07,append_bytes=16272,view_copy_bytes=0\n"
+      },
+      {
+        "name": "quantized_fc_test",
+        "returncode": 0,
+        "stdout": "bits=2 rows=1 max_code_error=0\nbits=2 rows=17 max_code_error=0\nbits=2 rows=128 max_code_error=1\nbits=4 rows=1 max_code_error=0\nbits=4 rows=17 max_code_error=0\nbits=4 rows=128 max_code_error=0\nbits=8 rows=1 max_code_error=0\nbits=8 rows=17 max_code_error=0\nbits=8 rows=128 max_code_error=1\n"
+      },
+      {
+        "name": "model_assets_test",
+        "returncode": 0,
+        "stdout": "INT2 per-channel and INT2/INT4 blockwise embeddings passed\n"
+      },
+      {
+        "name": "safetensors_assets_test",
+        "returncode": 0,
+        "stdout": "All packed byte patterns, warm cache, corruption, and unaligned coefficients passed\n"
+      },
+      {
+        "name": "benchmark_cases_test",
+        "returncode": 0,
+        "stdout": "Benchmark case validation passed\n"
+      },
+      {
+        "name": "execution_profile_test",
+        "returncode": 0,
+        "stdout": "execution profiling: arithmetic, threads, reset, failure, overflow passed\n"
+      }
+    ],
+    "asset_validation": [
+      {
+        "kind": "e2b-bundle",
+        "unique_payloads": 1114,
+        "sha256_verified": true
+      },
+      {
+        "kind": "e2b-parameters",
+        "unique_payloads": 750,
+        "sha256_verified": true
+      },
+      {
+        "kind": "e4b-bundle",
+        "unique_payloads": 1371,
+        "sha256_verified": true
+      },
+      {
+        "kind": "e4b-parameters",
+        "unique_payloads": 916,
+        "sha256_verified": true
+      },
+      {
+        "kind": "native-bundle",
+        "unique_payloads": 1114,
+        "sha256_verified": true
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "tests": [
+      {
+        "name": "state_views_test",
+        "returncode": 0,
+        "stdout": "capacity=2048,heads=2,query_heads=8,window=512,threads=1,requests=11,max_error=3.28629e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=2,query_heads=8,window=0,threads=1,requests=11,max_error=1.54449e-06,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=1,query_heads=1,window=512,threads=1,requests=11,max_error=2.62273e-07,append_bytes=16272,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=512,threads=1,requests=11,max_error=2.92525e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=2,query_heads=2,window=512,threads=1,requests=11,max_error=3.14644e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=4,query_heads=4,window=512,threads=1,requests=11,max_error=3.53826e-07,append_bytes=65088,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=0,threads=1,requests=11,max_error=7.825e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=1,threads=1,requests=11,max_error=8.73208e-08,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=1,query_heads=4,window=512,threads=1,requests=11,max_error=3.28629e-07,append_bytes=16272,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=8,window=512,threads=4,requests=11,max_error=3.28629e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=2,query_heads=8,window=0,threads=4,requests=11,max_error=1.54449e-06,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=1,query_heads=1,window=512,threads=4,requests=11,max_error=2.62273e-07,append_bytes=16272,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=512,threads=4,requests=11,max_error=2.92525e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=2,query_heads=2,window=512,threads=4,requests=11,max_error=3.14644e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=4,query_heads=4,window=512,threads=4,requests=11,max_error=3.53826e-07,append_bytes=65088,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=0,threads=4,requests=11,max_error=7.825e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=1,threads=4,requests=11,max_error=8.73208e-08,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=1,query_heads=4,window=512,threads=4,requests=11,max_error=3.28629e-07,append_bytes=16272,view_copy_bytes=0\n"
+      },
+      {
+        "name": "quantized_fc_test",
+        "returncode": 0,
+        "stdout": "bits=2 rows=1 max_code_error=0\nbits=2 rows=17 max_code_error=0\nbits=2 rows=128 max_code_error=1\nbits=4 rows=1 max_code_error=0\nbits=4 rows=17 max_code_error=0\nbits=4 rows=128 max_code_error=0\nbits=8 rows=1 max_code_error=0\nbits=8 rows=17 max_code_error=0\nbits=8 rows=128 max_code_error=1\n"
+      },
+      {
+        "name": "model_assets_test",
+        "returncode": 0,
+        "stdout": "INT2 per-channel and INT2/INT4 blockwise embeddings passed\n"
+      },
+      {
+        "name": "safetensors_assets_test",
+        "returncode": 0,
+        "stdout": "All packed byte patterns, warm cache, corruption, and unaligned coefficients passed\n"
+      },
+      {
+        "name": "benchmark_cases_test",
+        "returncode": 0,
+        "stdout": "Benchmark case validation passed\n"
+      },
+      {
+        "name": "execution_profile_test",
+        "returncode": 0,
+        "stdout": "execution profiling: arithmetic, threads, reset, failure, overflow passed\n"
+      }
+    ],
+    "asset_validation": [
+      {
+        "kind": "e2b-bundle",
+        "unique_payloads": 1114,
+        "sha256_verified": true
+      },
+      {
+        "kind": "e2b-parameters",
+        "unique_payloads": 750,
+        "sha256_verified": true
+      },
+      {
+        "kind": "native-bundle",
+        "unique_payloads": 1114,
+        "sha256_verified": true
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "tests": [
+      {
+        "name": "state_views_test",
+        "returncode": 0,
+        "stdout": "capacity=2048,heads=2,query_heads=8,window=512,threads=1,requests=11,max_error=3.28629e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=2,query_heads=8,window=0,threads=1,requests=11,max_error=1.54449e-06,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=1,query_heads=1,window=512,threads=1,requests=11,max_error=2.62273e-07,append_bytes=16272,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=512,threads=1,requests=11,max_error=2.92525e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=2,query_heads=2,window=512,threads=1,requests=11,max_error=3.14644e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=4,query_heads=4,window=512,threads=1,requests=11,max_error=3.53826e-07,append_bytes=65088,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=0,threads=1,requests=11,max_error=7.825e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=1,threads=1,requests=11,max_error=8.73208e-08,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=1,query_heads=4,window=512,threads=1,requests=11,max_error=3.28629e-07,append_bytes=16272,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=8,window=512,threads=4,requests=11,max_error=3.28629e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=2,query_heads=8,window=0,threads=4,requests=11,max_error=1.54449e-06,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=1,query_heads=1,window=512,threads=4,requests=11,max_error=2.62273e-07,append_bytes=16272,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=512,threads=4,requests=11,max_error=2.92525e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=2,query_heads=2,window=512,threads=4,requests=11,max_error=3.14644e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=8448,heads=4,query_heads=4,window=512,threads=4,requests=11,max_error=3.53826e-07,append_bytes=65088,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=0,threads=4,requests=11,max_error=7.825e-07,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=2,query_heads=2,window=1,threads=4,requests=11,max_error=8.73208e-08,append_bytes=32544,view_copy_bytes=0\ncapacity=2048,heads=1,query_heads=4,window=512,threads=4,requests=11,max_error=3.28629e-07,append_bytes=16272,view_copy_bytes=0\n"
+      },
+      {
+        "name": "quantized_fc_test",
+        "returncode": 0,
+        "stdout": "bits=2 rows=1 max_code_error=0\nbits=2 rows=17 max_code_error=0\nbits=2 rows=128 max_code_error=1\nbits=4 rows=1 max_code_error=0\nbits=4 rows=17 max_code_error=0\nbits=4 rows=128 max_code_error=0\nbits=8 rows=1 max_code_error=0\nbits=8 rows=17 max_code_error=0\nbits=8 rows=128 max_code_error=1\n"
+      },
+      {
+        "name": "model_assets_test",
+        "returncode": 0,
+        "stdout": "INT2 per-channel and INT2/INT4 blockwise embeddings passed\n"
+      },
+      {
+        "name": "safetensors_assets_test",
+        "returncode": 0,
+        "stdout": "All packed byte patterns, warm cache, corruption, and unaligned coefficients passed\n"
+      },
+      {
+        "name": "benchmark_cases_test",
+        "returncode": 0,
+        "stdout": "Benchmark case validation passed\n"
+      },
+      {
+        "name": "execution_profile_test",
+        "returncode": 0,
+        "stdout": "execution profiling: arithmetic, threads, reset, failure, overflow passed\n"
+      }
+    ],
+    "asset_validation": [
+      {
+        "kind": "e2b-bundle",
+        "unique_payloads": 1114,
+        "sha256_verified": true
+      },
+      {
+        "kind": "e2b-parameters",
+        "unique_payloads": 750,
+        "sha256_verified": true
+      },
+      {
+        "kind": "native-bundle",
+        "unique_payloads": 1114,
+        "sha256_verified": true
+      }
+    ]
+  }
+]

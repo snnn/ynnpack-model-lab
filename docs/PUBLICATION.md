@@ -24,6 +24,14 @@ Keep the HF arithmetic/precision audits as supporting experiments. Lead readers
 to the published-bundle E2B/E4B comparisons first. Do not promote a correctness
 run with dumps enabled into a latency baseline.
 
+Retain detailed records for the current baseline and compact evidence for older
+studies. Remove redundant process/per-step logs and individual operator tables
+when request summaries and aggregate profiles preserve the conclusions. Keep
+minimal reproducers and supporting evidence for unresolved issues; after a fix,
+retain its explanation and validation instead of every investigation capture.
+The [result retention policy](../results/README.md#retention) records which
+historical captures were pruned and links to their earlier public snapshot.
+
 The XNNPACK/LiteRT comparison controls are preserved external artifacts. Their
 hashes and normalized recorded flags are included, but this repository does not
 build every control executable or export its TFLite graph. Independent

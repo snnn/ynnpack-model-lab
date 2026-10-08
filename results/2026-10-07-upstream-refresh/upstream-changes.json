@@ -1,0 +1,23 @@
+[
+  "ynnpack/base/simd/target_independent.inc",
+  "ynnpack/cmake/DownloadSlinky.cmake",
+  "ynnpack/kernels/dot/BUILD",
+  "ynnpack/kernels/dot/bench.cc",
+  "ynnpack/kernels/dot/cost_model/BUILD",
+  "ynnpack/kernels/dot/cost_model/bench.cc",
+  "ynnpack/kernels/dot/cost_model/cost_model.h",
+  "ynnpack/kernels/dot/cost_model/fit_cost_models.py",
+  "ynnpack/kernels/dot/cost_model/golden_cove.h",
+  "ynnpack/kernels/dot/cost_model/redwood_cove.h",
+  "ynnpack/kernels/dot/dot.cc",
+  "ynnpack/kernels/dot/generator/arm_int8_int2_int32.py",
+  "ynnpack/kernels/dot/generator/arm_int8_int8_int32.py",
+  "ynnpack/kernels/dot/generator/x86_int8_int8_int32_k1.py",
+  "ynnpack/kernels/dot/kernels.inc",
+  "ynnpack/subgraph/dot.cc",
+  "ynnpack/subgraph/runtime.cc",
+  "ynnpack/subgraph/static_slice.cc",
+  "ynnpack/subgraph/subgraph.h",
+  "ynnpack/subgraph/test/dot.cc",
+  "ynnpack/subgraph/test/fusion_reduce.cc"
+]

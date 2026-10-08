@@ -293,9 +293,11 @@ retained captures. Those failed attempts remain in ignored local logs.
 
 Retained files include aggregate [metrics](metrics.json), per-request
 [observations](requests.json), portable [command templates](commands.json),
-raw per-token `timings/`, fixture snapshots, artifact/environment identities,
-kernel symbol summaries, numerical reports, and test summaries. Command paths
-are normalized to configurable locations. Device serials, host identities,
+fixture snapshots, artifact/environment identities, kernel symbol summaries,
+numerical reports, and test summaries. `requests.json` preserves every captured
+request and its per-token latencies; the duplicate per-process `timings/` tree
+has been pruned under the [retention policy](../README.md#retention). Command
+paths are normalized to configurable locations. Device serials, host identities,
 private checkpoint paths, model weights, raw profiles, and build logs remain
 outside Git.
 

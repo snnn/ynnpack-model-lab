@@ -12,7 +12,22 @@ views, preparation costs, and memory use. Classical vision workloads are planned
 as the lab expands.
 
 Start with the [performance gaps and investigation priorities](docs/PERFORMANCE_GAPS.md)
-and the [measurement index](results/README.md). The
+and the [measurement index](results/README.md). The current
+[October 7 mobile baseline](results/2026-10-07-upstream-refresh/README.md) adopts
+upstream `d297c798ea53`, including the merged cost model. It retimes E2B on all
+three phones and E4B on TECNO against fresh previous-pin controls, with fresh
+native E2B comparisons, numerical checks and separate execution/kernel profiles.
+Linux and host-only HF timings were skipped because the host was busy. Upstream
+now disables INT2 I8MM pending a compatible packing layout; the known-row packing
+correction remains applied.
+
+The [Samsung KV-history investigation](results/2026-10-08-kv-history/README.md)
+adds a fixed-capacity history sweep and attention accounting. Separate KV
+dequantization/packing contributes about 55% of long-history attention worker
+time. Query-head matrix layout and conversion/packing fusion are concrete next
+experiments; their speedups are unmeasured. Thermal/order effects remain large.
+
+The historical
 [October 5 backend refresh](results/2026-10-05/README.md) compares the previous
 and adopted dependencies using identical current builders and token IDs. The
 adopted backend selects AVX-VNNI INT4/INT8 and substantially improves desktop
@@ -29,7 +44,7 @@ the source and evidence to share and the local material to exclude.
 The [fresh phone decode comparison](results/2026-10-05-decode-profile/README.md)
 adds Samsung SM-S937U1 and repeats focused Pixel/TECNO cases against the preserved
 native Tensor API/XNNPACK runner. Separate execution profiles identify FC,
-live-history attention/packing, and outside-callback work. Samsung CPUinfo
+KV conversion/packing, attention matmuls, and outside-callback work. Samsung CPUinfo
 correctly detects Oryon; its I8MM selection differs from the native DOTPROD
 control. Use the [execution profiling guide](docs/PROFILING.md) to collect and
 analyze diagnostic data alongside unprofiled latency measurements.
@@ -39,7 +54,8 @@ traces the native DOTPROD tables and YNNPACK's learned I8MM ranking. Its fitting
 script excludes one-row DOTPROD kernels, and the I8MM training benchmark uses
 full row tiles. Compatible one-row kernel and model experiments examine the
 resulting decode choices. The selection restriction is an optional experiment;
-the normal dependency baseline retains its recorded configuration.
+the study retains its original dependency configuration. The October 7 upstream
+baseline's kernel availability is recorded separately.
 
 **Direct safetensors loading is supported for Gemma4 E2B.** The native C++
 runner reads the downloaded
@@ -48,10 +64,11 @@ from its original safetensors storage. The
 [safetensors quickstart below](#run-gemma4-e2b-directly-from-safetensors) uses
 **`hf_static_int8_published_kv`**, the preferred integer-FC profile for ongoing
 compiler/dynamism work. BF16 and FP32 profiles remain arithmetic controls.
-The [refreshed integer-FC measurements](results/2026-10-05/README.md)
+The [October 5 integer-FC measurements](results/2026-10-05/README.md)
 approach the published-source YNNPACK control's warm x86-64 speed. Higher RSS,
 cross-implementation numerical differences, and the global KV scale convention
 remain open questions; see the [HF design and validation](docs/HF_GEMMA4.md).
+Those host-only profiles were not retimed for the October 7 pin.
 
 The standalone C++ runner invokes YNNPACK directly. CMake builds the checked-in
 C++ graph builders against pinned, locally patched YNNPACK/Slinky. Large builders
@@ -70,6 +87,11 @@ dimensions are replaced by reshapes/views; fully connected weight-layout
 transposes remain available to backend packing. Building and running these
 artifacts needs no compiler; model weights, quantization profiles, and invocation
 flags are the same as the documented controls.
+
+The [October 8 builder refresh](results/2026-10-08-builder-refresh/README.md)
+regenerates all seven profiles and their standalone runtime helpers, extends
+operation labels to E4B and HF diagnostics, and checks construction and numerical
+parity. Query-head grouping and fused KV conversion/packing remain follow-up work.
 
 The [original E2B measurements](docs/MEASUREMENTS.md) include per-request timings,
 portable command records, artifact hashes, and sampled kernel summaries in
@@ -109,8 +131,9 @@ Dependencies live in the ignored `.deps/` directory. The repository and runtime
 dependencies are public.
 
 The backend pins include the learned dot cost model from
-[XNNPACK #11568](https://github.com/google/XNNPACK/pull/11568), still open when
-adopted on October 5, 2026. Existing checkouts should use a fresh dependency and
+[XNNPACK #11568](https://github.com/google/XNNPACK/pull/11568), merged on
+October 7, 2026. The current pin is upstream `d297c798ea53`; older records retain
+their original revisions. Existing checkouts should use a fresh dependency and
 build directory; see [dependency update instructions](patches/README.md).
 
 ## Run Gemma4 E2B directly from safetensors
@@ -217,6 +240,11 @@ tokens are teacher-forced, so this does not test free-generation quality.
 and KV append/view-copy counters. Use `--dump_outputs` for logits and live KV
 dumps, or `--dump_pipeline` for Slinky IR. Dumps add overhead: disable them for
 timing. See [benchmark methodology](docs/BENCHMARKING.md).
+
+The [capacity invariance check](docs/BENCHMARKING.md#capacity-invariance-check)
+automates fixed-input comparisons at capacities 2,048 and 8,448, reverses process
+order, and flags changes in warm prefill/decode latency. Setup and RSS are
+reported separately.
 
 ## Android: the same CMake build
 

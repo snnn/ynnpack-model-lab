@@ -46,6 +46,7 @@
 #include "slinky/runtime/print.h"
 #include "ynnpack/composites/composites.h"
 #include "ynnpack/base/type.h"
+#include "ynnpack/kernels/dot/dot.h"
 #include "ynnpack/include/ynnpack.h"
 #include "ynnpack/subgraph/runtime.h"
 #include "ynnpack/subgraph/slinky.h"
@@ -53,7 +54,7 @@
 namespace lab_ynn {
 inline constexpr uint32_t kCompletionContract = 1;
 // Slinky's ceil_div uses (a+b-1)/b, whose intermediate can overflow even when
-// the quotient fits. Core's emitter guarantees a positive constant divisor.
+// the quotient fits. Core's emitter proves the divisor positive.
 inline slinky::expr CeilDiv(const slinky::expr& a, const slinky::expr& b) {
   return a / b + slinky::select(a % b != 0, 1, 0);
 }
@@ -1020,6 +1021,9 @@ class Graph {
     };
     graph_->add_node(std::move(n));
   }
+
+#include "ynnpack_attention.inc"
+#include "ynnpack_weight_only.inc"
 
   void Compile(size_t threads = 1) {
     if (runtime_) throw std::logic_error("already compiled");

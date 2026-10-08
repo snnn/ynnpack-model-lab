@@ -196,25 +196,42 @@ int main(int argc, char** argv) {
         const auto i8mm = ynn::get_dot_kernel(
             type, costs, shape, {}, 0, std::nullopt,
             supported & ~static_cast<uint64_t>(ynn::arch_flag::neondot));
-        if (!dot.kernel || !i8mm.kernel ||
+        if (!normal.kernel || !dot.kernel ||
             std::string(KernelName(dot.kernel)).find("neondot") ==
-                std::string::npos ||
-            std::string(KernelName(i8mm.kernel)).find("neoni8mm") ==
                 std::string::npos) {
-          throw std::runtime_error("Requested ISA kernel was not selected");
+          throw std::runtime_error("DOTPROD kernel was not selected");
         }
+        const bool has_i8mm =
+            i8mm.kernel &&
+            std::string(KernelName(i8mm.kernel)).find("neoni8mm") !=
+                std::string::npos;
         std::cout << "{\"kind\":\"selection\",\"bits\":" << bits
                   << ",\"m\":1,\"n\":" << n << ",\"k\":" << k
                   << ",\"kernel\":\"" << KernelName(normal.kernel)
                   << "\",\"tile_k\":" << normal.tile_k
+                  << ",\"dotprod_available\":true,\"i8mm_available\":"
+                  << (has_i8mm ? "true" : "false")
                   << ",\"dotprod_predicted_ns\":" << dot.cost * 1e9
-                  << ",\"i8mm_predicted_ns\":" << i8mm.cost * 1e9 << "}\n";
-        Candidate candidates[] = {{dot, n, k, bits, stream_bytes},
-                                  {i8mm, n, k, bits, stream_bytes}};
+                  << ",\"i8mm_predicted_ns\":";
+        if (has_i8mm) {
+          std::cout << i8mm.cost * 1e9;
+        } else {
+          std::cout << "null";
+        }
+        std::cout << "}\n";
+        std::vector<std::unique_ptr<Candidate> > candidates;
+        candidates.push_back(
+            std::make_unique<Candidate>(dot, n, k, bits, stream_bytes));
+        if (has_i8mm) {
+          candidates.push_back(
+              std::make_unique<Candidate>(i8mm, n, k, bits, stream_bytes));
+        }
         for (bool streaming : {false, true}) {
           for (unsigned trial = 0; trial < trials; ++trial) {
-            candidates[trial % 2].Measure(streaming, trial, seconds);
-            candidates[1 - trial % 2].Measure(streaming, trial, seconds);
+            for (size_t i = 0; i < candidates.size(); ++i) {
+              candidates[(trial + i) % candidates.size()]->Measure(
+                  streaming, trial, seconds);
+            }
           }
         }
       }

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # Copyright 2026 The LiteRT Authors.
+# Copyright 2026 @snnn.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,6 +19,8 @@ The JSON configuration contains optional `serial`, `remote_root`, and
 array, not shell text. A literal {output} is replaced with a fresh output
 directory. Models, binaries, fixtures and cache files must already be present.
 No device CPU governors or power settings are changed.
+An optional capacity_sweep expands --cache_capacity={capacity} into alternating
+capacity rounds and checks warm prefill/decode latency after collection.
 """
 
 import argparse
@@ -28,13 +31,31 @@ import statistics
 import subprocess
 import time
 
+if __package__:
+    from .capacity_sweep import check_capacity_sweep, expand_capacity_sweep
+else:
+    from capacity_sweep import check_capacity_sweep, expand_capacity_sweep
+
 
 def save(path, value):
     path.write_text(json.dumps(value, indent=2) + "\n")
 
 
+def capture_capacity_telemetry(adb, directory, when):
+    result = subprocess.run(adb + ["shell", "\n".join([
+        'for p in /sys/devices/system/cpu/cpufreq/policy*; do',
+        'echo "$p"; cat "$p/scaling_cur_freq" "$p/scaling_max_freq" "$p/scaling_governor"',
+        'done',
+        'for p in /sys/class/thermal/thermal_zone*; do',
+        'echo "$p"; cat "$p/type" "$p/temp"',
+        'done',
+    ])], capture_output=True, text=True, timeout=30)
+    (directory / f"telemetry-{when}.txt").write_text(result.stdout + result.stderr)
+
+
 def summarize(directory):
     rows = []
+    validity_flags = []
     timings = directory / "timings.jsonl"
     if timings.exists():
         raw = [json.loads(s) for s in timings.read_text().splitlines()]
@@ -74,6 +95,8 @@ def summarize(directory):
             raw = json.loads(path.read_text())
             if "passes" not in raw:
                 continue
+            if "timings_valid_for_benchmark" in raw:
+                validity_flags.append(raw["timings_valid_for_benchmark"])
             passes = raw["passes"]
             decode = [v["elapsed_ms"] for v in passes[1:]]
             rows.append(
@@ -100,19 +123,14 @@ def summarize(directory):
             # Do not add it to warm TTFT or decode latency.
             row["frontend"] = frontend
     run_file = directory / "run.json"
-    validity = json.loads(run_file.read_text()).get("timings_valid_for_benchmark", True) if run_file.exists() else None
-    flags = []
-    if validity is None:
-        for path in directory.glob("*.json"):
-            record = json.loads(path.read_text())
-            if isinstance(record, dict) and "passes" in record and "timings_valid_for_benchmark" in record:
-                flags.append(record["timings_valid_for_benchmark"])
+    if run_file.exists():
+        run = json.loads(run_file.read_text())
+        if "timings_valid_for_benchmark" in run:
+            validity_flags.append(run["timings_valid_for_benchmark"])
     for row in rows:
-        if validity is not None:
-            row["timings_valid_for_benchmark"] = validity
-        else:
-            # External native runners carry this field in each request record.
-            row["timings_valid_for_benchmark"] = all(flags) if flags else True
+        # Native run.json can be a status-only record. Preserve request-level
+        # diagnostic flags even when that file exists or claims valid timing.
+        row["timings_valid_for_benchmark"] = all(validity_flags) if validity_flags else True
     if not rows:
         raise RuntimeError("No runner measurements found")
     return rows
@@ -123,7 +141,7 @@ def main():
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
-    config = json.loads(args.config.read_text())
+    config = expand_capacity_sweep(json.loads(args.config.read_text()))
     args.output.mkdir(parents=True, exist_ok=False)
     save(args.output / "config.json", config)
     adb = ["adb", "-s", config["serial"]] if config.get("serial") else []
@@ -141,6 +159,7 @@ def main():
             )
             (args.output / name).write_text(result.stdout)
     failures = []
+    time.sleep(config.get("initial_cooldown_seconds", 0))
     for job in config["jobs"]:
         name = job["name"]
         if not name or any(
@@ -172,6 +191,8 @@ def main():
                 timeout=30,
             )
             (directory / "battery-before.txt").write_text(before.stdout)
+            if "capacity_sweep" in config:
+                capture_capacity_telemetry(adb, directory, "before")
         with (directory / "process.log").open("w") as log:
             result = subprocess.run(
                 adb + ["shell", shlex.join(argv)] if adb else argv,
@@ -194,6 +215,8 @@ def main():
                 timeout=30,
             )
             (directory / "battery-after.txt").write_text(after.stdout)
+            if "capacity_sweep" in config:
+                capture_capacity_telemetry(adb, directory, "after")
         if result.returncode:
             failures.append(name)
             print("FAILED", name, result.returncode, flush=True)
@@ -218,6 +241,12 @@ def main():
         time.sleep(config.get("cooldown_seconds", 20))
     if failures:
         raise SystemExit("Failed jobs: " + ", ".join(failures))
+    if "capacity_sweep" in config:
+        report = check_capacity_sweep(config, args.output)
+        save(args.output / "capacity-check.json", report)
+        print("CAPACITY CHECK", report["verdict"], flush=True)
+        if report["verdict"] != "pass":
+            raise SystemExit("Capacity-sensitive timings; inspect capacity-check.json")
 
 
 if __name__ == "__main__":
