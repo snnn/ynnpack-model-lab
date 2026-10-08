@@ -209,6 +209,11 @@ Recheck an existing sweep without executing the model again:
 uv run --locked python tools/capacity_sweep.py out/capacity-results
 ```
 
+The retained [Samsung E2B follow-up](../results/2026-10-08-capacity-sweep/README.md)
+exercises this harness with 36 measured requests. Its paired latency changes
+stay within 5.2%, while the individual rounds retain meaningful thermal/order
+variation. It is evidence for that recorded model/device configuration.
+
 ## What belongs in the repository
 
 See [publication contents and privacy](PUBLICATION.md) before retaining a new

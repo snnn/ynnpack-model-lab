@@ -9,6 +9,7 @@ current generated builders.
 
 | Record | Role | Comparison scope |
 | --- | --- | --- |
+| [Capacity-invariance follow-up](2026-10-08-capacity-sweep/README.md) | Reusable harness validation: 36 measured requests, forward/reverse capacity order, separate warm latency checks and setup/RSS | Samsung E2B, four threads, prompts 17/128/1,024, capacities 2,048/8,448; paired changes within 5.2% with individual-round thermal variation |
 | [October 7 upstream refresh](2026-10-07-upstream-refresh/README.md) | Current normal mobile baseline: 104 configurations, 312 unprofiled requests, 32 separate profiles, 1,764 arithmetic-checked kernel trials and numerical/state checks | New/previous upstream E2B on TECNO/Pixel/Samsung, fresh native E2B controls, TECNO E4B; Linux/HF skipped on the busy host; Pixel throttling and additional rest intervals recorded |
 | [October 5 Oryon selection](2026-10-05-oryon-dot-selection/README.md) | One-row cost-model and dispatcher investigation: 336 kernel trials, 72 unprofiled requests, optional selection patch and exact output checks | Samsung E2B: default I8MM versus compatible INT2/INT4 DOTPROD restrictions; normal baseline unchanged |
 | [October 5 decode profiling](2026-10-05-decode-profile/README.md) | Phone comparison: 20 configurations, 96 unprofiled requests, separate execution/kernel profiles and exact profiler checks | Samsung one/four threads, focused Pixel/TECNO; previous normal packing baseline versus preserved native Tensor API/XNNPACK |
