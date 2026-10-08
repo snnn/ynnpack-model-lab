@@ -139,6 +139,13 @@ separate from the large weight-packing footprint.
 
 ## Measurements
 
+The [October 7 upstream refresh](../results/2026-10-07-upstream-refresh/README.md)
+retimes TECNO E4B with one/four threads, capacities 2048/8448 and prompts
+17/128/1024, including fresh previous-pin controls and full numerical/capacity
+checks. Linux was busy and was not retimed. Pixel/Samsung lacked available RAM
+for the recorded E4B footprint and were skipped; there is still no matched native
+E4B phone control.
+
 The [October 5 backend refresh](../results/2026-10-05/README.md) contains updated
 E4B timings, a fresh previous-backend desktop control, selected kernel evidence,
 and capacity checks. The table below retains the October 2 configuration and

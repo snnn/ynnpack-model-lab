@@ -1,0 +1,62 @@
+{
+  "lab_source_commit": "06e95b238c0889c6c2893fac0b85920302b48500",
+  "python": {
+    "command": [
+      "uv",
+      "run",
+      "--locked",
+      "python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_*.py"
+    ],
+    "tests": 32,
+    "status": "passed"
+  },
+  "hosted_ci": [
+    {
+      "trigger": "push",
+      "workflow": "CMake",
+      "run_url": "https://github.com/snnn/ynnpack-model-lab/actions/runs/37715581679",
+      "status": "passed",
+      "scope": "Source commit before measurement/documentation commit; final PR checks are reported separately.",
+      "uv": "0.12.23",
+      "python": "3.11"
+    },
+    {
+      "trigger": "pull_request",
+      "workflow": "CMake",
+      "run_url": "https://github.com/snnn/ynnpack-model-lab/actions/runs/37715585181",
+      "status": "passed",
+      "scope": "Source commit before measurement/documentation commit; final PR checks are reported separately.",
+      "uv": "0.12.23",
+      "python": "3.11"
+    }
+  ],
+  "skipped": [
+    {
+      "scope": "Local Linux and host-only HF binaries/performance",
+      "reason": "User requested avoiding the busy Linux host."
+    },
+    {
+      "scope": "Pixel/Samsung E4B",
+      "reason": "Available RAM at preflight below the previously observed approximately 4.5-GiB process footprint."
+    },
+    {
+      "scope": "E4B native phone comparison",
+      "reason": "No matched preserved native phone control artifact."
+    }
+  ],
+  "numerical_analysis": {
+    "python": "3.13.8",
+    "numpy": "2.5.3",
+    "openblas_threads": 1,
+    "omp_threads": 1,
+    "comparison_tool": "tools/compare_outputs.py",
+    "comparison_scope": "Finite logits, exact-file hashes, centered cosine, reference-to-candidate KL, greedy IDs and KV code differences."
+  }
+}

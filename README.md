@@ -12,7 +12,16 @@ views, preparation costs, and memory use. Classical vision workloads are planned
 as the lab expands.
 
 Start with the [performance gaps and investigation priorities](docs/PERFORMANCE_GAPS.md)
-and the [measurement index](results/README.md). The
+and the [measurement index](results/README.md). The current
+[October 7 mobile baseline](results/2026-10-07-upstream-refresh/README.md) adopts
+upstream `d297c798ea53`, including the merged cost model. It retimes E2B on all
+three phones and E4B on TECNO against fresh previous-pin controls, with fresh
+native E2B comparisons, numerical checks and separate execution/kernel profiles.
+Linux and host-only HF timings were skipped because the host was busy. Upstream
+now disables INT2 I8MM pending a compatible packing layout; the known-row packing
+correction remains applied.
+
+The historical
 [October 5 backend refresh](results/2026-10-05/README.md) compares the previous
 and adopted dependencies using identical current builders and token IDs. The
 adopted backend selects AVX-VNNI INT4/INT8 and substantially improves desktop
@@ -39,7 +48,8 @@ traces the native DOTPROD tables and YNNPACK's learned I8MM ranking. Its fitting
 script excludes one-row DOTPROD kernels, and the I8MM training benchmark uses
 full row tiles. Compatible one-row kernel and model experiments examine the
 resulting decode choices. The selection restriction is an optional experiment;
-the normal dependency baseline retains its recorded configuration.
+the study retains its original dependency configuration. The October 7 upstream
+baseline's kernel availability is recorded separately.
 
 **Direct safetensors loading is supported for Gemma4 E2B.** The native C++
 runner reads the downloaded
@@ -48,10 +58,11 @@ from its original safetensors storage. The
 [safetensors quickstart below](#run-gemma4-e2b-directly-from-safetensors) uses
 **`hf_static_int8_published_kv`**, the preferred integer-FC profile for ongoing
 compiler/dynamism work. BF16 and FP32 profiles remain arithmetic controls.
-The [refreshed integer-FC measurements](results/2026-10-05/README.md)
+The [October 5 integer-FC measurements](results/2026-10-05/README.md)
 approach the published-source YNNPACK control's warm x86-64 speed. Higher RSS,
 cross-implementation numerical differences, and the global KV scale convention
 remain open questions; see the [HF design and validation](docs/HF_GEMMA4.md).
+Those host-only profiles were not retimed for the October 7 pin.
 
 The standalone C++ runner invokes YNNPACK directly. CMake builds the checked-in
 C++ graph builders against pinned, locally patched YNNPACK/Slinky. Large builders

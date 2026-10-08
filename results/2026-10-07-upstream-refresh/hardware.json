@@ -1,0 +1,331 @@
+[
+  {
+    "device": "tecno",
+    "model": "TECNO LJ9",
+    "firmware": "TECNO/LJ9-OP/TECNO-LJ9:15/AP3A.240905.015.A2/154010:user/release-keys",
+    "mem_total_kib": 11772472,
+    "mem_available_at_preflight_kib": 8250072,
+    "policies": [
+      {
+        "policy": 0,
+        "cpus": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "maximum_khz": 2200000,
+        "governor": null
+      },
+      {
+        "policy": 4,
+        "cpus": [
+          4,
+          5,
+          6
+        ],
+        "maximum_khz": 3200000,
+        "governor": null
+      },
+      {
+        "policy": 7,
+        "cpus": [
+          7
+        ],
+        "maximum_khz": 3350000,
+        "governor": "sugov_ext"
+      }
+    ],
+    "cpu_ids": [
+      {
+        "processor": "0",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd46",
+        "CPU revision": "1"
+      },
+      {
+        "processor": "1",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd46",
+        "CPU revision": "1"
+      },
+      {
+        "processor": "2",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd46",
+        "CPU revision": "1"
+      },
+      {
+        "processor": "3",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd46",
+        "CPU revision": "1"
+      },
+      {
+        "processor": "4",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd4d",
+        "CPU revision": "0"
+      },
+      {
+        "processor": "5",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd4d",
+        "CPU revision": "0"
+      },
+      {
+        "processor": "6",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd4d",
+        "CPU revision": "0"
+      },
+      {
+        "processor": "7",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd4d",
+        "CPU revision": "0"
+      }
+    ],
+    "affinity": {
+      "1": "80",
+      "4": "f0"
+    },
+    "frequency_lock": false
+  },
+  {
+    "device": "pixel",
+    "model": "Pixel 8",
+    "firmware": "google/shiba/shiba:17/CP2A.260805.005/15828068:user/release-keys",
+    "mem_total_kib": 7754764,
+    "mem_available_at_preflight_kib": 3624528,
+    "policies": [
+      {
+        "policy": 0,
+        "cpus": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "maximum_khz": 1704000,
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": 4,
+        "cpus": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "maximum_khz": 2367000,
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": 8,
+        "cpus": [
+          8
+        ],
+        "maximum_khz": 2914000,
+        "governor": "sched_pixel"
+      }
+    ],
+    "cpu_ids": [
+      {
+        "processor": "0",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd46",
+        "CPU revision": "1"
+      },
+      {
+        "processor": "1",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd46",
+        "CPU revision": "1"
+      },
+      {
+        "processor": "2",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd46",
+        "CPU revision": "1"
+      },
+      {
+        "processor": "3",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd46",
+        "CPU revision": "1"
+      },
+      {
+        "processor": "4",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd4d",
+        "CPU revision": "0"
+      },
+      {
+        "processor": "5",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd4d",
+        "CPU revision": "0"
+      },
+      {
+        "processor": "6",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd4d",
+        "CPU revision": "0"
+      },
+      {
+        "processor": "7",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd4d",
+        "CPU revision": "0"
+      },
+      {
+        "processor": "8",
+        "CPU implementer": "0x41",
+        "CPU architecture": "8",
+        "CPU variant": "0x1",
+        "CPU part": "0xd4e",
+        "CPU revision": "0"
+      }
+    ],
+    "affinity": {
+      "1": "100",
+      "4": "1e0"
+    },
+    "frequency_lock": false
+  },
+  {
+    "device": "samsung",
+    "model": "SM-S937U1",
+    "firmware": "samsung/psquew/psq:16/BP4A.251205.006/S937U1UES9CZF9_OYM9CZF9:user/release-keys",
+    "mem_total_kib": 11380244,
+    "mem_available_at_preflight_kib": 4289436,
+    "policies": [
+      {
+        "policy": 0,
+        "cpus": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "maximum_khz": 3532800,
+        "governor": "walt"
+      },
+      {
+        "policy": 6,
+        "cpus": [
+          6,
+          7
+        ],
+        "maximum_khz": 4473600,
+        "governor": "walt"
+      }
+    ],
+    "cpu_ids": [
+      {
+        "processor": "0",
+        "CPU implementer": "0x51",
+        "CPU architecture": "8",
+        "CPU variant": "0x4",
+        "CPU part": "0x001",
+        "CPU revision": "4"
+      },
+      {
+        "processor": "1",
+        "CPU implementer": "0x51",
+        "CPU architecture": "8",
+        "CPU variant": "0x4",
+        "CPU part": "0x001",
+        "CPU revision": "4"
+      },
+      {
+        "processor": "2",
+        "CPU implementer": "0x51",
+        "CPU architecture": "8",
+        "CPU variant": "0x4",
+        "CPU part": "0x001",
+        "CPU revision": "4"
+      },
+      {
+        "processor": "3",
+        "CPU implementer": "0x51",
+        "CPU architecture": "8",
+        "CPU variant": "0x4",
+        "CPU part": "0x001",
+        "CPU revision": "4"
+      },
+      {
+        "processor": "4",
+        "CPU implementer": "0x51",
+        "CPU architecture": "8",
+        "CPU variant": "0x4",
+        "CPU part": "0x001",
+        "CPU revision": "4"
+      },
+      {
+        "processor": "5",
+        "CPU implementer": "0x51",
+        "CPU architecture": "8",
+        "CPU variant": "0x4",
+        "CPU part": "0x001",
+        "CPU revision": "4"
+      },
+      {
+        "processor": "6",
+        "CPU implementer": "0x51",
+        "CPU architecture": "8",
+        "CPU variant": "0x3",
+        "CPU part": "0x001",
+        "CPU revision": "4"
+      },
+      {
+        "processor": "7",
+        "CPU implementer": "0x51",
+        "CPU architecture": "8",
+        "CPU variant": "0x3",
+        "CPU part": "0x001",
+        "CPU revision": "4"
+      }
+    ],
+    "affinity": {
+      "1": "80",
+      "4": "f0"
+    },
+    "frequency_lock": false
+  }
+]

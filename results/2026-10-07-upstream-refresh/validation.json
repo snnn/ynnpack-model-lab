@@ -1,0 +1,171 @@
+{
+  "comparisons": 13,
+  "failures": [],
+  "repeated_requests": [
+    {
+      "device": "tecno",
+      "job": "e2b-new-c8448-t4",
+      "cases": 8,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": false,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "tecno",
+      "job": "e2b-native-c2048-t4",
+      "cases": 8,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": true,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "tecno",
+      "job": "e4b-new-c8448-t4",
+      "cases": 9,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": false,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "tecno",
+      "job": "e4b-old-c2048-t4",
+      "cases": 9,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": false,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "tecno",
+      "job": "e4b-new-c2048-t4",
+      "cases": 9,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": false,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "tecno",
+      "job": "e2b-old-c2048-t4",
+      "cases": 8,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": false,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "tecno",
+      "job": "e2b-new-c2048-t4",
+      "cases": 8,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": false,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "pixel",
+      "job": "e2b-new-c8448-t4",
+      "cases": 8,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": false,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "pixel",
+      "job": "e2b-native-c2048-t4",
+      "cases": 8,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": true,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "pixel",
+      "job": "e2b-old-c2048-t4",
+      "cases": 8,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": false,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "pixel",
+      "job": "e2b-new-c2048-t4",
+      "cases": 8,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": false,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "samsung",
+      "job": "e2b-new-c8448-t4",
+      "cases": 8,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": false,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "samsung",
+      "job": "e2b-native-c2048-t4",
+      "cases": 8,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": true,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "samsung",
+      "job": "e2b-old-c2048-t4",
+      "cases": 8,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": false,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    },
+    {
+      "device": "samsung",
+      "job": "e2b-new-c2048-t4",
+      "cases": 8,
+      "measured_repetitions": 2,
+      "repeated_argmax_exact": true,
+      "all_outputs_finite": true,
+      "logit_dump_scope": "First repetition only; repeated requests checked using finite outputs and greedy IDs.",
+      "runner_timings_valid_for_benchmark": false,
+      "timing_classification": "correctness_only; all dump runs excluded from latency metrics"
+    }
+  ]
+}

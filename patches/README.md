@@ -109,3 +109,5 @@ The patch context is updated for the October 7 pin. INT2 I8MM is unavailable in
 that pin; an INT2-only restriction therefore no longer provides an I8MM/DOTPROD
 comparison. The optional kernel benchmark reports candidate availability and
 uses `null` for an unavailable I8MM prediction.
+To replay the October 5 study, obtain its patch from the recorded lab revision;
+the current patch context targets the October 7 upstream source.

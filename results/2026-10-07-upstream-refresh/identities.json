@@ -1,0 +1,403 @@
+{
+  "lab_source_commit": "06e95b238c0889c6c2893fac0b85920302b48500",
+  "dependencies": [
+    {
+      "name": "XNNPACK",
+      "repository": "google/XNNPACK",
+      "revision": "d297c798ea530c12a1878bb3a3a811bdf05d715b",
+      "url": "https://codeload.github.com/google/XNNPACK/zip/d297c798ea530c12a1878bb3a3a811bdf05d715b",
+      "sha256": "f1a222b4447bc04a94ddd8d7ad32cb2ec4c99383c34dd74cb6b07bd7c8e80cae"
+    },
+    {
+      "name": "slinky",
+      "repository": "dsharlet/slinky",
+      "revision": "d18c98551c77f366857f125e3a0f7886deb82a47",
+      "url": "https://codeload.github.com/dsharlet/slinky/zip/d18c98551c77f366857f125e3a0f7886deb82a47",
+      "sha256": "e0f98371b2a89918bcac16e906966de36de62a80f56a2e17eb3b6cbb12fa17fe"
+    },
+    {
+      "name": "cpuinfo",
+      "repository": "pytorch/cpuinfo",
+      "revision": "8ce83db858065145192c97af90cb668ad72a12e9",
+      "url": "https://codeload.github.com/pytorch/cpuinfo/zip/8ce83db858065145192c97af90cb668ad72a12e9",
+      "sha256": "fe2aa43254838a2eb5658d1742696473a1d834a57f2a0b38d533346bcd212482"
+    },
+    {
+      "name": "tokenizers-cpp",
+      "repository": "mlc-ai/tokenizers-cpp",
+      "revision": "c586c52f93f7b060753bd2388eb96a105cb7374d",
+      "url": "https://codeload.github.com/mlc-ai/tokenizers-cpp/zip/c586c52f93f7b060753bd2388eb96a105cb7374d",
+      "sha256": "4c217141592091601a4d818999a5ea92f1a3ff61a8ae1d00e9d16d943bb5a248",
+      "feature": "tokenizers"
+    },
+    {
+      "name": "sentencepiece",
+      "repository": "google/sentencepiece",
+      "revision": "e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+      "url": "https://codeload.github.com/google/sentencepiece/zip/e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+      "sha256": "f47359a9c786bca379a0c34663dd5e417dbc0104924f7cab50fdaa493217d57f",
+      "feature": "tokenizers"
+    },
+    {
+      "name": "abseil",
+      "revision": "255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+      "url": "https://codeload.github.com/abseil/abseil-cpp/zip/255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+      "sha256": "e945549b45648c00cb07119fb7697e13762da3e0b8cdb244d8e6550bbe1e53cd",
+      "feature": "tokenizers",
+      "repository": "abseil/abseil-cpp"
+    }
+  ],
+  "previous_dependencies": [
+    {
+      "name": "XNNPACK",
+      "repository": "google/XNNPACK",
+      "revision": "f5122810ee8bb7461ed73efe7a678a472866cee3",
+      "url": "https://codeload.github.com/google/XNNPACK/zip/f5122810ee8bb7461ed73efe7a678a472866cee3",
+      "sha256": "47122c5f125d5fbadc5d1e6de057ea546828895d7c0ca60027bfc4d53f221268"
+    },
+    {
+      "name": "slinky",
+      "repository": "dsharlet/slinky",
+      "revision": "d18c98551c77f366857f125e3a0f7886deb82a47",
+      "url": "https://codeload.github.com/dsharlet/slinky/zip/d18c98551c77f366857f125e3a0f7886deb82a47",
+      "sha256": "e0f98371b2a89918bcac16e906966de36de62a80f56a2e17eb3b6cbb12fa17fe"
+    },
+    {
+      "name": "cpuinfo",
+      "repository": "pytorch/cpuinfo",
+      "revision": "8ce83db858065145192c97af90cb668ad72a12e9",
+      "url": "https://codeload.github.com/pytorch/cpuinfo/zip/8ce83db858065145192c97af90cb668ad72a12e9",
+      "sha256": "fe2aa43254838a2eb5658d1742696473a1d834a57f2a0b38d533346bcd212482"
+    },
+    {
+      "name": "tokenizers-cpp",
+      "repository": "mlc-ai/tokenizers-cpp",
+      "revision": "c586c52f93f7b060753bd2388eb96a105cb7374d",
+      "url": "https://codeload.github.com/mlc-ai/tokenizers-cpp/zip/c586c52f93f7b060753bd2388eb96a105cb7374d",
+      "sha256": "4c217141592091601a4d818999a5ea92f1a3ff61a8ae1d00e9d16d943bb5a248",
+      "feature": "tokenizers"
+    },
+    {
+      "name": "sentencepiece",
+      "repository": "google/sentencepiece",
+      "revision": "e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+      "url": "https://codeload.github.com/google/sentencepiece/zip/e0f0f966959108415183d6cbe7a9051ca8bc2da1",
+      "sha256": "f47359a9c786bca379a0c34663dd5e417dbc0104924f7cab50fdaa493217d57f",
+      "feature": "tokenizers"
+    },
+    {
+      "name": "abseil",
+      "revision": "255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+      "url": "https://codeload.github.com/abseil/abseil-cpp/zip/255c84dadd029fd8ad25c5efb5933e47beaa00c7",
+      "sha256": "e945549b45648c00cb07119fb7697e13762da3e0b8cdb244d8e6550bbe1e53cd",
+      "feature": "tokenizers",
+      "repository": "abseil/abseil-cpp"
+    }
+  ],
+  "asset_payload_inventory_sha256": {
+    "e2b": "bbb9f5b744728bfa51917f3259405c3a6da4478b63a2dc7121b63e2d917f563e",
+    "e4b": "0d821188da7136d25de8b9b8cd8f1e41eb3e9de009e65d0c82e912eedcb5d006",
+    "native_e2b": "0078652603ae1e474a396f4c7d5d2c651a53a8f3ce815b74921f9833c82af2ae"
+  },
+  "binary_sha256": {
+    "tecno": {
+      "ynn-new-e2b": "38ca5e8c8e56b91210790f0b664de1e589e816ce3581ba3ddf721fc617ee4341",
+      "ynn-new-e4b": "421f3647c48c484602a5229e730a9fb90381e00614cb0c14f136bf9e5ab8e408",
+      "dot-new": "fa162ee86af01796a2f94b52aabcb2db37c003298775f877846b6f11a1238414",
+      "state_views_test": "728dde222fecde4f9b70185d83e3f09e5ee6812d3bbb1e76ddc00d6e61614752",
+      "quantized_fc_test": "3019bdaa6b78cc421effa2ec89442209081b06427f62a1091e0662e223476689",
+      "model_assets_test": "ea9afb4609a22ed839b5ab21d8c550719215c050c6a4b6cb49b9dad0048a08bc",
+      "safetensors_assets_test": "e78c5d957589aca916481c29045e630d51c01d9c54fc06c4e51e35fc3f1ee3d5",
+      "benchmark_cases_test": "0ef030505248a668dba96796fbbcb35f9bba9bd7265953971e9e66d6eece28cf",
+      "execution_profile_test": "982f2cbf9edd17425759be5c399d2c2a4cdaffb65fad8d397a92d4b62c89d8f0",
+      "simpleperf": "7eb29ecba8ae792397bd8c1b0fcd874fed0dc4c44d0cf9cb284e948f80cfe7e5",
+      "native-control": "66df329632af5008c61f04b7f026c6cef0464c01b572ebbd8dd900b114153aa5",
+      "ynn-old-e2b": "59d0eb93045199e55bda56547fd65327e511ceaa53fa83336fd83df6c7078e87",
+      "ynn-old-e4b": "c78d2261a962d40f907cdb7d67ef1ab72ef28af42dd06cea865d370955b8115a",
+      "dot-old": "d7e88bf40b217373971ed07f38b973570420b15a4f1a50f8ae590557f35c18d5",
+      "native-profile": "4da482163d7bf8ac58c3de5625091685fa516f51cf7a7bcd7514d0e8bbc08d50"
+    },
+    "pixel": {
+      "ynn-new-e2b": "38ca5e8c8e56b91210790f0b664de1e589e816ce3581ba3ddf721fc617ee4341",
+      "dot-new": "fa162ee86af01796a2f94b52aabcb2db37c003298775f877846b6f11a1238414",
+      "state_views_test": "728dde222fecde4f9b70185d83e3f09e5ee6812d3bbb1e76ddc00d6e61614752",
+      "quantized_fc_test": "3019bdaa6b78cc421effa2ec89442209081b06427f62a1091e0662e223476689",
+      "model_assets_test": "ea9afb4609a22ed839b5ab21d8c550719215c050c6a4b6cb49b9dad0048a08bc",
+      "safetensors_assets_test": "e78c5d957589aca916481c29045e630d51c01d9c54fc06c4e51e35fc3f1ee3d5",
+      "benchmark_cases_test": "0ef030505248a668dba96796fbbcb35f9bba9bd7265953971e9e66d6eece28cf",
+      "execution_profile_test": "982f2cbf9edd17425759be5c399d2c2a4cdaffb65fad8d397a92d4b62c89d8f0",
+      "simpleperf": "7eb29ecba8ae792397bd8c1b0fcd874fed0dc4c44d0cf9cb284e948f80cfe7e5",
+      "native-control": "66df329632af5008c61f04b7f026c6cef0464c01b572ebbd8dd900b114153aa5",
+      "ynn-old-e2b": "59d0eb93045199e55bda56547fd65327e511ceaa53fa83336fd83df6c7078e87",
+      "dot-old": "d7e88bf40b217373971ed07f38b973570420b15a4f1a50f8ae590557f35c18d5",
+      "native-profile": "4da482163d7bf8ac58c3de5625091685fa516f51cf7a7bcd7514d0e8bbc08d50"
+    },
+    "samsung": {
+      "ynn-new-e2b": "38ca5e8c8e56b91210790f0b664de1e589e816ce3581ba3ddf721fc617ee4341",
+      "dot-new": "fa162ee86af01796a2f94b52aabcb2db37c003298775f877846b6f11a1238414",
+      "state_views_test": "728dde222fecde4f9b70185d83e3f09e5ee6812d3bbb1e76ddc00d6e61614752",
+      "quantized_fc_test": "3019bdaa6b78cc421effa2ec89442209081b06427f62a1091e0662e223476689",
+      "model_assets_test": "ea9afb4609a22ed839b5ab21d8c550719215c050c6a4b6cb49b9dad0048a08bc",
+      "safetensors_assets_test": "e78c5d957589aca916481c29045e630d51c01d9c54fc06c4e51e35fc3f1ee3d5",
+      "benchmark_cases_test": "0ef030505248a668dba96796fbbcb35f9bba9bd7265953971e9e66d6eece28cf",
+      "execution_profile_test": "982f2cbf9edd17425759be5c399d2c2a4cdaffb65fad8d397a92d4b62c89d8f0",
+      "simpleperf": "7eb29ecba8ae792397bd8c1b0fcd874fed0dc4c44d0cf9cb284e948f80cfe7e5",
+      "native-control": "66df329632af5008c61f04b7f026c6cef0464c01b572ebbd8dd900b114153aa5",
+      "ynn-old-e2b": "59d0eb93045199e55bda56547fd65327e511ceaa53fa83336fd83df6c7078e87",
+      "dot-old": "d7e88bf40b217373971ed07f38b973570420b15a4f1a50f8ae590557f35c18d5",
+      "native-profile": "4da482163d7bf8ac58c3de5625091685fa516f51cf7a7bcd7514d0e8bbc08d50"
+    }
+  },
+  "source_sha256": {
+    "CMakeLists.txt": "46452b41ccd10f833b7b08e07a46f4b399bc11eebee5c05bea470071d0379a4f",
+    "models/gemma4/runner.cc": "132f0420f644140e41945b6c423fef1c15de86770173ee18c6bf9e7389107305",
+    "runtime/ynnpack_support.h": "8bbd95bb10b489748e344c913a27d286f4b355292dd465adf39f6b1e3d8cd55c",
+    "runtime/execution_profile.h": "ccf31c75f56ce367d79d1a2ef18f4416dfd99522fe9b8088d9133349c2c08f54",
+    "tools/dot_decode_bench.cc": "8b2f0a916ae5962b265a0549d7e3a103013ecbd536ade74d9c2120abf8225631",
+    "models/gemma4_e2b/generated/gemma4_decode_DefineValues_1.cc": "5e1885fbc67047e7ddd3db0efd84e8a050e5321028df781f9fb91d3fbb5a1fea",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer19ToLayer22_10.cc": "f211edf08ef45aa97504b38d428f8e8611ef313cca98ba0527ff060af372c128",
+    "models/gemma4_e2b/generated/gemma4_decode_builder.h": "bf3134743c810859216f621dad7204fe8b73ec77c957af12ed6cde1d2c6270b0",
+    "models/gemma4_e2b/generated/model.json": "b3a9f64504bd733b9c7f5d8037304e63620beda6282a7585e566f1314134d0af",
+    "models/gemma4_e2b/generated/gemma4_decode.cc": "4fea39902b60c1136c9bafed76f041812531d61e2241586b57c0f743e8b8e67e",
+    "models/gemma4_e2b/generated/gemma4_prefill.h": "19601784cb615a824dac76d0a1052f397d5247df7a1e99f5004f8ad9f3953dcb",
+    "models/gemma4_e2b/generated/gemma4_decode_RopeTablesToLayer2_4.cc": "cdb6df0e98fa25e1c34ceb3669061b55ca70fd89b5ecdbcacaf052db1c15d9cc",
+    "models/gemma4_e2b/generated/gemma4_prefill_sources.cmake": "adfe14e432324ee815eb678db91366807d04a52c7fe8ea5b8fc723d79cd1829b",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer6ToLayer8_6.cc": "d48b1b60946bccaa56ef609a53e9eb36fb7f1a6de4d841f364659e7bdeb651f7",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer23ToLayer26_11.cc": "8d873a536273d845bdb5ee7c7f4d916a9953adc294f050eac5fe39fec2553cf0",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer31ToFinalNormAndHead_13.cc": "48bb43c6aedc8f6abace5b3358d04560db2c716e7c5d7cd0fd5f9ee6e3911d8c",
+    "models/gemma4_e2b/generated/gemma4_prefill_DefineValuesToInputProjection_1.cc": "db39f540d6b6a03bfb4f6ede41c46e9c68bb6ac2f4cb80429ba372465ab067a6",
+    "models/gemma4_e2b/generated/gemma4_decode.h": "414689ac783e4bea744ec49999bcb94edb4279a0f38194383706ce2416452c29",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer9ToLayer11_7.cc": "e7f810666779030ba4209adef2ebcec1008b0c310d2aa87a4f77f1685311d411",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer3ToLayer5_5.cc": "72546eeafdebab0f207560418c0e057086661178b3264ffc3ce03a0f9c2371a2",
+    "models/gemma4_e2b/generated/gemma4_prefill_builder.h": "0c7c9e9e9f97791f40c9eecd91f4ae587a1d4fb33ef158b845a612e0e9cbadf9",
+    "models/gemma4_e2b/generated/gemma4_prefill.cc": "34d609a756340f795b4cf8952f7cbb31fc3b1d2985a6fd4c650615a32db24db6",
+    "models/gemma4_e2b/generated/gemma4_prefill_Layer3ToLayer5_3.cc": "6e2b2e1f3a85516f2084444d0ee0c396ea309794135d99878f02d641416edff4",
+    "models/gemma4_e2b/generated/gemma4_decode_DefineValuesToEmbedding_3.cc": "693f1340b7df38f830c38f9323f0fb8594bb20fb9f33a6fb85ac2f8750e65225",
+    "models/gemma4_e2b/generated/gemma4_prefill_Layer0ToLayer2_2.cc": "ac8e7d322e2a408a8775288cefcd346a1799b18a06b370254c959be98e967358",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer27ToLayer30_12.cc": "4185024eb3630ca90cd642043abcb2666f9d53e838ea8c3140bb494ef2143fb3",
+    "models/gemma4_e2b/generated/gemma4_decode_sources.cmake": "8e899ce25d0d16b3fbaa2b9dedf5523b869a6ae3c5cbcb9c4278cb82d7ccde5f",
+    "models/gemma4_e2b/generated/gemma4_prefill_Layer9ToLayer11_5.cc": "d9c86dd391bf452c2178bf4bfc3bc5e8b15c266f33e0e645fbdaaaba60f52e70",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer12ToLayer14_8.cc": "3c10b626d3f5bdae67749a0f9b144aaf31a0b5455d27e949c858e88df476674d",
+    "models/gemma4_e2b/generated/gemma4_decode_DefineValues_0.cc": "f46e1993b9331f8516ef250f75d619e7ca6842f15a7f2da7df3413eb4922ed1a",
+    "models/gemma4_e2b/generated/gemma4_prefill_DefineValues_0.cc": "cd5e48e2ef12ec9b3ed98954f0ec5fd54ac0c529f38b3ca0f1497b726bd31935",
+    "models/gemma4_e2b/generated/gemma4_decode_Layer15ToLayer18_9.cc": "287fc52ba7b43c20df2aba47cded24937e13a826641d26c2fcc85271f9f257e3",
+    "models/gemma4_e2b/generated/gemma4_decode_DefineValues_2.cc": "e278a8cc52d6922beeabc3d16804f0c60c2cdba4008eb82ae4527ffd097478f8",
+    "models/gemma4_e2b/generated/gemma4_prefill_Layer6ToLayer8_4.cc": "43e39eebfa0d790deea80d5913ac79104e058754509438dbc8cb2d582b7a2a68",
+    "models/gemma4_e2b/generated/gemma4_prefill_Layer12ToLayer14_6.cc": "7975ed9dc7217d1a186736785167bab5d055e8767e5500259f9ece2eda7ed1f3",
+    "models/gemma4_e4b/generated/gemma4_prefill_Layer5ToLayer11_4.cc": "ee739002741b06d87a219d1f7d23050ddb0d2a928b716821b3acb5b5d9f539b0",
+    "models/gemma4_e4b/generated/gemma4_decode_DefineValues_1.cc": "39b5ee4ebeed1edad358a717f815531215f555d0506c88b056766e67834e0f5c",
+    "models/gemma4_e4b/generated/gemma4_decode_builder.h": "e637c35ffe5f87503d90c123a58ad010543f98e994730a09d2b4798b1e5ee61d",
+    "models/gemma4_e4b/generated/model.json": "0bd28a073eef96a79dd70a0a9ba2b6f5180acbe65e04496a58e60b952aa8863d",
+    "models/gemma4_e4b/generated/gemma4_decode.cc": "77d1383e0a26b40c6ab224b66ed010cf46a7663cff16c2dc944f32995404877e",
+    "models/gemma4_e4b/generated/gemma4_prefill.h": "19601784cb615a824dac76d0a1052f397d5247df7a1e99f5004f8ad9f3953dcb",
+    "models/gemma4_e4b/generated/gemma4_prefill_Layer12ToLayer18_5.cc": "99ccea666b3c18d66a62eec181939b288f7faaac90706d23a3c8e209f9faf1fd",
+    "models/gemma4_e4b/generated/gemma4_prefill_sources.cmake": "5b1c065b3e13c1b45e8244cf5f0b63452221f21ad9d70f7c5896f0f47c384ae6",
+    "models/gemma4_e4b/generated/gemma4_decode_Layer35ToFinalNormAndHead_10.cc": "549b52fe9a63abfd971d42e0b07181b7fd8ae487d894ac544068c561a34ca9a0",
+    "models/gemma4_e4b/generated/gemma4_decode.h": "414689ac783e4bea744ec49999bcb94edb4279a0f38194383706ce2416452c29",
+    "models/gemma4_e4b/generated/gemma4_prefill_Layer19ToLayer23_6.cc": "1c5894b36b76695db5b839d9179b04b268ac09940fc15cb585afa8175612520f",
+    "models/gemma4_e4b/generated/gemma4_prefill_DefineValues_1.cc": "a38ef8ce3756c9e595327c10f44f857fe888fb7c93c82901d198f44903b6f983",
+    "models/gemma4_e4b/generated/gemma4_prefill_DefineValuesToLayer4_3.cc": "7342aceb6130bd9dc68819ca8b241ba879460c6badfbc1ddf9113bcc5e6c675a",
+    "models/gemma4_e4b/generated/gemma4_prefill_builder.h": "50ffa99a4359783bbb21daf07301329ee4085544a20562b343b674fcb98e882f",
+    "models/gemma4_e4b/generated/gemma4_prefill.cc": "6154453ce555bb1af7df3b6569b7bcc7dd31cab26fe54af390489176fca2c51e",
+    "models/gemma4_e4b/generated/gemma4_decode_Layer11ToLayer17_7.cc": "5663d8e619d0b6ba96925fdb035984ce47e3699788ba196b65094cf25724b053",
+    "models/gemma4_e4b/generated/gemma4_decode_sources.cmake": "d9c92dbec83ba8865e008785907981d30eedaba0776938136f32a0f28a976201",
+    "models/gemma4_e4b/generated/gemma4_decode_DefineValues_4.cc": "cf59d9133fcdce146e9fa7c5d2bccfee5872cf4cf3fa7fd58f195d506220428b",
+    "models/gemma4_e4b/generated/gemma4_prefill_DefineValues_2.cc": "8c3effd3dc4ba4daece96574497b1503117604eb939f6cc343fce6971fa9c751",
+    "models/gemma4_e4b/generated/gemma4_decode_DefineValues_0.cc": "709a37b05585211f7e63cccb66e8ad42dfe4764a8a994d0e591df8da179da3f4",
+    "models/gemma4_e4b/generated/gemma4_prefill_DefineValues_0.cc": "4f7a3086bfbe0dd6e42e2ba8bd86453b6ced13869090befa522e7f255c09b582",
+    "models/gemma4_e4b/generated/gemma4_decode_Layer4ToLayer10_6.cc": "02302ec63436ab83dc597e2d532909f8508474f5e81e10462406a4934da2ad66",
+    "models/gemma4_e4b/generated/gemma4_decode_DefineValues_3.cc": "2e309acfe626ecf0112abdee109bd33763c81de2298968cbd2cc764154ee1c17",
+    "models/gemma4_e4b/generated/gemma4_decode_Layer26ToLayer34_9.cc": "d556f4876ac8469b2a531523d5419febf3def509b39246aa14418c74a78dad86",
+    "models/gemma4_e4b/generated/gemma4_decode_DefineValues_2.cc": "f3ed3d6912f968655b41ef31bcaddfab764de37b462d8cdd5d681af44ba6852d",
+    "models/gemma4_e4b/generated/gemma4_decode_Layer18ToLayer25_8.cc": "9d4ee29f5ec7e6e511a6df55a5202154bd0bf87044407838499f02fe966e5455",
+    "models/gemma4_e4b/generated/gemma4_decode_DefineValuesToLayer3_5.cc": "65dbb35d441228a2b2d27ef6e9a8c93cc26745ca6ea3928488620d7ebb94457f"
+  },
+  "patch_sha256": {
+    "patches/ynnpack-cmake-subproject.patch": "3f39b3587db10a5692f6d84548ead96e8860124b569624ffdfc3355cf5eeb8c0",
+    "patches/ynnpack-dot-packing-shape.patch": "f78544b08a4a6a34a0dbddcf8d743cc3ff33319a88ea118d043eac34da3d644d",
+    "patches/ynnpack-symbolic-runtime.patch": "f6d03c9925ebdbe69fdfeb9ffd2d02ecd47467da0e9e1e7ce263042dfca0dc0a"
+  },
+  "previous_patch_sha256": {
+    "patches/ynnpack-cmake-subproject.patch": "af4510e2cbebf9e0ef39abd253644a1a36d5335439797697db81adad9758b43f",
+    "patches/ynnpack-dot-packing-shape.patch": "f78544b08a4a6a34a0dbddcf8d743cc3ff33319a88ea118d043eac34da3d644d",
+    "patches/ynnpack-symbolic-runtime.patch": "f6d03c9925ebdbe69fdfeb9ffd2d02ecd47467da0e9e1e7ce263042dfca0dc0a"
+  },
+  "fixture_sha256": {
+    "e4b-p128.tsv": "3ae22c6ffc312954deb9946bede4656c9e706679a74fea375f5d07bb4763c134",
+    "e2b-p1024.tsv": "5e5eddc6f73a9913e8dfefcc358668bf9fb86700c6b0d10d0135c44e034bc291",
+    "e2b-p128.tsv": "e1d2ab58421b2f71425fe30cf777562e882d19ae3418e35241b3448fc97ecb0f",
+    "e2b-correctness.tsv": "ef4818037e0b3dfcb1bb2f3d493b1305abb30faa25e5aad6d474246d1238a665",
+    "e2b-performance.tsv": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "e4b-p1024.tsv": "56ba57292374c48917f178cfe5f8889affaa8a54f2995b4ee9b302183d1ec023",
+    "e4b-performance.tsv": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+    "e4b-p17.tsv": "57af45ec9c631671b44b97ff708673b593b17f9c238a662e1f51b62da92edfa8",
+    "e2b-p17.tsv": "1228941b116f27231114bfd25e7c80126fc4f78051843891654431379ebec77b",
+    "e4b-correctness.tsv": "2bbb154936ace29809bf6cb0bd4f4786d985a1f8c4ddd90275e739ff8de93b64"
+  },
+  "source_verification": [
+    {
+      "version": "new",
+      "revision": "d297c798ea530c12a1878bb3a3a811bdf05d715b",
+      "source_files": 12467,
+      "archive_sha256": "f1a222b4447bc04a94ddd8d7ad32cb2ec4c99383c34dd74cb6b07bd7c8e80cae",
+      "patch_sha256": [
+        "3f39b3587db10a5692f6d84548ead96e8860124b569624ffdfc3355cf5eeb8c0",
+        "f78544b08a4a6a34a0dbddcf8d743cc3ff33319a88ea118d043eac34da3d644d",
+        "f6d03c9925ebdbe69fdfeb9ffd2d02ecd47467da0e9e1e7ce263042dfca0dc0a"
+      ],
+      "differences": [],
+      "matches_archive_plus_declared_patches": true
+    },
+    {
+      "version": "old",
+      "revision": "f5122810ee8bb7461ed73efe7a678a472866cee3",
+      "source_files": 12466,
+      "archive_sha256": "47122c5f125d5fbadc5d1e6de057ea546828895d7c0ca60027bfc4d53f221268",
+      "patch_sha256": [
+        "af4510e2cbebf9e0ef39abd253644a1a36d5335439797697db81adad9758b43f",
+        "f78544b08a4a6a34a0dbddcf8d743cc3ff33319a88ea118d043eac34da3d644d",
+        "f6d03c9925ebdbe69fdfeb9ffd2d02ecd47467da0e9e1e7ce263042dfca0dc0a"
+      ],
+      "differences": [],
+      "matches_archive_plus_declared_patches": true
+    }
+  ],
+  "cost_model_merge": {
+    "merge_commit_sha": "087cc7387c7b7cb45fde4f79dc2f93d12a5d3191",
+    "merged": true,
+    "merged_at": "2026-10-07T04:50:17Z",
+    "state": "closed"
+  },
+  "build": {
+    "uv": "0.11.23",
+    "python": "3.13.8",
+    "compiler": "Android clang 19.0.1 (r530567e; LLVM 97a699bf4812a18fb657c2779f5296a4ab2694d2)",
+    "cmake": "4.3.3",
+    "ninja": "1.13.2",
+    "parallel_jobs": 2,
+    "ndk": "r28c (28.2.13676358)",
+    "android_api": 28,
+    "abi": "arm64-v8a",
+    "libcxx": "static",
+    "type": "Release",
+    "cpuinfo": true,
+    "dotprod": true,
+    "i8mm": true,
+    "sme": false,
+    "sme2": false,
+    "tokenizers": false,
+    "compile_flags": {
+      "new": {
+        "runner": [
+          "--target=aarch64-none-linux-android28",
+          "-DYNN_ENABLE_CPUINFO",
+          "-O3",
+          "-DNDEBUG",
+          "-O1",
+          "-ffp-contract=off",
+          "-fno-rtti"
+        ],
+        "builder": [
+          "--target=aarch64-none-linux-android28",
+          "-DYNN_ENABLE_CPUINFO",
+          "-O3",
+          "-DNDEBUG",
+          "-O2",
+          "-ffp-contract=off",
+          "-fno-rtti"
+        ],
+        "dot_dispatch": [
+          "--target=aarch64-none-linux-android28",
+          "-DYNN_ENABLE_CPUINFO",
+          "-fno-rtti",
+          "-O3",
+          "-DNDEBUG",
+          "-O2"
+        ],
+        "dotprod_int2": [
+          "--target=aarch64-none-linux-android28",
+          "-DYNN_ENABLE_CPUINFO",
+          "-fno-rtti",
+          "-O3",
+          "-DNDEBUG",
+          "-O2",
+          "-march=armv8.2-a+dotprod"
+        ],
+        "i8mm_int4": [
+          "--target=aarch64-none-linux-android28",
+          "-DYNN_ENABLE_CPUINFO",
+          "-fno-rtti",
+          "-O3",
+          "-DNDEBUG",
+          "-O2",
+          "-march=armv8.2-a+i8mm"
+        ]
+      },
+      "old": {
+        "runner": [
+          "--target=aarch64-none-linux-android28",
+          "-DYNN_ENABLE_CPUINFO",
+          "-O3",
+          "-DNDEBUG",
+          "-O1",
+          "-ffp-contract=off",
+          "-fno-rtti"
+        ],
+        "builder": [
+          "--target=aarch64-none-linux-android28",
+          "-DYNN_ENABLE_CPUINFO",
+          "-O3",
+          "-DNDEBUG",
+          "-O2",
+          "-ffp-contract=off",
+          "-fno-rtti"
+        ],
+        "dot_dispatch": [
+          "--target=aarch64-none-linux-android28",
+          "-DYNN_ENABLE_CPUINFO",
+          "-fno-rtti",
+          "-O3",
+          "-DNDEBUG",
+          "-O2"
+        ],
+        "dotprod_int2": [
+          "--target=aarch64-none-linux-android28",
+          "-DYNN_ENABLE_CPUINFO",
+          "-fno-rtti",
+          "-O3",
+          "-DNDEBUG",
+          "-O2",
+          "-march=armv8.2-a+dotprod"
+        ],
+        "i8mm_int4": [
+          "--target=aarch64-none-linux-android28",
+          "-DYNN_ENABLE_CPUINFO",
+          "-fno-rtti",
+          "-O3",
+          "-DNDEBUG",
+          "-O2",
+          "-march=armv8.2-a+i8mm"
+        ]
+      }
+    }
+  },
+  "native_control": {
+    "xnnpack_archive_sha256": "03415fd5bda574d2c4923fd99ad5adb8f4a61120d8e274d9da7c08b7c5ffac33",
+    "driver_target": "aarch64-none-linux-android24",
+    "driver_optimization": "-O2",
+    "floating_point_contract": "off",
+    "profile_source_record": "results/2026-10-05-decode-profile/identities.json"
+  },
+  "source_artifacts": {
+    "e2b": {
+      "bytes": 2583085056,
+      "sha256": "ab7838cdfc8f77e54d8ca45eadceb20452d9f01e4bfade03e5dce27911b27e42",
+      "recipe_sha256": "a48afde44c9290a96e58d5f051b1fb1bfe8ba5a11317b2dd164cf0295605e689"
+    },
+    "e4b": {
+      "bytes": 3654467584,
+      "sha256": "f335f2bfd1b758dc6476db16c0f41854bd6237e2658d604cbe566bcefd00a7bc",
+      "recipe_sha256": "e9f91db58fccf67db120b11295aebc0a13903fc9af2f68218bf898f68118abd4"
+    }
+  }
+}

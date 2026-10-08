@@ -1,0 +1,2122 @@
+[
+  {
+    "device": "tecno",
+    "job": "e2b-new-c2048-t1",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "80",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 38.1147,
+        "rss_before_prepare_kib": 77596,
+        "total_phase_ms": 11096.3,
+        "rss_after_prepare_kib": 643052,
+        "peak_rss_after_prepare_kib": 653076
+      },
+      {
+        "phase": "decode",
+        "author_ms": 70.2591,
+        "rss_before_prepare_kib": 650408,
+        "total_phase_ms": 29128.4,
+        "rss_after_prepare_kib": 1645092,
+        "peak_rss_after_prepare_kib": 1722936
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e2b-new-c2048-t4",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 32.4748,
+        "rss_before_prepare_kib": 77568,
+        "total_phase_ms": 11632.9,
+        "rss_after_prepare_kib": 642632,
+        "peak_rss_after_prepare_kib": 655744
+      },
+      {
+        "phase": "decode",
+        "author_ms": 67.3668,
+        "rss_before_prepare_kib": 650000,
+        "total_phase_ms": 29364.4,
+        "rss_after_prepare_kib": 1646112,
+        "peak_rss_after_prepare_kib": 1725304
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e2b-new-c8448-t1",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 8448,
+    "threads": 1,
+    "affinity": "80",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 34.7848,
+        "rss_before_prepare_kib": 135024,
+        "total_phase_ms": 11205.7,
+        "rss_after_prepare_kib": 700404,
+        "peak_rss_after_prepare_kib": 710460
+      },
+      {
+        "phase": "decode",
+        "author_ms": 70.7265,
+        "rss_before_prepare_kib": 707676,
+        "total_phase_ms": 29471.7,
+        "rss_after_prepare_kib": 1702420,
+        "peak_rss_after_prepare_kib": 1780424
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e2b-new-c8448-t4",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 8448,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 34.1535,
+        "rss_before_prepare_kib": 135168,
+        "total_phase_ms": 11567.3,
+        "rss_after_prepare_kib": 700000,
+        "peak_rss_after_prepare_kib": 713716
+      },
+      {
+        "phase": "decode",
+        "author_ms": 66.2538,
+        "rss_before_prepare_kib": 707252,
+        "total_phase_ms": 29340.4,
+        "rss_after_prepare_kib": 1703800,
+        "peak_rss_after_prepare_kib": 1782492
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e2b-old-c2048-t1",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "80",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 31.6751,
+        "rss_before_prepare_kib": 77532,
+        "total_phase_ms": 10277.7,
+        "rss_after_prepare_kib": 642240,
+        "peak_rss_after_prepare_kib": 652376
+      },
+      {
+        "phase": "decode",
+        "author_ms": 70.2277,
+        "rss_before_prepare_kib": 649572,
+        "total_phase_ms": 28268.6,
+        "rss_after_prepare_kib": 1645268,
+        "peak_rss_after_prepare_kib": 1722928
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e2b-old-c2048-t4",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 34.1769,
+        "rss_before_prepare_kib": 77580,
+        "total_phase_ms": 10773.2,
+        "rss_after_prepare_kib": 642536,
+        "peak_rss_after_prepare_kib": 655124
+      },
+      {
+        "phase": "decode",
+        "author_ms": 65.2835,
+        "rss_before_prepare_kib": 649900,
+        "total_phase_ms": 28639.1,
+        "rss_after_prepare_kib": 1645596,
+        "peak_rss_after_prepare_kib": 1723392
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e4b-new-c2048-t1",
+    "campaign_phase": "latency",
+    "model": "e4b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "80",
+    "fixture": "e4b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 74.5008,
+        "rss_before_prepare_kib": 126300,
+        "total_phase_ms": 47946.8,
+        "rss_after_prepare_kib": 2378480,
+        "peak_rss_after_prepare_kib": 2400616
+      },
+      {
+        "phase": "decode",
+        "author_ms": 114.526,
+        "rss_before_prepare_kib": 2383400,
+        "total_phase_ms": 80721.2,
+        "rss_after_prepare_kib": 4483896,
+        "peak_rss_after_prepare_kib": 4624880
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e4b-new-c2048-t4",
+    "campaign_phase": "latency",
+    "model": "e4b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e4b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 74.1988,
+        "rss_before_prepare_kib": 126428,
+        "total_phase_ms": 51314.4,
+        "rss_after_prepare_kib": 2380348,
+        "peak_rss_after_prepare_kib": 2405036
+      },
+      {
+        "phase": "decode",
+        "author_ms": 115.964,
+        "rss_before_prepare_kib": 2385276,
+        "total_phase_ms": 89396.7,
+        "rss_after_prepare_kib": 4485620,
+        "peak_rss_after_prepare_kib": 4510664
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e4b-new-c8448-t1",
+    "campaign_phase": "latency",
+    "model": "e4b",
+    "version": "new",
+    "capacity": 8448,
+    "threads": 1,
+    "affinity": "80",
+    "fixture": "e4b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 73.4701,
+        "rss_before_prepare_kib": 305588,
+        "total_phase_ms": 49009.3,
+        "rss_after_prepare_kib": 2557772,
+        "peak_rss_after_prepare_kib": 2579964
+      },
+      {
+        "phase": "decode",
+        "author_ms": 116.425,
+        "rss_before_prepare_kib": 2562692,
+        "total_phase_ms": 83737.1,
+        "rss_after_prepare_kib": 4663260,
+        "peak_rss_after_prepare_kib": 4804212
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e4b-new-c8448-t4",
+    "campaign_phase": "latency",
+    "model": "e4b",
+    "version": "new",
+    "capacity": 8448,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e4b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 77.8809,
+        "rss_before_prepare_kib": 305740,
+        "total_phase_ms": 52623.6,
+        "rss_after_prepare_kib": 2559692,
+        "peak_rss_after_prepare_kib": 2584388
+      },
+      {
+        "phase": "decode",
+        "author_ms": 117.354,
+        "rss_before_prepare_kib": 2564608,
+        "total_phase_ms": 88190.0,
+        "rss_after_prepare_kib": 4665428,
+        "peak_rss_after_prepare_kib": 4805604
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e4b-old-c2048-t1",
+    "campaign_phase": "latency",
+    "model": "e4b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "80",
+    "fixture": "e4b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 79.2262,
+        "rss_before_prepare_kib": 126716,
+        "total_phase_ms": 44316.1,
+        "rss_after_prepare_kib": 2378312,
+        "peak_rss_after_prepare_kib": 2400656
+      },
+      {
+        "phase": "decode",
+        "author_ms": 109.85,
+        "rss_before_prepare_kib": 2383840,
+        "total_phase_ms": 76015.5,
+        "rss_after_prepare_kib": 4484376,
+        "peak_rss_after_prepare_kib": 4618612
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e4b-old-c2048-t4",
+    "campaign_phase": "latency",
+    "model": "e4b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e4b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 73.7736,
+        "rss_before_prepare_kib": 126440,
+        "total_phase_ms": 46341.6,
+        "rss_after_prepare_kib": 2380784,
+        "peak_rss_after_prepare_kib": 2405620
+      },
+      {
+        "phase": "decode",
+        "author_ms": 107.99,
+        "rss_before_prepare_kib": 2385708,
+        "total_phase_ms": 79863.1,
+        "rss_after_prepare_kib": 4485404,
+        "peak_rss_after_prepare_kib": 4626724
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e2b-new-c2048-t4",
+    "campaign_phase": "correctness",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-correctness.tsv",
+    "purpose": "correctness",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 34.5364,
+        "rss_before_prepare_kib": 77492,
+        "total_phase_ms": 12333.9,
+        "rss_after_prepare_kib": 642548,
+        "peak_rss_after_prepare_kib": 655664
+      },
+      {
+        "phase": "decode",
+        "author_ms": 71.6136,
+        "rss_before_prepare_kib": 649844,
+        "total_phase_ms": 32308.6,
+        "rss_after_prepare_kib": 1645932,
+        "peak_rss_after_prepare_kib": 1725156
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e2b-new-c8448-t4",
+    "campaign_phase": "correctness",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 8448,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-correctness.tsv",
+    "purpose": "correctness",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 35.6821,
+        "rss_before_prepare_kib": 135200,
+        "total_phase_ms": 11587.3,
+        "rss_after_prepare_kib": 700212,
+        "peak_rss_after_prepare_kib": 713360
+      },
+      {
+        "phase": "decode",
+        "author_ms": 66.2424,
+        "rss_before_prepare_kib": 707504,
+        "total_phase_ms": 30081.6,
+        "rss_after_prepare_kib": 1703620,
+        "peak_rss_after_prepare_kib": 1782824
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e2b-old-c2048-t4",
+    "campaign_phase": "correctness",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-correctness.tsv",
+    "purpose": "correctness",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 41.3024,
+        "rss_before_prepare_kib": 77536,
+        "total_phase_ms": 10648.3,
+        "rss_after_prepare_kib": 642980,
+        "peak_rss_after_prepare_kib": 655400
+      },
+      {
+        "phase": "decode",
+        "author_ms": 72.3876,
+        "rss_before_prepare_kib": 650336,
+        "total_phase_ms": 29495.9,
+        "rss_after_prepare_kib": 1645576,
+        "peak_rss_after_prepare_kib": 1723932
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e4b-new-c2048-t4",
+    "campaign_phase": "correctness",
+    "model": "e4b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e4b-correctness.tsv",
+    "purpose": "correctness",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 78.8642,
+        "rss_before_prepare_kib": 126380,
+        "total_phase_ms": 50833.1,
+        "rss_after_prepare_kib": 2380656,
+        "peak_rss_after_prepare_kib": 2405444
+      },
+      {
+        "phase": "decode",
+        "author_ms": 116.721,
+        "rss_before_prepare_kib": 2385556,
+        "total_phase_ms": 87382.1,
+        "rss_after_prepare_kib": 4486152,
+        "peak_rss_after_prepare_kib": 4626784
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e4b-new-c8448-t4",
+    "campaign_phase": "correctness",
+    "model": "e4b",
+    "version": "new",
+    "capacity": 8448,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e4b-correctness.tsv",
+    "purpose": "correctness",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 78.5228,
+        "rss_before_prepare_kib": 305592,
+        "total_phase_ms": 51418.4,
+        "rss_after_prepare_kib": 2559568,
+        "peak_rss_after_prepare_kib": 2584212
+      },
+      {
+        "phase": "decode",
+        "author_ms": 113.969,
+        "rss_before_prepare_kib": 2564476,
+        "total_phase_ms": 86441.7,
+        "rss_after_prepare_kib": 4665116,
+        "peak_rss_after_prepare_kib": 4805460
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e4b-old-c2048-t4",
+    "campaign_phase": "correctness",
+    "model": "e4b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e4b-correctness.tsv",
+    "purpose": "correctness",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 69.8363,
+        "rss_before_prepare_kib": 126660,
+        "total_phase_ms": 46547.7,
+        "rss_after_prepare_kib": 2380880,
+        "peak_rss_after_prepare_kib": 2405708
+      },
+      {
+        "phase": "decode",
+        "author_ms": 108.909,
+        "rss_before_prepare_kib": 2385792,
+        "total_phase_ms": 79921.1,
+        "rss_after_prepare_kib": 4485948,
+        "peak_rss_after_prepare_kib": 4626644
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e2b-new-c2048-t1-p1024",
+    "campaign_phase": "profiles",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "80",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 34.6358,
+        "rss_before_prepare_kib": 77476,
+        "total_phase_ms": 11247.4,
+        "rss_after_prepare_kib": 643028,
+        "peak_rss_after_prepare_kib": 653036
+      },
+      {
+        "phase": "decode",
+        "author_ms": 67.8795,
+        "rss_before_prepare_kib": 647040,
+        "total_phase_ms": 29947.3,
+        "rss_after_prepare_kib": 1650572,
+        "peak_rss_after_prepare_kib": 1724392
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e2b-new-c2048-t1-p17",
+    "campaign_phase": "profiles",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "80",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 33.0711,
+        "rss_before_prepare_kib": 77412,
+        "total_phase_ms": 12252.9,
+        "rss_after_prepare_kib": 642828,
+        "peak_rss_after_prepare_kib": 652984
+      },
+      {
+        "phase": "decode",
+        "author_ms": 76.0422,
+        "rss_before_prepare_kib": 650184,
+        "total_phase_ms": 31804.2,
+        "rss_after_prepare_kib": 1650392,
+        "peak_rss_after_prepare_kib": 1725948
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e2b-new-c2048-t4-p1024",
+    "campaign_phase": "profiles",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 35.0282,
+        "rss_before_prepare_kib": 77532,
+        "total_phase_ms": 11709.8,
+        "rss_after_prepare_kib": 642764,
+        "peak_rss_after_prepare_kib": 655864
+      },
+      {
+        "phase": "decode",
+        "author_ms": 68.2569,
+        "rss_before_prepare_kib": 650132,
+        "total_phase_ms": 30437.1,
+        "rss_after_prepare_kib": 1651444,
+        "peak_rss_after_prepare_kib": 1726812
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e2b-new-c2048-t4-p17",
+    "campaign_phase": "profiles",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 35.7099,
+        "rss_before_prepare_kib": 77632,
+        "total_phase_ms": 11743.8,
+        "rss_after_prepare_kib": 642668,
+        "peak_rss_after_prepare_kib": 655820
+      },
+      {
+        "phase": "decode",
+        "author_ms": 67.2358,
+        "rss_before_prepare_kib": 650044,
+        "total_phase_ms": 30313.8,
+        "rss_after_prepare_kib": 1651392,
+        "peak_rss_after_prepare_kib": 1726852
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e4b-new-c2048-t4-p1024",
+    "campaign_phase": "profiles",
+    "model": "e4b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e4b-p1024.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 76.495,
+        "rss_before_prepare_kib": 126440,
+        "total_phase_ms": 48713.6,
+        "rss_after_prepare_kib": 2380336,
+        "peak_rss_after_prepare_kib": 2406176
+      },
+      {
+        "phase": "decode",
+        "author_ms": 108.699,
+        "rss_before_prepare_kib": 2385256,
+        "total_phase_ms": 81393.1,
+        "rss_after_prepare_kib": 4491492,
+        "peak_rss_after_prepare_kib": 4626264
+      }
+    ]
+  },
+  {
+    "device": "tecno",
+    "job": "e4b-new-c2048-t4-p17",
+    "campaign_phase": "profiles",
+    "model": "e4b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e4b-p17.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 75.4176,
+        "rss_before_prepare_kib": 126452,
+        "total_phase_ms": 48600.4,
+        "rss_after_prepare_kib": 2380444,
+        "peak_rss_after_prepare_kib": 2406204
+      },
+      {
+        "phase": "decode",
+        "author_ms": 107.879,
+        "rss_before_prepare_kib": 2385360,
+        "total_phase_ms": 81680.9,
+        "rss_after_prepare_kib": 4491132,
+        "peak_rss_after_prepare_kib": 4626352
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c2048-t1",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "100",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 36.0324,
+        "rss_before_prepare_kib": 70288,
+        "total_phase_ms": 8536.55,
+        "rss_after_prepare_kib": 638912,
+        "peak_rss_after_prepare_kib": 653816
+      },
+      {
+        "phase": "decode",
+        "author_ms": 62.5365,
+        "rss_before_prepare_kib": 646048,
+        "total_phase_ms": 22270.9,
+        "rss_after_prepare_kib": 1640316,
+        "peak_rss_after_prepare_kib": 1722544
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c2048-t4",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 92.0435,
+        "rss_before_prepare_kib": 70352,
+        "total_phase_ms": 9164.24,
+        "rss_after_prepare_kib": 640352,
+        "peak_rss_after_prepare_kib": 657072
+      },
+      {
+        "phase": "decode",
+        "author_ms": 79.9131,
+        "rss_before_prepare_kib": 647624,
+        "total_phase_ms": 22933.0,
+        "rss_after_prepare_kib": 1642920,
+        "peak_rss_after_prepare_kib": 1724160
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c8448-t1",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 8448,
+    "threads": 1,
+    "affinity": "100",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 68.56,
+        "rss_before_prepare_kib": 128140,
+        "total_phase_ms": 16107.3,
+        "rss_after_prepare_kib": 696704,
+        "peak_rss_after_prepare_kib": 711636
+      },
+      {
+        "phase": "decode",
+        "author_ms": 79.467,
+        "rss_before_prepare_kib": 703912,
+        "total_phase_ms": 32783.3,
+        "rss_after_prepare_kib": 1698144,
+        "peak_rss_after_prepare_kib": 1780336
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c8448-t4",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 8448,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 36.8488,
+        "rss_before_prepare_kib": 128200,
+        "total_phase_ms": 12264.9,
+        "rss_after_prepare_kib": 697524,
+        "peak_rss_after_prepare_kib": 714400
+      },
+      {
+        "phase": "decode",
+        "author_ms": 67.3515,
+        "rss_before_prepare_kib": 704820,
+        "total_phase_ms": 33085.9,
+        "rss_after_prepare_kib": 1700432,
+        "peak_rss_after_prepare_kib": 1781444
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-old-c2048-t1",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "100",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 42.2155,
+        "rss_before_prepare_kib": 70348,
+        "total_phase_ms": 7736.9,
+        "rss_after_prepare_kib": 638816,
+        "peak_rss_after_prepare_kib": 653388
+      },
+      {
+        "phase": "decode",
+        "author_ms": 56.937,
+        "rss_before_prepare_kib": 646032,
+        "total_phase_ms": 20075.6,
+        "rss_after_prepare_kib": 1641444,
+        "peak_rss_after_prepare_kib": 1721884
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-old-c2048-t4",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 117.995,
+        "rss_before_prepare_kib": 70332,
+        "total_phase_ms": 11618.3,
+        "rss_after_prepare_kib": 639700,
+        "peak_rss_after_prepare_kib": 656212
+      },
+      {
+        "phase": "decode",
+        "author_ms": 92.505,
+        "rss_before_prepare_kib": 646992,
+        "total_phase_ms": 35038.8,
+        "rss_after_prepare_kib": 1642964,
+        "peak_rss_after_prepare_kib": 1723476
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c2048-t1-p1024-reverse",
+    "campaign_phase": "latency-repeat",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "100",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "latency",
+    "round": "reverse_process_order",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 23.96,
+        "rss_before_prepare_kib": 70280,
+        "total_phase_ms": 9200.49,
+        "rss_after_prepare_kib": 639032,
+        "peak_rss_after_prepare_kib": 653912
+      },
+      {
+        "phase": "decode",
+        "author_ms": 55.2938,
+        "rss_before_prepare_kib": 646244,
+        "total_phase_ms": 26465.0,
+        "rss_after_prepare_kib": 1641332,
+        "peak_rss_after_prepare_kib": 1722548
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c2048-t1-p17-reverse",
+    "campaign_phase": "latency-repeat",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "100",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "latency",
+    "round": "reverse_process_order",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 24.3748,
+        "rss_before_prepare_kib": 70272,
+        "total_phase_ms": 8645.73,
+        "rss_after_prepare_kib": 639036,
+        "peak_rss_after_prepare_kib": 653924
+      },
+      {
+        "phase": "decode",
+        "author_ms": 54.629,
+        "rss_before_prepare_kib": 646256,
+        "total_phase_ms": 22715.4,
+        "rss_after_prepare_kib": 1641304,
+        "peak_rss_after_prepare_kib": 1722560
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c2048-t4-p1024-reverse",
+    "campaign_phase": "latency-repeat",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "latency",
+    "round": "reverse_process_order",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 25.5037,
+        "rss_before_prepare_kib": 70504,
+        "total_phase_ms": 9064.36,
+        "rss_after_prepare_kib": 639872,
+        "peak_rss_after_prepare_kib": 656712
+      },
+      {
+        "phase": "decode",
+        "author_ms": 267.638,
+        "rss_before_prepare_kib": 647124,
+        "total_phase_ms": 23286.5,
+        "rss_after_prepare_kib": 1643100,
+        "peak_rss_after_prepare_kib": 1723584
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c2048-t4-p17-reverse",
+    "campaign_phase": "latency-repeat",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "latency",
+    "round": "reverse_process_order",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 27.5776,
+        "rss_before_prepare_kib": 70480,
+        "total_phase_ms": 9566.08,
+        "rss_after_prepare_kib": 639840,
+        "peak_rss_after_prepare_kib": 656736
+      },
+      {
+        "phase": "decode",
+        "author_ms": 55.4328,
+        "rss_before_prepare_kib": 647140,
+        "total_phase_ms": 26078.2,
+        "rss_after_prepare_kib": 1642684,
+        "peak_rss_after_prepare_kib": 1723584
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-old-c2048-t1-p1024-reverse",
+    "campaign_phase": "latency-repeat",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "100",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "latency",
+    "round": "reverse_process_order",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 25.2116,
+        "rss_before_prepare_kib": 70360,
+        "total_phase_ms": 8217.45,
+        "rss_after_prepare_kib": 639044,
+        "peak_rss_after_prepare_kib": 653576
+      },
+      {
+        "phase": "decode",
+        "author_ms": 56.465,
+        "rss_before_prepare_kib": 646248,
+        "total_phase_ms": 24654.7,
+        "rss_after_prepare_kib": 1642076,
+        "peak_rss_after_prepare_kib": 1722500
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-old-c2048-t1-p17-reverse",
+    "campaign_phase": "latency-repeat",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "100",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "latency",
+    "round": "reverse_process_order",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 37.8895,
+        "rss_before_prepare_kib": 70368,
+        "total_phase_ms": 8010.72,
+        "rss_after_prepare_kib": 638936,
+        "peak_rss_after_prepare_kib": 653508
+      },
+      {
+        "phase": "decode",
+        "author_ms": 64.185,
+        "rss_before_prepare_kib": 646056,
+        "total_phase_ms": 24752.8,
+        "rss_after_prepare_kib": 1641972,
+        "peak_rss_after_prepare_kib": 1722428
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-old-c2048-t4-p1024-reverse",
+    "campaign_phase": "latency-repeat",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "latency",
+    "round": "reverse_process_order",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 24.2118,
+        "rss_before_prepare_kib": 70416,
+        "total_phase_ms": 8351.53,
+        "rss_after_prepare_kib": 639880,
+        "peak_rss_after_prepare_kib": 656460
+      },
+      {
+        "phase": "decode",
+        "author_ms": 54.5329,
+        "rss_before_prepare_kib": 647208,
+        "total_phase_ms": 22235.5,
+        "rss_after_prepare_kib": 1642632,
+        "peak_rss_after_prepare_kib": 1723620
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-old-c2048-t4-p17-reverse",
+    "campaign_phase": "latency-repeat",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "latency",
+    "round": "reverse_process_order",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 24.0348,
+        "rss_before_prepare_kib": 70264,
+        "total_phase_ms": 8481.93,
+        "rss_after_prepare_kib": 639552,
+        "peak_rss_after_prepare_kib": 655872
+      },
+      {
+        "phase": "decode",
+        "author_ms": 55.9001,
+        "rss_before_prepare_kib": 646896,
+        "total_phase_ms": 25119.5,
+        "rss_after_prepare_kib": 1642364,
+        "peak_rss_after_prepare_kib": 1723344
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c2048-t4",
+    "campaign_phase": "correctness",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-correctness.tsv",
+    "purpose": "correctness",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 68.6288,
+        "rss_before_prepare_kib": 70640,
+        "total_phase_ms": 15907.2,
+        "rss_after_prepare_kib": 640372,
+        "peak_rss_after_prepare_kib": 657088
+      },
+      {
+        "phase": "decode",
+        "author_ms": 78.3693,
+        "rss_before_prepare_kib": 647608,
+        "total_phase_ms": 36008.4,
+        "rss_after_prepare_kib": 1642924,
+        "peak_rss_after_prepare_kib": 1724292
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c8448-t4",
+    "campaign_phase": "correctness",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 8448,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-correctness.tsv",
+    "purpose": "correctness",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 68.4037,
+        "rss_before_prepare_kib": 128068,
+        "total_phase_ms": 16764.2,
+        "rss_after_prepare_kib": 697448,
+        "peak_rss_after_prepare_kib": 714308
+      },
+      {
+        "phase": "decode",
+        "author_ms": 79.4764,
+        "rss_before_prepare_kib": 704744,
+        "total_phase_ms": 33229.7,
+        "rss_after_prepare_kib": 1700300,
+        "peak_rss_after_prepare_kib": 1781364
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-old-c2048-t4",
+    "campaign_phase": "correctness",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-correctness.tsv",
+    "purpose": "correctness",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 29.5905,
+        "rss_before_prepare_kib": 70548,
+        "total_phase_ms": 9103.62,
+        "rss_after_prepare_kib": 639964,
+        "peak_rss_after_prepare_kib": 656568
+      },
+      {
+        "phase": "decode",
+        "author_ms": 55.9137,
+        "rss_before_prepare_kib": 647280,
+        "total_phase_ms": 28288.3,
+        "rss_after_prepare_kib": 1642388,
+        "peak_rss_after_prepare_kib": 1723704
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c2048-t1-p1024",
+    "campaign_phase": "profiles",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "100",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 55.6682,
+        "rss_before_prepare_kib": 70544,
+        "total_phase_ms": 9869.21,
+        "rss_after_prepare_kib": 639172,
+        "peak_rss_after_prepare_kib": 654068
+      },
+      {
+        "phase": "decode",
+        "author_ms": 58.8867,
+        "rss_before_prepare_kib": 646380,
+        "total_phase_ms": 27014.0,
+        "rss_after_prepare_kib": 1646264,
+        "peak_rss_after_prepare_kib": 1724408
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c2048-t1-p17",
+    "campaign_phase": "profiles",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "100",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 39.0273,
+        "rss_before_prepare_kib": 70536,
+        "total_phase_ms": 11817.4,
+        "rss_after_prepare_kib": 639152,
+        "peak_rss_after_prepare_kib": 654080
+      },
+      {
+        "phase": "decode",
+        "author_ms": 84.9327,
+        "rss_before_prepare_kib": 646380,
+        "total_phase_ms": 33116.0,
+        "rss_after_prepare_kib": 1646256,
+        "peak_rss_after_prepare_kib": 1724492
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c2048-t4-p1024",
+    "campaign_phase": "profiles",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 35.0319,
+        "rss_before_prepare_kib": 70408,
+        "total_phase_ms": 11311.5,
+        "rss_after_prepare_kib": 639648,
+        "peak_rss_after_prepare_kib": 656604
+      },
+      {
+        "phase": "decode",
+        "author_ms": 61.4708,
+        "rss_before_prepare_kib": 646884,
+        "total_phase_ms": 28389.3,
+        "rss_after_prepare_kib": 1647160,
+        "peak_rss_after_prepare_kib": 1725240
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-new-c2048-t4-p17",
+    "campaign_phase": "profiles",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 34.4323,
+        "rss_before_prepare_kib": 70284,
+        "total_phase_ms": 11750.5,
+        "rss_after_prepare_kib": 639748,
+        "peak_rss_after_prepare_kib": 656608
+      },
+      {
+        "phase": "decode",
+        "author_ms": 67.518,
+        "rss_before_prepare_kib": 647052,
+        "total_phase_ms": 28733.9,
+        "rss_after_prepare_kib": 1647200,
+        "peak_rss_after_prepare_kib": 1725400
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-old-c2048-t1-p1024",
+    "campaign_phase": "profiles-control",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "100",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 27.8719,
+        "rss_before_prepare_kib": 70324,
+        "total_phase_ms": 8456.95,
+        "rss_after_prepare_kib": 638800,
+        "peak_rss_after_prepare_kib": 653356
+      },
+      {
+        "phase": "decode",
+        "author_ms": 56.4709,
+        "rss_before_prepare_kib": 646012,
+        "total_phase_ms": 23203.1,
+        "rss_after_prepare_kib": 1645112,
+        "peak_rss_after_prepare_kib": 1724068
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-old-c2048-t1-p17",
+    "campaign_phase": "profiles-control",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "100",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 31.1731,
+        "rss_before_prepare_kib": 70432,
+        "total_phase_ms": 8168.9,
+        "rss_after_prepare_kib": 638996,
+        "peak_rss_after_prepare_kib": 653568
+      },
+      {
+        "phase": "decode",
+        "author_ms": 57.9157,
+        "rss_before_prepare_kib": 646144,
+        "total_phase_ms": 22367.5,
+        "rss_after_prepare_kib": 1645132,
+        "peak_rss_after_prepare_kib": 1724088
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-old-c2048-t4-p1024",
+    "campaign_phase": "profiles-control",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 30.0413,
+        "rss_before_prepare_kib": 70472,
+        "total_phase_ms": 9466.24,
+        "rss_after_prepare_kib": 639848,
+        "peak_rss_after_prepare_kib": 656192
+      },
+      {
+        "phase": "decode",
+        "author_ms": 56.2926,
+        "rss_before_prepare_kib": 647172,
+        "total_phase_ms": 26535.0,
+        "rss_after_prepare_kib": 1646356,
+        "peak_rss_after_prepare_kib": 1725236
+      }
+    ]
+  },
+  {
+    "device": "pixel",
+    "job": "e2b-old-c2048-t4-p17",
+    "campaign_phase": "profiles-control",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "1e0",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 52.7968,
+        "rss_before_prepare_kib": 70336,
+        "total_phase_ms": 10552.9,
+        "rss_after_prepare_kib": 639656,
+        "peak_rss_after_prepare_kib": 656224
+      },
+      {
+        "phase": "decode",
+        "author_ms": 60.9294,
+        "rss_before_prepare_kib": 646988,
+        "total_phase_ms": 26327.0,
+        "rss_after_prepare_kib": 1646168,
+        "peak_rss_after_prepare_kib": 1725092
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-new-c2048-t1",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "80",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 56.1342,
+        "rss_before_prepare_kib": 76652,
+        "total_phase_ms": 5715.68,
+        "rss_after_prepare_kib": 642876,
+        "peak_rss_after_prepare_kib": 653748
+      },
+      {
+        "phase": "decode",
+        "author_ms": 58.7579,
+        "rss_before_prepare_kib": 649448,
+        "total_phase_ms": 20580.7,
+        "rss_after_prepare_kib": 1646784,
+        "peak_rss_after_prepare_kib": 1722876
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-new-c2048-t4",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 36.5564,
+        "rss_before_prepare_kib": 76796,
+        "total_phase_ms": 10420.9,
+        "rss_after_prepare_kib": 643012,
+        "peak_rss_after_prepare_kib": 656432
+      },
+      {
+        "phase": "decode",
+        "author_ms": 51.9612,
+        "rss_before_prepare_kib": 649696,
+        "total_phase_ms": 27325.7,
+        "rss_after_prepare_kib": 1648592,
+        "peak_rss_after_prepare_kib": 1723584
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-new-c8448-t1",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 8448,
+    "threads": 1,
+    "affinity": "80",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 20.4627,
+        "rss_before_prepare_kib": 134260,
+        "total_phase_ms": 7232.19,
+        "rss_after_prepare_kib": 700068,
+        "peak_rss_after_prepare_kib": 711396
+      },
+      {
+        "phase": "decode",
+        "author_ms": 36.1398,
+        "rss_before_prepare_kib": 706592,
+        "total_phase_ms": 22078.1,
+        "rss_after_prepare_kib": 1704204,
+        "peak_rss_after_prepare_kib": 1782072
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-new-c8448-t4",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 8448,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 36.3405,
+        "rss_before_prepare_kib": 134352,
+        "total_phase_ms": 8939.46,
+        "rss_after_prepare_kib": 700536,
+        "peak_rss_after_prepare_kib": 713936
+      },
+      {
+        "phase": "decode",
+        "author_ms": 49.9492,
+        "rss_before_prepare_kib": 707216,
+        "total_phase_ms": 23152.0,
+        "rss_after_prepare_kib": 1705484,
+        "peak_rss_after_prepare_kib": 1781196
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-old-c2048-t1",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "80",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 24.8589,
+        "rss_before_prepare_kib": 76660,
+        "total_phase_ms": 5366.32,
+        "rss_after_prepare_kib": 643660,
+        "peak_rss_after_prepare_kib": 653244
+      },
+      {
+        "phase": "decode",
+        "author_ms": 37.5692,
+        "rss_before_prepare_kib": 650316,
+        "total_phase_ms": 19672.3,
+        "rss_after_prepare_kib": 1645792,
+        "peak_rss_after_prepare_kib": 1723352
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-old-c2048-t4",
+    "campaign_phase": "latency",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-performance.tsv",
+    "purpose": "latency",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 36.2139,
+        "rss_before_prepare_kib": 76776,
+        "total_phase_ms": 8920.97,
+        "rss_after_prepare_kib": 643036,
+        "peak_rss_after_prepare_kib": 656088
+      },
+      {
+        "phase": "decode",
+        "author_ms": 49.5719,
+        "rss_before_prepare_kib": 649604,
+        "total_phase_ms": 24132.5,
+        "rss_after_prepare_kib": 1646748,
+        "peak_rss_after_prepare_kib": 1725176
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-new-c2048-t4-p1024-reverse",
+    "campaign_phase": "latency-repeat",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "latency",
+    "round": "reverse_process_order",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 43.9673,
+        "rss_before_prepare_kib": 76584,
+        "total_phase_ms": 8780.57,
+        "rss_after_prepare_kib": 642800,
+        "peak_rss_after_prepare_kib": 656224
+      },
+      {
+        "phase": "decode",
+        "author_ms": 34.8762,
+        "rss_before_prepare_kib": 649112,
+        "total_phase_ms": 17941.9,
+        "rss_after_prepare_kib": 1647884,
+        "peak_rss_after_prepare_kib": 1724608
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-new-c2048-t4-p17-reverse",
+    "campaign_phase": "latency-repeat",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "latency",
+    "round": "reverse_process_order",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 49.5366,
+        "rss_before_prepare_kib": 76280,
+        "total_phase_ms": 9716.24,
+        "rss_after_prepare_kib": 642684,
+        "peak_rss_after_prepare_kib": 656072
+      },
+      {
+        "phase": "decode",
+        "author_ms": 53.6991,
+        "rss_before_prepare_kib": 649356,
+        "total_phase_ms": 26630.1,
+        "rss_after_prepare_kib": 1648792,
+        "peak_rss_after_prepare_kib": 1723272
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-old-c2048-t4-p1024-reverse",
+    "campaign_phase": "latency-repeat",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "latency",
+    "round": "reverse_process_order",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 37.9773,
+        "rss_before_prepare_kib": 76764,
+        "total_phase_ms": 8814.2,
+        "rss_after_prepare_kib": 642976,
+        "peak_rss_after_prepare_kib": 656004
+      },
+      {
+        "phase": "decode",
+        "author_ms": 49.0505,
+        "rss_before_prepare_kib": 649676,
+        "total_phase_ms": 25082.7,
+        "rss_after_prepare_kib": 1647592,
+        "peak_rss_after_prepare_kib": 1725216
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-old-c2048-t4-p17-reverse",
+    "campaign_phase": "latency-repeat",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "latency",
+    "round": "reverse_process_order",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 48.6596,
+        "rss_before_prepare_kib": 76608,
+        "total_phase_ms": 8971.0,
+        "rss_after_prepare_kib": 642820,
+        "peak_rss_after_prepare_kib": 655852
+      },
+      {
+        "phase": "decode",
+        "author_ms": 59.8543,
+        "rss_before_prepare_kib": 649496,
+        "total_phase_ms": 25254.6,
+        "rss_after_prepare_kib": 1647556,
+        "peak_rss_after_prepare_kib": 1725192
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-new-c2048-t4",
+    "campaign_phase": "correctness",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-correctness.tsv",
+    "purpose": "correctness",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 36.2612,
+        "rss_before_prepare_kib": 76860,
+        "total_phase_ms": 6573.12,
+        "rss_after_prepare_kib": 643232,
+        "peak_rss_after_prepare_kib": 656612
+      },
+      {
+        "phase": "decode",
+        "author_ms": 31.9732,
+        "rss_before_prepare_kib": 649784,
+        "total_phase_ms": 23365.0,
+        "rss_after_prepare_kib": 1648632,
+        "peak_rss_after_prepare_kib": 1725568
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-new-c8448-t4",
+    "campaign_phase": "correctness",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 8448,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-correctness.tsv",
+    "purpose": "correctness",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 36.3289,
+        "rss_before_prepare_kib": 134472,
+        "total_phase_ms": 10407.7,
+        "rss_after_prepare_kib": 700684,
+        "peak_rss_after_prepare_kib": 714064
+      },
+      {
+        "phase": "decode",
+        "author_ms": 49.6632,
+        "rss_before_prepare_kib": 707360,
+        "total_phase_ms": 26668.0,
+        "rss_after_prepare_kib": 1706736,
+        "peak_rss_after_prepare_kib": 1781200
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-old-c2048-t4",
+    "campaign_phase": "correctness",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-correctness.tsv",
+    "purpose": "correctness",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 35.7102,
+        "rss_before_prepare_kib": 76852,
+        "total_phase_ms": 9176.8,
+        "rss_after_prepare_kib": 642876,
+        "peak_rss_after_prepare_kib": 655888
+      },
+      {
+        "phase": "decode",
+        "author_ms": 49.3877,
+        "rss_before_prepare_kib": 649624,
+        "total_phase_ms": 20281.5,
+        "rss_after_prepare_kib": 1647408,
+        "peak_rss_after_prepare_kib": 1725140
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-new-c2048-t1-p1024",
+    "campaign_phase": "profiles",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "80",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 16.2804,
+        "rss_before_prepare_kib": 76520,
+        "total_phase_ms": 6131.51,
+        "rss_after_prepare_kib": 642236,
+        "peak_rss_after_prepare_kib": 653508
+      },
+      {
+        "phase": "decode",
+        "author_ms": 32.3172,
+        "rss_before_prepare_kib": 648668,
+        "total_phase_ms": 22331.1,
+        "rss_after_prepare_kib": 1651592,
+        "peak_rss_after_prepare_kib": 1725580
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-new-c2048-t1-p17",
+    "campaign_phase": "profiles",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 1,
+    "affinity": "80",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 32.5288,
+        "rss_before_prepare_kib": 76488,
+        "total_phase_ms": 6594.0,
+        "rss_after_prepare_kib": 642184,
+        "peak_rss_after_prepare_kib": 653540
+      },
+      {
+        "phase": "decode",
+        "author_ms": 37.6211,
+        "rss_before_prepare_kib": 648604,
+        "total_phase_ms": 24579.5,
+        "rss_after_prepare_kib": 1651736,
+        "peak_rss_after_prepare_kib": 1725528
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-new-c2048-t4-p1024",
+    "campaign_phase": "profiles",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 36.6006,
+        "rss_before_prepare_kib": 76360,
+        "total_phase_ms": 7280.96,
+        "rss_after_prepare_kib": 642400,
+        "peak_rss_after_prepare_kib": 655776
+      },
+      {
+        "phase": "decode",
+        "author_ms": 32.6394,
+        "rss_before_prepare_kib": 648836,
+        "total_phase_ms": 21750.0,
+        "rss_after_prepare_kib": 1651652,
+        "peak_rss_after_prepare_kib": 1725716
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-new-c2048-t4-p17",
+    "campaign_phase": "profiles",
+    "model": "e2b",
+    "version": "new",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 37.9057,
+        "rss_before_prepare_kib": 76296,
+        "total_phase_ms": 8519.35,
+        "rss_after_prepare_kib": 642856,
+        "peak_rss_after_prepare_kib": 656272
+      },
+      {
+        "phase": "decode",
+        "author_ms": 31.7183,
+        "rss_before_prepare_kib": 649264,
+        "total_phase_ms": 23494.2,
+        "rss_after_prepare_kib": 1652172,
+        "peak_rss_after_prepare_kib": 1726180
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-old-c2048-t4-p1024",
+    "campaign_phase": "profiles-control",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-p1024.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 39.4766,
+        "rss_before_prepare_kib": 76768,
+        "total_phase_ms": 8948.99,
+        "rss_after_prepare_kib": 642932,
+        "peak_rss_after_prepare_kib": 655976
+      },
+      {
+        "phase": "decode",
+        "author_ms": 49.9026,
+        "rss_before_prepare_kib": 649480,
+        "total_phase_ms": 25258.8,
+        "rss_after_prepare_kib": 1651580,
+        "peak_rss_after_prepare_kib": 1726596
+      }
+    ]
+  },
+  {
+    "device": "samsung",
+    "job": "e2b-old-c2048-t4-p17",
+    "campaign_phase": "profiles-control",
+    "model": "e2b",
+    "version": "old",
+    "capacity": 2048,
+    "threads": 4,
+    "affinity": "f0",
+    "fixture": "e2b-p17.tsv",
+    "purpose": "diagnostic_profile",
+    "timing_note": "total_phase_ms includes author_ms and preparation; the two timers share their start point.",
+    "stages": [
+      {
+        "phase": "prefill",
+        "author_ms": 51.453,
+        "rss_before_prepare_kib": 76492,
+        "total_phase_ms": 9080.78,
+        "rss_after_prepare_kib": 642880,
+        "peak_rss_after_prepare_kib": 655896
+      },
+      {
+        "phase": "decode",
+        "author_ms": 61.2434,
+        "rss_before_prepare_kib": 649448,
+        "total_phase_ms": 25497.9,
+        "rss_after_prepare_kib": 1651584,
+        "peak_rss_after_prepare_kib": 1726516
+      }
+    ]
+  }
+]
