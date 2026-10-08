@@ -230,6 +230,11 @@ and KV append/view-copy counters. Use `--dump_outputs` for logits and live KV
 dumps, or `--dump_pipeline` for Slinky IR. Dumps add overhead: disable them for
 timing. See [benchmark methodology](docs/BENCHMARKING.md).
 
+The [capacity invariance check](docs/BENCHMARKING.md#capacity-invariance-check)
+automates fixed-input comparisons at capacities 2,048 and 8,448, reverses process
+order, and flags changes in warm prefill/decode latency. Setup and RSS are
+reported separately.
+
 ## Android: the same CMake build
 
 Set `ANDROID_NDK` to your NDK installation. Validated with NDK r28c
