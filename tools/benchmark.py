@@ -55,6 +55,7 @@ def capture_capacity_telemetry(adb, directory, when):
 
 def summarize(directory):
     rows = []
+    validity_flags = []
     timings = directory / "timings.jsonl"
     if timings.exists():
         raw = [json.loads(s) for s in timings.read_text().splitlines()]
@@ -94,6 +95,8 @@ def summarize(directory):
             raw = json.loads(path.read_text())
             if "passes" not in raw:
                 continue
+            if "timings_valid_for_benchmark" in raw:
+                validity_flags.append(raw["timings_valid_for_benchmark"])
             passes = raw["passes"]
             decode = [v["elapsed_ms"] for v in passes[1:]]
             rows.append(
@@ -120,19 +123,14 @@ def summarize(directory):
             # Do not add it to warm TTFT or decode latency.
             row["frontend"] = frontend
     run_file = directory / "run.json"
-    validity = json.loads(run_file.read_text()).get("timings_valid_for_benchmark", True) if run_file.exists() else None
-    flags = []
-    if validity is None:
-        for path in directory.glob("*.json"):
-            record = json.loads(path.read_text())
-            if isinstance(record, dict) and "passes" in record and "timings_valid_for_benchmark" in record:
-                flags.append(record["timings_valid_for_benchmark"])
+    if run_file.exists():
+        run = json.loads(run_file.read_text())
+        if "timings_valid_for_benchmark" in run:
+            validity_flags.append(run["timings_valid_for_benchmark"])
     for row in rows:
-        if validity is not None:
-            row["timings_valid_for_benchmark"] = validity
-        else:
-            # External native runners carry this field in each request record.
-            row["timings_valid_for_benchmark"] = all(flags) if flags else True
+        # Native run.json can be a status-only record. Preserve request-level
+        # diagnostic flags even when that file exists or claims valid timing.
+        row["timings_valid_for_benchmark"] = all(validity_flags) if validity_flags else True
     if not rows:
         raise RuntimeError("No runner measurements found")
     return rows

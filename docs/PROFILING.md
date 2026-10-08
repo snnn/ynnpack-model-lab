@@ -52,8 +52,8 @@ allocation and synchronization, embedding/host work, and profiler overhead.
 The analyzer also emits an `attention` summary for all steps and separately for
 each case, including the actual history range. It separates scheduled SDPA
 dequantization, packing, QK, PV, and mask/softmax/other work. A dot retaining a
-fused dequantization origin is counted as a dot once; it does not become an
-additional dequantization event. Calls with both attention and other origins
+dequantization origin is counted as a dot once; provenance alone does not
+establish where the conversion executes. Calls with both attention and other origins
 remain explicitly mixed. These labels describe callback work, not every
 instruction executed inside a kernel.
 

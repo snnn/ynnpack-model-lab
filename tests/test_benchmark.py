@@ -12,6 +12,24 @@ from tools.capacity_sweep import check_capacity_sweep, expand_capacity_sweep
 
 
 class BenchmarkSummaryTest(unittest.TestCase):
+    def test_native_status_does_not_override_diagnostic_requests(self):
+        request = {"case_id": "a", "run_index": 0, "warmup": False,
+                   "timings_valid_for_benchmark": False, "peak_process_rss_kib": 2048,
+                   "passes": [{"elapsed_ms": 10, "argmax_id": 1},
+                              {"elapsed_ms": 2, "argmax_id": 2}]}
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "a.run_000.json").write_text(json.dumps(request))
+            for status in [{"status": "completed"}, {"timings_valid_for_benchmark": True}]:
+                with self.subTest(status=status):
+                    (root / "run.json").write_text(json.dumps(status))
+                    self.assertFalse(summarize(root)[0]["timings_valid_for_benchmark"])
+            request["timings_valid_for_benchmark"] = True
+            (root / "a.run_000.json").write_text(json.dumps(request))
+            self.assertTrue(summarize(root)[0]["timings_valid_for_benchmark"])
+            (root / "run.json").write_text(json.dumps({"timings_valid_for_benchmark": False}))
+            self.assertFalse(summarize(root)[0]["timings_valid_for_benchmark"])
+
     def test_frontend_time_is_separate_from_warm_model_metrics(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

@@ -73,7 +73,7 @@ def event_stats(events):
 
 
 def attention_category(call, operations):
-    """Split SDPA work without charging a fused dot to dequantization twice."""
+    """Split SDPA work without counting operation origins as extra calls."""
     origins = [operations[i] for i in call["origins"]]
     attention = ["/Attention/Sdpa" in o["scope"] for o in origins]
     if not any(attention):
