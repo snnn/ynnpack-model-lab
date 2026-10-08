@@ -109,8 +109,9 @@ Dependencies live in the ignored `.deps/` directory. The repository and runtime
 dependencies are public.
 
 The backend pins include the learned dot cost model from
-[XNNPACK #11568](https://github.com/google/XNNPACK/pull/11568), still open when
-adopted on October 5, 2026. Existing checkouts should use a fresh dependency and
+[XNNPACK #11568](https://github.com/google/XNNPACK/pull/11568), merged on
+October 7, 2026. The current pin is upstream `d297c798ea53`; older records retain
+their original revisions. Existing checkouts should use a fresh dependency and
 build directory; see [dependency update instructions](patches/README.md).
 
 ## Run Gemma4 E2B directly from safetensors

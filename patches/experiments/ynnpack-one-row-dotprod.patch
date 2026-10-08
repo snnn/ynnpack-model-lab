@@ -51,8 +51,8 @@ diff --git a/ynnpack/subgraph/dot.cc b/ynnpack/subgraph/dot.cc
 +  }
 +#endif
  
-   // Dot kernel selection assumes we are operating on a small tile, limit the
-   // shape passed to get_dot_kernel.
+   // Dot kernel cost models are fit on small tiles that fit in L1 cache. We also
+   // assume that the dot will be tiled such that the operands fit in L1 cache.
 @@ -1297,8 +1317,8 @@
    shape.n = std::min<size_t>(shape.n, 384);
    shape.k1 = std::min<size_t>(shape.k1, 256);
