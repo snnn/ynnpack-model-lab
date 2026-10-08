@@ -2,7 +2,7 @@
 
 # Gemma4 E2B decode profiling and native XNNPACK comparison
 
-The current YNNPACK packing baseline remains slower than the preserved native
+The October 5 YNNPACK packing baseline is slower than the preserved native
 Tensor API/XNNPACK runner on these phones. The new execution profiler localizes
 the remaining work to low-bit FCs, live-history attention/packing, and time
 outside scheduled callbacks. Samsung is correctly detected as Oryon; its I8MM
@@ -190,7 +190,10 @@ real history bounds, numerical references and the current controls throughout.
 
 The [profiling guide](../../docs/PROFILING.md) documents reusable tools.
 [operator-profiles.json](operator-profiles.json) retains per-layer/category
-worker and wall accounting plus dot/packing provenance;
-[native-operators.csv](native-operators.csv) retains individual native operator
-means, types, weight roles and shapes. Raw events, full CPU profiles, local
-commands, archived binaries and compiler material remain in ignored outputs.
+worker and wall accounting, native per-layer stage totals, and native operator
+categories summed across layers by stage, operator type and weight dtype.
+The older individual native operator CSV and per-callback dot/packing tables
+have been pruned; category timings, layer/stage totals and original profile
+hashes are preserved. See the [retention policy](../README.md#retention) for the
+earlier detailed snapshot. Raw events, full CPU profiles, local commands,
+archived binaries and compiler material remain in ignored outputs.

@@ -156,15 +156,18 @@ claim zero backend packing/dequantization or zero history reads.
    E4B safetensors and other architectures are outside this first integration.
 
 Build and reproduction instructions are in `docs/HF_GEMMA4.md`. The small JSON
-records alongside this document preserve numerical evidence and raw timing
+records alongside this document preserve numerical evidence and request timing
 observations; model tensors and large output dumps are intentionally external.
 
 ## Warm 1,024-token measurements
 
 Desktop rows use eight continuation tokens; phone rows use two. The control
 uses a different arithmetic contract. Full prompt-length results, observed
-ranges, and raw per-token timings are retained in `metrics.csv`,
-`metrics.json`, and `timings/`. All runs have output dumping disabled.
+ranges are retained in `metrics.csv` and `metrics.json`. Per-request observations
+and settings remain in `timings/*/*/summary.json` and `run.json`; duplicate
+per-step timing/process logs have been pruned under the
+[retention policy](../README.md#retention). All timing runs have output dumping
+disabled.
 
 | Device | Profile | Threads | Capacity | TTFT, s | Prefill tok/s | Decode tok/s | Peak RSS, MiB | Setup, s |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |

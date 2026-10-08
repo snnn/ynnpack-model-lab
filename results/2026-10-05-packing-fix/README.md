@@ -9,8 +9,8 @@ even for a statically one-row decode graph. The correction restores one-row
 DOTPROD selection for INT2 and INT4 decode on both tested phones. Desktop
 execution speed is essentially unchanged.
 
-This is the normal bootstrap baseline with the local correction. The
-[earlier backend refresh](../2026-10-05/README.md) remains the control without
+This historical study established the local correction for the normal baseline.
+The [earlier backend refresh](../2026-10-05/README.md) remains the control without
 this patch. Both use XNNPACK `f5122810ee8bb7461ed73efe7a678a472866cee3`, Slinky
 `d18c98551c77f366857f125e3a0f7886deb82a47`, the same CPUinfo pin, and identical
 current builders, assets, token IDs, and arithmetic profiles. CPU detection and
@@ -145,3 +145,8 @@ retains dependency, patch, builder, fixture, asset, and binary hashes.
 [Command records](commands.json) use repository-relative paths and configurable
 device directories. Raw profiles, model dumps, device serials, and temporary
 diagnostic tools remain outside the published record.
+
+The duplicate per-process `timings/` tree has been pruned. All captured request
+summaries and per-token latencies remain in [requests.json](requests.json),
+alongside the compact kernel, numerical and identity records. See the
+[retention policy](../README.md#retention) for the earlier detailed snapshot.

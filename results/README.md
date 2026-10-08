@@ -21,7 +21,29 @@ current generated builders.
 | [HF published-KV audit](hf_published_kv_audit_2026-10-02/README.md) | Correctness and intermediate-value investigation | Numerical references only; no performance claim |
 | [Native tokenizer validation](native_tokenizers_validation_20261005.json) | Input/reference parity and exact text-to-TSV replay | Correctness only, with dumps and no controlled latency campaign; Qwen model execution is not included |
 
-Small summaries, per-request timings, command templates, hashes, and focused
-test/failure records belong here. Model payloads, raw profiles, machine logs,
-private compiler material, and temporary PR-review experiments remain local.
-See [publication contents and privacy](../docs/PUBLICATION.md).
+## Retention
+
+Keep detailed timing and diagnostic records for the current baseline. Older
+studies retain reports, metrics and request observations, command templates,
+artifact hashes, selected-kernel evidence, and numerical/state checks. Remove
+duplicate process logs and per-step captures once summaries support the
+conclusions; a resolved issue normally needs a compact explanation and useful
+reproducer rather than every investigation log.
+
+The October 5 backend and packing studies retain all request observations,
+including per-token latency arrays, in their `requests.json` files. Their
+duplicate `timings/` trees have been removed. The older decode profile keeps
+YNNPACK category/layer accounting, native per-layer stage totals and native
+operator-category totals; individual operator/callback tables have been pruned.
+The initial HF studies retain per-request summaries and run settings, without
+per-step timing logs. Original detailed captures remain accessible in the
+[earlier public snapshot](https://github.com/snnn/ynnpack-model-lab/tree/fa6e613f5513c61a9027659b4c5a3fe247e3780c/results).
+
+The October 7 baseline, historical host/native comparisons, unresolved Oryon
+INT4 selection and HF precision/KV evidence, and E4B preparation-stack
+reproduction remain available. A local patch or workaround does not establish
+that the corresponding upstream issue is resolved.
+
+Model payloads, raw profiles, machine logs, private compiler material, and
+temporary PR-review experiments remain local. See
+[publication contents and privacy](../docs/PUBLICATION.md).
