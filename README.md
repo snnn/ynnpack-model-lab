@@ -88,6 +88,11 @@ transposes remain available to backend packing. Building and running these
 artifacts needs no compiler; model weights, quantization profiles, and invocation
 flags are the same as the documented controls.
 
+The [October 8 builder refresh](results/2026-10-08-builder-refresh/README.md)
+regenerates all seven profiles and their standalone runtime helpers, extends
+operation labels to E4B and HF diagnostics, and checks construction and numerical
+parity. Query-head grouping and fused KV conversion/packing remain follow-up work.
+
 The [original E2B measurements](docs/MEASUREMENTS.md) include per-request timings,
 portable command records, artifact hashes, and sampled kernel summaries in
 `results/2026-10-02/`. The comparison controls are external preserved artifacts;

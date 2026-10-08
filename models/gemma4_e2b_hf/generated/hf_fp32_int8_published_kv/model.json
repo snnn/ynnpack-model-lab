@@ -10,9 +10,13 @@
         "gemma4_prefill.cc",
         "gemma4_prefill_DefineValues_0.cc",
         "gemma4_prefill_DefineValues_1.cc",
-        "gemma4_prefill_DefineValuesToLayer4_2.cc",
-        "gemma4_prefill_Layer5ToLayer11_3.cc",
-        "gemma4_prefill_Layer12ToLayer14_4.cc"
+        "gemma4_prefill_BindInvocationToLayer1_2.cc",
+        "gemma4_prefill_Layer2ToLayer3_3.cc",
+        "gemma4_prefill_Layer4ToLayer5_4.cc",
+        "gemma4_prefill_Layer6ToLayer7_5.cc",
+        "gemma4_prefill_Layer8ToLayer9_6.cc",
+        "gemma4_prefill_Layer10ToLayer11_7.cc",
+        "gemma4_prefill_Layer12ToLayer14_8.cc"
       ]
     },
     {
@@ -26,11 +30,20 @@
         "gemma4_decode_DefineValues_2.cc",
         "gemma4_decode_DefineValues_3.cc",
         "gemma4_decode_DefineValuesToLayer0_4.cc",
-        "gemma4_decode_Layer1ToLayer7_5.cc",
-        "gemma4_decode_Layer8ToLayer14_6.cc",
-        "gemma4_decode_Layer15ToLayer23_7.cc",
-        "gemma4_decode_Layer24ToLayer32_8.cc",
-        "gemma4_decode_Layer33ToFinalNormAndHead_9.cc"
+        "gemma4_decode_Layer1ToLayer2_5.cc",
+        "gemma4_decode_Layer3ToLayer4_6.cc",
+        "gemma4_decode_Layer5ToLayer6_7.cc",
+        "gemma4_decode_Layer7ToLayer8_8.cc",
+        "gemma4_decode_Layer9ToLayer10_9.cc",
+        "gemma4_decode_Layer11ToLayer12_10.cc",
+        "gemma4_decode_Layer13ToLayer14_11.cc",
+        "gemma4_decode_Layer15ToLayer17_12.cc",
+        "gemma4_decode_Layer18ToLayer20_13.cc",
+        "gemma4_decode_Layer21ToLayer23_14.cc",
+        "gemma4_decode_Layer24ToLayer26_15.cc",
+        "gemma4_decode_Layer27ToLayer29_16.cc",
+        "gemma4_decode_Layer30ToLayer32_17.cc",
+        "gemma4_decode_Layer33ToFinalNormAndHead_18.cc"
       ]
     }
   ],

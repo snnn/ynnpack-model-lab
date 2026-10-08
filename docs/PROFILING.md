@@ -21,9 +21,11 @@ python3 tools/analyze_execution_profile.py \
 
 Generated construction functions are setup functions. They do not execute a
 layer. Generated operation labels instead associate authored scopes and inputs
-with backend values. The checked-in E2B builders contain these labels. The
-generic exporter can emit them for other models; builders without labels still
-run, with explicit unattributed profiling entries.
+with backend values. The checked-in E2B, E4B, and all five HF profile builders
+contain these labels. Builders without labels still run, with explicit
+unattributed profiling entries. The
+[October 8 refresh](../results/2026-10-08-builder-refresh/README.md) adds labels to
+the E4B and HF artifacts while preserving their computation and state contracts.
 
 The adapter associates optimized backend functions with those labels before
 Slinky recycles symbol IDs. It tags diagnostic call names, preserving Slinky's

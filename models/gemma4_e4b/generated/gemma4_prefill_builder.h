@@ -42,6 +42,7 @@ LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart19(Context& ctx);
 LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart20(Context& ctx);
 LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart21(Context& ctx);
 LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart22(Context& ctx);
+LAB_YNN_BUILDER_NOINLINE void BuildDefineValuesPart23(Context& ctx);
 LAB_YNN_BUILDER_NOINLINE void BuildDefineValues(Context& ctx);
 LAB_YNN_BUILDER_NOINLINE void BuildBindInvocation(Context& ctx);
 LAB_YNN_BUILDER_NOINLINE void BuildEmbedding(Context& ctx);

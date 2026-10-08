@@ -48,10 +48,10 @@ wrappers. Functions construct one shared graph per phase, preserving operation
 order and shared values. They introduce no per-layer host execution calls,
 backend fusion boundaries, or separate memory plans.
 
-E2B builders also emit presentation-only operation labels for execution
-profiling. The adapter carries these through optimized backend lowering and
-times scheduled callbacks; see [PROFILING.md](PROFILING.md). Labels do not create
-execution boundaries or change intermediate output visibility.
+All retained E2B, E4B, and HF builders emit presentation-only operation labels
+for execution profiling. The adapter carries these through optimized backend
+lowering and times scheduled callbacks; see [PROFILING.md](PROFILING.md). Labels
+do not create execution boundaries or change intermediate output visibility.
 
 Generated construction sources use `-O2` by default and prevent helper inlining.
 `-DLAB_BUILDER_OPTIMIZATION=0`, `1`, `2`, or `3` controls that compilation level
@@ -64,6 +64,14 @@ Source generation is separate from backend preparation. The executable still
 constructs YNNPACK graphs, packs weights, and prepares Slinky pipelines. Prefill
 and decode share source storage and persistent state, while backend packing and
 scratch are currently prepared independently.
+
+The [October 8 builder refresh](../results/2026-10-08-builder-refresh/README.md)
+records construction and output parity for all seven profiles. Helper boundaries
+count profiling statements toward the source-size limits. The synchronized
+adapter also contains standalone FP32 SDPA and packed weight-only linear
+capability helpers. The retained models continue to use their existing attention
+and FC implementations; these helpers do not enable grouped query-head rows or
+fused INT8 KV conversion/packing.
 
 ## Build an alternative artifact set
 
