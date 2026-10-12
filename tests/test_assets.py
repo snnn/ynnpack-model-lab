@@ -3,28 +3,34 @@
 import io
 import hashlib
 import json
+import os
+import subprocess
 from pathlib import Path
-import re
 import unittest
 
 from tools.prepare_gemma4 import extract, relative_path
 
 
 class AssetRecipesTest(unittest.TestCase):
-    def test_checked_in_builders_have_complete_recipes(self):
+    def test_checked_in_plans_have_complete_recipes(self):
         root = Path(__file__).resolve().parents[1]
         for variant in ("e2b", "e4b"):
             model = root / ("models/gemma4_" + variant)
             recipe = json.loads((model / "asset_recipe.json").read_text())
             generated = model / "generated"
             metadata = json.loads((generated / "model.json").read_text())
-            sources = {name for graph in metadata["graphs"] for name in graph["builder_sources"]}
-            self.assertEqual(sources, {p.name for p in generated.glob("*.cc")})
             references = set()
-            for source in [*generated.glob("*.h"), *(generated / name for name in sources)]:
-                references.update(
-                    re.findall(r'"(@parameters/[0-9a-f]{64}\.bin)"', source.read_text())
-                )
+            for phase in metadata['execution']['phases'].values():
+                plan = generated / phase['file']
+                self.assertEqual(hashlib.sha256(plan.read_bytes()).hexdigest(), phase['sha256'])
+                tool = os.environ.get('YNNPACK_PLAN_TOOL', str(root / 'build/ynn-plan'))
+                report = json.loads(subprocess.check_output([tool, 'inspect', str(plan)], text=True))
+                for data in report['constants']:
+                    if data['path'].startswith('@parameters/'):
+                        references.add(data['path'])
+                        self.assertEqual(recipe['files'][data['path']], data['sha256'])
+                        self.assertEqual(recipe['recipes'][data['sha256']]['bytes'], data['bytes'])
+            self.assertFalse(list(generated.glob('*.cc')))
             self.assertTrue(references)
             self.assertEqual(references - recipe["files"].keys(), set())
             for name in references:

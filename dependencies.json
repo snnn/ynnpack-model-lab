@@ -21,14 +21,6 @@
     "sha256": "fe2aa43254838a2eb5658d1742696473a1d834a57f2a0b38d533346bcd212482"
   },
   {
-    "name": "tokenizers-cpp",
-    "repository": "mlc-ai/tokenizers-cpp",
-    "revision": "c586c52f93f7b060753bd2388eb96a105cb7374d",
-    "url": "https://codeload.github.com/mlc-ai/tokenizers-cpp/zip/c586c52f93f7b060753bd2388eb96a105cb7374d",
-    "sha256": "4c217141592091601a4d818999a5ea92f1a3ff61a8ae1d00e9d16d943bb5a248",
-    "feature": "tokenizers"
-  },
-  {
     "name": "sentencepiece",
     "repository": "google/sentencepiece",
     "revision": "e0f0f966959108415183d6cbe7a9051ca8bc2da1",

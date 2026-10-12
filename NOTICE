@@ -14,13 +14,16 @@ upstream LICENSE files remain in the corresponding dependency directories.
 Patches identify their upstream files and are distributed with this project.
 The XNNPACK BSD license is also retained in third_party/XNNPACK-LICENSE.
 
-Native tokenization uses fetched mlc-ai/tokenizers-cpp (Apache-2.0), Hugging
-Face tokenizers (Apache-2.0), SentencePiece (Apache-2.0), and Abseil (Apache-2.0).
-Their original notices and LICENSE files remain in the bootstrapped sources
-and Cargo cache. SentencePiece retains its embedded protobuf-lite notices.
-Cargo dependency versions and checksums are recorded in
-patches/tokenizers.Cargo.lock. The tokenizer FFI and offline-build patches
-retain upstream file provenance.
+Text tokenization uses Hugging Face tokenizers (Apache-2.0) directly in Rust,
+and fetched SentencePiece (Apache-2.0) and Abseil (Apache-2.0) through a small
+local C ABI. Original notices and LICENSE files remain in the bootstrapped
+sources and Cargo cache. SentencePiece retains its embedded protobuf-lite
+notices. The offline SentencePiece patch retains upstream file provenance.
+
+The Rust runtime uses fetched tokenizers, serde, serde_json, sha2, and their
+transitive dependencies. Versions and checksums are recorded in rust/Cargo.lock;
+original licenses and notices remain in the Cargo cache. These sources are not
+vendored.
 
 Model weights are not distributed. Their use is governed by the model
 publisher's terms, independently of this project's source-code license.

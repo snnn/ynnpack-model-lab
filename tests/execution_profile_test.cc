@@ -55,6 +55,13 @@ int main() {
         origins.insert(call.origins.begin(), call.origins.end());
       Require(origins == std::set<size_t>({0, 1}),
               "lost or incorrect fused operation origins");
+      std::ostringstream prefill_trace;
+      profile->BeginStep("prefill", 0, 0, 509, 4, true);
+      graph.Run();
+      profile->EndStep(prefill_trace);
+      Require(prefill_trace.str().find("\"phase\":\"prefill\"") != std::string::npos &&
+                  prefill_trace.str().find("\"history\":513,\"rows\":4") != std::string::npos,
+              "prefill history must include all real query rows");
       profile->BeginStep("failure", 0, 3, 3);
       profile->EndStep(trace, false);
       Require(trace.str().find("\"complete\":false") != std::string::npos,

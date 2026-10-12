@@ -1,0 +1,41 @@
+# Copyright 2026 @snnn.
+# SPDX-License-Identifier: Apache-2.0
+[package]
+name = "ynnpack-lab"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.87"
+license = "Apache-2.0"
+publish = false
+
+[lib]
+crate-type = ["rlib", "staticlib"]
+
+[[bin]]
+name = "ynn-plan"
+path = "src/bin/ynn-plan.rs"
+required-features = ["plan-tool"]
+
+[features]
+default = []
+vision = []
+gemma = ["input-frontend"]
+input-frontend = []
+tokenizers = ["dep:tokenizers"]
+tokenizer-probe = ["input-frontend"]
+frontend-tests = ["input-frontend"]
+native-tests = []
+fixture = []
+plan-tool = []
+
+[dependencies]
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.151"
+sha2 = "=0.10.9"
+tokenizers = { version = "=0.22.2", default-features = false, features = ["onig"], optional = true }
+
+[lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+
+[profile.release]
+debug = 1

@@ -16,15 +16,7 @@
 #include <stdexcept>
 #include <vector>
 
-#include "c2048_h1_w512.h"
-#include "c2048_h1_w512_q4.h"
-#include "c2048_h2_w0.h"
-#include "c2048_h2_w1.h"
-#include "c2048_h2_w512.h"
-#include "c2048_h2_w512_q8.h"
-#include "c8448_h2_w0_q8.h"
-#include "c8448_h2_w512.h"
-#include "c8448_h4_w512.h"
+#include "runtime/rust/bridge_internal.h"
 
 namespace {
 void Expect(bool ok, const std::string& message) {
@@ -50,9 +42,12 @@ void Test(std::unique_ptr<lab_ynn::Graph> g, int c, int heads, int window,
   const std::vector<std::pair<int, int>> requests = {
       {0, 1},         {0, 128}, {128, 17}, {511, 128}, {512, 128}, {1024, 1},
       {c - 129, 128}, {1, 2},   {0, 17},   {512, 1},   {513, 127}};
-  auto key_state = g->NewResourceState("kcache", k.data(), k.size(), {1,size_t(heads),size_t(c),8});
-  auto value_state = g->NewResourceState("vcache", v.data(), v.size(), {1,size_t(heads),size_t(c),8});
-  auto only_state = g->NewResourceState("onlycache", only.data(), only.size(), {1,size_t(heads),size_t(c),8});
+  auto key_state = g->NewResourceState("kcache", k.data(), k.size(),
+                                       {1, size_t(heads), size_t(c), 8});
+  auto value_state = g->NewResourceState("vcache", v.data(), v.size(),
+                                         {1, size_t(heads), size_t(c), 8});
+  auto only_state = g->NewResourceState("onlycache", only.data(), only.size(),
+                                        {1, size_t(heads), size_t(c), 8});
   double max_error = 0;
   for (auto [p, t] : requests) {
     for (int h = 0; h < heads; ++h)
@@ -68,7 +63,9 @@ void Test(std::unique_ptr<lab_ynn::Graph> g, int c, int heads, int window,
           only[pos] = int8_t(67);
         }
     if (!(p == 128 && t == 17)) {
-      key_state->ImportPrefix(p); value_state->ImportPrefix(p); only_state->ImportPrefix(p);
+      key_state->ImportPrefix(p);
+      value_state->ImportPrefix(p);
+      only_state->ImportPrefix(p);
     }
     auto kbefore = k, vbefore = v, obefore = only;
     for (int h = 0; h < query_heads; ++h)
@@ -176,8 +173,11 @@ void Test(std::unique_ptr<lab_ynn::Graph> g, int c, int heads, int window,
     Expect(rejected && before == k && before_v == v && before_only == only,
            "invalid request wrote cache");
   }
-  key_state->ImportPrefix(512); value_state->ImportPrefix(512); only_state->ImportPrefix(512);
-  g->BindResource("kcache", key_state); g->BindResource("vcache", value_state);
+  key_state->ImportPrefix(512);
+  value_state->ImportPrefix(512);
+  only_state->ImportPrefix(512);
+  g->BindResource("kcache", key_state);
+  g->BindResource("vcache", value_state);
   g->BindResource("onlycache", only_state);
   // Shared shape symbols and storage ownership are real runtime contracts.
   g->ScalarValue("position", 512);
@@ -188,8 +188,10 @@ void Test(std::unique_ptr<lab_ynn::Graph> g, int c, int heads, int window,
     auto before = k, before_v = v, before_only = only;
     g->Bind("fresh", fresh.data(), fresh.size() * sizeof(float),
             {1, size_t(heads), size_t(alias ? 1 : 2), 8});
-    if (alias) g->BindResource("vcache", g->NewResourceState("vcache", k.data(), k.size(),
-        {1,size_t(heads),size_t(c),8},512));
+    if (alias)
+      g->BindResource(
+          "vcache", g->NewResourceState("vcache", k.data(), k.size(),
+                                        {1, size_t(heads), size_t(c), 8}, 512));
     bool rejected = false;
     try {
       g->Run();
@@ -245,36 +247,14 @@ void Test(std::unique_ptr<lab_ynn::Graph> g, int c, int heads, int window,
 }
 }  // namespace
 
-int main(int argc, char** argv) {
-  if (argc != 2) {
-    std::cerr << "usage: state_views_test EXISTING_OUTPUT_DIRECTORY\n";
-    return 2;
-  }
-  try {
-    for (int threads : {1, 4}) {
-      Test(Build_c2048_h2_w512_q8(), 2048, 2, 512, threads,
-           std::string(argv[1]) + "/gqa2-local.ir.txt", 8);
-      Test(Build_c8448_h2_w0_q8(), 8448, 2, 0, threads,
-           std::string(argv[1]) + "/gqa2-global.ir.txt", 8);
-      auto run = [&](std::unique_ptr<lab_ynn::Graph> g, int c, int h, int w) {
-        Test(std::move(g), c, h, w, threads,
-             std::string(argv[1]) + "/c" + std::to_string(c) + "h" +
-                 std::to_string(h) + "w" + std::to_string(w) + "t" +
-                 std::to_string(threads) + ".ir.txt");
-      };
-      run(Build_c2048_h1_w512(), 2048, 1, 512);
-      run(Build_c2048_h2_w512(), 2048, 2, 512);
-      run(Build_c8448_h2_w512(), 8448, 2, 512);
-      run(Build_c8448_h4_w512(), 8448, 4, 512);
-      run(Build_c2048_h2_w0(), 2048, 2, 0);
-      run(Build_c2048_h2_w1(), 2048, 2, 1);
-      Test(
-          Build_c2048_h1_w512_q4(), 2048, 1, 512, threads,
-          std::string(argv[1]) + "/gqa_t" + std::to_string(threads) + ".ir.txt",
-          4);
-    }
-  } catch (const std::exception& e) {
-    std::cerr << e.what() << '\n';
-    return 1;
-  }
+extern "C" int32_t lab_test_state_views(LabGraph* handle, int32_t capacity,
+                                        int32_t heads, int32_t window,
+                                        int32_t threads, const char* output,
+                                        int32_t query_heads,
+                                        LabError* error) noexcept {
+  return LabCatch(error, [&] {
+    LabRequire(handle && handle->graph && output, "Invalid state fixture");
+    Test(std::move(handle->graph), capacity, heads, window, threads, output,
+         query_heads);
+  });
 }

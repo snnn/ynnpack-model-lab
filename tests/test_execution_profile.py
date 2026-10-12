@@ -126,6 +126,32 @@ class ProfileAccountingTest(unittest.TestCase):
             # The remaining 20 ns of host collection is excluded.
             self.assertEqual(intervals, [(100, 130)])
 
+    def test_integer_attention_role_and_conversion_accounting(self):
+        operations = {
+            0: {"scope": "Layer0/Attention/Sdpa/PV", "kind": "ynn.dynamic_matmul",
+                "input_names": ["grouped_rows", "value_history"]},
+            1: {"scope": "Layer0/Attention/Sdpa/QK", "kind": "ynn.dynamic_matmul",
+                "input_names": ["grouped_rows", "key_history"]},
+        }
+        self.assertEqual(attention_category({"name": "dot", "origins": [0]}, operations), "pv")
+        self.assertEqual(attention_category({"name": "dot", "origins": [1]}, operations), "qk")
+        self.assertEqual(attention_category({"name": "dequantize_dot", "origins": [0]}, operations),
+                         "accumulator_conversion")
+        self.assertEqual(attention_category({"name": "quantize_uint8", "origins": [0]}, operations),
+                         "lhs_quantization")
+        self.assertEqual(attention_category({"name": "reduce op=reduce_sum", "origins": [1],
+                                             "backend_input_types": ["int8"]}, operations), "rhs_sum")
+        self.assertEqual(attention_category({"name": "copy", "origins": [0]}, operations),
+                         "intermediate_copy")
+
+    def test_grouped_fp32_without_explicit_role_is_combined(self):
+        operations = {
+            0: {"scope": "Layer0/Attention/Sdpa", "kind": "core.matmul",
+                "input_names": ["__ynn/row_group78/rows", "value_float"]},
+        }
+        call = {"name": "dot num_k_dims=1", "origins": [0]}
+        self.assertEqual(attention_category(call, operations), "qk_pv")
+
 
 if __name__ == "__main__":
     unittest.main()

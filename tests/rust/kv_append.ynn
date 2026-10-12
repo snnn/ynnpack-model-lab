@@ -1,0 +1,16 @@
+# Copyright 2026 @snnn.
+# SPDX-License-Identifier: Apache-2.0
+ynn 1 resource_contract=1 completion_contract=1 profiling=auto {
+    dim T = axis(new_k, 2) in 1..=128;
+    dim p = parameter("position") in 0..=9223372036854775807;
+    dim C = instance("capacity") in 1..=2048;
+    input new_k: fp32[1, 2, T, 8];
+    @resource(name="K", axis=2, encoding=encoding(dtype=fp32, axis=none, scales=[], zero_points=[]))
+    state K: fp32[1, 2, C, 8];
+    require committed(K) == p;
+    let end = checked(p + T);
+    require end <= C;
+    let K1 = append(K, new_k, axis=2, position=p, rows=T);
+    let history = view(K1, axis=2, begin=0, end=end);
+    output K1; output history;
+}

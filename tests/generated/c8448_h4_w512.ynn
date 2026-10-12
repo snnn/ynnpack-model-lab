@@ -1,0 +1,78 @@
+ynn 1 resource_contract=1 completion_contract=1 profiling=auto {
+  weight __ynn_op12_beta: storage<fp32[1]> = asset(a0);
+  weight __ynn_op12_one: storage<fp32[1]> = asset(a5);
+  weight weight: storage<fp32[8, 8]> = asset(a29);
+  let end: index = add(0, (1 * s1), (1 * position));
+  let begin: index = max(0, (-511 + (1 * position)));
+  dim s1 = axis(q, 2) in 1..=128;
+  dim position = parameter("position") in 0..=8448;
+  input q: fp32[1, 4, s1, 8];
+  input fresh: fp32[1, 4, s1, 8];
+  @shape() state kcache: int8[1, 4, 8448, 8];
+  @shape() state vcache: int8[1, 4, 8448, 8];
+  @shape() state onlycache: int8[1, 4, 8448, 8];
+  require committed(kcache) == position;
+  require committed(onlycache) == position;
+  require committed(vcache) == position;
+  @guard(message="symbol 1 lower bound", mode="bounds") require 1 <= s1;
+  @guard(message="symbol 1 upper bound", mode="bounds") require s1 <= 128;
+  @guard(message="symbol 2 lower bound", mode="bounds") require 0 <= position;
+  @guard(message="symbol 2 upper bound", mode="bounds") require position <= 8448;
+  @guard(message="append capacity", mode="ordinary") require end <= 8448;
+  @guard(message="view interval", mode="ordinary") require begin <= end;
+  @guard(message="view reads uninitialized history", mode="ordinary") require end <= end;
+  @guard(message="consumer reads uninitialized resource capacity", mode="ordinary") require add(end, (-1 * begin), begin) <= end;
+  let knew: int8[1, 4, s1, 8] = quantize(fresh, scale=0.03125, zero=0);
+  let vsrc: storage<fp32[1, 4, 0, 8]> = add(fresh, fresh);
+  let vnew: int8[1, 4, s1, 8] = quantize(vsrc, scale=0.03125, zero=0);
+  let kupdated: storage<int8[1, 4, 8448, 8]> = append(kcache, knew, axis=2, position=position, rows=s1);
+  let vupdated: storage<int8[1, 4, 8448, 8]> = append(vcache, vnew, axis=2, position=position, rows=s1);
+  let onlyupdated: storage<int8[1, 4, 8448, 8]> = append(onlycache, knew, axis=2, position=position, rows=s1);
+  let kview: storage<int8[1, 4, 0, 8]> = view(kupdated, axis=2, begin=begin, end=end);
+  let vview: storage<int8[1, 4, 0, 8]> = view(vupdated, axis=2, begin=begin, end=end);
+  let kf: storage<fp32[1, 4, 0, 8]> = dequantize(kview, scale=0.03125, zero=0);
+  let vf: storage<fp32[1, 4, 0, 8]> = dequantize(vview, scale=0.03125, zero=0);
+  let scores: storage<fp32[1, 4, 0, 0]> = matmul(q, kf, adjoint_lhs=false, adjoint_rhs=true);
+  let masked: storage<fp32[1, 4, 0, 0]> = mask(scores, position=position, begin=begin, window=512, scheduled=true);
+  let __ynn_op12_scaled: storage<fp32[1, 4, 0, 0]> = mul(masked, __ynn_op12_beta);
+  let __ynn_op12_max: storage<fp32[1, 4, 0, 1]> = reduce_max(__ynn_op12_scaled, axes=[-1], keep_dims=true);
+  let __ynn_op12_centered: storage<fp32[1, 4, 0, 0]> = sub(__ynn_op12_scaled, __ynn_op12_max);
+  let __ynn_op12_exp: storage<fp32[1, 4, 0, 0]> = exp(__ynn_op12_centered);
+  let __ynn_op12_sum: storage<fp32[1, 4, 0, 1]> = reduce_sum(__ynn_op12_exp, axes=[-1], keep_dims=true);
+  let __ynn_op12_inverse: storage<fp32[1, 4, 0, 1]> = div(__ynn_op12_one, __ynn_op12_sum);
+  let probs: storage<fp32[1, 4, 0, 0]> = mul(__ynn_op12_exp, __ynn_op12_inverse);
+  let context: storage<fp32[1, 4, 0, 8]> = matmul(probs, vf, adjoint_lhs=false, adjoint_rhs=false);
+  let projected: storage<fp32[1, 4, 0, 8]> = matmul(q, weight, adjoint_lhs=false, adjoint_rhs=false);
+  let result: fp32[1, 4, s1, 8] = add(context, projected);
+
+  output knew;
+  output kupdated;
+  output onlyupdated;
+  output result;
+  output vnew;
+  output vupdated;
+
+  metadata {
+    order [
+      __ynn_op12_beta, __ynn_op12_centered, __ynn_op12_exp, __ynn_op12_inverse, __ynn_op12_max, __ynn_op12_one,
+      __ynn_op12_scaled, __ynn_op12_sum, context, fresh, kcache, kf, knew, kupdated, kview, masked, onlycache, onlyupdated,
+      probs, projected, q, result, scores, vcache, vf, vnew, vsrc, vupdated, vview, weight,
+    ];
+    name __ynn_op12_beta = "__ynn/op12/beta";
+    asset a0 = asset(path="@parameters/948945eecf4a060f48a79e9fadcd501373212c7f5be4fa5ac1ac216f2469c043.bin", bytes=4, sha256="948945eecf4a060f48a79e9fadcd501373212c7f5be4fa5ac1ac216f2469c043");
+    name __ynn_op12_centered = "__ynn/op12/centered";
+    name __ynn_op12_exp = "__ynn/op12/exp";
+    name __ynn_op12_inverse = "__ynn/op12/inverse";
+    name __ynn_op12_max = "__ynn/op12/max";
+    name __ynn_op12_one = "__ynn/op12/one";
+    asset a5 = asset(path="@parameters/e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c.bin", bytes=4, sha256="e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c");
+    name __ynn_op12_scaled = "__ynn/op12/scaled";
+    name __ynn_op12_sum = "__ynn/op12/sum";
+    asset a29 = asset(path="@parameters/bd6d006127d2e821be8d68c82f774b26ba70c0d39abaed90fcd33b5ddc6f4314.bin", bytes=256, sha256="bd6d006127d2e821be8d68c82f774b26ba70c0d39abaed90fcd33b5ddc6f4314");
+    symbol s1 = 1;
+    symbol position = 2;
+    resource kcache = resource(name="kcache", axis=2, encoding=encoding(dtype=int8, axis=-1, scales=[0.03125], zero_points=[0]));
+    resource onlycache = resource(name="onlycache", axis=2, encoding=encoding(dtype=int8, axis=-1, scales=[0.03125], zero_points=[0]));
+    resource vcache = resource(name="vcache", axis=2, encoding=encoding(dtype=int8, axis=-1, scales=[0.03125], zero_points=[0]));
+  }
+}

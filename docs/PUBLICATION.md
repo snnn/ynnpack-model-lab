@@ -4,15 +4,16 @@
 
 Publish enough source and evidence for XNNPACK/YNNPACK engineers to run the
 workloads, inspect the performance gap, and reproduce backend limitations.
-The [performance investigation guide](PERFORMANCE_GAPS.md) is the starting
-point; the [result index](../results/README.md) identifies its supporting data.
+The [documentation index](README.md) lists usage and design references;
+the [result index](../results/README.md) identifies published evidence.
+Keep local investigation notes and captures out of source changes.
 
 ## Source and evidence to include
 
 | Contents | Purpose |
 | --- | --- |
 | CMake files, pinned dependencies, and public backend/tokenizer patches | Rebuild the standalone Linux/Android workloads with known dependency changes. |
-| Generated builder headers, sources, CMake manifests, model metadata, and runtime helpers | Execute the full models and their symbolic state contracts without a private compiler. Include matching source files for every declaration header. |
+| `.ynn` construction plans, model metadata, Rust runners, and native runtime helpers | Execute the full models and their symbolic state contracts without a private compiler. Include both phases and their matching metadata hashes. |
 | Public architecture/asset readers, hash-verified extraction recipes, and manifests | Obtain the same source weights, scales, and precision without distributing model payloads. |
 | Token-ID fixtures, native input/tokenizer tools, and tiny synthetic tokenizer fixtures | Compare the same IDs and construct controlled prompt lengths. Qwen recipes currently cover tokenization only. |
 | Independent arithmetic/state tests and focused backend bug reproductions | Establish what is correct and isolate failures, including E4B preparation depth and BF16 rounding. |
@@ -20,9 +21,10 @@ point; the [result index](../results/README.md) identifies its supporting data.
 | Numerical and capacity-consistency summaries | Distinguish backend arithmetic differences from changes to logically identical work. |
 | LICENSE, NOTICE, and retained third-party notices | Preserve ownership and licensing, including required copyright attribution. |
 
-Keep the HF arithmetic/precision audits as supporting experiments. Lead readers
-to the published-bundle E2B/E4B comparisons first. Do not promote a correctness
-run with dumps enabled into a latency baseline.
+Group evidence by model, source/numerical profile and device so readers can
+select the comparison relevant to their workload. Keep arithmetic/precision
+audits with those comparisons. A correctness run with dumps enabled must not
+be presented as a latency baseline.
 
 Retain detailed records for the current baseline and compact evidence for older
 studies. Remove redundant process/per-step logs and individual operator tables
@@ -50,7 +52,7 @@ their patches, reports, profiles, and timings.
 Private graph authors, compiler sources/imports, binding patches, installation
 instructions, raw compiler reports, and private provenance stay in their
 separate repository. Local agent guidance is excluded as well. Standalone
-generated C++ and its notices can be published; see [AUTHORING.md](AUTHORING.md).
+`.ynn` plans and runtime helpers retain their notices; see [AUTHORING.md](AUTHORING.md).
 
 ## Portable measurement records
 
@@ -94,7 +96,7 @@ Missing dependencies fail with setup instructions instead of skipping the check.
 The publication check scans tracked files and unignored candidate files. It
 flags common host paths, device identifiers, contact information, private
 compiler provenance, and accidentally included local artifacts. CI runs it
-before bootstrapping C++ dependencies. It does not inspect ignored captures or
+before bootstrapping runtime dependencies. It does not inspect ignored captures or
 change file contents. Review prose, arbitrary text fixtures, filenames, and
 new record fields for information the pattern checks cannot recognize.
 

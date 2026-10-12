@@ -28,7 +28,7 @@ def main():
     parser.add_argument("--hf-bf16", action="store_true",
                         help="Apply BF16 precision fixes; use a separate dependency directory")
     parser.add_argument("--no-tokenizers", action="store_true",
-                        help="Skip tokenizer sources/crates for LAB_ENABLE_TOKENIZERS=OFF")
+                        help="Skip SentencePiece/Abseil sources for LAB_ENABLE_TOKENIZERS=OFF")
     args = parser.parse_args()
     args.directory.mkdir(parents=True, exist_ok=True)
     for dep in json.loads((ROOT / "dependencies.json").read_text()):
@@ -101,15 +101,10 @@ def main():
             )
         print(f"Applied: {patch.name}", flush=True)
     if not args.no_tokenizers:
-        source = args.directory / "tokenizers-cpp"
-        extra_patches = [
-            (source, patch)
-            for patch in sorted((ROOT / "patches").glob("tokenizers-*.patch"))
-        ]
-        extra_patches.append((
+        extra_patches = [(
             args.directory / "sentencepiece",
             ROOT / "patches/sentencepiece-offline-abseil.patch",
-        ))
+        )]
         for source, patch in extra_patches:
             check = subprocess.run(
                 ["git", "apply", "--check", str(patch)],
@@ -125,24 +120,14 @@ def main():
                     cwd=source, check=True, env=env,
                 )
             print(f"Applied: {patch.name}", flush=True)
-        lock = ROOT / "patches/tokenizers.Cargo.lock"
-        source = args.directory / "tokenizers-cpp"
-        target = source / "rust/Cargo.lock"
-        if target.exists() and target.read_bytes() != lock.read_bytes():
-            raise RuntimeError(
-                "Tokenizer Cargo.lock differs; choose a fresh dependency directory"
-            )
-        shutil.copyfile(lock, target)
-        if not shutil.which("cargo"):
-            raise RuntimeError(
-                "Rust/Cargo is required; see README.md or use --no-tokenizers"
-            )
-        env = {**os.environ, "CARGO_HOME": str(args.directory.resolve() / "cargo")}
-        subprocess.run(
-            ["cargo", "fetch", "--locked", "--manifest-path",
-             str((source / "rust/Cargo.toml").resolve())],
-            check=True, env=env,
-        )
+    if not shutil.which("cargo"):
+        raise RuntimeError("Rust/Cargo is required for the model runners")
+    subprocess.run(
+        ["cargo", "fetch", "--locked", "--manifest-path",
+         str(ROOT / "rust/Cargo.toml")],
+        check=True,
+        env={**os.environ, "CARGO_HOME": str(args.directory.resolve() / "cargo")},
+    )
 
 
 

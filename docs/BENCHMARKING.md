@@ -4,20 +4,34 @@ Use the same token IDs, prompt lengths, forced continuations, thread counts,
 affinity, and capacities when comparing runs. Keep weights and activation/KV
 quantization fixed unless changing them is the explicit experiment.
 
-The C++ runner also accepts text and corpus inputs; see
+The Rust Gemma runners also accept text and corpus inputs; see
 [TOKENIZERS.md](TOKENIZERS.md). Every run writes `resolved_cases.tsv` and
 `frontend.json`, including tokenizer/input identities and resolved counts.
 Replay the exported TSV to compare the exact IDs across frontends or runtimes.
 
-The native C++ runners, Python command-matrix orchestration, and measurement
-analyzers form a small benchmark harness. CTest covers arithmetic, state and
+Token-ID fixtures have three tab-separated columns: case name, comma-separated
+prompt IDs, and comma-separated forced continuation IDs (`-` for none). The last
+prompt token runs through decode for first logits; subsequent tokens are
+teacher-forced. This measures controlled execution, not free-generation quality.
+
+The Rust runners with native kernels, Python command-matrix orchestration, and
+measurement analyzers form a small benchmark harness. CTest covers arithmetic, state and
 harness behavior without weights. Full-model performance checks run explicitly
 on the selected device with its model assets and recorded conditions.
 
 Start with prompts 17, 128, and 1024, capacities 2048/8448, and one/four threads.
-The checked-in performance TSV has 32 forced continuation tokens per prompt.
-Use one warmup and three measured repetitions initially. For chunk-boundary
-correctness, use `correctness.tsv` (prompts 1/128/129/1024, two continuations).
+The checked-in performance fixtures have different continuation counts:
+
+| Fixture | Forced continuation tokens per prompt |
+| --- | ---: |
+| `models/gemma4_e2b/fixtures/performance.tsv` | 32 |
+| `models/gemma4_e4b/fixtures/performance.tsv` | 16 |
+| `models/gemma4_e2b_hf/fixtures/performance.tsv` | 8 |
+
+Use identical counts for each paired comparison, with one warmup and three
+measured repetitions initially. For chunk-boundary correctness, use the model's
+`correctness.tsv` (two continuations; E2B prompts 1/128/129/1024, with additional
+short-chunk/window cases in E4B and HF).
 Add 130 tokens when specifically testing a short second prefix chunk: the last
 prompt token is withheld for the first full decode invocation, so 129 prompt
 tokens correspond to exactly 128 prefix rows here.
@@ -26,7 +40,7 @@ tokens correspond to exactly 128 prefix rows here.
 
 | Metric | Calculation / scope |
 | --- | --- |
-| Setup | Mapping, embedding initialization, graph construction and preparation |
+| Setup | Metadata/plan validation, constant hashing, mapping, embedding initialization, graph construction and preparation |
 | Tokenizer load/encode | Separate process frontend fields in `frontend.json`; excluded from model setup and warm TTFT |
 | Prefix throughput | `(prompt_tokens - 1) * 1000 / prefix_ms` |
 | Warm TTFT | `prefix_ms + token_ms` for step zero |
@@ -78,12 +92,13 @@ Capacity changes allocate additional storage. For E2B the exact KV increment is
 `delta_capacity * 9216` bytes; 2048 to 8448 adds 56.25 MiB. At identical logical
 history, this must not imply attention over the unused capacity. Check emitted
 pipeline extents, outputs, and timing together rather than infer work solely from
-noisy phone throughput.
+noisy phone throughput. E4B uses 28,672 KV bytes per capacity token; the same
+capacity increase adds 175 MiB.
 
 ## Collecting runs
 
-The root README provides single-process commands. Use `taskset` before the
-executable for explicit affinity; choose masks from the actual device topology,
+The [model guides](README.md#run-workloads) provide single-process commands.
+Use `taskset` before the executable for explicit affinity; choose masks from the actual device topology,
 not from another phone. Keep CPUs awake, record temperatures/battery and governor
 state, allow cooldown between processes, and run only one benchmark per device.
 Do not compare a cold/throttled trial with a warm high-frequency one.
@@ -126,9 +141,9 @@ For regressions, retain raw observations and binary/dependency/model hashes.
 For per-layer and operator execution diagnosis, see [PROFILING.md](PROFILING.md).
 Profiled timing records are diagnostic; collect unprofiled latency separately.
 Separate authoring, backend packing, kernel selection, and thermal changes before
-attributing a difference to “dynamic shapes.” The historical comparison in
-`MEASUREMENTS.md` includes different activation contracts in its static versus
-packed-dynamic rows, and is labeled accordingly.
+attributing a difference to “dynamic shapes.” The historical
+[E2B report](MEASUREMENTS.md) includes different activation
+contracts in its static versus packed-dynamic rows, and is labeled accordingly.
 
 ## Capacity invariance check
 

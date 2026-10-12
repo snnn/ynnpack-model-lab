@@ -5,15 +5,15 @@
 #include <filesystem>
 #include <fstream>
 #include <map>
+#include <stdexcept>
 #include <string>
 #include <vector>
 
-#include "runtime/options.h"
 #include "runtime/ynnpack_support.h"
 
 namespace lab {
 // Optional diagnostic outputs. They can inhibit backend fusions, so this is
-// deliberately enabled only in separate trace executables, never benchmarks.
+// enabled only for separate diagnostic invocations, never latency benchmarks.
 class ValueTrace {
  public:
   ValueTrace(lab_ynn::Graph& graph, const std::string& plan) : graph_(graph) {
@@ -80,6 +80,17 @@ class ValueTrace {
   }
 
  private:
+  static std::vector<std::string> Split(const std::string& s, char delim) {
+    std::vector<std::string> parts;
+    size_t start = 0, end;
+    while ((end = s.find(delim, start)) != std::string::npos) {
+      parts.push_back(s.substr(start, end - start));
+      start = end + 1;
+    }
+    parts.push_back(s.substr(start));
+    return parts;
+  }
+
   struct Item {
     std::string name, dtype;
   };

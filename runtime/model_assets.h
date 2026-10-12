@@ -174,6 +174,15 @@ class Embedding {
       for (int l = 0; l < layers; ++l)
         Decode(tokens[i], l * dim, dim, output[l].data() + i * dim);
   }
+  // Same arithmetic, with caller-owned allocations for the Rust runner.
+  void LookupPerLayer(const int32_t* tokens, size_t count, size_t layers,
+                      size_t dim, float* const* output) const {
+    if (layers * dim != width_)
+      throw std::invalid_argument("PLE dimensions");
+    for (size_t i = 0; i < count; ++i)
+      for (size_t l = 0; l < layers; ++l)
+        Decode(tokens[i], l * dim, dim, output[l] + i * dim);
+  }
 
  private:
   void Decode(int32_t row, size_t begin, size_t count, float* dst) const {

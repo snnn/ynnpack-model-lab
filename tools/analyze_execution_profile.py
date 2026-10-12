@@ -42,7 +42,19 @@ def classify(call, operations):
     elif "dot" in name:
         if "/Sdpa" in scope:
             names = " ".join(n for o in origins for n in o.get("input_names", []))
-            category = "attention_pv" if "Softmax" in names else "attention_qk"
+            # Grouped integer attention reshapes P before the dot. Preserve its
+            # explicit author role instead of guessing QK from that reshape's
+            # input name. Older builders retain the Softmax-name fallback.
+            pv = any(re.search(r"(?:^|/)PV(?:/|$)", s) for s in scopes)
+            qk = any(re.search(r"(?:^|/)QK(?:/|$)", s) for s in scopes)
+            if pv or "Softmax" in names:
+                category = "attention_pv"
+            elif not qk and "__ynn/row_group" in names:
+                # Legacy FP32 grouping replaced the LHS name without an
+                # explicit QK/PV scope. Keep its dot work combined.
+                category = "attention_qk_pv"
+            else:
+                category = "attention_qk"
         else:
             category = "head_fc" if "FinalNormAndHead" in scope else "fc"
             types = call.get("backend_input_types", [])
@@ -83,10 +95,22 @@ def attention_category(call, operations):
     name = call["name"].lower()
     if "pack" in name or "transpose_a" in name:
         return "packing"
+    if name == "copy" or "memcpy" in name:
+        return "intermediate_copy"
+    if name == "dequantize_dot":
+        # This callback corrects/scales an already computed accumulator.
+        return "accumulator_conversion"
     if "dot" in name:
         return classify(call, operations)[1].removeprefix("attention_")
     if name == "dequantize":
         return "dequantization"
+    integer_dot_scope = any(re.search(r"/(?:QK|PV)(?:/|$)", o["scope"]) for o in origins)
+    if integer_dot_scope:
+        if "quantize" in name or "qd8_params" in name or "reduce_min_max" in name:
+            return "lhs_quantization"
+        if "reduce_sum" in name and "int8" in call.get("backend_input_types", []):
+            return "rhs_sum"
+        return "integer_dot_other"
     return "mask_softmax_other"
 
 
@@ -170,6 +194,7 @@ def summarize_ynn(path):
             results.append({
                 "case": step["case"], "repetition": step["repetition"], "step": step["step"],
                 "position": step["position"], "history": step["history"],
+                "phase": step.get("phase", "decode"), "rows": step.get("rows", 1),
                 "wall_ms": wall_ns / 1e6,
                 "graph_run_ms": union_ns(graph_intervals) / 1e6,
                 "callback_busy_wall_ms": busy_ns / 1e6,
@@ -187,7 +212,7 @@ def summarize_ynn(path):
                            for (layer, category), events in groups.items()],
             })
     if not results:
-        raise ValueError("No measured decode steps")
+        raise ValueError("No measured execution steps")
     aggregates = defaultdict(list)
     category_aggregates = defaultdict(list)
     for result in results:

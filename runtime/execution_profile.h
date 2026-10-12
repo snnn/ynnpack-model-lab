@@ -256,8 +256,9 @@ class ExecutionProfile {
     if (!out) throw std::runtime_error("profile metadata write failed");
   }
   void BeginStep(const std::string& name, int repetition, size_t step,
-                 int position) {
+                 int position, size_t rows = 1, bool prefill = false) {
     if (active()) throw std::logic_error("profile step already active");
+    if (!rows) throw std::invalid_argument("zero profile rows");
     for (auto& slot : slots_) {
       slot->events.clear();
       slot->dropped = 0;
@@ -266,6 +267,8 @@ class ExecutionProfile {
     repetition_ = repetition;
     step_ = step;
     position_ = position;
+    rows_ = rows;
+    prefill_ = prefill;
     start_ = Now();
     active_.store(true, std::memory_order_release);
   }
@@ -277,9 +280,11 @@ class ExecutionProfile {
     for (auto& slot : slots_) dropped += slot->dropped;
     out << "{\"type\":\"step\",\"case\":" << ProfileJson(case_)
         << ",\"repetition\":" << repetition_ << ",\"step\":" << step_
-        << ",\"phase\":\"decode\",\"position\":" << position_
-        << ",\"history\":" << position_ + 1
-        << ",\"rows\":1,\"start_ns\":" << start_ << ",\"end_ns\":" << end
+        << ",\"phase\":" << ProfileJson(prefill_ ? "prefill" : "decode")
+        << ",\"position\":" << position_
+        << ",\"history\":" << position_ + rows_
+        << ",\"rows\":" << rows_ << ",\"start_ns\":" << start_
+        << ",\"end_ns\":" << end
         << ",\"complete\":" << (success && !dropped ? "true" : "false")
         << ",\"dropped_events\":" << dropped << ",\"events\":[";
     bool first = true;
@@ -297,6 +302,8 @@ class ExecutionProfile {
   const std::vector<Call>& calls() const { return calls_; }
 
  private:
+  size_t rows_ = 1;
+  bool prefill_ = false;
   static uint64_t NextGeneration() {
     static std::atomic<uint64_t> next{0};
     return ++next;
