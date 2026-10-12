@@ -68,6 +68,15 @@ class HfEmbedding {
       for (int l = 0; l < layers; ++l)
         Decode(tokens[t], l * dim, dim, output[l].data() + t * dim);
   }
+  template <typename T>
+  void LookupPerLayer(const int32_t* tokens, size_t count, size_t layers,
+                      size_t dim, T* const* output) const {
+    if (layers * dim != width_ || !output)
+      throw std::invalid_argument("HF PLE shape mismatch");
+    for (size_t t = 0; t < count; ++t)
+      for (size_t l = 0; l < layers; ++l)
+        Decode(tokens[t], l * dim, dim, output[l] + t * dim);
+  }
 
  private:
   template <typename T>

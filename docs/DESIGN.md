@@ -1,19 +1,28 @@
 # Design and extension points
 
 The lab separates model authoring, graph execution, persistent state, and
-measurements. This lets a new model exercise YNNPACK without depending on a
-large application runtime or copying the full E2B implementation.
+measurements. The intended LLM scope includes Gemma4 E2B, E4B, 12B and 31B,
+and multiple Qwen models. Shared interfaces should serve each model's actual
+architecture, state and numerical contract. Current integrations are listed in
+[model support](../README.md#models-and-workloads); implementation order does
+not make a model the default design or documentation entry point.
 
 | Component | Responsibility |
 | --- | --- |
-| External graph author | Offline graph preparation and C++ builder generation; maintained separately |
+| External graph author | Offline graph preparation and `.ynn` plan export; maintained separately |
 | `runtime/ynnpack_support.h` | Pinned YNNPACK/Slinky API adapter, bindings, state/view contracts |
 | `runtime/model_assets.h` | Read-only mappings and Gemma4 embedding unpacking |
-| `runtime/tokenizer.h`, `benchmark_cases.h` | Shared native tokenization, manifest policy, input resolution and fixture export |
+| `rust/src/frontend.rs`, `rust/src/frontend/` | Shared argument/input handling, direct HF tokenization, manifest policy, provenance and fixture export |
+| `runtime/rust/sentencepiece.h` | Small FFI for the SentencePiece C++ engine |
 | `models/gemma4/model_spec.py`, `hf_assets.py` | E2B/E4B architecture, source mapping and asset validation |
-| `models/gemma4_*/generated/` | Reviewed, reproducible builders; no large learned tensors |
-| `models/gemma4/runner.cc` | Request orchestration, embeddings, state ownership, timing |
+| `models/gemma4_*/generated/` | Reviewed, reproducible plans; no large learned tensors |
+| `rust/src/gemma.rs`, `rust/src/gemma/` | Request orchestration, package validation, state ownership and timing |
 | `tools/` | Dependency setup, asset extraction, benchmark orchestration |
+
+The [Rust runtime](RUST_RUNTIME.md) owns vision/Gemma request orchestration and
+buffers. Typed, validated `.ynn` plans construct native graphs through one adapter.
+Embedding arithmetic and authoritative resource-state checks remain native.
+There is no generated C++ model path. See [the plan format](GRAPH_PLANS.md).
 
 ## Symbolic state is more than dynamic tensor shapes
 
@@ -31,34 +40,62 @@ per-row causal/window mask restricts each query further. Slinky expressions carr
 these relationships to Slinky; `p` is an independent runtime scalar. Changing
 `p` must update execution even when all input shapes remain unchanged.
 
-Both K and V use separate token-major capacity buffers, logically `[1,1,C,D]`
-for E2B. An append copies only the new `[T,D]` payload at the current position.
+Current Gemma K/V owners use separate K and V allocations shaped
+`[1,Hkv,C,D]`, with `Hkv=1` for E2B and `Hkv=2` for E4B. Each allocation
+reserves a full `[C,D]` region for every KV head. The physical layout groups
+tokens by head: head `h` begins at element offset `h * C * D`, regardless of
+the current logical length.
+
+An append copies only the new `[1,Hkv,T,D]` payload into those reserved regions.
+For each K or V allocation, the update is:
+
+```python
+for h in range(Hkv):
+    cache[0, h, p:p + T, :] = fresh[0, h, 0:T, :]
+```
+
+E4B therefore writes two ranges per allocation. For `C=8`, `p=3` and `T=2`,
+each slot below represents one token's `D` elements:
+
+```text
+head 0: [old old old NEW NEW unused unused unused]
+head 1: [old old old NEW NEW unused unused unused]
+```
+
+The second head stays at offset `C * D`; neither its old tokens nor the first
+head's old tokens move. The adapter crops the destination along the token axis
+and uses a stride-aware `slinky::copy`. A dense fresh payload has head stride
+`T * D`, while the destination retains head stride `C * D`.
+
 Attention consumes symbolic views of the updated storage. The graph orders the
 write before its consumers. The host advances logical position after a successful
 invocation. Physical state is not transactionally rolled back after a late
-failure; callers must reset or discard a failed request. Invalid bounds are
+failure; callers must discard the failed session. Invalid bounds are
 checked before mutation. Resetting a successful request changes logical position;
 old capacity bytes are excluded by views and masks.
 
-Batch one and one KV head make E2B particularly convenient: an interval can be
-contiguous. With multiple heads, a narrowed interval usually retains the original
-capacity stride between heads. The state fixtures test those strided views and
-grouped-query shapes, including two KV heads paired with eight query heads.
-E4B now uses two heads in this layout; multiple request batches remain outside
-the integration.
+For an attention interval `[begin,end)`, the view has logical shape
+`[1,Hkv,end-begin,D]`. Its head stride remains `C * D` elements, and its first
+token for head `h` is at offset `(h * C + begin) * D` in the allocation.
+The state fixtures test those strided views and grouped-query
+shapes, including two KV heads paired with eight query heads. Multiple request
+batches remain outside the current integration. New models must supply their
+own state semantics rather than assume a single KV head or this Gemma layout.
 Never replace capacity strides with logical-length strides merely by reshaping.
 
 ## Prefill and decode
 
-There are two prepared phase graphs, not one graph per layer and not a Cartesian
-product of prompt/history buckets. They share source mappings and persistent KV
-buffers. Packed backend constants and scratch are currently prepared independently.
+The current Gemma integrations use two prepared phase graphs. They share source
+mappings and persistent KV buffers; packed backend constants and scratch are
+currently prepared independently. Graphs are reused across prompt/history
+lengths without host execution per layer.
 
-Gemma's KV-sharing structure permits prefix-only execution to stop once all
+E2B/E4B's KV-sharing structure permits prefix-only execution to stop once all
 required KV owners have been produced. The last prompt token traverses the full
-decode graph and head to produce logits. The current source/compiler operation counts depend on the weight profile and
-lowering policy; they are reported in each generated `model.json`. Prefill uses
-at most 128 actual rows and does not pad the final chunk. Chunk scores are still materialized: global attention scratch grows with
+decode graph and head to produce logits. Source/compiler operation counts depend
+on the weight profile and lowering policy; each generated `model.json` records
+them. Prefill uses at most 128 actual rows and does not pad the final chunk.
+Chunk scores are still materialized: global attention scratch grows with
 `chunk_rows * live_history`, rather than `prompt_length²` for a full prompt graph.
 Arithmetic over the whole sequence is not made linear by chunking.
 
@@ -69,11 +106,13 @@ packed weights.
 
 ## Quantization and numerical contract
 
-Weight codes/scales come from the published model, including static activation
-and INT8 KV quantization. Norm coefficients retain their source precision. The
-head has a floating interface and YNNPACK internally quantizes its input for an
-integer dot. `YNN_FLAG_NO_EXCESS_PRECISION` keeps authored QAT rounding/clipping
-boundaries from disappearing during backend rewriting.
+Each package declares its source and numerical contract. The published-bundle
+Gemma profiles preserve weight codes/scales, static activation and INT8 KV
+quantization, and source coefficient precision. Their head has a floating
+interface and YNNPACK internally quantizes its input for an integer dot.
+`YNN_FLAG_NO_EXCESS_PRECISION` preserves authored QAT rounding/clipping
+boundaries during backend rewriting. HF and future model profiles must specify
+their own arithmetic; these Gemma choices are not universal runner defaults.
 
 Cross-backend bit identity is not required. Check finite outputs, logit error,
 centered cosine/KL, greedy agreement, and eventually task quality. The existing
@@ -85,7 +124,7 @@ original desktop capacity check produced identical logits.
 ## Adding another model
 
 1. Add a model directory with architecture, weight provenance, extraction or
-   import logic, token fixtures, and standalone builders. Maintain compiler
+   import logic, token fixtures, and standalone `.ynn` plans. Maintain compiler
    integration and graph-authoring sources in their separate repository.
    Reuse the tokenizer and benchmark-case frontend with a hash-pinned asset
    recipe and explicit prompt prefix/suffix policy; pass the model's vocabulary
@@ -102,6 +141,9 @@ original desktop capacity check produced identical logits.
    query/history lengths. Record kernel choices before assigning a gap to graph
    authoring or the frontend runtime.
 
-Qwen/Gemma3 integration should start with one concrete model, rather than a
-large speculative model registry. A generic interactive/tokenizer API can follow
-when a different model family reveals the remaining shared interfaces.
+Add each Gemma4 or Qwen integration from a concrete checkpoint and extend shared
+interfaces when its architecture requires them. Keep layer counts, head layouts,
+quantization and tokenizer policy in model-specific authors, assets and metadata.
+Each new integration needs matching plans, asset recipes, state contracts and
+independent numerical checks. Dated numerical/performance evidence belongs in
+[results](../results/README.md), separately from the current interface contract.

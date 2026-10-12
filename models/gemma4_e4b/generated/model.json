@@ -20,57 +20,43 @@
     "global_rope_proportion": 0.25,
     "local_rope_proportion": 1.0
   },
+  "execution": {
+    "format": "gemma4-execution",
+    "version": 1,
+    "variant": "e4b",
+    "profile": "published_static_qat_e4b",
+    "asset_source": "published",
+    "source_identity": "",
+    "activation_dtype": "fp32",
+    "logits_dtype": "fp32",
+    "kv_dtype": "int8",
+    "kv_element_bytes": 1,
+    "prefill_rows": 128,
+    "phases": {
+      "prefill": {
+        "file": "gemma4_prefill.ynn",
+        "sha256": "1c81e5d0a8325c8d7ef7a7574e04f9672888c4f9d264e0d1642e46eac3c4cb5f"
+      },
+      "decode": {
+        "file": "gemma4_decode.ynn",
+        "sha256": "7b939134054b7c3df70cef90b9652baf5b4507e1b40b399bb78a72ccf8e6dabe"
+      }
+    },
+    "prefill_attention_profile": "fp32_batch",
+    "decode_attention_profile": "fp32_batch"
+  },
   "graphs": [
     {
       "phase": "prefill",
-      "ops": 4831,
-      "values": 5807,
-      "builder_sources": [
-        "gemma4_prefill.cc",
-        "gemma4_prefill_DefineValues_0.cc",
-        "gemma4_prefill_DefineValues_1.cc",
-        "gemma4_prefill_DefineValuesToEmbedding_2.cc",
-        "gemma4_prefill_RopeTablesToLayer1_3.cc",
-        "gemma4_prefill_Layer2ToLayer4_4.cc",
-        "gemma4_prefill_Layer5ToLayer7_5.cc",
-        "gemma4_prefill_Layer8ToLayer10_6.cc",
-        "gemma4_prefill_Layer11ToLayer13_7.cc",
-        "gemma4_prefill_Layer14ToLayer16_8.cc",
-        "gemma4_prefill_Layer17ToLayer19_9.cc",
-        "gemma4_prefill_Layer20ToLayer22_10.cc",
-        "gemma4_prefill_Layer23_11.cc"
-      ]
+      "ops": 4279,
+      "values": 5255,
+      "artifact_format": "ynnpack-construction-plan"
     },
     {
       "phase": "decode",
-      "ops": 8074,
-      "values": 9673,
-      "builder_sources": [
-        "gemma4_decode.cc",
-        "gemma4_decode_DefineValues_0.cc",
-        "gemma4_decode_DefineValues_1.cc",
-        "gemma4_decode_DefineValues_2.cc",
-        "gemma4_decode_DefineValues_3.cc",
-        "gemma4_decode_DefineValuesToInputProjection_4.cc",
-        "gemma4_decode_Layer0ToLayer1_5.cc",
-        "gemma4_decode_Layer2ToLayer3_6.cc",
-        "gemma4_decode_Layer4ToLayer5_7.cc",
-        "gemma4_decode_Layer6ToLayer7_8.cc",
-        "gemma4_decode_Layer8ToLayer9_9.cc",
-        "gemma4_decode_Layer10ToLayer11_10.cc",
-        "gemma4_decode_Layer12ToLayer13_11.cc",
-        "gemma4_decode_Layer14ToLayer15_12.cc",
-        "gemma4_decode_Layer16ToLayer17_13.cc",
-        "gemma4_decode_Layer18ToLayer19_14.cc",
-        "gemma4_decode_Layer20ToLayer21_15.cc",
-        "gemma4_decode_Layer22ToLayer24_16.cc",
-        "gemma4_decode_Layer25ToLayer27_17.cc",
-        "gemma4_decode_Layer28ToLayer30_18.cc",
-        "gemma4_decode_Layer31ToLayer33_19.cc",
-        "gemma4_decode_Layer34ToLayer36_20.cc",
-        "gemma4_decode_Layer37ToLayer39_21.cc",
-        "gemma4_decode_Layer40ToFinalNormAndHead_22.cc"
-      ]
+      "ops": 7066,
+      "values": 8665,
+      "artifact_format": "ynnpack-construction-plan"
     }
   ],
   "source_bundle": {
@@ -1777,9 +1763,13 @@
   },
   "activation_mode": "published_static_qat_with_dynamic_head",
   "prefill_rows": 128,
-  "author_seconds": 6.819839342002524,
+  "author_seconds": 5.107198423007503,
   "adapter_contract": "resource-state-v1",
   "optimization": "target_views",
+  "decode_matmul_row_grouping": false,
   "global_layout": true,
-  "decode_transpose_cleanup": true
+  "decode_transpose_cleanup": true,
+  "decode_attention_profile": "fp32_batch",
+  "prefill_attention_profile": "fp32_batch",
+  "prefill_plan": "included"
 }

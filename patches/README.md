@@ -43,7 +43,7 @@ The patch uses `a.extent(num_k_dims)`, which also handles implicit singleton
 rows in rank-one and broadcast inputs. Symbolic row counts retain the existing
 fallback and packing-size caps. It changes neither arithmetic contracts nor
 the cost model, and does not force an ISA or modify CPU detection. See the
-[packing investigation](../docs/PERFORMANCE_GAPS.md#known-bug-packing-ignores-the-known-decode-row-count).
+[original selector reproduction](../results/2026-10-05-packing-fix/README.md#original-selector-reproduction).
 The [matched validation and timing record](../results/2026-10-05-packing-fix/README.md)
 documents phone DOTPROD selection, observed decode gains, and desktop numerical
 differences.

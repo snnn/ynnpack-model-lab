@@ -2,8 +2,9 @@
 # SPDX-License-Identifier: Apache-2.0
 import hashlib
 import json
+import os
+import subprocess
 from pathlib import Path
-import re
 import struct
 import tempfile
 import unittest
@@ -28,14 +29,17 @@ class SafetensorsTest(unittest.TestCase):
                     )
                 references = set()
                 metadata = json.loads((path.parent / "model.json").read_text())
-                sources = {name for graph in metadata["graphs"] for name in graph["builder_sources"]}
-                self.assertEqual(sources, {p.name for p in path.parent.glob("gemma4_*.cc")})
-                for source in [*path.parent.glob("gemma4_*.h"), *(path.parent / name for name in sources)]:
-                    references.update(
-                        re.findall(
-                            r"@parameters/([0-9a-f]{64}\.bin)", source.read_text()
-                        )
-                    )
+                for phase in metadata['execution']['phases'].values():
+                    plan = path.parent / phase['file']
+                    self.assertEqual(hashlib.sha256(plan.read_bytes()).hexdigest(), phase['sha256'])
+                    tool = os.environ.get('YNNPACK_PLAN_TOOL', str(Path(__file__).resolve().parents[1] / 'build/ynn-plan'))
+                    report = json.loads(subprocess.check_output([tool, 'inspect', str(plan)], text=True))
+                    for data in report['constants']:
+                        if data['path'].startswith('@parameters/'):
+                            name = data['path'].removeprefix('@parameters/')
+                            references.add(name)
+                            self.assertEqual(hashlib.sha256(bytes.fromhex(parameters[name])).hexdigest(), data['sha256'])
+                self.assertFalse(list(path.parent.glob('*.cc')))
                 self.assertTrue(references)
                 self.assertLessEqual(references, parameters.keys())
 

@@ -324,8 +324,110 @@ class Graph {
     if (adj_b) b = TransposeLast(b);
     Check(ynn_define_dot(graph_.get(), 1, a, b, YNN_INVALID_VALUE_ID, &out, 0));
   }
+  // Experimental FP32 x INT8 attention arithmetic. Quantize each LHS row,
+  // correct its asymmetric zero point, accumulate in INT32, then return FP32.
+  // Cache codes include -128: never declare the RHS a symmetric weight tensor.
+  void DynamicallyQuantizedMatmul(uint32_t a, uint32_t b, uint32_t out,
+                                  float b_scale, bool adj_b, int rhs_head = -1) {
+    if (graph_->value(a).type != ynn_type_fp32 ||
+        graph_->value(b).type != ynn_type_int8 ||
+        graph_->value(a).rank() < 2 || graph_->value(b).rank() < 2 ||
+        !std::isfinite(b_scale) || b_scale <= 0)
+      throw std::invalid_argument("dynamic attention matmul contract");
+    if (rhs_head >= 0) {
+      if (graph_->value(b).rank() != 4)
+        throw std::invalid_argument("attention head selection requires rank four");
+      Require(rhs_head < Axis(b, 1), "attention RHS head bounds");
+      uint32_t selected = YNN_INVALID_VALUE_ID;
+      graph_->get_output_value(&selected, graph_->value(b));
+      Slice(b, selected, {0, rhs_head, 0, 0}, {1, 1, -1, -1});
+      b = selected;
+    }
+    int32_t axis = -1;
+    uint32_t mm = YNN_INVALID_VALUE_ID, az = YNN_INVALID_VALUE_ID;
+    uint32_t as = YNN_INVALID_VALUE_ID, qa = YNN_INVALID_VALUE_ID;
+    Check(ynn_define_reduce(graph_.get(), ynn_reduce_min_max, 1, &axis, a,
+                            YNN_INVALID_VALUE_ID, &mm, YNN_NODE_FLAG_KEEP_DIMS));
+    Check(ynn_define_dynamic_quantization(graph_.get(), mm, ynn_type_int8,
+                                          &az, &as, 0));
+    Check(ynn_define_quantize(graph_.get(), a, ynn_type_int8, az, as, &qa, 0));
+    if (adj_b) b = TransposeLast(b);
+    uint32_t zp = YNN_INVALID_VALUE_ID, scale = YNN_INVALID_VALUE_ID;
+    Check(ynn::define_dot_quantization(
+        graph_.get(), 1, qa, az, as, b, YNN_INVALID_VALUE_ID,
+        graph_->get_scalar_value_id(b_scale), zp, scale));
+    uint32_t bias = YNN_INVALID_VALUE_ID, acc = YNN_INVALID_VALUE_ID;
+    if (zp != YNN_INVALID_VALUE_ID)
+      Check(ynn_define_unary(graph_.get(), ynn_unary_negate, zp, &bias, 0));
+    Check(ynn_define_dot(graph_.get(), 1, qa, b, bias, &acc, 0));
+    Check(ynn_define_dequantize(graph_.get(), acc, YNN_INVALID_VALUE_ID, scale,
+                                ynn_type_fp32, &out, 0));
+  }
   void Dot(uint32_t a, uint32_t b, uint32_t bias, uint32_t out, size_t k) {
     Check(ynn_define_dot(graph_.get(), k, a, b, bias, &out, 0));
+  }
+  // NHWC cross-correlation, OHWI filters (1HWO for depthwise). Stencil and
+  // contraction nodes remain visible to the backend's layout/schedule passes.
+  void Conv2D(uint32_t in, uint32_t filter, uint32_t bias, uint32_t out,
+              std::vector<size_t> kernel, std::vector<size_t> strides,
+              std::vector<size_t> dilations, bool same, bool depthwise,
+              size_t channels, size_t multiplier) {
+    const int32_t axes[] = {1, 2}, new_axes[] = {3, 4};
+    uint32_t patches = YNN_INVALID_VALUE_ID;
+    const uint32_t padding = same ? graph_->get_scalar_value_id(0.0f)
+                                  : YNN_INVALID_VALUE_ID;
+    Check(ynn_define_stencil_copy(graph_.get(), 2, axes, new_axes,
+                                   kernel.data(), strides.data(), dilations.data(),
+                                   in, padding, &patches, 0));
+    uint32_t weights = YNN_INVALID_VALUE_ID;
+    if (!depthwise) {
+      const int32_t permutation[] = {1, 2, 3, 0};
+      Check(ynn_define_static_transpose(graph_.get(), 4, permutation, filter,
+                                         &weights, 0));
+      Dot(patches, weights, bias, out, 3);
+      return;
+    }
+    // [N,H,W,KH,KW,C] -> [N,H,C,W,KH,KW]. C is a dot batch
+    // dimension; the output's last axis is the depth multiplier.
+    uint32_t lhs = YNN_INVALID_VALUE_ID, split = YNN_INVALID_VALUE_ID;
+    const int32_t input_axes[] = {0, 1, 5, 2, 3, 4};
+    Check(ynn_define_static_transpose(graph_.get(), 6, input_axes, patches,
+                                       &lhs, 0));
+    const size_t weight_shape[] = {kernel[0], kernel[1], channels, multiplier};
+    Check(ynn_define_static_reshape(graph_.get(), 4, weight_shape, filter,
+                                     &split, 0));
+    const int32_t filter_axes[] = {2, 0, 1, 3};
+    Check(ynn_define_static_transpose(graph_.get(), 4, filter_axes, split,
+                                       &weights, 0));
+    uint32_t product = YNN_INVALID_VALUE_ID, ordered = YNN_INVALID_VALUE_ID;
+    Check(ynn_define_dot(graph_.get(), 2, lhs, weights, YNN_INVALID_VALUE_ID,
+                           &product, 0));
+    const int32_t output_axes[] = {0, 1, 3, 2, 4};
+    Check(ynn_define_static_transpose(graph_.get(), 5, output_axes, product,
+                                       &ordered, 0));
+    uint32_t fused = bias == YNN_INVALID_VALUE_ID ? out : YNN_INVALID_VALUE_ID;
+    Check(ynn_define_fuse_dim(graph_.get(), 3, 2, ordered, &fused, 0));
+    if (bias != YNN_INVALID_VALUE_ID)
+      Binary(ynn_binary_add, fused, bias, out);
+  }
+  void Pool2D(uint32_t in, uint32_t out, std::vector<size_t> kernel,
+              std::vector<size_t> strides, bool same, bool average) {
+    if (average) {
+      Check(ynn::define_average_pool_2d(graph_.get(), in, ynn_type_fp32, same,
+                                        kernel[0], kernel[1], strides[0],
+                                        strides[1], out));
+      return;
+    }
+    const int32_t axes[] = {1, 2}, new_axes[] = {3, 4};
+    const size_t dilations[] = {1, 1};
+    const uint32_t padding = same
+        ? graph_->get_scalar_value_id(-std::numeric_limits<float>::infinity())
+        : YNN_INVALID_VALUE_ID;
+    uint32_t patches = YNN_INVALID_VALUE_ID;
+    Check(ynn_define_stencil_copy(graph_.get(), 2, axes, new_axes, kernel.data(),
+                                   strides.data(), dilations, in, padding,
+                                   &patches, 0));
+    Reduce(ynn_reduce_max, patches, out, {3, 4}, false);
   }
   void BroadcastLike(uint32_t in, uint32_t like, uint32_t out,
                      std::vector<int32_t> axes) {
@@ -577,6 +679,84 @@ class Graph {
       }
       r.funcs.push_back(slinky::func::make_copy(
           std::move(source), {b.buffer, std::move(dims)}, {fill.buffer, {}}));
+      return ynn_status_success;
+    };
+    graph_->add_node(std::move(node));
+  }
+  void Compare(const std::string& op, uint32_t lhs, uint32_t rhs, uint32_t out,
+               std::vector<slinky::expr> shape) {
+    if (graph_->value(lhs).type != ynn_type_fp32 ||
+        graph_->value(rhs).type != ynn_type_fp32 ||
+        graph_->value(out).type != ynn_type_uint8)
+      throw std::invalid_argument("comparison requires FP32 inputs and byte booleans");
+    for (auto input : {lhs, rhs}) {
+      const size_t rank = graph_->value(input).rank();
+      if (rank > shape.size()) throw std::invalid_argument("comparison rank mismatch");
+      for (size_t axis = 0; axis < rank; ++axis)
+        Require(Axis(input, axis) == 1 ||
+                    Axis(input, axis) == shape[shape.size() - rank + axis],
+                "comparison broadcast extent");
+    }
+    const std::vector<std::string> names = {
+        "less", "less_equal", "greater", "greater_equal", "equal", "not_equal"};
+    const auto found = std::find(names.begin(), names.end(), op);
+    if (found == names.end()) throw std::invalid_argument("unknown comparison");
+    const size_t relation = found - names.begin();
+    auto& output = graph_->get_output_value(&out, ynn_type_uint8);
+    output.extents.assign(shape.rbegin(), shape.rend());
+    ynn_node node;
+    node.op = ynn_node::opaque{"core_compare"};
+    node.inputs = {lhs, rhs};
+    node.outputs = {out};
+    node.create = [relation](const ynn_node& n, ynn_runtime& r) {
+      const auto& a = r.value(n.inputs[0]);
+      const auto& b = r.value(n.inputs[1]);
+      auto& y = r.value(n.outputs[0]);
+      y.make_buffer(r, sizeof(uint8_t));
+      auto dims = r.globals.make_dims(y.rank());
+      auto bounds = [&](const ynn_runtime_value& v) {
+        auto result = ynn::make_elementwise_bounds(dims, v.physical_extents());
+        result.resize(v.rank());
+        return result;
+      };
+      auto fn = [relation](const slinky::raw_buffer& a,
+                           const slinky::raw_buffer& b,
+                           const slinky::raw_buffer& y) -> slinky::index_t {
+        auto broadcast = [&](const slinky::raw_buffer& source) {
+          slinky::buffer<const void, ynn::max_tensor_rank> result = source;
+          for (size_t d = 0; d < source.rank; ++d)
+            if (source.dim(d).extent() == 1 && y.dim(d).extent() != 1) {
+              result.mutable_dim(d).set_stride(0);
+              result.mutable_dim(d).set_bounds(y.dim(d).min(), y.dim(d).max());
+            }
+          return result;
+        };
+        auto aa = broadcast(a), bb = broadcast(b);
+        slinky::for_each_element(
+            [relation](void* dst, const void* av, const void* bv) {
+              const float x = *static_cast<const float*>(av);
+              const float z = *static_cast<const float*>(bv);
+              bool value = false;
+              switch (relation) {
+                case 0: value = x < z; break;
+                case 1: value = x <= z; break;
+                case 2: value = x > z; break;
+                case 3: value = x >= z; break;
+                case 4: value = x == z; break;
+                case 5: value = x != z; break;
+              }
+              *static_cast<uint8_t*>(dst) = value;
+            }, y, aa, bb);
+        return 0;
+      };
+      slinky::call_stmt::attributes attrs;
+      attrs.name = "core_compare";
+      auto f = slinky::func::make(std::move(fn),
+          {{a.buffer, bounds(a)}, {b.buffer, bounds(b)}}, {{y.buffer, dims}}, attrs);
+      auto schedule = r.make_schedule(dims, y.physical_extents(), sizeof(uint8_t));
+      f.user_data() = schedule.get();
+      r.scheduling_info_storage.push_back(std::move(schedule));
+      r.funcs.push_back(std::move(f));
       return ynn_status_success;
     };
     graph_->add_node(std::move(node));
@@ -857,8 +1037,18 @@ class Graph {
     node.outputs = {out};
     node.create = [d, begin, resource_view, stats = counters_](
                       const ynn_node& n, ynn_runtime& r) {
-      const auto& a = r.value(n.inputs[0]);
+      auto& a = r.value(n.inputs[0]);
       auto& b = r.value(n.outputs[0]);
+      // ResourceState owns a dense capacity-backed allocation. State this
+      // physical layout explicitly: an unconstrained input plus a constrained
+      // cropped output can otherwise prevent Slinky's copy-alias elimination.
+      if (resource_view && a.is_external()) {
+        slinky::expr stride = a.buffer->elem_size();
+        for (int i = 0; i < a.rank(); ++i) {
+          if (!slinky::is_one(a.extent(i))) a.buffer->dim(i).stride = stride;
+          stride = stride * a.extent(i);
+        }
+      }
       b.make_buffer(r, a.buffer->elem_size());
       auto dims = r.globals.make_dims(b.rank());
       slinky::box_expr bounds;
@@ -866,8 +1056,13 @@ class Graph {
         bounds.push_back(slinky::point(slinky::expr(dims[i]) +
                                        (i == d ? begin : slinky::expr(0))));
         // Preserve capacity strides. Compaction would turn this into a copy.
-        if (resource_view)
-          b.buffer->dim(i).stride = slinky::buffer_stride(a.buffer->sym(), i);
+        // A singleton dimension already has the backend's broadcast layout.
+        // Replacing its zero stride with an unconstrained external stride can
+        // prevent alias elimination when integer dots also reduce the RHS.
+        if (resource_view && !slinky::is_one(b.extent(i)))
+          b.buffer->dim(i).stride = a.buffer->dim(i).stride.defined()
+              ? a.buffer->dim(i).stride
+              : slinky::buffer_stride(a.buffer->sym(), i);
       }
       slinky::func::input src{a.buffer, bounds};
       src.output_crop.resize(b.rank());
@@ -1269,7 +1464,9 @@ class Graph {
     try {
       const auto status = ynn_invoke_runtime(runtime_.get());
       if (status != ynn_status_success || counters_->view_copy_bytes)
-        throw std::runtime_error("stateful invocation failed or materialized a cache view");
+        throw std::runtime_error("stateful invocation failed: status=" +
+            std::to_string(status) + ", history_view_copy_bytes=" +
+            std::to_string(counters_->view_copy_bytes));
       if (!pipeline_.same_as(runtime_->pipeline.body))
         throw std::logic_error("pipeline rebuilt");
     } catch (...) {

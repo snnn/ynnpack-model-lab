@@ -15,6 +15,6 @@ jobs:
       - run: uv run --locked python tools/check_publication.py
       - run: uv run --locked python -m unittest discover -s tests -p test_publication.py
       - run: uv run --locked python tools/bootstrap.py
-      - run: uv run --locked cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+      - run: uv run --locked cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DLAB_BUILD_ATTENTION_BENCHMARK=ON
       - run: uv run --locked cmake --build build --parallel 4
       - run: uv run --locked ctest --test-dir build --output-on-failure

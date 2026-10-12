@@ -1,7 +1,8 @@
 # Execution profiling
 
-The model runner accepts `--profile_execution=decode`. It writes
-`execution_profile.jsonl` alongside the usual timing records. Profiling is
+The model runner accepts `--profile_execution=decode`, `prefill`, or `all`.
+Decode writes `execution_profile.jsonl`; prefill writes
+`prefill_execution_profile.jsonl` alongside the usual timing records. Profiling is
 disabled by default. Use separate output directories for diagnostic and latency
 runs; diagnostic records carry `timings_valid_for_benchmark: false`.
 
@@ -19,13 +20,10 @@ python3 tools/analyze_execution_profile.py \
 
 ## Measurement and attribution
 
-Generated construction functions are setup functions. They do not execute a
-layer. Generated operation labels instead associate authored scopes and inputs
-with backend values. The checked-in E2B, E4B, and all five HF profile builders
-contain these labels. Builders without labels still run, with explicit
-unattributed profiling entries. The
-[October 8 refresh](../results/2026-10-08-builder-refresh/README.md) adds labels to
-the E4B and HF artifacts while preserving their computation and state contracts.
+Construction commands run during setup. Operation labels associate authored
+scopes and inputs with backend values. The checked-in E2B, E4B and all five HF
+profile plans contain these labels. Plans without labels still run, with explicit
+unattributed profiling entries.
 
 The adapter associates optimized backend functions with those labels before
 Slinky recycles symbol IDs. It tags diagnostic call names, preserving Slinky's
@@ -37,9 +35,11 @@ origins remain shared. Scheduled copies and runtime-generated calls without
 stable provenance are explicitly unattributed. Do not infer a layer from a
 recycled numeric symbol or expose intermediate outputs to obtain timing labels.
 
-Only measured subsequent decode steps are collected. Warmups, prefill, the
-first logits-producing prompt token, construction, and packing during setup are
-excluded. Each step records its position, live history length, complete-step
+Decode collection covers only measured subsequent decode steps. Prefill
+collection covers each measured prefix chunk, with its actual row count and
+end-of-chunk history length. Warmups, the first logits-producing prompt token,
+construction, and packing during setup are excluded. Each step records its
+phase, position, live history length, row count, complete-step
 wall interval, and events `[worker, call_id, start_ns, end_ns]`. The initial
 metadata record identifies operations and calls. Timestamps use the process's
 steady monotonic clock. Worker identifiers are local to the profile.
@@ -58,6 +58,15 @@ dequantization origin is counted as a dot once; provenance alone does not
 establish where the conversion executes. Calls with both attention and other origins
 remain explicitly mixed. These labels describe callback work, not every
 instruction executed inside a kernel.
+
+The opt-in [integer attention profiles](ATTENTION_EXPERIMENTS.md) carry explicit
+QK/PV roles through query-head reshapes. Their summaries separate LHS dynamic
+quantization, integer RHS sums, accumulator conversion/correction, and
+intermediate copies from the dot and mask/softmax work. A `dequantize_dot`
+callback scales an already computed INT32 result; it is not another matrix
+multiplication or a full KV-history expansion.
+Legacy grouped FP32 builders lose the original Softmax input name without an
+explicit QK/PV role. Their dots are reported together as `qk_pv`.
 
 Each step's `wall_partition` divides its wall interval into attention callbacks
 only, other callbacks only, their overlap, and time outside callbacks. These

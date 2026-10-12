@@ -3,6 +3,7 @@
 /.deps/
 /assets/
 /out/
+/rust/target/
 /models/**/parameters/
 
 # Python environments and caches.

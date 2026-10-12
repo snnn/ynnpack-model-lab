@@ -1,0 +1,7 @@
+# Copyright 2026 @snnn.
+# SPDX-License-Identifier: Apache-2.0
+ynn 1 resource_contract=1 completion_contract=1 profiling=explicit {
+  input x: fp32[4];
+  let squared = mul(x, x);
+  output squared;
+}

@@ -4,39 +4,28 @@ This separate research path loads `google/gemma-4-E2B-it-qat-mobile-transformers
 directly. It preserves the checkpoint's packed weight codes and scale values.
 The existing published-bundle E2B/E4B runners remain the comparison controls.
 
-**Best current candidate: `hf_static_int8_published_kv`.** Use this profile for
-new model-compiler, symbolic-shape, and dynamism experiments. Its integer FCs
-recover competitive warm desktop performance while loading the safetensors
-checkpoint directly. The checkpoint's BF16 global PLE projection is accepted;
-the candidate promotes those values to FP32 for computation. Exact bitwise
-agreement with another implementation is not a requirement. Keep finite-output,
-logit/distribution, model-quality, and state-invariance checks, and preserve the
-earlier profiles as controls. This selection does not establish equivalent task
-quality, phone performance, or resolve the higher measured peak RSS.
+Select a profile for its arithmetic and KV contract using the table below.
+BF16, FP32 and integer-FC profiles support different comparisons. Preserve
+finite-output, logit/distribution, model-quality and state-invariance checks;
+speed in one recorded configuration does not establish equivalent task quality
+or performance on another device. The [E2B guide](E2B.md) covers the separate
+published-bundle path.
 
-The experiment compares the candidate with **`hf_bf16_int8_published_kv`** and
-the FP32 floating variant, using the published-model LiteRT/XNNPACK
-runner as a compatibility reference. The follow-up
-[numerical audit](../results/hf_published_kv_audit_2026-10-02/README.md) identifies
-early arithmetic differences and chunk-sensitive softmax rounding. Matching the
-KV scales does not establish whole-model numerical equivalence.
-
-The first implementation supports text only, batch size one, chunk sizes 1–128,
+The implementation supports text only, batch size one, chunk sizes 1–128,
 and capacities up to 32,768. It uses the same symbolic position/length contracts,
 append-only KV writes, windowed views, and KV-owner-only prefix execution as the
 other runners. It does not add MTP, image/audio execution, E4B safetensors, or
 other model architectures.
 
-The BF16 implementation has Linux x86-64 and Android measurements. The FP32 and
-integer-FC variants currently have Linux x86-64 validation only. The recorded
-full-model checks have greedy
-disagreements and appreciable logit/KV differences. Do not treat these profiles
-as accuracy-qualified replacements for the published-source runners. See the
-measurement record in `results/hf_safetensors_2026-10-02/`.
+The [retained BF16 study](../results/hf_safetensors_2026-10-02/README.md) includes
+Linux/Android measurements; FP32/integer-FC execution evidence is host-only.
+These studies predate the current runner and do not establish device coverage
+for the current `.ynn` profiles. Matching KV scales does not
+establish whole-model numerical equivalence.
 
 ## Numerical profiles
 
-| Executable suffix | Activation/weight arithmetic | KV storage and scales |
+| Profile directory | Activation/weight arithmetic | KV storage and scales |
 | --- | --- | --- |
 | `hf_bf16` | HF BF16 execution boundaries | BF16; checkpoint KV scales are unused, as in ordinary Transformers execution |
 | `hf_bf16_int8_raw_kv` | Same BF16 arithmetic | INT8, symmetric, per-tensor; checkpoint KV scales unchanged |
@@ -49,15 +38,13 @@ relationship is an observed compatibility rule, not a general Gemma formula or
 an explanation of the original exporter's intent. It does not make the entire
 model equivalent to the published bundle.
 
-**TODO: Resolve the intended global KV quantization range.** In the audited E2B
-checkpoint, K and V scales for cache-owner layers 4, 9, and 14 (zero-based) are
-16× the published LiteRT-LM scales; local-attention scales match. Determine
-whether this reflects a different quantization convention, compensating scaling,
-or an export error. Compare both policies with otherwise matched arithmetic,
-checking KV clipping, quantization error, and model outputs against LiteRT-LM or
-our previous XNNPACK runners; Transformers is an optional reference. Until this
-is resolved, dividing by 16 remains an explicit compatibility experiment in
-`hf_bf16_int8_published_kv`, not an established correction to the checkpoint.
+In the audited checkpoint, K/V scales for cache-owner layers 4, 9 and 14
+(zero-based) are 16× the published LiteRT-LM scales; local scales match.
+Dividing global scales by 16 is an explicit compatibility experiment in all
+`*_published_kv` profiles. The intended quantization range remains unresolved;
+the [numerical audit](../results/hf_published_kv_audit_2026-10-02/README.md)
+records the evidence. Confirm the source runtime's quantization policy before
+treating this as a correction.
 
 In the three BF16 profiles, quantized linear weights are interpreted as
 `BF16(integer_codes * BF16(weight_scale))`. Calibrated FC inputs and outputs use
@@ -88,8 +75,8 @@ author preserves these boundaries because this path tests HF arithmetic.
 
 Thus a performance comparison changes arithmetic as well as the source format.
 Using safetensors does not inherently require BF16 execution; these initial
-profiles deliberately expose that numerical contract before adding faster
-lowerings with separately measured numerical differences.
+profiles expose that numerical contract alongside faster integer lowerings
+with separately measured numerical differences.
 
 ## Direct storage and derived cache
 
@@ -101,7 +88,7 @@ not import Torch, expand packed weights, or deserialize executable objects.
 `prepare_gemma4_hf.py` validates the E2B configuration, derives logical packed
 shapes, checks scales/shared-KV ownership, hashes tensors, and writes a manifest.
 The manifest retains source names, dtypes, shapes, shard spans, hashes, packing,
-and quantization policy. Its tensor-content identity also binds the builders to
+and quantization policy. Its tensor-content identity also binds the plans to
 their source. A different checkpoint requires reauthoring, even if its dimensions
 match, because activation scales are constants in the generated graph.
 
@@ -127,8 +114,10 @@ when explaining memory measurements. There is no automatic `madvise` eviction.
 
 ## Prepare and build standalone profiles
 
-The checked-in builders and small parameter recipes require no private compiler
-package at build or runtime. Download only the config and tensor shard for this
+The checked-in plans and small parameter recipes require no private compiler
+package at build or runtime. Preparing and running the checkpoint requires no
+TFLite export or Torch/Transformers installation; the optional independent
+reference below uses those Python packages. Download only the config and tensor shard for this
 audited single-file checkpoint; the index reader also supports future sharded
 sources.
 
@@ -145,7 +134,7 @@ python3 tools/bootstrap.py --directory .deps/hf --hf-bf16
 cmake -S . -B build-hf -G Ninja \
   -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ \
-  -DLAB_DEPS="$PWD/.deps/hf" -DLAB_BUILD_HF=ON
+  -DLAB_DEPS="$PWD/.deps/hf"
 cmake --build build-hf --parallel 8
 ctest --test-dir build-hf --output-on-failure
 ```
@@ -154,14 +143,17 @@ The BF16 path needs `patches/hf-ynnpack-bf16-rounding.patch`. The pinned backend
 fusion rules can bypass BF16 rounding despite `YNN_FLAG_NO_EXCESS_PRECISION`.
 The fix restricts rewrites that remove those intermediate boundaries; it retains
 lossless conversions and applicable fusion. The normal dependency tree and
-normal build defaults do not adopt this experimental fix. CMake rejects an HF
-build against the unpatched dependency tree. The BF16 regression test includes
+normal build defaults do not adopt this experimental fix. The runner rejects an HF
+package when built against the unpatched dependency tree. The BF16 regression test includes
 a `tanh → BF16 → multiply` chain that fails on the original backend.
 
 ## Run and validate
 
+This correctness example selects the BF16 profile explicitly:
+
 ```sh
-./build-hf/gemma4_e2b_hf_bf16 \
+./build-hf/gemma4_e2b \
+  --graph_dir=models/gemma4_e2b_hf/generated/hf_bf16 \
   --hf_model_dir=assets/hf-checkpoint \
   --asset_manifest=assets/gemma4_e2b_hf/manifest.json \
   --parameter_dir=assets/gemma4_e2b_hf/parameters \
@@ -172,8 +164,8 @@ a `tanh → BF16 → multiply` chain that fails on the original backend.
   --warmup_runs=0 --measured_runs=1 --dump_outputs
 ```
 
-Choose an executable suffix to select arithmetic and KV policy. All profiles
-share the source files and derived packed cache. The asset preparer materializes
+Choose a profile directory with `--graph_dir` to select arithmetic and KV policy.
+All profiles share the source files and derived packed cache. The asset preparer materializes
 the union of their constant recipes into its parameter directory. A run writes
 its profile, source identity, dimensions, and repetition settings to `run.json`.
 BF16 KV dumps end in `.bf16`; INT8 KV dumps end in `.i8`; logits are FP32 dumps.
@@ -217,9 +209,25 @@ and subsequent decode tok/s. A BF16 HF run and a static INT8 published-source
 run have different numerical contracts; their timing difference is not an
 isolated safetensors-loader comparison.
 
-Android uses the usual NDK CMake toolchain plus `LAB_DEPS` and `LAB_BUILD_HF`
-above. Push the source shard, manifest, parameter directory, case file, and
-selected executable. The phone needs only the standalone runner and its assets.
+For an integer-FC timing example using the same prepared checkpoint:
+
+```sh
+./build-hf/gemma4_e2b \
+  --graph_dir=models/gemma4_e2b_hf/generated/hf_static_int8_published_kv \
+  --hf_model_dir=assets/hf-checkpoint \
+  --asset_manifest=assets/gemma4_e2b_hf/manifest.json \
+  --parameter_dir=assets/gemma4_e2b_hf/parameters \
+  --cache_dir=assets/gemma4_e2b_hf/derived \
+  --cases_file=models/gemma4_e2b_hf/fixtures/performance.tsv \
+  --output_dir=out/hf-static-performance \
+  --cache_capacity=2048 --num_threads=4 --prefill_rows=128 \
+  --warmup_runs=1 --measured_runs=3
+```
+
+Android uses the usual NDK CMake toolchain plus `LAB_DEPS` above and the Rust
+Android target. Push the source shard, manifest, parameter directory, case file,
+selected plans, metadata and executable. The phone needs only the standalone
+runner and its assets.
 Check storage and available memory first and run one benchmark at a time per
 device. Keep SME disabled for this experiment.
 Run the device-side `safetensors_assets_test` from a writable working directory;
@@ -228,16 +236,15 @@ it creates and removes temporary fixture files in that directory.
 ## Reauthoring and extension points
 
 Graph authors and compiler integration are maintained in a separate private
-repository. The public lab contains the standalone builders and parameter
-recipes, plus the source-mapping and asset-validation tools. See `AUTHORING.md`
-for the artifact interface and validation requirements.
+repository. The public lab contains the standalone `.ynn` plans and parameter
+recipes, plus the source-mapping and asset-validation tools. See
+[AUTHORING.md](AUTHORING.md) for the artifact interface and validation requirements.
 
-Pass an alternative parent builder directory through `LAB_HF_GENERATED` to build
-experimental profiles. Keep builder/configuration headers, model metadata,
-parameter recipes, and the runtime adapter synchronized. Compiler reports and
-graph-authoring sources stay with the external compiler.
+Select an alternative package with `--graph_dir`. Keep both phase plans,
+execution metadata, parameter recipes and the native adapter synchronized.
+Compiler reports and graph authors stay with the external compiler.
 
-## FP32 arithmetic and integer-FC experiment
+## FP32 arithmetic and integer FCs
 
 Safetensors storage does not determine execution precision. The FP32 variant
 uses original packed integer codes and full FP32 scale values, computes embedding
@@ -271,35 +278,33 @@ profiles. Use the published-source runners and comparisons of logits, KV,
 capacity, and chunk size to evaluate the new arithmetic policies. Preserve the
 BF16 profile as a control while assessing these candidates.
 
-The [October 5 backend refresh](../results/2026-10-05/README.md) retimes the
-preferred integer-FC, BF16, and FP32 profiles with the adopted dependencies and
-identical HF token fixtures. It preserves the source and KV policies described
-here.
-
-Those HF timings predate the later
-[packing correction](../results/2026-10-05-packing-fix/README.md). Its follow-up
-measures the published-bundle controls; HF profiles have not been retimed with
-that additional patch.
-
-The [FP32/integer-FC measurement record](../results/hf_fp32_arithmetic_2026-10-02/README.md)
-contains the desktop comparison, numerical audit, and capacity/chunk checks.
-The integer variant is the preferred candidate and approaches the published-source
-YNNPACK control's warm speed, but has higher peak RSS and does not improve overall
-reference agreement. The existing numerical controls remain available.
-
 When reusing assets prepared before these profiles existed, rerun the asset
 preparer with a fresh manifest/parameter destination so it materializes the new
 integer-FC scale constants. The source checkpoint and derived packed-code cache
 can be reused.
-Only headers/metadata/recipes belong in the repository; tensor payloads and
+Only plans/metadata/recipes belong in the repository; tensor payloads and
 large diagnostic outputs remain external.
 
-The generated C++ construction code uses small helper functions to limit C++
-compiler cost. Runtime execution still uses one prepared prefill graph and one
-prepared decode graph, with symbolic bounds preserved as Slinky expressions.
+The Rust loader validates both `.ynn` phase plans and constructs one prepared
+prefill graph and one prepared decode graph. Symbolic bounds remain Slinky
+expressions; steady-state execution invokes the prepared native graphs.
 
 The safetensors reader and tensor provider are model-independent. HF tensor-name
 mapping, quantization interpretation, BF16 arithmetic, and E2B validation live
 in the Gemma author/assets code. Adding another model requires its architecture
 and state semantics; a generic container reader alone does not provide linear
 attention, different KV layouts, or other model behavior.
+
+## Evidence and limitations
+
+The [FP32/integer-FC record](../results/hf_fp32_arithmetic_2026-10-02/README.md)
+contains desktop comparisons and capacity/chunk checks. The integer variant
+approaches the published-source YNNPACK control's warm speed in that study,
+but has higher peak RSS and does not improve overall reference agreement.
+The [numerical audit](../results/hf_published_kv_audit_2026-10-02/README.md)
+identifies early arithmetic differences and chunk-sensitive softmax rounding.
+
+The [October 5 HF timings](../results/2026-10-05/README.md) predate the packing
+correction and runtime migrations. They are historical measurements, not a
+current safetensors-loader speed claim. Current timing, KV-policy interpretation
+and generation quality require separate validation.

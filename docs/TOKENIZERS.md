@@ -1,8 +1,11 @@
 # Text inputs and native tokenizers
 
-The C++ benchmark frontend accepts real text and resolves it to token IDs before
-preparing the model. It supports Hugging Face `tokenizer.json` through the
-Rust tokenizer library and SentencePiece model files through its C++ processor.
+The Gemma runners and tokenizer probe share the Rust frontend in
+`rust/src/frontend.rs`. Rust owns argument parsing, input loading, case validation,
+special-token policy, provenance, fixture export and frontend timing. It calls
+Hugging Face `tokenizers` directly for `tokenizer.json`. SentencePiece model files
+use the validated C++ processor through `runtime/rust/sentencepiece.h`, whose
+interface only loads, encodes, decodes and releases the engine.
 The same frontend can be used by future Qwen and other model runners.
 
 Existing TSV fixtures remain useful for controlled performance and numerical
@@ -30,14 +33,16 @@ ctest --test-dir build --output-on-failure
 ```
 
 Bootstrap checks the source archives in `dependencies.json`, applies the
-checked tokenizer FFI and offline SentencePiece patches, installs the tracked
-Cargo lockfile, and fetches its checksum-verified crates into `.deps/cargo`.
-CMake builds with `cargo --frozen`: it cannot resolve new versions or download
-missing crates. SentencePiece and Abseil also use bootstrapped local sources.
-The unused upstream RWKV/MsgPack wrapper is excluded. The Rust tokenizer version
-is exactly 0.22.2; do not change it without updating the lockfile and parity checks.
+checked offline SentencePiece patch, and fetches checksum-verified crates from
+`rust/Cargo.lock` into `.deps/cargo`. CMake builds with `cargo --frozen`: it cannot
+resolve new versions or download missing crates. SentencePiece and Abseil use
+bootstrapped local sources. There is no `tokenizers-cpp` dependency or HF C ABI.
+The HF crate is exactly 0.22.2; changing it requires lockfile and parity checks.
 
-To retain token-ID-only benchmarks on a machine without Rust:
+`LAB_ENABLE_TOKENIZERS` remains an optional build feature for token-ID-only
+experiments: OFF omits both tokenizer engines from the build, while Rust remains
+required. `--no-tokenizers` skips fetching the SentencePiece/Abseil sources;
+Cargo fetch still populates the shared lockfile's optional crates.
 
 ```sh
 python3 tools/bootstrap.py --no-tokenizers
@@ -57,7 +62,7 @@ only the tokenizer into a fresh directory:
 ```sh
 python3 tools/prepare_tokenizer.py \
   --recipe models/gemma4_e2b/tokenizer_recipe.json \
-  --source assets/download/gemma-4-E2B-it.litertlm \
+  --source assets/download-e2b/gemma-4-E2B-it.litertlm \
   --output assets/gemma4_e2b/tokenizer
 ```
 
@@ -205,7 +210,8 @@ validation, fixture serialization, and tokenizer destruction. Writing output
 files and process startup are excluded. TSV runs report zero tokenizer load
 and encode time.
 
-The tokenizer is released before model setup. Allocators may retain released
+Frontend RSS snapshots read `VmRSS` and `VmHWM` from `/proc/self/status`
+on Linux/Android, in KiB. The tokenizer is released before model setup. Allocators may retain released
 pages, and process peak RSS still includes the frontend's peak. The metadata's
 `rss_after_release_kib` is a measured current RSS, not a promise that all pages
 were returned to the OS. These snapshots also include resolved case IDs.
@@ -254,14 +260,17 @@ preserve `RUSTUP_HOME` during configure/build if using an isolated Rust install.
 Set `LAB_RUST_TARGET` explicitly for other cross builds; those are unvalidated.
 
 Use an explicit ADB serial, check free storage/memory, and push the tokenizer
-directory along with the model assets. To run the weights-free native tests:
+directory along with the model assets. To run the weights-free frontend tests:
 
 ```sh
 adb -s "$ANDROID_SERIAL" shell mkdir -p /data/local/tmp/ynnpack-tokenizers
-adb -s "$ANDROID_SERIAL" push build-android/tokenizer_test tests/tokenizers \
+adb -s "$ANDROID_SERIAL" push build-android/frontend_test tests/tokenizers \
   /data/local/tmp/ynnpack-tokenizers/
 adb -s "$ANDROID_SERIAL" shell \
-  /data/local/tmp/ynnpack-tokenizers/tokenizer_test \
+  /data/local/tmp/ynnpack-tokenizers/frontend_test cases \
+  /data/local/tmp/ynnpack-tokenizers/case-test-data
+adb -s "$ANDROID_SERIAL" shell \
+  /data/local/tmp/ynnpack-tokenizers/frontend_test tokenizers \
   /data/local/tmp/ynnpack-tokenizers/tokenizers \
   /data/local/tmp/ynnpack-tokenizers/test-data
 ```
