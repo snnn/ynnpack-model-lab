@@ -5,26 +5,26 @@ and applies the three `ynnpack-*.patch` files. Repeating it checks that the patc
 are already applied. It refuses an unmanaged dependency directory or a different
 revision instead of resetting local work.
 
-The normal baseline adopts upstream XNNPACK
-`d297c798ea530c12a1878bb3a3a811bdf05d715b`, captured on October 7, 2026. It includes
-merged AVX-VNNI kernels from [#11521](https://github.com/google/XNNPACK/pull/11521)
-and the learned dot cost models from
-[#11568](https://github.com/google/XNNPACK/pull/11568), merged on October 7.
-The October 5 records retain the earlier premerge snapshot
-`f5122810ee8bb7461ed73efe7a678a472866cee3` and its exact configuration. Slinky
-`d18c98551c77f366857f125e3a0f7886deb82a47` supplies the required per-context
-initialization interface. CPUinfo and tokenizer dependencies retain their pins.
+The normal baseline uses upstream XNNPACK/YNNPACK
+`0a66ebb5817fce48df605451444dcfc27a5e4ee4` and Slinky
+`a3eec6fcfe3093be04d6c3d7dcab7d4e70bdd0dc`, matching the October 13 LiteRT-LM
+comparison. Both the previous October 7 pin (`d297c798ea53`) and this pin
+include upstream AVX-VNNI kernels and learned dot cost models. The update
+changes x86 cost-model data, adds INT2 kernel shapes, fixes graph/runtime
+edge cases and advances Slinky's thread pool. CPUinfo and tokenizer
+dependencies retain their pins. Dated measurement records retain their
+original revisions; Linux validation does not update earlier device results.
 
 Use a fresh dependency/build directory when updating an existing checkout:
 
 ```sh
 uv sync --locked
-uv run --locked python tools/bootstrap.py --directory .deps/upstream
-uv run --locked cmake -S . -B build-upstream -G Ninja -DCMAKE_BUILD_TYPE=Release \
+uv run --locked python tools/bootstrap.py --directory .deps/upstream-20261013
+uv run --locked cmake -S . -B build-upstream-20261013 -G Ninja -DCMAKE_BUILD_TYPE=Release \
   -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ \
-  -DLAB_DEPS="$PWD/.deps/upstream"
-uv run --locked cmake --build build-upstream --parallel 8
-uv run --locked ctest --test-dir build-upstream --output-on-failure
+  -DLAB_DEPS="$PWD/.deps/upstream-20261013"
+uv run --locked cmake --build build-upstream-20261013 --parallel 8
+uv run --locked ctest --test-dir build-upstream-20261013 --output-on-failure
 ```
 
 The older dependency trees and measurement records remain useful controls.
@@ -48,7 +48,7 @@ The [matched validation and timing record](../results/2026-10-05-packing-fix/REA
 documents phone DOTPROD selection, observed decode gains, and desktop numerical
 differences.
 
-The October 7 upstream revision still needs this correction. Upstream separately
+The pinned upstream revision still needs this correction. Upstream separately
 disables INT2 I8MM kernels until their packing uses the same `tile_k=16` as other
 INT2 kernels. That removes the former INT2 layout conflict from current ARM
 dispatch; it does not make unknown-row packing correct for every other dot type.
@@ -81,9 +81,11 @@ Build-system-only fixes for the pinned YNNPACK revision:
   variants; the scripts require all their output arguments.
 - Order dot-header generation before sources that include the common kernel
   declaration header, including handwritten AMX sources.
-- Remove the stale INT2 I8MM CMake variant: the pinned upstream generator and
-  kernel registry disable it, so its generated source no longer exists. This
-  keeps CMake consistent with upstream's kernel availability.
+
+The current upstream CMake source already removes the disabled INT2 I8MM
+variant. That formerly local patch hunk is dropped; the other build fixes
+remain necessary. The symbolic-runtime and packing-shape patches apply
+unchanged, as do the optional BF16 and one-row-selection patches.
 
 The lab's root CMake config disables SME/SME2 by default and FP8 for compatibility
 with the tested NDK. Disabling SME is an experiment choice, not a conclusion that
@@ -105,7 +107,7 @@ unset or `none` retains normal selection. Apply it to a fresh dependency copy
 after the normal patches and select that copy with `LAB_DEPS`.
 Bootstrap does not apply patches under `experiments/`. The study documents
 arithmetic checks, actual selected kernels, timing scope and reproduction.
-The patch context is updated for the October 7 pin. INT2 I8MM is unavailable in
+The patch applies to the current pin. INT2 I8MM is unavailable in
 that pin; an INT2-only restriction therefore no longer provides an I8MM/DOTPROD
 comparison. The optional kernel benchmark reports candidate availability and
 uses `null` for an unavailable I8MM prediction.

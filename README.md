@@ -96,11 +96,12 @@ phase hashes, assets and numerical profiles. Validate the selected package
 on the target platform; earlier mobile and C++ measurements retain their
 original scope.
 
-The backend pins include the learned dot cost model from
-[XNNPACK #11568](https://github.com/google/XNNPACK/pull/11568), merged on
-October 7, 2026. The current pin is upstream `d297c798ea53`; older records retain
-their original revisions. Existing checkouts should use a fresh dependency and
-build directory; see [dependency update instructions](patches/README.md).
+The backend pins are XNNPACK/YNNPACK `0a66ebb5817f` and Slinky `a3eec6fcfe30`.
+They retain upstream AVX-VNNI support and update x86 dot cost models and
+thread-pool behavior. CPUinfo and tokenizer dependencies retain their pins.
+Older records, including the October 7 mobile baseline, retain their original
+revisions and validation scope. Existing checkouts should use a fresh dependency
+and build directory; see [dependency update instructions](patches/README.md).
 
 ## Android: the same CMake build
 

@@ -2,16 +2,16 @@
   {
     "name": "XNNPACK",
     "repository": "google/XNNPACK",
-    "revision": "d297c798ea530c12a1878bb3a3a811bdf05d715b",
-    "url": "https://codeload.github.com/google/XNNPACK/zip/d297c798ea530c12a1878bb3a3a811bdf05d715b",
-    "sha256": "f1a222b4447bc04a94ddd8d7ad32cb2ec4c99383c34dd74cb6b07bd7c8e80cae"
+    "revision": "0a66ebb5817fce48df605451444dcfc27a5e4ee4",
+    "url": "https://codeload.github.com/google/XNNPACK/zip/0a66ebb5817fce48df605451444dcfc27a5e4ee4",
+    "sha256": "cb485a0fe76dec243568ec6ce6c0b75e18909ed7df5459921b46eaada332fe8f"
   },
   {
     "name": "slinky",
     "repository": "dsharlet/slinky",
-    "revision": "d18c98551c77f366857f125e3a0f7886deb82a47",
-    "url": "https://codeload.github.com/dsharlet/slinky/zip/d18c98551c77f366857f125e3a0f7886deb82a47",
-    "sha256": "e0f98371b2a89918bcac16e906966de36de62a80f56a2e17eb3b6cbb12fa17fe"
+    "revision": "a3eec6fcfe3093be04d6c3d7dcab7d4e70bdd0dc",
+    "url": "https://codeload.github.com/dsharlet/slinky/zip/a3eec6fcfe3093be04d6c3d7dcab7d4e70bdd0dc",
+    "sha256": "cca25390873ad01a6e461edd39d220fb16c912beba2ebe02ae3b897ca63f30ef"
   },
   {
     "name": "cpuinfo",
