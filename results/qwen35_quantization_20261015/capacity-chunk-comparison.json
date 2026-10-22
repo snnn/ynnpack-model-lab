@@ -1,0 +1,518 @@
+{
+  "int8-c4096-chunk128-accuracy": {
+    "logits": [
+      {
+        "step": 0,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 1,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 2,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 3,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 4,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 5,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 6,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 7,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 8,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 9,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 10,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 11,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 12,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 13,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 14,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 15,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 16,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      }
+    ],
+    "exact_logits": 17,
+    "max_rmse": 0.0,
+    "max_abs": 0.0,
+    "reset_logits": true,
+    "reset_states": true,
+    "reset_live_kv": true
+  },
+  "int8-c2048-chunk32-accuracy": {
+    "logits": [
+      {
+        "step": 0,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 1,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 2,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 3,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 4,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 5,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 6,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 7,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 8,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 9,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 10,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 11,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 12,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 13,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 14,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 15,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 16,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      }
+    ],
+    "exact_logits": 17,
+    "max_rmse": 0.0,
+    "max_abs": 0.0,
+    "reset_logits": true,
+    "reset_states": true,
+    "reset_live_kv": true
+  },
+  "int4-c4096-chunk128-accuracy": {
+    "logits": [
+      {
+        "step": 0,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 1,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 2,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 3,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 4,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 5,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 6,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 7,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 8,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 9,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 10,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 11,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 12,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 13,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 14,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 15,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 16,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      }
+    ],
+    "exact_logits": 17,
+    "max_rmse": 0.0,
+    "max_abs": 0.0,
+    "reset_logits": true,
+    "reset_states": true,
+    "reset_live_kv": true
+  },
+  "int4-c2048-chunk32-accuracy": {
+    "logits": [
+      {
+        "step": 0,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 1,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 2,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 3,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 4,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 5,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 6,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 7,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 8,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 9,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 10,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 11,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 12,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 13,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 14,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 15,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      },
+      {
+        "step": 16,
+        "exact": true,
+        "rmse": 0.0,
+        "max_abs": 0.0,
+        "top1": true
+      }
+    ],
+    "exact_logits": 17,
+    "max_rmse": 0.0,
+    "max_abs": 0.0,
+    "reset_logits": true,
+    "reset_states": true,
+    "reset_live_kv": true
+  }
+}

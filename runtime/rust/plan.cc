@@ -162,11 +162,13 @@ ynn_binary_operator Arguments::Binary(size_t i) const {
 }
 ynn_unary_operator Arguments::Unary(size_t i) const {
   const std::string name(S(i));
+  if (name == "log") return ynn_unary_log;
   if (name == "abs") return ynn_unary_abs;
   if (name == "cos") return ynn_unary_cos;
   if (name == "erf") return ynn_unary_erf;
   if (name == "exp") return ynn_unary_exp;
   if (name == "hardswish") return ynn_unary_hardswish;
+  if (name == "sigmoid") return ynn_unary_sigmoid;
   if (name == "negate") return ynn_unary_negate;
   if (name == "round") return ynn_unary_round;
   if (name == "rsqrt") return ynn_unary_rsqrt;
@@ -196,14 +198,16 @@ int32_t lab_assets_data(LabAssets* assets, const char* path, size_t size,
     *out = assets->Get(path, size);
   });
 }
-int32_t lab_plan_create(size_t values, LabGraph** out,
+int32_t lab_plan_create(size_t values, int32_t math_mode, LabGraph** out,
                         LabError* error) noexcept {
   if (out) *out = nullptr;
   return LabCatch(error, [&] {
     LabRequire(out && values > 0 && values <= 100000,
                "Invalid plan value count");
+    LabRequire(math_mode == 0 || math_mode == 1, "Invalid graph math mode");
     auto h = std::make_unique<LabGraph>();
-    h->graph = std::make_unique<lab_ynn::Graph>(values);
+    h->graph = std::make_unique<lab_ynn::Graph>(
+        values, math_mode == 1 ? YNN_FLAG_FAST_MATH : YNN_FLAG_NO_EXCESS_PRECISION);
     h->construction = std::make_unique<LabPlanContext>();
     *out = h.release();
   });
@@ -352,10 +356,29 @@ int32_t lab_plan_command(LabGraph* h, const char* method, const LabPlanArg* a,
               x.E(11)->value, x.E(12)->value, x.E(13)->value, x.B(14));
       return;
     }
+    if (name == "GatedDeltaRule") {
+      x.Check({1,1,1,1,1,1,1,1,1,4,12});
+      g->GatedDeltaRule(x.I<uint32_t>(0),x.I<uint32_t>(1),x.I<uint32_t>(2),
+        x.I<uint32_t>(3),x.I<uint32_t>(4),x.I<uint32_t>(5),x.I<uint32_t>(6),
+        x.I<uint32_t>(7),x.I<uint32_t>(8),x.V<int64_t>(9),x.F(10));
+      return;
+    }
+    if (name == "CausalDepthwiseConv") {
+      x.Check({1,1,1,1,1,6,11});
+      g->CausalDepthwiseConv(x.I<uint32_t>(0),x.I<uint32_t>(1),x.I<uint32_t>(2),
+        x.I<uint32_t>(3),x.I<uint32_t>(4),x.E(5)->value,x.B(6));
+      return;
+    }
     if (name == "WeightOnlyLinear") {
       x.Check({1, 1, 1, 1, 1, 1});
       g->WeightOnlyLinear(x.I<uint32_t>(0), x.I<uint32_t>(1), x.I<uint32_t>(2),
                           x.I<uint32_t>(3), x.I<uint32_t>(4), x.I<size_t>(5));
+      return;
+    }
+    if (name == "BlockwiseFullyConnected") {
+      x.Check({1, 1, 1, 1, 1, 1});
+      g->BlockwiseFullyConnected(x.I<uint32_t>(0), x.I<uint32_t>(1), x.I<uint32_t>(2),
+                                x.I<uint32_t>(3), x.I<uint32_t>(4), x.I<size_t>(5));
       return;
     }
     if (name == "Reverse") {
@@ -370,8 +393,8 @@ int32_t lab_plan_command(LabGraph* h, const char* method, const LabPlanArg* a,
     }
     if (name == "Compare") {
       x.Check({2, 1, 1, 1, 7});
-      g->Compare(x.S(0), x.I<uint32_t>(1), x.I<uint32_t>(2), x.I<uint32_t>(3),
-                 x.Expressions(4));
+      g->Compare(x.S(0), x.I<uint32_t>(1), x.I<uint32_t>(2),
+                 x.I<uint32_t>(3), x.Expressions(4));
       return;
     }
     if (name == "Select") {
@@ -435,6 +458,11 @@ int32_t lab_plan_command(LabGraph* h, const char* method, const LabPlanArg* a,
       g->ResultShape(x.I<uint32_t>(0), x.Expressions(1));
       return;
     }
+    if (name == "PackedStrides") {
+      x.Check({1, 7});
+      g->PackedStrides(x.I<uint32_t>(0), x.Expressions(1));
+      return;
+    }
     if (name == "Resource") {
       x.Check({1, 2, 1, 6, 2});
       g->Resource(x.I<uint32_t>(0), x.S(1), x.I<int32_t>(2), x.E(3)->value,
@@ -460,6 +488,11 @@ int32_t lab_plan_command(LabGraph* h, const char* method, const LabPlanArg* a,
     if (name == "EndOperation") {
       x.Check({14, 4});
       g->EndOperation(x.Strings(0), x.V<uint32_t>(1));
+      return;
+    }
+    if (name == "CompletionOutput") {
+      x.Check({14});
+      g->CompletionOutput(x.Strings(0));
       return;
     }
     if (name == "Binary") {

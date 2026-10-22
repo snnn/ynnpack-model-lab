@@ -4,7 +4,8 @@
 /assets/
 /out/
 /rust/target/
-/models/**/parameters/
+/models/**/parameters
+/models/**/tokenizer
 
 # Python environments and caches.
 /.venv/
@@ -15,3 +16,6 @@ __pycache__/
 # Local-only files and directories.
 /AGENTS.md
 /private/
+
+# Private compiler analysis for the standalone session fixture.
+/tests/llm_session/*.report.json

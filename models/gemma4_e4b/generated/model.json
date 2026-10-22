@@ -1771,5 +1771,1683 @@
   "decode_transpose_cleanup": true,
   "decode_attention_profile": "fp32_batch",
   "prefill_attention_profile": "fp32_batch",
-  "prefill_plan": "included"
+  "prefill_plan": "included",
+  "runner": {
+    "format": "ynn-llm-execution",
+    "model": "gemma4_e4b",
+    "capacity": 2048,
+    "prefill_rows": 128,
+    "vocabulary": 262144,
+    "prefill_after_decode": true,
+    "graphs": {
+      "prefill": {
+        "file": "gemma4_prefill.ynn",
+        "sha256": "1c81e5d0a8325c8d7ef7a7574e04f9672888c4f9d264e0d1642e46eac3c4cb5f",
+        "logits": null,
+        "row_policy": "valid",
+        "inputs": [
+          {
+            "name": "embedded_input",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              2560
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "tokens",
+              "begin": 0,
+              "columns": 2560
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_0",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 0,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_1",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 256,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_10",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 2560,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_11",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 2816,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_12",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 3072,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_13",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 3328,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_14",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 3584,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_15",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 3840,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_16",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 4096,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_17",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 4352,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_18",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 4608,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_19",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 4864,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_2",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 512,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_20",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 5120,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_21",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 5376,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_22",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 5632,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_3",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 768,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_4",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 1024,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_5",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 1280,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_6",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 1536,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_7",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 1792,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_8",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 2048,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_9",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 2304,
+              "columns": 256
+            }
+          },
+          {
+            "name": "positions",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              1,
+              "rows",
+              1
+            ],
+            "recipe": {
+              "kind": "positions"
+            }
+          }
+        ],
+        "scalars": {
+          "position": "position"
+        }
+      },
+      "decode": {
+        "file": "gemma4_decode.ynn",
+        "sha256": "7b939134054b7c3df70cef90b9652baf5b4507e1b40b399bb78a72ccf8e6dabe",
+        "logits": "logits",
+        "row_policy": "valid",
+        "inputs": [
+          {
+            "name": "embedded_input",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              2560
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "tokens",
+              "begin": 0,
+              "columns": 2560
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_0",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 0,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_1",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 256,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_10",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 2560,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_11",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 2816,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_12",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 3072,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_13",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 3328,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_14",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 3584,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_15",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 3840,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_16",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 4096,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_17",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 4352,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_18",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 4608,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_19",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 4864,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_2",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 512,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_20",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 5120,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_21",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 5376,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_22",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 5632,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_23",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 5888,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_24",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 6144,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_25",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 6400,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_26",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 6656,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_27",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 6912,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_28",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 7168,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_29",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 7424,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_3",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 768,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_30",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 7680,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_31",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 7936,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_32",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 8192,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_33",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 8448,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_34",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 8704,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_35",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 8960,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_36",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 9216,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_37",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 9472,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_38",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 9728,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_39",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 9984,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_4",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 1024,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_40",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 10240,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_41",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 10496,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_5",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 1280,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_6",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 1536,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_7",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 1792,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_8",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 2048,
+              "columns": 256
+            }
+          },
+          {
+            "name": "per_layer_token_embedding_9",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              "rows",
+              256
+            ],
+            "recipe": {
+              "kind": "embedding",
+              "table": "layer_tokens",
+              "begin": 2304,
+              "columns": 256
+            }
+          },
+          {
+            "name": "positions",
+            "dtype": "fp32",
+            "shape": [
+              1,
+              1,
+              "rows",
+              1
+            ],
+            "recipe": {
+              "kind": "positions"
+            }
+          }
+        ],
+        "scalars": {
+          "position": "position"
+        }
+      }
+    },
+    "resources": [
+      {
+        "name": "cache_key_0",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_1",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_10",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_11",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          512
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_12",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_13",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_14",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_15",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_16",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_17",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          512
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_18",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_19",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_2",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_20",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_21",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_22",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_23",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          512
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_3",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_4",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_5",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          512
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_6",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_7",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_8",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_key_9",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_0",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_1",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_10",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_11",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          512
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_12",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_13",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_14",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_15",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_16",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_17",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          512
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_18",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_19",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_2",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_20",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_21",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_22",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_23",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          512
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_3",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_4",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_5",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          512
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_6",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_7",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_8",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      },
+      {
+        "name": "cache_value_9",
+        "dtype": "int8",
+        "shape": [
+          1,
+          2,
+          "capacity",
+          256
+        ],
+        "axis": 2
+      }
+    ],
+    "fixed_states": [],
+    "embeddings": {
+      "tokens": {
+        "record": {
+          "dtype": "int2",
+          "shape": [
+            262144,
+            2560
+          ],
+          "file": "tensors/model.embed_tokens.weight.i2",
+          "bytes": 167772160,
+          "quantization": {
+            "kind": "per_channel",
+            "quantized_dimension": 0,
+            "scales_file": "scales/model.embed_tokens.weight.f32",
+            "scales_shape": [
+              262144
+            ],
+            "scales_dtype": "float32",
+            "scales_bytes": 1048576,
+            "scales_sha256": "870e405117e2b9b91a86a4210dc66de2d46af52c9274ea46c3193dd69b437eb6",
+            "zero_points": [
+              0
+            ]
+          }
+        },
+        "width": 2560,
+        "bits": 2,
+        "block": 2560,
+        "assets": [
+          {
+            "path": "tensors/model.embed_tokens.weight.i2",
+            "bytes": 167772160,
+            "sha256": "716cb2b91bbd0c14f5d1eca629170b1270591abbca1f54106e698e1539b0abbf"
+          },
+          {
+            "path": "scales/model.embed_tokens.weight.f32",
+            "bytes": 1048576,
+            "sha256": "870e405117e2b9b91a86a4210dc66de2d46af52c9274ea46c3193dd69b437eb6"
+          }
+        ]
+      },
+      "layer_tokens": {
+        "record": {
+          "dtype": "int2",
+          "shape": [
+            262144,
+            10752
+          ],
+          "file": "tensors/model.embed_tokens_per_layer.weight.i2",
+          "bytes": 704643072,
+          "quantization": {
+            "kind": "blockwise",
+            "block_size": 256,
+            "quantized_dimension": 0,
+            "scales_file": "scales/model.embed_tokens_per_layer.weight.f32",
+            "scales_shape": [
+              262144,
+              42
+            ],
+            "scales_dtype": "float32",
+            "scales_bytes": 44040192,
+            "scales_sha256": "b43781fe30f93c14724c007305e2bb4da3060ad7909f01b388e573e34868e32b",
+            "zero_points": [
+              0
+            ]
+          }
+        },
+        "width": 10752,
+        "bits": 2,
+        "block": 256,
+        "assets": [
+          {
+            "path": "tensors/model.embed_tokens_per_layer.weight.i2",
+            "bytes": 704643072,
+            "sha256": "a114baecb00b8fbecb83aa235dd7b2e0982e48ec87831877e6992686cdf20025"
+          },
+          {
+            "path": "scales/model.embed_tokens_per_layer.weight.f32",
+            "bytes": 44040192,
+            "sha256": "b43781fe30f93c14724c007305e2bb4da3060ad7909f01b388e573e34868e32b"
+          }
+        ]
+      }
+    }
+  }
 }

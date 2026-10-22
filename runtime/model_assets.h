@@ -162,6 +162,10 @@ class Embedding {
       if (!(scales_[i] > 0) || !std::isfinite(scales_[i]))
         throw std::invalid_argument("Invalid embedding scale");
   }
+  void LookupSlice(const int32_t* tokens, size_t rows, size_t begin, size_t columns, float* output) const {
+    if (begin > width_ || columns > width_ - begin) throw std::invalid_argument("Embedding slice");
+    for (size_t i = 0; i < rows; ++i) Decode(tokens[i], begin, columns, output + i * columns);
+  }
   void Lookup(const int32_t* tokens, size_t count, float* output) const {
     for (size_t i = 0; i < count; ++i)
       Decode(tokens[i], 0, width_, output + i * width_);

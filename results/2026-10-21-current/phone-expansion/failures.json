@@ -1,0 +1,34 @@
+[
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "qwen3_0_6b_t1_c2048",
+    "status": {
+      "returncode": 134,
+      "elapsed_seconds": 45.48104119300842
+    }
+  },
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "qwen3_0_6b_t4_c2048",
+    "status": {
+      "returncode": 134,
+      "elapsed_seconds": 48.20291458599968
+    }
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "qwen3_0_6b_t1_c2048",
+    "status": {
+      "returncode": 1,
+      "elapsed_seconds": 46.71933001599973
+    }
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "qwen3_0_6b_t4_c2048",
+    "status": {
+      "returncode": 1,
+      "elapsed_seconds": 50.547246670001186
+    }
+  }
+]

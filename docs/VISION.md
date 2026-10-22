@@ -16,10 +16,6 @@ TorchVision weights named in its `model.json`. The models retain FP32 weights
 and activations. Convolution and pooling execute through native YNNPACK
 stencil, dot and reduction operations.
 
-Use the comparison harness below to validate the current `.ynn` outputs against
-PyTorch references and LiteRT before measuring execution, setup and memory.
-Results depend on the selected backend revision, model and target device.
-
 Plans live in `models/vision/<model>/generated/`. Their `model.json` records
 the checkpoint, input/output names and shapes, and parameter sizes and SHA-256
 hashes. Parameter blobs are local assets, excluded from Git; supply the
@@ -30,7 +26,8 @@ LiteRT and previously generated PyTorch reference tensors.
 Supply parameters under `models/vision/<model>/generated/parameters/` and the
 comparison fixtures under `assets/vision/<model>/validation/`. The public tools
 currently consume these prepared assets; they do not create the complete vision
-asset/reference set from a clean download.
+asset/reference set from a clean download. See the
+[reproduction gap](worklogs/VALIDATION_GAPS.md#public-reproduction-inputs).
 
 ## Build and run
 

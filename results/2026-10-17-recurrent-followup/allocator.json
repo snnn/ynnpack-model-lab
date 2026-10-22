@@ -1,0 +1,122 @@
+{
+  "paired": [
+    {
+      "pooled": false,
+      "result": {
+        "engine": "step-native",
+        "rows": 1,
+        "valid": 1,
+        "threads": 4,
+        "geometry": 0,
+        "stress": 0,
+        "flags": 4,
+        "max_abs": 5.620008842e-08,
+        "max_scaled_error": 0.002039717696,
+        "setup_ms": 19.398776,
+        "ms": [
+          2.065925715,
+          2.079662277,
+          2.08610311,
+          2.092032637,
+          2.082096137
+        ]
+      },
+      "process_seconds": {
+        "real": 5.21,
+        "user": 8.07,
+        "sys": 9.37
+      }
+    },
+    {
+      "pooled": true,
+      "result": {
+        "engine": "step-native",
+        "rows": 1,
+        "valid": 1,
+        "threads": 4,
+        "geometry": 0,
+        "stress": 0,
+        "flags": 4,
+        "max_abs": 5.620008842e-08,
+        "max_scaled_error": 0.002039717696,
+        "setup_ms": 32.965156,
+        "ms": [
+          0.1487266172,
+          0.1253523117,
+          0.1254127134,
+          0.1239590656,
+          0.1235018405
+        ]
+      },
+      "process_seconds": {
+        "real": 5.18,
+        "user": 18.17,
+        "sys": 1.69
+      }
+    },
+    {
+      "pooled": true,
+      "result": {
+        "engine": "step-native",
+        "rows": 1,
+        "valid": 1,
+        "threads": 4,
+        "geometry": 0,
+        "stress": 0,
+        "flags": 4,
+        "max_abs": 5.620008842e-08,
+        "max_scaled_error": 0.002039717696,
+        "setup_ms": 25.264599,
+        "ms": [
+          0.1482930255,
+          0.126529887,
+          0.1209120486,
+          0.1220330438,
+          0.1231384571
+        ]
+      },
+      "process_seconds": {
+        "real": 5.15,
+        "user": 18.37,
+        "sys": 1.45
+      }
+    },
+    {
+      "pooled": false,
+      "result": {
+        "engine": "step-native",
+        "rows": 1,
+        "valid": 1,
+        "threads": 4,
+        "geometry": 0,
+        "stress": 0,
+        "flags": 4,
+        "max_abs": 5.620008842e-08,
+        "max_scaled_error": 0.002039717696,
+        "setup_ms": 31.009505,
+        "ms": [
+          2.033012128,
+          2.08090304,
+          2.08664141,
+          2.113321989,
+          2.110487181
+        ]
+      },
+      "process_seconds": {
+        "real": 5.22,
+        "user": 8.19,
+        "sys": 9.22
+      }
+    }
+  ],
+  "process_memory_snapshot_kib": {
+    "plain": {
+      "VmHWM": 23880,
+      "VmRSS": 23828
+    },
+    "pooled": {
+      "VmHWM": 24036,
+      "VmRSS": 24036
+    }
+  }
+}

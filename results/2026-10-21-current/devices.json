@@ -1,0 +1,50 @@
+{
+  "tecno": {
+    "model": "TECNO LJ9",
+    "android_build_fingerprint": "TECNO/LJ9-OP/TECNO-LJ9:15/AP3A.240905.015.A2/154010:user/release-keys",
+    "affinity": {
+      "1_thread": [
+        7
+      ],
+      "4_threads": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "clock_control": "Unchanged; see sensor snapshots"
+  },
+  "pixel8": {
+    "model": "Pixel 8",
+    "android_build_fingerprint": "google/shiba/shiba:17/CP2A.260805.005/15828068:user/release-keys",
+    "affinity": {
+      "1_thread": [
+        8
+      ],
+      "4_threads": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "clock_control": "Unchanged; see sensor snapshots"
+  },
+  "host": {
+    "model": "Intel Core i9-12900K",
+    "affinity": {
+      "1_thread": [
+        0
+      ],
+      "4_threads": [
+        0,
+        2,
+        4,
+        6
+      ]
+    },
+    "clock_control": "Existing powersave governor; clocks not locked",
+    "kernel": "7.2.11-200.fc44.x86_64"
+  }
+}

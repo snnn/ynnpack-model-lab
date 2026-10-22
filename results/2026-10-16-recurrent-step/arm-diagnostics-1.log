@@ -1,0 +1,3 @@
+executing_dot=dot_fp32_1x64x4_1x4x1_neon m=1 n=128 k=128 threads=1 tile_k=1 flags=2
+{"engine":"step-native","rows":1,"valid":1,"threads":1,"geometry":0,"stress":0,"flags":4,"max_abs":5.620008842e-08,"max_scaled_error":0.002039717696,"setup_ms":19.029556,"ms":[]}
+scratch invocations=2 allocations=4 allocated_bytes=524288 peak_live_bytes=262144

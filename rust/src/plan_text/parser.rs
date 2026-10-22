@@ -43,12 +43,15 @@ pub(super) struct Type<'a> {
     pub name: &'a str,
     pub dims: Vec<Value<'a>>,
     pub storage: bool,
+    pub owner: bool,
+    pub literal: bool,
     pub span: Span,
 }
 #[derive(Clone)]
 pub(super) struct Binding<'a> {
     pub name: &'a str,
     pub ty: Option<Type<'a>>,
+    pub default: Option<Value<'a>>,
     pub span: Span,
 }
 #[derive(Clone)]
@@ -59,10 +62,7 @@ pub(super) struct Statement<'a> {
 }
 #[derive(Clone)]
 pub(super) enum StatementKind<'a> {
-    Invoke {
-        call: Call<'a>,
-        outputs: Vec<&'a str>,
-    },
+    Invoke { call: Call<'a>, outputs: Vec<&'a str> },
     Return(Vec<&'a str>),
     Declaration {
         role: &'a str,
@@ -331,7 +331,8 @@ impl<'a> Parser<'a> {
     }
     fn ty(&mut self) -> Result<Type<'a>> {
         let (mut name, span) = self.name()?;
-        let storage = name == "storage";
+        let owner = name == "owner";
+        let storage = name == "storage" || owner;
         if storage {
             self.expect(Kind::Punct(b'<'))?;
             name = self.name()?.0;
@@ -343,7 +344,8 @@ impl<'a> Parser<'a> {
                 "index cannot be a storage template",
             ));
         }
-        let dims = if name == "index" {
+        let literal = !storage && matches!(name, "float" | "int" | "size" | "ints" | "sizes" | "floats" | "encoding" | "bool");
+        let dims = if name == "index" || literal {
             Vec::new()
         } else {
             let v = self.expression(0, 30)?;
@@ -359,6 +361,8 @@ impl<'a> Parser<'a> {
             name,
             dims,
             storage,
+            owner,
+            literal,
             span,
         })
     }
@@ -376,23 +380,15 @@ impl<'a> Parser<'a> {
         } else {
             None
         };
-        Ok(Binding { name, ty, span })
+        Ok(Binding { name, ty, default: None, span })
     }
     fn names(&mut self) -> Result<Vec<&'a str>> {
         self.expect(Kind::Punct(b'('))?;
         let mut names = Vec::new();
         while self.peek(0)?.kind != Kind::Punct(b')') {
-            if names.len() >= 1024 {
-                return Err(diagnostic(
-                    self.source,
-                    self.peek(0)?.span,
-                    "Too many results",
-                ));
-            }
+            if names.len() >= 1024 { return Err(diagnostic(self.source, self.peek(0)?.span, "Too many results")); }
             names.push(self.name()?.0);
-            if !self.eat(Kind::Punct(b','))? {
-                break;
-            }
+            if !self.eat(Kind::Punct(b','))? { break; }
         }
         self.expect(Kind::Punct(b')'))?;
         Ok(names)
@@ -401,25 +397,12 @@ impl<'a> Parser<'a> {
         self.expect(Kind::Punct(b'('))?;
         let mut bindings = Vec::new();
         while self.peek(0)?.kind != Kind::Punct(b')') {
-            if bindings.len() >= 1024 {
-                return Err(diagnostic(
-                    self.source,
-                    self.peek(0)?.span,
-                    "Too many parameters",
-                ));
-            }
-            let binding = self.binding()?;
-            if binding.ty.is_none() {
-                return Err(diagnostic(
-                    self.source,
-                    binding.span,
-                    "Function parameters and results require types",
-                ));
-            }
+            if bindings.len() >= 1024 { return Err(diagnostic(self.source, self.peek(0)?.span, "Too many parameters")); }
+            let mut binding = self.binding()?;
+            if binding.ty.is_none() { return Err(diagnostic(self.source, binding.span, "Function parameters and results require types")); }
+            if self.eat(Kind::Punct(b'='))? { binding.default = Some(self.expression(0, 0)?); }
             bindings.push(binding);
-            if !self.eat(Kind::Punct(b','))? {
-                break;
-            }
+            if !self.eat(Kind::Punct(b','))? { break; }
         }
         self.expect(Kind::Punct(b')'))?;
         Ok(bindings)
@@ -432,17 +415,9 @@ impl<'a> Parser<'a> {
         let results = self.parameters()?;
         self.expect(Kind::Punct(b'{'))?;
         let mut statements = Vec::new();
-        while self.peek(0)?.kind != Kind::Punct(b'}') {
-            statements.push(self.statement(1)?);
-        }
+        while self.peek(0)?.kind != Kind::Punct(b'}') { statements.push(self.statement(1)?); }
         self.take()?;
-        Ok(Function {
-            name,
-            parameters,
-            results,
-            statements,
-            span,
-        })
+        Ok(Function { name, parameters, results, statements, span })
     }
     fn statement(&mut self, depth: usize) -> Result<Statement<'a>> {
         let span = self.peek(0)?.span;
@@ -467,10 +442,7 @@ impl<'a> Parser<'a> {
                 let call = self.call(0)?;
                 self.expect(Kind::Punct(b'-'))?;
                 self.expect(Kind::Punct(b'>'))?;
-                StatementKind::Invoke {
-                    call,
-                    outputs: self.names()?,
-                }
+                StatementKind::Invoke { call, outputs: self.names()? }
             }
             "return" => StatementKind::Return(self.names()?),
             "input" | "weight" | "value" | "state" => {
@@ -668,9 +640,7 @@ pub(super) fn document(source: &str) -> Result<Document<'_>> {
         if p.eat(Kind::Ident("metadata"))? {
             p.metadata(&mut doc)?;
         } else if p.eat(Kind::Ident("fn"))? {
-            if doc.functions.len() >= 1024 {
-                return Err(diagnostic(source, p.peek(0)?.span, "Too many functions"));
-            }
+            if doc.functions.len() >= 1024 { return Err(diagnostic(source, p.peek(0)?.span, "Too many functions")); }
             doc.functions.push(p.function()?);
         } else {
             doc.statements.push(p.statement(0)?);

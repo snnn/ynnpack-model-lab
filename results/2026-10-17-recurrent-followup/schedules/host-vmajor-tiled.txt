@@ -1,0 +1,76 @@
+
+let {
+  .9 = constant_buffer([], 0, {}),
+  .10 = constant_buffer([], 0, {{min=0, max=127, extent=128, stride=0}})
+} in {
+ .11 = transpose(in2, {0}) {
+  .12 = allocate(automatic, 4, {
+    {[0, 127], 4, <>},
+    {[0, 31], <>, <>}
+  }) {
+   .13 = allocate(automatic, 4, {
+     {[0, 7], 4, <>},
+     {},
+     {[0, 15], 32, <>}
+   }) {
+    .14 = transpose(in2, {-1, 0}) {
+     call(pack_b, {.14}, {.13}, {})
+    }
+    .14 = allocate(automatic, 4, {
+      {[0, 127], 4, <>},
+      {[0, 31], <>, <>}
+    }) {
+     .15 = transpose(in7, {0, 1}) {
+      .16 = allocate(automatic, 4, {}) {
+       .17 = transpose(in1, {}) {
+        call(exp, {.17}, {.16}, {})
+       }
+       call(multiply, {.15, .16}, {.14}, {})
+      }
+     }
+     .15 = transpose(in8, {-1, 0}) {
+      .16 = allocate(automatic, 4, {
+        {},
+        {[0, 31], <>, <>}
+      }) {
+       call(dot num_k_dims=1, {.14, .13, .9}, {.16, .10}, {})
+       call(subtract, {.15, .16}, {.16}, {})
+       .17 = allocate(automatic, 4, {
+         {[0, 127], <>, <>},
+         {[0, 31], <>, <>}
+       }) {
+        .18 = transpose(in0, {}) {
+         call(multiply, {.18, .16, .11}, {.17}, {})
+        }
+        call(add, {.14, .17}, {.12}, {})
+       }
+      }
+     }
+    }
+   }
+   call(copy, {}, {.12, out3, .}, {})
+   .13 = allocate(automatic, 4, {
+     {[0, 127], <>, <>}
+   }) {
+    .14 = transpose(in5, {0}) {
+     call(multiply, {.14, in6}, {.13}, {})
+    }
+    .14 = make_buffer(buffer_at(out4), 4, {
+      {[0, 0], 4, <>},
+      {[buffer_min(out4, 0), buffer_max(out4, 0)], buffer_stride(out4, 0), buffer_fold_factor(out4, 0)}
+    }) {
+     .15 = allocate(automatic, 4, {
+       {[0, 7], 4, <>},
+       {},
+       {[0, 15], 32, <>}
+     }) {
+      .13 = transpose(.13, {-1, 0}) {
+       call(pack_b, {.13}, {.15}, {})
+      }
+      call(dot num_k_dims=1, {.12, .15, .9}, {.14, .10}, {})
+     }
+    }
+   }
+  }
+ }
+}

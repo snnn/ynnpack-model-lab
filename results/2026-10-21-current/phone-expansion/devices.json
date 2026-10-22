@@ -1,0 +1,50 @@
+{
+  "samsung_s25": {
+    "label": "samsung_s25",
+    "properties": {
+      "ro.product.manufacturer": "samsung",
+      "ro.product.model": "SM-S937U1",
+      "ro.product.device": "psq",
+      "ro.soc.model": "SM8750",
+      "ro.build.fingerprint": "samsung/psquew/psq:17/CP2A.260605.016/S937U1UEU9DZIF_OYM9DZIF:user/release-keys"
+    },
+    "resources": "MemTotal:       11379992 kB\nMemFree:          294744 kB\nMemAvailable:    3239052 kB\nBuffers:            2948 kB\nCached:          2914808 kB\nFilesystem       Size Used Avail Use% Mounted on\n/dev/block/dm-97 221G 198G   24G  90% /data/user/0\n",
+    "topology": "/sys/devices/system/cpu/cpufreq/policy0\n0 1 2 3 4 5\n3532800\nwalt\n/sys/devices/system/cpu/cpufreq/policy6\n6 7\n4473600\nwalt\n",
+    "affinity_masks": {
+      "1": "80",
+      "4": "f0"
+    },
+    "binaries": {
+      "ynn-llm": "56874bdc0d49c65fd7b91d6e4e3f5186d50774bef03540562034afee06a686ea",
+      "gemma4_e2b": "60ab9a1c60368a2a71bf7e7ab164a3b6ac3cb7d50d16278c24437cf35bbb91fa",
+      "rust_native_test": "ce3a26792e81871d3523010f2301f075b0636f9abc1e4ba06cb58e54d298736c",
+      "quantized_fc_test": "7cbde6374c0df25b402f60725a46493afdeb25f47563c3702e411657ee76d32d",
+      "model_assets_test": "aa32133aadb3ff7365d8c3466326c9d73f392123e7e9328012baf93e819ee617",
+      "recurrent_cpu_test": "57a8c454059c5848e8962e5775f60ddc2d87394435ee031d9c2c32e851e4a219"
+    }
+  },
+  "pixel11": {
+    "label": "pixel11",
+    "properties": {
+      "ro.product.manufacturer": "Google",
+      "ro.product.model": "Pixel 11",
+      "ro.product.device": "cubs",
+      "ro.soc.model": "Tensor G6",
+      "ro.build.fingerprint": "google/cubs/cubs:17/CD1A.261005.003.B1/16433324:user/release-keys"
+    },
+    "resources": "MemTotal:       11926628 kB\nMemFree:         2321516 kB\nMemAvailable:    4761488 kB\nBuffers:            7328 kB\nCached:          3340508 kB\nFilesystem        Size Used Avail Use% Mounted on\n/dev/block/dm-115 224G  42G  182G  19% /data/user/0\n",
+    "topology": "/sys/devices/system/cpu/cpufreq/policy0\n0 1\n2649000\nsched_pixel\n/sys/devices/system/cpu/cpufreq/policy2\n2 3 4 5\n3379000\nsched_pixel\n/sys/devices/system/cpu/cpufreq/policy6\n6\n4109000\nsched_pixel\n",
+    "affinity_masks": {
+      "1": "40",
+      "4": "3c"
+    },
+    "binaries": {
+      "ynn-llm": "56874bdc0d49c65fd7b91d6e4e3f5186d50774bef03540562034afee06a686ea",
+      "gemma4_e2b": "60ab9a1c60368a2a71bf7e7ab164a3b6ac3cb7d50d16278c24437cf35bbb91fa",
+      "rust_native_test": "ce3a26792e81871d3523010f2301f075b0636f9abc1e4ba06cb58e54d298736c",
+      "quantized_fc_test": "7cbde6374c0df25b402f60725a46493afdeb25f47563c3702e411657ee76d32d",
+      "model_assets_test": "aa32133aadb3ff7365d8c3466326c9d73f392123e7e9328012baf93e819ee617",
+      "recurrent_cpu_test": "57a8c454059c5848e8962e5775f60ddc2d87394435ee031d9c2c32e851e4a219"
+    }
+  }
+}

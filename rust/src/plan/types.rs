@@ -157,7 +157,7 @@ macro_rules! enumeration {
 enumeration!(Dtype, Dtype, { Bf16 => "bf16", Fp16 => "fp16", Fp32 => "fp32", Fp64 => "fp64", Int2 => "int2", Int4 => "int4", Int8 => "int8", Uint8 => "uint8", Int32 => "int32" });
 enumeration!(Binary, Binary, { Add => "add", Subtract => "subtract", Multiply => "multiply", Divide => "divide", Max => "max", Min => "min", Pow => "pow", LeakyRelu => "leaky_relu" });
 enumeration!(Comparison, Text, { Less => "less", LessEqual => "less_equal", Greater => "greater", GreaterEqual => "greater_equal", Equal => "equal", NotEqual => "not_equal" });
-enumeration!(Unary, Unary, { Abs => "abs", Exp => "exp", Erf => "erf", Tanh => "tanh", Sin => "sin", Cos => "cos", Sqrt => "sqrt", Rsqrt => "rsqrt", Square => "square", Negate => "negate", Round => "round", Hardswish => "hardswish" });
+enumeration!(Unary, Unary, { Abs => "abs", Log => "log", Exp => "exp", Erf => "erf", Tanh => "tanh", Sin => "sin", Cos => "cos", Sqrt => "sqrt", Rsqrt => "rsqrt", Square => "square", Negate => "negate", Round => "round", Hardswish => "hardswish", Sigmoid => "sigmoid" });
 enumeration!(Reduce, Reduce, { Sum => "sum", Max => "max", Min => "min", MinMax => "min_max", SumSquared => "sum_squared" });
 enumeration!(Relation, Text, { Equal => "eq", LessEqual => "le" });
 enumeration!(GuardMode, Text, { Bounds => "bounds", Ordinary => "ordinary", Checked => "checked" });

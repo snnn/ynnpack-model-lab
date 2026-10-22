@@ -1,0 +1,150 @@
+{
+  "benchmark": {
+    "cases": {
+      "p128": [
+        128,
+        16
+      ]
+    },
+    "excluded_step_zero": 3,
+    "excluded_warmup_runs": 1,
+    "runner": "llama_replay",
+    "total_decode_calls": 48,
+    "total_decode_elapsed_ms": 6198.594878999999,
+    "total_decode_trace_elapsed_ms": 6198.948979999999
+  },
+  "benchmark_cmd": [
+    "env",
+    "LAB_YNN_MATH=no_excess_precision",
+    "taskset",
+    "-c",
+    "0,2,4,6",
+    "EXPERIMENT_DIR/llama-replay-next",
+    "--model=EXPERIMENT_DIR/qwen35-q8.gguf",
+    "--cases_file=EXPERIMENT_DIR/p128.tsv",
+    "--output_dir=EXPERIMENT_DIR/imc-run-llama-q8",
+    "--num_threads=4",
+    "--cache_capacity=2048",
+    "--prefill_rows=128",
+    "--warmup_runs=1",
+    "--measured_runs=3"
+  ],
+  "benchmark_format": "replay_jsonl",
+  "collector_cmd": [
+    "sudo",
+    "MEASUREMENT_TOOLS_DIR/imc_freerun_probe",
+    "--start-disabled",
+    "--trace-section",
+    "decode",
+    "--control-fifo",
+    "EXPERIMENT_DIR/imc-llama-q8/trace.fifo",
+    "--json-out",
+    "EXPERIMENT_DIR/imc-llama-q8/imc.json",
+    "--",
+    "/usr/bin/env",
+    "QWEN_REPLAY_TRACE_FIFO=EXPERIMENT_DIR/imc-llama-q8/trace.fifo",
+    "env",
+    "LAB_YNN_MATH=no_excess_precision",
+    "taskset",
+    "-c",
+    "0,2,4,6",
+    "EXPERIMENT_DIR/llama-replay-next",
+    "--model=EXPERIMENT_DIR/qwen35-q8.gguf",
+    "--cases_file=EXPERIMENT_DIR/p128.tsv",
+    "--output_dir=EXPERIMENT_DIR/imc-run-llama-q8",
+    "--num_threads=4",
+    "--cache_capacity=2048",
+    "--prefill_rows=128",
+    "--warmup_runs=1",
+    "--measured_runs=3"
+  ],
+  "derived": {
+    "avg_decode_tokens_per_second": 7.743690455173559,
+    "collector_to_native_trace_elapsed_ratio": 1.0000134085633337,
+    "decode_window_tokens_per_second": 7.7431442898550475,
+    "measured_bytes_per_token": 4653638967.99505,
+    "measured_gb_per_s_decimal": 36.03379800207781,
+    "measured_read_bytes": 220287097536.24985,
+    "measured_read_bytes_per_token": 4589314532.005205,
+    "measured_total_bytes": 223374670463.76242,
+    "measured_total_tokens": 48,
+    "measured_write_bytes": 3087572927.512576,
+    "measured_write_bytes_per_token": 64324435.989845335
+  },
+  "files": {
+    "benchmark_output": "EXPERIMENT_DIR/imc-llama-q8/benchmark.stdout.log",
+    "collector_stderr_log": "EXPERIMENT_DIR/imc-llama-q8/collector.stderr.log",
+    "imc_json": "EXPERIMENT_DIR/imc-llama-q8/imc.json",
+    "native_output_dir": "EXPERIMENT_DIR/imc-run-llama-q8"
+  },
+  "imc": {
+    "child_exit_code": 0,
+    "command": [
+      "/usr/bin/env",
+      "QWEN_REPLAY_TRACE_FIFO=EXPERIMENT_DIR/imc-llama-q8/trace.fifo",
+      "env",
+      "LAB_YNN_MATH=no_excess_precision",
+      "taskset",
+      "-c",
+      "0,2,4,6",
+      "EXPERIMENT_DIR/llama-replay-next",
+      "--model=EXPERIMENT_DIR/qwen35-q8.gguf",
+      "--cases_file=EXPERIMENT_DIR/p128.tsv",
+      "--output_dir=EXPERIMENT_DIR/imc-run-llama-q8",
+      "--num_threads=4",
+      "--cache_capacity=2048",
+      "--prefill_rows=128",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ],
+    "completed_windows": 3,
+    "counter_scope": "system-wide Intel IMC freerun PMUs",
+    "counters": [
+      {
+        "event_name": "data_read",
+        "pmu_name": "uncore_imc_free_running_0",
+        "raw": 1720935444,
+        "scaled_mib": 105037.563721
+      },
+      {
+        "event_name": "data_write",
+        "pmu_name": "uncore_imc_free_running_0",
+        "raw": 24091131,
+        "scaled_mib": 1470.405945
+      },
+      {
+        "event_name": "data_read",
+        "pmu_name": "uncore_imc_free_running_1",
+        "raw": 1721050455,
+        "scaled_mib": 105044.583435
+      },
+      {
+        "event_name": "data_write",
+        "pmu_name": "uncore_imc_free_running_1",
+        "raw": 24152196,
+        "scaled_mib": 1474.133057
+      }
+    ],
+    "enabled_ns": 6199032099,
+    "gating_mode": "asynchronous_fifo",
+    "total_read_mib": 210082.147156,
+    "total_rw_gib_per_s": 33.55909,
+    "total_rw_mib": 213026.686157,
+    "total_write_mib": 2944.539001,
+    "trace_section": "decode"
+  },
+  "measurement_scope": {
+    "counter_scope": "All discovered Intel uncore IMC freerun PMUs; system/socket-wide, not process-private",
+    "limitations": [
+      "Includes concurrent system memory traffic; no idle baseline subtraction",
+      "Measures memory-controller traffic, not CPU load/store instructions or allocated memory",
+      "Counter enable/disable is sequential across PMUs and can lag runtime markers",
+      "This collector does not measure Android DRAM traffic"
+    ],
+    "window": "FIFO-gated decode sections; asynchronous marker delivery without acknowledgement"
+  },
+  "output_dir": "EXPERIMENT_DIR/imc-llama-q8",
+  "runtime": "llama_replay",
+  "trace_env_var": "QWEN_REPLAY_TRACE_FIFO",
+  "trace_section": "decode"
+}

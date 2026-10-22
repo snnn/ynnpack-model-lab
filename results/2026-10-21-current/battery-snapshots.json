@@ -1,0 +1,398 @@
+[
+  {
+    "campaign": "tecno-v2",
+    "job": "gemma4_e2b_t1_c2048",
+    "when": "before",
+    "battery": {
+      "level": 100,
+      "voltage": 4415,
+      "temperature": 227
+    }
+  },
+  {
+    "campaign": "tecno-v2",
+    "job": "gemma4_e2b_t1_c2048",
+    "when": "after",
+    "battery": {
+      "level": 100,
+      "voltage": 4414,
+      "temperature": 235
+    }
+  },
+  {
+    "campaign": "tecno-v2",
+    "job": "gemma4_e2b_t4_c2048",
+    "when": "before",
+    "battery": {
+      "level": 100,
+      "voltage": 4415,
+      "temperature": 235
+    }
+  },
+  {
+    "campaign": "tecno-v2",
+    "job": "gemma4_e2b_t4_c2048",
+    "when": "after",
+    "battery": {
+      "level": 100,
+      "voltage": 4414,
+      "temperature": 240
+    }
+  },
+  {
+    "campaign": "tecno-v2",
+    "job": "qwen3_0_6b_t1_c2048",
+    "when": "before",
+    "battery": {
+      "level": 100,
+      "voltage": 4414,
+      "temperature": 240
+    }
+  },
+  {
+    "campaign": "tecno-v2",
+    "job": "qwen3_0_6b_t1_c2048",
+    "when": "after",
+    "battery": {
+      "level": 100,
+      "voltage": 4414,
+      "temperature": 241
+    }
+  },
+  {
+    "campaign": "tecno-v2",
+    "job": "qwen3_0_6b_t4_c2048",
+    "when": "before",
+    "battery": {
+      "level": 100,
+      "voltage": 4414,
+      "temperature": 241
+    }
+  },
+  {
+    "campaign": "tecno-v2",
+    "job": "qwen3_0_6b_t4_c2048",
+    "when": "after",
+    "battery": {
+      "level": 100,
+      "voltage": 4414,
+      "temperature": 241
+    }
+  },
+  {
+    "campaign": "pixel8-v2",
+    "job": "gemma4_e2b_t1_c2048",
+    "when": "before",
+    "battery": {
+      "level": 79,
+      "voltage": 4167,
+      "temperature": 259
+    }
+  },
+  {
+    "campaign": "pixel8-v2",
+    "job": "gemma4_e2b_t1_c2048",
+    "when": "after",
+    "battery": {
+      "level": 79,
+      "voltage": 4086,
+      "temperature": 266
+    }
+  },
+  {
+    "campaign": "pixel8-v2",
+    "job": "gemma4_e2b_t4_c2048",
+    "when": "before",
+    "battery": {
+      "level": 79,
+      "voltage": 4086,
+      "temperature": 266
+    }
+  },
+  {
+    "campaign": "pixel8-v2",
+    "job": "gemma4_e2b_t4_c2048",
+    "when": "after",
+    "battery": {
+      "level": 78,
+      "voltage": 4091,
+      "temperature": 285
+    }
+  },
+  {
+    "campaign": "pixel8-v2",
+    "job": "qwen3_0_6b_t1_c2048",
+    "when": "before",
+    "battery": {
+      "level": 78,
+      "voltage": 4145,
+      "temperature": 286
+    }
+  },
+  {
+    "campaign": "pixel8-v2",
+    "job": "qwen3_0_6b_t1_c2048",
+    "when": "after",
+    "battery": {
+      "level": 78,
+      "voltage": 4058,
+      "temperature": 299
+    }
+  },
+  {
+    "campaign": "pixel8-v2",
+    "job": "qwen3_0_6b_t4_c2048",
+    "when": "before",
+    "battery": {
+      "level": 78,
+      "voltage": 4083,
+      "temperature": 302
+    }
+  },
+  {
+    "campaign": "pixel8-v2",
+    "job": "qwen3_0_6b_t4_c2048",
+    "when": "after",
+    "battery": {}
+  },
+  {
+    "campaign": "tecno-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "when": "before",
+    "battery": {
+      "level": 100,
+      "voltage": 4414,
+      "temperature": 247
+    }
+  },
+  {
+    "campaign": "tecno-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "when": "after",
+    "battery": {
+      "level": 100,
+      "voltage": 4414,
+      "temperature": 245
+    }
+  },
+  {
+    "campaign": "tecno-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "when": "before",
+    "battery": {
+      "level": 100,
+      "voltage": 4414,
+      "temperature": 244
+    }
+  },
+  {
+    "campaign": "tecno-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "when": "after",
+    "battery": {
+      "level": 100,
+      "voltage": 4414,
+      "temperature": 247
+    }
+  },
+  {
+    "campaign": "pixel8-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "when": "before",
+    "battery": {
+      "level": 76,
+      "voltage": 4121,
+      "temperature": 303
+    }
+  },
+  {
+    "campaign": "pixel8-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "when": "after",
+    "battery": {
+      "level": 76,
+      "voltage": 4092,
+      "temperature": 312
+    }
+  },
+  {
+    "campaign": "pixel8-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "when": "before",
+    "battery": {
+      "level": 77,
+      "voltage": 4135,
+      "temperature": 313
+    }
+  },
+  {
+    "campaign": "pixel8-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "when": "after",
+    "battery": {
+      "level": 76,
+      "voltage": 4013,
+      "temperature": 304
+    }
+  },
+  {
+    "campaign": "tecno-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "when": "before",
+    "battery": {
+      "level": 100,
+      "voltage": 4413,
+      "temperature": 242
+    }
+  },
+  {
+    "campaign": "tecno-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "when": "after",
+    "battery": {
+      "level": 100,
+      "voltage": 4412,
+      "temperature": 243
+    }
+  },
+  {
+    "campaign": "tecno-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "when": "before",
+    "battery": {
+      "level": 100,
+      "voltage": 4413,
+      "temperature": 246
+    }
+  },
+  {
+    "campaign": "tecno-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "when": "after",
+    "battery": {
+      "level": 100,
+      "voltage": 4410,
+      "temperature": 249
+    }
+  },
+  {
+    "campaign": "tecno-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "when": "before",
+    "battery": {
+      "level": 100,
+      "voltage": 4413,
+      "temperature": 250
+    }
+  },
+  {
+    "campaign": "tecno-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "when": "after",
+    "battery": {
+      "level": 100,
+      "voltage": 4409,
+      "temperature": 251
+    }
+  },
+  {
+    "campaign": "tecno-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "when": "before",
+    "battery": {
+      "level": 100,
+      "voltage": 4413,
+      "temperature": 249
+    }
+  },
+  {
+    "campaign": "tecno-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "when": "after",
+    "battery": {
+      "level": 100,
+      "voltage": 4413,
+      "temperature": 250
+    }
+  },
+  {
+    "campaign": "pixel8-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "when": "before",
+    "battery": {
+      "level": 76,
+      "voltage": 4131,
+      "temperature": 292
+    }
+  },
+  {
+    "campaign": "pixel8-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "when": "after",
+    "battery": {
+      "level": 76,
+      "voltage": 4103,
+      "temperature": 282
+    }
+  },
+  {
+    "campaign": "pixel8-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "when": "before",
+    "battery": {
+      "level": 76,
+      "voltage": 4103,
+      "temperature": 282
+    }
+  },
+  {
+    "campaign": "pixel8-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "when": "after",
+    "battery": {
+      "level": 75,
+      "voltage": 4050,
+      "temperature": 290
+    }
+  },
+  {
+    "campaign": "pixel8-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "when": "before",
+    "battery": {
+      "level": 75,
+      "voltage": 4091,
+      "temperature": 297
+    }
+  },
+  {
+    "campaign": "pixel8-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "when": "after",
+    "battery": {
+      "level": 75,
+      "voltage": 4055,
+      "temperature": 303
+    }
+  },
+  {
+    "campaign": "pixel8-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "when": "before",
+    "battery": {
+      "level": 75,
+      "voltage": 4113,
+      "temperature": 291
+    }
+  },
+  {
+    "campaign": "pixel8-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "when": "after",
+    "battery": {
+      "level": 75,
+      "voltage": 4091,
+      "temperature": 297
+    }
+  }
+]

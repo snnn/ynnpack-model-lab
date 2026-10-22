@@ -1,0 +1,7 @@
+{
+  "first_divergent_layer": 26,
+  "native_input_replay_max_abs": 9.5367431640625e-07,
+  "gate_input_max_abs": 7.62939453125e-06,
+  "changed_gate_activation_codes": 1,
+  "changed_down_activation_codes": 22
+}

@@ -1,0 +1,132 @@
+{
+  "host-step-native": {
+    "kernels": [
+      "executing_dot=dot_fp32_1x32x1_1x8x1_fma3 m=1 n=128 k=128 threads=4 tile_k=1 flags=6"
+    ],
+    "scratch": [
+      "scratch invocations=2 allocations=16 allocated_bytes=2097152 peak_live_bytes=1048576"
+    ]
+  },
+  "host-vmajor": {
+    "kernels": [
+      "executing_dot=dot_fp32_8x1x8_1x1x8_avx2_fma3 m=128 n=1 k=128 threads=4 tile_k=8 flags=0"
+    ],
+    "scratch": [
+      "scratch invocations=2 allocations=16 allocated_bytes=2097152 peak_live_bytes=1048576"
+    ]
+  },
+  "host-vmajor-reduce": {
+    "kernels": [
+      "executing_dot=dot_fp32_8x1x8_1x1x8_avx2_fma3 m=128 n=1 k=128 threads=4 tile_k=8 flags=0"
+    ],
+    "scratch": [
+      "scratch invocations=2 allocations=24 allocated_bytes=3145728 peak_live_bytes=1048576"
+    ]
+  },
+  "host-vmajor-tiled": {
+    "kernels": [
+      "executing_dot=dot_fp32_8x1x8_1x1x8_avx2_fma3 m=32 n=1 k=128 threads=1 tile_k=8 flags=0"
+    ],
+    "scratch": [
+      "scratch invocations=0 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=0 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=0 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=0 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=64 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=64 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=64 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=64 allocations=0 allocated_bytes=0 peak_live_bytes=0"
+    ]
+  },
+  "host-chunk16": {
+    "kernels": [
+      "executing_dot=dot_fp32_8x1x8_1x1x8_avx2_fma3 m=16 n=1 k=16 threads=4 tile_k=8 flags=0",
+      "executing_dot=dot_fp32_6x16x1_1x8x1_fma3 m=16 n=16 k=128 threads=4 tile_k=1 flags=6",
+      "executing_dot=dot_fp32_6x16x1_1x8x1_fma3 m=16 n=16 k=16 threads=4 tile_k=1 flags=6",
+      "executing_dot=dot_fp32_6x16x1_1x8x1_fma3 m=16 n=128 k=128 threads=4 tile_k=1 flags=6",
+      "executing_dot=dot_fp32_6x16x1_1x8x1_fma3 m=16 n=128 k=16 threads=4 tile_k=1 flags=6",
+      "executing_dot=dot_fp32_6x16x1_1x8x1_fma3 m=128 n=128 k=16 threads=4 tile_k=1 flags=6"
+    ],
+    "scratch": [
+      "scratch invocations=2 allocations=26 allocated_bytes=4194304 peak_live_bytes=1572864"
+    ]
+  },
+  "host-chunk32": {
+    "kernels": [
+      "executing_dot=dot_fp32_8x1x8_1x1x8_avx2_fma3 m=32 n=1 k=32 threads=4 tile_k=8 flags=0",
+      "executing_dot=dot_fp32_6x16x1_1x8x1_fma3 m=32 n=32 k=128 threads=4 tile_k=1 flags=6",
+      "executing_dot=dot_fp32_6x16x1_1x8x1_fma3 m=32 n=32 k=32 threads=4 tile_k=1 flags=6",
+      "executing_dot=dot_fp32_6x16x1_1x8x1_fma3 m=32 n=128 k=128 threads=4 tile_k=1 flags=6",
+      "executing_dot=dot_fp32_6x16x1_1x8x1_fma3 m=32 n=128 k=32 threads=4 tile_k=1 flags=6",
+      "executing_dot=dot_fp32_6x16x1_1x8x1_fma3 m=128 n=128 k=32 threads=4 tile_k=1 flags=6"
+    ],
+    "scratch": [
+      "scratch invocations=2 allocations=20 allocated_bytes=5505024 peak_live_bytes=2752512"
+    ]
+  },
+  "arm-step-native": {
+    "kernels": [
+      "executing_dot=dot_fp32_1x64x4_1x4x1_neon m=1 n=128 k=128 threads=4 tile_k=1 flags=2"
+    ],
+    "scratch": [
+      "scratch invocations=2 allocations=20 allocated_bytes=2621440 peak_live_bytes=1048576"
+    ]
+  },
+  "arm-vmajor": {
+    "kernels": [
+      "executing_dot=dot_fp32_8x4x4_1x4x1_neon m=128 n=1 k=128 threads=4 tile_k=1 flags=2"
+    ],
+    "scratch": [
+      "scratch invocations=2 allocations=12 allocated_bytes=1572864 peak_live_bytes=786432"
+    ]
+  },
+  "arm-vmajor-reduce": {
+    "kernels": [
+      "executing_dot=dot_fp32_8x4x4_1x4x1_neon m=128 n=1 k=128 threads=4 tile_k=1 flags=2"
+    ],
+    "scratch": [
+      "scratch invocations=2 allocations=20 allocated_bytes=2621440 peak_live_bytes=786432"
+    ]
+  },
+  "arm-vmajor-tiled": {
+    "kernels": [
+      "executing_dot=dot_fp32_8x4x4_1x4x1_neon m=32 n=1 k=128 threads=1 tile_k=1 flags=2"
+    ],
+    "scratch": [
+      "scratch invocations=0 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=0 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=0 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=0 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=64 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=64 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=64 allocations=0 allocated_bytes=0 peak_live_bytes=0",
+      "scratch invocations=64 allocations=0 allocated_bytes=0 peak_live_bytes=0"
+    ]
+  },
+  "arm-chunk16": {
+    "kernels": [
+      "executing_dot=dot_fp32_8x4x4_1x4x1_neon m=16 n=1 k=16 threads=4 tile_k=1 flags=2",
+      "executing_dot=dot_fp32_4x16x4_1x4x1_neon m=16 n=16 k=128 threads=4 tile_k=1 flags=2",
+      "executing_dot=dot_fp32_4x16x4_1x4x1_neon m=16 n=16 k=16 threads=4 tile_k=1 flags=2",
+      "executing_dot=dot_fp32_4x16x4_1x4x1_neon m=16 n=128 k=128 threads=4 tile_k=1 flags=2",
+      "executing_dot=dot_fp32_4x16x4_1x4x1_neon m=16 n=128 k=16 threads=4 tile_k=1 flags=2",
+      "executing_dot=dot_fp32_5x16x4_1x4x1_neon m=128 n=128 k=16 threads=4 tile_k=1 flags=2"
+    ],
+    "scratch": [
+      "scratch invocations=2 allocations=30 allocated_bytes=8650752 peak_live_bytes=3932160"
+    ]
+  },
+  "arm-chunk32": {
+    "kernels": [
+      "executing_dot=dot_fp32_8x4x4_1x4x1_neon m=32 n=1 k=32 threads=4 tile_k=1 flags=2",
+      "executing_dot=dot_fp32_5x16x4_1x4x1_neon m=32 n=32 k=128 threads=4 tile_k=1 flags=2",
+      "executing_dot=dot_fp32_5x16x4_1x4x1_neon m=32 n=32 k=32 threads=4 tile_k=1 flags=2",
+      "executing_dot=dot_fp32_5x16x4_1x4x1_neon m=32 n=128 k=128 threads=4 tile_k=1 flags=2",
+      "executing_dot=dot_fp32_5x16x4_1x4x1_neon m=32 n=128 k=32 threads=4 tile_k=1 flags=2",
+      "executing_dot=dot_fp32_5x16x4_1x4x1_neon m=128 n=128 k=32 threads=4 tile_k=1 flags=2"
+    ],
+    "scratch": [
+      "scratch invocations=2 allocations=22 allocated_bytes=9699328 peak_live_bytes=4849664"
+    ]
+  }
+}

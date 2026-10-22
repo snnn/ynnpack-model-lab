@@ -2,6 +2,30 @@
 // SPDX-License-Identifier: Apache-2.0
 use super::*;
 
+#[test]
+fn causal_depthwise_checks_shapes_and_round_trips_two_results() {
+    let source = r#"ynn 1 resource_contract=1 completion_contract=1 {
+      input x: fp32[2,7,67]; input h: fp32[2,3,67]; input w: fp32[1,4,1,67];
+      let (y: fp32[2,7,1,67], next: fp32[2,3,67]) = causal_depthwise_conv(x,w,h,valid_rows=7,silu=false);
+      output y; output next;
+    }"#;
+    assert!(crate::plan_text::check(source).is_ok());
+    for (from,to) in [("fp32[1,4,1,67]","fp32[1,5,1,67]"),
+                      ("fp32[2,7,1,67]","fp32[2,7,1,68]"),
+                      ("input h: fp32","input h: int32")] {
+        assert!(crate::plan_text::check(&source.replace(from,to)).is_err());
+    }
+}
+
+#[test]
+fn shape_tensor_vector_length_is_not_tensor_rank() {
+    let elements = (0..128).map(|i| i.to_string()).collect::<Vec<_>>().join(", ");
+    let source = format!("ynn 1 resource_contract=1 completion_contract=1 {{ let positions: int32[128] = shape_tensor(elements=[{elements}], scalar=false); output positions; }}");
+    assert!(crate::plan_text::check(&source).is_ok());
+    assert!(crate::plan_text::check(&source.replace("int32[128]", "int32[127]")).is_err());
+    assert!(crate::plan_text::check(&source.replace("scalar=false", "scalar=true")).is_err());
+}
+
 fn square() -> Plan {
     crate::plan_text::parse(include_str!("../../../tests/rust/square.ynn")).unwrap()
 }
@@ -180,5 +204,33 @@ fn validates_all_published_plans_without_model_weights() {
             let path = package.join(format!("gemma4_{phase}.ynn"));
             ValidatedPlan::read(&path).unwrap_or_else(|e| panic!("{}: {e}", path.display()));
         }
+    }
+}
+
+#[test]
+fn gated_delta_validates_geometry_mapping_and_result_types() {
+    let source = r#"ynn 1 resource_contract=1 completion_contract=1 {
+      input q: storage<fp32[1,7,2,5]>;
+      input k: storage<fp32[1,7,2,5]>;
+      input v: storage<fp32[1,7,4,3]>;
+      input g: storage<fp32[1,7,4]>;
+      input beta: storage<fp32[1,7,4]>;
+      input state: storage<fp32[1,4,5,3]>;
+      input valid: storage<int32[]>;
+      value y: storage<fp32[1,7,4,3]>;
+      value next: storage<fp32[1,4,5,3]>;
+      GatedDeltaRule(query=q, key=k, value=v, log_decay=g, beta=beta,
+        state=state, valid_rows=valid, output=y, next_state=next,
+        head_map=[0,0,1,1], scale=0.5);
+      output y; output next;
+    }"#;
+    assert!(crate::plan_text::check(source).is_ok());
+    for (a,b) in [("head_map=[0,0,1,1]","head_map=[0,0,1,2]"),
+                  ("head_map=[0,0,1,1]","head_map=[0,1]"),
+                  ("scale=0.5","scale=0.0"),
+                  ("state: storage<fp32[1,4,5,3]>","state: storage<fp32[1,4,3,5]>"),
+                  ("valid: storage<int32[]>","valid: storage<fp32[]>"),
+                  ("next: storage<fp32[1,4,5,3]>","next: storage<int32[1,4,5,3]>")] {
+        assert!(crate::plan_text::check(&source.replace(a,b)).is_err(), "{a}");
     }
 }

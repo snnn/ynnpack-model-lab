@@ -48,7 +48,7 @@ can retain prior model evidence when the runtime behavior they use is unchanged.
 Review adapter, backend, build and device changes separately; matching plan bytes
 alone do not identify those parts of execution.
 
-## Pure functions
+## Reusable functions
 
 Version `ynn 1` supports reusable typed functions. Calls expand during loading,
 before preparing one native graph; they do not add per-layer host execution.
@@ -76,11 +76,48 @@ are private to each invocation. Nested acyclic calls are supported.
 
 Use `require` and `shape` for logical contracts. A zero in a storage template
 is a backend placeholder, so matching storage types alone is not a logical
-shape proof. Bodies cannot introduce inputs, runtime symbol bindings, resources,
-state operations or completion edges, or capture caller values implicitly.
-Weights declared with immutable assets are explicit local constants. Resource
-owners/views cannot be passed as ordinary tensor parameters; dequantization or
-other materialization belongs in the caller.
+shape proof. Bodies cannot introduce runtime inputs, symbol bindings or implicit
+captures. Immutable assets are explicit local constants or parameters. Ordinary
+tensor inputs may borrow live read-only resource views; ordinary results cannot
+expose those views. Writable resources use owner parameters and results.
+
+A stateful block declares its binding with `owner<dtype[...]>`, checks it with a
+`Resource` command, and returns exactly one advanced successor for each owner:
+
+```text
+fn append_row(cache: owner<fp32[8,4]>, x: storage<fp32[1,4]>, p: index)
+    -> (next: owner<fp32[8,4]>) {
+  Resource(owner=cache, name="formal", axis=0, entry_extent=p,
+           encoding=encoding(dtype=fp32, axis=none, scales=[], zero_points=[]));
+  Append(owner=cache, input=x, output=next, axis=0, position=p, rows=1);
+  return(next);
+}
+```
+
+The caller binds an existing resource, declared by `Resource` or by
+`@resource`/`state` and `require committed(...)`. Expansion validates storage,
+encoding, axis, entry extent and generation, and emits no extra cache allocation
+or copy. Aliased owners, stale generations, hidden resources/successors and
+escaping views reject. Local completion names and tensor identities are hygienic
+even when human-readable scopes repeat. Calls still construct one native graph.
+
+Construction attributes can be explicit typed parameters with closed defaults:
+
+```text
+fn scaled_softmax(x: storage<fp32[4]>, beta: float = 1.0)
+    -> (y: storage<fp32[4]>) {
+  Softmax(input=x, output=y, beta=beta);
+  return(y);
+}
+```
+
+`invoke scaled_softmax(x, 0.125) -> (y);` substitutes the literal before native
+validation. Omitting a trailing literal uses its default. Supported types are
+`int`, `size`, `float`, `bool`, `ints`, `sizes`, `floats` and `encoding`. Values
+must be closed literals of the declared type, including in unused definitions;
+these are construction parameters, not runtime tensors. Exact float bits survive.
+This permits layer-specific quantization attributes without duplicating the
+operation body or changing arithmetic. The file version remains `ynn 1`.
 
 Definitions, including unused ones, are validated in a closed namespace.
 Unknown calls, recursion, interface mismatches and invalid results reject.
@@ -91,8 +128,8 @@ their names from `@scope`; inside an explicit caller completion/profile region,
 the function contributes to that caller region instead of nesting incompatible
 primitive regions.
 
-The default Gemma graphs use separate global and sliding-window attention
-functions. See [attention representation](ATTENTION.md).
+Generated Gemma graphs can retain global/sliding decoder blocks and shared-KV
+readers, with separate nested global and sliding-window attention functions. See [attention representation](ATTENTION.md).
 
 ## Results and types
 

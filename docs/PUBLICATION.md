@@ -4,9 +4,9 @@
 
 Publish enough source and evidence for XNNPACK/YNNPACK engineers to run the
 workloads, inspect the performance gap, and reproduce backend limitations.
-The [documentation index](README.md) lists usage and design references;
-the [result index](../results/README.md) identifies published evidence.
-Keep local investigation notes and captures out of source changes.
+The [documentation index](README.md) separates usage/design references from
+[open investigations](worklogs/README.md); the [result index](../results/README.md)
+identifies retained evidence.
 
 ## Source and evidence to include
 
@@ -26,13 +26,10 @@ select the comparison relevant to their workload. Keep arithmetic/precision
 audits with those comparisons. A correctness run with dumps enabled must not
 be presented as a latency baseline.
 
-Retain detailed records for the current baseline and compact evidence for older
-studies. Remove redundant process/per-step logs and individual operator tables
-when request summaries and aggregate profiles preserve the conclusions. Keep
-minimal reproducers and supporting evidence for unresolved issues; after a fix,
-retain its explanation and validation instead of every investigation capture.
-The [result retention policy](../results/README.md#retention) records which
-historical captures were pruned and links to their earlier public snapshot.
+Retain the current baseline and minimal evidence for unresolved issues.
+Superseded campaigns and resolved migration history are archived locally outside
+the repository. The [result index](../results/README.md) identifies the retained
+questions and whether they have been revalidated on the current checkout.
 
 The XNNPACK/LiteRT comparison controls are preserved external artifacts. Their
 hashes and normalized recorded flags are included, but this repository does not

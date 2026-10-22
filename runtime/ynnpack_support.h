@@ -35,6 +35,7 @@
 #include <vector>
 
 #include "execution_profile.h"
+#include "ynnpack_recurrent_cpu.h"
 #include "packed_routing.h"
 #include "checked_index.h"
 #include "resource_state.h"
@@ -70,6 +71,15 @@ struct Counters {
   size_t fail_before_append = std::numeric_limits<size_t>::max();
   std::function<void(size_t)> before_append;
 };
+struct RuntimeCounters {
+  std::atomic<size_t> append_calls{0}, append_bytes{0}, view_copy_bytes{0};
+  size_t fail_before_append = std::numeric_limits<size_t>::max();
+  std::function<void(size_t)> before_append;
+  Counters Snapshot() const {
+    return {append_calls.load(), append_bytes.load(), view_copy_bytes.load(),
+            fail_before_append, before_append};
+  }
+};
 
 struct ScratchStatistics {
   std::atomic<size_t> live{0}, peak{0}, allocated{0}, allocations{0};
@@ -77,11 +87,12 @@ struct ScratchStatistics {
 
 class Graph {
  public:
-  explicit Graph(size_t count) : bound_(count) {
+  explicit Graph(size_t count, uint32_t flags = YNN_FLAG_NO_EXCESS_PRECISION)
+      : bound_(count) {
     ynn_subgraph_t raw = nullptr;
     // Preserve authored quantize/dequantize boundaries. Default YNNPACK
     // rewrites can otherwise remove the QAT output rounding/clipping entirely.
-    Check(ynn_create_subgraph(count, YNN_FLAG_NO_EXCESS_PRECISION, &raw));
+    Check(ynn_create_subgraph(count, flags, &raw));
     graph_.reset(raw);
   }
   Graph(const Graph&) = delete;
@@ -113,81 +124,20 @@ class Graph {
       throw std::invalid_argument("completion requires real result anchors");
     for (size_t i = operation_begin_; i < graph_->nodes.size(); ++i) {
       auto& node = graph_->nodes[i];
+      // Aliases have no execution point. Carry their waits through every
+      // consumer until a materialized operation (or the public sink) runs.
+      for (auto input : node.inputs) {
+        const auto& inherited = metadata_waits_[input];
+        operation_waits_.insert(inherited.begin(), inherited.end());
+      }
+      for (auto output : node.outputs) metadata_waits_[output] = operation_waits_;
+      for (auto anchor : operation_waits_) {
+        const auto& covered = value_node_dependencies_[anchor];
+        operation_coverage_.insert(covered.begin(), covered.end());
+      }
       node_prerequisites_[i] = operation_coverage_;
       if (operation_waits_.empty()) continue;
-      const auto original_op = node.op;
-      const auto original_create = node.create;
-      const size_t node_input_count = node.inputs.size();
-      node.inputs.insert(node.inputs.end(), operation_waits_.begin(), operation_waits_.end());
-      node.op = ynn_node::opaque{"core_completion_controlled"};
-      node.create = [original_op, original_create, node_input_count](
-                        const ynn_node& n, ynn_runtime& r) {
-        ynn_node original = n;
-        original.op = original_op;
-        original.inputs.resize(node_input_count);
-        const size_t begin = r.funcs.size();
-        const auto status = original_create(original, r);
-        if (status != ynn_status_success) return status;
-        if (begin == r.funcs.size())
-          throw std::invalid_argument("completion capability: metadata-only wait");
-        // Remapping during YNNPACK optimization also remaps the appended IDs.
-        std::vector<uint32_t> remapped(n.inputs.begin() + node_input_count,
-                                       n.inputs.end());
-        for (size_t j = begin; j < r.funcs.size(); ++j) {
-          auto& f = r.funcs[j];
-          if (!f.impl())
-            throw std::invalid_argument("completion capability: copy/view wait");
-          std::optional<slinky::func> original_func(std::move(f));
-          auto& source = *original_func;
-          auto inputs = source.inputs();
-          const size_t kernel_inputs = inputs.size();
-          for (auto id : remapped) {
-            const auto& value = r.value(id);
-            if (!value.buffer)
-              throw std::invalid_argument("completion anchor has no backend buffer");
-            slinky::box_expr bounds;
-            for (int d = 0; d < value.rank(); ++d)
-              bounds.push_back(slinky::min_extent(0, value.extent(d)));
-            inputs.push_back({value.buffer, std::move(bounds)});
-          }
-          auto attrs = source.attrs();
-          const uint32_t old_in_place = uint32_t(attrs.allow_in_place);
-          attrs.allow_in_place = 0;
-          for (size_t o = 0; o < source.outputs().size(); ++o)
-            for (size_t in = 0; in < kernel_inputs; ++in) {
-              const size_t old_bit = o * kernel_inputs + in;
-              const size_t bit = o * inputs.size() + in;
-              if (old_bit < 31 && bit < 31 && (old_in_place & (uint32_t(1) << old_bit)))
-                attrs.allow_in_place |= int(uint32_t(1) << bit);
-            }
-          attrs.name = "core_completion_" + attrs.name;
-          attrs.min_rank = std::numeric_limits<int>::max();
-          const auto impl = source.impl();
-          auto callback = [impl, kernel_inputs](const slinky::call_stmt* call,
-                                               slinky::eval_context& ctx) {
-            slinky::call_stmt kernel_call(*call);
-            kernel_call.inputs = {call->inputs.data(), kernel_inputs};
-            return impl(&kernel_call, ctx);
-          };
-          const auto call = source.make_call();
-          const auto* native_call = call.as<slinky::call_stmt>();
-          std::vector<slinky::expr> scalars(native_call->scalars.begin(),
-                                           native_call->scalars.end());
-          auto outputs = source.outputs();
-          auto loops = source.loops();
-          auto* user_data = source.user_data();
-          // Destroying the old func releases its producer links through the
-          // builder's API; replacing private buffer metadata is unnecessary.
-          original_func.reset();
-          auto controlled = slinky::func(std::move(callback), std::move(inputs),
-                                         std::move(outputs), std::move(scalars), attrs);
-          controlled.loops(std::move(loops));
-          controlled.compute_root();
-          controlled.user_data() = user_data;
-          f = std::move(controlled);
-        }
-        return ynn_status_success;
-      };
+      InstallCompletionWaits(i, operation_waits_);
     }
     std::set<uint32_t> anchors(results.begin(), results.end());
     anchors.insert(operation_waits_.begin(), operation_waits_.end());
@@ -203,6 +153,137 @@ class Graph {
       completion_coverage_.emplace(token, coverage);
     }
     operation_open_ = false;
+  }
+
+  std::map<size_t, std::set<uint32_t>> node_waits_;
+  void InstallCompletionWaits(size_t i, const std::set<uint32_t>& waits) {
+    auto& node = graph_->nodes[i];
+    node_waits_[i].insert(waits.begin(), waits.end());
+    const auto original_op = node.op;
+    const auto original_create = node.create;
+    const size_t node_input_count = node.inputs.size();
+    node.inputs.insert(node.inputs.end(), waits.begin(), waits.end());
+    node.op = ynn_node::opaque{"core_completion_controlled"};
+    node.create = [original_op, original_create, node_input_count](
+                      const ynn_node& n, ynn_runtime& r) {
+      ynn_node original = n;
+      original.op = original_op;
+      original.inputs.resize(node_input_count);
+      const size_t begin = r.funcs.size();
+      const auto status = original_create(original, r);
+      if (status != ynn_status_success) return status;
+      // Remapping during YNNPACK optimization also remaps the appended IDs.
+      std::vector<uint32_t> remapped(n.inputs.begin() + node_input_count,
+                                     n.inputs.end());
+      for (size_t j = begin; j < r.funcs.size(); ++j) {
+        auto& f = r.funcs[j];
+        // Slinky's copy functions express aliases. Wrapping them in an
+        // opaque callback would force a history copy. Their downstream
+        // materialized consumers carry the same waits.
+        if (!f.impl()) continue;
+        std::optional<slinky::func> original_func(std::move(f));
+        auto& source = *original_func;
+        auto inputs = source.inputs();
+        const size_t kernel_inputs = inputs.size();
+        for (auto id : remapped) {
+          const auto& value = r.value(id);
+          if (!value.buffer)
+            throw std::invalid_argument("completion anchor has no backend buffer");
+          slinky::box_expr bounds;
+          for (int d = 0; d < value.rank(); ++d)
+            bounds.push_back(slinky::min_extent(0, value.extent(d)));
+          inputs.push_back({value.buffer, std::move(bounds)});
+        }
+        auto attrs = source.attrs();
+        const uint32_t old_in_place = uint32_t(attrs.allow_in_place);
+        attrs.allow_in_place = 0;
+        for (size_t o = 0; o < source.outputs().size(); ++o)
+          for (size_t in = 0; in < kernel_inputs; ++in) {
+            const size_t old_bit = o * kernel_inputs + in;
+            const size_t bit = o * inputs.size() + in;
+            if (old_bit < 31 && bit < 31 && (old_in_place & (uint32_t(1) << old_bit)))
+              attrs.allow_in_place |= int(uint32_t(1) << bit);
+          }
+        attrs.name = "core_completion_" + attrs.name;
+        attrs.min_rank = std::numeric_limits<int>::max();
+        const auto impl = source.impl();
+        auto callback = [impl, kernel_inputs](const slinky::call_stmt* call,
+                                             slinky::eval_context& ctx) {
+          slinky::call_stmt kernel_call(*call);
+          kernel_call.inputs = {call->inputs.data(), kernel_inputs};
+          return impl(&kernel_call, ctx);
+        };
+        const auto call = source.make_call();
+        const auto* native_call = call.as<slinky::call_stmt>();
+        std::vector<slinky::expr> scalars(native_call->scalars.begin(),
+                                         native_call->scalars.end());
+        auto outputs = source.outputs();
+        auto loops = source.loops();
+        auto* user_data = source.user_data();
+        // Destroying the old func releases its producer links through the
+        // builder's API; replacing private buffer metadata is unnecessary.
+        original_func.reset();
+        auto controlled = slinky::func(std::move(callback), std::move(inputs),
+                                       std::move(outputs), std::move(scalars), attrs);
+        controlled.loops(std::move(loops));
+        controlled.compute_root();
+        controlled.user_data() = user_data;
+        f = std::move(controlled);
+      }
+      return ynn_status_success;
+    };
+  }
+
+  // Retain public effects without requiring a public tensor binding. The
+  // adapter owns a one-byte scheduling sink, never an allocation for a token.
+  // Whole result regions force all contributing operations to finish before
+  // Run publishes resource successors.
+  void CompletionOutput(const std::vector<std::string>& tokens) {
+    if (runtime_ || operation_open_ || completion_sink_ != YNN_INVALID_VALUE_ID)
+      throw std::invalid_argument("invalid public completion boundary");
+    std::set<uint32_t> anchors;
+    std::set<std::string> unique;
+    for (const auto& token : tokens) {
+      if (!unique.insert(token).second || !completion_anchors_.count(token))
+        throw std::invalid_argument("duplicate or undefined public completion");
+      const auto& values = completion_anchors_.at(token);
+      anchors.insert(values.begin(), values.end());
+    }
+    if (anchors.empty()) throw std::invalid_argument("empty public completion");
+    const size_t one = 1;
+    Check(ynn_define_tensor(graph_.get(), ynn_type_uint8, 1, &one, nullptr,
+                            YNN_VALUE_FLAG_EXTERNAL_OUTPUT, &completion_sink_));
+    bound_.resize(std::max(bound_.size(), size_t(completion_sink_) + 1));
+    ynn_node node;
+    node.op = ynn_node::opaque{"core_public_completion"};
+    node.inputs.assign(anchors.begin(), anchors.end());
+    node.outputs = {completion_sink_};
+    node.create = [](const ynn_node& n, ynn_runtime& r) {
+      auto& output = r.value(n.outputs[0]);
+      output.make_buffer(r, 1);
+      std::vector<slinky::func::input> inputs;
+      for (auto id : n.inputs) {
+        const auto& a = r.value(id);
+        slinky::box_expr bounds;
+        for (int d = 0; d < a.rank(); ++d)
+          bounds.push_back(slinky::min_extent(0, a.extent(d)));
+        inputs.push_back({a.buffer, std::move(bounds)});
+      }
+      auto callback = [](const slinky::call_stmt* call,
+                         slinky::eval_context& ctx) -> slinky::index_t {
+        *static_cast<uint8_t*>(ctx.lookup_buffer(call->outputs[0])->base) = 1;
+        return 0;
+      };
+      slinky::call_stmt::attributes attrs;
+      attrs.name = "core_public_completion";
+      auto f = slinky::func(callback, inputs,
+                            {{output.buffer, r.globals.make_dims(1)}}, {}, attrs);
+      f.compute_root();
+      output.buffer->store_root();
+      r.funcs.push_back(std::move(f));
+      return ynn_status_success;
+    };
+    graph_->add_node(std::move(node));
   }
 
   void BeginProfileOperation(const char* scope, const char* kind,
@@ -233,6 +314,12 @@ class Graph {
 
   void Tensor(uint32_t id, const std::string& name, ynn_type type,
               std::vector<size_t> dims, uint32_t flags, const void* data) {
+    // An input returned unchanged already has caller-owned storage. YNNPACK's
+    // external-output rewriting introduces an unbound copy for a value carrying
+    // both flags. Retain the input binding and expose that same buffer through
+    // the adapter interface; no native output allocation or copy is necessary.
+    if (flags & YNN_VALUE_FLAG_EXTERNAL_INPUT)
+      flags &= ~YNN_VALUE_FLAG_EXTERNAL_OUTPUT;
     Check(ynn_define_tensor(graph_.get(), type, dims.size(), dims.data(), data,
                             flags, &id));
     names_.emplace(name, id);
@@ -242,7 +329,12 @@ class Graph {
     Tensor(id, name, type, dims, YNN_VALUE_FLAG_EXTERNAL_OUTPUT, nullptr);
     uint32_t source = YNN_INVALID_VALUE_ID;
     Check(ynn_define_tensor(graph_.get(), type, dims.size(), dims.data(), data, 0, &source));
+    constant_sources_.emplace(id, source);
     Copy(source, id);
+  }
+  uint32_t ConstantSource(uint32_t id) const {
+    const auto source = constant_sources_.find(id);
+    return source == constant_sources_.end() ? id : source->second;
   }
   #include "ynnpack_packed.inc"
   slinky::expr Axis(uint32_t id, size_t axis) const {
@@ -507,6 +599,7 @@ class Graph {
       throw std::invalid_argument("shape tensor requires INT32 scalar/vector");
     output.extents = scalar ? std::vector<slinky::expr>{}
                             : std::vector<slinky::expr>{static_cast<int64_t>(elements.size())};
+    if (!scalar && elements.size() == 1) output.extents[0] = slinky::expr{};
     ynn_node node;
     node.op = ynn_node::opaque{"core_shape_tensor"};
     node.outputs = {out};
@@ -552,6 +645,38 @@ class Graph {
     });
   }
   void Copy(uint32_t in, uint32_t out) {
+    if (operation_open_ && !operation_waits_.empty()) {
+      // An explicit data copy can carry a completion wait with a scheduled
+      // callback. Resource views retain their separate no-copy contract.
+      auto& output = graph_->get_output_value(&out, graph_->value(in));
+      output.extents = graph_->value(in).extents;
+      ynn_node node;
+      node.op = ynn_node::opaque{"core_ordered_copy"};
+      node.inputs = {in}; node.outputs = {out};
+      node.create = [](const ynn_node& n, ynn_runtime& r) {
+        const auto& a = r.value(n.inputs[0]);
+        auto& b = r.value(n.outputs[0]);
+        b.make_buffer(r, a.buffer->elem_size());
+        slinky::box_expr bounds;
+        for (int d = 0; d < a.rank(); ++d)
+          bounds.push_back(slinky::min_extent(0, a.extent(d)));
+        auto callback = [](const slinky::call_stmt* call,
+                           slinky::eval_context& ctx) -> slinky::index_t {
+          slinky::copy(*ctx.lookup_buffer(call->inputs[0]),
+                       *ctx.lookup_buffer(call->outputs[0]));
+          return 0;
+        };
+        slinky::call_stmt::attributes attrs;
+        attrs.name = "core_ordered_copy";
+        auto f = slinky::func(callback, {{a.buffer, bounds}},
+            {{b.buffer, r.globals.make_dims(b.rank())}}, {}, attrs);
+        f.compute_root(); b.buffer->store_root();
+        r.funcs.push_back(std::move(f));
+        return ynn_status_success;
+      };
+      graph_->add_node(std::move(node));
+      return;
+    }
     Check(ynn_define_copy(graph_.get(), in, &out, 0));
   }
   void SliceLike(uint32_t in, uint32_t like, uint32_t out,
@@ -574,15 +699,32 @@ class Graph {
     output.extents.assign(shape.rbegin(), shape.rend());
     for (auto& d : output.extents)
       if (slinky::is_constant(d, 1)) d = {};
+    const bool empty = std::any_of(output.extents.begin(), output.extents.end(),
+        [](const slinky::expr& extent) { return slinky::is_constant(extent, 0); });
     ynn_node node;
     node.op = ynn_node::opaque{name};
     node.inputs = {in};
     node.outputs = {out};
-    node.create = [map = std::move(map)](const ynn_node& n, ynn_runtime& r) {
+    node.create = [map = std::move(map), empty](const ynn_node& n, ynn_runtime& r) {
       const auto& a = r.value(n.inputs[0]);
       auto& b = r.value(n.outputs[0]);
       b.make_buffer(r, a.buffer->elem_size());
       auto dims = r.globals.make_dims(b.rank());
+      if (empty) {
+        // No coordinate exists in this result. Building an input point-box
+        // for it nevertheless asks Slinky to prove a read inside [0,-1].
+        // Preserve the declared output shape without declaring a payload read.
+        slinky::call_stmt::attributes attrs;
+        attrs.name = "empty_indexed_copy";
+        auto f = slinky::func(
+            [](const slinky::call_stmt*, slinky::eval_context&) -> slinky::index_t {
+              return 0;
+            }, {}, {{b.buffer, dims}}, {}, attrs);
+        f.compute_root();
+        b.buffer->store_root();
+        r.funcs.push_back(std::move(f));
+        return ynn_status_success;
+      }
       auto bounds = map(a, dims);
       r.funcs.push_back(slinky::func::make_copy({a.buffer, std::move(bounds)},
                                                 {b.buffer, std::move(dims)}));
@@ -980,14 +1122,27 @@ class Graph {
   void Resource(uint32_t owner, std::string identity, int axis,
                 slinky::expr entry_extent, std::string encoding) {
     const auto& value = graph_->value(owner);
-    if (!value.is_external_input() || axis != value.rank() - 2 ||
+    if (!value.is_external_input() || axis < 0 || axis >= int(LogicalShape(owner).size()) ||
         resources_.count(owner))
-      throw std::invalid_argument("YNNPACK resource capability: unique token-major owner");
+      throw std::invalid_argument("YNNPACK resource capability: unique contiguous owner and valid append axis");
     for (const auto& [id, resource] : resources_)
       if (resource.identity == identity)
         throw std::invalid_argument("duplicate resource identity");
     resources_.emplace(owner, ResourceBinding{std::move(identity), axis,
         std::move(entry_extent), std::move(encoding)});
+  }
+  size_t ResourceStorageBytes(const std::string& name, const std::vector<size_t>& shape) const {
+    const auto id = names_.at(name);
+    std::vector<int64_t> strides;
+    if (packed_.count(id)) for (const auto& e : packed_.at(id).strides) {
+      auto n = slinky::as_constant(e);
+      if (!n) throw std::invalid_argument("padded state needs static strides");
+      strides.push_back(*n);
+    }
+    lab_ynn_runtime::StateGeometry g(std::vector<int64_t>(shape.begin(), shape.end()),
+                                  resources_.at(id).axis, strides);
+    return packed_.count(id) ? size_t(g.Bytes(packed_.at(id).bits))
+        : size_t(lab_ynn_runtime::StateGeometry::Multiply(g.span, ynn::type_size_bytes(graph_->value(id).type)));
   }
   std::shared_ptr<ResourceState> NewResourceState(
       const std::string& name, void* data, size_t bytes,
@@ -996,38 +1151,66 @@ class Graph {
     const auto& declaration = resources_.at(id);
     const auto& value = graph_->value(id);
     if (shape.empty()) {
-      for (int axis = 0; axis < value.rank(); ++axis) {
-        auto dimension = slinky::as_constant(value.extent(value.rank() - 1 - axis));
+      for (const auto& extent : LogicalShape(id)) {
+        auto dimension = slinky::as_constant(extent);
         if (!dimension || *dimension < 0)
           throw std::invalid_argument("dynamic resource needs concrete storage geometry");
         shape.push_back(size_t(*dimension));
       }
     }
+    const int packed_bits = packed_.count(id) ? packed_.at(id).bits : 0;
+    std::vector<int64_t> strides;
+    if (packed_bits) for (const auto& stride : packed_.at(id).strides) {
+      auto n = slinky::as_constant(stride);
+      if (!n) throw std::invalid_argument("padded state needs static strides");
+      strides.push_back(*n);
+    }
     return std::make_shared<ResourceState>(data, bytes, std::move(shape),
-        ynn::type_size_bytes(value.type), declaration.axis, declaration.encoding, initialized);
+        packed_bits ? 0 : ynn::type_size_bytes(value.type), declaration.axis,
+        declaration.encoding, initialized, packed_bits, std::move(strides));
   }
   void BindResource(const std::string& name, std::shared_ptr<ResourceState> state) {
     if (!runtime_) throw std::logic_error("uncompiled graph");
     const uint32_t id = names_.at(name);
     auto& declaration = resources_.at(id);
-    if (!state || state->encoding_ != declaration.encoding ||
+    const int packed_bits = packed_.count(id) ? packed_.at(id).bits : 0;
+    if (!state || state->retired() || state->encoding_ != declaration.encoding ||
         state->axis_ != size_t(declaration.axis) ||
-        state->element_bytes_ != ynn::type_size_bytes(graph_->value(id).type) ||
-        state->shape_.size() != size_t(graph_->value(id).rank()))
+        state->packed_bits_ != size_t(packed_bits) ||
+        state->element_bytes_ != (packed_bits ? 0 : ynn::type_size_bytes(graph_->value(id).type)) ||
+        state->shape_.size() != LogicalShape(id).size())
       throw std::invalid_argument("incompatible resource state");
+    if (packed_bits) {
+      std::vector<int64_t> strides;
+      for (const auto& expression : packed_.at(id).strides) {
+        const auto n = slinky::as_constant(expression);
+        if (!n) throw std::invalid_argument("padded state needs static strides");
+        strides.push_back(*n);
+      }
+      const lab_ynn_runtime::StateGeometry expected(
+          std::vector<int64_t>(state->shape_.begin(), state->shape_.end()),
+          declaration.axis, strides);
+      if (state->geometry_.strides != expected.strides)
+        throw std::invalid_argument("incompatible packed state representation");
+    }
     declaration.state = std::move(state);
     declaration.epoch = declaration.state->epoch_;
     BindTensor(name, declaration.state->data_, declaration.state->bytes_, declaration.state->shape_);
   }
   void View(uint32_t in, uint32_t out, int axis, slinky::expr begin,
             slinky::expr end, bool resource_view = true) {
+    if (packed_.count(in)) {
+      PackedView(in, out, axis, begin, end);
+      return;
+    }
     const auto& input = graph_->value(in);
     if (axis < 0 || axis >= input.rank())
       throw std::invalid_argument("view axis");
     const int d = input.rank() - 1 - axis;
     auto& output = graph_->get_output_value(&out, input);
     output.extents = input.extents;
-    output.extents[d] = end - begin;
+    const auto extent = slinky::simplify(end - begin);
+    output.extents[d] = slinky::is_one(extent) ? slinky::expr{} : extent;
     Require(begin >= 0 && end >= begin && end <= input.extent(d),
             "view bounds");
     ynn_node node;
@@ -1086,15 +1269,20 @@ class Graph {
 
   void Append(uint32_t cache, uint32_t fresh, uint32_t out, int axis,
               slinky::expr p, slinky::expr logical_length) {
+    if (packed_.count(cache)) {
+      PackedAppend(cache, fresh, out, axis, p, logical_length);
+      return;
+    }
     const auto& c = graph_->value(cache);
     const auto& a = graph_->value(fresh);
     const uint32_t owner = alias_owners_.count(cache) ? alias_owners_.at(cache) : cache;
     if (!resources_.count(owner))
       throw std::invalid_argument("append requires a shared resource declaration");
     resources_.at(owner).append_lengths.push_back(logical_length);
-    if (c.type != a.type || c.rank() != a.rank() || axis != c.rank() - 2)
+    if (c.type != a.type || c.rank() != a.rank() || axis < 0 || axis >= c.rank())
       throw std::invalid_argument(
-          "append requires matching token-major tensors");
+          "append requires matching tensors and a valid axis");
+    const int append_dim = c.rank() - 1 - axis;
     if ((!c.is_external_input() && !alias_owners_.count(cache)) ||
         alias_owners_.count(out))
       throw std::invalid_argument(
@@ -1104,15 +1292,15 @@ class Graph {
     if (!b.is_external_output())
       throw std::invalid_argument("append must be an effect root");
     for (int d = 0; d < c.rank(); ++d)
-      if (d != 1) Require(c.extent(d) == a.extent(d), "append row shape");
-    Require(p >= 0 && logical_length >= 0 && p + logical_length <= c.extent(1), "append capacity");
+      if (d != append_dim) Require(c.extent(d) == a.extent(d), "append row shape");
+    Require(p >= 0 && logical_length >= 0 && p + logical_length <= c.extent(append_dim), "append capacity");
     aliases_[owner].push_back(out);
     alias_owners_.emplace(out, owner);
     ynn_node n;
     n.op = ynn_node::opaque{"core_append_rows"};
     n.inputs = {cache, fresh};
     n.outputs = {out};
-    n.create = [p, logical_length, stats = counters_](const ynn_node& n, ynn_runtime& r) {
+    n.create = [p, logical_length, append_dim, stats = counters_](const ynn_node& n, ynn_runtime& r) {
       const auto& old = r.value(n.inputs[0]);
       const auto& a = r.value(n.inputs[1]);
       auto& b = r.value(n.outputs[0]);
@@ -1126,7 +1314,7 @@ class Graph {
       slinky::call_stmt::attributes attrs;
       attrs.name = "core_append_rows";
       attrs.allow_in_place = 1;  // output 0 explicitly aliases cache input 0.
-      auto callback = [stats](const slinky::call_stmt* call,
+      auto callback = [stats, append_dim](const slinky::call_stmt* call,
                               slinky::eval_context& ctx) -> slinky::index_t {
         if (stats->append_calls == stats->fail_before_append) return 1;
         const auto* old = ctx.lookup_buffer(call->inputs[0]);
@@ -1137,12 +1325,12 @@ class Graph {
         slinky::buffer<const void, 8> a(*src);
         slinky::buffer<void, 8> b(*dst);
         const auto expected = slinky::evaluate(call->scalars[1], ctx);
-        if (a.dim(1).extent() != expected || p < 0 || expected < 0 ||
-            p > b.dim(1).extent() || expected > b.dim(1).extent() - p) return 1;
+        if (a.dim(append_dim).extent() != expected || p < 0 || expected < 0 ||
+            p > b.dim(append_dim).extent() || expected > b.dim(append_dim).extent() - p) return 1;
         if (stats->before_append) stats->before_append(stats->append_calls);
         if (a.elem_count() == 0) { ++stats->append_calls; return 0; }
-        b.crop(1, p, p + a.dim(1).extent() - 1);
-        b.translate(0, -p);
+        b.crop(append_dim, p, p + a.dim(append_dim).extent() - 1);
+        b.mutable_dim(append_dim).translate(-p);
         slinky::copy(a, b);
         ++stats->append_calls;
         stats->append_bytes += a.elem_count() * a.elem_size;
@@ -1219,10 +1407,35 @@ class Graph {
 
 #include "ynnpack_attention.inc"
 #include "ynnpack_weight_only.inc"
+#include "ynnpack_blockwise_fc.inc"
+#include "ynnpack_gated_delta.inc"
+#include "ynnpack_causal_conv.inc"
 
   void Compile(size_t threads = 1) {
     if (runtime_) throw std::logic_error("already compiled");
     if (operation_open_) throw std::invalid_argument("unclosed completion boundary");
+    // Close metadata dependencies over every native consumer, including
+    // operations with no authored completion boundary and the public sink.
+    // Aliases remain copy-free; the first real callback carries their waits.
+    indexed_nodes_ = 0;
+    value_node_dependencies_.clear();
+    for (size_t i = 0; i < graph_->nodes.size(); ++i) {
+      std::set<uint32_t> waits = node_waits_[i];
+      for (auto input : graph_->nodes[i].inputs) {
+        const auto& inherited = metadata_waits_[input];
+        waits.insert(inherited.begin(), inherited.end());
+      }
+      std::set<uint32_t> added;
+      std::set_difference(waits.begin(), waits.end(), node_waits_[i].begin(),
+                          node_waits_[i].end(), std::inserter(added, added.end()));
+      if (!added.empty()) InstallCompletionWaits(i, added);
+      for (auto output : graph_->nodes[i].outputs) metadata_waits_[output] = waits;
+      for (auto anchor : waits) {
+        const auto& coverage = value_node_dependencies_[anchor];
+        node_prerequisites_[i].insert(coverage.begin(), coverage.end());
+      }
+      RefreshNodeDependencies(i + 1);
+    }
     // Old-version readers need explicit completion coverage before mutation;
     // the writer's own cache input carries its alias/generation dependency.
     // Check physical read-before-write prerequisites as well as Core's semantic
@@ -1250,6 +1463,11 @@ class Graph {
                              reinterpret_cast<ynn_threadpool_t>(pool_.get()), 0,
                              &runtime));
     runtime_.reset(runtime);
+    if (completion_sink_ != YNN_INVALID_VALUE_ID) {
+      Check(ynn_set_external_value_data(runtime_.get(), completion_sink_,
+                                        &completion_byte_));
+      bound_.at(completion_sink_) = {&completion_byte_, 1};
+    }
     if (execution_profile_)
       runtime_->pipeline.body = execution_profile_->Instrument(runtime_->pipeline.body);
     for (const auto& [name, value] : instance_values_) {
@@ -1337,7 +1555,9 @@ class Graph {
       }
       if (!shape.empty()) {
         std::vector<int64_t> logical(shape.begin(), shape.end());
-        shape = {size_t(packed::Bytes(packed::Count(logical), p.bits))};
+        shape = {resources_.count(id) && resources_.at(id).state
+                     ? size_t(resources_.at(id).state->geometry_.Bytes(p.bits))
+                     : size_t(packed::Bytes(packed::Count(logical), p.bits))};
       }
     }
     if (!shape.empty())
@@ -1401,13 +1621,50 @@ class Graph {
     for (const auto& [condition, message] : checked_checks_)
       if (!condition(shape_context_)) throw std::invalid_argument(message);
     slinky::evaluate(preflight_, shape_context_);
-    Check(static_cast<ynn_status>(
-        slinky::evaluate(runtime_->reshape_impl, shape_context_)));
+    const auto reshape_status = static_cast<ynn_status>(
+        slinky::evaluate(runtime_->reshape_impl, shape_context_));
+    if (reshape_status != ynn_status_success) {
+      std::string failures;
+      auto diagnose = [&](const slinky::call_stmt*, slinky::eval_context& ctx) -> slinky::index_t {
+        for (const auto& node : runtime_->subgraph->nodes) {
+          if (!node.is_valid()) continue;
+          for (const auto& check : node.checks) {
+            if (slinky::evaluate(check.condition, ctx)) continue;
+            failures += " " + std::string(node.name()) + " inputs=";
+            for (auto id : node.inputs) {
+              for (const auto& [name, value] : names_)
+                if (value == id) failures += name + ",";
+            }
+            failures += " [";
+            for (const auto& item : check.message) {
+              std::visit([&](const auto& part) {
+                using T = std::decay_t<decltype(part)>;
+                if constexpr (std::is_same_v<T, const char*>) failures += part;
+                else if constexpr (std::is_same_v<T, slinky::expr>)
+                  failures += std::to_string(slinky::evaluate(part, ctx));
+                else failures += std::to_string(part.idx);
+              }, item);
+            }
+            failures += "]";
+          }
+        }
+        return 0;
+      };
+      slinky::evaluate(slinky::let_stmt::make(runtime_->globals.lets,
+          slinky::call_stmt::make(diagnose, {}, {}, {}, {})), shape_context_);
+      throw std::invalid_argument("YNNPACK reshape failed:" + failures);
+    }
     for (size_t id = 0; id < bound_.size(); ++id) {
       const auto& v = runtime_->value(id);
       if (!v.is_valid() || !v.is_external()) continue;
-      if (!bound_[id].first || v.data->size_bytes() > bound_[id].second)
-        throw std::invalid_argument("missing or undersized external buffer");
+      if (!bound_[id].first || v.data->size_bytes() > bound_[id].second) {
+        std::string name = std::to_string(id);
+        for (const auto& [candidate, value] : names_)
+          if (value == id) name = candidate;
+        throw std::invalid_argument("missing or undersized external buffer: " + name +
+            " needs " + std::to_string(v.data->size_bytes()) + ", bound " +
+            std::to_string(bound_[id].second));
+      }
     }
     struct ResourceLease {
       std::vector<std::shared_ptr<ResourceState>> states;
@@ -1423,7 +1680,7 @@ class Graph {
       if (!state->busy_.compare_exchange_strong(available, true))
         throw std::logic_error("concurrent resource execution is unsupported");
       lease.states.push_back(state);
-      if (state->poisoned_ || state->epoch_ != declaration.epoch)
+      if (state->retired() || state->poisoned_ || state->epoch_ != declaration.epoch)
         throw std::invalid_argument("poisoned resource or stale reset epoch; reset/rebind required");
       const auto extent = slinky::evaluate(declaration.entry_extent, shape_context_);
       size_t length = 0;
@@ -1476,7 +1733,7 @@ class Graph {
     }
     for (const auto& [state, extent] : pending) state->committed_ = extent;
   }
-  Counters counters() const { return *counters_; }
+  Counters counters() const { return counters_->Snapshot(); }
   // Read-only diagnostics. This is the root context's pool, not a process-wide
   // allocation total; worker contexts and allocator-retained pages are
   // separate.
@@ -1554,9 +1811,14 @@ class Graph {
     uint64_t epoch = 0;
   };
   std::map<uint32_t, ResourceBinding> resources_;
+  friend struct CapacityVariant;
   std::map<uint32_t, std::vector<uint32_t>> aliases_;
   std::map<uint32_t, uint32_t> alias_owners_;
+  std::map<uint32_t, uint32_t> constant_sources_;
   std::map<std::string, std::set<uint32_t>> completion_anchors_;
+  std::map<uint32_t, std::set<uint32_t>> metadata_waits_;
+  uint32_t completion_sink_ = YNN_INVALID_VALUE_ID;
+  uint8_t completion_byte_ = 0;
   std::map<std::string, std::set<size_t>> completion_coverage_;
   std::map<uint32_t, std::set<size_t>> value_node_dependencies_;
   std::map<size_t, std::set<size_t>> node_prerequisites_;
@@ -1571,7 +1833,7 @@ class Graph {
       std::pair<std::function<bool(slinky::eval_context&)>, std::string>>
       checked_checks_;
   std::vector<std::pair<void*, size_t>> bound_;
-  std::shared_ptr<Counters> counters_ = std::make_shared<Counters>();
+  std::shared_ptr<RuntimeCounters> counters_ = std::make_shared<RuntimeCounters>();
   slinky::stmt pipeline_;
   slinky::stmt preflight_;
   slinky::eval_context shape_context_;

@@ -348,8 +348,7 @@ impl Printer<'_> {
         let mut named = false;
         for ((field, kind), arg) in c.op.fields().iter().zip(c.op.signature()).zip(&c.args) {
             if schema::output(c.op, field)
-                || matches!(c.op, Op::Binary | Op::Compare | Op::Unary | Op::Reduce)
-                    && *field == "operator"
+                || matches!(c.op, Op::Binary | Op::Compare | Op::Unary | Op::Reduce) && *field == "operator"
             {
                 continue;
             }

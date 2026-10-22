@@ -114,21 +114,7 @@ Slinky preparation. Library callers must supply the stack budget described in
 [RUST_RUNTIME.md](RUST_RUNTIME.md). After a late execution failure, discard the
 failed session; state can be partially modified.
 
-Published-bundle text-to-TSV replay has been checked with the current Rust/`.ynn`
-runner on Linux and one Android ARM64 device at capacity 2048, including partial
-prefill chunks, window crossings and repeated requests. This does not establish
-HF-profile device coverage, generation quality or current performance.
-Historical device results apply to their recorded runners.
-
-## Measurement records
-
-| Record | Scope |
-| --- | --- |
-| [Original E2B comparison](MEASUREMENTS.md) | Historical host/phone controls, numerical checks and capacity comparison |
-| [Packing correction](../results/2026-10-05-packing-fix/README.md) | Matched host/phone timing and numerical changes |
-| [October 7 mobile baseline](../results/2026-10-07-upstream-refresh/README.md) | Previous-pin/native phone controls and separate profiles |
-| [KV-history investigation](../results/2026-10-08-kv-history/README.md) | Samsung attention layout, conversion/packing and thermal effects |
-
-These completed studies retain their C++ runners and exact configurations.
-See the [results index](../results/README.md) for published HF and backend
-studies.
+See the [current results](../results/README.md) for measured configurations and
+[validation gaps](worklogs/VALIDATION_GAPS.md) for missing coverage. The retained
+[KV-history investigation](../results/2026-10-08-kv-history/README.md) supports
+an unresolved attention question; its C++ timings are historical.

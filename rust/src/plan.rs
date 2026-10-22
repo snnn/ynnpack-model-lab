@@ -108,6 +108,14 @@ impl ValidatedPlan {
     pub(crate) fn commands(&self) -> &[Command] {
         &self.commands
     }
+    pub(crate) fn scalar_names(&self) -> std::collections::BTreeSet<&str> {
+        use types::SymbolSource;
+        self.commands.iter().filter_map(|c|match c {
+            Command::Symbol{source:SymbolSource::Parameter{name,..},..}=>Some(name.as_str()),
+            Command::Symbol{source:SymbolSource::InstanceParameter{name,lower,upper},..} if lower!=upper=>Some(name.as_str()),
+            Command::BindScalarParameter{name,..}=>Some(name.as_str()),_=>None,
+        }).collect()
+    }
     pub(crate) fn require_tensor(
         &self,
         name: &str,
@@ -273,6 +281,7 @@ impl Arg {
             ("unary", Self::Unary(x)) => require(
                 [
                     "abs",
+                    "log",
                     "exp",
                     "erf",
                     "tanh",
@@ -284,6 +293,7 @@ impl Arg {
                     "negate",
                     "round",
                     "hardswish",
+                    "sigmoid",
                 ]
                 .contains(&x.as_str()),
                 "Unsupported unary operator",
@@ -295,8 +305,9 @@ impl Arg {
             ("expr", Self::Expr(e)) => {
                 e.bounds_in(symbols, &mut 4096, 0, protected, false)?;
             }
-            ("exprs", Self::Exprs(xs)) => {
-                require(xs.len() <= 8, "Invalid expression rank")?;
+            ("exprs" | "elements", Self::Exprs(xs)) => {
+                let limit = if kind == "elements" { 1024 } else { 8 };
+                require(xs.len() <= limit, "Invalid expression vector length")?;
                 for e in xs {
                     e.bounds_in(symbols, &mut 4096, 0, protected, false)?;
                 }
@@ -607,6 +618,7 @@ impl Plan {
             "Incorrect command argument count",
         )?;
         for (arg, kind) in a.iter().zip(signature) {
+            let kind = if c.op == ShapeTensor && *kind == "exprs" { "elements" } else { kind };
             arg.check(kind, syms, protected)?;
         }
         if matches!(
@@ -731,7 +743,9 @@ impl Plan {
             Split => (vec![a[0].int()], a[1].ints().to_vec()),
             PackedRoute => (a[1].ints().to_vec(), vec![a[2].int()]),
             ShapeTensor => (vec![], vec![a[0].int()]),
-            Sdpa | WeightOnlyLinear => (a[..4].iter().map(Arg::int).collect(), vec![a[4].int()]),
+            GatedDeltaRule => (a[..7].iter().map(Arg::int).collect(), vec![a[7].int(), a[8].int()]),
+            CausalDepthwiseConv => (a[..3].iter().map(Arg::int).collect(), vec![a[3].int(), a[4].int()]),
+            Sdpa | WeightOnlyLinear | BlockwiseFullyConnected => (a[..4].iter().map(Arg::int).collect(), vec![a[4].int()]),
             Pad => (vec![a[0].int(), a[1].int()], vec![a[2].int()]),
             Quantize | Dequantize | FuseDims | SplitDim | ShapeProduct | Polynomial | Softmax
             | Reshape | Transpose | Slice | View | Mask | Pool2D | Copy | ExpandDims | Squeeze
@@ -757,6 +771,11 @@ impl Plan {
         let rank = |id: i64| values[id as usize].dims.len();
         let axis_ok = |axis: i64, r: usize| axis >= -(r as i64) && axis < r as i64;
         match c.op {
+            PackedStrides => {
+                require(resources.contains(&a[0].int()), "Packed strides need a resource")?;
+                let Arg::Exprs(xs) = &a[1] else { unreachable!() };
+                require(xs.len() == rank(a[0].int()), "Packed stride rank mismatch")?;
+            }
             InputShape | ResultShape => {
                 if let Arg::Exprs(xs) = &a[1] {
                     require(xs.len() == rank(a[0].int()), "Shape rank mismatch")?;
@@ -831,6 +850,14 @@ impl Plan {
                     require(completions.insert(s.clone()), "Duplicate completion")?;
                 }
                 *operation = false;
+            }
+            CompletionOutput => {
+                let tokens = a[0].texts();
+                let unique: HashSet<_> = tokens.iter().collect();
+                require(!*operation && !tokens.is_empty()
+                    && unique.len() == tokens.len()
+                    && tokens.iter().all(|s| completions.contains(s)),
+                    "Invalid public completion roots")?;
             }
             Transpose => {
                 let xs = a[2].ints();
@@ -967,6 +994,12 @@ impl Plan {
                             values[out as usize].dtype == "int32",
                             "Shape tensor must be INT32",
                         )?;
+                        let scalar = matches!(a[2], Arg::Bool(true));
+                        require(
+                            if scalar { rank(out) == 0 && xs.len() == 1 }
+                            else { rank(out) == 1 && values[out as usize].dims[0] == xs.len() as i64 },
+                            "Shape tensor element count mismatch",
+                        )?;
                     }
                 }
             }
@@ -987,10 +1020,57 @@ impl Plan {
                     "Invalid parameter map",
                 )?;
             }
+            CausalDepthwiseConv => {
+                let shape = |slot: usize| &values[a[slot].int() as usize].dims;
+                require(a[..5].iter().all(|id| values[id.int() as usize].dtype == "fp32")
+                    && rank(a[0].int())==3 && rank(a[1].int())==4 && rank(a[2].int())==3,
+                    "Causal convolution requires FP32 BTC/history/filter")?;
+                let (x,w,h)=(shape(0),shape(1),shape(2));
+                require(x.iter().all(|&d| d>0) && w[1]>=2 && w==&[1,h[1]+1,1,x[2]]
+                    && h==&[x[0],w[1]-1,x[2]] && shape(3)==&[x[0],x[1],1,x[2]]
+                    && shape(4)==h,"Causal convolution shape mismatch")?;
+            },
+            GatedDeltaRule => {
+                require(a[..6].iter().all(|id| values[id.int() as usize].dtype == "fp32")
+                    && rank(a[0].int()) == 4 && rank(a[1].int()) == 4
+                    && rank(a[2].int()) == 4 && rank(a[3].int()) == 3
+                    && rank(a[4].int()) == 3 && rank(a[5].int()) == 4
+                    && rank(a[6].int()) == 0 && values[a[6].int() as usize].dtype == "int32"
+                    && !a[9].ints().is_empty() && a[9].ints().iter().all(|&h| h>=0),
+                    "Invalid gated delta contract")?;
+                let shape = |slot: usize| &values[a[slot].int() as usize].dims;
+                let (q, v) = (shape(0), shape(2));
+                require(q == shape(1) && q.iter().chain(v).all(|&d| d>0)
+                    && q[0]==v[0] && q[1]==v[1]
+                    && shape(3)==&v[..3] && shape(4)==shape(3)
+                    && shape(5)==&[v[0],v[2],q[3],v[3]]
+                    && shape(7)==v && shape(8)==shape(5)
+                    && values[a[7].int() as usize].dtype=="fp32"
+                    && values[a[8].int() as usize].dtype=="fp32"
+                    && a[9].ints().len()==v[2] as usize
+                    && a[9].ints().iter().all(|&h| h<q[2]), "Gated delta shape/head map mismatch")?;
+                if let Arg::Float(bits)=&a[10] {
+                    require(float(bits)?>0.0, "Invalid gated delta scale")?;
+                }
+            },
             WeightOnlyLinear => require(
                 a[5].int() > 0 && rank(a[0].int()) == 2 && rank(a[1].int()) == 2,
                 "Invalid weight-only linear shape/group",
             )?,
+            BlockwiseFullyConnected => {
+                let x = &values[a[0].int() as usize];
+                let w = &values[a[1].int() as usize];
+                let s = &values[a[2].int() as usize];
+                let z = &values[a[3].int() as usize];
+                let y = &values[a[4].int() as usize];
+                require(a[5].int() == 32 && x.dims.len() == 2 && w.dims.len() == 2
+                    && w.dims[1] > 0 && w.dims[1] % 32 == 0 && w.dims[0] > 0
+                    && x.dims[1] == w.dims[1] && x.dtype == "fp32" && w.dtype == "int4"
+                    && s.dtype == "fp32" && s.dims == vec![w.dims[0], w.dims[1] / 32]
+                    && z.dtype == "int32" && z.dims == vec![1,1]
+                    && y.dtype == "fp32" && y.dims == vec![x.dims[0],w.dims[0]],
+                    "Invalid grouped hybrid FC contract")?;
+            },
             DynamicallyQuantizedMatmul => {
                 require(
                     rank(a[0].int()) >= 2

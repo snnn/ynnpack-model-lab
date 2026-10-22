@@ -12,6 +12,31 @@ from tools.capacity_sweep import check_capacity_sweep, expand_capacity_sweep
 
 
 class BenchmarkSummaryTest(unittest.TestCase):
+    def test_general_runner_separate_setup_memory_and_counters(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            rows = [{"case": "a", "rep": 0, "step": step,
+                     "prompt_tokens": 17, "prefix_ms": 8,
+                     "token_ms": latency, "argmax": 3}
+                    for step, latency in enumerate([4, 2, 6])]
+            (root / "timings.jsonl").write_text("\n".join(map(json.dumps, rows)))
+            for name, data in {
+                "setup": {"setup_ms": 1000},
+                "memory": {"peak_rss_bytes": 8 * 1024 * 1024},
+                "counters": [{"append_bytes": 64, "view_copy_bytes": 0},
+                             {"append_bytes": 32, "view_copy_bytes": 0}],
+            }.items():
+                (root / (name + ".json")).write_text(json.dumps(data))
+            row, = summarize(root)
+            self.assertEqual(row["ttft_ms"], 12)
+            self.assertEqual(row["prefill_tok_s"], 2000)
+            self.assertEqual(row["decode_ms"], 4)
+            self.assertEqual(row["setup_ms"], 1000)
+            self.assertEqual(row["peak_rss_mib"], 8)
+            self.assertEqual(row["process_append_bytes"], 96)
+            self.assertIsNone(row["last_append_bytes"])
+            self.assertIsNone(row["view_copy_bytes"])
+
     def test_native_status_does_not_override_diagnostic_requests(self):
         request = {"case_id": "a", "run_index": 0, "warmup": False,
                    "timings_valid_for_benchmark": False, "peak_process_rss_kib": 2048,

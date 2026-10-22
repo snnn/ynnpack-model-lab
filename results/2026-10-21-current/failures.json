@@ -1,0 +1,26 @@
+[
+  {
+    "platform": "tecno",
+    "campaign": "tecno-v2",
+    "job": "qwen3_0_6b_t1_c2048",
+    "returncode": 134
+  },
+  {
+    "platform": "tecno",
+    "campaign": "tecno-v2",
+    "job": "qwen3_0_6b_t4_c2048",
+    "returncode": 134
+  },
+  {
+    "platform": "pixel8",
+    "campaign": "pixel8-v2",
+    "job": "qwen3_0_6b_t1_c2048",
+    "returncode": 1
+  },
+  {
+    "platform": "pixel8",
+    "campaign": "pixel8-v2",
+    "job": "qwen3_0_6b_t4_c2048",
+    "returncode": 134
+  }
+]

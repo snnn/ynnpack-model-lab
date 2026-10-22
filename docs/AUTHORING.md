@@ -71,6 +71,16 @@ Select a candidate without recompiling a model:
   --warmup_runs=0 --measured_runs=1 --dump_outputs
 ```
 
+Recurrent plans require the matching `lab_recurrent_cpu` library, built by the
+standard CMake configuration from `runtime/ynnpack_recurrent_cpu.cc`. This small
+kernel translation unit uses `-O3 -ffp-contract=off`; runner setup code retains
+its existing flags. AVX2 is selected at runtime, with scalar fallback. Causal
+convolution explicitly uses ordered FP32 FMA, including its scalar fallback;
+recurrence uses separate FP32 multiply/add. The two-result
+`causal_depthwise_conv` command returns convolution output and replacement
+history without constructing a concatenated history tensor. Matching runtime
+helpers must accompany regenerated plans.
+
 Keep candidate directories and results separate from retained baselines. Hold
 source assets, precision, tokens, capacity, chunks, threads and affinity fixed.
 Compare logits and active KV against the corresponding control; capacity-only
@@ -92,7 +102,3 @@ patches, installation instructions and raw compiler reports outside this
 repository. Learned model payloads, downloads, builds and large dumps remain
 ignored. Small deterministic state-test parameters are checked in with their
 plans. Publication history must also exclude the private sources.
-
-The [October 8 builder refresh](../results/2026-10-08-builder-refresh/README.md)
-is historical evidence for the retired C++ artifact path. Its configurations
-and results remain unchanged.

@@ -1,0 +1,14 @@
+{
+  "tecno-gemma4_e2b-correctness": {
+    "returncode": 0
+  },
+  "tecno-qwen3_0_6b-correctness": {
+    "returncode": 134
+  },
+  "pixel8-gemma4_e2b-correctness": {
+    "returncode": 0
+  },
+  "pixel8-qwen3_0_6b-correctness": {
+    "returncode": 1
+  }
+}

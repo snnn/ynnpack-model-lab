@@ -65,15 +65,24 @@ struct Tensor {
   std::vector<I> shape;
   int bits = 0;
   int type = 0;  // ynn_type, used by the adapter for numerical loads
+  I offset = 0;  // logical code offset for a capacity-backed packed view
+  std::vector<I> strides;
+  I Index(const std::vector<I>& c) const {
+    const I dense = Ordinal(c, shape);  // also validates every coordinate
+    if (strides.empty()) return dense + offset;
+    I n = offset;
+    for (size_t i = 0; i < c.size(); ++i) n += c[i] * strides.at(i);
+    return n;
+  }
   const void* At(const std::vector<I>& c) const {
-    const I n = Ordinal(c, shape);
+    const I n = Index(c);
     if (bits) return buffer->address_at(n / (8 / bits));
     std::vector<slinky::index_t> reversed(c.rbegin(), c.rend());
     return buffer->address_at(slinky::span<slinky::index_t>(reversed));
   }
   I Code(const std::vector<I>& c) const {
     if (bits) {
-      const I n = Ordinal(c, shape);
+      const I n = Index(c);
       const auto byte = *static_cast<const uint8_t*>(At(c));
       const unsigned q =
           (byte >> ((n % (8 / bits)) * bits)) & ((1u << bits) - 1);

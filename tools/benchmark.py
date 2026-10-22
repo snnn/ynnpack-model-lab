@@ -59,6 +59,17 @@ def summarize(directory):
     timings = directory / "timings.jsonl"
     if timings.exists():
         raw = [json.loads(s) for s in timings.read_text().splitlines()]
+        # The general runner records setup and process memory separately.
+        if raw and "rep" in raw[0]:
+            setup = json.loads((directory / "setup.json").read_text())
+            memory = json.loads((directory / "memory.json").read_text())
+            counters = json.loads((directory / "counters.json").read_text())
+            raw = [{**r, "repetition": r["rep"], "context": r["prompt_tokens"],
+                    "setup_ms": setup["setup_ms"],
+                    "peak_rss_kib": memory["peak_rss_bytes"] / 1024}
+                   for r in raw]
+        else:
+            counters = None
         for case, rep in sorted({(r["case"], r["repetition"]) for r in raw}):
             r = [v for v in raw if v["case"] == case and v["repetition"] == rep]
             assert [v["step"] for v in r] == list(range(len(r)))
@@ -90,6 +101,10 @@ def summarize(directory):
                     "view_copy_bytes": r[-1].get("view_copy_bytes"),
                 }
             )
+            if counters is not None:
+                rows[-1]["peak_rss_scope"] = "process_end_high_water_mark"
+                rows[-1]["process_append_bytes"] = sum(c["append_bytes"] for c in counters)
+                rows[-1]["process_view_copy_bytes"] = sum(c["view_copy_bytes"] for c in counters)
     else:
         for path in sorted(directory.glob("*.json")):
             raw = json.loads(path.read_text())
@@ -191,7 +206,7 @@ def main():
                 timeout=30,
             )
             (directory / "battery-before.txt").write_text(before.stdout)
-            if "capacity_sweep" in config:
+            if "capacity_sweep" in config or config.get("capture_telemetry", False):
                 capture_capacity_telemetry(adb, directory, "before")
         with (directory / "process.log").open("w") as log:
             result = subprocess.run(
@@ -215,7 +230,7 @@ def main():
                 timeout=30,
             )
             (directory / "battery-after.txt").write_text(after.stdout)
-            if "capacity_sweep" in config:
+            if "capacity_sweep" in config or config.get("capture_telemetry", False):
                 capture_capacity_telemetry(adb, directory, "after")
         if result.returncode:
             failures.append(name)

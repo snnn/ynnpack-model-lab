@@ -1,0 +1,3117 @@
+[
+  {
+    "campaign": "host",
+    "job": "gemma4_e2b_t1_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 50.37712590501178
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792619405.075025,
+      "end_unix_seconds": 1792619455.452151,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 4246016000,
+      "rss_bytes": 4162801664,
+      "setup_ms": 16461.50504,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 4246016000,
+      "rss_bytes": 3849719808
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "append_contract": {
+      "expected_bytes": 46632960,
+      "actual_bytes": 46632960,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "host",
+    "job": "gemma4_e2b_t4_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 31.28509835799923
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792619457.4606264,
+      "end_unix_seconds": 1792619488.7457247,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 4246106112,
+      "rss_bytes": 4162392064,
+      "setup_ms": 16372.238152000002,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 4246106112,
+      "rss_bytes": 4185505792
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "append_contract": {
+      "expected_bytes": 46632960,
+      "actual_bytes": 46632960,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "host",
+    "job": "gemma4_e4b_t1_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 123.27229454996996
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792619490.7494526,
+      "end_unix_seconds": 1792619614.021747,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e4b",
+      "peak_rss_bytes": 8164929536,
+      "rss_bytes": 8028053504,
+      "setup_ms": 48586.756626,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 8164929536,
+      "rss_bytes": 8072904704
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 133726208,
+        "append_calls": 1920,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 5849088,
+        "append_calls": 9792,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+    "append_contract": {
+      "expected_bytes": 139575296,
+      "actual_bytes": 139575296,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "host",
+    "job": "gemma4_e4b_t4_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 72.92390492901905
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792619616.026739,
+      "end_unix_seconds": 1792619688.9506438,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e4b",
+      "peak_rss_bytes": 8165236736,
+      "rss_bytes": 8029769728,
+      "setup_ms": 43279.284063,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 8171593728,
+      "rss_bytes": 8090058752
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 133726208,
+        "append_calls": 1920,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 5849088,
+        "append_calls": 9792,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+    "append_contract": {
+      "expected_bytes": 139575296,
+      "actual_bytes": 139575296,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "host",
+    "job": "qwen3_0_6b_t1_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 39.99278436799068
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792619690.952773,
+      "end_unix_seconds": 1792619730.9455574,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "qwen3",
+      "peak_rss_bytes": 2439331840,
+      "rss_bytes": 2431246336,
+      "setup_ms": 18842.266787,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 2831400960,
+      "rss_bytes": 2782314496
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 1069809664,
+        "append_calls": 2240,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 46792704,
+        "append_calls": 11424,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "352814c00fe347f29876295c22f05d020f7b56d4d9678b44c3932d38ee08aa46"
+  },
+  {
+    "campaign": "host",
+    "job": "qwen3_0_6b_t4_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 28.62601917097345
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792619732.951682,
+      "end_unix_seconds": 1792619761.5777013,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "qwen3",
+      "peak_rss_bytes": 2439925760,
+      "rss_bytes": 2431725568,
+      "setup_ms": 18724.262414,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 2838294528,
+      "rss_bytes": 2792046592
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 1069809664,
+        "append_calls": 2240,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 46792704,
+        "append_calls": 11424,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "352814c00fe347f29876295c22f05d020f7b56d4d9678b44c3932d38ee08aa46"
+  },
+  {
+    "campaign": "host",
+    "job": "qwen3_4b_t1_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 159.0624948979821
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792619763.579732,
+      "end_unix_seconds": 1792619922.642227,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "qwen3",
+      "peak_rss_bytes": 10079182848,
+      "rss_bytes": 10068602880,
+      "setup_ms": 40395.421169,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 10641174528,
+      "rss_bytes": 10522038272
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 1375469568,
+        "append_calls": 2880,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 60162048,
+        "append_calls": 14688,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "352814c00fe347f29876295c22f05d020f7b56d4d9678b44c3932d38ee08aa46"
+  },
+  {
+    "campaign": "host",
+    "job": "qwen3_4b_t4_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 84.39648565504467
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792619924.6452994,
+      "end_unix_seconds": 1792620009.041785,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "qwen3",
+      "peak_rss_bytes": 10083012608,
+      "rss_bytes": 10072629248,
+      "setup_ms": 33515.503639999995,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 10641612800,
+      "rss_bytes": 10535620608
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 1375469568,
+        "append_calls": 2880,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 60162048,
+        "append_calls": 14688,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "352814c00fe347f29876295c22f05d020f7b56d4d9678b44c3932d38ee08aa46"
+  },
+  {
+    "campaign": "host",
+    "job": "qwen3_5_4b_fp32_t1_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 469.29090332699707
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792620237.0728464,
+      "end_unix_seconds": 1792620706.3637497,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "qwen3_5",
+      "peak_rss_bytes": 34212847616,
+      "rss_bytes": 34212286464,
+      "setup_ms": 72025.732711,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 34410745856,
+      "rss_bytes": 34315182080
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "qwen3",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 305659904,
+        "append_calls": 640,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 13369344,
+        "append_calls": 3264,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "6dd9bbdab8ab81f714e3019e6192cc6943ceb0ad688c238bf84de97e55ae0f02"
+  },
+  {
+    "campaign": "host",
+    "job": "qwen3_5_4b_fp32_t4_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 197.9060911340057
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792620708.3754485,
+      "end_unix_seconds": 1792620906.2815397,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "qwen3_5",
+      "peak_rss_bytes": 34213273600,
+      "rss_bytes": 34213621760,
+      "setup_ms": 17077.030109,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 34416664576,
+      "rss_bytes": 34329202688
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "qwen3",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 305659904,
+        "append_calls": 640,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 13369344,
+        "append_calls": 3264,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "6dd9bbdab8ab81f714e3019e6192cc6943ceb0ad688c238bf84de97e55ae0f02"
+  },
+  {
+    "campaign": "host",
+    "job": "qwen3_5_4b_int4_mlp_t1_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 1843.595009538054
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792620908.2896411,
+      "end_unix_seconds": 1792622751.8846507,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "qwen3_5",
+      "peak_rss_bytes": 6244610048,
+      "rss_bytes": 6244749312,
+      "setup_ms": 30528.793413,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 6498516992,
+      "rss_bytes": 6352621568
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "qwen3",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 305659904,
+        "append_calls": 640,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 13369344,
+        "append_calls": 3264,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "6dd9bbdab8ab81f714e3019e6192cc6943ceb0ad688c238bf84de97e55ae0f02"
+  },
+  {
+    "campaign": "host",
+    "job": "qwen3_5_4b_int4_mlp_t4_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 549.3536927059758
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792622753.8892066,
+      "end_unix_seconds": 1792623303.2428994,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "qwen3_5",
+      "peak_rss_bytes": 6244696064,
+      "rss_bytes": 6245224448,
+      "setup_ms": 12261.209116,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 6511984640,
+      "rss_bytes": 6361214976
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "qwen3",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 305659904,
+        "append_calls": 640,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 13369344,
+        "append_calls": 3264,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "6dd9bbdab8ab81f714e3019e6192cc6943ceb0ad688c238bf84de97e55ae0f02"
+  },
+  {
+    "campaign": "host",
+    "job": "qwen3_5_4b_int8_t1_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 152.85723934898851
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792620011.0482206,
+      "end_unix_seconds": 1792620163.90546,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "qwen3_5",
+      "peak_rss_bytes": 9720643584,
+      "rss_bytes": 9720733696,
+      "setup_ms": 37847.456731,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 9970753536,
+      "rss_bytes": 9822982144
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 305659904,
+        "append_calls": 640,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 13369344,
+        "append_calls": 3264,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "6dd9bbdab8ab81f714e3019e6192cc6943ceb0ad688c238bf84de97e55ae0f02"
+  },
+  {
+    "campaign": "host",
+    "job": "qwen3_5_4b_int8_t4_c2048_r0",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 69.1524299220182
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792620165.917386,
+      "end_unix_seconds": 1792620235.0698159,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "qwen3_5",
+      "peak_rss_bytes": 9722867712,
+      "rss_bytes": 9723150336,
+      "setup_ms": 17238.844717,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 9981763584,
+      "rss_bytes": 9847156736
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 305659904,
+        "append_calls": 640,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 13369344,
+        "append_calls": 3264,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "6dd9bbdab8ab81f714e3019e6192cc6943ceb0ad688c238bf84de97e55ae0f02"
+  },
+  {
+    "campaign": "capacity",
+    "job": "gemma4_e2b-t4-r1-c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 30.935480765998363
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792623307.5021198,
+      "end_unix_seconds": 1792623338.4376006,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "capacity",
+    "job": "gemma4_e2b-t4-r1-c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 30.984712348959874
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792623343.45629,
+      "end_unix_seconds": 1792623374.4410024,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 8448,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "capacity",
+    "job": "gemma4_e2b-t4-r2-c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 30.649227974994574
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792623415.3463445,
+      "end_unix_seconds": 1792623445.9955723,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "capacity",
+    "job": "gemma4_e2b-t4-r2-c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 30.88430592295481
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792623379.4587076,
+      "end_unix_seconds": 1792623410.3430135,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 8448,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "capacity",
+    "job": "gemma4_e4b-t4-r1-c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 77.29528965899954
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792623450.9988272,
+      "end_unix_seconds": 1792623528.294117,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+  },
+  {
+    "campaign": "capacity",
+    "job": "gemma4_e4b-t4-r1-c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 72.82252272503683
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792623533.301858,
+      "end_unix_seconds": 1792623606.1243806,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 8448,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+  },
+  {
+    "campaign": "capacity",
+    "job": "gemma4_e4b-t4-r2-c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 73.32539250800619
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792623689.5616736,
+      "end_unix_seconds": 1792623762.8870661,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+  },
+  {
+    "campaign": "capacity",
+    "job": "gemma4_e4b-t4-r2-c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 73.4278564210399
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792623611.1312885,
+      "end_unix_seconds": 1792623684.559145,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 8448,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+  },
+  {
+    "campaign": "tecno-v2",
+    "job": "gemma4_e2b_t1_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 313.1318873059936
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792619590.4693077,
+      "end_unix_seconds": 1792619903.6011949,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 5502926848,
+      "rss_bytes": 5434363904,
+      "setup_ms": 132365.442162,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 5472882688,
+      "rss_bytes": 5444657152
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "append_contract": {
+      "expected_bytes": 46632960,
+      "actual_bytes": 46632960,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "tecno-v2",
+    "job": "gemma4_e2b_t4_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 178.37103948398726
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792619933.8556862,
+      "end_unix_seconds": 1792620112.2267256,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 5505347584,
+      "rss_bytes": 5428404224,
+      "setup_ms": 114209.213853,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 5505347584,
+      "rss_bytes": 5432332288
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "append_contract": {
+      "expected_bytes": 46632960,
+      "actual_bytes": 46632960,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "tecno-v2",
+    "job": "qwen3_0_6b_t1_c2048",
+    "status": {
+      "returncode": 134,
+      "elapsed_seconds": 128.04488352598855
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792620142.4458125,
+      "end_unix_seconds": 1792620270.490696,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    }
+  },
+  {
+    "campaign": "tecno-v2",
+    "job": "qwen3_0_6b_t4_c2048",
+    "status": {
+      "returncode": 134,
+      "elapsed_seconds": 108.28831849695416
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792620300.810195,
+      "end_unix_seconds": 1792620409.0985134,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    }
+  },
+  {
+    "campaign": "pixel8-v2",
+    "job": "gemma4_e2b_t1_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 108.32369473896688
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792619591.7100668,
+      "end_unix_seconds": 1792619700.0337615,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 4694904832,
+      "rss_bytes": 4314079232,
+      "setup_ms": 47339.732242,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 4694904832,
+      "rss_bytes": 4214403072
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "append_contract": {
+      "expected_bytes": 46632960,
+      "actual_bytes": 46632960,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "pixel8-v2",
+    "job": "gemma4_e2b_t4_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 136.02607967198128
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792619730.68866,
+      "end_unix_seconds": 1792619866.7147396,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 4358840320,
+      "rss_bytes": 4041449472,
+      "setup_ms": 85136.272014,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 4358840320,
+      "rss_bytes": 4132884480
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "append_contract": {
+      "expected_bytes": 46632960,
+      "actual_bytes": 46632960,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "pixel8-v2",
+    "job": "qwen3_0_6b_t1_c2048",
+    "status": {
+      "returncode": 1,
+      "elapsed_seconds": 90.0873815260129
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792619897.5919008,
+      "end_unix_seconds": 1792619987.6792824,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    }
+  },
+  {
+    "campaign": "pixel8-v2",
+    "job": "qwen3_0_6b_t4_c2048",
+    "status": {
+      "returncode": 134,
+      "elapsed_seconds": 131.89133647998096
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792620017.9487576,
+      "end_unix_seconds": 1792620149.840094,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    }
+  },
+  {
+    "campaign": "tecno-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 310.11076501198113
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792620918.0436497,
+      "end_unix_seconds": 1792621228.1544147,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 5504262144,
+      "rss_bytes": 5435637760,
+      "setup_ms": 129688.17916200001,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 5504262144,
+      "rss_bytes": 5445951488
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "append_contract": {
+      "expected_bytes": 46632960,
+      "actual_bytes": 46632960,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "tecno-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 179.29027195298113
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792620708.4948688,
+      "end_unix_seconds": 1792620887.7851408,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 5504655360,
+      "rss_bytes": 5439508480,
+      "setup_ms": 114477.73262200001,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 5504655360,
+      "rss_bytes": 5443518464
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "append_contract": {
+      "expected_bytes": 46632960,
+      "actual_bytes": 46632960,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "pixel8-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 109.58253511600196
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792620853.968313,
+      "end_unix_seconds": 1792620963.550848,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 4461056000,
+      "rss_bytes": 3993317376,
+      "setup_ms": 48157.687239,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 4461056000,
+      "rss_bytes": 4038971392
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "append_contract": {
+      "expected_bytes": 46632960,
+      "actual_bytes": 46632960,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "pixel8-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 133.39016172697302
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792620689.898232,
+      "end_unix_seconds": 1792620823.2883937,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 4275408896,
+      "rss_bytes": 4111347712,
+      "setup_ms": 86124.03825,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 4275408896,
+      "rss_bytes": 3766046720
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "append_contract": {
+      "expected_bytes": 46632960,
+      "actual_bytes": 46632960,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "tecno-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 167.91722608194686
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792621362.0277038,
+      "end_unix_seconds": 1792621529.9449298,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "tecno-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 168.1241309979814
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792621560.1650894,
+      "end_unix_seconds": 1792621728.2892203,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 8448,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "tecno-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 168.76000639703125
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792621956.961584,
+      "end_unix_seconds": 1792622125.7215905,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "tecno-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 168.11921496200375
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792621758.5549202,
+      "end_unix_seconds": 1792621926.6741352,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 8448,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "pixel8-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 125.83398153499002
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792621363.279097,
+      "end_unix_seconds": 1792621489.1130786,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "pixel8-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 125.65128922200529
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792621519.7073443,
+      "end_unix_seconds": 1792621645.3586335,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 8448,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "pixel8-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 121.14426521502901
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792621830.1218894,
+      "end_unix_seconds": 1792621951.2661545,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "pixel8-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 123.29626140499022
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792621676.1221724,
+      "end_unix_seconds": 1792621799.4184337,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 8448,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "external-controls",
+    "job": "lab_after",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 31.136288871988654
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792624089.7766428,
+      "end_unix_seconds": 1792624120.9129317,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 4245831680,
+      "rss_bytes": 4162297856,
+      "setup_ms": 16197.8856,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 4245831680,
+      "rss_bytes": 4185178112
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "external-controls",
+    "job": "lab_before",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 31.23509016801836
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792624008.1983984,
+      "end_unix_seconds": 1792624039.4334886,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 4246155264,
+      "rss_bytes": 4162871296,
+      "setup_ms": 16306.109074999998,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 4246155264,
+      "rss_bytes": 4185255936
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "external-controls",
+    "job": "litert_forward",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 20.720444345963188
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792624044.4406638,
+      "end_unix_seconds": 1792624065.1611083,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    }
+  },
+  {
+    "campaign": "external-controls",
+    "job": "litert_reverse",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 14.600751950987615
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792624070.168756,
+      "end_unix_seconds": 1792624084.769508,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    }
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e2b_fp32_batch_t1",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 47.95611433201702
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625240.7672238,
+      "end_unix_seconds": 1792625288.7233381,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e2b_fp32_batch_t4",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 30.58791044598911
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625290.7367868,
+      "end_unix_seconds": 1792625321.3246973,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e2b_fp32_batch_t4_correctness",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 16.299384820042178
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792626418.2576041,
+      "end_unix_seconds": 1792626434.556989,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "c802e1c3b0616bfa11a6feb809a95d8ad63f7bb3b97a996262e8a65025f10cac"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e2b_fp32_rows_t1",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 48.262871306040324
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625323.3378417,
+      "end_unix_seconds": 1792625371.600713,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e2b_fp32_rows_t4",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 31.538696562987752
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625373.6036718,
+      "end_unix_seconds": 1792625405.1423683,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e2b_fp32_rows_t4_correctness",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 17.550096620980185
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792626436.5650754,
+      "end_unix_seconds": 1792626454.115172,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "c802e1c3b0616bfa11a6feb809a95d8ad63f7bb3b97a996262e8a65025f10cac"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e2b_int8_batch_t1",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 49.516537179995794
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625407.149407,
+      "end_unix_seconds": 1792625456.665944,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e2b_int8_batch_t4",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 32.74155851296382
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625458.6716316,
+      "end_unix_seconds": 1792625491.4131901,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e2b_int8_batch_t4_correctness",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 18.692392773984466
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792626456.1176417,
+      "end_unix_seconds": 1792626474.8100345,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "c802e1c3b0616bfa11a6feb809a95d8ad63f7bb3b97a996262e8a65025f10cac"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e2b_int8_rows_t1",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 51.16837917501107
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625493.4164252,
+      "end_unix_seconds": 1792625544.5848043,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e2b_int8_rows_t4",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 34.64707897795597
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625546.5924323,
+      "end_unix_seconds": 1792625581.2395113,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e2b_int8_rows_t4_correctness",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 20.555820949026383
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792626476.8117537,
+      "end_unix_seconds": 1792626497.3675747,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "c802e1c3b0616bfa11a6feb809a95d8ad63f7bb3b97a996262e8a65025f10cac"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e4b_fp32_batch_t1",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 115.2513785319752
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625583.246401,
+      "end_unix_seconds": 1792625698.4977796,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e4b_fp32_batch_t4",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 72.04006617801497
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625700.4999645,
+      "end_unix_seconds": 1792625772.5400307,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e4b_fp32_batch_t4_correctness",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 43.95673229597742
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792626499.3697016,
+      "end_unix_seconds": 1792626543.326434,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "c802e1c3b0616bfa11a6feb809a95d8ad63f7bb3b97a996262e8a65025f10cac"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e4b_fp32_rows_t1",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 122.06620529101929
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625774.5490706,
+      "end_unix_seconds": 1792625896.6152759,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e4b_fp32_rows_t4",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 75.4439615419833
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625898.618935,
+      "end_unix_seconds": 1792625974.0628967,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e4b_fp32_rows_t4_correctness",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 48.44404328399105
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792626545.3280735,
+      "end_unix_seconds": 1792626593.772117,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "c802e1c3b0616bfa11a6feb809a95d8ad63f7bb3b97a996262e8a65025f10cac"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e4b_int8_batch_t1",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 126.12939719698625
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625976.0692863,
+      "end_unix_seconds": 1792626102.1986835,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e4b_int8_batch_t4",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 81.65481382398866
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792626104.2023146,
+      "end_unix_seconds": 1792626185.8571284,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e4b_int8_batch_t4_correctness",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 55.884912582987454
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792626595.773543,
+      "end_unix_seconds": 1792626651.6584554,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "c802e1c3b0616bfa11a6feb809a95d8ad63f7bb3b97a996262e8a65025f10cac"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e4b_int8_rows_t1",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 135.14486250199843
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792626187.8631372,
+      "end_unix_seconds": 1792626323.0079997,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e4b_int8_rows_t4",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 91.22887766599888
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792626325.0207667,
+      "end_unix_seconds": 1792626416.2496445,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24"
+  },
+  {
+    "campaign": "attention",
+    "job": "gemma4_e4b_int8_rows_t4_correctness",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 63.39527197595453
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792626653.660374,
+      "end_unix_seconds": 1792626717.055646,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "c802e1c3b0616bfa11a6feb809a95d8ad63f7bb3b97a996262e8a65025f10cac"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_bf16_int8_published_kv_t1",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 391.99508322402835
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792627273.960639,
+      "end_unix_seconds": 1792627665.9557223,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "23fe296780b90b1a486ef9a0eebde37d2790f760a4c7bb09c7ee9ee2855e22db"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_bf16_int8_published_kv_t4",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 165.80146401701495
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792627667.9579723,
+      "end_unix_seconds": 1792627833.7594364,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "23fe296780b90b1a486ef9a0eebde37d2790f760a4c7bb09c7ee9ee2855e22db"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_bf16_int8_published_kv_t4_correctness",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 73.48101526102982
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792629014.7553651,
+      "end_unix_seconds": 1792629088.2363803,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "c802e1c3b0616bfa11a6feb809a95d8ad63f7bb3b97a996262e8a65025f10cac"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_bf16_int8_raw_kv_t1",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 387.0141605170211
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792627835.7615478,
+      "end_unix_seconds": 1792628222.7757084,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "23fe296780b90b1a486ef9a0eebde37d2790f760a4c7bb09c7ee9ee2855e22db"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_bf16_int8_raw_kv_t4",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 164.59658361395122
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792628224.777809,
+      "end_unix_seconds": 1792628389.3743925,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "23fe296780b90b1a486ef9a0eebde37d2790f760a4c7bb09c7ee9ee2855e22db"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_bf16_int8_raw_kv_t4_correctness",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 70.4247231510235
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792629090.2433589,
+      "end_unix_seconds": 1792629160.668082,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "c802e1c3b0616bfa11a6feb809a95d8ad63f7bb3b97a996262e8a65025f10cac"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_bf16_t1",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 389.74959897698136
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792626719.1051054,
+      "end_unix_seconds": 1792627108.8547044,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "23fe296780b90b1a486ef9a0eebde37d2790f760a4c7bb09c7ee9ee2855e22db"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_bf16_t4",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 161.0915933479555
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792627110.8612568,
+      "end_unix_seconds": 1792627271.95285,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "23fe296780b90b1a486ef9a0eebde37d2790f760a4c7bb09c7ee9ee2855e22db"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_bf16_t4_correctness",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 74.63476730702678
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792628938.1197755,
+      "end_unix_seconds": 1792629012.7545428,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "c802e1c3b0616bfa11a6feb809a95d8ad63f7bb3b97a996262e8a65025f10cac"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_fp32_int8_published_kv_t1",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 286.56711505696876
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792628391.3800833,
+      "end_unix_seconds": 1792628677.9471984,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "23fe296780b90b1a486ef9a0eebde37d2790f760a4c7bb09c7ee9ee2855e22db"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_fp32_int8_published_kv_t4",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 158.37949587899493
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792628679.949282,
+      "end_unix_seconds": 1792628838.3287778,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "23fe296780b90b1a486ef9a0eebde37d2790f760a4c7bb09c7ee9ee2855e22db"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_fp32_int8_published_kv_t4_correctness",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 48.02111101697665
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792629162.6700075,
+      "end_unix_seconds": 1792629210.6911185,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "c802e1c3b0616bfa11a6feb809a95d8ad63f7bb3b97a996262e8a65025f10cac"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_static_int8_published_kv_t1",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 53.221671010018326
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792628840.334509,
+      "end_unix_seconds": 1792628893.55618,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 1,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "23fe296780b90b1a486ef9a0eebde37d2790f760a4c7bb09c7ee9ee2855e22db"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_static_int8_published_kv_t4",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 40.54944021301344
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792628895.5605402,
+      "end_unix_seconds": 1792628936.1099803,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 3,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": true,
+      "warmups": 1
+    },
+    "resolved_cases_sha256": "23fe296780b90b1a486ef9a0eebde37d2790f760a4c7bb09c7ee9ee2855e22db"
+  },
+  {
+    "campaign": "hf-screen",
+    "job": "hf_static_int8_published_kv_t4_correctness",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 32.98355951602571
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792629212.6934419,
+      "end_unix_seconds": 1792629245.6770015,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "c802e1c3b0616bfa11a6feb809a95d8ad63f7bb3b97a996262e8a65025f10cac"
+  },
+  {
+    "campaign": "diagnostics",
+    "job": "gemma4_e2b",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 20.961924125964288
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625069.6732109,
+      "end_unix_seconds": 1792625090.635135,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 4251082752,
+      "rss_bytes": 4182102016,
+      "setup_ms": 16350.624394,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 4251082752,
+      "rss_bytes": 4214104064
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "all",
+      "repetitions": 1,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 10745856,
+        "append_calls": 300,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 912384,
+        "append_calls": 2970,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "append_contract": {
+      "expected_bytes": 11658240,
+      "actual_bytes": 11658240,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "diagnostics",
+    "job": "gemma4_e4b",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 51.3282790860394
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625090.6382365,
+      "end_unix_seconds": 1792625141.9665155,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "gemma4_e4b",
+      "peak_rss_bytes": 8173805568,
+      "rss_bytes": 8045096960,
+      "setup_ms": 42721.371529000004,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 8173805568,
+      "rss_bytes": 8085082112
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "all",
+      "repetitions": 1,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 33431552,
+        "append_calls": 480,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 1462272,
+        "append_calls": 2448,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+    "append_contract": {
+      "expected_bytes": 34893824,
+      "actual_bytes": 34893824,
+      "matches": true,
+      "view_copy_bytes": 0
+    }
+  },
+  {
+    "campaign": "diagnostics",
+    "job": "qwen3_0_6b",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 21.410843262972776
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625141.967182,
+      "end_unix_seconds": 1792625163.3780253,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "qwen3",
+      "peak_rss_bytes": 2448375808,
+      "rss_bytes": 2442653696,
+      "setup_ms": 18384.724854,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 2856255488,
+      "rss_bytes": 2811289600
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "all",
+      "repetitions": 1,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 267452416,
+        "append_calls": 560,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 11698176,
+        "append_calls": 2856,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "352814c00fe347f29876295c22f05d020f7b56d4d9678b44c3932d38ee08aa46"
+  },
+  {
+    "campaign": "diagnostics",
+    "job": "qwen3_4b",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 46.86992193799233
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625163.37872,
+      "end_unix_seconds": 1792625210.248642,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "qwen3",
+      "peak_rss_bytes": 10088288256,
+      "rss_bytes": 10081689600,
+      "setup_ms": 33260.751352,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 10650652672,
+      "rss_bytes": 10546044928
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "all",
+      "repetitions": 1,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 343867392,
+        "append_calls": 720,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 15040512,
+        "append_calls": 3672,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "352814c00fe347f29876295c22f05d020f7b56d4d9678b44c3932d38ee08aa46"
+  },
+  {
+    "campaign": "diagnostics",
+    "job": "qwen3_5_4b_int8",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 30.483871473988984
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792625210.249311,
+      "end_unix_seconds": 1792625240.7331824,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "setup": {
+      "model": "qwen3_5",
+      "peak_rss_bytes": 9730920448,
+      "rss_bytes": 9731006464,
+      "setup_ms": 17128.251272,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 9988468736,
+      "rss_bytes": 9875312640
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_chunk_size": 128,
+      "prefill_rows": 128,
+      "profile_execution": "all",
+      "repetitions": 1,
+      "runner": "ynn-llm",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0,
+      "ynn_math": "no_excess_precision"
+    },
+    "counters": [
+      {
+        "append_bytes": 76414976,
+        "append_calls": 160,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3342336,
+        "append_calls": 816,
+        "view_copy_bytes": 0
+      }
+    ],
+    "completion": {
+      "cases": 3,
+      "status": "completed"
+    },
+    "resolved_cases_sha256": "6dd9bbdab8ab81f714e3019e6192cc6943ceb0ad688c238bf84de97e55ae0f02"
+  },
+  {
+    "campaign": "diagnostics-capacity",
+    "job": "gemma4_e2b_capacity_correct_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 19.456299587967806
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792624788.166744,
+      "end_unix_seconds": 1792624807.6230435,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "d162a40054e09dc17ebdaa3280ec95cc7f78fcae44a0103b8f6de1954ede9e8d"
+  },
+  {
+    "campaign": "diagnostics-capacity",
+    "job": "gemma4_e2b_capacity_correct_c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 19.606085301027633
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792624807.6238172,
+      "end_unix_seconds": 1792624827.2299025,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 8448,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "d162a40054e09dc17ebdaa3280ec95cc7f78fcae44a0103b8f6de1954ede9e8d"
+  },
+  {
+    "campaign": "diagnostics-capacity",
+    "job": "gemma4_e4b_capacity_correct_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 53.58734733099118
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792624827.2374763,
+      "end_unix_seconds": 1792624880.8248236,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 2048,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "d162a40054e09dc17ebdaa3280ec95cc7f78fcae44a0103b8f6de1954ede9e8d"
+  },
+  {
+    "campaign": "diagnostics-capacity",
+    "job": "gemma4_e4b_capacity_correct_c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 54.03737861197442
+    },
+    "approximate_capture_interval": {
+      "start_unix_seconds": 1792624880.8349016,
+      "end_unix_seconds": 1792624934.8722801,
+      "basis": "Status-file mtime minus monotonic elapsed; process-level approximation, includes Android pre-run telemetry"
+    },
+    "run": {
+      "cache_capacity": 8448,
+      "prefill_rows": 128,
+      "profile_execution": "none",
+      "repetitions": 1,
+      "runner": "rust",
+      "threads": 4,
+      "timings_valid_for_benchmark": false,
+      "warmups": 0
+    },
+    "resolved_cases_sha256": "d162a40054e09dc17ebdaa3280ec95cc7f78fcae44a0103b8f6de1954ede9e8d"
+  }
+]

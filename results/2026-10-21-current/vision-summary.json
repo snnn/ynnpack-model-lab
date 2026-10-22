@@ -1,0 +1,466 @@
+[
+  {
+    "model": "resnet18",
+    "threads": 1,
+    "ynnpack": {
+      "median_ms": 34.413551999999996,
+      "run_medians_ms": [
+        34.345646,
+        34.481457999999996
+      ],
+      "setup_ms": 67.869309,
+      "first_invoke_ms": 35.1732775,
+      "rss_mib": 104.779296875,
+      "incremental_rss_mib": 100.0703125,
+      "peak_rss_mib": 110.931640625
+    },
+    "litert_xnnpack": {
+      "median_ms": 26.0691485,
+      "run_medians_ms": [
+        25.778375,
+        26.359922
+      ],
+      "setup_ms": 36.972593,
+      "first_invoke_ms": 26.307878,
+      "rss_mib": 149.263671875,
+      "incremental_rss_mib": 107.8125,
+      "peak_rss_mib": 149.056640625
+    },
+    "ynn_over_litert_latency": 1.320087305498298
+  },
+  {
+    "model": "resnet18",
+    "threads": 4,
+    "ynnpack": {
+      "median_ms": 13.365003999999999,
+      "run_medians_ms": [
+        13.230265999999999,
+        13.499742
+      ],
+      "setup_ms": 69.74030400000001,
+      "first_invoke_ms": 13.743378499999999,
+      "rss_mib": 104.29296875,
+      "incremental_rss_mib": 99.62109375,
+      "peak_rss_mib": 110.42578125
+    },
+    "litert_xnnpack": {
+      "median_ms": 7.46055,
+      "run_medians_ms": [
+        7.421294,
+        7.499806
+      ],
+      "setup_ms": 39.079646,
+      "first_invoke_ms": 19.6230285,
+      "rss_mib": 149.455078125,
+      "incremental_rss_mib": 107.85546875,
+      "peak_rss_mib": 149.208984375
+    },
+    "ynn_over_litert_latency": 1.7914234205252964
+  },
+  {
+    "model": "resnet34",
+    "threads": 1,
+    "ynnpack": {
+      "median_ms": 64.35740600000001,
+      "run_medians_ms": [
+        64.25363200000001,
+        64.46118000000001
+      ],
+      "setup_ms": 139.208982,
+      "first_invoke_ms": 65.6028515,
+      "rss_mib": 184.4375,
+      "incremental_rss_mib": 179.7265625,
+      "peak_rss_mib": 190.6875
+    },
+    "litert_xnnpack": {
+      "median_ms": 52.293887,
+      "run_medians_ms": [
+        52.307313,
+        52.280461
+      ],
+      "setup_ms": 66.6559515,
+      "first_invoke_ms": 51.8039155,
+      "rss_mib": 227.2578125,
+      "incremental_rss_mib": 185.8984375,
+      "peak_rss_mib": 227.1953125
+    },
+    "ynn_over_litert_latency": 1.2306869825912925
+  },
+  {
+    "model": "resnet34",
+    "threads": 4,
+    "ynnpack": {
+      "median_ms": 23.0958535,
+      "run_medians_ms": [
+        23.122484,
+        23.069223
+      ],
+      "setup_ms": 140.22305999999998,
+      "first_invoke_ms": 23.6409395,
+      "rss_mib": 183.697265625,
+      "incremental_rss_mib": 179.05859375,
+      "peak_rss_mib": 189.484375
+    },
+    "litert_xnnpack": {
+      "median_ms": 15.129097999999999,
+      "run_medians_ms": [
+        15.076864,
+        15.181332
+      ],
+      "setup_ms": 67.7774665,
+      "first_invoke_ms": 15.2071845,
+      "rss_mib": 227.447265625,
+      "incremental_rss_mib": 185.935546875,
+      "peak_rss_mib": 227.12890625
+    },
+    "ynn_over_litert_latency": 1.5265849623024454
+  },
+  {
+    "model": "resnet50",
+    "threads": 1,
+    "ynnpack": {
+      "median_ms": 78.77476899999999,
+      "run_medians_ms": [
+        78.62253299999999,
+        78.927005
+      ],
+      "setup_ms": 190.937519,
+      "first_invoke_ms": 79.5587675,
+      "rss_mib": 212.857421875,
+      "incremental_rss_mib": 208.150390625,
+      "peak_rss_mib": 239.732421875
+    },
+    "litert_xnnpack": {
+      "median_ms": 59.395549,
+      "run_medians_ms": [
+        59.519632,
+        59.271466
+      ],
+      "setup_ms": 55.484319,
+      "first_invoke_ms": 59.2693835,
+      "rss_mib": 255.685546875,
+      "incremental_rss_mib": 214.36328125,
+      "peak_rss_mib": 255.51171875
+    },
+    "ynn_over_litert_latency": 1.3262739435239497
+  },
+  {
+    "model": "resnet50",
+    "threads": 4,
+    "ynnpack": {
+      "median_ms": 26.3956705,
+      "run_medians_ms": [
+        26.437871,
+        26.35347
+      ],
+      "setup_ms": 192.137951,
+      "first_invoke_ms": 26.973255,
+      "rss_mib": 215.076171875,
+      "incremental_rss_mib": 210.3984375,
+      "peak_rss_mib": 241.939453125
+    },
+    "litert_xnnpack": {
+      "median_ms": 17.442819999999998,
+      "run_medians_ms": [
+        17.510797,
+        17.374843
+      ],
+      "setup_ms": 56.798046,
+      "first_invoke_ms": 17.6869795,
+      "rss_mib": 255.8671875,
+      "incremental_rss_mib": 214.396484375,
+      "peak_rss_mib": 255.619140625
+    },
+    "ynn_over_litert_latency": 1.5132685253875235
+  },
+  {
+    "model": "resnet101",
+    "threads": 1,
+    "ynnpack": {
+      "median_ms": 144.304771,
+      "run_medians_ms": [
+        144.67758899999998,
+        143.931953
+      ],
+      "setup_ms": 514.4363695,
+      "first_invoke_ms": 145.3893745,
+      "rss_mib": 369.51953125,
+      "incremental_rss_mib": 364.876953125,
+      "peak_rss_mib": 412.5
+    },
+    "litert_xnnpack": {
+      "median_ms": 111.7798845,
+      "run_medians_ms": [
+        111.612968,
+        111.946801
+      ],
+      "setup_ms": 93.415672,
+      "first_invoke_ms": 111.88555099999999,
+      "rss_mib": 401.2421875,
+      "incremental_rss_mib": 359.92578125,
+      "peak_rss_mib": 401.1953125
+    },
+    "ynn_over_litert_latency": 1.2909726257589753
+  },
+  {
+    "model": "resnet101",
+    "threads": 4,
+    "ynnpack": {
+      "median_ms": 48.399478,
+      "run_medians_ms": [
+        48.240394,
+        48.558562
+      ],
+      "setup_ms": 514.8035925,
+      "first_invoke_ms": 49.034742,
+      "rss_mib": 372.291015625,
+      "incremental_rss_mib": 367.716796875,
+      "peak_rss_mib": 414.880859375
+    },
+    "litert_xnnpack": {
+      "median_ms": 32.8002935,
+      "run_medians_ms": [
+        32.860168,
+        32.740419
+      ],
+      "setup_ms": 97.08166800000001,
+      "first_invoke_ms": 32.99431,
+      "rss_mib": 401.521484375,
+      "incremental_rss_mib": 359.962890625,
+      "peak_rss_mib": 401.201171875
+    },
+    "ynn_over_litert_latency": 1.47558063771594
+  },
+  {
+    "model": "resnet152",
+    "threads": 1,
+    "ynnpack": {
+      "median_ms": 206.3419885,
+      "run_medians_ms": [
+        206.631508,
+        206.052469
+      ],
+      "setup_ms": 1019.3183650000001,
+      "first_invoke_ms": 207.51869449999998,
+      "rss_mib": 505.974609375,
+      "incremental_rss_mib": 501.265625,
+      "peak_rss_mib": 568.6796875
+    },
+    "litert_xnnpack": {
+      "median_ms": 162.3438485,
+      "run_medians_ms": [
+        162.474243,
+        162.213454
+      ],
+      "setup_ms": 126.8864975,
+      "first_invoke_ms": 163.1899855,
+      "rss_mib": 521.44921875,
+      "incremental_rss_mib": 480.25390625,
+      "peak_rss_mib": 521.353515625
+    },
+    "ynn_over_litert_latency": 1.271018214773934
+  },
+  {
+    "model": "resnet152",
+    "threads": 4,
+    "ynnpack": {
+      "median_ms": 69.7410595,
+      "run_medians_ms": [
+        70.022738,
+        69.45938100000001
+      ],
+      "setup_ms": 988.144097,
+      "first_invoke_ms": 70.403525,
+      "rss_mib": 508.72265625,
+      "incremental_rss_mib": 504.115234375,
+      "peak_rss_mib": 571.185546875
+    },
+    "litert_xnnpack": {
+      "median_ms": 48.204169500000006,
+      "run_medians_ms": [
+        48.071049,
+        48.33729
+      ],
+      "setup_ms": 126.5529275,
+      "first_invoke_ms": 48.213514,
+      "rss_mib": 521.720703125,
+      "incremental_rss_mib": 480.275390625,
+      "peak_rss_mib": 521.42578125
+    },
+    "ynn_over_litert_latency": 1.446784795244735
+  },
+  {
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "ynnpack": {
+      "median_ms": 96.089261,
+      "run_medians_ms": [
+        96.440877,
+        95.737645
+      ],
+      "setup_ms": 6567.764207,
+      "first_invoke_ms": 95.35710850000001,
+      "rss_mib": 358.056640625,
+      "incremental_rss_mib": 353.517578125,
+      "peak_rss_mib": 398.619140625
+    },
+    "litert_xnnpack": {
+      "median_ms": 65.5465605,
+      "run_medians_ms": [
+        65.67875,
+        65.414371
+      ],
+      "setup_ms": 52.257059999999996,
+      "first_invoke_ms": 67.8396775,
+      "rss_mib": 297.3671875,
+      "incremental_rss_mib": 255.96484375,
+      "peak_rss_mib": 297.1328125
+    },
+    "ynn_over_litert_latency": 1.4659695377913842
+  },
+  {
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "ynnpack": {
+      "median_ms": 30.9183395,
+      "run_medians_ms": [
+        30.754033,
+        31.082645999999997
+      ],
+      "setup_ms": 6530.3632395,
+      "first_invoke_ms": 30.743246,
+      "rss_mib": 360.384765625,
+      "incremental_rss_mib": 355.673828125,
+      "peak_rss_mib": 400.755859375
+    },
+    "litert_xnnpack": {
+      "median_ms": 21.973180499999998,
+      "run_medians_ms": [
+        21.900624,
+        22.045737
+      ],
+      "setup_ms": 54.355644999999996,
+      "first_invoke_ms": 23.223502,
+      "rss_mib": 297.5078125,
+      "incremental_rss_mib": 256.009765625,
+      "peak_rss_mib": 297.20703125
+    },
+    "ynn_over_litert_latency": 1.4070944122085558
+  },
+  {
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "ynnpack": {
+      "median_ms": 220.04983650000003,
+      "run_medians_ms": [
+        220.65306,
+        219.446613
+      ],
+      "setup_ms": 307.493721,
+      "first_invoke_ms": 222.3154085,
+      "rss_mib": 543.26171875,
+      "incremental_rss_mib": 538.6171875,
+      "peak_rss_mib": 579.32421875
+    },
+    "litert_xnnpack": {
+      "median_ms": 159.072584,
+      "run_medians_ms": [
+        158.924194,
+        159.220974
+      ],
+      "setup_ms": 165.2619335,
+      "first_invoke_ms": 158.7590275,
+      "rss_mib": 587.15234375,
+      "incremental_rss_mib": 545.7109375,
+      "peak_rss_mib": 587.095703125
+    },
+    "ynn_over_litert_latency": 1.3833297414719812
+  },
+  {
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "ynnpack": {
+      "median_ms": 65.850214,
+      "run_medians_ms": [
+        65.949386,
+        65.751042
+      ],
+      "setup_ms": 309.046369,
+      "first_invoke_ms": 65.9437125,
+      "rss_mib": 545.853515625,
+      "incremental_rss_mib": 541.244140625,
+      "peak_rss_mib": 579.423828125
+    },
+    "litert_xnnpack": {
+      "median_ms": 45.064913,
+      "run_medians_ms": [
+        45.22915,
+        44.900676
+      ],
+      "setup_ms": 167.15175,
+      "first_invoke_ms": 45.2255215,
+      "rss_mib": 587.1796875,
+      "incremental_rss_mib": 545.71875,
+      "peak_rss_mib": 586.822265625
+    },
+    "ynn_over_litert_latency": 1.461230248020228
+  },
+  {
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "ynnpack": {
+      "median_ms": 45.8982565,
+      "run_medians_ms": [
+        45.892382000000005,
+        45.904131
+      ],
+      "setup_ms": 154.139642,
+      "first_invoke_ms": 46.696959,
+      "rss_mib": 45.744140625,
+      "incremental_rss_mib": 41.05078125,
+      "peak_rss_mib": 60.806640625
+    },
+    "litert_xnnpack": {
+      "median_ms": 4.755276,
+      "run_medians_ms": [
+        4.729969,
+        4.780583
+      ],
+      "setup_ms": 6.121276,
+      "first_invoke_ms": 5.1364815,
+      "rss_mib": 81.802734375,
+      "incremental_rss_mib": 40.486328125,
+      "peak_rss_mib": 81.55078125
+    },
+    "ynn_over_litert_latency": 9.652069932428738
+  },
+  {
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "ynnpack": {
+      "median_ms": 16.018682,
+      "run_medians_ms": [
+        16.00933,
+        16.028034
+      ],
+      "setup_ms": 155.6444625,
+      "first_invoke_ms": 17.0976785,
+      "rss_mib": 46.8671875,
+      "incremental_rss_mib": 42.189453125,
+      "peak_rss_mib": 59.34375
+    },
+    "litert_xnnpack": {
+      "median_ms": 5.287977,
+      "run_medians_ms": [
+        4.53024,
+        6.045714
+      ],
+      "setup_ms": 6.3160585000000005,
+      "first_invoke_ms": 6.16719,
+      "rss_mib": 81.9765625,
+      "incremental_rss_mib": 40.548828125,
+      "peak_rss_mib": 81.705078125
+    },
+    "ynn_over_litert_latency": 3.0292646885567014
+  }
+]

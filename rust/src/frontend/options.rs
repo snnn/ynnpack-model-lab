@@ -67,7 +67,7 @@ Options: --cache_capacity=2048 --num_threads=4 --prefill_rows=128\n\
   --profile_execution=none|prefill|decode|all (diagnostic timings)\n\
 HF packages: replace --bundle_dir with --hf_model_dir=DIR --asset_manifest=FILE --cache_dir=DIR",
                     if require_model {
-                        "Gemma4 YNNPACK experiment"
+                        "YNNPACK model experiment"
                     } else {
                         "Tokenizer benchmark case probe"
                     },

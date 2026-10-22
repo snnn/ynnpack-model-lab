@@ -1,0 +1,1070 @@
+{
+  "host": [
+    {
+      "threads": 1,
+      "rows": 1,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 0.12718982169999998,
+          "direction_ms": [
+            0.1287179466,
+            0.1264998116
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 0.19766606539999998,
+          "direction_ms": [
+            0.1981513792,
+            0.19660561
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 1.5541028579018756
+          }
+        },
+        "vmajor": {
+          "valid": true,
+          "ms": 0.2191830831,
+          "direction_ms": [
+            0.2188917473,
+            0.2194744189
+          ],
+          "stable": true,
+          "max_abs": 5.446360229e-08
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 0.84320332325,
+          "direction_ms": [
+            0.8386141464,
+            0.847081865
+          ],
+          "stable": true,
+          "max_abs": 6.66690757e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 6.629487422655929
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 1.7669599565,
+          "direction_ms": [
+            1.769175491,
+            1.757996316
+          ],
+          "stable": true,
+          "max_abs": 6.66690757e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 13.892306262270672
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 0.17248050529999998,
+          "direction_ms": [
+            0.1721254165,
+            0.1728355941
+          ],
+          "stable": true,
+          "max_abs": 5.315791174e-08
+        }
+      }
+    },
+    {
+      "threads": 1,
+      "rows": 17,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 0.9483034309,
+          "direction_ms": [
+            0.9457171509,
+            0.9508897109
+          ],
+          "stable": true,
+          "max_abs": 3.419723936e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 3.423563593,
+          "direction_ms": [
+            3.417088017,
+            3.443077966
+          ],
+          "stable": true,
+          "max_abs": 1.303611467e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 3.610198467541999
+          }
+        },
+        "vmajor": {
+          "valid": true,
+          "ms": 3.714879509,
+          "direction_ms": [
+            3.709637407,
+            3.725999852
+          ],
+          "stable": true,
+          "max_abs": 1.153999986e-07
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 1.670706996,
+          "direction_ms": [
+            1.669584125,
+            1.676027375
+          ],
+          "stable": true,
+          "max_abs": 4.052541939e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 1.761785248856891
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 1.823406491,
+          "direction_ms": [
+            1.793689518,
+            1.825609755
+          ],
+          "stable": true,
+          "max_abs": 3.503736684e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 1.9228091258401034
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 1.974359521,
+          "direction_ms": [
+            1.99903498,
+            1.953696767
+          ],
+          "stable": true,
+          "max_abs": 2.356762403e-08
+        }
+      }
+    },
+    {
+      "threads": 1,
+      "rows": 128,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 6.8794352665,
+          "direction_ms": [
+            6.62653271,
+            7.057768379
+          ],
+          "stable": false,
+          "max_abs": 3.14853042e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 25.494342315,
+          "direction_ms": [
+            25.71505138,
+            25.31652438
+          ],
+          "stable": true,
+          "max_abs": 8.253460571e-08,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 3.7058772017445802
+          }
+        },
+        "vmajor": {
+          "valid": true,
+          "ms": 28.27828394,
+          "direction_ms": [
+            28.38307462,
+            27.84799037
+          ],
+          "stable": true,
+          "max_abs": 8.253460571e-08
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 5.60076825,
+          "direction_ms": [
+            5.720546543,
+            5.510565216
+          ],
+          "stable": true,
+          "max_abs": 4.833659806e-08,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 0.8141319793026357
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 5.7437505,
+          "direction_ms": [
+            5.734806771,
+            5.780690114
+          ],
+          "stable": true,
+          "max_abs": 8.32977959e-08,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 0.8349159891030135
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 13.79426627,
+          "direction_ms": [
+            13.79200347,
+            13.8214296
+          ],
+          "stable": true,
+          "max_abs": 2.026103624e-08
+        }
+      }
+    },
+    {
+      "threads": 1,
+      "rows": 1024,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 54.760141875,
+          "direction_ms": [
+            54.7185985,
+            54.80168525
+          ],
+          "stable": true,
+          "max_abs": 3.552621791e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 207.403717,
+          "direction_ms": [
+            208.656363,
+            206.643967
+          ],
+          "stable": true,
+          "max_abs": 1.210090897e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 3.787494149913577
+          }
+        },
+        "vmajor": {
+          "valid": true,
+          "ms": 227.89837699999998,
+          "direction_ms": [
+            228.00884,
+            226.212682
+          ],
+          "stable": true,
+          "max_abs": 1.174382617e-07
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 46.4047479,
+          "direction_ms": [
+            46.378218,
+            46.549735
+          ],
+          "stable": true,
+          "max_abs": 7.462919691e-08,
+          "gate": "PASS",
+          "ratios": {
+            "custom": 0.847418328570574
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 48.042107400000006,
+          "direction_ms": [
+            47.782288,
+            48.8347562
+          ],
+          "stable": true,
+          "max_abs": 1.089342661e-07,
+          "gate": "PASS",
+          "ratios": {
+            "custom": 0.8773188993860693
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 120.94042175,
+          "direction_ms": [
+            118.844169,
+            123.756103
+          ],
+          "stable": true,
+          "max_abs": 1.641666728e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 1,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 0.03601606349,
+          "direction_ms": [
+            0.036048051,
+            0.03553872157
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 0.062834833875,
+          "direction_ms": [
+            0.06267075815,
+            0.06295321372
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 1.7446335825248178
+          }
+        },
+        "vmajor": {
+          "valid": true,
+          "ms": 0.06926222275999999,
+          "direction_ms": [
+            0.06952404241,
+            0.06922888993
+          ],
+          "stable": true,
+          "max_abs": 5.446360229e-08
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 0.41242163865000003,
+          "direction_ms": [
+            0.4115933251,
+            0.4131861381
+          ],
+          "stable": true,
+          "max_abs": 6.66690757e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 11.451047079715153
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 0.73768077625,
+          "direction_ms": [
+            0.7417301148,
+            0.7246805181
+          ],
+          "stable": true,
+          "max_abs": 6.66690757e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 20.481993443142944
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 0.045358199434999996,
+          "direction_ms": [
+            0.04530248222,
+            0.04552704962
+          ],
+          "stable": true,
+          "max_abs": 5.315791174e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 17,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 0.24960940025,
+          "direction_ms": [
+            0.2499358764,
+            0.2470700827
+          ],
+          "stable": true,
+          "max_abs": 3.419723936e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 1.1044345605,
+          "direction_ms": [
+            1.111021215,
+            1.098960962
+          ],
+          "stable": true,
+          "max_abs": 1.303611467e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 4.424651312786446
+          }
+        },
+        "vmajor": {
+          "valid": true,
+          "ms": 1.207856349,
+          "direction_ms": [
+            1.208210807,
+            1.203413048
+          ],
+          "stable": true,
+          "max_abs": 1.153999986e-07
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 0.8187758408,
+          "direction_ms": [
+            0.8220046475,
+            0.8179166245
+          ],
+          "stable": true,
+          "max_abs": 4.052541939e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 3.2802283887543613
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 0.74298279075,
+          "direction_ms": [
+            0.7419281037,
+            0.7431170259
+          ],
+          "stable": true,
+          "max_abs": 3.503736684e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 2.9765817713830267
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 0.5073408415,
+          "direction_ms": [
+            0.5080057919,
+            0.5062602803
+          ],
+          "stable": true,
+          "max_abs": 2.356762403e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 128,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 1.6510808275,
+          "direction_ms": [
+            1.657934289,
+            1.646069049
+          ],
+          "stable": true,
+          "max_abs": 3.14853042e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 8.4196530625,
+          "direction_ms": [
+            8.36932575,
+            8.47744525
+          ],
+          "stable": true,
+          "max_abs": 8.253460571e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 5.099479639194103
+          }
+        },
+        "vmajor": {
+          "valid": true,
+          "ms": 9.2066605,
+          "direction_ms": [
+            9.209609045,
+            9.191168364
+          ],
+          "stable": true,
+          "max_abs": 8.253460571e-08
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 2.2146877965,
+          "direction_ms": [
+            2.191639293,
+            2.217007736
+          ],
+          "stable": true,
+          "max_abs": 4.833659806e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 1.341356376751943
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 1.839895064,
+          "direction_ms": [
+            1.840222339,
+            1.833991518
+          ],
+          "stable": true,
+          "max_abs": 8.32977959e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 1.1143579607703973
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 3.637367719,
+          "direction_ms": [
+            3.564265053,
+            3.680324709
+          ],
+          "stable": true,
+          "max_abs": 2.026103624e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 1024,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 15.27015254,
+          "direction_ms": [
+            15.04532864,
+            15.49299677
+          ],
+          "stable": true,
+          "max_abs": 3.552621791e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 67.8848025,
+          "direction_ms": [
+            68.92034967,
+            67.56063433
+          ],
+          "stable": true,
+          "max_abs": 1.210090897e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 4.445587712511482
+          }
+        },
+        "vmajor": {
+          "valid": true,
+          "ms": 74.23002783000001,
+          "direction_ms": [
+            74.660165,
+            73.81414867
+          ],
+          "stable": true,
+          "max_abs": 1.174382617e-07
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 19.002723365,
+          "direction_ms": [
+            18.889218,
+            19.143704
+          ],
+          "stable": true,
+          "max_abs": 7.462919691e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 1.2444357261803753
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 15.76493973,
+          "direction_ms": [
+            15.65213254,
+            15.84841862
+          ],
+          "stable": true,
+          "max_abs": 1.089342661e-07,
+          "gate": "PASS",
+          "ratios": {
+            "custom": 1.0324022427872879
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 29.652182500000002,
+          "direction_ms": [
+            29.66932057,
+            29.57382214
+          ],
+          "stable": true,
+          "max_abs": 1.641666728e-08
+        }
+      }
+    }
+  ],
+  "arm": [
+    {
+      "threads": 1,
+      "rows": 1,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 0.9569218245,
+          "direction_ms": [
+            0.9500623128,
+            0.9603793254
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 0.2132119892,
+          "direction_ms": [
+            0.2127495101,
+            0.2138011635
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.22281024817403985,
+            "llama": 1.1710691727055005
+          }
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 1.028563282,
+          "direction_ms": [
+            1.017778518,
+            1.031936201
+          ],
+          "stable": true,
+          "max_abs": 6.66690757e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 1.0748665728649602,
+            "llama": 5.649395028143165
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 2.0968249219999997,
+          "direction_ms": [
+            2.100750844,
+            2.093514792
+          ],
+          "stable": true,
+          "max_abs": 6.66690757e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 2.1912186223734724,
+            "llama": 11.516833719943621
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 0.18206609325,
+          "direction_ms": [
+            0.1817029237,
+            0.1821893707
+          ],
+          "stable": true,
+          "max_abs": 5.315791174e-08
+        }
+      }
+    },
+    {
+      "threads": 1,
+      "rows": 128,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 89.225519835,
+          "direction_ms": [
+            89.25213433,
+            89.14506833
+          ],
+          "stable": true,
+          "max_abs": 3.14853042e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 29.220787575000003,
+          "direction_ms": [
+            28.86039029,
+            29.599929
+          ],
+          "stable": true,
+          "max_abs": 8.253460571e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.3274936097770733,
+            "llama": 2.07583648253672
+          }
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 8.431076812499999,
+          "direction_ms": [
+            8.429859917,
+            8.432293708
+          ],
+          "stable": true,
+          "max_abs": 4.926153446e-08,
+          "gate": "PASS",
+          "ratios": {
+            "custom": 0.09449176455448105,
+            "llama": 0.5989413115418707
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 8.521592229,
+          "direction_ms": [
+            8.524602792,
+            8.520806083
+          ],
+          "stable": true,
+          "max_abs": 7.823086168e-08,
+          "gate": "PASS",
+          "ratios": {
+            "custom": 0.0955062211434411,
+            "llama": 0.6053715011225055
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 14.076632635,
+          "direction_ms": [
+            14.08058487,
+            14.07387833
+          ],
+          "stable": true,
+          "max_abs": 2.026103624e-08
+        }
+      }
+    },
+    {
+      "threads": 1,
+      "rows": 1024,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 735.5110065,
+          "direction_ms": [
+            735.553689,
+            735.110174
+          ],
+          "stable": true,
+          "max_abs": 3.552621791e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 234.7247365,
+          "direction_ms": [
+            232.787002,
+            236.730438
+          ],
+          "stable": true,
+          "max_abs": 1.210090897e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.3191315077893399,
+            "llama": 1.9453920201280692
+          }
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 67.57286816499999,
+          "direction_ms": [
+            67.39586167,
+            67.91962267
+          ],
+          "stable": true,
+          "max_abs": 5.359851558e-08,
+          "gate": "PASS",
+          "ratios": {
+            "custom": 0.09187200132674016,
+            "llama": 0.5600420324909259
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 68.023653665,
+          "direction_ms": [
+            67.84581533,
+            68.04274233
+          ],
+          "stable": true,
+          "max_abs": 1.04081163e-07,
+          "gate": "PASS",
+          "ratios": {
+            "custom": 0.09248488882402604,
+            "llama": 0.5637781300474332
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 120.65677975,
+          "direction_ms": [
+            120.6550505,
+            120.658509
+          ],
+          "stable": true,
+          "max_abs": 1.641666728e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 1,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 0.3872040276,
+          "direction_ms": [
+            0.3796448501,
+            0.3947632051
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 0.17610388645,
+          "direction_ms": [
+            0.1936405677,
+            0.1427058053
+          ],
+          "stable": false,
+          "max_abs": 5.620008842e-08,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 0.4548090254678952,
+            "llama": 2.4448140708561916
+          }
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 0.8006616046,
+          "direction_ms": [
+            0.7980476972,
+            0.803275512
+          ],
+          "stable": true,
+          "max_abs": 6.66690757e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 2.067802883050383,
+            "llama": 11.115420541704784
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 1.3519817665,
+          "direction_ms": [
+            1.356577439,
+            1.347386094
+          ],
+          "stable": true,
+          "max_abs": 6.66690757e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 3.491652126864395,
+            "llama": 18.76928506753129
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 0.072031607045,
+          "direction_ms": [
+            0.07211644304,
+            0.06918046558
+          ],
+          "stable": true,
+          "max_abs": 5.315791174e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 128,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 32.042197145,
+          "direction_ms": [
+            31.753199,
+            32.140946
+          ],
+          "stable": true,
+          "max_abs": 3.14853042e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 16.562953885,
+          "direction_ms": [
+            16.84548158,
+            16.48835523
+          ],
+          "stable": true,
+          "max_abs": 8.253460571e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.5169106790663558,
+            "llama": 2.595327306462932
+          }
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 5.8404962,
+          "direction_ms": [
+            5.856813171,
+            5.840492486
+          ],
+          "stable": true,
+          "max_abs": 4.926153446e-08,
+          "gate": "PASS",
+          "ratios": {
+            "custom": 0.18227514716204082,
+            "llama": 0.9151748761964865
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 5.167715282,
+          "direction_ms": [
+            5.324381763,
+            5.117436125
+          ],
+          "stable": true,
+          "max_abs": 7.823086168e-08,
+          "gate": "PASS",
+          "ratios": {
+            "custom": 0.1612784310206515,
+            "llama": 0.8097536632971427
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 6.38183625,
+          "direction_ms": [
+            6.393140406,
+            6.379488875
+          ],
+          "stable": true,
+          "max_abs": 2.026103624e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 1024,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 260.81395499999996,
+          "direction_ms": [
+            262.115882,
+            260.412393
+          ],
+          "stable": true,
+          "max_abs": 3.552621791e-08
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 130.9503955,
+          "direction_ms": [
+            127.48061,
+            133.411925
+          ],
+          "stable": true,
+          "max_abs": 1.210090897e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.5020835464881472,
+            "llama": 2.5074119553289878
+          }
+        },
+        "chunk16": {
+          "valid": true,
+          "ms": 47.8683326,
+          "direction_ms": [
+            47.6404318,
+            48.0580566
+          ],
+          "stable": true,
+          "max_abs": 5.359851558e-08,
+          "gate": "PASS",
+          "ratios": {
+            "custom": 0.1835343994534342,
+            "llama": 0.916573248859751
+          }
+        },
+        "chunk32": {
+          "valid": true,
+          "ms": 40.753416200000004,
+          "direction_ms": [
+            40.8995098,
+            40.5090778
+          ],
+          "stable": true,
+          "max_abs": 1.04081163e-07,
+          "gate": "PASS",
+          "ratios": {
+            "custom": 0.1562547379797987,
+            "llama": 0.7803382541168273
+          }
+        },
+        "llama": {
+          "valid": true,
+          "ms": 52.2253215,
+          "direction_ms": [
+            52.058404,
+            52.3097845
+          ],
+          "stable": true,
+          "max_abs": 1.641666728e-08
+        }
+      }
+    }
+  ]
+}

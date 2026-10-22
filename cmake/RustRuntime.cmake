@@ -103,6 +103,25 @@ add_executable(plan_fixture runtime/rust/main.cc runtime/rust/fixture.cc
   runtime/rust/bridge.cc runtime/rust/plan.cc third_party/minijson.cc)
 target_compile_options(plan_fixture PRIVATE -O1)
 target_link_libraries(plan_fixture PRIVATE lab_rust_plan_fixture lab_runtime)
+set(lab_qwen_features "qwen")
+if(LAB_ENABLE_TOKENIZERS)
+  string(APPEND lab_qwen_features ",tokenizers")
+endif()
+lab_add_rust_library(lab_rust_qwen "${lab_qwen_features}")
+add_executable(qwen3 runtime/rust/main.cc runtime/rust/fixture.cc
+  runtime/rust/bridge.cc runtime/rust/plan.cc third_party/minijson.cc)
+target_compile_options(qwen3 PRIVATE -O1)
+target_link_libraries(qwen3 PRIVATE lab_rust_qwen lab_runtime)
+set(lab_llm_features "llm")
+if(LAB_ENABLE_TOKENIZERS)
+  string(APPEND lab_llm_features ",tokenizers")
+endif()
+lab_add_rust_library(lab_rust_llm "${lab_llm_features}")
+add_executable(ynn-llm runtime/rust/main.cc runtime/rust/fixture.cc
+  runtime/rust/embedding.cc runtime/rust/bridge.cc runtime/rust/plan.cc third_party/minijson.cc)
+target_compile_options(ynn-llm PRIVATE -O1)
+target_compile_definitions(ynn-llm PRIVATE LAB_ENABLE_VALUE_TRACE=1)
+target_link_libraries(ynn-llm PRIVATE lab_rust_llm lab_runtime)
 foreach(variant e2b e4b)
   add_executable(gemma4_${variant} runtime/rust/main.cc runtime/rust/gemma.cc
     runtime/rust/bridge.cc runtime/rust/plan.cc third_party/minijson.cc)
@@ -150,4 +169,15 @@ if(BUILD_TESTING)
       ${LAB_CARGO} test --frozen --manifest-path "${CMAKE_CURRENT_SOURCE_DIR}/rust/Cargo.toml"
       --features gemma)
   endif()
+endif()
+
+# Backend-independent model names and state lifecycle, using a tiny .ynn fixture.
+lab_add_rust_library(lab_rust_llm_tests "llm-tests")
+add_executable(llm_session_test runtime/rust/main.cc runtime/rust/fixture.cc
+  runtime/rust/embedding.cc runtime/rust/bridge.cc runtime/rust/plan.cc third_party/minijson.cc)
+target_compile_options(llm_session_test PRIVATE -O1)
+target_link_libraries(llm_session_test PRIVATE lab_rust_llm_tests lab_runtime)
+if(BUILD_TESTING)
+  add_test(NAME llm_session COMMAND llm_session_test
+    "${CMAKE_CURRENT_SOURCE_DIR}/tests/llm_session")
 endif()

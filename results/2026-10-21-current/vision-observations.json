@@ -1,0 +1,1826 @@
+[
+  {
+    "model": "resnet18",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4931584,
+      "cases": [
+        {
+          "first_invoke_ms": 34.8799,
+          "inference_ms": [
+            33.950492,
+            34.345646,
+            34.376422
+          ],
+          "rss_bytes": 109867008
+        }
+      ],
+      "compile_ms": 46.161092000000004,
+      "construction_ms": 22.027997,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 116318208,
+      "prepared_rss_bytes": 105451520,
+      "runner": "rust",
+      "setup_ms": 68.189291,
+      "threads": 1
+    }
+  },
+  {
+    "model": "resnet18",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 37.119901,
+      "base_rss_bytes": 43433984,
+      "prepared_rss_bytes": 153546752,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 26.330671,
+          "inference_ms": [
+            26.019168,
+            25.646157,
+            25.778375
+          ],
+          "rss_bytes": 156487680
+        }
+      ],
+      "peak_rss_bytes": 156270592
+    }
+  },
+  {
+    "model": "resnet18",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 36.825285,
+      "base_rss_bytes": 43495424,
+      "prepared_rss_bytes": 153608192,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 26.285085,
+          "inference_ms": [
+            26.359922,
+            26.420358,
+            26.125904
+          ],
+          "rss_bytes": 156540928
+        }
+      ],
+      "peak_rss_bytes": 156323840
+    }
+  },
+  {
+    "model": "resnet18",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4943872,
+      "cases": [
+        {
+          "first_invoke_ms": 35.466655,
+          "inference_ms": [
+            34.481457999999996,
+            33.765311,
+            34.50168
+          ],
+          "rss_bytes": 109871104
+        }
+      ],
+      "compile_ms": 45.468647000000004,
+      "construction_ms": 22.080379,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 116322304,
+      "prepared_rss_bytes": 105459712,
+      "runner": "rust",
+      "setup_ms": 67.549327,
+      "threads": 1
+    }
+  },
+  {
+    "model": "resnet18",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4939776,
+      "cases": [
+        {
+          "first_invoke_ms": 13.740694,
+          "inference_ms": [
+            13.095508,
+            13.417485,
+            13.230265999999999
+          ],
+          "rss_bytes": 109416448
+        }
+      ],
+      "compile_ms": 47.001233000000006,
+      "construction_ms": 21.964548999999998,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 116080640,
+      "prepared_rss_bytes": 105492480,
+      "runner": "rust",
+      "setup_ms": 68.96601700000001,
+      "threads": 4
+    }
+  },
+  {
+    "model": "resnet18",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 39.933528,
+      "base_rss_bytes": 43634688,
+      "prepared_rss_bytes": 153853952,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 18.312468,
+          "inference_ms": [
+            7.421294,
+            7.372,
+            7.507724
+          ],
+          "rss_bytes": 156729344
+        }
+      ],
+      "peak_rss_bytes": 156471296
+    }
+  },
+  {
+    "model": "resnet18",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 38.225764,
+      "base_rss_bytes": 43606016,
+      "prepared_rss_bytes": 153825280,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 20.933589,
+          "inference_ms": [
+            7.555216,
+            7.499806,
+            7.372075
+          ],
+          "rss_bytes": 156700672
+        }
+      ],
+      "peak_rss_bytes": 156442624
+    }
+  },
+  {
+    "model": "resnet18",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4857856,
+      "cases": [
+        {
+          "first_invoke_ms": 13.746063,
+          "inference_ms": [
+            13.509799,
+            13.499742,
+            13.206723
+          ],
+          "rss_bytes": 109301760
+        }
+      ],
+      "compile_ms": 47.445892,
+      "construction_ms": 23.068495000000002,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 115499008,
+      "prepared_rss_bytes": 105435136,
+      "runner": "rust",
+      "setup_ms": 70.514591,
+      "threads": 4
+    }
+  },
+  {
+    "model": "resnet34",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4943872,
+      "cases": [
+        {
+          "first_invoke_ms": 65.350173,
+          "inference_ms": [
+            64.623092,
+            64.25363200000001,
+            63.994313
+          ],
+          "rss_bytes": 193404928
+        }
+      ],
+      "compile_ms": 98.856764,
+      "construction_ms": 40.834382000000005,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 199958528,
+      "prepared_rss_bytes": 189149184,
+      "runner": "rust",
+      "setup_ms": 139.69135999999997,
+      "threads": 1
+    }
+  },
+  {
+    "model": "resnet34",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 66.622248,
+      "base_rss_bytes": 43433984,
+      "prepared_rss_bytes": 235388928,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 51.556666,
+          "inference_ms": [
+            52.394388,
+            52.307313,
+            51.722481
+          ],
+          "rss_bytes": 238362624
+        }
+      ],
+      "peak_rss_bytes": 238297088
+    }
+  },
+  {
+    "model": "resnet34",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 66.689655,
+      "base_rss_bytes": 43302912,
+      "prepared_rss_bytes": 235257856,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 52.051165,
+          "inference_ms": [
+            52.280461,
+            51.998772,
+            52.422348
+          ],
+          "rss_bytes": 238231552
+        }
+      ],
+      "peak_rss_bytes": 238166016
+    }
+  },
+  {
+    "model": "resnet34",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4935680,
+      "cases": [
+        {
+          "first_invoke_ms": 65.85553,
+          "inference_ms": [
+            64.442329,
+            64.61225,
+            64.46118000000001
+          ],
+          "rss_bytes": 193388544
+        }
+      ],
+      "compile_ms": 98.778701,
+      "construction_ms": 39.947696,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 199942144,
+      "prepared_rss_bytes": 189136896,
+      "runner": "rust",
+      "setup_ms": 138.726604,
+      "threads": 1
+    }
+  },
+  {
+    "model": "resnet34",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4870144,
+      "cases": [
+        {
+          "first_invoke_ms": 23.454041,
+          "inference_ms": [
+            22.732276,
+            23.157242,
+            23.122484
+          ],
+          "rss_bytes": 192626688
+        }
+      ],
+      "compile_ms": 99.94019399999999,
+      "construction_ms": 39.701031,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 198725632,
+      "prepared_rss_bytes": 189108224,
+      "runner": "rust",
+      "setup_ms": 139.64146,
+      "threads": 4
+    }
+  },
+  {
+    "model": "resnet34",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 67.042044,
+      "base_rss_bytes": 43696128,
+      "prepared_rss_bytes": 235757568,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 15.142803,
+          "inference_ms": [
+            15.162832,
+            14.962413,
+            15.076864
+          ],
+          "rss_bytes": 238661632
+        }
+      ],
+      "peak_rss_bytes": 238329856
+    }
+  },
+  {
+    "model": "resnet34",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 68.512889,
+      "base_rss_bytes": 43360256,
+      "prepared_rss_bytes": 235421696,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 15.271566,
+          "inference_ms": [
+            15.297248,
+            14.967514,
+            15.181332
+          ],
+          "rss_bytes": 238329856
+        }
+      ],
+      "peak_rss_bytes": 237993984
+    }
+  },
+  {
+    "model": "resnet34",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4857856,
+      "cases": [
+        {
+          "first_invoke_ms": 23.827838,
+          "inference_ms": [
+            23.117307,
+            23.069223,
+            22.988024
+          ],
+          "rss_bytes": 192614400
+        }
+      ],
+      "compile_ms": 100.067076,
+      "construction_ms": 40.737339999999996,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 198651904,
+      "prepared_rss_bytes": 189022208,
+      "runner": "rust",
+      "setup_ms": 140.80465999999998,
+      "threads": 4
+    }
+  },
+  {
+    "model": "resnet50",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4939776,
+      "cases": [
+        {
+          "first_invoke_ms": 79.447899,
+          "inference_ms": [
+            78.731043,
+            78.514224,
+            78.62253299999999
+          ],
+          "rss_bytes": 223232000
+        }
+      ],
+      "compile_ms": 143.64659699999999,
+      "construction_ms": 48.021046,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 251412480,
+      "prepared_rss_bytes": 222019584,
+      "runner": "rust",
+      "setup_ms": 191.66787699999998,
+      "threads": 1
+    }
+  },
+  {
+    "model": "resnet50",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 55.447949,
+      "base_rss_bytes": 43229184,
+      "prepared_rss_bytes": 265015296,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 59.461201,
+          "inference_ms": [
+            59.543434,
+            59.519632,
+            59.340207
+          ],
+          "rss_bytes": 268005376
+        }
+      ],
+      "peak_rss_bytes": 267825152
+    }
+  },
+  {
+    "model": "resnet50",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 55.520689,
+      "base_rss_bytes": 43429888,
+      "prepared_rss_bytes": 265216000,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 59.077566,
+          "inference_ms": [
+            59.158169,
+            59.271466,
+            59.540466
+          ],
+          "rss_bytes": 268206080
+        }
+      ],
+      "peak_rss_bytes": 268021760
+    }
+  },
+  {
+    "model": "resnet50",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4931584,
+      "cases": [
+        {
+          "first_invoke_ms": 79.669636,
+          "inference_ms": [
+            79.336132,
+            78.802276,
+            78.927005
+          ],
+          "rss_bytes": 223162368
+        }
+      ],
+      "compile_ms": 142.8386,
+      "construction_ms": 47.36833,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 251342848,
+      "prepared_rss_bytes": 221970432,
+      "runner": "rust",
+      "setup_ms": 190.207161,
+      "threads": 1
+    }
+  },
+  {
+    "model": "resnet50",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4874240,
+      "cases": [
+        {
+          "first_invoke_ms": 27.181878,
+          "inference_ms": [
+            26.437871,
+            26.129085,
+            26.852079
+          ],
+          "rss_bytes": 225492992
+        }
+      ],
+      "compile_ms": 144.800057,
+      "construction_ms": 47.480934000000005,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 253628416,
+      "prepared_rss_bytes": 221937664,
+      "runner": "rust",
+      "setup_ms": 192.281217,
+      "threads": 4
+    }
+  },
+  {
+    "model": "resnet50",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 56.908978,
+      "base_rss_bytes": 43630592,
+      "prepared_rss_bytes": 265523200,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 17.700029,
+          "inference_ms": [
+            17.510797,
+            17.680425,
+            17.411025
+          ],
+          "rss_bytes": 268439552
+        }
+      ],
+      "peak_rss_bytes": 268181504
+    }
+  },
+  {
+    "model": "resnet50",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 56.687114,
+      "base_rss_bytes": 43339776,
+      "prepared_rss_bytes": 265232384,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 17.67393,
+          "inference_ms": [
+            17.374843,
+            17.46394,
+            17.215358
+          ],
+          "rss_bytes": 268152832
+        }
+      ],
+      "peak_rss_bytes": 267890688
+    }
+  },
+  {
+    "model": "resnet50",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4935680,
+      "cases": [
+        {
+          "first_invoke_ms": 26.764632,
+          "inference_ms": [
+            26.35347,
+            26.170598,
+            26.450185
+          ],
+          "rss_bytes": 225554432
+        }
+      ],
+      "compile_ms": 143.690483,
+      "construction_ms": 48.303989,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 253755392,
+      "prepared_rss_bytes": 222003200,
+      "runner": "rust",
+      "setup_ms": 191.994685,
+      "threads": 4
+    }
+  },
+  {
+    "model": "resnet101",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4874240,
+      "cases": [
+        {
+          "first_invoke_ms": 146.052298,
+          "inference_ms": [
+            145.058671,
+            144.49078300000002,
+            144.67758899999998
+          ],
+          "rss_bytes": 387473408
+        }
+      ],
+      "compile_ms": 429.760094,
+      "construction_ms": 83.765706,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 432594944,
+      "prepared_rss_bytes": 387137536,
+      "runner": "rust",
+      "setup_ms": 513.526025,
+      "threads": 1
+    }
+  },
+  {
+    "model": "resnet101",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 93.316536,
+      "base_rss_bytes": 43372544,
+      "prepared_rss_bytes": 417722368,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 111.373355,
+          "inference_ms": [
+            111.612968,
+            110.895392,
+            112.377327
+          ],
+          "rss_bytes": 420777984
+        }
+      ],
+      "peak_rss_bytes": 420728832
+    }
+  },
+  {
+    "model": "resnet101",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 93.514808,
+      "base_rss_bytes": 43274240,
+      "prepared_rss_bytes": 417624064,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 112.397747,
+          "inference_ms": [
+            111.946801,
+            111.715045,
+            112.22952
+          ],
+          "rss_bytes": 420687872
+        }
+      ],
+      "peak_rss_bytes": 420638720
+    }
+  },
+  {
+    "model": "resnet101",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4861952,
+      "cases": [
+        {
+          "first_invoke_ms": 144.726451,
+          "inference_ms": [
+            143.931953,
+            143.405774,
+            144.05284400000002
+          ],
+          "rss_bytes": 387465216
+        }
+      ],
+      "compile_ms": 432.034376,
+      "construction_ms": 83.312126,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 432480256,
+      "prepared_rss_bytes": 387133440,
+      "runner": "rust",
+      "setup_ms": 515.346714,
+      "threads": 1
+    }
+  },
+  {
+    "model": "resnet101",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4792320,
+      "cases": [
+        {
+          "first_invoke_ms": 48.866245,
+          "inference_ms": [
+            48.240394,
+            48.309978,
+            48.215757999999994
+          ],
+          "rss_bytes": 390369280
+        }
+      ],
+      "compile_ms": 431.981785,
+      "construction_ms": 84.029736,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 435060736,
+      "prepared_rss_bytes": 387084288,
+      "runner": "rust",
+      "setup_ms": 516.011762,
+      "threads": 4
+    }
+  },
+  {
+    "model": "resnet101",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 94.463657,
+      "base_rss_bytes": 43569152,
+      "prepared_rss_bytes": 418021376,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 32.8548,
+          "inference_ms": [
+            32.860168,
+            33.16014,
+            32.725061
+          ],
+          "rss_bytes": 421015552
+        }
+      ],
+      "peak_rss_bytes": 420683776
+    }
+  },
+  {
+    "model": "resnet101",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 99.699679,
+      "base_rss_bytes": 43585536,
+      "prepared_rss_bytes": 418037760,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 33.13382,
+          "inference_ms": [
+            32.740419,
+            33.095906,
+            32.676155
+          ],
+          "rss_bytes": 421036032
+        }
+      ],
+      "peak_rss_bytes": 420696064
+    }
+  },
+  {
+    "model": "resnet101",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4800512,
+      "cases": [
+        {
+          "first_invoke_ms": 49.203239,
+          "inference_ms": [
+            48.591499000000006,
+            48.356385,
+            48.558562
+          ],
+          "rss_bytes": 390381568
+        }
+      ],
+      "compile_ms": 429.88045400000004,
+      "construction_ms": 83.714761,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 435007488,
+      "prepared_rss_bytes": 387096576,
+      "runner": "rust",
+      "setup_ms": 513.5954230000001,
+      "threads": 4
+    }
+  },
+  {
+    "model": "resnet152",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4931584,
+      "cases": [
+        {
+          "first_invoke_ms": 207.95443899999998,
+          "inference_ms": [
+            207.002891,
+            206.631508,
+            205.807174
+          ],
+          "rss_bytes": 530546688
+        }
+      ],
+      "compile_ms": 908.6210070000001,
+      "construction_ms": 114.56056600000001,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 596316160,
+      "prepared_rss_bytes": 531140608,
+      "runner": "rust",
+      "setup_ms": 1023.181855,
+      "threads": 1
+    }
+  },
+  {
+    "model": "resnet152",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 124.041406,
+      "base_rss_bytes": 43237376,
+      "prepared_rss_bytes": 543621120,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 163.948043,
+          "inference_ms": [
+            162.474243,
+            162.237004,
+            162.540628
+          ],
+          "rss_bytes": 546775040
+        }
+      ],
+      "peak_rss_bytes": 546619392
+    }
+  },
+  {
+    "model": "resnet152",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 129.731589,
+      "base_rss_bytes": 43155456,
+      "prepared_rss_bytes": 543539200,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 162.431928,
+          "inference_ms": [
+            161.961659,
+            162.213454,
+            162.461238
+          ],
+          "rss_bytes": 546783232
+        }
+      ],
+      "peak_rss_bytes": 546738176
+    }
+  },
+  {
+    "model": "resnet152",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4943872,
+      "cases": [
+        {
+          "first_invoke_ms": 207.08294999999998,
+          "inference_ms": [
+            207.10029699999998,
+            206.052469,
+            206.01309
+          ],
+          "rss_bytes": 530558976
+        }
+      ],
+      "compile_ms": 900.722111,
+      "construction_ms": 114.73254200000001,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 596291584,
+      "prepared_rss_bytes": 531152896,
+      "runner": "rust",
+      "setup_ms": 1015.4548750000001,
+      "threads": 1
+    }
+  },
+  {
+    "model": "resnet152",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4800512,
+      "cases": [
+        {
+          "first_invoke_ms": 70.46975599999999,
+          "inference_ms": [
+            70.022738,
+            70.31008299999999,
+            69.810063
+          ],
+          "rss_bytes": 533405696
+        }
+      ],
+      "compile_ms": 877.6080069999999,
+      "construction_ms": 114.79785700000001,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 598999040,
+      "prepared_rss_bytes": 531046400,
+      "runner": "rust",
+      "setup_ms": 992.406082,
+      "threads": 4
+    }
+  },
+  {
+    "model": "resnet152",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 124.783481,
+      "base_rss_bytes": 43614208,
+      "prepared_rss_bytes": 544100352,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 48.02656,
+          "inference_ms": [
+            48.182409,
+            48.071049,
+            47.804487
+          ],
+          "rss_bytes": 547184640
+        }
+      ],
+      "peak_rss_bytes": 546877440
+    }
+  },
+  {
+    "model": "resnet152",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 128.322374,
+      "base_rss_bytes": 43302912,
+      "prepared_rss_bytes": 543854592,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 48.400468,
+          "inference_ms": [
+            48.146069,
+            48.33729,
+            48.337634
+          ],
+          "rss_bytes": 546942976
+        }
+      ],
+      "peak_rss_bytes": 546631680
+    }
+  },
+  {
+    "model": "resnet152",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4861952,
+      "cases": [
+        {
+          "first_invoke_ms": 70.337294,
+          "inference_ms": [
+            69.364281,
+            69.45938100000001,
+            70.338537
+          ],
+          "rss_bytes": 533463040
+        }
+      ],
+      "compile_ms": 867.582439,
+      "construction_ms": 116.299472,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 598863872,
+      "prepared_rss_bytes": 531103744,
+      "runner": "rust",
+      "setup_ms": 983.882112,
+      "threads": 4
+    }
+  },
+  {
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4718592,
+      "cases": [
+        {
+          "first_invoke_ms": 95.597342,
+          "inference_ms": [
+            96.440877,
+            96.358517,
+            96.60728999999999
+          ],
+          "rss_bytes": 375078912
+        }
+      ],
+      "compile_ms": 6509.173864,
+      "construction_ms": 68.415681,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 417808384,
+      "prepared_rss_bytes": 381685760,
+      "runner": "rust",
+      "setup_ms": 6577.589808,
+      "threads": 1
+    }
+  },
+  {
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 52.776709,
+      "base_rss_bytes": 43429888,
+      "prepared_rss_bytes": 298258432,
+      "delegate_partitions": 17,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 68.040898,
+          "inference_ms": [
+            65.67875,
+            65.46097,
+            66.230893
+          ],
+          "rss_bytes": 311832576
+        }
+      ],
+      "peak_rss_bytes": 311582720
+    }
+  },
+  {
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 51.737411,
+      "base_rss_bytes": 43397120,
+      "prepared_rss_bytes": 298225664,
+      "delegate_partitions": 17,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 67.638457,
+          "inference_ms": [
+            65.414371,
+            65.595292,
+            65.345484
+          ],
+          "rss_bytes": 311791616
+        }
+      ],
+      "peak_rss_bytes": 311549952
+    }
+  },
+  {
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4800512,
+      "cases": [
+        {
+          "first_invoke_ms": 95.11687500000001,
+          "inference_ms": [
+            95.661967,
+            96.199212,
+            95.737645
+          ],
+          "rss_bytes": 375820288
+        }
+      ],
+      "compile_ms": 6490.0122,
+      "construction_ms": 67.926169,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 418156544,
+      "prepared_rss_bytes": 381632512,
+      "runner": "rust",
+      "setup_ms": 6557.938606000001,
+      "threads": 1
+    }
+  },
+  {
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4935680,
+      "cases": [
+        {
+          "first_invoke_ms": 30.790989,
+          "inference_ms": [
+            31.377338999999996,
+            30.510135000000002,
+            30.754033
+          ],
+          "rss_bytes": 377745408
+        }
+      ],
+      "compile_ms": 6486.036529,
+      "construction_ms": 68.753372,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 420073472,
+      "prepared_rss_bytes": 381300736,
+      "runner": "rust",
+      "setup_ms": 6554.790102,
+      "threads": 4
+    }
+  },
+  {
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 54.571362,
+      "base_rss_bytes": 43544576,
+      "prepared_rss_bytes": 298475520,
+      "delegate_partitions": 17,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 23.194181,
+          "inference_ms": [
+            21.900624,
+            22.051261,
+            21.726875
+          ],
+          "rss_bytes": 311980032
+        }
+      ],
+      "peak_rss_bytes": 311771136
+    }
+  },
+  {
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 54.139928,
+      "base_rss_bytes": 43483136,
+      "prepared_rss_bytes": 298414080,
+      "delegate_partitions": 17,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 23.252823,
+          "inference_ms": [
+            21.937541,
+            22.045737,
+            22.184535
+          ],
+          "rss_bytes": 311939072
+        }
+      ],
+      "peak_rss_bytes": 311517184
+    }
+  },
+  {
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4943872,
+      "cases": [
+        {
+          "first_invoke_ms": 30.695503,
+          "inference_ms": [
+            31.082645999999997,
+            31.176993,
+            30.986144
+          ],
+          "rss_bytes": 378036224
+        }
+      ],
+      "compile_ms": 6436.908503,
+      "construction_ms": 69.027647,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 420372480,
+      "prepared_rss_bytes": 381575168,
+      "runner": "rust",
+      "setup_ms": 6505.936377,
+      "threads": 4
+    }
+  },
+  {
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4874240,
+      "cases": [
+        {
+          "first_invoke_ms": 222.71796999999998,
+          "inference_ms": [
+            220.630348,
+            221.963412,
+            220.65306
+          ],
+          "rss_bytes": 569655296
+        }
+      ],
+      "compile_ms": 190.477389,
+      "construction_ms": 119.30053,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 607469568,
+      "prepared_rss_bytes": 568455168,
+      "runner": "rust",
+      "setup_ms": 309.778133,
+      "threads": 1
+    }
+  },
+  {
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 161.301237,
+      "base_rss_bytes": 43417600,
+      "prepared_rss_bytes": 612585472,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 158.51654,
+          "inference_ms": [
+            158.746174,
+            159.34874,
+            158.924194
+          ],
+          "rss_bytes": 615571456
+        }
+      ],
+      "peak_rss_bytes": 615473152
+    }
+  },
+  {
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 169.22263,
+      "base_rss_bytes": 43491328,
+      "prepared_rss_bytes": 612659200,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 159.001515,
+          "inference_ms": [
+            159.954225,
+            159.220974,
+            159.126508
+          ],
+          "rss_bytes": 615776256
+        }
+      ],
+      "peak_rss_bytes": 615755776
+    }
+  },
+  {
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4866048,
+      "cases": [
+        {
+          "first_invoke_ms": 221.912847,
+          "inference_ms": [
+            221.51423400000002,
+            219.446613,
+            219.352452
+          ],
+          "rss_bytes": 569647104
+        }
+      ],
+      "compile_ms": 186.758056,
+      "construction_ms": 118.451031,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 607461376,
+      "prepared_rss_bytes": 568451072,
+      "runner": "rust",
+      "setup_ms": 305.20930899999996,
+      "threads": 1
+    }
+  },
+  {
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4800512,
+      "cases": [
+        {
+          "first_invoke_ms": 66.22856900000001,
+          "inference_ms": [
+            65.684699,
+            66.083608,
+            65.949386
+          ],
+          "rss_bytes": 572305408
+        }
+      ],
+      "compile_ms": 189.724155,
+      "construction_ms": 120.363864,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 607498240,
+      "prepared_rss_bytes": 568401920,
+      "runner": "rust",
+      "setup_ms": 310.08824200000004,
+      "threads": 4
+    }
+  },
+  {
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 162.022411,
+      "base_rss_bytes": 43540480,
+      "prepared_rss_bytes": 612814848,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 45.207196,
+          "inference_ms": [
+            45.078872,
+            45.283744,
+            45.22915
+          ],
+          "rss_bytes": 615735296
+        }
+      ],
+      "peak_rss_bytes": 615354368
+    }
+  },
+  {
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 172.281089,
+      "base_rss_bytes": 43409408,
+      "prepared_rss_bytes": 612749312,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 45.243847,
+          "inference_ms": [
+            44.900676,
+            45.021413,
+            44.808217
+          ],
+          "rss_bytes": 615669760
+        }
+      ],
+      "peak_rss_bytes": 615301120
+    }
+  },
+  {
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4866048,
+      "cases": [
+        {
+          "first_invoke_ms": 65.658856,
+          "inference_ms": [
+            65.908816,
+            65.397152,
+            65.751042
+          ],
+          "rss_bytes": 572432384
+        }
+      ],
+      "compile_ms": 188.216378,
+      "construction_ms": 119.787857,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 607641600,
+      "prepared_rss_bytes": 568528896,
+      "runner": "rust",
+      "setup_ms": 308.004496,
+      "threads": 4
+    }
+  },
+  {
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4902912,
+      "cases": [
+        {
+          "first_invoke_ms": 46.620165,
+          "inference_ms": [
+            44.864822,
+            45.892382000000005,
+            45.937361
+          ],
+          "rss_bytes": 47960064
+        }
+      ],
+      "compile_ms": 143.40051400000002,
+      "construction_ms": 11.099526000000001,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 63754240,
+      "prepared_rss_bytes": 46936064,
+      "runner": "rust",
+      "setup_ms": 154.500244,
+      "threads": 1
+    }
+  },
+  {
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 6.127137,
+      "base_rss_bytes": 43130880,
+      "prepared_rss_bytes": 82661376,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 5.098789,
+          "inference_ms": [
+            4.934649,
+            4.729969,
+            4.665054
+          ],
+          "rss_bytes": 85577728
+        }
+      ],
+      "peak_rss_bytes": 85315584
+    }
+  },
+  {
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 1,
+      "setup_ms": 6.115415,
+      "base_rss_bytes": 43515904,
+      "prepared_rss_bytes": 83046400,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 5.174174,
+          "inference_ms": [
+            5.029747,
+            4.780583,
+            4.66281
+          ],
+          "rss_bytes": 85975040
+        }
+      ],
+      "peak_rss_bytes": 85708800
+    }
+  },
+  {
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4939776,
+      "cases": [
+        {
+          "first_invoke_ms": 46.773753,
+          "inference_ms": [
+            44.64738,
+            46.025938000000004,
+            45.904131
+          ],
+          "rss_bytes": 47972352
+        }
+      ],
+      "compile_ms": 143.187473,
+      "construction_ms": 10.591352,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 63766528,
+      "prepared_rss_bytes": 46964736,
+      "runner": "rust",
+      "setup_ms": 153.77904,
+      "threads": 1
+    }
+  },
+  {
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4866048,
+      "cases": [
+        {
+          "first_invoke_ms": 17.150067,
+          "inference_ms": [
+            15.435868000000001,
+            16.00933,
+            16.240053
+          ],
+          "rss_bytes": 49106944
+        }
+      ],
+      "compile_ms": 145.25450800000002,
+      "construction_ms": 10.758026000000001,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 62173184,
+      "prepared_rss_bytes": 46919680,
+      "runner": "rust",
+      "setup_ms": 156.012652,
+      "threads": 4
+    }
+  },
+  {
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "repetition": 0,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 6.319051,
+      "base_rss_bytes": 43470848,
+      "prepared_rss_bytes": 83103744,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 5.610146,
+          "inference_ms": [
+            3.623774,
+            4.53024,
+            5.644668
+          ],
+          "rss_bytes": 85958656
+        }
+      ],
+      "peak_rss_bytes": 85671936
+    }
+  },
+  {
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "litert_xnnpack",
+    "measurements": {
+      "engine": "litert_xnnpack",
+      "threads": 4,
+      "setup_ms": 6.313066,
+      "base_rss_bytes": 43409408,
+      "prepared_rss_bytes": 83107840,
+      "delegate_partitions": 1,
+      "ai_edge_litert": "2.3.0",
+      "cases": [
+        {
+          "first_invoke_ms": 6.724234,
+          "inference_ms": [
+            6.045714,
+            5.549145,
+            6.316218
+          ],
+          "rss_bytes": 85958656
+        }
+      ],
+      "peak_rss_bytes": 85676032
+    }
+  },
+  {
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "repetition": 1,
+    "engine": "ynnpack",
+    "measurements": {
+      "base_rss_bytes": 4943872,
+      "cases": [
+        {
+          "first_invoke_ms": 17.04529,
+          "inference_ms": [
+            15.575378,
+            16.028034,
+            16.145488999999998
+          ],
+          "rss_bytes": 49180672
+        }
+      ],
+      "compile_ms": 144.340826,
+      "construction_ms": 10.935176,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 62279680,
+      "prepared_rss_bytes": 47001600,
+      "runner": "rust",
+      "setup_ms": 155.276273,
+      "threads": 4
+    }
+  }
+]

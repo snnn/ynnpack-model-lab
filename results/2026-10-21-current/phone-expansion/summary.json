@@ -1,0 +1,1346 @@
+[
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "gemma4_e2b_t1_c2048",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 4247.138835,
+    "ttft_ms": 4301.725918333333,
+    "decode_ms": 53.564638708333334,
+    "prefill_tok_s": 240.86803840025635,
+    "decode_tok_s": 18.669032856641387,
+    "setup_ms": 36978.164049,
+    "peak_rss_mib": 5081.07421875,
+    "ranges": {
+      "prefix_ms": [
+        4220.1118209999995,
+        4261.256092
+      ],
+      "ttft_ms": [
+        4268.105414999999,
+        4319.152967
+      ],
+      "decode_ms": [
+        46.6231055,
+        57.04505221875
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "gemma4_e2b_t1_c2048",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 372.27574633333336,
+    "ttft_ms": 409.05694466666665,
+    "decode_ms": 37.6802528125,
+    "prefill_tok_s": 341.1449745272554,
+    "decode_tok_s": 26.53910006857123,
+    "setup_ms": 36978.164049,
+    "peak_rss_mib": 5081.07421875,
+    "ranges": {
+      "prefix_ms": [
+        365.733906,
+        385.253958
+      ],
+      "ttft_ms": [
+        401.772656,
+        423.446771
+      ],
+      "decode_ms": [
+        36.8019124375,
+        39.3616325
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "gemma4_e2b_t1_c2048",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 48.14395833333333,
+    "ttft_ms": 82.00541666666666,
+    "decode_ms": 34.341724666666664,
+    "prefill_tok_s": 332.33661198402365,
+    "decode_tok_s": 29.11909665884185,
+    "setup_ms": 36978.164049,
+    "peak_rss_mib": 5081.07421875,
+    "ranges": {
+      "prefix_ms": [
+        47.831354,
+        48.396823
+      ],
+      "ttft_ms": [
+        81.569739,
+        82.28526099999999
+      ],
+      "decode_ms": [
+        34.31332353125,
+        34.361246781249996
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "gemma4_e2b_t4_c2048",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 2283.0785926666667,
+    "ttft_ms": 2325.4470823333336,
+    "decode_ms": 43.757357375,
+    "prefill_tok_s": 448.07918714927905,
+    "decode_tok_s": 22.853299650388223,
+    "setup_ms": 44518.207952,
+    "peak_rss_mib": 5048.7421875,
+    "ranges": {
+      "prefix_ms": [
+        1916.9168220000001,
+        2896.451665
+      ],
+      "ttft_ms": [
+        1949.7774470000002,
+        2949.4378110000002
+      ],
+      "decode_ms": [
+        32.147545625,
+        52.7137305
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "gemma4_e2b_t4_c2048",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 185.81017333333335,
+    "ttft_ms": 208.73795133333334,
+    "decode_ms": 23.746111645833334,
+    "prefill_tok_s": 683.4932540112801,
+    "decode_tok_s": 42.11215776775257,
+    "setup_ms": 44518.207952,
+    "peak_rss_mib": 5048.7421875,
+    "ranges": {
+      "prefix_ms": [
+        179.744166,
+        190.226979
+      ],
+      "ttft_ms": [
+        202.513645,
+        213.707344
+      ],
+      "decode_ms": [
+        23.29078278125,
+        24.05365078125
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "gemma4_e2b_t4_c2048",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 22.070381666666666,
+    "ttft_ms": 41.443333333333335,
+    "decode_ms": 19.64021271875,
+    "prefill_tok_s": 724.9534802637834,
+    "decode_tok_s": 50.91594547982294,
+    "setup_ms": 44518.207952,
+    "peak_rss_mib": 5048.7421875,
+    "ranges": {
+      "prefix_ms": [
+        21.783333,
+        22.609218000000002
+      ],
+      "ttft_ms": [
+        41.03573,
+        41.843281000000005
+      ],
+      "decode_ms": [
+        19.4479003125,
+        19.80544446875
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 4509.111908333333,
+    "ttft_ms": 4568.313158333333,
+    "decode_ms": 58.7629285625,
+    "prefill_tok_s": 226.87394342761462,
+    "decode_tok_s": 17.017531706855017,
+    "setup_ms": 44694.165712,
+    "peak_rss_mib": 5520.5390625,
+    "ranges": {
+      "prefix_ms": [
+        4024.071822,
+        4927.811248
+      ],
+      "ttft_ms": [
+        4080.174739,
+        4993.17255
+      ],
+      "decode_ms": [
+        56.098185125,
+        64.0598436875
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 413.00177033333335,
+    "ttft_ms": 457.11618,
+    "decode_ms": 44.440442187500004,
+    "prefill_tok_s": 307.504735143141,
+    "decode_tok_s": 22.502026325050277,
+    "setup_ms": 44694.165712,
+    "peak_rss_mib": 5520.5390625,
+    "ranges": {
+      "prefix_ms": [
+        398.172343,
+        422.15828100000004
+      ],
+      "ttft_ms": [
+        440.514687,
+        467.166666
+      ],
+      "decode_ms": [
+        42.7300374375,
+        45.30260253125
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 54.60729166666667,
+    "ttft_ms": 94.49057266666667,
+    "decode_ms": 40.08204425,
+    "prefill_tok_s": 293.0011636113919,
+    "decode_tok_s": 24.9488273043858,
+    "setup_ms": 44694.165712,
+    "peak_rss_mib": 5520.5390625,
+    "ranges": {
+      "prefix_ms": [
+        54.580781,
+        54.647031999999996
+      ],
+      "ttft_ms": [
+        94.428125,
+        94.52666699999999
+      ],
+      "decode_ms": [
+        40.0791439375,
+        40.08393546875
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 2866.869044,
+    "ttft_ms": 2919.8083153333337,
+    "decode_ms": 47.21462453125,
+    "prefill_tok_s": 356.83527370774453,
+    "decode_tok_s": 21.179878267127354,
+    "setup_ms": 46740.934722,
+    "peak_rss_mib": 5031.77734375,
+    "ranges": {
+      "prefix_ms": [
+        2858.799374,
+        2872.943905
+      ],
+      "ttft_ms": [
+        2912.304218,
+        2923.937343
+      ],
+      "decode_ms": [
+        46.960615125000004,
+        47.48893715625
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 180.270729,
+    "ttft_ms": 203.59171866666668,
+    "decode_ms": 23.37602265625,
+    "prefill_tok_s": 704.4959584093101,
+    "decode_tok_s": 42.778877087229034,
+    "setup_ms": 46740.934722,
+    "peak_rss_mib": 5031.77734375,
+    "ranges": {
+      "prefix_ms": [
+        175.451198,
+        185.560156
+      ],
+      "ttft_ms": [
+        198.887604,
+        209.46296900000002
+      ],
+      "decode_ms": [
+        23.32480134375,
+        23.474739593749998
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 23.307187333333335,
+    "ttft_ms": 43.44637166666667,
+    "decode_ms": 19.76123261458333,
+    "prefill_tok_s": 686.4835199190773,
+    "decode_tok_s": 50.6041308001214,
+    "setup_ms": 46740.934722,
+    "peak_rss_mib": 5031.77734375,
+    "ranges": {
+      "prefix_ms": [
+        22.0475,
+        25.210625
+      ],
+      "ttft_ms": [
+        42.117604,
+        44.826615000000004
+      ],
+      "decode_ms": [
+        19.63882165625,
+        19.92176265625
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 2581.421457,
+    "ttft_ms": 2629.5767,
+    "decode_ms": 43.449976,
+    "prefill_tok_s": 396.293289197681,
+    "decode_tok_s": 23.014972436348412,
+    "setup_ms": 44207.829462,
+    "peak_rss_mib": 4315.4609375,
+    "ranges": {
+      "prefix_ms": [
+        1932.243332,
+        2912.167342
+      ],
+      "ttft_ms": [
+        1969.934373,
+        2966.754269
+      ],
+      "decode_ms": [
+        36.9146629375,
+        46.776066
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 190.077795,
+    "ttft_ms": 213.66560733333333,
+    "decode_ms": 25.002204885416667,
+    "prefill_tok_s": 668.1474814036011,
+    "decode_tok_s": 39.996472494443154,
+    "setup_ms": 44207.829462,
+    "peak_rss_mib": 4302.69921875,
+    "ranges": {
+      "prefix_ms": [
+        188.768854,
+        192.232187
+      ],
+      "ttft_ms": [
+        212.447031,
+        215.91651000000002
+      ],
+      "decode_ms": [
+        24.87937340625,
+        25.158470125
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 25.073385000000002,
+    "ttft_ms": 46.15854133333333,
+    "decode_ms": 22.032962739583333,
+    "prefill_tok_s": 638.1268424666234,
+    "decode_tok_s": 45.386542509938955,
+    "setup_ms": 44207.829462,
+    "peak_rss_mib": 4302.69921875,
+    "ranges": {
+      "prefix_ms": [
+        23.794062,
+        27.528437
+      ],
+      "ttft_ms": [
+        44.94276,
+        48.589739
+      ],
+      "decode_ms": [
+        21.9402099375,
+        22.129575125
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 2851.0111620000002,
+    "ttft_ms": 2904.0273773333333,
+    "decode_ms": 46.433729354166665,
+    "prefill_tok_s": 358.82006132952483,
+    "decode_tok_s": 21.536069015104133,
+    "setup_ms": 51893.735553,
+    "peak_rss_mib": 4315.51953125,
+    "ranges": {
+      "prefix_ms": [
+        2846.506249,
+        2857.325311
+      ],
+      "ttft_ms": [
+        2897.286718,
+        2911.364998
+      ],
+      "decode_ms": [
+        46.01761396875,
+        46.8161131875
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 174.48166666666665,
+    "ttft_ms": 197.84381966666666,
+    "decode_ms": 23.577198958333334,
+    "prefill_tok_s": 727.8701678304311,
+    "decode_tok_s": 42.41385932939889,
+    "setup_ms": 51893.735553,
+    "peak_rss_mib": 4302.65625,
+    "ranges": {
+      "prefix_ms": [
+        173.848593,
+        175.551563
+      ],
+      "ttft_ms": [
+        196.248751,
+        199.740209
+      ],
+      "decode_ms": [
+        23.35783859375,
+        23.7431674375
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 23.011007333333335,
+    "ttft_ms": 42.784775,
+    "decode_ms": 20.201865229166668,
+    "prefill_tok_s": 695.3194081522317,
+    "decode_tok_s": 49.500379725147305,
+    "setup_ms": 51893.735553,
+    "peak_rss_mib": 4302.65625,
+    "ranges": {
+      "prefix_ms": [
+        21.543438000000002,
+        25.34474
+      ],
+      "ttft_ms": [
+        41.673855,
+        44.811928
+      ],
+      "decode_ms": [
+        20.0131346875,
+        20.30414396875
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 2324.425451,
+    "ttft_ms": 2366.334826,
+    "decode_ms": 42.11603132291667,
+    "prefill_tok_s": 440.1087587299869,
+    "decode_tok_s": 23.74392763488777,
+    "setup_ms": 54699.43576,
+    "peak_rss_mib": 4314.2421875,
+    "ranges": {
+      "prefix_ms": [
+        2040.333698,
+        2872.010676
+      ],
+      "ttft_ms": [
+        2078.592969,
+        2921.391874
+      ],
+      "decode_ms": [
+        36.11006828125,
+        46.97780925
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 181.203368,
+    "ttft_ms": 204.49791666666667,
+    "decode_ms": 24.61104978125,
+    "prefill_tok_s": 700.8699749995816,
+    "decode_tok_s": 40.632155429706735,
+    "setup_ms": 54699.43576,
+    "peak_rss_mib": 4302.6171875,
+    "ranges": {
+      "prefix_ms": [
+        172.168802,
+        195.831875
+      ],
+      "ttft_ms": [
+        194.186198,
+        221.57609399999998
+      ],
+      "decode_ms": [
+        23.712552,
+        26.35176109375
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 23.46158,
+    "ttft_ms": 42.96986166666667,
+    "decode_ms": 20.3027398125,
+    "prefill_tok_s": 681.9660056995308,
+    "decode_tok_s": 49.25443606307359,
+    "setup_ms": 54699.43576,
+    "peak_rss_mib": 4302.6171875,
+    "ranges": {
+      "prefix_ms": [
+        21.688437,
+        26.539635999999998
+      ],
+      "ttft_ms": [
+        41.117656,
+        46.23448
+      ],
+      "decode_ms": [
+        20.21507978125,
+        20.380952125
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 2638.5115443333334,
+    "ttft_ms": 2686.27394,
+    "decode_ms": 46.21758302083333,
+    "prefill_tok_s": 387.7185992220015,
+    "decode_tok_s": 21.63678701132497,
+    "setup_ms": 42847.306494000004,
+    "peak_rss_mib": 4314.53125,
+    "ranges": {
+      "prefix_ms": [
+        2067.0888010000003,
+        2933.4364060000003
+      ],
+      "ttft_ms": [
+        2106.3447380000002,
+        2986.934791
+      ],
+      "decode_ms": [
+        42.743142875000004,
+        48.25926115625
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 203.59088533333335,
+    "ttft_ms": 229.86324633333334,
+    "decode_ms": 26.394573072916668,
+    "prefill_tok_s": 623.800028140094,
+    "decode_tok_s": 37.88657604869899,
+    "setup_ms": 42847.306494000004,
+    "peak_rss_mib": 4302.5625,
+    "ranges": {
+      "prefix_ms": [
+        197.839583,
+        210.10026000000002
+      ],
+      "ttft_ms": [
+        222.99994700000002,
+        235.88833300000002
+      ],
+      "decode_ms": [
+        26.257563625,
+        26.53584153125
+      ]
+    }
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 26.806562666666665,
+    "ttft_ms": 49.83291666666667,
+    "decode_ms": 24.261739354166668,
+    "prefill_tok_s": 596.8687667626863,
+    "decode_tok_s": 41.21716029515674,
+    "setup_ms": 42847.306494000004,
+    "peak_rss_mib": 4302.5625,
+    "ranges": {
+      "prefix_ms": [
+        26.5,
+        27.292188
+      ],
+      "ttft_ms": [
+        49.152657000000005,
+        50.271562
+      ],
+      "decode_ms": [
+        24.186990625,
+        24.302760375
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "gemma4_e2b_t1_c2048",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 3649.435969,
+    "ttft_ms": 3710.9642066666665,
+    "decode_ms": 61.25650025,
+    "prefill_tok_s": 280.31728976472965,
+    "decode_tok_s": 16.324798118057682,
+    "setup_ms": 46105.58459300001,
+    "peak_rss_mib": 4740.24609375,
+    "ranges": {
+      "prefix_ms": [
+        3646.874355,
+        3651.733859
+      ],
+      "ttft_ms": [
+        3707.930891,
+        3713.6525309999997
+      ],
+      "decode_ms": [
+        61.08923778125,
+        61.44199603125
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "gemma4_e2b_t1_c2048",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 367.15867966666667,
+    "ttft_ms": 412.95966833333335,
+    "decode_ms": 47.448591156250004,
+    "prefill_tok_s": 345.8994898753308,
+    "decode_tok_s": 21.07544134886876,
+    "setup_ms": 46105.58459300001,
+    "peak_rss_mib": 4740.24609375,
+    "ranges": {
+      "prefix_ms": [
+        364.944397,
+        369.266725
+      ],
+      "ttft_ms": [
+        411.270803,
+        415.590708
+      ],
+      "decode_ms": [
+        47.34188184375,
+        47.62754990625
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "gemma4_e2b_t1_c2048",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 49.02566766666666,
+    "ttft_ms": 92.455025,
+    "decode_ms": 44.19627354166666,
+    "prefill_tok_s": 326.35965528886936,
+    "decode_tok_s": 22.626341993680438,
+    "setup_ms": 46105.58459300001,
+    "peak_rss_mib": 4740.24609375,
+    "ranges": {
+      "prefix_ms": [
+        48.638879,
+        49.472865
+      ],
+      "ttft_ms": [
+        91.903915,
+        93.420692
+      ],
+      "decode_ms": [
+        44.1280954375,
+        44.240477625
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "gemma4_e2b_t4_c2048",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 4223.799708666666,
+    "ttft_ms": 4309.492682333333,
+    "decode_ms": 80.30648715625,
+    "prefill_tok_s": 242.1989844596424,
+    "decode_tok_s": 12.452294147225354,
+    "setup_ms": 92298.936059,
+    "peak_rss_mib": 5366.83203125,
+    "ranges": {
+      "prefix_ms": [
+        4165.372187,
+        4311.295674
+      ],
+      "ttft_ms": [
+        4250.556317,
+        4396.888382
+      ],
+      "decode_ms": [
+        74.508762125,
+        83.943994375
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "gemma4_e2b_t4_c2048",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 283.2456123333333,
+    "ttft_ms": 324.0523793333333,
+    "decode_ms": 40.57108305208334,
+    "prefill_tok_s": 448.37411232531986,
+    "decode_tok_s": 24.64809723507368,
+    "setup_ms": 92298.936059,
+    "peak_rss_mib": 5366.83203125,
+    "ranges": {
+      "prefix_ms": [
+        253.847861,
+        303.971897
+      ],
+      "ttft_ms": [
+        289.289735,
+        348.629283
+      ],
+      "decode_ms": [
+        39.67049059375,
+        41.760922281250004
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "gemma4_e2b_t4_c2048",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 33.05819366666667,
+    "ttft_ms": 64.96527633333334,
+    "decode_ms": 32.85216819791667,
+    "prefill_tok_s": 483.99498657826445,
+    "decode_tok_s": 30.43939121386257,
+    "setup_ms": 92298.936059,
+    "peak_rss_mib": 5366.83203125,
+    "ranges": {
+      "prefix_ms": [
+        31.629088,
+        33.972733
+      ],
+      "ttft_ms": [
+        63.250728,
+        66.75335799999999
+      ],
+      "decode_ms": [
+        32.39781346875,
+        33.21795775
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 3630.2800893333333,
+    "ttft_ms": 3689.9281963333333,
+    "decode_ms": 59.46337758333333,
+    "prefill_tok_s": 281.7964385188429,
+    "decode_tok_s": 16.817073645010783,
+    "setup_ms": 46264.298914,
+    "peak_rss_mib": 5521.90234375,
+    "ranges": {
+      "prefix_ms": [
+        3625.302688,
+        3632.818365
+      ],
+      "ttft_ms": [
+        3685.3367240000002,
+        3692.438198
+      ],
+      "decode_ms": [
+        59.1875139375,
+        59.89488715625
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 365.968754,
+    "ttft_ms": 411.496245,
+    "decode_ms": 46.49204622916667,
+    "prefill_tok_s": 347.0241615217238,
+    "decode_tok_s": 21.50905544296419,
+    "setup_ms": 46264.298914,
+    "peak_rss_mib": 5521.90234375,
+    "ranges": {
+      "prefix_ms": [
+        362.725596,
+        368.91585399999997
+      ],
+      "ttft_ms": [
+        407.43345999999997,
+        414.627885
+      ],
+      "decode_ms": [
+        46.47394534375,
+        46.51291628125
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 49.90229633333333,
+    "ttft_ms": 92.93878033333333,
+    "decode_ms": 43.37408155208333,
+    "prefill_tok_s": 320.6265277478313,
+    "decode_tok_s": 23.05524322859047,
+    "setup_ms": 46264.298914,
+    "peak_rss_mib": 5521.90234375,
+    "ranges": {
+      "prefix_ms": [
+        49.425078,
+        50.217603
+      ],
+      "ttft_ms": [
+        92.029842,
+        94.315822
+      ],
+      "decode_ms": [
+        43.27318475,
+        43.47069090625
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 3981.7990463333335,
+    "ttft_ms": 4062.7748956666665,
+    "decode_ms": 81.27897597916667,
+    "prefill_tok_s": 256.9190428989721,
+    "decode_tok_s": 12.303304611715566,
+    "setup_ms": 58069.914361999996,
+    "peak_rss_mib": 4798.70703125,
+    "ranges": {
+      "prefix_ms": [
+        3582.785918,
+        4209.819633
+      ],
+      "ttft_ms": [
+        3661.9561,
+        4292.538694
+      ],
+      "decode_ms": [
+        80.6539981875,
+        82.49639584375001
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 352.940664,
+    "ttft_ms": 401.8922776666667,
+    "decode_ms": 54.307935375,
+    "prefill_tok_s": 359.83385581209194,
+    "decode_tok_s": 18.413515319537222,
+    "setup_ms": 58069.914361999996,
+    "peak_rss_mib": 4798.70703125,
+    "ranges": {
+      "prefix_ms": [
+        299.839293,
+        441.82806800000003
+      ],
+      "ttft_ms": [
+        349.2495,
+        498.512104
+      ],
+      "decode_ms": [
+        41.018381125,
+        62.8551534375
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 48.18324633333334,
+    "ttft_ms": 86.34317633333333,
+    "decode_ms": 38.22783066666667,
+    "prefill_tok_s": 332.06562898048537,
+    "decode_tok_s": 26.158952327681124,
+    "setup_ms": 58069.914361999996,
+    "peak_rss_mib": 4798.70703125,
+    "ranges": {
+      "prefix_ms": [
+        39.492604,
+        64.201615
+      ],
+      "ttft_ms": [
+        77.371562,
+        103.863698
+      ],
+      "decode_ms": [
+        35.8922438125,
+        42.2262209375
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 4356.7649440000005,
+    "ttft_ms": 4440.532286666667,
+    "decode_ms": 84.8637835,
+    "prefill_tok_s": 234.80725105650774,
+    "decode_tok_s": 11.78358963927174,
+    "setup_ms": 45846.27734099999,
+    "peak_rss_mib": 4327.3046875,
+    "ranges": {
+      "prefix_ms": [
+        4308.340596,
+        4385.497964
+      ],
+      "ttft_ms": [
+        4391.19096,
+        4471.669212
+      ],
+      "decode_ms": [
+        83.8832580625,
+        86.17201328125
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 288.628121,
+    "ttft_ms": 325.7585286666667,
+    "decode_ms": 40.703543375,
+    "prefill_tok_s": 440.0125655115913,
+    "decode_tok_s": 24.56788566997823,
+    "setup_ms": 45846.27734099999,
+    "peak_rss_mib": 4303.52734375,
+    "ranges": {
+      "prefix_ms": [
+        275.232262,
+        302.66530800000004
+      ],
+      "ttft_ms": [
+        311.261793,
+        338.01507300000003
+      ],
+      "decode_ms": [
+        40.3582201875,
+        41.20197290625
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 32.81998733333334,
+    "ttft_ms": 65.19709333333333,
+    "decode_ms": 33.44712307291667,
+    "prefill_tok_s": 487.5078054570039,
+    "decode_tok_s": 29.89793764384285,
+    "setup_ms": 45846.27734099999,
+    "peak_rss_mib": 4303.52734375,
+    "ranges": {
+      "prefix_ms": [
+        32.213827,
+        33.443245000000005
+      ],
+      "ttft_ms": [
+        63.36565,
+        66.46262899999999
+      ],
+      "decode_ms": [
+        33.1963909375,
+        33.73314271875
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 4165.656327,
+    "ttft_ms": 4249.128799666667,
+    "decode_ms": 83.02988216666667,
+    "prefill_tok_s": 245.57954850220173,
+    "decode_tok_s": 12.043856668285889,
+    "setup_ms": 44834.253853999995,
+    "peak_rss_mib": 4317.8046875,
+    "ranges": {
+      "prefix_ms": [
+        4105.286926,
+        4275.293071
+      ],
+      "ttft_ms": [
+        4190.212993,
+        4358.084658
+      ],
+      "decode_ms": [
+        82.2152105,
+        83.6293284375
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 309.55259133333334,
+    "ttft_ms": 346.44144133333333,
+    "decode_ms": 40.15374396875,
+    "prefill_tok_s": 410.2695424159557,
+    "decode_tok_s": 24.904277936778666,
+    "setup_ms": 44834.253853999995,
+    "peak_rss_mib": 4304.375,
+    "ranges": {
+      "prefix_ms": [
+        281.61947599999996,
+        365.271662
+      ],
+      "ttft_ms": [
+        315.894995,
+        405.044551
+      ],
+      "decode_ms": [
+        36.5216290625,
+        42.89091140625
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 34.975712,
+    "ttft_ms": 68.58842766666668,
+    "decode_ms": 33.572867510416664,
+    "prefill_tok_s": 457.46030845633675,
+    "decode_tok_s": 29.785957356479297,
+    "setup_ms": 44834.253853999995,
+    "peak_rss_mib": 4304.375,
+    "ranges": {
+      "prefix_ms": [
+        32.32172,
+        39.268333000000005
+      ],
+      "ttft_ms": [
+        66.44987,
+        72.770571
+      ],
+      "decode_ms": [
+        33.44170703125,
+        33.645779437499996
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 3980.0127646666665,
+    "ttft_ms": 4060.4147863333333,
+    "decode_ms": 83.36112640625,
+    "prefill_tok_s": 257.03435151813596,
+    "decode_tok_s": 11.995999131857042,
+    "setup_ms": 45407.851789,
+    "peak_rss_mib": 4308.13671875,
+    "ranges": {
+      "prefix_ms": [
+        3913.56482,
+        4080.590009
+      ],
+      "ttft_ms": [
+        3994.9706260000003,
+        4159.76329
+      ],
+      "decode_ms": [
+        82.89704503125,
+        84.28046090625
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 305.27733133333334,
+    "ttft_ms": 344.34728766666666,
+    "decode_ms": 41.70298405208333,
+    "prefill_tok_s": 416.01516707877755,
+    "decode_tok_s": 23.979099403320603,
+    "setup_ms": 45407.851789,
+    "peak_rss_mib": 4303.5390625,
+    "ranges": {
+      "prefix_ms": [
+        292.710361,
+        313.163876
+      ],
+      "ttft_ms": [
+        327.811063,
+        353.753148
+      ],
+      "decode_ms": [
+        40.877612125,
+        42.30231859375
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 35.93751133333333,
+    "ttft_ms": 67.82571766666666,
+    "decode_ms": 33.45896533333333,
+    "prefill_tok_s": 445.2172508996032,
+    "decode_tok_s": 29.887355751666203,
+    "setup_ms": 45407.851789,
+    "peak_rss_mib": 4303.5390625,
+    "ranges": {
+      "prefix_ms": [
+        35.586484,
+        36.342655
+      ],
+      "ttft_ms": [
+        66.516113,
+        69.50643099999999
+      ],
+      "decode_ms": [
+        33.432834375,
+        33.4722835625
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "case": "p1024",
+    "requests": 3,
+    "prompt_tokens": 1024,
+    "prefix_ms": 3892.0401269999998,
+    "ttft_ms": 3973.171957333333,
+    "decode_ms": 72.0520793125,
+    "prefill_tok_s": 262.8441554091922,
+    "decode_tok_s": 13.878849986588998,
+    "setup_ms": 45321.28041,
+    "peak_rss_mib": 4316.83203125,
+    "ranges": {
+      "prefix_ms": [
+        3848.286773,
+        3957.459543
+      ],
+      "ttft_ms": [
+        3924.6560689999997,
+        4040.120453
+      ],
+      "decode_ms": [
+        50.98831725,
+        83.91462540625
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "case": "p128",
+    "requests": 3,
+    "prompt_tokens": 128,
+    "prefix_ms": 298.2302183333333,
+    "ttft_ms": 342.57087766666666,
+    "decode_ms": 42.660924979166666,
+    "prefill_tok_s": 425.84551193283676,
+    "decode_tok_s": 23.440654427637163,
+    "setup_ms": 45321.28041,
+    "peak_rss_mib": 4304.37890625,
+    "ranges": {
+      "prefix_ms": [
+        295.767981,
+        301.389136
+      ],
+      "ttft_ms": [
+        340.099257,
+        344.60728700000004
+      ],
+      "decode_ms": [
+        42.4963919375,
+        42.82770359375
+      ]
+    }
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "case": "p17",
+    "requests": 3,
+    "prompt_tokens": 17,
+    "prefix_ms": 33.83596266666667,
+    "ttft_ms": 66.11196,
+    "decode_ms": 33.646341979166664,
+    "prefill_tok_s": 472.86965521339584,
+    "decode_tok_s": 29.720912918830397,
+    "setup_ms": 45321.28041,
+    "peak_rss_mib": 4304.37890625,
+    "ranges": {
+      "prefix_ms": [
+        31.92341,
+        34.858255
+      ],
+      "ttft_ms": [
+        62.39932,
+        68.22455599999999
+      ],
+      "decode_ms": [
+        33.37581478125,
+        33.8693211875
+      ]
+    }
+  }
+]

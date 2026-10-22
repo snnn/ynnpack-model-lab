@@ -1,0 +1,126 @@
+{
+  "dependencies": [
+    {
+      "name": "XNNPACK",
+      "revision": "0a66ebb5817fce48df605451444dcfc27a5e4ee4",
+      "files": 12546,
+      "manifest_sha256": "bafdd5136cc924df988b99e68315fb6c10d8d356414d445663d7ff317d846ff1"
+    },
+    {
+      "name": "slinky",
+      "revision": "a3eec6fcfe3093be04d6c3d7dcab7d4e70bdd0dc",
+      "files": 146,
+      "manifest_sha256": "131d506fda1505b5c370e76025a257854557a901b0dc1dac40ca5d00d17b35f0"
+    },
+    {
+      "name": "cpuinfo",
+      "revision": "8ce83db858065145192c97af90cb668ad72a12e9",
+      "files": 566,
+      "manifest_sha256": "c92e96d5c4deeadb80dda5d596043aabec04543e73c841c805f7bc0d837b6fbe"
+    }
+  ],
+  "binary_sha256": {
+    "host/recurrent_step_bench": "9e63a1358d01a775ca3ce4e8135727d8d3f9840509ec0b8348977d80aa3147ac",
+    "host/recurrent_step_diagnostics": "2d639f627186a0f36c2703da48bde0f7f36fac7450b3b9d610fdc6d3b85b626d",
+    "arm/recurrent_step_bench": "c61794776c4b7ea646324501422ddcc5ed05de5381d39a493e813dd5cc88c841",
+    "arm/recurrent_step_diagnostics": "d4a026f696776f3d414d0996c409cb2555e1f11f6f17c39709853a486a5912f3",
+    "host/recurrent_step_test": "939bf864e2b3a925b25d8fbfbd489430d4cfea20e0f235ea5eea479e49bd87bc",
+    "arm/recurrent_step_test": "ccf1dba674905836ce38864bb46d05413dcfffc6800c89831d8ff8b773582e82"
+  },
+  "source_sha256": {
+    "generated/followup_0_0.ynn": "d512953be3c46fc19ba8087ebcd5343666d1b14c053466654ca97d29e76e7b5b",
+    "generated/followup_0_1.ynn": "e501c1549b8ee51d47ba281fb4352cb3db032f6acfd9eccaec1dddd798506738",
+    "generated/followup_0_2.ynn": "c767eed92afc93f132984b7df2b8755b60246d3fecf5055f9b11ddf4b7c9f3c1",
+    "generated/followup_0_3.ynn": "9a5cc42149d7f01aa356d1390ba7174297b836e032336f7d3ce058f812942001",
+    "generated/followup_0_4.ynn": "77d122715dc4a7555803dd92d004a891be019791d6053ad7c3658211cc8fc1a2",
+    "generated/followup_0_5.ynn": "d419f6252750291f7213e3c21e42b5482e511330f5c3a7a97e40f43de639251e",
+    "generated/followup_1_0.ynn": "e373a0818de0e6ee1fc68c246f14090d38e70e201bbc911915b6183373eba4dd",
+    "generated/followup_1_1.ynn": "cd62f51c79fb5d7a71d3593903752b8add9c27fc055e99445b9bcc668cf42e35",
+    "generated/followup_1_2.ynn": "5d785dd20717e920b9c50bc3371619f09bb9bd37b1300915c191e279bc2901c3",
+    "generated/followup_1_3.ynn": "6a4a0314eb5ebcfaf36aead8918eedb2ed9580cd112db04f4237402e55d54af8",
+    "generated/followup_1_4.ynn": "d524d9d30fb7701eacc8092c700b3ab0b9e7dddbb0ac5b8b37e2e834cd6f00a9",
+    "generated/followup_1_5.ynn": "276fade2e41822d7fbdc728547631c74e7085ebae945b5d1ec729d4b033fa4db",
+    "generated/followup_2_0.ynn": "444087096ab6aded58234d43115c77498f81dfdd920a6bd482c459aa6aca0d9b",
+    "generated/followup_2_1.ynn": "00a2c749348ea87a6165ad51b7a7c23815a9d8cb28d28099fae746976dc7a5c9",
+    "generated/followup_2_2.ynn": "791c8f10feb4f822d8e354fd7d3944141e120b826959cf2fb5eede662828e1bf",
+    "generated/followup_2_3.ynn": "eef9d35b05a8fddf62f4a8331b3ba2b6b66e4e07925c7e3b39fb1f9472d43fdf",
+    "generated/followup_2_4.ynn": "fa02465425ec938e44848a605060db725d8430047065062a0f3752b1b7805f0e",
+    "generated/followup_2_5.ynn": "e8ba507bfe1ed94788c25ebf28a42b6428d5553129de8ca564fa70089ea69d3d",
+    "generated/followup_3_0.ynn": "aa4081c25f5ff10232418389398503365a8d51fa928bde397ede4a048297af0b",
+    "generated/followup_3_1.ynn": "a337f569a824c63a01b5a6aed8799c06906c76b1070a052ddd3b7f34a483db3d",
+    "generated/followup_3_2.ynn": "adec79e59db52e479c96bdc9617f43d8b9db2dd6e94bf4f39980cc6bff12149b",
+    "generated/followup_3_3.ynn": "f2f04fdf6272bda49717ae61958f24fabde41cc52211a3656c5065c3a3e879a0",
+    "generated/followup_3_4.ynn": "ca41ea4c8bc2c47f5253da23809540f9e69d4251252a7a67f7f2f1a4a9f9524d",
+    "generated/followup_3_5.ynn": "fe57c3e0809a92f76c468872283d298b0da2ed828091305ac0e2022cecc52354",
+    "generated/followup_4_0.ynn": "5aaac442ac2a103e62b235511c766cd699ba13f3ecb1be58a139b722318d5130",
+    "generated/followup_4_1.ynn": "e32561874491aaa847454fbcd9a1d599aa5bd5525b95ee6de78a57f046222f39",
+    "generated/followup_4_2.ynn": "41e38f6df719aac889ca2086bb95a2637fec45b23d308a7621ec691023c925a9",
+    "generated/followup_4_3.ynn": "17e08c1d5688689e703ad0f0b18c20ea190a4f3c8debf76476097f3b912b0469",
+    "generated/followup_4_4.ynn": "7d485a648942100b3084122de3aa3f691ac6d51c5e433f51f5531b5b3b4a681a",
+    "generated/followup_4_5.ynn": "cf5c353f9f5b3c96054bc712f963b1f026af3939c558dc2366e63993c40bf25f",
+    "generated/followup_5_0.ynn": "a0c413b8c9fbe3ee281329b44d057b1db1fc92d4100be8aa28d070f153d9ee86",
+    "generated/followup_5_1.ynn": "e501c1549b8ee51d47ba281fb4352cb3db032f6acfd9eccaec1dddd798506738",
+    "generated/followup_5_2.ynn": "1b935f2d1c6b0eeb88bc97e0db9a085ef8dcb17453a713854ffecebc99fab65d",
+    "generated/followup_5_3.ynn": "1b935f2d1c6b0eeb88bc97e0db9a085ef8dcb17453a713854ffecebc99fab65d",
+    "generated/followup_5_4.ynn": "e62a3ba52ee18fdd343f575d29c740c6fab334afc90b9b0b7b6a36e5332968e0",
+    "generated/followup_5_5.ynn": "5118e17438677eb69d59ca3e514e3af416acbeb3403c9075c8c024a34d11f816",
+    "generated/followup_6_0.ynn": "a0c413b8c9fbe3ee281329b44d057b1db1fc92d4100be8aa28d070f153d9ee86",
+    "generated/followup_6_1.ynn": "e501c1549b8ee51d47ba281fb4352cb3db032f6acfd9eccaec1dddd798506738",
+    "generated/followup_6_2.ynn": "1b935f2d1c6b0eeb88bc97e0db9a085ef8dcb17453a713854ffecebc99fab65d",
+    "generated/followup_6_3.ynn": "1b935f2d1c6b0eeb88bc97e0db9a085ef8dcb17453a713854ffecebc99fab65d",
+    "generated/followup_6_4.ynn": "47cbb56108b15f2397104b9f3b4e705d8577248dbd452703d1cf59a223f5f3aa",
+    "generated/followup_6_5.ynn": "5118e17438677eb69d59ca3e514e3af416acbeb3403c9075c8c024a34d11f816",
+    "generated/recurrent_followup_generated.h": "91a7b823572c2a5ca00bbecc2d372039a112e8f2bdb030a8b873737dae6ebc74",
+    "lab/CMakeLists.txt": "786a43861444cab170a52cd9fe80c847e14e1899a9f171de7b72e0d439088845",
+    "lab/runtime/checked_arithmetic.h": "8c1c59d3ed25f21cd3e1bc9ad9a3cd529442268c7ff2f837d8a99214de341bd5",
+    "lab/runtime/checked_index.h": "3f27f4412dcc48bc3049fc0744a30faaa8ece6228152fb02a709ef79c0ef9b71",
+    "lab/runtime/execution_profile.h": "b6fc9a9cf5711a651e4965d2e44716e3792d2a33780c737a60b9973b8275fcb7",
+    "lab/runtime/logical_state.h": "19310cc93737773d81fe81b8abe5f7daa4901f49dfbfa39ed45f1f70944b9592",
+    "lab/runtime/model_assets.h": "c0573694f97bf7389401cd029e494c53c7c6423f122d531d35d5779e91d29785",
+    "lab/runtime/packed_routing.h": "60f8eb5651fa846e26fbd202c3c593903ee52553db79215b4ed618f685fa8499",
+    "lab/runtime/resource_state.h": "5f9acc26fa120a84e9276cec7ba668b1d3adb6d8fc8ea6ba718cfb217f44f4fe",
+    "lab/runtime/rust/bridge.h": "104c2551a89c24c900e32c70758be23426af8b94eca4741688b5457b0bad76ea",
+    "lab/runtime/rust/bridge_internal.h": "d495013718cad2f135c7980d4def5af8990dfc47bfd15e432f3bc2432b568424",
+    "lab/runtime/rust/sentencepiece.h": "9a4b5bf745f669a4d1cb28b15adc8e94b541bbd4923f8d1633faf0e216c77308",
+    "lab/runtime/safetensors_assets.h": "d7968c17f6306e85d1bd1a2ffd3ff4554aee363c5dd4554688caa9d505591e50",
+    "lab/runtime/sha256.h": "3c0baa9eb78779ce50be9b6ac3c0aea9fea9347c33febe531a29098491a3e6c8",
+    "lab/runtime/value_trace.h": "95ce88288ae0c1a18380ab1ca2cc4919a3ea8c02a16f14f61c1dd25b52d527b7",
+    "lab/runtime/ynnpack_recurrent_cpu.cc": "6587534a6fb18b20a86786dfa78fe339c2a0460d6737ab8f4607001e586e673f",
+    "lab/runtime/ynnpack_recurrent_cpu.h": "64a58000328d92e8e64e3a0b2bc7a9e6f0ccf2a710fdeacdb972be30b13bae63",
+    "lab/runtime/ynnpack_support.h": "3ed5321ba73fa4e19736cae2e04bf40a79b4cc8eb0fd9caa4a0e83726643355b",
+    "lab/tools/recurrent_cpu_bench.cc": "b27ca609e18f5442a05d0dfef8adc7cf228ab5baa45ebf5757fbf684b6b3117f",
+    "lab/tools/recurrent_followup_engines.h": "b4c8a5480f7c93c8c17156eb593b4d692339839e6ecf349bfa1b6beda49bf432",
+    "lab/tools/recurrent_step_bench.cc": "93cd098d05f43196a5170dbe4c285d3064f67c3f693a8c0fe1c15c257cbf99e5",
+    "lab/tools/recurrent_step_diagnostics.cc": "8226a3e9e48d635b9f1cd1efd43a2164dc7f5feebd59e75a48eff7e749103b6a",
+    "lab/tools/recurrent_step_native.h": "a61416d4542cd46003edcf3adda2da6266af04d7b67b3207a0e08b9923b6f112",
+    "lab/tools/recurrent_step_test.cc": "b754daa5f38de6b1dda952c120613d6ab58311e6e0f9fe6f1a3847ac9b98d5d2"
+  },
+  "lab_head": "1bee1b2b0ff8d1c9d803ba47ec36f2f3c895db12",
+  "llama_head": "cd0e36153b3f669d3e20ad2eb59ece6f5c8e23f5",
+  "lab_dirty": true,
+  "new_backend_patches": false,
+  "host_compiler": "Clang 22.1.8",
+  "android_ndk": "r28c",
+  "host_affinity": {
+    "1": "0",
+    "4": "0,2,4,6"
+  },
+  "arm_affinity": {
+    "1": "6",
+    "4": "2,3,4,5"
+  },
+  "arm_qualification_scratch_pool": true,
+  "host_qualification_scratch_pool": false,
+  "correctness_native_cases": 810,
+  "qualification_processes": {
+    "host": {
+      "cases": 132,
+      "failures": 0
+    },
+    "arm": {
+      "cases": 70,
+      "failures": 0
+    }
+  },
+  "original_step_regression_cases_per_cpu": 50
+}

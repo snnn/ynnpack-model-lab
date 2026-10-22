@@ -1,0 +1,14 @@
+{
+  "cache_capacity": 2048,
+  "graph_dir": "EXPERIMENT_DIR/int4",
+  "prefill_chunk_size": 128,
+  "prefill_rows": 128,
+  "profile_execution": "none",
+  "repetitions": 3,
+  "runner": "qwen3",
+  "threads": 4,
+  "timings_valid_for_benchmark": true,
+  "trace_plan": "",
+  "warmups": 1,
+  "ynn_math": "no_excess_precision"
+}

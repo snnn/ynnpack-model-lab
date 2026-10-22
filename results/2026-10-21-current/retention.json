@@ -1,0 +1,43 @@
+{
+  "removed_campaigns": [
+    "qwen35_cpu_parity_20261015",
+    "hf_fp32_arithmetic_2026-10-02",
+    "2026-10-13-backend-match",
+    "2026-10-12-rust-input-frontend",
+    "2026-10-05-decode-profile",
+    "2026-10-05-packing-fix",
+    "2026-10-07-upstream-refresh",
+    "2026-10-11-rust-runtime",
+    "2026-10-05",
+    "2026-10-11-json-cutover",
+    "2026-10-08-capacity-sweep",
+    "2026-10-08-builder-refresh",
+    "2026-10-02",
+    "2026-10-11-vision",
+    "native_tokenizers_validation_20261005.json",
+    "hf_safetensors_2026-10-02",
+    "2026-10-11-dsl-cutover",
+    "qwen35_fp32_20261015",
+    "2026-10-11-attention-functions"
+  ],
+  "pruned_e4b_files": [
+    "results/e4b_2026-10-02/pixel-state-views.txt",
+    "results/e4b_2026-10-02/e4b-host-performance.json",
+    "results/e4b_2026-10-02/e4b-tecno-performance.jsonl",
+    "results/e4b_2026-10-02/e4b-host-performance.jsonl",
+    "results/e4b_2026-10-02/tecno-correctness.jsonl",
+    "results/e4b_2026-10-02/e4b-xnn-host-performance.jsonl",
+    "results/e4b_2026-10-02/e4b-xnn-host-performance.json",
+    "results/e4b_2026-10-02/append-contract.json",
+    "results/e4b_2026-10-02/host-c8448-correctness.jsonl",
+    "results/e4b_2026-10-02/metrics.json",
+    "results/e4b_2026-10-02/tecno-vs-host.json",
+    "results/e4b_2026-10-02/e2b-regression.json",
+    "results/e4b_2026-10-02/e4b-tecno-performance.json",
+    "results/e4b_2026-10-02/cross-backend.json",
+    "results/e4b_2026-10-02/capacity-parity.json",
+    "results/e4b_2026-10-02/host-c2048-correctness.jsonl",
+    "results/e4b_2026-10-02/ctest.txt"
+  ],
+  "archive": "Full pre-cleanup results archived locally outside the repository; archive is not part of the PR."
+}

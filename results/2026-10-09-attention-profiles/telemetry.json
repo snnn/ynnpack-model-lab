@@ -1,0 +1,107 @@
+{
+  "scope": "samples_during_unprofiled_full_model_processes_including_preparation",
+  "intervals": "requests.json jobs start_ns/end_ns; approximate process bounds",
+  "samples": 250,
+  "package_temperature_c": {
+    "min": 44.0,
+    "max": 73.0
+  },
+  "cpus": {
+    "0": {
+      "frequency_khz_min": 4625843,
+      "frequency_khz_max": 5113350,
+      "max_frequency_khz": [
+        5100000
+      ],
+      "governors": [
+        "powersave"
+      ],
+      "thermal_throttle": {
+        "core_throttle_count": {
+          "first": 0,
+          "last": 0,
+          "min": 0,
+          "max": 0
+        },
+        "package_throttle_count": {
+          "first": 0,
+          "last": 0,
+          "min": 0,
+          "max": 0
+        }
+      }
+    },
+    "2": {
+      "frequency_khz_min": 800000,
+      "frequency_khz_max": 5100051,
+      "max_frequency_khz": [
+        5100000
+      ],
+      "governors": [
+        "powersave"
+      ],
+      "thermal_throttle": {
+        "core_throttle_count": {
+          "first": 0,
+          "last": 0,
+          "min": 0,
+          "max": 0
+        },
+        "package_throttle_count": {
+          "first": 0,
+          "last": 0,
+          "min": 0,
+          "max": 0
+        }
+      }
+    },
+    "4": {
+      "frequency_khz_min": 800000,
+      "frequency_khz_max": 5157303,
+      "max_frequency_khz": [
+        5100000
+      ],
+      "governors": [
+        "powersave"
+      ],
+      "thermal_throttle": {
+        "core_throttle_count": {
+          "first": 0,
+          "last": 0,
+          "min": 0,
+          "max": 0
+        },
+        "package_throttle_count": {
+          "first": 0,
+          "last": 0,
+          "min": 0,
+          "max": 0
+        }
+      }
+    },
+    "6": {
+      "frequency_khz_min": 800000,
+      "frequency_khz_max": 5110039,
+      "max_frequency_khz": [
+        5100000
+      ],
+      "governors": [
+        "powersave"
+      ],
+      "thermal_throttle": {
+        "core_throttle_count": {
+          "first": 0,
+          "last": 0,
+          "min": 0,
+          "max": 0
+        },
+        "package_throttle_count": {
+          "first": 0,
+          "last": 0,
+          "min": 0,
+          "max": 0
+        }
+      }
+    }
+  }
+}

@@ -24,6 +24,7 @@ pub(super) fn output(op: Op, field: &str) -> bool {
         && (field == "output"
             || op == Op::Split && field == "outputs"
             || op == Op::DynamicQuantization && field == "scale")
+        || op == Op::CausalDepthwiseConv && field == "next_history"
 }
 pub(super) fn results(c: &RawCommand) -> Vec<i64> {
     c.op.fields()
@@ -95,20 +96,14 @@ pub(super) fn lookup(name: &str) -> Option<(Op, Option<Arg>)> {
     if let Some(s) = binary {
         return Some((Op::Binary, Some(Arg::Binary(s.into()))));
     }
-    if [
-        "less",
-        "less_equal",
-        "greater",
-        "greater_equal",
-        "equal",
-        "not_equal",
-    ]
-    .contains(&name)
+    if ["less", "less_equal", "greater", "greater_equal", "equal", "not_equal"]
+        .contains(&name)
     {
         return Some((Op::Compare, Some(Arg::Text(name.into()))));
     }
     if [
         "abs",
+        "log",
         "exp",
         "erf",
         "tanh",
@@ -120,6 +115,7 @@ pub(super) fn lookup(name: &str) -> Option<(Op, Option<Arg>)> {
         "negate",
         "round",
         "hardswish",
+        "sigmoid",
     ]
     .contains(&name)
     {

@@ -1,0 +1,62 @@
+{
+  "runner": {
+    "format": "ynn-llm-execution",
+    "model": "unrecognized-name-is-descriptive",
+    "capacity": 8,
+    "prefill_rows": 1,
+    "vocabulary": 4,
+    "prefill_after_decode": false,
+    "graphs": {
+      "prefill": {
+        "file": "prefill.ynn",
+        "sha256": "9bbc7735cbbabc9fb468126fc6ebd7d456af8cf433f9de7eae7cd5d83dcc717a",
+        "logits": null,
+        "row_policy": "valid",
+        "scalars": {},
+        "inputs": [
+          {
+            "name": "ids",
+            "dtype": "int32",
+            "shape": [
+              "rows"
+            ],
+            "recipe": {
+              "kind": "tokens"
+            }
+          }
+        ]
+      },
+      "decode": {
+        "file": "decode.ynn",
+        "sha256": "d818d6eca9ea03aa4866c444bff9dcc9481a1eb058dbafc324612b7aa77fe2f5",
+        "logits": "scores",
+        "row_policy": "valid",
+        "scalars": {},
+        "inputs": [
+          {
+            "name": "ids",
+            "dtype": "int32",
+            "shape": [
+              "rows"
+            ],
+            "recipe": {
+              "kind": "tokens"
+            }
+          }
+        ]
+      }
+    },
+    "resources": [],
+    "fixed_states": [
+      {
+        "input": "memory",
+        "output": "next",
+        "shape": [
+          1,
+          4
+        ]
+      }
+    ],
+    "embeddings": {}
+  }
+}

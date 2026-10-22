@@ -50,7 +50,7 @@ typedef struct LabPlanArg {
 } LabPlanArg;
 int32_t lab_assets_data(LabAssets*, const char*, size_t, const void**,
                         LabError*) LAB_NOEXCEPT;
-int32_t lab_plan_create(size_t, LabGraph**, LabError*) LAB_NOEXCEPT;
+int32_t lab_plan_create(size_t, int32_t math_mode, LabGraph**, LabError*) LAB_NOEXCEPT;
 int32_t lab_plan_expr(LabGraph*, uint32_t, int64_t, const uint32_t*, size_t,
                       uint32_t*, LabError*) LAB_NOEXCEPT;
 int32_t lab_plan_command(LabGraph*, const char*, const LabPlanArg*, size_t,
@@ -93,6 +93,7 @@ int32_t lab_graph_shape(LabGraph*, const char* name, size_t* dims, size_t* rank,
 int32_t lab_graph_weight_stats(LabGraph*, uint64_t values[3],
                                LabError*) LAB_NOEXCEPT;
 int32_t lab_graph_counters(LabGraph*, LabCounters*, LabError*) LAB_NOEXCEPT;
+int32_t lab_resource_bytes(LabGraph*, const char*, const size_t*, size_t, size_t*, LabError*) LAB_NOEXCEPT;
 int32_t lab_resource_create(LabGraph*, const char*, void*, size_t,
                             const size_t*, size_t, LabResource**,
                             LabError*) LAB_NOEXCEPT;
@@ -100,6 +101,8 @@ void lab_resource_delete(LabResource*) LAB_NOEXCEPT;
 int32_t lab_resource_reset(LabResource*, LabError*) LAB_NOEXCEPT;
 int32_t lab_resource_import(LabResource*, size_t, LabError*) LAB_NOEXCEPT;
 int32_t lab_resource_status(LabResource*, uint64_t[3], LabError*) LAB_NOEXCEPT;
+int32_t lab_resources_migrate(LabResource* const*, LabResource* const*, size_t,
+                              size_t, LabError*) LAB_NOEXCEPT;
 int32_t lab_graph_resource(LabGraph*, const char*, LabResource*,
                            LabError*) LAB_NOEXCEPT;
 

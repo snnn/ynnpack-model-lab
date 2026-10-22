@@ -1,0 +1,394 @@
+[
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "gemma4_e2b_t1_c2048",
+    "argv": [
+      "taskset",
+      "80",
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=1",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "gemma4_e2b_t4_c2048",
+    "argv": [
+      "taskset",
+      "f0",
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "qwen3_0_6b_t1_c2048",
+    "argv": [
+      "taskset",
+      "80",
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/qwen",
+      "--bundle_dir=${REMOTE_ROOT}/qwen",
+      "--parameter_dir=${REMOTE_ROOT}/qwen/parameters",
+      "--cases_file=${REMOTE_ROOT}/qwen/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=1",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "qwen3_0_6b_t4_c2048",
+    "argv": [
+      "taskset",
+      "f0",
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/qwen",
+      "--bundle_dir=${REMOTE_ROOT}/qwen",
+      "--parameter_dir=${REMOTE_ROOT}/qwen/parameters",
+      "--cases_file=${REMOTE_ROOT}/qwen/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "samsung_s25-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "argv": [
+      "taskset",
+      "80",
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=1",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "samsung_s25-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "argv": [
+      "taskset",
+      "f0",
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "argv": [
+      "taskset",
+      "f0",
+      "${REMOTE_ROOT}/bin/gemma4_e2b",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "argv": [
+      "taskset",
+      "f0",
+      "${REMOTE_ROOT}/bin/gemma4_e2b",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=8448",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "argv": [
+      "taskset",
+      "f0",
+      "${REMOTE_ROOT}/bin/gemma4_e2b",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "argv": [
+      "taskset",
+      "f0",
+      "${REMOTE_ROOT}/bin/gemma4_e2b",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=8448",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "samsung_s25-reset",
+    "job": "reset",
+    "argv": [
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${RESET_FIXTURE}",
+      "--output_dir={output}",
+      "--num_threads=4",
+      "--warmup_runs=0",
+      "--measured_runs=2",
+      "--dump_outputs"
+    ]
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "gemma4_e2b_t1_c2048",
+    "argv": [
+      "taskset",
+      "40",
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=1",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "gemma4_e2b_t4_c2048",
+    "argv": [
+      "taskset",
+      "3c",
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "qwen3_0_6b_t1_c2048",
+    "argv": [
+      "taskset",
+      "40",
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/qwen",
+      "--bundle_dir=${REMOTE_ROOT}/qwen",
+      "--parameter_dir=${REMOTE_ROOT}/qwen/parameters",
+      "--cases_file=${REMOTE_ROOT}/qwen/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=1",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "qwen3_0_6b_t4_c2048",
+    "argv": [
+      "taskset",
+      "3c",
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/qwen",
+      "--bundle_dir=${REMOTE_ROOT}/qwen",
+      "--parameter_dir=${REMOTE_ROOT}/qwen/parameters",
+      "--cases_file=${REMOTE_ROOT}/qwen/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "pixel11-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "argv": [
+      "taskset",
+      "40",
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=1",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "pixel11-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "argv": [
+      "taskset",
+      "3c",
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "argv": [
+      "taskset",
+      "3c",
+      "${REMOTE_ROOT}/bin/gemma4_e2b",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "argv": [
+      "taskset",
+      "3c",
+      "${REMOTE_ROOT}/bin/gemma4_e2b",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=8448",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "argv": [
+      "taskset",
+      "3c",
+      "${REMOTE_ROOT}/bin/gemma4_e2b",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "argv": [
+      "taskset",
+      "3c",
+      "${REMOTE_ROOT}/bin/gemma4_e2b",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+      "--output_dir={output}",
+      "--cache_capacity=8448",
+      "--num_threads=4",
+      "--warmup_runs=1",
+      "--measured_runs=3"
+    ]
+  },
+  {
+    "campaign": "pixel11-reset",
+    "job": "reset",
+    "argv": [
+      "${REMOTE_ROOT}/bin/ynn-llm",
+      "--graph_dir=${REMOTE_ROOT}/e2b",
+      "--bundle_dir=${REMOTE_ROOT}/bundle",
+      "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+      "--cases_file=${RESET_FIXTURE}",
+      "--output_dir={output}",
+      "--num_threads=4",
+      "--warmup_runs=0",
+      "--measured_runs=2",
+      "--dump_outputs"
+    ]
+  }
+]

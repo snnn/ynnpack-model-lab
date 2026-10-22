@@ -1,0 +1,568 @@
+{
+  "platform": "Linux-7.2.9-200.fc44.x86_64-x86_64-with-glibc2.43",
+  "compiler": "clang version 22.1.8 (Fedora 22.1.8-4.fc44)\nTarget: x86_64-redhat-linux-gnu\nThread model: posix\nInstalledDir: /usr/bin\nConfiguration file: /etc/clang/x86_64-redhat-linux-gnu-clang++.cfg\n",
+  "python_versions": {
+    "torch": "2.14.0+rocm7.2",
+    "torchao": "0.18.0+rocm7.2",
+    "transformers": "5.12.1",
+    "numpy": "2.4.4",
+    "safetensors": "0.7.0"
+  },
+  "checkpoint_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "checkpoint_files": {
+    "README.md": {
+      "bytes": 77661,
+      "sha256": "1406be1b6b8fd8a6545870da516912804756593628a1d0fb0a7965211e82a7bb"
+    },
+    "model.safetensors.index.json": {
+      "bytes": 76196,
+      "sha256": "cf3f798ee02ba45f9622aa8892a47369ab667d0afbf154ee7c2212de42e6302d"
+    },
+    "preprocessor_config.json": {
+      "bytes": 390,
+      "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+    },
+    "model.safetensors-00001-of-00002.safetensors": {
+      "bytes": 5329398688,
+      "sha256": "26a93f066e1916adb13453dae5a0c707c0fbc71299ed98779571a907b8e74c61"
+    },
+    "model.safetensors-00002-of-00002.safetensors": {
+      "bytes": 3990429408,
+      "sha256": "cb544bd9bfae93dc59b0f22b292f5933573854a7f9b97835c67060d7d910e188"
+    },
+    ".gitattributes": {
+      "bytes": 1570,
+      "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+    },
+    "tokenizer.json": {
+      "bytes": 12807982,
+      "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+    },
+    "LICENSE": {
+      "bytes": 11544,
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a"
+    },
+    "merges.txt": {
+      "bytes": 3353259,
+      "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+    },
+    "config.json": {
+      "bytes": 3161,
+      "sha256": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670"
+    },
+    "chat_template.jinja": {
+      "bytes": 7756,
+      "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+    },
+    "video_preprocessor_config.json": {
+      "bytes": 385,
+      "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+    },
+    "vocab.json": {
+      "bytes": 6722759,
+      "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+    },
+    "tokenizer_config.json": {
+      "bytes": 16710,
+      "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+    }
+  },
+  "artifacts": {
+    "qwen35-f32.gguf": {
+      "bytes": 17316372384,
+      "sha256": "d906713d8daed28660a140c5c8cbd466086697222154add72c8ea0d922bc634e"
+    },
+    "qwen35-q8.gguf": {
+      "bytes": 4610580384,
+      "sha256": "820c97970655ed22721c39d2eb086a4e29ef9925f2eef2d12b8ddc5d2b94f36d"
+    },
+    "qwen35-q4km.gguf": {
+      "bytes": 2783446944,
+      "sha256": "ae0554752abf9c461caefd842b43eda8c097da526051166dcfcfba09a243b674"
+    },
+    "lab-build/qwen3": {
+      "bytes": 39900168,
+      "sha256": "4ab5a0a96f9add94ab596afc3bdfa799775becd8f9008dd8eaab4dd1db62b92f"
+    },
+    "lab-build/plan_fixture": {
+      "bytes": 40765144,
+      "sha256": "ef7d690afad68e2f63eba9a2b97d3c608a5d081a2ee15d8fa11f00384785e499"
+    },
+    "llama-replay": {
+      "bytes": 79576,
+      "sha256": "ae3533f79a236eb0999e3f685a71a9b5dff56d6bc64b68da9d104a04ec5c4039"
+    },
+    "llama-replay-next": {
+      "bytes": 79576,
+      "sha256": "ff14cb0447a2a25aa2dc278ed67286be9b040e0e8be7392a4323ba42c7b49117"
+    },
+    "qwen3-scalar-int4-baseline": {
+      "bytes": 39899280,
+      "sha256": "b3472ab34bf5b59c667a0586900387cf2a083c19d5377242729d34c735a1efc4"
+    },
+    "imc_freerun_probe": {
+      "bytes": 83000,
+      "sha256": "cccc4ceed95eb0b914e0aec622ddc1e5a3c3a825f4cb5434f5f49fdf79035126"
+    },
+    "llama-build/bin/libllama.so": {
+      "bytes": 4538160,
+      "sha256": "f001480bef21c3fd0d7d908f016237a98bcca29d487a4d93d667c4d99c9d72a1"
+    },
+    "llama-build/bin/libggml.so": {
+      "bytes": 52824,
+      "sha256": "f97fee30a2e1eddf4c9c2709410b73202c79f686122a763fbb157976b26c03d7"
+    },
+    "llama-build/bin/libggml-base.so": {
+      "bytes": 924512,
+      "sha256": "285d4f94d3ecf2d832106f1b3c0f5e084dbca2c0d10e920288b434a26cdd8a1f"
+    },
+    "llama-build/bin/libggml-cpu.so": {
+      "bytes": 1710016,
+      "sha256": "665fb79471c7e4462384e563e73bb627d39d7154b304e9e8951a967aa68275e8"
+    },
+    "llama-build/bin/llama-quantize": {
+      "bytes": 12576,
+      "sha256": "630fbdef780c82d9bd04cdfb0614795f24d969d3a8ada05ff30c430b7ab3516f"
+    }
+  },
+  "builds": {
+    "lab-build": {
+      "cache": {
+        "CMAKE_BUILD_TYPE:STRING": "Release",
+        "CMAKE_CXX_COMPILER:STRING": "/usr/bin/clang++",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-g",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_C_COMPILER:STRING": "/usr/bin/clang",
+        "CMAKE_C_FLAGS:STRING": "",
+        "CMAKE_C_FLAGS_DEBUG:STRING": "-g",
+        "CMAKE_C_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_C_FLAGS_RELEASE:STRING": "-O3 -DNDEBUG",
+        "CMAKE_C_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "LAB_BUILD_ATTENTION_BENCHMARK:BOOL": "OFF",
+        "LAB_BUILD_DOT_BENCHMARK:BOOL": "OFF",
+        "LAB_CARGO:FILEPATH": "/usr/bin/cargo",
+        "LAB_CARGO_HOME:PATH": "BACKEND_ROOT/cargo",
+        "LAB_DEPS:PATH": "BACKEND_ROOT",
+        "LAB_ENABLE_SME:BOOL": "OFF",
+        "LAB_ENABLE_TOKENIZERS:BOOL": "OFF",
+        "LAB_RUSTC:FILEPATH": "/usr/bin/rustc",
+        "LAB_RUST_TARGET:STRING": "",
+        "LAB_SANITIZERS:BOOL": "OFF",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_C_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_C_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1"
+      },
+      "cache_sha256": "b8844bd37b7ecad3b1607eab33cfdbcc0177e18a2c759ae104adcd9ddb19273d",
+      "compile_commands_sha256": null,
+      "representative_ninja_rules": [
+        "build CMakeFiles/qwen3.dir/runtime/rust/main.cc.o: CXX_COMPILER__qwen3_unscanned_Release LAB_ROOT/runtime/rust/main.cc || cmake_object_order_depends_target_qwen3\n  CONFIG = Release\n  DEFINES = -DCPUINFO_SUPPORTED_PLATFORM=1 -DLAB_HAS_BF16_ROUNDING=0 -DYNN_ARCH_EMULATE_FMA -DYNN_ARCH_FP16_ARITHMETIC -DYNN_ARCH_X86 -DYNN_ARCH_X86_64 -DYNN_ARCH_X86_AMXBF16 -DYNN_ARCH_X86_AMXFP16 -DYNN_ARCH_X86_AMXINT8 -DYNN_ARCH_X86_AVX -DYNN_ARCH_X86_AVX2 -DYNN_ARCH_X86_AVX2_FMA3 -DYNN_ARCH_X86_AVX512 -DYNN_ARCH_X86_AVX512BF16 -DYNN_ARCH_X86_AVX512FP16 -DYNN_ARCH_X86_AVX512VNNI -DYNN_ARCH_X86_AVXVNNI -DYNN_ARCH_X86_F16C -DYNN_ARCH_X86_F16C_FMA3 -DYNN_ARCH_X86_FMA3 -DYNN_ARCH_X86_SSE2 -DYNN_ARCH_X86_SSE2_FMA -DYNN_ARCH_X86_SSE41 -DYNN_ARCH_X86_SSSE3 -DYNN_ENABLE_CPUINFO -DYNN_LOG_LEVEL=YNN_LOG_LEVEL_warning\n  DEP_FILE = CMakeFiles/qwen3.dir/runtime/rust/main.cc.o.d\n  FLAGS = -O3 -DNDEBUG -std=gnu++17 -O1 -ffp-contract=off -fno-rtti\n  INCLUDES = -IBACKEND_ROOT/XNNPACK -IBACKEND_ROOT/slinky -ILAB_ROOT -IBACKEND_ROOT/XNNPACK/ynnpack/composites/. -IBACKEND_ROOT/XNNPACK/ynnpack/base/. -IBACKEND_ROOT/cpuinfo/include -IBACKEND_ROOT/XNNPACK/ynnpack/include -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/binary/. -IEXPERIMENT_DIR/lab-build -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/dequantize_dot/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/dot/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/iota/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/ternary/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/unary/.\n  OBJECT_DIR = CMakeFiles/qwen3.dir\n  OBJECT_FILE_DIR = CMakeFiles/qwen3.dir/runtime/rust\n  TARGET_COMPILE_PDB = CMakeFiles/qwen3.dir/\n  TARGET_PDB = qwen3.pdb\n  TARGET_SUPPORT_DIR = CMakeFiles/qwen3.dir",
+        "build CMakeFiles/qwen3.dir/runtime/rust/fixture.cc.o: CXX_COMPILER__qwen3_unscanned_Release LAB_ROOT/runtime/rust/fixture.cc || cmake_object_order_depends_target_qwen3\n  CONFIG = Release\n  DEFINES = -DCPUINFO_SUPPORTED_PLATFORM=1 -DLAB_HAS_BF16_ROUNDING=0 -DYNN_ARCH_EMULATE_FMA -DYNN_ARCH_FP16_ARITHMETIC -DYNN_ARCH_X86 -DYNN_ARCH_X86_64 -DYNN_ARCH_X86_AMXBF16 -DYNN_ARCH_X86_AMXFP16 -DYNN_ARCH_X86_AMXINT8 -DYNN_ARCH_X86_AVX -DYNN_ARCH_X86_AVX2 -DYNN_ARCH_X86_AVX2_FMA3 -DYNN_ARCH_X86_AVX512 -DYNN_ARCH_X86_AVX512BF16 -DYNN_ARCH_X86_AVX512FP16 -DYNN_ARCH_X86_AVX512VNNI -DYNN_ARCH_X86_AVXVNNI -DYNN_ARCH_X86_F16C -DYNN_ARCH_X86_F16C_FMA3 -DYNN_ARCH_X86_FMA3 -DYNN_ARCH_X86_SSE2 -DYNN_ARCH_X86_SSE2_FMA -DYNN_ARCH_X86_SSE41 -DYNN_ARCH_X86_SSSE3 -DYNN_ENABLE_CPUINFO -DYNN_LOG_LEVEL=YNN_LOG_LEVEL_warning\n  DEP_FILE = CMakeFiles/qwen3.dir/runtime/rust/fixture.cc.o.d\n  FLAGS = -O3 -DNDEBUG -std=gnu++17 -O1 -ffp-contract=off -fno-rtti\n  INCLUDES = -IBACKEND_ROOT/XNNPACK -IBACKEND_ROOT/slinky -ILAB_ROOT -IBACKEND_ROOT/XNNPACK/ynnpack/composites/. -IBACKEND_ROOT/XNNPACK/ynnpack/base/. -IBACKEND_ROOT/cpuinfo/include -IBACKEND_ROOT/XNNPACK/ynnpack/include -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/binary/. -IEXPERIMENT_DIR/lab-build -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/dequantize_dot/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/dot/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/iota/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/ternary/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/unary/.\n  OBJECT_DIR = CMakeFiles/qwen3.dir\n  OBJECT_FILE_DIR = CMakeFiles/qwen3.dir/runtime/rust\n  TARGET_COMPILE_PDB = CMakeFiles/qwen3.dir/\n  TARGET_PDB = qwen3.pdb\n  TARGET_SUPPORT_DIR = CMakeFiles/qwen3.dir",
+        "build CMakeFiles/qwen3.dir/runtime/rust/bridge.cc.o: CXX_COMPILER__qwen3_unscanned_Release LAB_ROOT/runtime/rust/bridge.cc || cmake_object_order_depends_target_qwen3\n  CONFIG = Release\n  DEFINES = -DCPUINFO_SUPPORTED_PLATFORM=1 -DLAB_HAS_BF16_ROUNDING=0 -DYNN_ARCH_EMULATE_FMA -DYNN_ARCH_FP16_ARITHMETIC -DYNN_ARCH_X86 -DYNN_ARCH_X86_64 -DYNN_ARCH_X86_AMXBF16 -DYNN_ARCH_X86_AMXFP16 -DYNN_ARCH_X86_AMXINT8 -DYNN_ARCH_X86_AVX -DYNN_ARCH_X86_AVX2 -DYNN_ARCH_X86_AVX2_FMA3 -DYNN_ARCH_X86_AVX512 -DYNN_ARCH_X86_AVX512BF16 -DYNN_ARCH_X86_AVX512FP16 -DYNN_ARCH_X86_AVX512VNNI -DYNN_ARCH_X86_AVXVNNI -DYNN_ARCH_X86_F16C -DYNN_ARCH_X86_F16C_FMA3 -DYNN_ARCH_X86_FMA3 -DYNN_ARCH_X86_SSE2 -DYNN_ARCH_X86_SSE2_FMA -DYNN_ARCH_X86_SSE41 -DYNN_ARCH_X86_SSSE3 -DYNN_ENABLE_CPUINFO -DYNN_LOG_LEVEL=YNN_LOG_LEVEL_warning\n  DEP_FILE = CMakeFiles/qwen3.dir/runtime/rust/bridge.cc.o.d\n  FLAGS = -O3 -DNDEBUG -std=gnu++17 -O1 -ffp-contract=off -fno-rtti\n  INCLUDES = -IBACKEND_ROOT/XNNPACK -IBACKEND_ROOT/slinky -ILAB_ROOT -IBACKEND_ROOT/XNNPACK/ynnpack/composites/. -IBACKEND_ROOT/XNNPACK/ynnpack/base/. -IBACKEND_ROOT/cpuinfo/include -IBACKEND_ROOT/XNNPACK/ynnpack/include -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/binary/. -IEXPERIMENT_DIR/lab-build -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/dequantize_dot/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/dot/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/iota/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/ternary/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/unary/.\n  OBJECT_DIR = CMakeFiles/qwen3.dir\n  OBJECT_FILE_DIR = CMakeFiles/qwen3.dir/runtime/rust\n  TARGET_COMPILE_PDB = CMakeFiles/qwen3.dir/\n  TARGET_PDB = qwen3.pdb\n  TARGET_SUPPORT_DIR = CMakeFiles/qwen3.dir",
+        "build CMakeFiles/qwen3.dir/runtime/rust/plan.cc.o: CXX_COMPILER__qwen3_unscanned_Release LAB_ROOT/runtime/rust/plan.cc || cmake_object_order_depends_target_qwen3\n  CONFIG = Release\n  DEFINES = -DCPUINFO_SUPPORTED_PLATFORM=1 -DLAB_HAS_BF16_ROUNDING=0 -DYNN_ARCH_EMULATE_FMA -DYNN_ARCH_FP16_ARITHMETIC -DYNN_ARCH_X86 -DYNN_ARCH_X86_64 -DYNN_ARCH_X86_AMXBF16 -DYNN_ARCH_X86_AMXFP16 -DYNN_ARCH_X86_AMXINT8 -DYNN_ARCH_X86_AVX -DYNN_ARCH_X86_AVX2 -DYNN_ARCH_X86_AVX2_FMA3 -DYNN_ARCH_X86_AVX512 -DYNN_ARCH_X86_AVX512BF16 -DYNN_ARCH_X86_AVX512FP16 -DYNN_ARCH_X86_AVX512VNNI -DYNN_ARCH_X86_AVXVNNI -DYNN_ARCH_X86_F16C -DYNN_ARCH_X86_F16C_FMA3 -DYNN_ARCH_X86_FMA3 -DYNN_ARCH_X86_SSE2 -DYNN_ARCH_X86_SSE2_FMA -DYNN_ARCH_X86_SSE41 -DYNN_ARCH_X86_SSSE3 -DYNN_ENABLE_CPUINFO -DYNN_LOG_LEVEL=YNN_LOG_LEVEL_warning\n  DEP_FILE = CMakeFiles/qwen3.dir/runtime/rust/plan.cc.o.d\n  FLAGS = -O3 -DNDEBUG -std=gnu++17 -O1 -ffp-contract=off -fno-rtti\n  INCLUDES = -IBACKEND_ROOT/XNNPACK -IBACKEND_ROOT/slinky -ILAB_ROOT -IBACKEND_ROOT/XNNPACK/ynnpack/composites/. -IBACKEND_ROOT/XNNPACK/ynnpack/base/. -IBACKEND_ROOT/cpuinfo/include -IBACKEND_ROOT/XNNPACK/ynnpack/include -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/binary/. -IEXPERIMENT_DIR/lab-build -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/dequantize_dot/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/dot/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/iota/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/ternary/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/unary/.\n  OBJECT_DIR = CMakeFiles/qwen3.dir\n  OBJECT_FILE_DIR = CMakeFiles/qwen3.dir/runtime/rust\n  TARGET_COMPILE_PDB = CMakeFiles/qwen3.dir/\n  TARGET_PDB = qwen3.pdb\n  TARGET_SUPPORT_DIR = CMakeFiles/qwen3.dir",
+        "build deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int8_int32.dir/__/__/__/__/ynnpack/kernels/dot/x86_avxvnni_uint8_int8_int32.cc.o: CXX_COMPILER__ynnpack_kernels_dot_x86_avxvnni_uint8_int8_int32_unscanned_Release EXPERIMENT_DIR/lab-build/ynnpack/kernels/dot/x86_avxvnni_uint8_int8_int32.cc || cmake_object_order_depends_target_ynnpack_kernels_dot_x86_avxvnni_uint8_int8_int32\n  CONFIG = Release\n  DEFINES = -DCPUINFO_SUPPORTED_PLATFORM=1 -DYNN_ARCH_X86 -DYNN_ARCH_X86_64 -DYNN_ARCH_X86_AVX -DYNN_ARCH_X86_AVX2 -DYNN_ARCH_X86_AVX512 -DYNN_ARCH_X86_AVXVNNI -DYNN_ARCH_X86_F16C -DYNN_ARCH_X86_FMA3 -DYNN_ARCH_X86_SSE2 -DYNN_ARCH_X86_SSE41 -DYNN_ARCH_X86_SSSE3 -DYNN_ENABLE_CPUINFO -DYNN_LOG_LEVEL=YNN_LOG_LEVEL_warning\n  DEP_FILE = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int8_int32.dir/__/__/__/__/ynnpack/kernels/dot/x86_avxvnni_uint8_int8_int32.cc.o.d\n  FLAGS = -fno-rtti -O3 -DNDEBUG -std=c++17 -O2 -mavx2 -mavxvnni\n  INCLUDES = -IBACKEND_ROOT/XNNPACK -IBACKEND_ROOT/slinky -IBACKEND_ROOT/XNNPACK/ynnpack/.. -IBACKEND_ROOT/XNNPACK/ynnpack/include -IBACKEND_ROOT/XNNPACK/ynnpack/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/dot/. -IEXPERIMENT_DIR/lab-build -IBACKEND_ROOT/XNNPACK/ynnpack/base/. -IBACKEND_ROOT/cpuinfo/include\n  OBJECT_DIR = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int8_int32.dir\n  OBJECT_FILE_DIR = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int8_int32.dir/__/__/__/__/ynnpack/kernels/dot\n  TARGET_COMPILE_PDB = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int8_int32.dir/ynnpack_kernels_dot_x86_avxvnni_uint8_int8_int32.pdb\n  TARGET_PDB = deps/ynnpack/kernels/dot/libynnpack_kernels_dot_x86_avxvnni_uint8_int8_int32.pdb\n  TARGET_SUPPORT_DIR = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int8_int32.dir",
+        "build deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int2_int32.dir/__/__/__/__/ynnpack/kernels/dot/x86_avxvnni_uint8_int2_int32.cc.o: CXX_COMPILER__ynnpack_kernels_dot_x86_avxvnni_uint8_int2_int32_unscanned_Release EXPERIMENT_DIR/lab-build/ynnpack/kernels/dot/x86_avxvnni_uint8_int2_int32.cc || cmake_object_order_depends_target_ynnpack_kernels_dot_x86_avxvnni_uint8_int2_int32\n  CONFIG = Release\n  DEFINES = -DCPUINFO_SUPPORTED_PLATFORM=1 -DYNN_ARCH_X86 -DYNN_ARCH_X86_64 -DYNN_ARCH_X86_AVX -DYNN_ARCH_X86_AVX2 -DYNN_ARCH_X86_AVX512 -DYNN_ARCH_X86_AVXVNNI -DYNN_ARCH_X86_F16C -DYNN_ARCH_X86_FMA3 -DYNN_ARCH_X86_SSE2 -DYNN_ARCH_X86_SSE41 -DYNN_ARCH_X86_SSSE3 -DYNN_ENABLE_CPUINFO -DYNN_LOG_LEVEL=YNN_LOG_LEVEL_warning\n  DEP_FILE = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int2_int32.dir/__/__/__/__/ynnpack/kernels/dot/x86_avxvnni_uint8_int2_int32.cc.o.d\n  FLAGS = -fno-rtti -O3 -DNDEBUG -std=c++17 -O2 -mavx2 -mavxvnni\n  INCLUDES = -IBACKEND_ROOT/XNNPACK -IBACKEND_ROOT/slinky -IBACKEND_ROOT/XNNPACK/ynnpack/.. -IBACKEND_ROOT/XNNPACK/ynnpack/include -IBACKEND_ROOT/XNNPACK/ynnpack/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/dot/. -IEXPERIMENT_DIR/lab-build -IBACKEND_ROOT/XNNPACK/ynnpack/base/. -IBACKEND_ROOT/cpuinfo/include\n  OBJECT_DIR = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int2_int32.dir\n  OBJECT_FILE_DIR = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int2_int32.dir/__/__/__/__/ynnpack/kernels/dot\n  TARGET_COMPILE_PDB = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int2_int32.dir/ynnpack_kernels_dot_x86_avxvnni_uint8_int2_int32.pdb\n  TARGET_PDB = deps/ynnpack/kernels/dot/libynnpack_kernels_dot_x86_avxvnni_uint8_int2_int32.pdb\n  TARGET_SUPPORT_DIR = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int2_int32.dir",
+        "build deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int4_int32.dir/__/__/__/__/ynnpack/kernels/dot/x86_avxvnni_uint8_int4_int32.cc.o: CXX_COMPILER__ynnpack_kernels_dot_x86_avxvnni_uint8_int4_int32_unscanned_Release EXPERIMENT_DIR/lab-build/ynnpack/kernels/dot/x86_avxvnni_uint8_int4_int32.cc || cmake_object_order_depends_target_ynnpack_kernels_dot_x86_avxvnni_uint8_int4_int32\n  CONFIG = Release\n  DEFINES = -DCPUINFO_SUPPORTED_PLATFORM=1 -DYNN_ARCH_X86 -DYNN_ARCH_X86_64 -DYNN_ARCH_X86_AVX -DYNN_ARCH_X86_AVX2 -DYNN_ARCH_X86_AVX512 -DYNN_ARCH_X86_AVXVNNI -DYNN_ARCH_X86_F16C -DYNN_ARCH_X86_FMA3 -DYNN_ARCH_X86_SSE2 -DYNN_ARCH_X86_SSE41 -DYNN_ARCH_X86_SSSE3 -DYNN_ENABLE_CPUINFO -DYNN_LOG_LEVEL=YNN_LOG_LEVEL_warning\n  DEP_FILE = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int4_int32.dir/__/__/__/__/ynnpack/kernels/dot/x86_avxvnni_uint8_int4_int32.cc.o.d\n  FLAGS = -fno-rtti -O3 -DNDEBUG -std=c++17 -O2 -mavx2 -mavxvnni\n  INCLUDES = -IBACKEND_ROOT/XNNPACK -IBACKEND_ROOT/slinky -IBACKEND_ROOT/XNNPACK/ynnpack/.. -IBACKEND_ROOT/XNNPACK/ynnpack/include -IBACKEND_ROOT/XNNPACK/ynnpack/. -IBACKEND_ROOT/XNNPACK/ynnpack/kernels/dot/. -IEXPERIMENT_DIR/lab-build -IBACKEND_ROOT/XNNPACK/ynnpack/base/. -IBACKEND_ROOT/cpuinfo/include\n  OBJECT_DIR = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int4_int32.dir\n  OBJECT_FILE_DIR = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int4_int32.dir/__/__/__/__/ynnpack/kernels/dot\n  TARGET_COMPILE_PDB = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int4_int32.dir/ynnpack_kernels_dot_x86_avxvnni_uint8_int4_int32.pdb\n  TARGET_PDB = deps/ynnpack/kernels/dot/libynnpack_kernels_dot_x86_avxvnni_uint8_int4_int32.pdb\n  TARGET_SUPPORT_DIR = deps/ynnpack/kernels/dot/CMakeFiles/ynnpack_kernels_dot_x86_avxvnni_uint8_int4_int32.dir"
+      ]
+    },
+    "llama-build": {
+      "cache": {
+        "CMAKE_BUILD_TYPE:STRING": "Release",
+        "CMAKE_CXX_COMPILER:STRING": "/usr/bin/clang++",
+        "CMAKE_CXX_FLAGS:STRING": "",
+        "CMAKE_CXX_FLAGS_DEBUG:STRING": "-g",
+        "CMAKE_CXX_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELEASE:STRING": "-O3 -DNDEBUG",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "CMAKE_C_COMPILER:STRING": "/usr/bin/clang",
+        "CMAKE_C_FLAGS:STRING": "",
+        "CMAKE_C_FLAGS_DEBUG:STRING": "-g",
+        "CMAKE_C_FLAGS_MINSIZEREL:STRING": "-Os -DNDEBUG",
+        "CMAKE_C_FLAGS_RELEASE:STRING": "-O3 -DNDEBUG",
+        "CMAKE_C_FLAGS_RELWITHDEBINFO:STRING": "-O2 -g -DNDEBUG",
+        "GGML_ACCELERATE:BOOL": "ON",
+        "GGML_ALL_WARNINGS_3RD_PARTY:BOOL": "OFF",
+        "GGML_AMX_BF16:BOOL": "OFF",
+        "GGML_AMX_INT8:BOOL": "OFF",
+        "GGML_AMX_TILE:BOOL": "OFF",
+        "GGML_AVX:BOOL": "OFF",
+        "GGML_AVX2:BOOL": "OFF",
+        "GGML_AVX512:BOOL": "OFF",
+        "GGML_AVX512_BF16:BOOL": "OFF",
+        "GGML_AVX512_VBMI:BOOL": "OFF",
+        "GGML_AVX512_VNNI:BOOL": "OFF",
+        "GGML_AVX_VNNI:BOOL": "OFF",
+        "GGML_BACKEND_DIR:PATH": "",
+        "GGML_BACKEND_DL:BOOL": "OFF",
+        "GGML_BIN_INSTALL_DIR:PATH": "bin",
+        "GGML_BLAS:BOOL": "OFF",
+        "GGML_BLAS_VENDOR:STRING": "Generic",
+        "GGML_BMI2:BOOL": "OFF",
+        "GGML_BUILD_EXAMPLES:BOOL": "OFF",
+        "GGML_BUILD_TESTS:BOOL": "OFF",
+        "GGML_CCACHE:BOOL": "ON",
+        "GGML_CCACHE_FOUND:FILEPATH": "GGML_CCACHE_FOUND-NOTFOUND",
+        "GGML_CPU:BOOL": "ON",
+        "GGML_CPU_ALL_VARIANTS:BOOL": "OFF",
+        "GGML_CPU_ARM_ARCH:STRING": "",
+        "GGML_CPU_HBM:BOOL": "OFF",
+        "GGML_CPU_KLEIDIAI:BOOL": "OFF",
+        "GGML_CPU_POWERPC_CPUTYPE:STRING": "",
+        "GGML_CPU_REPACK:BOOL": "ON",
+        "GGML_CUDA:BOOL": "OFF",
+        "GGML_CUDA_CCCL_VERSION:STRING": "",
+        "GGML_CUDA_COMPRESSION_MODE:STRING": "size",
+        "GGML_CUDA_FA:BOOL": "ON",
+        "GGML_CUDA_FA_ALL_QUANTS:BOOL": "OFF",
+        "GGML_CUDA_FA_QUANTS:STRING": "q4_0-q4_0;q8_0-q8_0;f16-f16;bf16-bf16",
+        "GGML_CUDA_FORCE_CUBLAS:BOOL": "OFF",
+        "GGML_CUDA_FORCE_MMQ:BOOL": "OFF",
+        "GGML_CUDA_GRAPHS:BOOL": "ON",
+        "GGML_CUDA_NCCL:BOOL": "ON",
+        "GGML_CUDA_NO_PEER_COPY:BOOL": "OFF",
+        "GGML_CUDA_NO_VMM:BOOL": "OFF",
+        "GGML_ET:BOOL": "OFF",
+        "GGML_ET_SYSEMU:BOOL": "OFF",
+        "GGML_F16C:BOOL": "OFF",
+        "GGML_FMA:BOOL": "OFF",
+        "GGML_GPROF:BOOL": "OFF",
+        "GGML_HEXAGON:BOOL": "OFF",
+        "GGML_HIP:BOOL": "OFF",
+        "GGML_HIP_EXPORT_METRICS:BOOL": "OFF",
+        "GGML_HIP_GRAPHS:BOOL": "ON",
+        "GGML_HIP_MMQ_MFMA:BOOL": "ON",
+        "GGML_HIP_NO_VMM:BOOL": "ON",
+        "GGML_HIP_RCCL:BOOL": "OFF",
+        "GGML_INCLUDE_INSTALL_DIR:PATH": "include",
+        "GGML_LASX:BOOL": "ON",
+        "GGML_LIB_INSTALL_DIR:PATH": "lib64",
+        "GGML_LLAMAFILE:BOOL": "ON",
+        "GGML_LSX:BOOL": "ON",
+        "GGML_LTO:BOOL": "OFF",
+        "GGML_METAL:BOOL": "OFF",
+        "GGML_METAL_EMBED_LIBRARY:BOOL": "OFF",
+        "GGML_METAL_MACOSX_VERSION_MIN:STRING": "",
+        "GGML_METAL_NDEBUG:BOOL": "OFF",
+        "GGML_METAL_SHADER_DEBUG:BOOL": "OFF",
+        "GGML_METAL_STD:STRING": "",
+        "GGML_METAL_TARGET_OS:STRING": "macos",
+        "GGML_MUSA:BOOL": "OFF",
+        "GGML_MUSA_GRAPHS:BOOL": "OFF",
+        "GGML_MUSA_MUDNN_COPY:BOOL": "OFF",
+        "GGML_NATIVE:BOOL": "ON",
+        "GGML_OPENCL:BOOL": "OFF",
+        "GGML_OPENCL_EMBED_KERNELS:BOOL": "ON",
+        "GGML_OPENCL_PROFILING:BOOL": "OFF",
+        "GGML_OPENCL_TARGET_VERSION:STRING": "300",
+        "GGML_OPENCL_USE_ADRENO_KERNELS:BOOL": "ON",
+        "GGML_OPENMP:BOOL": "ON",
+        "GGML_OPENMP_FETCH:BOOL": "OFF",
+        "GGML_OPENVINO:BOOL": "OFF",
+        "GGML_RPC:BOOL": "OFF",
+        "GGML_RVV:BOOL": "ON",
+        "GGML_RV_ZFH:BOOL": "ON",
+        "GGML_RV_ZICBOP:BOOL": "ON",
+        "GGML_RV_ZIHINTPAUSE:BOOL": "ON",
+        "GGML_RV_ZVFBFWMA:BOOL": "OFF",
+        "GGML_RV_ZVFH:BOOL": "ON",
+        "GGML_SANITIZE_ADDRESS:BOOL": "OFF",
+        "GGML_SANITIZE_THREAD:BOOL": "OFF",
+        "GGML_SANITIZE_UNDEFINED:BOOL": "OFF",
+        "GGML_SCCACHE_FOUND:FILEPATH": "GGML_SCCACHE_FOUND-NOTFOUND",
+        "GGML_SCHED_MAX_COPIES:STRING": "4",
+        "GGML_SCHED_NO_REALLOC:BOOL": "OFF",
+        "GGML_SSE42:BOOL": "OFF",
+        "GGML_STATIC:BOOL": "OFF",
+        "GGML_SYCL:BOOL": "OFF",
+        "GGML_SYCL_DEVICE_ARCH:STRING": "",
+        "GGML_SYCL_DNN:BOOL": "ON",
+        "GGML_SYCL_F16:BOOL": "OFF",
+        "GGML_SYCL_GRAPH:BOOL": "ON",
+        "GGML_SYCL_HOST_MEM_FALLBACK:BOOL": "ON",
+        "GGML_SYCL_SUPPORT_LEVEL_ZERO_API:BOOL": "ON",
+        "GGML_SYCL_TARGET:STRING": "INTEL",
+        "GGML_VIRTGPU:BOOL": "OFF",
+        "GGML_VIRTGPU_BACKEND:BOOL": "OFF",
+        "GGML_VULKAN:BOOL": "OFF",
+        "GGML_VULKAN_CHECK_RESULTS:BOOL": "OFF",
+        "GGML_VULKAN_DEBUG:BOOL": "OFF",
+        "GGML_VULKAN_MEMORY_DEBUG:BOOL": "OFF",
+        "GGML_VULKAN_RUN_TESTS:BOOL": "OFF",
+        "GGML_VULKAN_SHADERS_GEN_TOOLCHAIN:FILEPATH": "",
+        "GGML_VULKAN_SHADER_DEBUG_INFO:BOOL": "OFF",
+        "GGML_VULKAN_VALIDATE:BOOL": "OFF",
+        "GGML_VXE:BOOL": "ON",
+        "GGML_WEBGPU:BOOL": "OFF",
+        "GGML_WEBGPU_CPU_PROFILE:BOOL": "OFF",
+        "GGML_WEBGPU_DEBUG:BOOL": "OFF",
+        "GGML_WEBGPU_GPU_PROFILE:BOOL": "OFF",
+        "GGML_WEBGPU_JSPI:BOOL": "ON",
+        "GGML_XTHEADVECTOR:BOOL": "OFF",
+        "GGML_ZDNN:BOOL": "OFF",
+        "GGML_ZENDNN:BOOL": "OFF",
+        "LLAMA_ALL_WARNINGS:BOOL": "ON",
+        "LLAMA_ALL_WARNINGS_3RD_PARTY:BOOL": "OFF",
+        "LLAMA_BIN_INSTALL_DIR:PATH": "bin",
+        "LLAMA_BUILD_APP:BOOL": "ON",
+        "LLAMA_BUILD_COMMON:BOOL": "ON",
+        "LLAMA_BUILD_EXAMPLES:BOOL": "ON",
+        "LLAMA_BUILD_IS_DEV:BOOL": "ON",
+        "LLAMA_BUILD_MTMD:BOOL": "OFF",
+        "LLAMA_BUILD_SERVER:BOOL": "ON",
+        "LLAMA_BUILD_TESTS:BOOL": "ON",
+        "LLAMA_BUILD_TOOLS:BOOL": "ON",
+        "LLAMA_BUILD_UI:BOOL": "OFF",
+        "LLAMA_CURL:UNINITIALIZED": "OFF",
+        "LLAMA_FATAL_WARNINGS:BOOL": "OFF",
+        "LLAMA_INCLUDE_INSTALL_DIR:PATH": "include",
+        "LLAMA_LIB_INSTALL_DIR:PATH": "lib64",
+        "LLAMA_LLGUIDANCE:BOOL": "OFF",
+        "LLAMA_OPENSSL:BOOL": "ON",
+        "LLAMA_SANITIZE_ADDRESS:BOOL": "OFF",
+        "LLAMA_SANITIZE_THREAD:BOOL": "OFF",
+        "LLAMA_SANITIZE_UNDEFINED:BOOL": "OFF",
+        "LLAMA_SUBPROCESS:BOOL": "ON",
+        "LLAMA_TESTS_INSTALL:BOOL": "ON",
+        "LLAMA_TOOLS_INSTALL:BOOL": "ON",
+        "LLAMA_UI_GZIP:BOOL": "ON",
+        "LLAMA_UI_HF_BUCKET:STRING": "ggml-org/llama-ui",
+        "LLAMA_USE_PREBUILT_UI:BOOL": "ON",
+        "LLAMA_USE_SYSTEM_GGML:BOOL": "OFF",
+        "LLAMA_WASM_MEM64:BOOL": "ON",
+        "CMAKE_CXX_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "CMAKE_C_FLAGS-ADVANCED:INTERNAL": "1",
+        "CMAKE_C_FLAGS_DEBUG-ADVANCED:INTERNAL": "1",
+        "CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL": "1",
+        "CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL": "1",
+        "CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL": "1",
+        "GGML_AVAILABLE_BACKENDS:INTERNAL": "ggml-cpu",
+        "GGML_CUDA_COMPRESSION_MODE-STRINGS:INTERNAL": "none;speed;balance;size",
+        "GGML_OPENMP_ENABLED:INTERNAL": "ON"
+      },
+      "cache_sha256": "df068f054e0ac6e1d04f45dd7049a045176ea60c8573a883134609aac1668af6",
+      "compile_commands_sha256": "0d3a42f7aefcf3915796c30a5bf961f7a15f4d275a861ccf2005f188746e7113",
+      "representative_commands": [
+        {
+          "directory": "EXPERIMENT_DIR/llama-build",
+          "command": "/usr/bin/clang -DGGML_BUILD -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_base_EXPORTS -ILLAMA_ROOT/ggml/src/. -IEXPERIMENT_DIR/llama-build/ggml/src -ILLAMA_ROOT/ggml/src/../include -O3 -DNDEBUG -std=gnu11 -fPIC -Xclang -fno-pch-timestamp -Wshadow -Wstrict-prototypes -Wpointer-arith -Wmissing-prototypes -Werror=implicit-int -Werror=implicit-function-declaration -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wunreachable-code-break -Wunreachable-code-return -Wdouble-promotion -fopenmp=libomp -o ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o -c LLAMA_ROOT/ggml/src/ggml-quants.c",
+          "file": "LLAMA_ROOT/ggml/src/ggml-quants.c",
+          "output": "EXPERIMENT_DIR/llama-build/ggml/src/CMakeFiles/ggml-base.dir/ggml-quants.c.o"
+        },
+        {
+          "directory": "EXPERIMENT_DIR/llama-build",
+          "command": "/usr/bin/clang++ -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -DGGML_USE_CPU_REPACK -DGGML_USE_LLAMAFILE -DGGML_USE_OPENMP -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cpu_EXPORTS -ILLAMA_ROOT/ggml/src/.. -ILLAMA_ROOT/ggml/src/. -ILLAMA_ROOT/ggml/src/ggml-cpu -ILLAMA_ROOT/ggml/src/../include -O3 -DNDEBUG -std=gnu++17 -fPIC -Xclang -fno-pch-timestamp -Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wunreachable-code-break -Wunreachable-code-return -Wmissing-prototypes -Wextra-semi -march=native -fopenmp=libomp -o ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o -c LLAMA_ROOT/ggml/src/ggml-cpu/ggml-cpu.cpp",
+          "file": "LLAMA_ROOT/ggml/src/ggml-cpu/ggml-cpu.cpp",
+          "output": "EXPERIMENT_DIR/llama-build/ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ggml-cpu.cpp.o"
+        }
+      ]
+    }
+  },
+  "backend_source_check": [
+    {
+      "name": "XNNPACK",
+      "files": 12566,
+      "changes_from_fp32_experiment": [
+        {
+          "path": "ynnpack/kernels/binary/__pycache__/kernels.cpython-314.pyc",
+          "before": null,
+          "after": "33227da51696a746c7e9412ccc42dd6d497c1a165b9160d6a6536a7efb6f9fc7"
+        },
+        {
+          "path": "ynnpack/kernels/dot/generator/__pycache__/dot_base.cpython-314.pyc",
+          "before": null,
+          "after": "851f717e65cb897961118451754c031d076a59d0d4b02893eaba140ee70e904d"
+        },
+        {
+          "path": "ynnpack/kernels/dot/generator/__pycache__/x86.cpython-314.pyc",
+          "before": null,
+          "after": "98a2f95a04efb5a4576d4adb52782c573505c8bc29348022f20f986dbdf008bf"
+        },
+        {
+          "path": "ynnpack/kernels/elementwise/__pycache__/arm.cpython-314.pyc",
+          "before": null,
+          "after": "064d5cccac6369ee98a9f32c7f0a801a497d9b077a81af6d3ccce93e0add03cf"
+        },
+        {
+          "path": "ynnpack/kernels/elementwise/__pycache__/compiler.cpython-314.pyc",
+          "before": null,
+          "after": "98ffc72bf158207e18f5a586abe11bfa5415fa735050b62b492b85d205a50961"
+        },
+        {
+          "path": "ynnpack/kernels/elementwise/__pycache__/generator.cpython-314.pyc",
+          "before": null,
+          "after": "222df1281b54c73820a48e1460eeaac8b57cd198977b152f744b6ec5a12604fe"
+        },
+        {
+          "path": "ynnpack/kernels/elementwise/__pycache__/hexagon.cpython-314.pyc",
+          "before": null,
+          "after": "ab487907c3fdeba428d8d5bb314fa7bbda0e55635bf8b8d7fc3c29c70d40ab91"
+        },
+        {
+          "path": "ynnpack/kernels/elementwise/__pycache__/rules.cpython-314.pyc",
+          "before": null,
+          "after": "f469c6a990b80a7386984d1d17cbf3d68550202471701ee2b1c3b8808b146d3a"
+        },
+        {
+          "path": "ynnpack/kernels/elementwise/__pycache__/wasm.cpython-314.pyc",
+          "before": null,
+          "after": "f087982947dbe5b0473844fd84ae2b6d38d4263be44b46aea76981b800e8ce7d"
+        },
+        {
+          "path": "ynnpack/kernels/elementwise/__pycache__/x86.cpython-314.pyc",
+          "before": null,
+          "after": "8079141d63ddf8176d9e5456f8a4236fb6fd60e41182aecf4e42d3939c167e2a"
+        },
+        {
+          "path": "ynnpack/kernels/ternary/__pycache__/convert.cpython-314.pyc",
+          "before": null,
+          "after": "d3d8a9691cb7f48e9e381b29e81a652bd784823490948efa88ccd013f02affcc"
+        },
+        {
+          "path": "ynnpack/kernels/ternary/__pycache__/kernels.cpython-314.pyc",
+          "before": null,
+          "after": "2b69885da26ca402bc51890dcea66dd986c45823f58b5bfb76918970142cbfec"
+        },
+        {
+          "path": "ynnpack/kernels/unary/__pycache__/convert.cpython-314.pyc",
+          "before": null,
+          "after": "540bf695c4da1d4138f530ca6edc3a4b73b4dd63e3935fba952a9e80b5d0b800"
+        },
+        {
+          "path": "ynnpack/kernels/unary/__pycache__/erf.cpython-314.pyc",
+          "before": null,
+          "after": "9d4c9d3517f038a90ca125adcd6f7fb69877593765fcb031306e8f302f4faba0"
+        },
+        {
+          "path": "ynnpack/kernels/unary/__pycache__/exp.cpython-314.pyc",
+          "before": null,
+          "after": "b13e066299b5256a8fb15aa3c2a81533fb28a7379babd8ab7b672eaedec1d8d4"
+        },
+        {
+          "path": "ynnpack/kernels/unary/__pycache__/kernels.cpython-314.pyc",
+          "before": null,
+          "after": "89901e7957b88ca5a929dbd9ea8bf2c732b77c334635de1f0ab6bbc8f324fda3"
+        },
+        {
+          "path": "ynnpack/kernels/unary/__pycache__/log.cpython-314.pyc",
+          "before": null,
+          "after": "64e52025e423834b6dd4f34a25e0d1f5ad82fb9c8e9aa9a69b565c58b27e2779"
+        },
+        {
+          "path": "ynnpack/kernels/unary/__pycache__/sigmoid.cpython-314.pyc",
+          "before": null,
+          "after": "3edbb25822a7f55158b94fe83ad1da40cd6c3e6ea3099dc11da9b569ac1d320f"
+        },
+        {
+          "path": "ynnpack/kernels/unary/__pycache__/tanh.cpython-314.pyc",
+          "before": null,
+          "after": "65b047dd3b2d50459d14360413c375ddb0f9cc62db5a2ae323c6a46ed4602dcc"
+        },
+        {
+          "path": "ynnpack/kernels/unary/__pycache__/trig.cpython-314.pyc",
+          "before": null,
+          "after": "3c8f8336a4a8a0417fc19e53cc5a034f19663d13df80cb2edf65f5951309247f"
+        }
+      ],
+      "source_manifest_sha256": "db6d5d2f1677a1153f6ca7aa5ad792ec5fd7035518c741d7914af626aa032322"
+    },
+    {
+      "name": "slinky",
+      "files": 146,
+      "changes_from_fp32_experiment": [],
+      "source_manifest_sha256": "3ab1fa1fa2cee815756ade78788fa19cc0e86ebfb590600471ddb6d09ab52815"
+    },
+    {
+      "name": "cpuinfo",
+      "files": 566,
+      "changes_from_fp32_experiment": [],
+      "source_manifest_sha256": "d1600655b96f509190816c92dbc3facad4f0b77987e62e3875362949a4b6bb10"
+    }
+  ],
+  "command_records": "Portable templates; replace named path variables with local locations",
+  "lab_source_fingerprints": {
+    "CMakeLists.txt": "41f502ef8893f32b3434bbef69a6e0c002088f40bbca3da0d9139792644374b9",
+    "cmake/RustRuntime.cmake": "7c7735f205e46692cc88260fe380018014e33d5aca6da62108f2e7040b3846ca",
+    "cmake/Tokenizers.cmake": "758131f74dfaa5beaff650b91702a85609b6537f1a52d219de654cc695c261d8",
+    "dependencies.json": "5c2c98a811a85d01240a5fc6fa6cd7951de762f7cbc56af2e85297999b0c9d9e",
+    "patches/README.md": "3eb12d534d2b963215f9fe92300cc4f228924b5173a3168512131e501591afff",
+    "runtime/checked_arithmetic.h": "8c1c59d3ed25f21cd3e1bc9ad9a3cd529442268c7ff2f837d8a99214de341bd5",
+    "runtime/checked_index.h": "3f27f4412dcc48bc3049fc0744a30faaa8ece6228152fb02a709ef79c0ef9b71",
+    "runtime/execution_profile.h": "b6fc9a9cf5711a651e4965d2e44716e3792d2a33780c737a60b9973b8275fcb7",
+    "runtime/logical_state.h": "19310cc93737773d81fe81b8abe5f7daa4901f49dfbfa39ed45f1f70944b9592",
+    "runtime/model_assets.h": "f541c6519b2cd88d911c72bafb8b2dc7ca7f2e18faefb1e2863ab4826b5afe94",
+    "runtime/packed_routing.h": "60f8eb5651fa846e26fbd202c3c593903ee52553db79215b4ed618f685fa8499",
+    "runtime/resource_state.h": "5f9acc26fa120a84e9276cec7ba668b1d3adb6d8fc8ea6ba718cfb217f44f4fe",
+    "runtime/rust/bridge.cc": "dfb4d0397edd223944d8f5a5c6ce48d463aabd9d449c54e965586c3a1129fa41",
+    "runtime/rust/bridge.h": "104c2551a89c24c900e32c70758be23426af8b94eca4741688b5457b0bad76ea",
+    "runtime/rust/bridge_internal.h": "d495013718cad2f135c7980d4def5af8990dfc47bfd15e432f3bc2432b568424",
+    "runtime/rust/fixture.cc": "5a69af90334744d87115b5111590919da371ff51bc61b7b7270a4534565f9bb1",
+    "runtime/rust/gemma.cc": "563158f5107e01fc7568b0b683d9417111bbae88f2f5e314bbf965d197e90ece",
+    "runtime/rust/main.cc": "36c185c0b4356a5c6781988b0e7d58bb801376cdc92eae7f426cb1a708b52031",
+    "runtime/rust/plan.cc": "ea68f327848ac4b2e3c87ebe0dfdb2abd056adaa93fe2c2dc259650df8302b37",
+    "runtime/rust/sentencepiece.cc": "c17db967a0e4b75326153acd5eb1e9c4342b0d931ecf469d4be97398a38344a5",
+    "runtime/rust/sentencepiece.h": "9a4b5bf745f669a4d1cb28b15adc8e94b541bbd4923f8d1633faf0e216c77308",
+    "runtime/rust/vision.cc": "db334f560bf53df2bbc6057b920e9fdc429ec80113703b11bb34495305674ee3",
+    "runtime/safetensors_assets.h": "d7968c17f6306e85d1bd1a2ffd3ff4554aee363c5dd4554688caa9d505591e50",
+    "runtime/sha256.h": "3c0baa9eb78779ce50be9b6ac3c0aea9fea9347c33febe531a29098491a3e6c8",
+    "runtime/value_trace.h": "95ce88288ae0c1a18380ab1ca2cc4919a3ea8c02a16f14f61c1dd25b52d527b7",
+    "runtime/ynnpack_attention.inc": "199ee4a57cad3a9c9041794fb60519ffc9649367c9a7e26554635576dabdc2ab",
+    "runtime/ynnpack_blockwise_fc.inc": "7d3097f71a456c9387c22379048190ca559904b8e79df57ed9c2dba1b1006f7b",
+    "runtime/ynnpack_gated_delta.inc": "52c355d4e1a06c49757054f729d5f791359299e263d4e0871b9193566d36bc55",
+    "runtime/ynnpack_packed.inc": "b74e298d89cbe27f23079c405c1bbad941e4b5beac4c48013eb4ad62df216c85",
+    "runtime/ynnpack_support.h": "8aa1626bf8817bf3981fa8cb1cbc713c9e56eedb89a1df180fa5c2d8d125d788",
+    "runtime/ynnpack_weight_only.inc": "44194709c28dd566a73e949ab997d06ed7edbc53adaaefcb73d2f0fa28826e60",
+    "rust/Cargo.toml": "127a7f998576a72f58646b3f3384c4d4154b3fe11d3feda4d53628999b09a033",
+    "rust/src/bin/ynn-plan.rs": "77ba1237e623e52e8d1e237ed1392d1aeba40390ca04f8848a9d90c8357a9a73",
+    "rust/src/ffi.rs": "c9724726f4006d1ff369a0381b46feca413e25a75c33c8f628e470646fe4097b",
+    "rust/src/ffi/gemma.rs": "9921ea622d070f8de9a014d238b43e4916009277cd1f5c01e08d3e0a89504de0",
+    "rust/src/ffi/plan.rs": "bb7d0d161c8af15701a02ef6d45ac2dbece1d9c453efda8e09f9c159c9aea629",
+    "rust/src/fixture.rs": "280522be35d1beb67b3e394c87cfc00cb6ee2914f148faf5ceaa26262d1e2acc",
+    "rust/src/frontend.rs": "545445c8afd88eddf8e567cf4ed0cf8e9139bf20dab933353ee0ce8409b1f367",
+    "rust/src/frontend/options.rs": "bfd5736873d4a4d5b5a064e5d89a5fbc087e3735c170aef3a5b184a9504173ee",
+    "rust/src/frontend/sentencepiece.rs": "73607ea58530ab6258e88bf2c0b0c3e9071123580b60a86e83ad4d876e1a7687",
+    "rust/src/frontend/strict_json.rs": "1cf394cf419220ecff506a2a5da9ec5065414bd04ba964d535a3c99c776846cb",
+    "rust/src/frontend/tests.rs": "9c557068bded196a87c517caf66d252ac5391de43a0a031ff50ccade417b4436",
+    "rust/src/frontend/tokenizer.rs": "a026d61bb933c4e091f978849e405da1d02e02896bdc8102427b2d5c282e1e35",
+    "rust/src/gemma.rs": "f1a7e5cb3012c053426e69767e231ea285a2aa461b4dc0991f7a5e517dcee84a",
+    "rust/src/gemma/package.rs": "88bdcbe187a5d50d439285440312d08e4e90c95ef580d9aa0ad1f8d4cac3c406",
+    "rust/src/io.rs": "1d54833ab74c00b7cc8812e31f984177e0043c32fb447a0e8ef00c7900fe7a3e",
+    "rust/src/lib.rs": "2841c60fa945eb06fc8e101ab04d71292921c08bf282e0a557ecb7f8cedc9fdd",
+    "rust/src/native_tests.rs": "8ece5d59dd56f86379311a683d64c7b4c36023246ac73921b28b2e359446bd68",
+    "rust/src/plan.rs": "0e7aa2cddc05eb923e93314dade3a0b722e6d8540c26428230d559316eba701c",
+    "rust/src/plan/commands.rs": "e1f0d0779298038d47c1647fb03c6ac945c126eb8d6171e2d7a957f99bd2c33a",
+    "rust/src/plan/encoding.rs": "44bf64e8559051da9ecc36f90f3cc9e31263aa5d07827b55be2ba2f6e7fb24a6",
+    "rust/src/plan/tests.rs": "4585fcdc052478ea93dabd83655f6674a559f80ef2945a5e4d68101c8ca92c4f",
+    "rust/src/plan/types.rs": "a1fd38297a23b13da86c6d165340c96afbefe82fd5e02cdb06cd23e4beed7c6a",
+    "rust/src/plan_text.rs": "d4ed788329d17f590dc03c0d46596e3480e1ff150cfe898a0a99c555f203b553",
+    "rust/src/plan_text/compile.rs": "7b30375eab9d3f41c322c69c35a8f40c8eb38ba8613641038f9fed879111ae2c",
+    "rust/src/plan_text/functions.rs": "950430c3ff640d97843a47eb79f4d2e189af5d121786c0174d49500f577e7edb",
+    "rust/src/plan_text/lexer.rs": "b39aa047c245a237ce1500d390b2e83f1ee6815e98701764e01e0139246d6b29",
+    "rust/src/plan_text/parser.rs": "caf3ef13b6b2c3b7971f9a6faf9c020bdbb8acf5b91d5ec70046096a51596605",
+    "rust/src/plan_text/printer.rs": "84ca75220d3c7906f809bd52d3355b376114e14143fa410b5f2fab85773b5edd",
+    "rust/src/plan_text/resolve.rs": "8394e52d765a6f867beecbf16aaab9fe76595ccd45101d2cdc353866f148f92d",
+    "rust/src/plan_text/schema.rs": "f3f535ee262061abea331269a1e860aa2d4146c88819902d0122105f09cdffba",
+    "rust/src/plan_text/tests.rs": "d08e497bd2bdc2932964a20c884ec21bdb060c6205bf85914611a17e9394bb3a",
+    "rust/src/qwen.rs": "b4a79006a8e34e8042dca75ab7c2a065be594fd61deadcb3ee0d941e9452ed4a",
+    "rust/src/vision.rs": "d9d5238e273d57c6fa0bce32a399537596431317aefe8e71ac3c96a864e60a04",
+    "third_party/minijson.cc": "dfbcb7e7e332b9b4d96ae5b47f26f353e08f0134a2cd8653037fd451fe0bf840",
+    "third_party/minijson.h": "74e3b4110004f12b0d8794f89f611c88c147bb376bbd670d58df7d5f55db0da3",
+    "rust/Cargo.lock": "08ed77a34f351d31c02ac0840326131c8259c97aa06303201598c43cac4c47ed"
+  },
+  "lab_revision": "1bee1b2b0ff8d1c9d803ba47ec36f2f3c895db12",
+  "lab_has_local_changes": true,
+  "llama_revision": "cd0e36153b3f669d3e20ad2eb59ece6f5c8e23f5",
+  "llama_has_local_changes": false
+}

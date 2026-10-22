@@ -19,6 +19,22 @@ measurement analyzers form a small benchmark harness. CTest covers arithmetic, s
 harness behavior without weights. Full-model performance checks run explicitly
 on the selected device with its model assets and recorded conditions.
 
+`tools/benchmark.py` accepts both the Gemma comparison-runner records and the
+general `ynn-llm`/Qwen records. The latter store setup in `setup.json`, final
+process memory in `memory.json`, and cumulative state counters in `counters.json`.
+Their summary labels final process peak RSS and process counters explicitly;
+these are not per-request memory or append measurements. Warmups are executed
+but omitted from those runners' timing rows.
+
+Execution profile files begin with metadata describing operations and scheduled
+calls, followed by step events. Keep that first record when processing traces;
+event IDs alone are not interpretable. The session test checks both phase files,
+including their first step. Profiling runs are diagnostics, not latency baselines.
+
+General-runner packages declare a fixed capacity. The currently checked-in
+qualified packages use 2048; a different capacity requires a matching package.
+Use the Gemma comparison runners for their supported 2048/8448 capacity sweep.
+
 Start with prompts 17, 128, and 1024, capacities 2048/8448, and one/four threads.
 The checked-in performance fixtures have different continuation counts:
 
@@ -137,13 +153,11 @@ not change governors, push models, or delete device files. Every output director
 must be new. An external baseline can be another job if its output format is
 one supported by `summarize`; otherwise add a parser with explicit metric scope.
 
-For regressions, retain raw observations and binary/dependency/model hashes.
-For per-layer and operator execution diagnosis, see [PROFILING.md](PROFILING.md).
-Profiled timing records are diagnostic; collect unprofiled latency separately.
-Separate authoring, backend packing, kernel selection, and thermal changes before
-attributing a difference to “dynamic shapes.” The historical
-[E2B report](MEASUREMENTS.md) includes different activation
-contracts in its static versus packed-dynamic rows, and is labeled accordingly.
+Set `capture_telemetry: true` to capture accessible Android frequency/governor
+and thermal sensors before and after every job, including non-capacity runs.
+Permission-denied sensors remain explicit in the raw capture. Android's toybox
+`taskset` accepts a hexadecimal mask; Linux's `taskset -c` syntax is not portable
+to every phone.
 
 ## Capacity invariance check
 
@@ -223,11 +237,6 @@ Recheck an existing sweep without executing the model again:
 ```sh
 uv run --locked python tools/capacity_sweep.py out/capacity-results
 ```
-
-The retained [Samsung E2B follow-up](../results/2026-10-08-capacity-sweep/README.md)
-exercises this harness with 36 measured requests. Its paired latency changes
-stay within 5.2%, while the individual rounds retain meaningful thermal/order
-variation. It is evidence for that recorded model/device configuration.
 
 ## What belongs in the repository
 

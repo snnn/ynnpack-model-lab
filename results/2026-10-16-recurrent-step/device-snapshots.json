@@ -1,0 +1,8282 @@
+[
+  {
+    "name": "0000-forward-custom-t1-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0000-forward-custom-t1-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0001-forward-step-adapter-t1-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0001-forward-step-adapter-t1-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0002-forward-step-native-t1-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0002-forward-step-native-t1-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0003-forward-custom-step-t1-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0003-forward-custom-step-t1-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0004-forward-llama-t1-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0004-forward-llama-t1-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0005-reverse-llama-t1-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0005-reverse-llama-t1-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0006-reverse-custom-step-t1-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0006-reverse-custom-step-t1-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "533000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0007-reverse-step-native-t1-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0007-reverse-step-native-t1-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0008-reverse-step-adapter-t1-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0008-reverse-step-adapter-t1-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 277"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0009-reverse-custom-t1-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0009-reverse-custom-t1-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0010-forward-custom-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0010-forward-custom-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0011-forward-step-adapter-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0011-forward-step-adapter-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0012-forward-step-native-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0012-forward-step-native-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0013-forward-custom-step-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0013-forward-custom-step-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0014-forward-llama-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0014-forward-llama-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0015-reverse-llama-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0015-reverse-llama-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0016-reverse-custom-step-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0016-reverse-custom-step-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0017-reverse-step-native-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0017-reverse-step-native-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0018-reverse-step-adapter-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0018-reverse-step-adapter-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0019-reverse-custom-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0019-reverse-custom-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0020-repeat-forward-custom-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0020-repeat-forward-custom-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 276"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0021-repeat-forward-step-adapter-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0021-repeat-forward-step-adapter-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0022-repeat-forward-step-native-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0022-repeat-forward-step-native-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0023-repeat-forward-custom-step-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0023-repeat-forward-custom-step-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0024-repeat-forward-llama-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0024-repeat-forward-llama-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0025-repeat-reverse-llama-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0025-repeat-reverse-llama-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0026-repeat-reverse-custom-step-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0026-repeat-reverse-custom-step-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0027-repeat-reverse-step-native-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0027-repeat-reverse-step-native-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0028-repeat-reverse-step-adapter-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0028-repeat-reverse-step-adapter-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0029-repeat-reverse-custom-t1-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0029-repeat-reverse-custom-t1-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0030-forward-custom-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0030-forward-custom-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0031-forward-step-adapter-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0031-forward-step-adapter-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0032-forward-step-native-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0032-forward-step-native-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0033-forward-custom-step-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0033-forward-custom-step-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0034-forward-llama-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0034-forward-llama-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0035-reverse-llama-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0035-reverse-llama-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0036-reverse-custom-step-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0036-reverse-custom-step-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 280"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0037-reverse-step-native-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0037-reverse-step-native-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0038-reverse-step-adapter-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0038-reverse-step-adapter-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0039-reverse-custom-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0039-reverse-custom-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0040-repeat-forward-custom-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0040-repeat-forward-custom-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0041-repeat-forward-step-adapter-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0041-repeat-forward-step-adapter-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0042-repeat-forward-step-native-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0042-repeat-forward-step-native-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0043-repeat-forward-custom-step-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0043-repeat-forward-custom-step-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0044-repeat-forward-llama-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0044-repeat-forward-llama-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0045-repeat-reverse-llama-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0045-repeat-reverse-llama-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0046-repeat-reverse-custom-step-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0046-repeat-reverse-custom-step-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0047-repeat-reverse-step-native-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0047-repeat-reverse-step-native-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0048-repeat-reverse-step-adapter-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0048-repeat-reverse-step-adapter-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 278"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0049-repeat-reverse-custom-t1-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0049-repeat-reverse-custom-t1-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0050-forward-custom-t1-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0050-forward-custom-t1-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0051-forward-step-adapter-t1-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0051-forward-step-adapter-t1-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0052-forward-step-native-t1-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0052-forward-step-native-t1-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0053-forward-custom-step-t1-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0053-forward-custom-step-t1-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0054-forward-llama-t1-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0054-forward-llama-t1-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0055-reverse-llama-t1-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0055-reverse-llama-t1-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0056-reverse-custom-step-t1-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0056-reverse-custom-step-t1-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0057-reverse-step-native-t1-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "1248000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0057-reverse-step-native-t1-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0058-reverse-step-adapter-t1-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0058-reverse-step-adapter-t1-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0059-reverse-custom-t1-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0059-reverse-custom-t1-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0060-forward-custom-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 289"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0060-forward-custom-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 279"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0061-forward-step-adapter-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 289"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0061-forward-step-adapter-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 289"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0062-forward-step-native-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 289"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0062-forward-step-native-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 289"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0063-forward-custom-step-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 289"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0063-forward-custom-step-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 289"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0064-forward-llama-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 289"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0064-forward-llama-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 289"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0065-reverse-llama-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 289"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0065-reverse-llama-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 289"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0066-reverse-custom-step-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 298"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0066-reverse-custom-step-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 289"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0067-reverse-step-native-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 298"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0067-reverse-step-native-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 298"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0068-reverse-step-adapter-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 298"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0068-reverse-step-adapter-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 298"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0069-reverse-custom-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 298"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0069-reverse-custom-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 298"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0070-repeat-forward-custom-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 310"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0070-repeat-forward-custom-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 298"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0071-repeat-forward-step-adapter-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 310"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0071-repeat-forward-step-adapter-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 310"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0072-repeat-forward-step-native-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 310"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0072-repeat-forward-step-native-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 310"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0073-repeat-forward-custom-step-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 310"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0073-repeat-forward-custom-step-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 310"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0074-repeat-forward-llama-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 310"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0074-repeat-forward-llama-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 310"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0075-repeat-reverse-llama-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 310"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0075-repeat-reverse-llama-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 310"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0076-repeat-reverse-custom-step-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0076-repeat-reverse-custom-step-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 310"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0077-repeat-reverse-step-native-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0077-repeat-reverse-step-native-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0078-repeat-reverse-step-adapter-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0078-repeat-reverse-step-adapter-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0079-repeat-reverse-custom-t1-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0079-repeat-reverse-custom-t1-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0080-forward-custom-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0080-forward-custom-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0081-forward-step-adapter-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0081-forward-step-adapter-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0082-forward-step-native-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0082-forward-step-native-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0083-forward-custom-step-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0083-forward-custom-step-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0084-forward-llama-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0084-forward-llama-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0085-reverse-llama-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0085-reverse-llama-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0086-reverse-custom-step-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0086-reverse-custom-step-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0087-reverse-step-native-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0087-reverse-step-native-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0088-reverse-step-adapter-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0088-reverse-step-adapter-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0089-reverse-custom-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0089-reverse-custom-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0090-repeat-forward-custom-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0090-repeat-forward-custom-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0091-repeat-forward-step-adapter-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "533000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0091-repeat-forward-step-adapter-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0092-repeat-forward-step-native-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0092-repeat-forward-step-native-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0093-repeat-forward-custom-step-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0093-repeat-forward-custom-step-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0094-repeat-forward-llama-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0094-repeat-forward-llama-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0095-repeat-reverse-llama-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0095-repeat-reverse-llama-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 322"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0096-repeat-reverse-custom-step-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0096-repeat-reverse-custom-step-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0097-repeat-reverse-step-native-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0097-repeat-reverse-step-native-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0098-repeat-reverse-step-adapter-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0098-repeat-reverse-step-adapter-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0099-repeat-reverse-custom-t4-n1.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0099-repeat-reverse-custom-t4-n1.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0100-forward-custom-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0100-forward-custom-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0101-forward-step-adapter-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0101-forward-step-adapter-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0102-forward-step-native-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0102-forward-step-native-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0103-forward-custom-step-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0103-forward-custom-step-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0104-forward-llama-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0104-forward-llama-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0105-reverse-llama-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0105-reverse-llama-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0106-reverse-custom-step-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0106-reverse-custom-step-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0107-reverse-step-native-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0107-reverse-step-native-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0108-reverse-step-adapter-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0108-reverse-step-adapter-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0109-reverse-custom-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0109-reverse-custom-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 315"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0110-repeat-forward-custom-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0110-repeat-forward-custom-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0111-repeat-forward-step-adapter-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "1344000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "1171000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0111-repeat-forward-step-adapter-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0112-repeat-forward-step-native-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "1152000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "691000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0112-repeat-forward-step-native-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "1920000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "768000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0113-repeat-forward-custom-step-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "533000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0113-repeat-forward-custom-step-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0114-repeat-forward-llama-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "2496000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0114-repeat-forward-llama-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "1152000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0115-repeat-reverse-llama-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "2496000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0115-repeat-reverse-llama-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "2496000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0116-repeat-reverse-custom-step-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0116-repeat-reverse-custom-step-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0117-repeat-reverse-step-native-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0117-repeat-reverse-step-native-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "1728000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0118-repeat-reverse-step-adapter-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0118-repeat-reverse-step-adapter-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0119-repeat-reverse-custom-t4-n17.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0119-repeat-reverse-custom-t4-n17.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0120-forward-custom-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0120-forward-custom-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0121-forward-step-adapter-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0121-forward-step-adapter-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 308"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0122-forward-step-native-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0122-forward-step-native-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0123-forward-custom-step-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0123-forward-custom-step-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0124-forward-llama-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0124-forward-llama-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0125-reverse-llama-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0125-reverse-llama-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0126-reverse-custom-step-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0126-reverse-custom-step-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0127-reverse-step-native-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0127-reverse-step-native-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0128-reverse-step-adapter-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0128-reverse-step-adapter-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0129-reverse-custom-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0129-reverse-custom-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0130-repeat-forward-custom-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0130-repeat-forward-custom-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0131-repeat-forward-step-adapter-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0131-repeat-forward-step-adapter-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0132-repeat-forward-step-native-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0132-repeat-forward-step-native-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 307"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0133-repeat-forward-custom-step-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0133-repeat-forward-custom-step-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0134-repeat-forward-llama-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "1440000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0134-repeat-forward-llama-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0135-repeat-reverse-llama-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0135-repeat-reverse-llama-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0136-repeat-reverse-custom-step-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0136-repeat-reverse-custom-step-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0137-repeat-reverse-step-native-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0137-repeat-reverse-step-native-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "1248000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0138-repeat-reverse-step-adapter-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0138-repeat-reverse-step-adapter-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0139-repeat-reverse-custom-t4-n32.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0139-repeat-reverse-custom-t4-n32.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0140-forward-custom-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0140-forward-custom-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0141-forward-step-adapter-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0141-forward-step-adapter-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0142-forward-step-native-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0142-forward-step-native-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0143-forward-custom-step-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0143-forward-custom-step-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0144-forward-llama-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0144-forward-llama-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0145-reverse-llama-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0145-reverse-llama-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0146-reverse-custom-step-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0146-reverse-custom-step-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0147-reverse-step-native-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0147-reverse-step-native-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0148-reverse-step-adapter-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0148-reverse-step-adapter-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0149-reverse-custom-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0149-reverse-custom-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0150-repeat-forward-custom-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0150-repeat-forward-custom-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0151-repeat-forward-step-adapter-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0151-repeat-forward-step-adapter-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 304"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0152-repeat-forward-step-native-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0152-repeat-forward-step-native-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0153-repeat-forward-custom-step-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0153-repeat-forward-custom-step-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0154-repeat-forward-llama-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0154-repeat-forward-llama-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0155-repeat-reverse-llama-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0155-repeat-reverse-llama-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0156-repeat-reverse-custom-step-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0156-repeat-reverse-custom-step-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0157-repeat-reverse-step-native-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0157-repeat-reverse-step-native-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0158-repeat-reverse-step-adapter-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0158-repeat-reverse-step-adapter-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0159-repeat-reverse-custom-t4-n128.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0159-repeat-reverse-custom-t4-n128.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0160-forward-custom-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0160-forward-custom-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0161-forward-step-adapter-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 302"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0161-forward-step-adapter-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 306"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0162-forward-step-native-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 299"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0162-forward-step-native-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 302"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0163-forward-custom-step-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 299"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0163-forward-custom-step-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 299"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0164-forward-llama-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 299"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0164-forward-llama-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 299"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0165-reverse-llama-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 299"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0165-reverse-llama-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 299"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0166-reverse-custom-step-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 299"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0166-reverse-custom-step-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 299"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0167-reverse-step-native-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 311"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0167-reverse-step-native-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 299"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0168-reverse-step-adapter-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0168-reverse-step-adapter-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 311"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0169-reverse-custom-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0169-reverse-custom-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0170-repeat-forward-custom-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0170-repeat-forward-custom-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0171-repeat-forward-step-adapter-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0171-repeat-forward-step-adapter-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0172-repeat-forward-step-native-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 295"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0172-repeat-forward-step-native-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 305"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0173-repeat-forward-custom-step-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 295"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0173-repeat-forward-custom-step-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 295"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0174-repeat-forward-llama-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 295"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0174-repeat-forward-llama-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 295"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0175-repeat-reverse-llama-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 295"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0175-repeat-reverse-llama-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 295"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0176-repeat-reverse-custom-step-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 295"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0176-repeat-reverse-custom-step-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 295"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0177-repeat-reverse-step-native-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 314"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0177-repeat-reverse-step-native-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 295"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0178-repeat-reverse-step-adapter-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 309"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0178-repeat-reverse-step-adapter-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 314"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0179-repeat-reverse-custom-t4-n1024.after.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 309"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  },
+  {
+    "name": "0179-repeat-reverse-custom-t4-n1024.before.device.txt",
+    "battery_temperature_tenths_c": [
+      "temperature: 309"
+    ],
+    "frequencies": [
+      {
+        "policy": "policy0",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy2",
+        "khz": "394000",
+        "governor": "sched_pixel"
+      },
+      {
+        "policy": "policy6",
+        "khz": "788000",
+        "governor": "sched_pixel"
+      }
+    ]
+  }
+]
