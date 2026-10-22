@@ -6,6 +6,10 @@ packed representations, native function sharing, and construction serialization.
 The runtime and native kernels remain separate from model authoring. There is one
 compiler implementation, in `rust/src/compiler`, shared by every frontend.
 
+FC, attention, and selected graph rewrites use build-time generated Rust from
+[ISLE rules](ISLE_LOWERING.md). That guide describes rule ownership, extension,
+and regression checks.
+
 An importer translates source semantics into this program. It does not translate
 operations into native commands. A Rust model author builds the same program
 directly. Adding a model does not require an importer or any other repository.

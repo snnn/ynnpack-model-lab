@@ -501,3 +501,5 @@ fn quantized_results_publish_parameter_companions() {
         serde_json::json!([q.scales, q.zeros])
     );
 }
+
+mod isle;
