@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "quant_select_i2.ynn"
+  },
+  "buffers": [
+    {
+      "name": "a",
+      "dtype": "int2",
+      "shape": [
+        5
+      ]
+    },
+    {
+      "name": "b",
+      "dtype": "int2",
+      "shape": [
+        5
+      ]
+    },
+    {
+      "name": "cond",
+      "dtype": "uint8",
+      "shape": [
+        5
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        5
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "a",
+          "shape": [
+            5
+          ],
+          "bytes": 2,
+          "file": "quant_select_i2_0_in_61.bin"
+        },
+        {
+          "name": "b",
+          "shape": [
+            5
+          ],
+          "bytes": 2,
+          "file": "quant_select_i2_0_in_62.bin"
+        },
+        {
+          "name": "cond",
+          "shape": [
+            5
+          ],
+          "bytes": 5,
+          "file": "quant_select_i2_0_in_636f6e64.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 20
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/quant_select_i2/0_79.bin"
+      }
+    }
+  ]
+}

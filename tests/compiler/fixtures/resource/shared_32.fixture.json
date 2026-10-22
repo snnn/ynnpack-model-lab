@@ -1,0 +1,357 @@
+{
+  "version": 1,
+  "graphs": {
+    "a": "shared_32_a.ynn",
+    "b": "shared_32_b.ynn"
+  },
+  "buffers": [
+    {
+      "name": "cache",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        32,
+        4
+      ],
+      "file": "shared_32_6361636865_initial.bin",
+      "resource": "a",
+      "initialized_extent": 0,
+      "append_axis": 2
+    },
+    {
+      "name": "second",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        32,
+        4
+      ],
+      "file": "shared_32_7365636f6e64_initial.bin",
+      "resource": "a",
+      "initialized_extent": 0,
+      "append_axis": 2
+    },
+    {
+      "name": "fresh",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        8,
+        4
+      ]
+    },
+    {
+      "name": "out",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        8,
+        4
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "shared_32_0_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_32/0_6f7574.bin",
+        "cache": "actual/shared_32/0_6361636865.bin",
+        "second": "actual/shared_32/0_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "shared_32_1_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_32/1_6f7574.bin",
+        "cache": "actual/shared_32/1_6361636865.bin",
+        "second": "actual/shared_32/1_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 1
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            7,
+            4
+          ],
+          "bytes": 168,
+          "file": "shared_32_2_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 672
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_32/2_6f7574.bin",
+        "cache": "actual/shared_32/2_6361636865.bin",
+        "second": "actual/shared_32/2_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 8
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "shared_32_3_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_32/3_6f7574.bin",
+        "cache": "actual/shared_32/3_6361636865.bin",
+        "second": "actual/shared_32/3_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 8
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            2,
+            4
+          ],
+          "bytes": 48,
+          "file": "shared_32_4_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 192
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_32/4_6f7574.bin",
+        "cache": "actual/shared_32/4_6361636865.bin",
+        "second": "actual/shared_32/4_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 10
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            8,
+            4
+          ],
+          "bytes": 192,
+          "file": "shared_32_5_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 768
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_32/5_6f7574.bin",
+        "cache": "actual/shared_32/5_6361636865.bin",
+        "second": "actual/shared_32/5_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 18
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "shared_32_6_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_32/6_6f7574.bin",
+        "cache": "actual/shared_32/6_6361636865.bin",
+        "second": "actual/shared_32/6_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "shared_32_7_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_32/7_6f7574.bin",
+        "cache": "actual/shared_32/7_6361636865.bin",
+        "second": "actual/shared_32/7_7365636f6e64.bin"
+      },
+      "reset": [
+        "cache",
+        "second"
+      ]
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 31
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "shared_32_8_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_32/8_6f7574.bin",
+        "cache": "actual/shared_32/8_6361636865.bin",
+        "second": "actual/shared_32/8_7365636f6e64.bin"
+      },
+      "import": {
+        "cache": 31,
+        "second": 31
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 32
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "shared_32_9_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_32/9_6f7574.bin",
+        "cache": "actual/shared_32/9_6361636865.bin",
+        "second": "actual/shared_32/9_7365636f6e64.bin"
+      }
+    }
+  ]
+}

@@ -8,6 +8,7 @@ description = "Research tools and publication checks for the YNNPACK model lab."
 requires-python = ">=3.11"
 dependencies = [
     "email-validator==2.3.0",
+    "numpy==2.3.5",
 ]
 
 [tool.uv]

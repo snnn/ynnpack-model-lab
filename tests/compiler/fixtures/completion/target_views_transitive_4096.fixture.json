@@ -1,0 +1,487 @@
+{
+  "version": 1,
+  "graphs": {
+    "a": "target_views_transitive_4096_a.ynn",
+    "b": "target_views_transitive_4096_b.ynn"
+  },
+  "buffers": [
+    {
+      "name": "cache",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        4096,
+        4
+      ],
+      "file": "target_views_transitive_4096_6361636865_initial.bin",
+      "resource": "a",
+      "initialized_extent": 0,
+      "append_axis": 2
+    },
+    {
+      "name": "fresh0",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        8,
+        4
+      ]
+    },
+    {
+      "name": "fresh1",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        8,
+        4
+      ]
+    },
+    {
+      "name": "old_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        27,
+        4
+      ]
+    },
+    {
+      "name": "middle_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        27,
+        4
+      ]
+    },
+    {
+      "name": "final_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        27,
+        4
+      ]
+    },
+    {
+      "name": "extra_old_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        27,
+        4
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "target_views_transitive_4096_0_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "target_views_transitive_4096_0_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "extra_old_codes",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/target_views_transitive_4096/0_6f6c645f636f646573.bin",
+        "middle_codes": "actual/target_views_transitive_4096/0_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/target_views_transitive_4096/0_66696e616c5f636f646573.bin",
+        "cache": "actual/target_views_transitive_4096/0_6361636865.bin",
+        "extra_old_codes": "actual/target_views_transitive_4096/0_65787472615f6f6c645f636f646573.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "target_views_transitive_4096_0_6f6c645f636f646573.bin",
+          "extra_old_codes": "target_views_transitive_4096_0_65787472615f6f6c645f636f646573.bin"
+        },
+        {
+          "old_codes": "target_views_transitive_4096_0_6f6c645f636f646573.bin",
+          "middle_codes": "target_views_transitive_4096_0_6d6964646c655f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "target_views_transitive_4096_1_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "target_views_transitive_4096_1_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 96
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 192
+        },
+        {
+          "name": "extra_old_codes",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/target_views_transitive_4096/1_6f6c645f636f646573.bin",
+        "middle_codes": "actual/target_views_transitive_4096/1_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/target_views_transitive_4096/1_66696e616c5f636f646573.bin",
+        "cache": "actual/target_views_transitive_4096/1_6361636865.bin",
+        "extra_old_codes": "actual/target_views_transitive_4096/1_65787472615f6f6c645f636f646573.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "target_views_transitive_4096_1_6f6c645f636f646573.bin",
+          "extra_old_codes": "target_views_transitive_4096_1_65787472615f6f6c645f636f646573.bin"
+        },
+        {
+          "old_codes": "target_views_transitive_4096_1_6f6c645f636f646573.bin",
+          "middle_codes": "target_views_transitive_4096_1_6d6964646c655f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 2
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            7,
+            4
+          ],
+          "bytes": 168,
+          "file": "target_views_transitive_4096_2_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "target_views_transitive_4096_2_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 192
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 864
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 864
+        },
+        {
+          "name": "extra_old_codes",
+          "shape": [],
+          "bytes": 192
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/target_views_transitive_4096/2_6f6c645f636f646573.bin",
+        "middle_codes": "actual/target_views_transitive_4096/2_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/target_views_transitive_4096/2_66696e616c5f636f646573.bin",
+        "cache": "actual/target_views_transitive_4096/2_6361636865.bin",
+        "extra_old_codes": "actual/target_views_transitive_4096/2_65787472615f6f6c645f636f646573.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "target_views_transitive_4096_2_6f6c645f636f646573.bin",
+          "extra_old_codes": "target_views_transitive_4096_2_65787472615f6f6c645f636f646573.bin"
+        },
+        {
+          "old_codes": "target_views_transitive_4096_2_6f6c645f636f646573.bin",
+          "middle_codes": "target_views_transitive_4096_2_6d6964646c655f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 9
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "target_views_transitive_4096_3_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            2,
+            4
+          ],
+          "bytes": 48,
+          "file": "target_views_transitive_4096_3_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 864
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 864
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 1056
+        },
+        {
+          "name": "extra_old_codes",
+          "shape": [],
+          "bytes": 864
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/target_views_transitive_4096/3_6f6c645f636f646573.bin",
+        "middle_codes": "actual/target_views_transitive_4096/3_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/target_views_transitive_4096/3_66696e616c5f636f646573.bin",
+        "cache": "actual/target_views_transitive_4096/3_6361636865.bin",
+        "extra_old_codes": "actual/target_views_transitive_4096/3_65787472615f6f6c645f636f646573.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "target_views_transitive_4096_3_6f6c645f636f646573.bin",
+          "extra_old_codes": "target_views_transitive_4096_3_65787472615f6f6c645f636f646573.bin"
+        },
+        {
+          "old_codes": "target_views_transitive_4096_3_6f6c645f636f646573.bin",
+          "middle_codes": "target_views_transitive_4096_3_6d6964646c655f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 11
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            8,
+            4
+          ],
+          "bytes": 192,
+          "file": "target_views_transitive_4096_4_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            8,
+            4
+          ],
+          "bytes": 192,
+          "file": "target_views_transitive_4096_4_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 1056
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 1824
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 2592
+        },
+        {
+          "name": "extra_old_codes",
+          "shape": [],
+          "bytes": 1056
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/target_views_transitive_4096/4_6f6c645f636f646573.bin",
+        "middle_codes": "actual/target_views_transitive_4096/4_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/target_views_transitive_4096/4_66696e616c5f636f646573.bin",
+        "cache": "actual/target_views_transitive_4096/4_6361636865.bin",
+        "extra_old_codes": "actual/target_views_transitive_4096/4_65787472615f6f6c645f636f646573.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "target_views_transitive_4096_4_6f6c645f636f646573.bin",
+          "extra_old_codes": "target_views_transitive_4096_4_65787472615f6f6c645f636f646573.bin"
+        },
+        {
+          "old_codes": "target_views_transitive_4096_4_6f6c645f636f646573.bin",
+          "middle_codes": "target_views_transitive_4096_4_6d6964646c655f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 27
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "target_views_transitive_4096_5_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "target_views_transitive_4096_5_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 2592
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 2592
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 2592
+        },
+        {
+          "name": "extra_old_codes",
+          "shape": [],
+          "bytes": 2592
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/target_views_transitive_4096/5_6f6c645f636f646573.bin",
+        "middle_codes": "actual/target_views_transitive_4096/5_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/target_views_transitive_4096/5_66696e616c5f636f646573.bin",
+        "cache": "actual/target_views_transitive_4096/5_6361636865.bin",
+        "extra_old_codes": "actual/target_views_transitive_4096/5_65787472615f6f6c645f636f646573.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "target_views_transitive_4096_5_6f6c645f636f646573.bin",
+          "extra_old_codes": "target_views_transitive_4096_5_65787472615f6f6c645f636f646573.bin"
+        },
+        {
+          "old_codes": "target_views_transitive_4096_5_6f6c645f636f646573.bin",
+          "middle_codes": "target_views_transitive_4096_5_6d6964646c655f636f646573.bin"
+        }
+      ]
+    }
+  ]
+}

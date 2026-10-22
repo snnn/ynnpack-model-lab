@@ -1,0 +1,926 @@
+[
+  {
+    "name": "gated_delta_t7_k5_v3",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "gated_delta_t7_k5_v3_0_in_71.bin",
+            "shape": [
+              2,
+              7,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "gated_delta_t7_k5_v3_0_in_6b.bin",
+            "shape": [
+              2,
+              7,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "gated_delta_t7_k5_v3_0_in_76.bin",
+            "shape": [
+              2,
+              7,
+              4,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "g": {
+            "file": "gated_delta_t7_k5_v3_0_in_67.bin",
+            "shape": [
+              2,
+              7,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "beta": {
+            "file": "gated_delta_t7_k5_v3_0_in_62657461.bin",
+            "shape": [
+              2,
+              7,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "state": {
+            "file": "gated_delta_t7_k5_v3_0_in_7374617465.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "valid": {
+            "file": "gated_delta_t7_k5_v3_0_in_76616c6964.bin",
+            "shape": [],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "gated_delta_t7_k5_v3_0_out_6f7574707574.bin",
+            "shape": [
+              2,
+              7,
+              4,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "next_state": {
+            "file": "gated_delta_t7_k5_v3_0_out_6e6578745f7374617465.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "q": {
+            "file": "gated_delta_t7_k5_v3_1_in_71.bin",
+            "shape": [
+              2,
+              7,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "gated_delta_t7_k5_v3_1_in_6b.bin",
+            "shape": [
+              2,
+              7,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "gated_delta_t7_k5_v3_1_in_76.bin",
+            "shape": [
+              2,
+              7,
+              4,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "g": {
+            "file": "gated_delta_t7_k5_v3_1_in_67.bin",
+            "shape": [
+              2,
+              7,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "beta": {
+            "file": "gated_delta_t7_k5_v3_1_in_62657461.bin",
+            "shape": [
+              2,
+              7,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "state": {
+            "file": "gated_delta_t7_k5_v3_1_in_7374617465.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "valid": {
+            "file": "gated_delta_t7_k5_v3_1_in_76616c6964.bin",
+            "shape": [],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "gated_delta_t7_k5_v3_1_out_6f7574707574.bin",
+            "shape": [
+              2,
+              7,
+              4,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "next_state": {
+            "file": "gated_delta_t7_k5_v3_1_out_6e6578745f7374617465.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "q": {
+            "file": "gated_delta_t7_k5_v3_2_in_71.bin",
+            "shape": [
+              2,
+              7,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "gated_delta_t7_k5_v3_2_in_6b.bin",
+            "shape": [
+              2,
+              7,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "gated_delta_t7_k5_v3_2_in_76.bin",
+            "shape": [
+              2,
+              7,
+              4,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "g": {
+            "file": "gated_delta_t7_k5_v3_2_in_67.bin",
+            "shape": [
+              2,
+              7,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "beta": {
+            "file": "gated_delta_t7_k5_v3_2_in_62657461.bin",
+            "shape": [
+              2,
+              7,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "state": {
+            "file": "gated_delta_t7_k5_v3_2_in_7374617465.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "valid": {
+            "file": "gated_delta_t7_k5_v3_2_in_76616c6964.bin",
+            "shape": [],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "gated_delta_t7_k5_v3_2_out_6f7574707574.bin",
+            "shape": [
+              2,
+              7,
+              4,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "next_state": {
+            "file": "gated_delta_t7_k5_v3_2_out_6e6578745f7374617465.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "q": {
+            "file": "gated_delta_t7_k5_v3_3_in_71.bin",
+            "shape": [
+              2,
+              7,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "gated_delta_t7_k5_v3_3_in_6b.bin",
+            "shape": [
+              2,
+              7,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "gated_delta_t7_k5_v3_3_in_76.bin",
+            "shape": [
+              2,
+              7,
+              4,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "g": {
+            "file": "gated_delta_t7_k5_v3_3_in_67.bin",
+            "shape": [
+              2,
+              7,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "beta": {
+            "file": "gated_delta_t7_k5_v3_3_in_62657461.bin",
+            "shape": [
+              2,
+              7,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "state": {
+            "file": "gated_delta_t7_k5_v3_3_in_7374617465.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "valid": {
+            "file": "gated_delta_t7_k5_v3_3_in_76616c6964.bin",
+            "shape": [],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "gated_delta_t7_k5_v3_3_out_6f7574707574.bin",
+            "shape": [
+              2,
+              7,
+              4,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "next_state": {
+            "file": "gated_delta_t7_k5_v3_3_out_6e6578745f7374617465.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "gated_delta_t1_k128_v128",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "gated_delta_t1_k128_v128_0_in_71.bin",
+            "shape": [
+              2,
+              1,
+              2,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "gated_delta_t1_k128_v128_0_in_6b.bin",
+            "shape": [
+              2,
+              1,
+              2,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "gated_delta_t1_k128_v128_0_in_76.bin",
+            "shape": [
+              2,
+              1,
+              4,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "g": {
+            "file": "gated_delta_t1_k128_v128_0_in_67.bin",
+            "shape": [
+              2,
+              1,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "beta": {
+            "file": "gated_delta_t1_k128_v128_0_in_62657461.bin",
+            "shape": [
+              2,
+              1,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "state": {
+            "file": "gated_delta_t1_k128_v128_0_in_7374617465.bin",
+            "shape": [
+              2,
+              4,
+              128,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "valid": {
+            "file": "gated_delta_t1_k128_v128_0_in_76616c6964.bin",
+            "shape": [],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "gated_delta_t1_k128_v128_0_out_6f7574707574.bin",
+            "shape": [
+              2,
+              1,
+              4,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "next_state": {
+            "file": "gated_delta_t1_k128_v128_0_out_6e6578745f7374617465.bin",
+            "shape": [
+              2,
+              4,
+              128,
+              128
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "q": {
+            "file": "gated_delta_t1_k128_v128_1_in_71.bin",
+            "shape": [
+              2,
+              1,
+              2,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "gated_delta_t1_k128_v128_1_in_6b.bin",
+            "shape": [
+              2,
+              1,
+              2,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "gated_delta_t1_k128_v128_1_in_76.bin",
+            "shape": [
+              2,
+              1,
+              4,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "g": {
+            "file": "gated_delta_t1_k128_v128_1_in_67.bin",
+            "shape": [
+              2,
+              1,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "beta": {
+            "file": "gated_delta_t1_k128_v128_1_in_62657461.bin",
+            "shape": [
+              2,
+              1,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "state": {
+            "file": "gated_delta_t1_k128_v128_1_in_7374617465.bin",
+            "shape": [
+              2,
+              4,
+              128,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "valid": {
+            "file": "gated_delta_t1_k128_v128_1_in_76616c6964.bin",
+            "shape": [],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "gated_delta_t1_k128_v128_1_out_6f7574707574.bin",
+            "shape": [
+              2,
+              1,
+              4,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "next_state": {
+            "file": "gated_delta_t1_k128_v128_1_out_6e6578745f7374617465.bin",
+            "shape": [
+              2,
+              4,
+              128,
+              128
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "gated_delta_t128_k128_v128",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "gated_delta_t128_k128_v128_0_in_71.bin",
+            "shape": [
+              2,
+              128,
+              2,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "gated_delta_t128_k128_v128_0_in_6b.bin",
+            "shape": [
+              2,
+              128,
+              2,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "gated_delta_t128_k128_v128_0_in_76.bin",
+            "shape": [
+              2,
+              128,
+              4,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "g": {
+            "file": "gated_delta_t128_k128_v128_0_in_67.bin",
+            "shape": [
+              2,
+              128,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "beta": {
+            "file": "gated_delta_t128_k128_v128_0_in_62657461.bin",
+            "shape": [
+              2,
+              128,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "state": {
+            "file": "gated_delta_t128_k128_v128_0_in_7374617465.bin",
+            "shape": [
+              2,
+              4,
+              128,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "valid": {
+            "file": "gated_delta_t128_k128_v128_0_in_76616c6964.bin",
+            "shape": [],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "gated_delta_t128_k128_v128_0_out_6f7574707574.bin",
+            "shape": [
+              2,
+              128,
+              4,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "next_state": {
+            "file": "gated_delta_t128_k128_v128_0_out_6e6578745f7374617465.bin",
+            "shape": [
+              2,
+              4,
+              128,
+              128
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "q": {
+            "file": "gated_delta_t128_k128_v128_1_in_71.bin",
+            "shape": [
+              2,
+              128,
+              2,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "gated_delta_t128_k128_v128_1_in_6b.bin",
+            "shape": [
+              2,
+              128,
+              2,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "gated_delta_t128_k128_v128_1_in_76.bin",
+            "shape": [
+              2,
+              128,
+              4,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "g": {
+            "file": "gated_delta_t128_k128_v128_1_in_67.bin",
+            "shape": [
+              2,
+              128,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "beta": {
+            "file": "gated_delta_t128_k128_v128_1_in_62657461.bin",
+            "shape": [
+              2,
+              128,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "state": {
+            "file": "gated_delta_t128_k128_v128_1_in_7374617465.bin",
+            "shape": [
+              2,
+              4,
+              128,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "valid": {
+            "file": "gated_delta_t128_k128_v128_1_in_76616c6964.bin",
+            "shape": [],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "gated_delta_t128_k128_v128_1_out_6f7574707574.bin",
+            "shape": [
+              2,
+              128,
+              4,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "next_state": {
+            "file": "gated_delta_t128_k128_v128_1_out_6e6578745f7374617465.bin",
+            "shape": [
+              2,
+              4,
+              128,
+              128
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "q": {
+            "file": "gated_delta_t128_k128_v128_2_in_71.bin",
+            "shape": [
+              2,
+              128,
+              2,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "gated_delta_t128_k128_v128_2_in_6b.bin",
+            "shape": [
+              2,
+              128,
+              2,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "gated_delta_t128_k128_v128_2_in_76.bin",
+            "shape": [
+              2,
+              128,
+              4,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "g": {
+            "file": "gated_delta_t128_k128_v128_2_in_67.bin",
+            "shape": [
+              2,
+              128,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "beta": {
+            "file": "gated_delta_t128_k128_v128_2_in_62657461.bin",
+            "shape": [
+              2,
+              128,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "state": {
+            "file": "gated_delta_t128_k128_v128_2_in_7374617465.bin",
+            "shape": [
+              2,
+              4,
+              128,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "valid": {
+            "file": "gated_delta_t128_k128_v128_2_in_76616c6964.bin",
+            "shape": [],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "gated_delta_t128_k128_v128_2_out_6f7574707574.bin",
+            "shape": [
+              2,
+              128,
+              4,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "next_state": {
+            "file": "gated_delta_t128_k128_v128_2_out_6e6578745f7374617465.bin",
+            "shape": [
+              2,
+              4,
+              128,
+              128
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "q": {
+            "file": "gated_delta_t128_k128_v128_3_in_71.bin",
+            "shape": [
+              2,
+              128,
+              2,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "gated_delta_t128_k128_v128_3_in_6b.bin",
+            "shape": [
+              2,
+              128,
+              2,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "gated_delta_t128_k128_v128_3_in_76.bin",
+            "shape": [
+              2,
+              128,
+              4,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "g": {
+            "file": "gated_delta_t128_k128_v128_3_in_67.bin",
+            "shape": [
+              2,
+              128,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "beta": {
+            "file": "gated_delta_t128_k128_v128_3_in_62657461.bin",
+            "shape": [
+              2,
+              128,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "state": {
+            "file": "gated_delta_t128_k128_v128_3_in_7374617465.bin",
+            "shape": [
+              2,
+              4,
+              128,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "valid": {
+            "file": "gated_delta_t128_k128_v128_3_in_76616c6964.bin",
+            "shape": [],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "gated_delta_t128_k128_v128_3_out_6f7574707574.bin",
+            "shape": [
+              2,
+              128,
+              4,
+              128
+            ],
+            "dtype": "<f4"
+          },
+          "next_state": {
+            "file": "gated_delta_t128_k128_v128_3_out_6e6578745f7374617465.bin",
+            "shape": [
+              2,
+              4,
+              128,
+              128
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  }
+]

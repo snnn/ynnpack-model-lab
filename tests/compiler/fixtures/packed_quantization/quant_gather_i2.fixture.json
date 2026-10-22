@@ -1,0 +1,251 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "quant_gather_i2.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "int2",
+      "shape": [
+        3,
+        5
+      ]
+    },
+    {
+      "name": "indices",
+      "dtype": "int32",
+      "shape": [
+        13
+      ]
+    },
+    {
+      "name": "q",
+      "dtype": "int2",
+      "shape": [
+        13,
+        5
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        13,
+        5
+      ]
+    },
+    {
+      "name": "__quant/0/parameter",
+      "dtype": "fp32",
+      "shape": [
+        13
+      ]
+    },
+    {
+      "name": "__quant/0/parameter_",
+      "dtype": "int32",
+      "shape": [
+        13
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            5
+          ],
+          "bytes": 4,
+          "file": "quant_gather_i2_0_in_78.bin"
+        },
+        {
+          "name": "indices",
+          "shape": [
+            7
+          ],
+          "bytes": 28,
+          "file": "quant_gather_i2_0_in_696e6469636573.bin"
+        },
+        {
+          "name": "q",
+          "shape": [],
+          "bytes": 9
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 140
+        },
+        {
+          "name": "__quant/0/parameter",
+          "shape": [],
+          "bytes": 28
+        },
+        {
+          "name": "__quant/0/parameter_",
+          "shape": [],
+          "bytes": 28
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "q": "actual/quant_gather_i2/0_71.bin",
+        "y": "actual/quant_gather_i2/0_79.bin",
+        "__quant/0/parameter": "actual/quant_gather_i2/0_5f5f7175616e742f302f706172616d65746572.bin",
+        "__quant/0/parameter_": "actual/quant_gather_i2/0_5f5f7175616e742f302f706172616d657465725f.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            5
+          ],
+          "bytes": 4,
+          "file": "quant_gather_i2_1_in_78.bin"
+        },
+        {
+          "name": "indices",
+          "shape": [
+            1
+          ],
+          "bytes": 4,
+          "file": "quant_gather_i2_1_in_696e6469636573.bin"
+        },
+        {
+          "name": "q",
+          "shape": [],
+          "bytes": 2
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 20
+        },
+        {
+          "name": "__quant/0/parameter",
+          "shape": [],
+          "bytes": 4
+        },
+        {
+          "name": "__quant/0/parameter_",
+          "shape": [],
+          "bytes": 4
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "q": "actual/quant_gather_i2/1_71.bin",
+        "y": "actual/quant_gather_i2/1_79.bin",
+        "__quant/0/parameter": "actual/quant_gather_i2/1_5f5f7175616e742f302f706172616d65746572.bin",
+        "__quant/0/parameter_": "actual/quant_gather_i2/1_5f5f7175616e742f302f706172616d657465725f.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            5
+          ],
+          "bytes": 4,
+          "file": "quant_gather_i2_2_in_78.bin"
+        },
+        {
+          "name": "indices",
+          "shape": [
+            0
+          ],
+          "bytes": 0,
+          "file": "quant_gather_i2_2_in_696e6469636573.bin"
+        },
+        {
+          "name": "q",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "__quant/0/parameter",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "__quant/0/parameter_",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "q": "actual/quant_gather_i2/2_71.bin",
+        "y": "actual/quant_gather_i2/2_79.bin",
+        "__quant/0/parameter": "actual/quant_gather_i2/2_5f5f7175616e742f302f706172616d65746572.bin",
+        "__quant/0/parameter_": "actual/quant_gather_i2/2_5f5f7175616e742f302f706172616d657465725f.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            5
+          ],
+          "bytes": 4,
+          "file": "quant_gather_i2_3_in_78.bin"
+        },
+        {
+          "name": "indices",
+          "shape": [
+            13
+          ],
+          "bytes": 52,
+          "file": "quant_gather_i2_3_in_696e6469636573.bin"
+        },
+        {
+          "name": "q",
+          "shape": [],
+          "bytes": 17
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 260
+        },
+        {
+          "name": "__quant/0/parameter",
+          "shape": [],
+          "bytes": 52
+        },
+        {
+          "name": "__quant/0/parameter_",
+          "shape": [],
+          "bytes": 52
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "q": "actual/quant_gather_i2/3_71.bin",
+        "y": "actual/quant_gather_i2/3_79.bin",
+        "__quant/0/parameter": "actual/quant_gather_i2/3_5f5f7175616e742f302f706172616d65746572.bin",
+        "__quant/0/parameter_": "actual/quant_gather_i2/3_5f5f7175616e742f302f706172616d657465725f.bin"
+      }
+    }
+  ]
+}

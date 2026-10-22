@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "graphs": {
+    "prefill": "append_prefill.ynn",
+    "decode": "append_decode.ynn"
+  },
+  "buffers": [
+    {
+      "name": "k",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        2,
+        9,
+        5
+      ],
+      "file": "append_6b_initial.bin",
+      "resource": "prefill",
+      "initialized_extent": 0,
+      "append_axis": 2
+    },
+    {
+      "name": "v",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        2,
+        9,
+        7
+      ],
+      "file": "append_76_initial.bin",
+      "resource": "prefill",
+      "initialized_extent": 0,
+      "append_axis": 2
+    },
+    {
+      "name": "q",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        4,
+        3,
+        5
+      ]
+    },
+    {
+      "name": "k_fresh",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "name": "v_fresh",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        2,
+        3,
+        7
+      ]
+    },
+    {
+      "name": "mask",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        4,
+        3,
+        5
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        4,
+        3,
+        7
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "prefill",
+      "scalars": {
+        "position": 0,
+        "begin": 0
+      },
+      "bindings": [
+        {
+          "name": "q",
+          "shape": [
+            1,
+            4,
+            3,
+            5
+          ],
+          "bytes": 240,
+          "file": "append_0_71.bin"
+        },
+        {
+          "name": "k_fresh",
+          "shape": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "bytes": 120,
+          "file": "append_0_6b5f6672657368.bin"
+        },
+        {
+          "name": "v_fresh",
+          "shape": [
+            1,
+            2,
+            3,
+            7
+          ],
+          "bytes": 168,
+          "file": "append_0_765f6672657368.bin"
+        },
+        {
+          "name": "mask",
+          "shape": [
+            1,
+            4,
+            3,
+            3
+          ],
+          "bytes": 144,
+          "file": "append_0_6d61736b.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 336
+        }
+      ],
+      "outputs": {
+        "y": "actual/append/0_79.bin",
+        "k": "actual/append/0_6b.bin",
+        "v": "actual/append/0_76.bin"
+      }
+    },
+    {
+      "graph": "decode",
+      "scalars": {
+        "position": 3,
+        "begin": 1
+      },
+      "bindings": [
+        {
+          "name": "q",
+          "shape": [
+            1,
+            4,
+            1,
+            5
+          ],
+          "bytes": 80,
+          "file": "append_1_71.bin"
+        },
+        {
+          "name": "k_fresh",
+          "shape": [
+            1,
+            2,
+            1,
+            5
+          ],
+          "bytes": 40,
+          "file": "append_1_6b5f6672657368.bin"
+        },
+        {
+          "name": "v_fresh",
+          "shape": [
+            1,
+            2,
+            1,
+            7
+          ],
+          "bytes": 56,
+          "file": "append_1_765f6672657368.bin"
+        },
+        {
+          "name": "mask",
+          "shape": [
+            1,
+            4,
+            1,
+            3
+          ],
+          "bytes": 48,
+          "file": "append_1_6d61736b.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 112
+        }
+      ],
+      "outputs": {
+        "y": "actual/append/1_79.bin",
+        "k": "actual/append/1_6b.bin",
+        "v": "actual/append/1_76.bin"
+      }
+    },
+    {
+      "graph": "prefill",
+      "scalars": {
+        "position": 4,
+        "begin": 2
+      },
+      "bindings": [
+        {
+          "name": "q",
+          "shape": [
+            1,
+            4,
+            2,
+            5
+          ],
+          "bytes": 160,
+          "file": "append_2_71.bin"
+        },
+        {
+          "name": "k_fresh",
+          "shape": [
+            1,
+            2,
+            2,
+            5
+          ],
+          "bytes": 80,
+          "file": "append_2_6b5f6672657368.bin"
+        },
+        {
+          "name": "v_fresh",
+          "shape": [
+            1,
+            2,
+            2,
+            7
+          ],
+          "bytes": 112,
+          "file": "append_2_765f6672657368.bin"
+        },
+        {
+          "name": "mask",
+          "shape": [
+            1,
+            4,
+            2,
+            4
+          ],
+          "bytes": 128,
+          "file": "append_2_6d61736b.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 224
+        }
+      ],
+      "outputs": {
+        "y": "actual/append/2_79.bin",
+        "k": "actual/append/2_6b.bin",
+        "v": "actual/append/2_76.bin"
+      }
+    },
+    {
+      "graph": "prefill",
+      "scalars": {
+        "position": 6,
+        "begin": 4
+      },
+      "bindings": [
+        {
+          "name": "q",
+          "shape": [
+            1,
+            4,
+            3,
+            5
+          ],
+          "bytes": 240,
+          "file": "append_3_71.bin"
+        },
+        {
+          "name": "k_fresh",
+          "shape": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "bytes": 120,
+          "file": "append_3_6b5f6672657368.bin"
+        },
+        {
+          "name": "v_fresh",
+          "shape": [
+            1,
+            2,
+            3,
+            7
+          ],
+          "bytes": 168,
+          "file": "append_3_765f6672657368.bin"
+        },
+        {
+          "name": "mask",
+          "shape": [
+            1,
+            4,
+            3,
+            5
+          ],
+          "bytes": 240,
+          "file": "append_3_6d61736b.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 336
+        }
+      ],
+      "outputs": {
+        "y": "actual/append/3_79.bin",
+        "k": "actual/append/3_6b.bin",
+        "v": "actual/append/3_76.bin"
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "dot_i4_n8.ynn"
+  },
+  "buffers": [
+    {
+      "name": "a",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "w",
+      "dtype": "int4",
+      "shape": [
+        8,
+        3
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "int32",
+      "shape": [
+        2,
+        8
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "a",
+          "shape": [
+            2,
+            3
+          ],
+          "bytes": 6,
+          "file": "dot_i4_n8_0_in_61.bin"
+        },
+        {
+          "name": "w",
+          "shape": [
+            8,
+            3
+          ],
+          "bytes": 12,
+          "file": "dot_i4_n8_0_in_77.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 64
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/dot_i4_n8/0_79.bin"
+      }
+    }
+  ]
+}

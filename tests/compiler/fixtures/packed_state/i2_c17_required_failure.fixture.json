@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "graphs": {
+    "a": "i2_c17_required_failure_a.ynn",
+    "b": "i2_c17_required_failure_b.ynn"
+  },
+  "buffers": [
+    {
+      "name": "cache",
+      "dtype": "int2",
+      "shape": [
+        17
+      ],
+      "file": "i2_c17_required_failure_6361636865_initial.bin",
+      "resource": "a",
+      "initialized_extent": 0,
+      "append_axis": 0
+    },
+    {
+      "name": "fresh",
+      "dtype": "int2",
+      "shape": [
+        1
+      ]
+    },
+    {
+      "name": "old_codes",
+      "dtype": "int2",
+      "shape": [
+        0
+      ]
+    },
+    {
+      "name": "codes",
+      "dtype": "int2",
+      "shape": [
+        1
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 0,
+        "begin": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            1
+          ],
+          "bytes": 1,
+          "file": "i2_c17_required_failure_0_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 1
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i2_c17_required_failure/0_6f6c645f636f646573.bin",
+        "codes": "actual/i2_c17_required_failure/0_636f646573.bin"
+      },
+      "expect_error": "stateful invocation failed",
+      "fail_after_appends": 1,
+      "expect_poisoned": [
+        "cache"
+      ],
+      "before_appends": [
+        {},
+        {
+          "codes": "i2_c17_required_failure_0_636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 0,
+        "begin": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            1
+          ],
+          "bytes": 1,
+          "file": "i2_c17_required_failure_1_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 1
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i2_c17_required_failure/1_6f6c645f636f646573.bin",
+        "codes": "actual/i2_c17_required_failure/1_636f646573.bin"
+      },
+      "expect_error": "poisoned",
+      "expect_unchanged": true,
+      "expect_poisoned": [
+        "cache"
+      ]
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 0,
+        "begin": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            1
+          ],
+          "bytes": 1,
+          "file": "i2_c17_required_failure_2_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 1
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i2_c17_required_failure/2_6f6c645f636f646573.bin",
+        "codes": "actual/i2_c17_required_failure/2_636f646573.bin"
+      },
+      "reset": [
+        "cache"
+      ]
+    }
+  ]
+}

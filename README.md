@@ -1,5 +1,8 @@
 # YNNPACK model lab
 
+
+Public Rust model authoring and lowering are described in [docs/COMPILER.md](docs/COMPILER.md).
+
 A research and benchmarking lab to help the **XNNPACK/YNNPACK team understand
 full-model performance gaps**. It provides runnable workloads, retained
 measurements, kernel evidence, and bug reproductions for investigating YNNPACK
@@ -22,8 +25,10 @@ native YNNPACK/Slinky graphs through a small C ABI. The
 [general LLM runner](docs/GENERAL_RUNNER.md), `ynn-llm`, loads qualified Gemma4,
 Qwen3 and Qwen3.5 packages using explicit metadata. CMake also builds `vision`,
 the comparison controls `gemma4_e2b`, `gemma4_e4b`, `qwen3`, and `plan_fixture`. Profiles are
-selected by model directory. Graph authors and compiler integration stay private;
-building and running published plans needs no private compiler. Generated C++
+selected by model directory. The [Rust compiler and authoring API](docs/COMPILER.md)
+build these plans from semantic tensor programs, with a standalone Qwen3 author
+and checkpoint preparation tools. Source importers can supply the same program
+contract. Generated C++
 model builders and JSON graph loading are retired. JSON remains the format for
 metadata, manifests, fixture controls and measurements. See the
 [artifact interface](docs/AUTHORING.md), [Rust runtime](docs/RUST_RUNTIME.md), and
@@ -154,7 +159,9 @@ report that cost separately from warm execution.
 flowchart LR
   W[Published model] --> E[Verified asset extraction]
   E --> A[Packed weights and scales]
-  P[External graph author] --> C[`.ynn` plans and metadata]
+  P[Rust model author or source importer] --> T[Semantic tensor program]
+  T --> B[Rust compiler]
+  B --> C[`.ynn` plans and metadata]
   C --> R[Rust loader and runner]
   A --> R
   R --> Y[YNNPACK graph]
@@ -172,6 +179,7 @@ Attention still reads history and can pack/dequantize it internally. This is
 chunked attention, not online-softmax/FlashAttention.
 
 - [Design and model extension](docs/DESIGN.md)
+- [Rust authoring and compiler](docs/COMPILER.md)
 - [Standalone model artifacts](docs/AUTHORING.md)
 - [Benchmarking](docs/BENCHMARKING.md)
 - [Execution profiling](docs/PROFILING.md)
@@ -186,8 +194,7 @@ reuse and tiled online-softmax attention; see [open work](docs/worklogs/README.m
 
 Lab code is Apache-2.0; retained third-party notices and licenses are listed in
 `NOTICE` and `third_party/`. Model weights have their own publisher's terms.
-Graph-authoring sources and compiler integration are maintained separately and
-are excluded from this repository. Generated plans and their standalone
+The Rust compiler, public model authors, asset tools, generated plans and
 runtime helpers retain the applicable notices and licenses.
 
 Qwen3.5-4B text-only FP32 packages use the shared Qwen runner; see

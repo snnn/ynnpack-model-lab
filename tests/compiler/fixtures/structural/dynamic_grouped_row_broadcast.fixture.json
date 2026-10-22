@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "dynamic_grouped_row_broadcast.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        4,
+        8
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        4,
+        2,
+        4
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            8
+          ],
+          "bytes": 96,
+          "file": "dynamic_grouped_row_broadcast_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/dynamic_grouped_row_broadcast/0_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            1,
+            8
+          ],
+          "bytes": 32,
+          "file": "dynamic_grouped_row_broadcast_1_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 32
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/dynamic_grouped_row_broadcast/1_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            4,
+            8
+          ],
+          "bytes": 128,
+          "file": "dynamic_grouped_row_broadcast_2_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 128
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/dynamic_grouped_row_broadcast/2_79.bin"
+      }
+    }
+  ]
+}

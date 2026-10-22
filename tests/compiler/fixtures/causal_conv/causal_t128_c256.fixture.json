@@ -1,0 +1,269 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "causal_t128_c256.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        128,
+        256
+      ]
+    },
+    {
+      "name": "history",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3,
+        256
+      ]
+    },
+    {
+      "name": "weights",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        4,
+        1,
+        256
+      ]
+    },
+    {
+      "name": "output",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        128,
+        1,
+        256
+      ]
+    },
+    {
+      "name": "next",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3,
+        256
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            128,
+            256
+          ],
+          "bytes": 262144,
+          "file": "causal_t128_c256_0_in_78.bin"
+        },
+        {
+          "name": "history",
+          "shape": [
+            2,
+            3,
+            256
+          ],
+          "bytes": 6144,
+          "file": "causal_t128_c256_0_in_686973746f7279.bin"
+        },
+        {
+          "name": "weights",
+          "shape": [
+            1,
+            4,
+            1,
+            256
+          ],
+          "bytes": 4096,
+          "file": "causal_t128_c256_0_in_77656967687473.bin"
+        },
+        {
+          "name": "output",
+          "shape": [],
+          "bytes": 262144
+        },
+        {
+          "name": "next",
+          "shape": [],
+          "bytes": 6144
+        }
+      ],
+      "scalars": {
+        "valid": 0
+      },
+      "outputs": {
+        "output": "actual/causal_t128_c256/0_6f7574707574.bin",
+        "next": "actual/causal_t128_c256/0_6e657874.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            128,
+            256
+          ],
+          "bytes": 262144,
+          "file": "causal_t128_c256_1_in_78.bin"
+        },
+        {
+          "name": "history",
+          "shape": [
+            2,
+            3,
+            256
+          ],
+          "bytes": 6144,
+          "file": "causal_t128_c256_1_in_686973746f7279.bin"
+        },
+        {
+          "name": "weights",
+          "shape": [
+            1,
+            4,
+            1,
+            256
+          ],
+          "bytes": 4096,
+          "file": "causal_t128_c256_1_in_77656967687473.bin"
+        },
+        {
+          "name": "output",
+          "shape": [],
+          "bytes": 262144
+        },
+        {
+          "name": "next",
+          "shape": [],
+          "bytes": 6144
+        }
+      ],
+      "scalars": {
+        "valid": 1
+      },
+      "outputs": {
+        "output": "actual/causal_t128_c256/1_6f7574707574.bin",
+        "next": "actual/causal_t128_c256/1_6e657874.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            128,
+            256
+          ],
+          "bytes": 262144,
+          "file": "causal_t128_c256_2_in_78.bin"
+        },
+        {
+          "name": "history",
+          "shape": [
+            2,
+            3,
+            256
+          ],
+          "bytes": 6144,
+          "file": "causal_t128_c256_2_in_686973746f7279.bin"
+        },
+        {
+          "name": "weights",
+          "shape": [
+            1,
+            4,
+            1,
+            256
+          ],
+          "bytes": 4096,
+          "file": "causal_t128_c256_2_in_77656967687473.bin"
+        },
+        {
+          "name": "output",
+          "shape": [],
+          "bytes": 262144
+        },
+        {
+          "name": "next",
+          "shape": [],
+          "bytes": 6144
+        }
+      ],
+      "scalars": {
+        "valid": 127
+      },
+      "outputs": {
+        "output": "actual/causal_t128_c256/2_6f7574707574.bin",
+        "next": "actual/causal_t128_c256/2_6e657874.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            128,
+            256
+          ],
+          "bytes": 262144,
+          "file": "causal_t128_c256_3_in_78.bin"
+        },
+        {
+          "name": "history",
+          "shape": [
+            2,
+            3,
+            256
+          ],
+          "bytes": 6144,
+          "file": "causal_t128_c256_3_in_686973746f7279.bin"
+        },
+        {
+          "name": "weights",
+          "shape": [
+            1,
+            4,
+            1,
+            256
+          ],
+          "bytes": 4096,
+          "file": "causal_t128_c256_3_in_77656967687473.bin"
+        },
+        {
+          "name": "output",
+          "shape": [],
+          "bytes": 262144
+        },
+        {
+          "name": "next",
+          "shape": [],
+          "bytes": 6144
+        }
+      ],
+      "scalars": {
+        "valid": 128
+      },
+      "outputs": {
+        "output": "actual/causal_t128_c256/3_6f7574707574.bin",
+        "next": "actual/causal_t128_c256/3_6e657874.bin"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2138 @@
+[
+  {
+    "name": "conv2d_0_0",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_0_0_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_0_0_0_out_79.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_0_0_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_0_0_1_out_79.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_0_0_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_0_0_2_out_79.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "conv2d_0_1",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_0_1_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_0_1_0_out_79.bin",
+            "shape": [
+              1,
+              3,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_0_1_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_0_1_1_out_79.bin",
+            "shape": [
+              3,
+              3,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_0_1_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_0_1_2_out_79.bin",
+            "shape": [
+              2,
+              3,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "conv2d_0_2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_0_2_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_0_2_0_out_79.bin",
+            "shape": [
+              1,
+              2,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_0_2_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_0_2_1_out_79.bin",
+            "shape": [
+              3,
+              2,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_0_2_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_0_2_2_out_79.bin",
+            "shape": [
+              2,
+              2,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "conv2d_1_0",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_1_0_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_1_0_0_out_79.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_1_0_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_1_0_1_out_79.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_1_0_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_1_0_2_out_79.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "conv2d_1_1",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_1_1_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_1_1_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_1_1_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_1_1_1_out_79.bin",
+            "shape": [
+              3,
+              4,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_1_1_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_1_1_2_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "conv2d_1_2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_1_2_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_1_2_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_1_2_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_1_2_1_out_79.bin",
+            "shape": [
+              3,
+              4,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "conv2d_1_2_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "conv2d_1_2_2_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "depthwise_conv2d_0_0",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_0_0_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_0_0_0_out_79.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_0_0_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_0_0_1_out_79.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_0_0_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_0_0_2_out_79.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "depthwise_conv2d_0_1",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_0_1_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_0_1_0_out_79.bin",
+            "shape": [
+              1,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_0_1_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_0_1_1_out_79.bin",
+            "shape": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_0_1_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_0_1_2_out_79.bin",
+            "shape": [
+              2,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "depthwise_conv2d_0_2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_0_2_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_0_2_0_out_79.bin",
+            "shape": [
+              1,
+              2,
+              3,
+              6
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_0_2_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_0_2_1_out_79.bin",
+            "shape": [
+              3,
+              2,
+              3,
+              6
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_0_2_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_0_2_2_out_79.bin",
+            "shape": [
+              2,
+              2,
+              3,
+              6
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "depthwise_conv2d_1_0",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_1_0_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_1_0_0_out_79.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_1_0_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_1_0_1_out_79.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_1_0_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_1_0_2_out_79.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "depthwise_conv2d_1_1",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_1_1_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_1_1_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_1_1_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_1_1_1_out_79.bin",
+            "shape": [
+              3,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_1_1_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_1_1_2_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "depthwise_conv2d_1_2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_1_2_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_1_2_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              6
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_1_2_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_1_2_1_out_79.bin",
+            "shape": [
+              3,
+              4,
+              3,
+              6
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "depthwise_conv2d_1_2_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "depthwise_conv2d_1_2_2_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              6
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "average_pool2d_0_0",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_0_0_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_0_0_0_out_79.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_0_0_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_0_0_1_out_79.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_0_0_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_0_0_2_out_79.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "average_pool2d_0_1",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_0_1_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_0_1_0_out_79.bin",
+            "shape": [
+              1,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_0_1_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_0_1_1_out_79.bin",
+            "shape": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_0_1_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_0_1_2_out_79.bin",
+            "shape": [
+              2,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "average_pool2d_0_2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_0_2_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_0_2_0_out_79.bin",
+            "shape": [
+              1,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_0_2_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_0_2_1_out_79.bin",
+            "shape": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_0_2_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_0_2_2_out_79.bin",
+            "shape": [
+              2,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "average_pool2d_1_0",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_1_0_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_1_0_0_out_79.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_1_0_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_1_0_1_out_79.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_1_0_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_1_0_2_out_79.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "average_pool2d_1_1",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_1_1_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_1_1_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_1_1_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_1_1_1_out_79.bin",
+            "shape": [
+              3,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_1_1_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_1_1_2_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "average_pool2d_1_2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_1_2_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_1_2_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_1_2_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_1_2_1_out_79.bin",
+            "shape": [
+              3,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "average_pool2d_1_2_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "average_pool2d_1_2_2_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "max_pool2d_0_0",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_0_0_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_0_0_0_out_79.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_0_0_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_0_0_1_out_79.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_0_0_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_0_0_2_out_79.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "max_pool2d_0_1",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_0_1_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_0_1_0_out_79.bin",
+            "shape": [
+              1,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_0_1_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_0_1_1_out_79.bin",
+            "shape": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_0_1_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_0_1_2_out_79.bin",
+            "shape": [
+              2,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "max_pool2d_0_2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_0_2_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_0_2_0_out_79.bin",
+            "shape": [
+              1,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_0_2_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_0_2_1_out_79.bin",
+            "shape": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_0_2_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_0_2_2_out_79.bin",
+            "shape": [
+              2,
+              3,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "max_pool2d_1_0",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_1_0_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_1_0_0_out_79.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_1_0_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_1_0_1_out_79.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_1_0_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_1_0_2_out_79.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "max_pool2d_1_1",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_1_1_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_1_1_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_1_1_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_1_1_1_out_79.bin",
+            "shape": [
+              3,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_1_1_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_1_1_2_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  },
+  {
+    "name": "max_pool2d_1_2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_1_2_0_in_78.bin",
+            "shape": [
+              1,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_1_2_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_1_2_1_in_78.bin",
+            "shape": [
+              3,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_1_2_1_out_79.bin",
+            "shape": [
+              3,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "max_pool2d_1_2_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              8,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "max_pool2d_1_2_2_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 5e-06,
+    "rtol": 1e-05
+  }
+]

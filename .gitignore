@@ -19,3 +19,7 @@ __pycache__/
 
 # Private compiler analysis for the standalone session fixture.
 /tests/llm_session/*.report.json
+
+# Public Python package build artifacts.
+/python/build/
+/python/*.egg-info/

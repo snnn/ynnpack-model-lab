@@ -1,0 +1,404 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "partition_i2.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "int2",
+      "shape": [
+        13,
+        6
+      ]
+    },
+    {
+      "name": "scalar",
+      "dtype": "int2",
+      "shape": []
+    },
+    {
+      "name": "a",
+      "dtype": "int2",
+      "shape": [
+        13,
+        3
+      ]
+    },
+    {
+      "name": "b",
+      "dtype": "int2",
+      "shape": [
+        13,
+        3
+      ]
+    },
+    {
+      "name": "first",
+      "dtype": "int2",
+      "shape": [
+        13,
+        1
+      ]
+    },
+    {
+      "name": "empty",
+      "dtype": "int2",
+      "shape": [
+        7,
+        0
+      ]
+    },
+    {
+      "name": "rest",
+      "dtype": "int2",
+      "shape": [
+        13,
+        5
+      ]
+    },
+    {
+      "name": "u",
+      "dtype": "int2",
+      "shape": [
+        13,
+        3
+      ]
+    },
+    {
+      "name": "v",
+      "dtype": "int2",
+      "shape": [
+        13,
+        3
+      ]
+    },
+    {
+      "name": "broadcast",
+      "dtype": "int2",
+      "shape": [
+        13,
+        6
+      ]
+    },
+    {
+      "name": "reshaped",
+      "dtype": "int2",
+      "shape": [
+        13,
+        2,
+        3
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            7,
+            6
+          ],
+          "bytes": 11,
+          "file": "partition_i2_0_in_78.bin"
+        },
+        {
+          "name": "scalar",
+          "shape": [],
+          "bytes": 1,
+          "file": "partition_i2_0_in_7363616c6172.bin"
+        },
+        {
+          "name": "a",
+          "shape": [],
+          "bytes": 6
+        },
+        {
+          "name": "b",
+          "shape": [],
+          "bytes": 6
+        },
+        {
+          "name": "first",
+          "shape": [],
+          "bytes": 2
+        },
+        {
+          "name": "empty",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "rest",
+          "shape": [],
+          "bytes": 9
+        },
+        {
+          "name": "u",
+          "shape": [],
+          "bytes": 6
+        },
+        {
+          "name": "v",
+          "shape": [],
+          "bytes": 6
+        },
+        {
+          "name": "broadcast",
+          "shape": [],
+          "bytes": 11
+        },
+        {
+          "name": "reshaped",
+          "shape": [],
+          "bytes": 11
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "a": "actual/partition_i2/0_61.bin",
+        "b": "actual/partition_i2/0_62.bin",
+        "first": "actual/partition_i2/0_6669727374.bin",
+        "empty": "actual/partition_i2/0_656d707479.bin",
+        "rest": "actual/partition_i2/0_72657374.bin",
+        "u": "actual/partition_i2/0_75.bin",
+        "v": "actual/partition_i2/0_76.bin",
+        "broadcast": "actual/partition_i2/0_62726f616463617374.bin",
+        "reshaped": "actual/partition_i2/0_7265736861706564.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            1,
+            6
+          ],
+          "bytes": 2,
+          "file": "partition_i2_1_in_78.bin"
+        },
+        {
+          "name": "scalar",
+          "shape": [],
+          "bytes": 1,
+          "file": "partition_i2_1_in_7363616c6172.bin"
+        },
+        {
+          "name": "a",
+          "shape": [],
+          "bytes": 1
+        },
+        {
+          "name": "b",
+          "shape": [],
+          "bytes": 1
+        },
+        {
+          "name": "first",
+          "shape": [],
+          "bytes": 1
+        },
+        {
+          "name": "empty",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "rest",
+          "shape": [],
+          "bytes": 2
+        },
+        {
+          "name": "u",
+          "shape": [],
+          "bytes": 1
+        },
+        {
+          "name": "v",
+          "shape": [],
+          "bytes": 1
+        },
+        {
+          "name": "broadcast",
+          "shape": [],
+          "bytes": 2
+        },
+        {
+          "name": "reshaped",
+          "shape": [],
+          "bytes": 2
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "a": "actual/partition_i2/1_61.bin",
+        "b": "actual/partition_i2/1_62.bin",
+        "first": "actual/partition_i2/1_6669727374.bin",
+        "empty": "actual/partition_i2/1_656d707479.bin",
+        "rest": "actual/partition_i2/1_72657374.bin",
+        "u": "actual/partition_i2/1_75.bin",
+        "v": "actual/partition_i2/1_76.bin",
+        "broadcast": "actual/partition_i2/1_62726f616463617374.bin",
+        "reshaped": "actual/partition_i2/1_7265736861706564.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            0,
+            6
+          ],
+          "bytes": 0,
+          "file": "partition_i2_2_in_78.bin"
+        },
+        {
+          "name": "scalar",
+          "shape": [],
+          "bytes": 1,
+          "file": "partition_i2_2_in_7363616c6172.bin"
+        },
+        {
+          "name": "a",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "b",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "first",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "empty",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "rest",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "u",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "v",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "broadcast",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "reshaped",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "a": "actual/partition_i2/2_61.bin",
+        "b": "actual/partition_i2/2_62.bin",
+        "first": "actual/partition_i2/2_6669727374.bin",
+        "empty": "actual/partition_i2/2_656d707479.bin",
+        "rest": "actual/partition_i2/2_72657374.bin",
+        "u": "actual/partition_i2/2_75.bin",
+        "v": "actual/partition_i2/2_76.bin",
+        "broadcast": "actual/partition_i2/2_62726f616463617374.bin",
+        "reshaped": "actual/partition_i2/2_7265736861706564.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            13,
+            6
+          ],
+          "bytes": 20,
+          "file": "partition_i2_3_in_78.bin"
+        },
+        {
+          "name": "scalar",
+          "shape": [],
+          "bytes": 1,
+          "file": "partition_i2_3_in_7363616c6172.bin"
+        },
+        {
+          "name": "a",
+          "shape": [],
+          "bytes": 10
+        },
+        {
+          "name": "b",
+          "shape": [],
+          "bytes": 10
+        },
+        {
+          "name": "first",
+          "shape": [],
+          "bytes": 4
+        },
+        {
+          "name": "empty",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "rest",
+          "shape": [],
+          "bytes": 17
+        },
+        {
+          "name": "u",
+          "shape": [],
+          "bytes": 10
+        },
+        {
+          "name": "v",
+          "shape": [],
+          "bytes": 10
+        },
+        {
+          "name": "broadcast",
+          "shape": [],
+          "bytes": 20
+        },
+        {
+          "name": "reshaped",
+          "shape": [],
+          "bytes": 20
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "a": "actual/partition_i2/3_61.bin",
+        "b": "actual/partition_i2/3_62.bin",
+        "first": "actual/partition_i2/3_6669727374.bin",
+        "empty": "actual/partition_i2/3_656d707479.bin",
+        "rest": "actual/partition_i2/3_72657374.bin",
+        "u": "actual/partition_i2/3_75.bin",
+        "v": "actual/partition_i2/3_76.bin",
+        "broadcast": "actual/partition_i2/3_62726f616463617374.bin",
+        "reshaped": "actual/partition_i2/3_7265736861706564.bin"
+      }
+    }
+  ]
+}

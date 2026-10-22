@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "depthwise_conv2d_0_1.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        3,
+        7,
+        8,
+        3
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        3,
+        3,
+        3,
+        3
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            1,
+            7,
+            8,
+            3
+          ],
+          "bytes": 672,
+          "file": "depthwise_conv2d_0_1_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 108
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/depthwise_conv2d_0_1/0_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            7,
+            8,
+            3
+          ],
+          "bytes": 2016,
+          "file": "depthwise_conv2d_0_1_1_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 324
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/depthwise_conv2d_0_1/1_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            7,
+            8,
+            3
+          ],
+          "bytes": 1344,
+          "file": "depthwise_conv2d_0_1_2_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 216
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/depthwise_conv2d_0_1/2_79.bin"
+      }
+    }
+  ]
+}

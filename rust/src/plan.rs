@@ -3,7 +3,7 @@
 //! Versioned construction data. Validation happens before any native mutation.
 #![allow(dead_code)]
 use crate::{Error, Result};
-use serde::Serialize;
+use serde::{Serialize, Deserialize};
 use std::collections::{HashMap, HashSet};
 use std::path::{Component, Path};
 mod commands;
@@ -19,9 +19,9 @@ pub(crate) const MAX_VALUES: usize = 100_000;
 pub(crate) const MAX_COMMANDS: usize = 500_000;
 pub(crate) const MAX_FILE: u64 = 128 * 1024 * 1024;
 
-#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize)]
+#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
-pub(crate) enum Expr {
+pub enum Expr {
     Known(i64),
     Symbol(u32),
     Add(Vec<Expr>),

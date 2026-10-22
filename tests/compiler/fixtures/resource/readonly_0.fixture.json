@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "graphs": {
+    "a": "readonly_0_a.ynn"
+  },
+  "buffers": [
+    {
+      "name": "cache",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        32,
+        4
+      ],
+      "file": "readonly_0_6361636865_initial.bin",
+      "resource": "a",
+      "initialized_extent": 0,
+      "append_axis": 2
+    },
+    {
+      "name": "out",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        0,
+        4
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 0
+      },
+      "bindings": [
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "outputs": {
+        "out": "actual/readonly_0/0_6f7574.bin",
+        "cache": "actual/readonly_0/0_6361636865.bin"
+      }
+    }
+  ]
+}

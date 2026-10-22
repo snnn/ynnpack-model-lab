@@ -1,0 +1,371 @@
+[
+  {
+    "name": "blockwise_7_64",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_7_64_0_in_78.bin",
+            "shape": [
+              0,
+              64
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_7_64_0_out_79.bin",
+            "shape": [
+              0,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_7_64_1_in_78.bin",
+            "shape": [
+              1,
+              64
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_7_64_1_out_79.bin",
+            "shape": [
+              1,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_7_64_2_in_78.bin",
+            "shape": [
+              3,
+              64
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_7_64_2_out_79.bin",
+            "shape": [
+              3,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_7_64_3_in_78.bin",
+            "shape": [
+              17,
+              64
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_7_64_3_out_79.bin",
+            "shape": [
+              17,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_7_64_4_in_78.bin",
+            "shape": [
+              2,
+              64
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_7_64_4_out_79.bin",
+            "shape": [
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 0.0001,
+    "rtol": 2e-06
+  },
+  {
+    "name": "blockwise_131_256",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_131_256_0_in_78.bin",
+            "shape": [
+              0,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_131_256_0_out_79.bin",
+            "shape": [
+              0,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_131_256_1_in_78.bin",
+            "shape": [
+              1,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_131_256_1_out_79.bin",
+            "shape": [
+              1,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_131_256_2_in_78.bin",
+            "shape": [
+              3,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_131_256_2_out_79.bin",
+            "shape": [
+              3,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_131_256_3_in_78.bin",
+            "shape": [
+              17,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_131_256_3_out_79.bin",
+            "shape": [
+              17,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_131_256_4_in_78.bin",
+            "shape": [
+              2,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_131_256_4_out_79.bin",
+            "shape": [
+              2,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 0.0001,
+    "rtol": 2e-06
+  },
+  {
+    "name": "blockwise_256_32",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_256_32_0_in_78.bin",
+            "shape": [
+              0,
+              32
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_256_32_0_out_79.bin",
+            "shape": [
+              0,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_256_32_1_in_78.bin",
+            "shape": [
+              1,
+              32
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_256_32_1_out_79.bin",
+            "shape": [
+              1,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_256_32_2_in_78.bin",
+            "shape": [
+              3,
+              32
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_256_32_2_out_79.bin",
+            "shape": [
+              3,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_256_32_3_in_78.bin",
+            "shape": [
+              17,
+              32
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_256_32_3_out_79.bin",
+            "shape": [
+              17,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_256_32_4_in_78.bin",
+            "shape": [
+              2,
+              32
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_256_32_4_out_79.bin",
+            "shape": [
+              2,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 0.0001,
+    "rtol": 2e-06
+  }
+]

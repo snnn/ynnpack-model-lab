@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "numerical_constant_slice_f4_before.ynn"
+  },
+  "buffers": [
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "a",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 32
+        },
+        {
+          "name": "a",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/numerical_constant_slice_f4_before/0_79.bin",
+        "a": "actual/numerical_constant_slice_f4_before/0_61.bin"
+      }
+    }
+  ]
+}

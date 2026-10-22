@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "pad_reflect_i4.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "int4",
+      "shape": [
+        3,
+        5
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "int4",
+      "shape": [
+        5,
+        9
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            5
+          ],
+          "bytes": 8,
+          "file": "pad_reflect_i4_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 23
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/pad_reflect_i4/0_79.bin"
+      }
+    }
+  ]
+}

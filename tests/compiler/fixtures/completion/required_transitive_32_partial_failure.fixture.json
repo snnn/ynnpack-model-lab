@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "graphs": {
+    "a": "required_transitive_32_partial_failure_a.ynn"
+  },
+  "buffers": [
+    {
+      "name": "cache",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        32,
+        4
+      ],
+      "file": "required_transitive_32_partial_failure_6361636865_initial.bin",
+      "resource": "a",
+      "initialized_extent": 0,
+      "append_axis": 2
+    },
+    {
+      "name": "fresh0",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "fresh1",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "old_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        0,
+        4
+      ]
+    },
+    {
+      "name": "middle_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "final_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "name": "extra_old_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        0,
+        4
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "required_transitive_32_partial_failure_0_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "required_transitive_32_partial_failure_0_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 96
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 192
+        },
+        {
+          "name": "extra_old_codes",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/required_transitive_32_partial_failure/0_6f6c645f636f646573.bin",
+        "middle_codes": "actual/required_transitive_32_partial_failure/0_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/required_transitive_32_partial_failure/0_66696e616c5f636f646573.bin",
+        "extra_old_codes": "actual/required_transitive_32_partial_failure/0_65787472615f6f6c645f636f646573.bin"
+      },
+      "expect_error": "stateful invocation failed",
+      "fail_after_appends": 1,
+      "expect_poisoned": [
+        "cache"
+      ],
+      "before_appends": [
+        {},
+        {
+          "middle_codes": "required_transitive_32_partial_failure_0_6d6964646c655f636f646573.bin"
+        }
+      ]
+    }
+  ]
+}

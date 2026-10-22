@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "graphs": {
+    "a": "target_views_copy_wait_4096_boundary_a.ynn"
+  },
+  "buffers": [
+    {
+      "name": "cache",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        4096,
+        4
+      ],
+      "file": "target_views_copy_wait_4096_boundary_6361636865_initial.bin",
+      "resource": "a",
+      "initialized_extent": 4094,
+      "append_axis": 2
+    },
+    {
+      "name": "fresh0",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "fresh1",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "old_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        4096,
+        4
+      ]
+    },
+    {
+      "name": "middle_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        4096,
+        4
+      ]
+    },
+    {
+      "name": "final_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        4096,
+        4
+      ]
+    },
+    {
+      "name": "extra_old_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        4096,
+        4
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 4094
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "target_views_copy_wait_4096_boundary_0_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "target_views_copy_wait_4096_boundary_0_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 393024
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 393120
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 393216
+        },
+        {
+          "name": "extra_old_codes",
+          "shape": [],
+          "bytes": 393024
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/target_views_copy_wait_4096_boundary/0_6f6c645f636f646573.bin",
+        "middle_codes": "actual/target_views_copy_wait_4096_boundary/0_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/target_views_copy_wait_4096_boundary/0_66696e616c5f636f646573.bin",
+        "cache": "actual/target_views_copy_wait_4096_boundary/0_6361636865.bin",
+        "extra_old_codes": "actual/target_views_copy_wait_4096_boundary/0_65787472615f6f6c645f636f646573.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 4096
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "target_views_copy_wait_4096_boundary_1_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "target_views_copy_wait_4096_boundary_1_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 393216
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 393216
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 393216
+        },
+        {
+          "name": "extra_old_codes",
+          "shape": [],
+          "bytes": 393216
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/target_views_copy_wait_4096_boundary/1_6f6c645f636f646573.bin",
+        "middle_codes": "actual/target_views_copy_wait_4096_boundary/1_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/target_views_copy_wait_4096_boundary/1_66696e616c5f636f646573.bin",
+        "cache": "actual/target_views_copy_wait_4096_boundary/1_6361636865.bin",
+        "extra_old_codes": "actual/target_views_copy_wait_4096_boundary/1_65787472615f6f6c645f636f646573.bin"
+      }
+    }
+  ]
+}

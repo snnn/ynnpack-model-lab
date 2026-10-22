@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "conv2d_0_0.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        3,
+        7,
+        8,
+        3
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        3,
+        7,
+        8,
+        5
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            1,
+            7,
+            8,
+            3
+          ],
+          "bytes": 672,
+          "file": "conv2d_0_0_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 1120
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/conv2d_0_0/0_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            7,
+            8,
+            3
+          ],
+          "bytes": 2016,
+          "file": "conv2d_0_0_1_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 3360
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/conv2d_0_0/1_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            7,
+            8,
+            3
+          ],
+          "bytes": 1344,
+          "file": "conv2d_0_0_2_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 2240
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/conv2d_0_0/2_79.bin"
+      }
+    }
+  ]
+}

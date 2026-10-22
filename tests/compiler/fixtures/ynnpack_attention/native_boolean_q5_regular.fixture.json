@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "native_boolean_q5_regular.ynn"
+  },
+  "buffers": [
+    {
+      "name": "q",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        4,
+        5,
+        16
+      ]
+    },
+    {
+      "name": "k",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        2,
+        7,
+        16
+      ]
+    },
+    {
+      "name": "v",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        2,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "mask",
+      "dtype": "uint8",
+      "shape": [
+        2,
+        4,
+        5,
+        7
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        4,
+        5,
+        8
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "q",
+          "shape": [
+            2,
+            4,
+            5,
+            16
+          ],
+          "bytes": 2560,
+          "file": "native_boolean_q5_regular_0_in_71.bin"
+        },
+        {
+          "name": "k",
+          "shape": [
+            2,
+            2,
+            7,
+            16
+          ],
+          "bytes": 1792,
+          "file": "native_boolean_q5_regular_0_in_6b.bin"
+        },
+        {
+          "name": "v",
+          "shape": [
+            2,
+            2,
+            7,
+            8
+          ],
+          "bytes": 896,
+          "file": "native_boolean_q5_regular_0_in_76.bin"
+        },
+        {
+          "name": "mask",
+          "shape": [
+            2,
+            4,
+            5,
+            7
+          ],
+          "bytes": 280,
+          "file": "native_boolean_q5_regular_0_in_6d61736b.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 1280
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/native_boolean_q5_regular/0_79.bin"
+      }
+    }
+  ]
+}

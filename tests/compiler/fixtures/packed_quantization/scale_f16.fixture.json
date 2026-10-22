@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "scale_f16.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "int4",
+      "shape": [
+        5
+      ]
+    },
+    {
+      "name": "s",
+      "dtype": "fp16",
+      "shape": []
+    },
+    {
+      "name": "z",
+      "dtype": "int32",
+      "shape": []
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        5
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            5
+          ],
+          "bytes": 3,
+          "file": "scale_f16_0_in_78.bin"
+        },
+        {
+          "name": "s",
+          "shape": [],
+          "bytes": 2,
+          "file": "scale_f16_0_in_73.bin"
+        },
+        {
+          "name": "z",
+          "shape": [],
+          "bytes": 4,
+          "file": "scale_f16_0_in_7a.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 20
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/scale_f16/0_79.bin"
+      }
+    }
+  ]
+}

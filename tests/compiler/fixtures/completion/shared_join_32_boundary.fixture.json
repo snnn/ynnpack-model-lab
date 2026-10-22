@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "graphs": {
+    "a": "shared_join_32_boundary_a.ynn"
+  },
+  "buffers": [
+    {
+      "name": "cache",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        32,
+        4
+      ],
+      "file": "shared_join_32_boundary_6361636865_initial.bin",
+      "resource": "a",
+      "initialized_extent": 30,
+      "append_axis": 2
+    },
+    {
+      "name": "fresh0",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "fresh1",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "old_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        32,
+        4
+      ]
+    },
+    {
+      "name": "middle_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        32,
+        4
+      ]
+    },
+    {
+      "name": "final_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        32,
+        4
+      ]
+    },
+    {
+      "name": "extra_old_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        32,
+        4
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 30
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "shared_join_32_boundary_0_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "shared_join_32_boundary_0_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 2880
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 2976
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 3072
+        },
+        {
+          "name": "extra_old_codes",
+          "shape": [],
+          "bytes": 2880
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/shared_join_32_boundary/0_6f6c645f636f646573.bin",
+        "middle_codes": "actual/shared_join_32_boundary/0_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/shared_join_32_boundary/0_66696e616c5f636f646573.bin",
+        "cache": "actual/shared_join_32_boundary/0_6361636865.bin",
+        "extra_old_codes": "actual/shared_join_32_boundary/0_65787472615f6f6c645f636f646573.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 32
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "shared_join_32_boundary_1_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "shared_join_32_boundary_1_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 3072
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 3072
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 3072
+        },
+        {
+          "name": "extra_old_codes",
+          "shape": [],
+          "bytes": 3072
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/shared_join_32_boundary/1_6f6c645f636f646573.bin",
+        "middle_codes": "actual/shared_join_32_boundary/1_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/shared_join_32_boundary/1_66696e616c5f636f646573.bin",
+        "cache": "actual/shared_join_32_boundary/1_6361636865.bin",
+        "extra_old_codes": "actual/shared_join_32_boundary/1_65787472615f6f6c645f636f646573.bin"
+      }
+    }
+  ]
+}

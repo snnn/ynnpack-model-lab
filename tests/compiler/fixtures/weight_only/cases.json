@@ -1,0 +1,870 @@
+[
+  {
+    "name": "linear0",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "linear0_0_in_78.bin",
+            "shape": [
+              0,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear0_0_out_79.bin",
+            "shape": [
+              0,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear0_1_in_78.bin",
+            "shape": [
+              1,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear0_1_out_79.bin",
+            "shape": [
+              1,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear0_2_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear0_2_out_79.bin",
+            "shape": [
+              3,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear0_3_in_78.bin",
+            "shape": [
+              17,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear0_3_out_79.bin",
+            "shape": [
+              17,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear0_4_in_78.bin",
+            "shape": [
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear0_4_out_79.bin",
+            "shape": [
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 0.002,
+    "rtol": 5e-05,
+    "weight_only": true
+  },
+  {
+    "name": "linear1",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "linear1_0_in_78.bin",
+            "shape": [
+              0,
+              129
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear1_0_out_79.bin",
+            "shape": [
+              0,
+              65
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear1_1_in_78.bin",
+            "shape": [
+              1,
+              129
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear1_1_out_79.bin",
+            "shape": [
+              1,
+              65
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear1_2_in_78.bin",
+            "shape": [
+              3,
+              129
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear1_2_out_79.bin",
+            "shape": [
+              3,
+              65
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear1_3_in_78.bin",
+            "shape": [
+              17,
+              129
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear1_3_out_79.bin",
+            "shape": [
+              17,
+              65
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear1_4_in_78.bin",
+            "shape": [
+              2,
+              129
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear1_4_out_79.bin",
+            "shape": [
+              2,
+              65
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 0.002,
+    "rtol": 5e-05,
+    "weight_only": true
+  },
+  {
+    "name": "linear2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "linear2_0_in_78.bin",
+            "shape": [
+              0,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear2_0_out_79.bin",
+            "shape": [
+              0,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear2_1_in_78.bin",
+            "shape": [
+              1,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear2_1_out_79.bin",
+            "shape": [
+              1,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear2_2_in_78.bin",
+            "shape": [
+              3,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear2_2_out_79.bin",
+            "shape": [
+              3,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear2_3_in_78.bin",
+            "shape": [
+              17,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear2_3_out_79.bin",
+            "shape": [
+              17,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear2_4_in_78.bin",
+            "shape": [
+              2,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear2_4_out_79.bin",
+            "shape": [
+              2,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 0.002,
+    "rtol": 5e-05,
+    "weight_only": true
+  },
+  {
+    "name": "linear3",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "linear3_0_in_78.bin",
+            "shape": [
+              0,
+              12
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear3_0_out_79.bin",
+            "shape": [
+              0,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear3_1_in_78.bin",
+            "shape": [
+              1,
+              12
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear3_1_out_79.bin",
+            "shape": [
+              1,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear3_2_in_78.bin",
+            "shape": [
+              3,
+              12
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear3_2_out_79.bin",
+            "shape": [
+              3,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear3_3_in_78.bin",
+            "shape": [
+              17,
+              12
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear3_3_out_79.bin",
+            "shape": [
+              17,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear3_4_in_78.bin",
+            "shape": [
+              2,
+              12
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear3_4_out_79.bin",
+            "shape": [
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 0.002,
+    "rtol": 5e-05,
+    "weight_only": true
+  },
+  {
+    "name": "linear4",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "linear4_0_in_78.bin",
+            "shape": [
+              0,
+              132
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear4_0_out_79.bin",
+            "shape": [
+              0,
+              67
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear4_1_in_78.bin",
+            "shape": [
+              1,
+              132
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear4_1_out_79.bin",
+            "shape": [
+              1,
+              67
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear4_2_in_78.bin",
+            "shape": [
+              3,
+              132
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear4_2_out_79.bin",
+            "shape": [
+              3,
+              67
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear4_3_in_78.bin",
+            "shape": [
+              17,
+              132
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear4_3_out_79.bin",
+            "shape": [
+              17,
+              67
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear4_4_in_78.bin",
+            "shape": [
+              2,
+              132
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear4_4_out_79.bin",
+            "shape": [
+              2,
+              67
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 0.002,
+    "rtol": 5e-05,
+    "weight_only": true
+  },
+  {
+    "name": "linear5",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "linear5_0_in_78.bin",
+            "shape": [
+              0,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear5_0_out_79.bin",
+            "shape": [
+              0,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear5_1_in_78.bin",
+            "shape": [
+              1,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear5_1_out_79.bin",
+            "shape": [
+              1,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear5_2_in_78.bin",
+            "shape": [
+              3,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear5_2_out_79.bin",
+            "shape": [
+              3,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear5_3_in_78.bin",
+            "shape": [
+              17,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear5_3_out_79.bin",
+            "shape": [
+              17,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear5_4_in_78.bin",
+            "shape": [
+              2,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear5_4_out_79.bin",
+            "shape": [
+              2,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 0.002,
+    "rtol": 5e-05,
+    "weight_only": true
+  },
+  {
+    "name": "linear6",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "linear6_0_in_78.bin",
+            "shape": [
+              0,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear6_0_out_79.bin",
+            "shape": [
+              0,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear6_1_in_78.bin",
+            "shape": [
+              1,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear6_1_out_79.bin",
+            "shape": [
+              1,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear6_2_in_78.bin",
+            "shape": [
+              3,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear6_2_out_79.bin",
+            "shape": [
+              3,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear6_3_in_78.bin",
+            "shape": [
+              17,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear6_3_out_79.bin",
+            "shape": [
+              17,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "linear6_4_in_78.bin",
+            "shape": [
+              2,
+              257
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "linear6_4_out_79.bin",
+            "shape": [
+              2,
+              131
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 0.002,
+    "rtol": 5e-05,
+    "weight_only": true
+  }
+]

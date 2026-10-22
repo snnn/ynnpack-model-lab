@@ -1,0 +1,719 @@
+{
+  "version": 1,
+  "graphs": {
+    "a": "shared_2048_continuity_a.ynn",
+    "b": "shared_2048_continuity_b.ynn"
+  },
+  "buffers": [
+    {
+      "name": "cache",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        2048,
+        4
+      ],
+      "file": "shared_2048_continuity_6361636865_initial.bin",
+      "resource": "a",
+      "initialized_extent": 0,
+      "append_axis": 2
+    },
+    {
+      "name": "second",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        2048,
+        4
+      ],
+      "file": "shared_2048_continuity_7365636f6e64_initial.bin",
+      "resource": "a",
+      "initialized_extent": 0,
+      "append_axis": 2
+    },
+    {
+      "name": "fresh",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        129,
+        4
+      ]
+    },
+    {
+      "name": "out",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        128,
+        4
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "shared_2048_continuity_0_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/0_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/0_6361636865.bin",
+        "second": "actual/shared_2048_continuity/0_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 1
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            126,
+            4
+          ],
+          "bytes": 3024,
+          "file": "shared_2048_continuity_1_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 12096
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/1_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/1_6361636865.bin",
+        "second": "actual/shared_2048_continuity/1_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 127
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "shared_2048_continuity_2_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/2_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/2_6361636865.bin",
+        "second": "actual/shared_2048_continuity/2_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 128
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "shared_2048_continuity_3_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/3_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/3_6361636865.bin",
+        "second": "actual/shared_2048_continuity/3_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 129
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "shared_2048_continuity_4_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/4_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/4_6361636865.bin",
+        "second": "actual/shared_2048_continuity/4_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 130
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            128,
+            4
+          ],
+          "bytes": 3072,
+          "file": "shared_2048_continuity_5_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 12288
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/5_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/5_6361636865.bin",
+        "second": "actual/shared_2048_continuity/5_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 258
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            128,
+            4
+          ],
+          "bytes": 3072,
+          "file": "shared_2048_continuity_6_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 12288
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/6_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/6_6361636865.bin",
+        "second": "actual/shared_2048_continuity/6_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 386
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            124,
+            4
+          ],
+          "bytes": 2976,
+          "file": "shared_2048_continuity_7_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 11904
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/7_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/7_6361636865.bin",
+        "second": "actual/shared_2048_continuity/7_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 510
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "shared_2048_continuity_8_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/8_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/8_6361636865.bin",
+        "second": "actual/shared_2048_continuity/8_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 511
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "shared_2048_continuity_9_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/9_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/9_6361636865.bin",
+        "second": "actual/shared_2048_continuity/9_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 512
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "shared_2048_continuity_10_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/10_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/10_6361636865.bin",
+        "second": "actual/shared_2048_continuity/10_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 513
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            128,
+            4
+          ],
+          "bytes": 3072,
+          "file": "shared_2048_continuity_11_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 12288
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/11_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/11_6361636865.bin",
+        "second": "actual/shared_2048_continuity/11_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 641
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            128,
+            4
+          ],
+          "bytes": 3072,
+          "file": "shared_2048_continuity_12_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 12288
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/12_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/12_6361636865.bin",
+        "second": "actual/shared_2048_continuity/12_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 769
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            128,
+            4
+          ],
+          "bytes": 3072,
+          "file": "shared_2048_continuity_13_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 12288
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/13_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/13_6361636865.bin",
+        "second": "actual/shared_2048_continuity/13_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 897
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            126,
+            4
+          ],
+          "bytes": 3024,
+          "file": "shared_2048_continuity_14_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 12096
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/14_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/14_6361636865.bin",
+        "second": "actual/shared_2048_continuity/14_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 1023
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "shared_2048_continuity_15_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/15_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/15_6361636865.bin",
+        "second": "actual/shared_2048_continuity/15_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 1024
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "shared_2048_continuity_16_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/16_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/16_6361636865.bin",
+        "second": "actual/shared_2048_continuity/16_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 1024
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            2,
+            4
+          ],
+          "bytes": 48,
+          "file": "shared_2048_continuity_17_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 192
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/17_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/17_6361636865.bin",
+        "second": "actual/shared_2048_continuity/17_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 1026
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            17,
+            4
+          ],
+          "bytes": 408,
+          "file": "shared_2048_continuity_18_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 1632
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/18_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/18_6361636865.bin",
+        "second": "actual/shared_2048_continuity/18_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 1043
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            127,
+            4
+          ],
+          "bytes": 3048,
+          "file": "shared_2048_continuity_19_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 12192
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/19_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/19_6361636865.bin",
+        "second": "actual/shared_2048_continuity/19_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 1170
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            128,
+            4
+          ],
+          "bytes": 3072,
+          "file": "shared_2048_continuity_20_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 12288
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/20_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/20_6361636865.bin",
+        "second": "actual/shared_2048_continuity/20_7365636f6e64.bin"
+      }
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 1298
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            129,
+            4
+          ],
+          "bytes": 3096,
+          "file": "shared_2048_continuity_21_6672657368.bin"
+        }
+      ],
+      "outputs": {},
+      "expect_error": "bounds",
+      "expect_unchanged": true
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 1298
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "shared_2048_continuity_22_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "outputs": {
+        "out": "actual/shared_2048_continuity/22_6f7574.bin",
+        "cache": "actual/shared_2048_continuity/22_6361636865.bin",
+        "second": "actual/shared_2048_continuity/22_7365636f6e64.bin"
+      }
+    }
+  ]
+}

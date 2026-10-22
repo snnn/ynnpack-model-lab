@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "slice_transpose.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            3,
+            4
+          ],
+          "bytes": 96,
+          "file": "slice_transpose_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 32
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/slice_transpose/0_79.bin"
+      }
+    }
+  ]
+}
