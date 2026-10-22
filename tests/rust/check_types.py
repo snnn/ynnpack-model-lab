@@ -15,6 +15,12 @@ def main():
     args = parser.parse_args()
     prelude = 'use ynnpack_lab::vision::{VisionBuilder, VisionSession};\n'
     examples = [
+        ('prepared_program_not_send', 'E0277', '''
+fn require_send<T: Send>() {}
+fn example() { require_send::<ynnpack_lab::runtime::PreparedProgram>(); }'''),
+        ('asset_store_not_sync', 'E0277', '''
+fn require_sync<T: Sync>() {}
+fn example() { require_sync::<ynnpack_lab::runtime::AssetStore>(); }'''),
         ('consumed_builder', 'E0382', '''
 fn example(builder: VisionBuilder) {
     let first = builder.prepare(1);

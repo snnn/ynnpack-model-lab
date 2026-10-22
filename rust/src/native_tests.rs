@@ -40,6 +40,7 @@ pub(crate) fn run(args: &[String]) -> Result<()> {
     drop(graph); // native borrows end before stack storage
     mapped_constant_lifetime()?;
     loaded_constant_lifetime()?;
+    crate::runtime::tests::preparation()?;
     for capacity in [2048, 8448] {
         for threads in [1, 4] {
             state_checks(capacity, threads, &model.join("../generated"))?;

@@ -4,6 +4,7 @@ use crate::{frontend::Options,Result};
 use std::path::Path;
 
 pub(super) fn run(args:&[String])->Result<()> {
+    runtime_session()?;
     let root=Path::new(&args[1]);
     let mut options=Options::parse(&["test".into(),format!("--bundle_dir={}",root.display()),
         format!("--parameter_dir={}/parameters",root.display()),"--cache_capacity=8".into(),
@@ -74,4 +75,43 @@ pub(super) fn run(args:&[String])->Result<()> {
     }
     std::fs::remove_dir_all(output).unwrap();
     println!("Session reset, transitions, bounds, rejection, poisoning and profile metadata passed");Ok(())
+}
+
+fn runtime_session() -> Result<()> {
+    use crate::{compiler::*, runtime::*};
+    use std::collections::BTreeMap;
+    let mut b = GraphBuilder::default();
+    b.input("x", TensorType { shape: vec![Expr::Known(1)], ..Default::default() })?;
+    b.value("bias", Value { tensor: TensorType { shape: vec![Expr::Known(1),Expr::Known(4)], ..Default::default() },
+        constant: true, floats: vec![1.0.into(),2.0.into(),3.0.into(),4.0.into()], ..Default::default() })?;
+    b.operation(Op::Add, &["x","bias"], "logits", Attributes::default())?;
+    let g = b.finish(&["logits"]);
+    let program = Program { phases: BTreeMap::from([("prefill".into(),g.clone()),("decode".into(),g)]), ..Default::default() };
+    let phase = serde_json::json!({"logits":null,"row_policy":"valid","scalars":{},
+        "inputs":[{"name":"x","dtype":"fp32","shape":["rows"],"recipe":{"kind":"positions"}}]});
+    let mut value = serde_json::json!({"format":"ynn-llm-execution","model":"tiny-semantic",
+        "capacity":8,"prefill_rows":1,"vocabulary":4,"prefill_after_decode":false,
+        "graphs":{"prefill":phase,"decode":phase},"resources":[],"fixed_states":[],"embeddings":{}});
+    value["graphs"]["decode"]["logits"] = serde_json::json!("logits");
+    value["graphs"]["prefill"]["logits"] = serde_json::json!("logits");
+    let spec: ExecutionSpec = serde_json::from_value(value)?;
+    let make = |spec: &ExecutionSpec| prepare(&program,AssetStore::open(Path::new(""),Path::new(""))?,
+        PrepareOptions { threads:1, execution:Some(spec), ..Default::default() });
+    let mut wrong = spec.clone(); wrong.vocabulary = 5;
+    assert!(make(&wrong).is_err());
+    assert!(Session::from_prepared(make(&spec)?,wrong).is_err());
+    let mut session = Session::from_prepared(make(&spec)?,spec)?;
+    drop(program);
+    session.invoke(&[0],false,None)?;
+    session.invoke(&[1],true,None)?;
+    assert_eq!(session.logits(),&[2.,3.,4.,5.]);
+    assert_eq!(session.preparation.compiler_calls,1);
+    assert!(session.invoke(&[4],true,None).is_err());
+    for _ in 0..6 { session.invoke(&[0],true,None)?; }
+    assert_eq!(session.position(),8);
+    assert!(session.invoke(&[0],true,None).is_err());
+    session.reset()?;
+    session.invoke(&[0],true,None)?;
+    assert_eq!(session.logits(),&[1.,2.,3.,4.]);
+    Ok(())
 }

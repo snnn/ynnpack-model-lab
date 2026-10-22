@@ -12,8 +12,21 @@
 #include "runtime/value_trace.h"
 #include "runtime/ynnpack_support.h"
 
+#ifdef LAB_RUNTIME_TEST_HOOKS
+inline size_t lab_test_graphs = 0, lab_test_assets = 0;
+inline int lab_test_compile_countdown = -1;
+struct LabTestLifetime {
+  size_t& count;
+  explicit LabTestLifetime(size_t& count) : count(count) { ++count; }
+  ~LabTestLifetime() { --count; }
+};
+#endif
+
 // One native adapter implements the construction vocabulary for every model.
 struct LabAssets {
+#ifdef LAB_RUNTIME_TEST_HOOKS
+  LabTestLifetime lifetime{lab_test_assets};
+#endif
   lab::Weights weights;
   std::unique_ptr<lab::ModelAssets> model;
   std::unique_ptr<lab::TensorProvider> hf_weights;
@@ -36,6 +49,9 @@ struct LabPlanContext {
   std::unordered_map<uint32_t, slinky::expr> symbols;
 };
 struct LabGraph {
+#ifdef LAB_RUNTIME_TEST_HOOKS
+  LabTestLifetime lifetime{lab_test_graphs};
+#endif
   std::unique_ptr<lab::ValueTrace> trace;
   std::unique_ptr<lab_ynn::Graph> graph;
   slinky::stmt prepared_pipeline;

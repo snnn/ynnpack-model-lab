@@ -86,6 +86,9 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         }
         Ok(result)
     }
+    let prepare_drop = take_option(&mut arguments, "--prepare-drop")?
+        .map(|s| s.parse::<usize>().ok().filter(|n| (1..=16).contains(n))
+            .ok_or_else(|| Error::invalid("--prepare-drop must be 1..16"))).transpose()?;
     let program_path = take_option(&mut arguments, "--program")?;
     let qwen_assets = take_option(&mut arguments, "--qwen-assets")?;
     let execution_path = take_option(&mut arguments, "--execution")?;
@@ -165,10 +168,34 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
             "warmups": o.warmup_runs, "repetitions": o.measured_runs,
             "ynn_math": ffi::math_mode()?,
             "profile_execution": o.profile_execution, "trace_plan": o.trace_plan,
-            "timings_valid_for_benchmark": !score_tokens && o.profile_execution == "none"
+            "timings_valid_for_benchmark": prepare_drop.is_none() && !score_tokens && o.profile_execution == "none"
                 && !o.report_memory && !o.dump_outputs && o.trace_plan.is_empty(),
         }),
     )?;
+    if let Some(repetitions) = prepare_drop {
+        let mut records = Vec::new();
+        for repetition in 0..repetitions {
+            let before = ffi::allocator_bytes();
+            let start = Instant::now();
+            let session = if let Some(program) = program.as_ref() {
+                let assets = crate::runtime::AssetStore::open(Path::new(&o.bundle_dir),Path::new(&o.parameter_dir))?;
+                let prepared = crate::runtime::prepare(program,assets,session::prepare_options(&o,&package))?;
+                Session::from_prepared(prepared,package.clone())?
+            } else {
+                Session::load(root,Path::new(&o.bundle_dir),Path::new(&o.parameter_dir),Package::read(root)?,&o)?
+            };
+            let mut record = json!({"repetition":repetition,"prepare_ms":start.elapsed().as_secs_f64()*1000.0,
+                "before_allocator":before,"prepared_rss":ffi::rss(),"prepared_allocator":ffi::allocator_bytes(),
+                "preparation":session.preparation});
+            drop(session);
+            record["after_drop_rss"] = json!(ffi::rss());
+            record["after_drop_allocator"] = json!(ffi::allocator_bytes());
+            records.push(record);
+            io::json(&output.join("preparation_lifecycle.json"),&records)?;
+        }
+        io::json(&output.join("completion.json"),&json!({"status":"completed","prepare_drop":repetitions}))?;
+        return Ok(());
+    }
     let start = Instant::now();
     let mut session = if let Some(program) = program.take() {
         let assets = crate::runtime::AssetStore::open(Path::new(&o.bundle_dir), Path::new(&o.parameter_dir))?;

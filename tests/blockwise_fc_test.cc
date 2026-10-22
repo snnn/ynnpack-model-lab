@@ -15,32 +15,37 @@ void Require(bool condition, const char* message) {
 }
 
 void CheckSelection() {
-  using lab_ynn::detail::SelectBlockwiseDot;
-  auto portable = SelectBlockwiseDot(8, 131, 0);
-  Require(portable.kernel.tile_k == 1 && portable.activation_shift == 0,
-          "portable U8 dot must use unpacked K");
+  auto check = [](uint64_t flags, size_t tile_k, size_t shift) {
+    void* raw = nullptr;
+    Require(!lab_blockwise_create(131, 256, 17, flags, &raw),
+            "Rust preparation failed");
+    std::shared_ptr<void> operation(raw, lab_blockwise_delete);
+    for (size_t rows = 1; rows <= 17; ++rows) {
+      LabBlockwiseInfo info{};
+      Require(!lab_blockwise_info(raw, rows, &info),
+              "Missing prepared descriptor");
+      Require(
+          !tile_k || (info.tile_k == tile_k && info.activation_shift == shift),
+          "Unexpected runtime ISLE selection");
+      Require(info.prepared_queries == 24 && info.worker_scratch_bytes == 8704,
+              "Descriptor/scratch contract changed");
+      Require(!(info.arch_flags & ~ynn::get_supported_arch_flags()),
+              "Unsupported ISA selected");
+      if (rows == 1 || rows == 8)
+        std::cout << "selection flags=" << info.arch_flags << " rows=" << rows
+                  << " kernel=" << info.kernel_name << " tile_k=" << info.tile_k
+                  << " shift=" << info.activation_shift << '\n';
+    }
+  };
+  check(0, 1, 0);
+  check(UINT64_MAX, 0, 0);
 #ifdef YNN_ARCH_X86_AVX2
-  auto avx2 = SelectBlockwiseDot(8, 131, ynn::arch_flag::avx2);
-  Require(avx2.kernel.tile_k == 4 && avx2.activation_shift == 128,
-          "AVX2 without VNNI must recenter to signed codes");
+  if (ynn::is_arch_supported(ynn::arch_flag::avx2))
+    check(ynn::arch_flag::avx2, 4, 128);
 #endif
 #ifdef YNN_ARCH_ARM_NEONDOT
-  auto neon = SelectBlockwiseDot(8, 131, ynn::arch_flag::neondot);
-  Require(neon.kernel.tile_k == 4 && neon.activation_shift == 128,
-          "NEON DOT must recenter to signed codes");
-#endif
-#if defined(YNN_ARCH_X86_AMXINT8) && defined(YNN_ARCH_X86_AVX512VNNI) && \
-    __has_include("ynnpack/kernels/dot/cost_model/cost_model.h")
-  // Selection only: this also runs on hosts that cannot execute AMX/VNNI.
-  // Make AMX the cheapest candidate to catch accepting it and rejecting its
-  // tile shape later, which made execution depend on the CI host's CPU.
-  ynn::dot_cost_models costs;
-  costs.x86_amx_uint8 = {0, 0, 0, 0};
-  auto amx_host = SelectBlockwiseDot(
-      8, 131, ynn::arch_flag::amxint8 | ynn::arch_flag::avx512vnni, costs);
-  Require(amx_host.kernel.tile_m == 1 && amx_host.kernel.tile_k == 4 &&
-              amx_host.activation_shift == 0,
-          "AMX must not displace a compatible VNNI kernel");
+  if (ynn::is_arch_supported(ynn::arch_flag::neondot))
+    check(ynn::arch_flag::neondot, 4, 128);
 #endif
 }
 
@@ -67,6 +72,10 @@ void CheckNumerics(size_t rows, size_t n, size_t k, size_t threads,
                          : m % 4 == 1 ? 0.0f
                          : m % 4 == 2 ? value
                                       : -value;
+      if (m % 5 == 4)  // Exact half-way rounding, with scale one.
+        input[m * k + r] = r == 0       ? 0.0f
+                           : r == k - 1 ? 255.0f
+                                        : float(r % 200) + 0.5f;
     }
   lab_ynn::Graph graph(5);
   graph.Tensor(0, "x", ynn_type_fp32, {rows, k}, YNN_VALUE_FLAG_EXTERNAL_INPUT,
@@ -131,7 +140,7 @@ int main() {
     for (auto mask : masks) {
       for (size_t rows : {0, 1, 3, 8, 9, 17})
         for (auto shape :
-             {std::pair<size_t, size_t>{7, 64}, {131, 256}, {256, 32}})
+             {std::pair<size_t, size_t>{1, 32}, {7, 64}, {131, 256}, {256, 32}})
           for (size_t threads : {1, 4})
             CheckNumerics(rows, shape.first, shape.second, threads, mask);
       std::cout << "blockwise FC arch_flags=" << mask

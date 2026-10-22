@@ -82,6 +82,7 @@ impl Assets {
         Ok(Rc::new(Self {
             ptr: NonNull::new(ptr).ok_or_else(|| Error::invalid("Null HF assets"))?,
             verified: RefCell::new(HashMap::new()),
+            owned: HashMap::new(),
         }))
     }
     pub fn config(&self) -> Result<Config> {

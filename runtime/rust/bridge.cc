@@ -21,6 +21,15 @@ std::vector<size_t> Shape(const size_t* shape, size_t rank) {
 }  // namespace
 
 extern "C" {
+#ifdef LAB_RUNTIME_TEST_HOOKS
+void lab_test_live_handles(size_t* graphs, size_t* assets) noexcept {
+  *graphs = lab_test_graphs;
+  *assets = lab_test_assets;
+}
+void lab_test_fail_compile_after(int successful) noexcept {
+  lab_test_compile_countdown = successful;
+}
+#endif
 void lab_assets_delete(LabAssets* assets) noexcept { delete assets; }
 void lab_graph_delete(LabGraph* graph) noexcept { delete graph; }
 void lab_resource_delete(LabResource* resource) noexcept { delete resource; }
@@ -48,6 +57,13 @@ int32_t lab_graph_compile(LabGraph* graph, size_t threads,
   return LabCatch(error, [&] {
     LabRequire(graph && threads >= 1 && threads <= 256,
                "Invalid graph/threads");
+#ifdef LAB_RUNTIME_TEST_HOOKS
+    if (lab_test_compile_countdown == 0) {
+      lab_test_compile_countdown = -1;
+      throw std::runtime_error("Injected later-phase preparation failure");
+    }
+    if (lab_test_compile_countdown > 0) --lab_test_compile_countdown;
+#endif
     graph->graph->Compile(threads);
     graph->prepared_pipeline = graph->graph->pipeline();
     if (graph->trace) graph->trace->Bind();
