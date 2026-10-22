@@ -1,0 +1,18 @@
+ynn 1 resource_contract=1 completion_contract=1 profiling=auto {
+  weight table: storage<fp32[4, 4]> = asset(a5);
+  @shape() input ids: int32[1];
+  @shape() input memory: fp32[1, 4];
+  let row: storage<fp32[1, 4]> = gather(table, ids, axis=0);
+  let next: fp32[1, 4] = add(row, memory);
+  let scores: fp32[1, 4] = copy(next);
+
+  output next;
+  output scores;
+
+  metadata {
+    order [
+      ids, memory, next, row, scores, table,
+    ];
+    asset a5 = asset(path="@parameters/5ea6540b76f84340381a244977fc8cfc1e808c6f957123d82b381e619fbf198e.bin", bytes=64, sha256="5ea6540b76f84340381a244977fc8cfc1e808c6f957123d82b381e619fbf198e");
+  }
+}

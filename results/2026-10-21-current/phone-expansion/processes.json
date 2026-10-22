@@ -1,0 +1,362 @@
+[
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "gemma4_e2b_t1_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 75.52798210503533
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 5327892480,
+      "rss_bytes": 3768475648,
+      "setup_ms": 36978.164049,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 5327892480,
+      "rss_bytes": 3440295936
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "gemma4_e2b_t4_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 69.8772058840259
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 5293989888,
+      "rss_bytes": 4758839296,
+      "setup_ms": 44518.207952,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 5293989888,
+      "rss_bytes": 3597434880
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "qwen3_0_6b_t1_c2048",
+    "status": {
+      "returncode": 134,
+      "elapsed_seconds": 45.48104119300842
+    }
+  },
+  {
+    "campaign": "samsung_s25-primary",
+    "job": "qwen3_0_6b_t4_c2048",
+    "status": {
+      "returncode": 134,
+      "elapsed_seconds": 48.20291458599968
+    }
+  },
+  {
+    "campaign": "samsung_s25-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 86.09577301400714
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 5788704768,
+      "rss_bytes": 5738201088,
+      "setup_ms": 44694.165712,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 5788704768,
+      "rss_bytes": 5748334592
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "samsung_s25-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 74.95866912294878
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 5276200960,
+      "rss_bytes": 4684201984,
+      "setup_ms": 46740.934722,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 5276200960,
+      "rss_bytes": 4982136832
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 70.58471079100855
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 78.80781302601099
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 79.89945956104202
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "samsung_s25-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 70.4395761199994
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "gemma4_e2b_t1_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 85.920215154998
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 4970508288,
+      "rss_bytes": 4732829696,
+      "setup_ms": 46105.58459300001,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 4970508288,
+      "rss_bytes": 4912308224
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "gemma4_e2b_t4_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 133.30224564502714
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 5627531264,
+      "rss_bytes": 5508280320,
+      "setup_ms": 92298.936059,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 5627531264,
+      "rss_bytes": 5287337984
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "qwen3_0_6b_t1_c2048",
+    "status": {
+      "returncode": 1,
+      "elapsed_seconds": 46.71933001599973
+    }
+  },
+  {
+    "campaign": "pixel11-primary",
+    "job": "qwen3_0_6b_t4_c2048",
+    "status": {
+      "returncode": 1,
+      "elapsed_seconds": 50.547246670001186
+    }
+  },
+  {
+    "campaign": "pixel11-repeat",
+    "job": "gemma4_e2b_t1_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 84.8329239829909
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 5790134272,
+      "rss_bytes": 5739761664,
+      "setup_ms": 46264.298914,
+      "threads": 1
+    },
+    "memory": {
+      "peak_rss_bytes": 5790134272,
+      "rss_bytes": 5749846016
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "pixel11-repeat",
+    "job": "gemma4_e2b_t4_c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 102.11824401299236
+    },
+    "setup": {
+      "model": "gemma4_e2b",
+      "peak_rss_bytes": 5031809024,
+      "rss_bytes": 4982833152,
+      "setup_ms": 58069.914361999996,
+      "threads": 4
+    },
+    "memory": {
+      "peak_rss_bytes": 5031809024,
+      "rss_bytes": 3570483200
+    },
+    "counters": [
+      {
+        "append_bytes": 42983424,
+        "append_calls": 1200,
+        "view_copy_bytes": 0
+      },
+      {
+        "append_bytes": 3649536,
+        "append_calls": 11880,
+        "view_copy_bytes": 0
+      }
+    ],
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r1-c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 86.93441744998563
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r1-c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 85.63007173297228
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r2-c2048",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 86.05407986300997
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  },
+  {
+    "campaign": "pixel11-capacity",
+    "job": "gemma4-e2b-t4-r2-c8448",
+    "status": {
+      "returncode": 0,
+      "elapsed_seconds": 84.73792457202217
+    },
+    "resolved_cases_sha256": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2"
+  }
+]

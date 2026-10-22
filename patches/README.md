@@ -42,11 +42,9 @@ that the cost model prefers for the actual row count.
 The patch uses `a.extent(num_k_dims)`, which also handles implicit singleton
 rows in rank-one and broadcast inputs. Symbolic row counts retain the existing
 fallback and packing-size caps. It changes neither arithmetic contracts nor
-the cost model, and does not force an ISA or modify CPU detection. See the
-[original selector reproduction](../results/2026-10-05-packing-fix/README.md#original-selector-reproduction).
-The [matched validation and timing record](../results/2026-10-05-packing-fix/README.md)
-documents phone DOTPROD selection, observed decode gains, and desktop numerical
-differences.
+the cost model, and does not force an ISA or modify CPU detection. Validate
+selected kernels and model outputs when changing this patch; a packing choice
+can change floating-point accumulation order.
 
 The pinned upstream revision still needs this correction. Upstream separately
 disables INT2 I8MM kernels until their packing uses the same `tile_k=16` as other

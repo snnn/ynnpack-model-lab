@@ -1,0 +1,122 @@
+{
+  "kind": "post-qualification diagnostic; not acceptance timing",
+  "same_core_class": [
+    {
+      "order": 0,
+      "cpus": "2",
+      "engine": "step-native",
+      "rows": 1,
+      "valid": 1,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 5.620008842e-08,
+      "max_scaled_error": 0.002039717696,
+      "setup_ms": 18.807032,
+      "ms": [
+        0.5308208249,
+        0.4568100091,
+        0.4673655864,
+        0.4678233248,
+        0.4717389505
+      ],
+      "median_ms": 0.4678233248
+    },
+    {
+      "order": 1,
+      "cpus": "2\u20135",
+      "engine": "step-native",
+      "rows": 1,
+      "valid": 1,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 5.620008842e-08,
+      "max_scaled_error": 0.002039717696,
+      "setup_ms": 32.288177,
+      "ms": [
+        1.130424593,
+        1.324325809,
+        1.638372561,
+        1.714477812,
+        1.728575543
+      ],
+      "median_ms": 1.638372561
+    },
+    {
+      "order": 2,
+      "cpus": "2\u20135",
+      "engine": "step-native",
+      "rows": 1,
+      "valid": 1,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 5.620008842e-08,
+      "max_scaled_error": 0.002039717696,
+      "setup_ms": 19.119792,
+      "ms": [
+        2.025068798,
+        1.908975429,
+        1.905526419,
+        1.930049048,
+        1.918100676
+      ],
+      "median_ms": 1.918100676
+    },
+    {
+      "order": 3,
+      "cpus": "2",
+      "engine": "step-native",
+      "rows": 1,
+      "valid": 1,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 5.620008842e-08,
+      "max_scaled_error": 0.002039717696,
+      "setup_ms": 19.395625,
+      "ms": [
+        0.5227970157,
+        0.4845257579,
+        0.4871546715,
+        0.4931716897,
+        0.4937274138
+      ],
+      "median_ms": 0.4931716897
+    }
+  ],
+  "user_cycle_profile": {
+    "event": "cpu-cycles:u",
+    "samples": 7239,
+    "lost": 0,
+    "rows": 1,
+    "threads": 4,
+    "seconds": 5.23153,
+    "exclusive_percent": {
+      "memmove": 29.84,
+      "dot": 15.15,
+      "add": 14.5,
+      "multiply_binary": 11.85,
+      "multiply_ternary": 9.78,
+      "sched_yield": 3.11
+    },
+    "pack_inclusive_percent": 31.18,
+    "note": "Inclusive pack and exclusive memmove overlap; do not add. User-space sampling excludes kernel work and off-CPU waits. Startup and FP64 checks are included in this short profile."
+  },
+  "unprofiled_process_seconds": {
+    "elapsed": 5.18,
+    "user": 7.91,
+    "system": 9.34,
+    "note": "User/system seconds accumulate over all threads. System share of accumulated CPU time is about 54%, not 54% of wall time."
+  },
+  "limitations": [
+    "Default cpu-cycles and task-clock events were rejected; explicit cpu-cycles:u worked.",
+    "No syscall trace was available; allocation and synchronization shares of system time remain unresolved.",
+    "This is the tested K-major state layout; no V-major primitive variant was measured."
+  ]
+}

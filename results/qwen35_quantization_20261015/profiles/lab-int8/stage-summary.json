@@ -1,0 +1,41 @@
+[
+  {
+    "phase": "prefill",
+    "prompt": 128,
+    "graph_ms": 1278.304513,
+    "stages": {
+      "AttentionProjection": 50.232914,
+      "CausalConv": 230.915256,
+      "Embedding": 0.213717,
+      "GatedDelta": 443.50772,
+      "GlobalAttention": 9.123342,
+      "KVUpdate": 6.833599,
+      "MLP": 308.697224,
+      "Norm": 6.550793,
+      "QKVProjection": 30.667245,
+      "RecurrentProjection": 117.552492,
+      "mixed": 14.551029,
+      "unattributed": 62.885925
+    }
+  },
+  {
+    "phase": "decode",
+    "prompt": 128,
+    "graph_ms": 141.71459,
+    "stages": {
+      "AttentionProjection": 10.633572000000001,
+      "CausalConv": 3.7600765,
+      "Embedding": 0.003558,
+      "FinalNormAndHead": 17.3757565,
+      "GatedDelta": 17.046490499999997,
+      "GlobalAttention": 0.488439,
+      "KVUpdate": 0.10533000000000001,
+      "MLP": 62.781168,
+      "Norm": 0.0963585,
+      "QKVProjection": 5.870442499999999,
+      "RecurrentProjection": 21.4278485,
+      "Residual": 0.103811,
+      "unattributed": 0.507895
+    }
+  }
+]

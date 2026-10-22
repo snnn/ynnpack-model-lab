@@ -1,0 +1,24 @@
+{
+  "int8": {
+    "passed": false,
+    "distinct_logits": 153,
+    "top1": 145,
+    "max_rmse": 1.757847979975172,
+    "max_abs": 10.635621070861816,
+    "minimum_centered_cosine": 0.734761704388529,
+    "mean_kl": 0.012221213072766328,
+    "finite": true,
+    "non_logit_failure_count": 0
+  },
+  "int4": {
+    "passed": false,
+    "distinct_logits": 153,
+    "top1": 140,
+    "max_rmse": 1.4889434603160348,
+    "max_abs": 7.976877450942993,
+    "minimum_centered_cosine": 0.8282962694401996,
+    "mean_kl": 0.01070685558336256,
+    "finite": true,
+    "non_logit_failure_count": 0
+  }
+}

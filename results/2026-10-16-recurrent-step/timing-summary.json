@@ -1,0 +1,1326 @@
+{
+  "host": [
+    {
+      "threads": 1,
+      "rows": 1,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 0.12206796219999999,
+          "direction_ms": [
+            0.1216507191,
+            0.1221861203
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 0.19410259019999998,
+          "direction_ms": [
+            0.1945679562,
+            0.1940188283
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 1.590119034525834
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 0.19331314719999998,
+          "direction_ms": [
+            0.1934170415,
+            0.1932092529
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 1.583651792951779
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 0.122508303,
+          "direction_ms": [
+            0.1220741977,
+            0.1229553872
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08
+        },
+        "llama": {
+          "valid": true,
+          "ms": 0.17362834755,
+          "direction_ms": [
+            0.174443415,
+            0.1682362641
+          ],
+          "stable": true,
+          "max_abs": 5.315791174e-08
+        }
+      }
+    },
+    {
+      "threads": 1,
+      "rows": 17,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 1.015178214,
+          "direction_ms": [
+            1.00970304,
+            1.019211909
+          ],
+          "stable": true,
+          "max_abs": 3.419723936e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 3.7776486035000003,
+          "direction_ms": [
+            3.766971611,
+            3.782078698
+          ],
+          "stable": true,
+          "max_abs": 1.303611467e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 3.721167920473124
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 3.7528508795000004,
+          "direction_ms": [
+            3.753224315,
+            3.752477444
+          ],
+          "stable": true,
+          "max_abs": 1.303611467e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 3.696740954194669
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 2.132965312,
+          "direction_ms": [
+            2.099445875,
+            2.161309624
+          ],
+          "stable": true,
+          "max_abs": 1.303611467e-07
+        },
+        "llama": {
+          "valid": true,
+          "ms": 1.945579859,
+          "direction_ms": [
+            1.946077524,
+            1.945082194
+          ],
+          "stable": true,
+          "max_abs": 2.356762403e-08
+        }
+      }
+    },
+    {
+      "threads": 1,
+      "rows": 32,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 1.651610529,
+          "direction_ms": [
+            1.652516689,
+            1.648707705
+          ],
+          "stable": true,
+          "max_abs": 2.934960941e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 7.0406745520000005,
+          "direction_ms": [
+            7.114720897,
+            6.985502345
+          ],
+          "stable": true,
+          "max_abs": 9.662395495e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 4.2629145481791735
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 7.0681800865,
+          "direction_ms": [
+            7.070494966,
+            7.029523897
+          ],
+          "stable": true,
+          "max_abs": 9.662395495e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 4.279568313711083
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 3.932749922,
+          "direction_ms": [
+            3.942660176,
+            3.920306192
+          ],
+          "stable": true,
+          "max_abs": 8.205999269e-08
+        },
+        "llama": {
+          "valid": true,
+          "ms": 3.4347385595,
+          "direction_ms": [
+            3.435151458,
+            3.433832034
+          ],
+          "stable": true,
+          "max_abs": 1.580262983e-08
+        }
+      }
+    },
+    {
+      "threads": 1,
+      "rows": 128,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 6.612159175,
+          "direction_ms": [
+            6.831315833,
+            6.317248219
+          ],
+          "stable": false,
+          "max_abs": 3.14853042e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 28.041101310000002,
+          "direction_ms": [
+            28.2732465,
+            28.00087112
+          ],
+          "stable": true,
+          "max_abs": 8.253460571e-08,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 4.24083881949197
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 28.042216879999998,
+          "direction_ms": [
+            28.00809525,
+            28.04545913
+          ],
+          "stable": true,
+          "max_abs": 8.253460571e-08,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 4.24100753442615
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 15.793040385,
+          "direction_ms": [
+            15.95507731,
+            15.631462
+          ],
+          "stable": true,
+          "max_abs": 8.004366675e-08
+        },
+        "llama": {
+          "valid": true,
+          "ms": 13.500383765,
+          "direction_ms": [
+            13.464936,
+            13.5329154
+          ],
+          "stable": true,
+          "max_abs": 2.026103624e-08
+        }
+      }
+    },
+    {
+      "threads": 1,
+      "rows": 1024,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 57.448993375,
+          "direction_ms": [
+            55.68228475,
+            57.88217975
+          ],
+          "stable": true,
+          "max_abs": 3.552621791e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 226.3311495,
+          "direction_ms": [
+            225.383944,
+            227.360114
+          ],
+          "stable": true,
+          "max_abs": 1.210090897e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 3.939688690846448
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 225.0755855,
+          "direction_ms": [
+            226.438994,
+            224.877537
+          ],
+          "stable": true,
+          "max_abs": 1.210090897e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 3.9178334079905013
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 126.20006275,
+          "direction_ms": [
+            125.85317,
+            126.959412
+          ],
+          "stable": true,
+          "max_abs": 1.016229134e-07
+        },
+        "llama": {
+          "valid": true,
+          "ms": 115.57382225,
+          "direction_ms": [
+            115.844556,
+            115.2884495
+          ],
+          "stable": true,
+          "max_abs": 1.641666728e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 1,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 0.03478667584,
+          "direction_ms": [
+            0.03481953221,
+            0.03478417687
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 0.061988057485,
+          "direction_ms": [
+            0.06164461109,
+            0.06251690094
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 1.7819482887675648
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 0.061589164325,
+          "direction_ms": [
+            0.06152975115,
+            0.0616485775
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 1.7704814512394638
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 0.034807028835,
+          "direction_ms": [
+            0.03486702719,
+            0.03476043987
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08
+        },
+        "llama": {
+          "valid": true,
+          "ms": 0.04281509671,
+          "direction_ms": [
+            0.04225442057,
+            0.04346726141
+          ],
+          "stable": true,
+          "max_abs": 5.315791174e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 17,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 0.24378780449999998,
+          "direction_ms": [
+            0.2437237649,
+            0.2438836967
+          ],
+          "stable": true,
+          "max_abs": 3.419723936e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 1.291286787,
+          "direction_ms": [
+            1.292405168,
+            1.28503534
+          ],
+          "stable": true,
+          "max_abs": 1.303611467e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 5.296765314607852
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 1.276460245,
+          "direction_ms": [
+            1.276934879,
+            1.275985611
+          ],
+          "stable": true,
+          "max_abs": 1.303611467e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 5.235947908132542
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 0.65739680655,
+          "direction_ms": [
+            0.6551357418,
+            0.6598974145
+          ],
+          "stable": true,
+          "max_abs": 1.303611467e-07
+        },
+        "llama": {
+          "valid": true,
+          "ms": 0.4779207291,
+          "direction_ms": [
+            0.4778554916,
+            0.478719067
+          ],
+          "stable": true,
+          "max_abs": 2.356762403e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 32,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 0.42910500269999996,
+          "direction_ms": [
+            0.428196062,
+            0.431018086
+          ],
+          "stable": true,
+          "max_abs": 2.934960941e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 2.4414391770000003,
+          "direction_ms": [
+            2.441654976,
+            2.440326073
+          ],
+          "stable": true,
+          "max_abs": 9.662395495e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 5.689607815425267
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 2.395838881,
+          "direction_ms": [
+            2.383506512,
+            2.402140536
+          ],
+          "stable": true,
+          "max_abs": 9.662395495e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 5.583339429568483
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 1.246970671,
+          "direction_ms": [
+            1.239023383,
+            1.24871418
+          ],
+          "stable": true,
+          "max_abs": 8.205999269e-08
+        },
+        "llama": {
+          "valid": true,
+          "ms": 0.88320507045,
+          "direction_ms": [
+            0.8833940396,
+            0.8830161013
+          ],
+          "stable": true,
+          "max_abs": 1.580262983e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 128,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 1.6441315185,
+          "direction_ms": [
+            1.660320174,
+            1.623049153
+          ],
+          "stable": true,
+          "max_abs": 3.14853042e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 9.703213357,
+          "direction_ms": [
+            9.717269333,
+            9.677734
+          ],
+          "stable": true,
+          "max_abs": 8.253460571e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 5.901725773040704
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 9.599980762000001,
+          "direction_ms": [
+            9.599230714,
+            9.614839714
+          ],
+          "stable": true,
+          "max_abs": 8.253460571e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 5.838937246795443
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 4.932148427,
+          "direction_ms": [
+            4.919828244,
+            4.936930439
+          ],
+          "stable": true,
+          "max_abs": 8.004366675e-08
+        },
+        "llama": {
+          "valid": true,
+          "ms": 3.6567107815,
+          "direction_ms": [
+            3.663002582,
+            3.645604345
+          ],
+          "stable": true,
+          "max_abs": 2.026103624e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 1024,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 14.782710145,
+          "direction_ms": [
+            14.75701671,
+            14.79499914
+          ],
+          "stable": true,
+          "max_abs": 3.552621791e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 79.05457067,
+          "direction_ms": [
+            78.97650767,
+            79.22953933
+          ],
+          "stable": true,
+          "max_abs": 1.210090897e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 5.347772491956684
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 77.42802900000001,
+          "direction_ms": [
+            77.166108,
+            77.94061733
+          ],
+          "stable": true,
+          "max_abs": 1.210090897e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 5.237742487035689
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 40.1620787,
+          "direction_ms": [
+            39.92250483,
+            40.3258448
+          ],
+          "stable": true,
+          "max_abs": 1.016229134e-07
+        },
+        "llama": {
+          "valid": true,
+          "ms": 28.768132215,
+          "direction_ms": [
+            28.77492914,
+            28.76131243
+          ],
+          "stable": true,
+          "max_abs": 1.641666728e-08
+        }
+      }
+    }
+  ],
+  "arm": [
+    {
+      "threads": 1,
+      "rows": 1,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 0.9625869399,
+          "direction_ms": [
+            0.9516362891,
+            0.9650179663
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 0.31823927185,
+          "direction_ms": [
+            0.3187264411,
+            0.3159262429
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.3306083416039915,
+            "llama": 1.754371866352962
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 0.3118692764,
+          "direction_ms": [
+            0.3121036427,
+            0.3115761246
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.323990762260289,
+            "llama": 1.7192557075542332
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 0.9600007966499999,
+          "direction_ms": [
+            0.9606147703,
+            0.9326214279
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08
+        },
+        "llama": {
+          "valid": true,
+          "ms": 0.1813978427,
+          "direction_ms": [
+            0.1815420799,
+            0.1809875561
+          ],
+          "stable": true,
+          "max_abs": 5.315791174e-08
+        }
+      }
+    },
+    {
+      "threads": 1,
+      "rows": 17,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 12.283114605000002,
+          "direction_ms": [
+            12.02655159,
+            12.54373681
+          ],
+          "stable": true,
+          "max_abs": 3.419723936e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 5.6336472225000005,
+          "direction_ms": [
+            5.568535806,
+            5.693331778
+          ],
+          "stable": true,
+          "max_abs": 1.303611467e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.4586497320644351,
+            "llama": 2.929312682918652
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 5.531314667,
+          "direction_ms": [
+            5.617295194,
+            5.445604514
+          ],
+          "stable": true,
+          "max_abs": 1.303611467e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.4503185751233166,
+            "llama": 2.8761030940213543
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 17.801467875,
+          "direction_ms": [
+            17.80355658,
+            17.79937917
+          ],
+          "stable": true,
+          "max_abs": 1.303611467e-07
+        },
+        "llama": {
+          "valid": true,
+          "ms": 1.9231976345000001,
+          "direction_ms": [
+            1.924277817,
+            1.92188301
+          ],
+          "stable": true,
+          "max_abs": 2.356762403e-08
+        }
+      }
+    },
+    {
+      "threads": 1,
+      "rows": 32,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 22.727073,
+          "direction_ms": [
+            22.510862,
+            22.913903
+          ],
+          "stable": true,
+          "max_abs": 2.934960941e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 10.467193875,
+          "direction_ms": [
+            10.5032056,
+            10.3135077
+          ],
+          "stable": true,
+          "max_abs": 9.662395495e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.4605605779063586,
+            "llama": 2.9012717803470283
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 10.49841475,
+          "direction_ms": [
+            10.55821532,
+            10.4474881
+          ],
+          "stable": true,
+          "max_abs": 9.662395495e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.4619343084787029,
+            "llama": 2.9099255078576642
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 33.79667042,
+          "direction_ms": [
+            33.58998217,
+            33.87630167
+          ],
+          "stable": true,
+          "max_abs": 8.205999269e-08
+        },
+        "llama": {
+          "valid": true,
+          "ms": 3.607795018,
+          "direction_ms": [
+            3.613341661,
+            3.607616696
+          ],
+          "stable": true,
+          "max_abs": 1.580262983e-08
+        }
+      }
+    },
+    {
+      "threads": 1,
+      "rows": 128,
+      "repeated": false,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 88.9245995,
+          "direction_ms": [
+            88.97216933,
+            88.91183033
+          ],
+          "stable": true,
+          "max_abs": 3.14853042e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 39.574825915,
+          "direction_ms": [
+            39.38712183,
+            39.75068967
+          ],
+          "stable": true,
+          "max_abs": 8.253460571e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.4450380000305765,
+            "llama": 2.810697381533639
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 41.1928694,
+          "direction_ms": [
+            41.0695254,
+            41.3216766
+          ],
+          "stable": true,
+          "max_abs": 8.253460571e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.46323367922506076,
+            "llama": 2.925614642225197
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 135.547687,
+          "direction_ms": [
+            135.527459,
+            135.7117165
+          ],
+          "stable": true,
+          "max_abs": 8.004366675e-08
+        },
+        "llama": {
+          "valid": true,
+          "ms": 14.08007357,
+          "direction_ms": [
+            14.0681456,
+            14.0899686
+          ],
+          "stable": true,
+          "max_abs": 2.026103624e-08
+        }
+      }
+    },
+    {
+      "threads": 1,
+      "rows": 1024,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 732.1731285000001,
+          "direction_ms": [
+            733.68585,
+            731.180069
+          ],
+          "stable": true,
+          "max_abs": 3.552621791e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 338.177365,
+          "direction_ms": [
+            339.532209,
+            336.999006
+          ],
+          "stable": true,
+          "max_abs": 1.210090897e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 0.4618816941463319,
+            "llama": 2.7783450086952737
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 316.710126,
+          "direction_ms": [
+            330.212132,
+            302.976976
+          ],
+          "stable": false,
+          "max_abs": 1.210090897e-07,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 0.4325617994870184,
+            "llama": 2.6019778046805446
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 1070.37621,
+          "direction_ms": [
+            1070.32397,
+            1070.42845
+          ],
+          "stable": true,
+          "max_abs": 1.016229134e-07
+        },
+        "llama": {
+          "valid": true,
+          "ms": 121.718996,
+          "direction_ms": [
+            121.7275115,
+            121.7104805
+          ],
+          "stable": true,
+          "max_abs": 1.641666728e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 1,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 0.3696972135,
+          "direction_ms": [
+            0.357128328,
+            0.3771789605
+          ],
+          "stable": false,
+          "max_abs": 5.620008842e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 2.0312649645,
+          "direction_ms": [
+            2.032548636,
+            2.021151061
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 5.4944016084665455,
+            "llama": 28.848933240200484
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 1.954564466,
+          "direction_ms": [
+            1.949213155,
+            1.959915777
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 5.286933183768776,
+            "llama": 27.75959846635857
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 0.36937491405,
+          "direction_ms": [
+            0.370528613,
+            0.3603729784
+          ],
+          "stable": true,
+          "max_abs": 5.620008842e-08
+        },
+        "llama": {
+          "valid": true,
+          "ms": 0.07041040123,
+          "direction_ms": [
+            0.06998800805,
+            0.07053578173
+          ],
+          "stable": true,
+          "max_abs": 5.315791174e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 17,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 4.0932207655,
+          "direction_ms": [
+            4.085962408,
+            4.12514449
+          ],
+          "stable": true,
+          "max_abs": 3.419723936e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 35.763376335000004,
+          "direction_ms": [
+            30.88821757,
+            36.15624067
+          ],
+          "stable": false,
+          "max_abs": 1.303611467e-07,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 8.737221465412798,
+            "llama": 42.15389964716119
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 33.923163665000004,
+          "direction_ms": [
+            24.60893189,
+            34.30703083
+          ],
+          "stable": false,
+          "max_abs": 1.303611467e-07,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 8.287645746089188,
+            "llama": 39.984861145483194
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 14.524984965,
+          "direction_ms": [
+            14.51923529,
+            14.53073464
+          ],
+          "stable": true,
+          "max_abs": 1.303611467e-07
+        },
+        "llama": {
+          "valid": true,
+          "ms": 0.8484001868,
+          "direction_ms": [
+            0.8519853617,
+            0.8424844538
+          ],
+          "stable": true,
+          "max_abs": 2.356762403e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 32,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 7.6039640185,
+          "direction_ms": [
+            7.600918111,
+            7.649002593
+          ],
+          "stable": true,
+          "max_abs": 2.934960941e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 63.33409437500001,
+          "direction_ms": [
+            61.576568,
+            65.46191975
+          ],
+          "stable": false,
+          "max_abs": 9.662395495e-08,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 8.329089172556822,
+            "llama": 40.32690135284563
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 62.5936775,
+          "direction_ms": [
+            65.2982155,
+            58.16722575
+          ],
+          "stable": false,
+          "max_abs": 9.662395495e-08,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 8.23171668720594,
+            "llama": 39.855453571476644
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 27.81494325,
+          "direction_ms": [
+            27.77949837,
+            27.830081
+          ],
+          "stable": true,
+          "max_abs": 8.205999269e-08
+        },
+        "llama": {
+          "valid": true,
+          "ms": 1.570517254,
+          "direction_ms": [
+            1.57326882,
+            1.568064555
+          ],
+          "stable": true,
+          "max_abs": 1.580262983e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 128,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 32.535700930000004,
+          "direction_ms": [
+            32.59927257,
+            32.04267814
+          ],
+          "stable": true,
+          "max_abs": 3.14853042e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 255.3281705,
+          "direction_ms": [
+            273.415282,
+            255.129329
+          ],
+          "stable": false,
+          "max_abs": 8.253460571e-08,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 7.8476308547750095,
+            "llama": 39.95396586019035
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 250.637471,
+          "direction_ms": [
+            255.394174,
+            244.282835
+          ],
+          "stable": true,
+          "max_abs": 8.253460571e-08,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 7.703460009644242,
+            "llama": 39.219961275751395
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 112.84933425,
+          "direction_ms": [
+            112.8234565,
+            112.9159415
+          ],
+          "stable": true,
+          "max_abs": 8.004366675e-08
+        },
+        "llama": {
+          "valid": true,
+          "ms": 6.3905588595000005,
+          "direction_ms": [
+            6.38400025,
+            6.392931219
+          ],
+          "stable": true,
+          "max_abs": 2.026103624e-08
+        }
+      }
+    },
+    {
+      "threads": 4,
+      "rows": 1024,
+      "repeated": true,
+      "engines": {
+        "custom": {
+          "valid": true,
+          "ms": 260.48190250000005,
+          "direction_ms": [
+            259.912601,
+            261.514163
+          ],
+          "stable": true,
+          "max_abs": 3.552621791e-08
+        },
+        "step-adapter": {
+          "valid": true,
+          "ms": 2200.0987345000003,
+          "direction_ms": [
+            2218.80531,
+            2182.108435
+          ],
+          "stable": true,
+          "max_abs": 1.210090897e-07,
+          "gate": "FAIL",
+          "ratios": {
+            "custom": 8.446263304223217,
+            "llama": 42.20077422141946
+          }
+        },
+        "step-native": {
+          "valid": true,
+          "ms": 2120.403879,
+          "direction_ms": [
+            1785.885055,
+            2213.217315
+          ],
+          "stable": false,
+          "max_abs": 1.210090897e-07,
+          "gate": "INCONCLUSIVE",
+          "ratios": {
+            "custom": 8.140311701692978,
+            "llama": 40.67212255191677
+          }
+        },
+        "custom-step": {
+          "valid": true,
+          "ms": 905.4978980000001,
+          "direction_ms": [
+            905.555823,
+            905.086576
+          ],
+          "stable": true,
+          "max_abs": 1.016229134e-07
+        },
+        "llama": {
+          "valid": true,
+          "ms": 52.134084625,
+          "direction_ms": [
+            52.02775325,
+            52.17611275
+          ],
+          "stable": true,
+          "max_abs": 1.641666728e-08
+        }
+      }
+    }
+  ]
+}

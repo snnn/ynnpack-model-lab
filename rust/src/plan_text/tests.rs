@@ -1,7 +1,7 @@
 // Copyright 2026 @snnn.
 // SPDX-License-Identifier: Apache-2.0
 use super::*;
-use crate::plan::{Arg, Data, Expr, Op};
+use crate::plan::{Arg, Data, Op};
 use serde_json::{json, Value};
 const SQUARE: &str = include_str!("../../../tests/rust/square.ynn");
 fn report(p: &Plan) -> Value {
@@ -61,14 +61,7 @@ fn handwritten_square_matches_typed_commands() {
 }
 #[test]
 fn fp32_comparisons_roundtrip_with_byte_boolean_results() {
-    for operator in [
-        "less",
-        "less_equal",
-        "greater",
-        "greater_equal",
-        "equal",
-        "not_equal",
-    ] {
+    for operator in ["less", "less_equal", "greater", "greater_equal", "equal", "not_equal"] {
         let source = format!(
             "ynn 1 resource_contract=1 completion_contract=1 {{
                 input x: fp32[1]; input y: fp32[4];
@@ -478,7 +471,6 @@ fn functions_reject_recursion_captures_effects_and_bad_interfaces() {
         "fn f(x: storage<fp32[4]>) -> (y: storage<fp32[4]>) { value x: storage<fp32[4]>; return(y); }",
         "fn f(x: storage<fp32[4]>) -> (y: storage<fp32[4]>) { Copy(input=x, output=y); return(y); } input x: storage<int32[4]>; value y: storage<fp32[4]>; invoke f(x) -> (y);",
         "fn f(x: storage<fp32[4]>) -> (y: storage<fp32[4]>) { Copy(input=x, output=y); return(y); } input x: storage<fp32[5]>; value y: storage<fp32[4]>; invoke f(x) -> (y);",
-        "fn f(x: storage<fp32[4]>) -> (y: storage<fp32[4]>) { BeginOperation(waits=[]); Copy(input=x, output=y); EndOperation(defines=[], outputs=[y]); return(y); }",
     ] {
         let source = format!("{prefix}{body}}}");
         let failure = std::panic::catch_unwind(|| super::check(&source));
@@ -496,10 +488,7 @@ fn function_expansion_is_bounded_and_rejects_resource_operands() {
     }
     source.push('}');
     let error = super::check(&source).unwrap_err().to_string();
-    assert!(
-        error.contains("limit") || error.contains("budget"),
-        "{error}"
-    );
+    assert!(error.contains("limit") || error.contains("budget"), "{error}");
     let source = r#"ynn 1 resource_contract=1 completion_contract=1 {
       fn f(x: storage<fp32[4]>) -> (y: storage<fp32[4]>) { Copy(input=x, output=y); return(y); }
       input x: storage<fp32[4]>;
@@ -508,8 +497,85 @@ fn function_expansion_is_bounded_and_rejects_resource_operands() {
       invoke f(x) -> (y);
       output y;
     }"#;
-    assert!(super::check(source)
-        .unwrap_err()
-        .to_string()
-        .contains("resource"));
+    assert!(super::check(source).unwrap_err().to_string().contains("resource"));
+    let borrowed = source.replace("invoke f(x)",
+        "value live: storage<fp32[4]>; View(input=x, output=live, axis=0, begin=0, end=4); invoke f(live)");
+    assert!(super::check(&borrowed).is_ok());
+    // Function results cannot write into borrowed storage.
+    assert!(super::check(&borrowed.replace("-> (y);\n      output", "-> (live);\n      output")).is_err());
+}
+
+#[test]
+fn stateful_functions_preserve_owners_and_expand_without_cache_copies() {
+    let source = r#"ynn 1 resource_contract=1 completion_contract=1 profiling=explicit {
+      fn step(cache: owner<fp32[8,4]>, x: storage<fp32[1,4]>, p: index) -> (next: owner<fp32[8,4]>, y: storage<fp32[1,4]>) {
+        Resource(owner=cache, name="formal", axis=0, entry_extent=p, encoding=encoding(dtype=fp32, axis=none, scales=[], zero_points=[]));
+        value live: storage<fp32[0,4]>;
+        Append(owner=cache, input=x, output=next, axis=0, position=p, rows=1);
+        View(input=next, output=live, axis=0, begin=0, end=add(p,1));
+        Reduce(operator=sum, input=live, output=y, axes=[0], keep_dims=true);
+        return(next,y);
+      }
+      input cache: storage<fp32[8,4]>;
+      input x: storage<fp32[1,4]>;
+      value next: storage<fp32[8,4]>;
+      value next2: storage<fp32[8,4]>;
+      value y: storage<fp32[1,4]>;
+      value y2: storage<fp32[1,4]>;
+      Resource(owner=cache, name="K", axis=0, entry_extent=0, encoding=encoding(dtype=fp32, axis=none, scales=[], zero_points=[]));
+      invoke step(cache,x,0) -> (next,y);
+      invoke step(next,x,1) -> (next2,y2);
+      output next2; output y2;
+    }"#;
+    super::check(source).unwrap();
+    let high_level = source.replace("input cache: storage<fp32[8,4]>;", "@resource(name=\"K\", axis=0, encoding=encoding(dtype=fp32, axis=none, scales=[], zero_points=[])) state cache: storage<fp32[8,4]>;")
+        .replace("Resource(owner=cache, name=\"K\", axis=0, entry_extent=0, encoding=encoding(dtype=fp32, axis=none, scales=[], zero_points=[]));", "require committed(cache) == 0;");
+    super::check(&high_level).unwrap();
+    let typed_let = source.replace("value live: storage<fp32[0,4]>;", "")
+        .replace("View(input=next, output=live, axis=0, begin=0, end=add(p,1));", "let live: storage<fp32[0,4]> = view(next, axis=0, begin=0, end=add(p,1));");
+    super::check(&typed_let).unwrap();
+    let formatted = super::format(source).unwrap();
+    assert!(formatted.contains("owner<fp32[8, 4]>") && formatted.contains("invoke step"));
+    let plan = super::parse(&formatted).unwrap();
+    assert_eq!(plan.commands.iter().filter(|c| c.op == Op::Resource).count(), 1);
+    assert_eq!(plan.commands.iter().filter(|c| c.op == Op::Append).count(), 2);
+    assert!(!plan.commands.iter().any(|c| c.op == Op::Copy));
+    for (from,to) in [
+        ("step(next,x,1)", "step(cache,x,1)"),
+        ("next: owner<fp32[8,4]>", "next: storage<fp32[8,4]>"),
+        ("axis=0, entry_extent=p", "axis=1, entry_extent=p"),
+        ("return(next,y)", "return(cache,y)"),
+        ("step(cache,x,0)", "step(x,x,0)"),
+    ] {
+        assert!(super::check(&source.replace(from,to)).is_err(), "accepted {to}");
+    }
+}
+
+#[test]
+fn function_literal_attributes_are_closed_typed_and_substituted() {
+    let source = r#"ynn 1 resource_contract=1 completion_contract=1 profiling=explicit {
+      fn soft(x: storage<fp32[2]>, beta: float = 1.0) -> (y: storage<fp32[2]>) {
+        Softmax(input=x, output=y, beta=beta); return(y);
+      }
+      fn nested(x: storage<fp32[2]>, scale: float = 1.0) -> (y: storage<fp32[2]>) {
+        invoke soft(x,scale) -> (y); return(y);
+      }
+      input x: fp32[2]; value y: fp32[2]; value z: fp32[2];
+      invoke nested(x,bits("3fc0000000000000")) -> (y);
+      invoke soft(y) -> (z); output z;
+    }"#;
+    let formatted = format(source).unwrap();
+    assert!(formatted.contains("beta: float ="));
+    let plan = parse(&formatted).unwrap();
+    let coefficients: Vec<_> = plan.commands.iter().filter(|c| c.op == Op::Softmax).map(|c| c.args[2].clone()).collect();
+    assert_eq!(coefficients, vec![Arg::Float("3fc0000000000000".into()),Arg::Float("3ff0000000000000".into())]);
+    for (from,to) in [
+        ("beta: float = 1.0", "beta: float = x"),
+        ("beta: float = 1.0", "beta: float"),
+        ("scale: float = 1.0", "scale: size = -1"),
+        ("nested(x,bits(\"3fc0000000000000\"))", "nested(x,x)"),
+        ("nested(x,bits(\"3fc0000000000000\"))", "nested(x,[1,2])"),
+    ] { assert!(check(&source.replace(from,to)).is_err(), "accepted {to}"); }
+    // Unused definitions and unused defaults must also be closed and typed.
+    assert!(check(&source.replace("Softmax(input=x, output=y, beta=beta)", "Copy(input=x, output=y)").replace("beta: float = 1.0", "beta: float = hidden")).is_err());
 }

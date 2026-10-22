@@ -25,9 +25,10 @@ API/XNNPACK control retains FP32 Q/P and mixed FP32/INT8 attention kernels; it i
 not this dynamically quantized policy. Its `qp8_all` experiment changes eligible
 prefill FCs only, leaving decode FCs and attention unchanged.
 
-Validate each policy on the current runner and target device before comparing
-performance. Earlier C++ measurements do not establish current-loader or ARM
-results, and integer attention needs its own numerical evaluation.
+The [PC study](../results/2026-10-09-attention-profiles/README.md) retains the
+completed numerical and performance investigation using the earlier C++ runner.
+Remaining ARM, current-loader and equivalent-arithmetic work is tracked in
+[open work](worklogs/README.md).
 
 ## Full-model candidates
 

@@ -1,0 +1,10 @@
+{
+  "model_path": {
+    "bytes": 796709136,
+    "sha256": "855be64fd3b22ad1acd8465731fe0c5080349daa90bbff1f6908a4e269f40978"
+  },
+  "weight_cache_path": {
+    "bytes": 788412736,
+    "sha256": "6567e4e21d883d3775d08c8221ed42ce8b27beeb7de3a0d4477bb7f6fc0d74fe"
+  }
+}

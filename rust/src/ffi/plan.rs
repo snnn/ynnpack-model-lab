@@ -33,7 +33,7 @@ extern "C" {
         out: *mut *const c_void,
         error: *mut NativeError,
     ) -> i32;
-    fn lab_plan_create(values: usize, out: *mut *mut c_void, error: *mut NativeError) -> i32;
+    fn lab_plan_create(values: usize, math_mode: i32, out: *mut *mut c_void, error: *mut NativeError) -> i32;
     fn lab_plan_expr(
         graph: *mut c_void,
         op: u32,
@@ -52,7 +52,7 @@ extern "C" {
     ) -> i32;
 }
 impl Assets {
-    fn verify(&self, d: &Data) -> Result<*const c_void> {
+    pub(super) fn verify(&self, d: &Data) -> Result<*const c_void> {
         let path = string(&d.path)?;
         let mut ptr = std::ptr::null();
         // SAFETY: native owner retains this immutable mapping; exact size was
@@ -242,7 +242,12 @@ impl GraphBuilder {
             }
         }
         let mut ptr = std::ptr::null_mut();
-        call(|e| unsafe { lab_plan_create(plan.value_count(), &mut ptr, e) })?;
+        let math_mode = match super::math_mode()? {
+            "no_excess_precision" => 0,
+            "fast_math" => 1,
+            _ => unreachable!(),
+        };
+        call(|e| unsafe { lab_plan_create(plan.value_count(), math_mode, &mut ptr, e) })?;
         let graph = NativeGraph {
             ptr: NonNull::new(ptr).ok_or_else(|| Error::invalid("Null graph handle"))?,
             _assets: assets,

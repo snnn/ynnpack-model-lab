@@ -1,0 +1,2385 @@
+{
+  "scope": "CPU-core user cycles sampled at 199 Hz; only execution-profiler graph-step windows (input binding/embedding work outside these windows is excluded); decode excludes first-token step; sampled period shares are not wall-time shares",
+  "models": {
+    "qwen3_0_6b": {
+      "prefill": {
+        "sample_count": 969,
+        "sampled_cycle_period": 20600374143,
+        "symbols": [
+          {
+            "symbol": "ynn::dot_uint8_int8_int32_6x16x4_1x8x4_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 495,
+            "period": 10465848089,
+            "share": 0.5080416509112914
+          },
+          {
+            "symbol": "ynn::dot_fp32_6x16x1_1x8x1_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 206,
+            "period": 4404611419,
+            "share": 0.21381220498350442
+          },
+          {
+            "symbol": "[unknown]",
+            "samples": 33,
+            "period": 679279961,
+            "share": 0.03297415650243513
+          },
+          {
+            "symbol": "ynn::transpose_x32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 29,
+            "period": 626736034,
+            "share": 0.03042352675972949
+          },
+          {
+            "symbol": "ynn::dequantize_dot_f32_avx2(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dequantize_dot_params const*)",
+            "samples": 27,
+            "period": 560867110,
+            "share": 0.02722606425041957
+          },
+          {
+            "symbol": "ynn::add_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 26,
+            "period": 560447211,
+            "share": 0.0272056811740208
+          },
+          {
+            "symbol": "ynn::exp_subtract_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 25,
+            "period": 544905135,
+            "share": 0.02645122516792534
+          },
+          {
+            "symbol": "__memmove_avx_unaligned_erms",
+            "samples": 12,
+            "period": 273067391,
+            "share": 0.013255457842875549
+          },
+          {
+            "symbol": "ynn::multiply_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 13,
+            "period": 272725210,
+            "share": 0.013238847416403451
+          },
+          {
+            "symbol": "ynn::multiply_fp32_fp32_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 11,
+            "period": 244991873,
+            "share": 0.011892593372302812
+          },
+          {
+            "symbol": "ynn::sum_squared_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 10,
+            "period": 218665858,
+            "share": 0.010614654689381095
+          },
+          {
+            "symbol": "ynn::sigmoid_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 9,
+            "period": 190474967,
+            "share": 0.009246189689458787
+          },
+          {
+            "symbol": "ynn::quantize_fp32_to_uint8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 7,
+            "period": 157949439,
+            "share": 0.00766730923931647
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::function_ref<bool",
+            "samples": 7,
+            "period": 143345588,
+            "share": 0.006958397308949303
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::allocate>(slinky::allocate const*, slinky::eval_context&)",
+            "samples": 5,
+            "period": 103546629,
+            "share": 0.005026444096656619
+          },
+          {
+            "symbol": "void ynn::run_dot<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1}>(slinky::span<ynn::dot_loop, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, void const*, unsigned long, void const*, unsigned long, unsigned long, void*, ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1} const&, ynn::dot_kernel_state*)",
+            "samples": 4,
+            "period": 89740117,
+            "share": 0.004356237240016035
+          },
+          {
+            "symbol": "lab_ynn::ExecutionProfile::Record(unsigned long, unsigned long, unsigned long)",
+            "samples": 4,
+            "period": 85903301,
+            "share": 0.004169987418854231
+          },
+          {
+            "symbol": "lab_ynn::Graph::Run()",
+            "samples": 3,
+            "period": 69472556,
+            "share": 0.00337239292440748
+          },
+          {
+            "symbol": "ynn::rsqrt_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 3,
+            "period": 63506482,
+            "share": 0.0030827829416670803
+          },
+          {
+            "symbol": "void slinky::function_ref<void",
+            "samples": 3,
+            "period": 50143608,
+            "share": 0.002434111519136597
+          },
+          {
+            "symbol": "ynn::min_max_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 2,
+            "period": 46461532,
+            "share": 0.0022553732120339965
+          },
+          {
+            "symbol": "ynn::divide_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 2,
+            "period": 44792282,
+            "share": 0.002174343130327097
+          },
+          {
+            "symbol": "void ynn::(anonymous namespace)::unary_impl<float, float, ynn::(anonymous namespace)::convert_op<float> >(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 2,
+            "period": 44272447,
+            "share": 0.0021491088799007936
+          },
+          {
+            "symbol": "ynn::multiply_add_fp32_fp32_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 2,
+            "period": 43903101,
+            "share": 0.0021311797880582796
+          },
+          {
+            "symbol": "ynn::subtract_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 2,
+            "period": 43046816,
+            "share": 0.0020896133099906487
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::let_stmt>(slinky::let_stmt const*, slinky::eval_context&)",
+            "samples": 2,
+            "period": 42720395,
+            "share": 0.0020737679181674655
+          },
+          {
+            "symbol": "ynn::max_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 2,
+            "period": 42268686,
+            "share": 0.002051840695056642
+          },
+          {
+            "symbol": "bool slinky::function_ref<bool",
+            "samples": 2,
+            "period": 38554566,
+            "share": 0.0018715468822249925
+          },
+          {
+            "symbol": "slinky::raw_buffer::init_strides_impl(long)",
+            "samples": 2,
+            "period": 34331667,
+            "share": 0.001666555508248664
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::logical_and>(slinky::logical_and const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24435820,
+            "share": 0.0011861833105736715
+          },
+          {
+            "symbol": "slinky::evaluate(slinky::expr const&, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24304890,
+            "share": 0.001179827600765144
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_loop_parallel(slinky::loop const*, long, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24262743,
+            "share": 0.0011777816670501817
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_unshadowed(slinky::crop_dim const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24096083,
+            "share": 0.0011696915227235249
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::make_buffer>(slinky::make_buffer const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 22845184,
+            "share": 0.0011089693731491175
+          },
+          {
+            "symbol": "ynn::sum_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 1,
+            "period": 22305433,
+            "share": 0.0010827683441652141
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::task_impl::work(unsigned long)",
+            "samples": 1,
+            "period": 22108294,
+            "share": 0.0010731986636035146
+          },
+          {
+            "symbol": "long std::__invoke_impl<long, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*, slinky::eval_context&>(std::__invoke_other, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*&&, slinky::eval_context&)",
+            "samples": 1,
+            "period": 21749434,
+            "share": 0.0010557785916422517
+          },
+          {
+            "symbol": "cfree@GLIBC_2.2.5",
+            "samples": 1,
+            "period": 21692496,
+            "share": 0.0010530146612590093
+          },
+          {
+            "symbol": "memcpy@plt",
+            "samples": 1,
+            "period": 21589856,
+            "share": 0.0010480322274795297
+          },
+          {
+            "symbol": "ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const",
+            "samples": 1,
+            "period": 21570813,
+            "share": 0.0010471078267930273
+          }
+        ]
+      },
+      "decode": {
+        "sample_count": 841,
+        "sampled_cycle_period": 19142165697,
+        "symbols": [
+          {
+            "symbol": "ynn::dot_uint8_int8_int32_1x32x4_1x8x4_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 644,
+            "period": 14622418729,
+            "share": 0.7638852865687844
+          },
+          {
+            "symbol": "ynn::dot_fp32_8x1x8_1x1x8_avx2_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 124,
+            "period": 2828762640,
+            "share": 0.14777652041969994
+          },
+          {
+            "symbol": "[unknown]",
+            "samples": 12,
+            "period": 277058136,
+            "share": 0.014473709003752963
+          },
+          {
+            "symbol": "lab_ynn::Graph::Run()",
+            "samples": 7,
+            "period": 167598688,
+            "share": 0.008755471593596456
+          },
+          {
+            "symbol": "ynn::dequantize_dot_f32_avx2(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dequantize_dot_params const*)",
+            "samples": 7,
+            "period": 156688074,
+            "share": 0.008185493558054221
+          },
+          {
+            "symbol": "long std::__invoke_impl<long, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*, slinky::eval_context&>(std::__invoke_other, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*&&, slinky::eval_context&)",
+            "samples": 5,
+            "period": 118634377,
+            "share": 0.006197542058607957
+          },
+          {
+            "symbol": "ynn::transpose_x32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 4,
+            "period": 97429261,
+            "share": 0.005089772105319792
+          },
+          {
+            "symbol": "std::_Function_handler<long",
+            "samples": 4,
+            "period": 92168034,
+            "share": 0.004814921961230581
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::allocate>(slinky::allocate const*, slinky::eval_context&)",
+            "samples": 4,
+            "period": 90635143,
+            "share": 0.004734842673219808
+          },
+          {
+            "symbol": "slinky::evaluate(slinky::expr const&, slinky::eval_context&)",
+            "samples": 3,
+            "period": 71949512,
+            "share": 0.003758692362133093
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::make_buffer>(slinky::make_buffer const*, slinky::eval_context&)",
+            "samples": 3,
+            "period": 70165362,
+            "share": 0.003665487129859944
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::function_ref<bool",
+            "samples": 3,
+            "period": 66853314,
+            "share": 0.003492463447355771
+          },
+          {
+            "symbol": "__memmove_avx_unaligned_erms",
+            "samples": 2,
+            "period": 45444094,
+            "share": 0.00237403095967987
+          },
+          {
+            "symbol": "void ynn::run_dot<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1}>(slinky::span<ynn::dot_loop, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, void const*, unsigned long, void const*, unsigned long, unsigned long, void*, ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1} const&, ynn::dot_kernel_state*)",
+            "samples": 2,
+            "period": 44849346,
+            "share": 0.0023429609120471087
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::dequeue(int&)",
+            "samples": 2,
+            "period": 44020151,
+            "share": 0.002299643190681341
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::task_impl::work(unsigned long)",
+            "samples": 1,
+            "period": 24527836,
+            "share": 0.0012813511484671795
+          },
+          {
+            "symbol": "ynn::multiply_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 1,
+            "period": 24527020,
+            "share": 0.001281308520061757
+          },
+          {
+            "symbol": "ynn::sigmoid_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 1,
+            "period": 24323849,
+            "share": 0.0012706947262405154
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::thread_pool::task*)",
+            "samples": 1,
+            "period": 24297566,
+            "share": 0.0012693216841085
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_buffer_at(slinky::call const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24227882,
+            "share": 0.0012656813436630655
+          },
+          {
+            "symbol": "lab_ynn::Graph::Append(unsigned int, unsigned int, unsigned int, int, slinky::expr, slinky::expr)::{lambda(ynn_node const&, ynn_runtime&)#1}::operator()(ynn_node const&, ynn_runtime&) const::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}::operator()(slinky::call_stmt const*, slinky::eval_context&) const",
+            "samples": 1,
+            "period": 24222706,
+            "share": 0.0012654109458365118
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::div>(slinky::div const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24021183,
+            "share": 0.0012548832446772024
+          },
+          {
+            "symbol": "_int_malloc",
+            "samples": 1,
+            "period": 23843199,
+            "share": 0.001245585237188536
+          },
+          {
+            "symbol": "<ynnpack_lab::llm::session::Session>::invoke",
+            "samples": 1,
+            "period": 23767711,
+            "share": 0.0012416416917613938
+          },
+          {
+            "symbol": "operator new(unsigned long)",
+            "samples": 1,
+            "period": 22027928,
+            "share": 0.0011507542223110243
+          },
+          {
+            "symbol": "void slinky::function_ref<void",
+            "samples": 1,
+            "period": 21963599,
+            "share": 0.001147393630776176
+          },
+          {
+            "symbol": "bool slinky::function_ref<bool",
+            "samples": 1,
+            "period": 21950143,
+            "share": 0.001146690680012245
+          },
+          {
+            "symbol": "__sched_yield",
+            "samples": 1,
+            "period": 21852086,
+            "share": 0.0011415681143865924
+          },
+          {
+            "symbol": "void slinky::internal::for_each_element_impl<4ul>(slinky::span<slinky::raw_buffer const*, 4ul>, slinky::function_ref<void",
+            "samples": 1,
+            "period": 21444064,
+            "share": 0.0011202527623800037
+          },
+          {
+            "symbol": "pthread_mutex_lock@@GLIBC_2.2.5",
+            "samples": 1,
+            "period": 20494064,
+            "share": 0.0010706241041060402
+          }
+        ]
+      }
+    },
+    "gemma4_e4b": {
+      "prefill": {
+        "sample_count": 2774,
+        "sampled_cycle_period": 65136515101,
+        "symbols": [
+          {
+            "symbol": "ynn::dot_uint8_int4_int32_5x8x8_1x8x8_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 2178,
+            "period": 51211882695,
+            "share": 0.7862238656088891
+          },
+          {
+            "symbol": "ynn::dot_fp32_6x16x1_1x8x1_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 166,
+            "period": 3992845540,
+            "share": 0.061299649417976006
+          },
+          {
+            "symbol": "ynn::dot_uint8_int8_int32_6x16x4_1x8x4_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 59,
+            "period": 1259636583,
+            "share": 0.01933840920176372
+          },
+          {
+            "symbol": "ynn::dot_uint8_int4_int32_4x8x8_1x8x8_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 46,
+            "period": 948894762,
+            "share": 0.014567785220450522
+          },
+          {
+            "symbol": "ynn::dequantize_int8_to_fp32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 39,
+            "period": 920081626,
+            "share": 0.014125435242787107
+          },
+          {
+            "symbol": "ynn::quantize_fp32_to_int8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 32,
+            "period": 751409324,
+            "share": 0.011535915343872367
+          },
+          {
+            "symbol": "long slinky::raw_buffer::flat_offset_bytes_impl<long, long, int>(slinky::dim const*, unsigned long, long, long, long, int)",
+            "samples": 23,
+            "period": 553628573,
+            "share": 0.008499511712309898
+          },
+          {
+            "symbol": "ynn::tanh_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 23,
+            "period": 534659373,
+            "share": 0.00820828950045858
+          },
+          {
+            "symbol": "[unknown]",
+            "samples": 22,
+            "period": 523561218,
+            "share": 0.008037906498193394
+          },
+          {
+            "symbol": "lab_ynn::Graph::Mask(unsigned int, unsigned int, slinky::expr, slinky::expr, int, bool)::{lambda(ynn_node const&, ynn_runtime&)#1}::operator()(ynn_node const&, ynn_runtime&) const::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}::operator()(slinky::call_stmt const*, slinky::eval_context&) const",
+            "samples": 21,
+            "period": 503805179,
+            "share": 0.007734604441438185
+          },
+          {
+            "symbol": "ynn::quantize_fp32_to_uint8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 15,
+            "period": 355166426,
+            "share": 0.005452647035987151
+          },
+          {
+            "symbol": "ynn::multiply_int32_fp32_fp32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 14,
+            "period": 333557146,
+            "share": 0.005120893334296282
+          },
+          {
+            "symbol": "void ynn::run_dot<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1}>(slinky::span<ynn::dot_loop, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, void const*, unsigned long, void const*, unsigned long, unsigned long, void*, ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1} const&, ynn::dot_kernel_state*)",
+            "samples": 13,
+            "period": 297412007,
+            "share": 0.004565979720266521
+          },
+          {
+            "symbol": "ynn::multiply_fp32_fp32_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 12,
+            "period": 291478054,
+            "share": 0.004474879467346958
+          },
+          {
+            "symbol": "ynn::add_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 10,
+            "period": 246222515,
+            "share": 0.0037800996049329617
+          },
+          {
+            "symbol": "__memmove_avx_unaligned_erms",
+            "samples": 7,
+            "period": 169670121,
+            "share": 0.0026048387872288116
+          },
+          {
+            "symbol": "ynn::exp_subtract_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 7,
+            "period": 168624910,
+            "share": 0.0025887923193086393
+          },
+          {
+            "symbol": "ynn::multiply_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 6,
+            "period": 147585668,
+            "share": 0.002265790052955016
+          },
+          {
+            "symbol": "ynn::sum_squared_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 6,
+            "period": 147553496,
+            "share": 0.0022652961364482745
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::function_ref<bool",
+            "samples": 6,
+            "period": 132459573,
+            "share": 0.0020335686180725137
+          },
+          {
+            "symbol": "ynn::transpose_x32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 5,
+            "period": 121665505,
+            "share": 0.00186785407250214
+          },
+          {
+            "symbol": "ynn::divide_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 5,
+            "period": 118899805,
+            "share": 0.0018253940177124183
+          },
+          {
+            "symbol": "std::_Function_handler<long",
+            "samples": 5,
+            "period": 116469605,
+            "share": 0.001788084683674026
+          },
+          {
+            "symbol": "ynn::transpose_x1024_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 4,
+            "period": 96928423,
+            "share": 0.0014880811914746099
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::allocate>(slinky::allocate const*, slinky::eval_context&)",
+            "samples": 4,
+            "period": 96357883,
+            "share": 0.0014793220492467008
+          },
+          {
+            "symbol": "bool slinky::function_ref<bool",
+            "samples": 4,
+            "period": 94511572,
+            "share": 0.0014509767962478702
+          },
+          {
+            "symbol": "long std::__invoke_impl<long, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*, slinky::eval_context&>(std::__invoke_other, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*&&, slinky::eval_context&)",
+            "samples": 3,
+            "period": 72616408,
+            "share": 0.0011148340970867378
+          },
+          {
+            "symbol": "ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const",
+            "samples": 3,
+            "period": 72065952,
+            "share": 0.0011063832918948042
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::task_impl::work(unsigned long)",
+            "samples": 3,
+            "period": 71506802,
+            "share": 0.001097799013182119
+          },
+          {
+            "symbol": "lab_ynn::Graph::Run()",
+            "samples": 3,
+            "period": 68246722,
+            "share": 0.0010477490528035978
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_loop_parallel(slinky::loop const*, long, slinky::eval_context&)",
+            "samples": 2,
+            "period": 48515667,
+            "share": 0.0007448305597063661
+          },
+          {
+            "symbol": "ynn::multiply_add_fp32_fp32_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 2,
+            "period": 48238557,
+            "share": 0.0007405762639466019
+          },
+          {
+            "symbol": "ynn::transpose_x2048_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 2,
+            "period": 47983304,
+            "share": 0.0007366575249780802
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_unshadowed(slinky::crop_dim const*, slinky::eval_context&)",
+            "samples": 2,
+            "period": 47912968,
+            "share": 0.0007355777005525495
+          },
+          {
+            "symbol": "ynn::get_dot_kernel(ynn::dot_type const&, ynn::dot_cost_models const&, ynn::dot_shape const&, ynn::dot_packed_shape, unsigned int, std::optional<bool>, unsigned long, int)",
+            "samples": 2,
+            "period": 47658971,
+            "share": 0.000731678244163055
+          },
+          {
+            "symbol": "std::vector<long, slinky::uninitialized_allocator<long> >::resize(unsigned long)",
+            "samples": 2,
+            "period": 47524450,
+            "share": 0.0007296130277511636
+          },
+          {
+            "symbol": "void slinky::function_ref<void",
+            "samples": 2,
+            "period": 47290694,
+            "share": 0.0007260243187200227
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::add>(slinky::add const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 25973764,
+            "share": 0.0003987588829357136
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::loop>(slinky::loop const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24621190,
+            "share": 0.00037799366395059115
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::thread_pool::task*)",
+            "samples": 1,
+            "period": 24459905,
+            "share": 0.000375517556658853
+          }
+        ]
+      },
+      "decode": {
+        "sample_count": 2622,
+        "sampled_cycle_period": 59604504288,
+        "symbols": [
+          {
+            "symbol": "ynn::dot_uint8_int4_int32_1x16x8_1x8x8_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 2092,
+            "period": 47513796686,
+            "share": 0.7971511088561442
+          },
+          {
+            "symbol": "ynn::dot_uint8_int2_int32_1x32x16_1x8x16_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 179,
+            "period": 4144183923,
+            "share": 0.06952803269658828
+          },
+          {
+            "symbol": "ynn::dot_uint8_int8_int32_1x32x4_1x8x4_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 60,
+            "period": 1385781321,
+            "share": 0.02324960735021154
+          },
+          {
+            "symbol": "[unknown]",
+            "samples": 48,
+            "period": 1084221552,
+            "share": 0.018190262043975815
+          },
+          {
+            "symbol": "ynn::dot_fp32_1x32x1_1x8x1_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 24,
+            "period": 536010375,
+            "share": 0.008992783035491387
+          },
+          {
+            "symbol": "ynn::dot_fp32_1x16x2_1x4x2_avx2_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 23,
+            "period": 511220864,
+            "share": 0.008576883074639085
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::allocate>(slinky::allocate const*, slinky::eval_context&)",
+            "samples": 22,
+            "period": 501358003,
+            "share": 0.008411411335249322
+          },
+          {
+            "symbol": "lab_ynn::Graph::Run()",
+            "samples": 20,
+            "period": 465209667,
+            "share": 0.007804941464694964
+          },
+          {
+            "symbol": "ynn::dequantize_int8_to_fp32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 20,
+            "period": 427825009,
+            "share": 0.007177729504012212
+          },
+          {
+            "symbol": "std::_Function_handler<long",
+            "samples": 14,
+            "period": 321222943,
+            "share": 0.005389239401235501
+          },
+          {
+            "symbol": "ynn::transpose_x64_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 13,
+            "period": 286940757,
+            "share": 0.004814078406114166
+          },
+          {
+            "symbol": "ynn::multiply_int32_fp32_fp32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 12,
+            "period": 269740565,
+            "share": 0.004525506389528116
+          },
+          {
+            "symbol": "long std::__invoke_impl<long, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*, slinky::eval_context&>(std::__invoke_other, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*&&, slinky::eval_context&)",
+            "samples": 8,
+            "period": 184448672,
+            "share": 0.0030945425048545284
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::function_ref<bool",
+            "samples": 7,
+            "period": 156199123,
+            "share": 0.0026205926022850445
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_unshadowed(slinky::crop_dim const*, slinky::eval_context&)",
+            "samples": 4,
+            "period": 91591007,
+            "share": 0.0015366457299509787
+          },
+          {
+            "symbol": "ynn::dequantize_dot_f32_avx2(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dequantize_dot_params const*)",
+            "samples": 4,
+            "period": 91370448,
+            "share": 0.0015329453552454986
+          },
+          {
+            "symbol": "void ynn::run_dot<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1}>(slinky::span<ynn::dot_loop, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, void const*, unsigned long, void const*, unsigned long, unsigned long, void*, ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1} const&, ynn::dot_kernel_state*)",
+            "samples": 4,
+            "period": 89502268,
+            "share": 0.001501602421983723
+          },
+          {
+            "symbol": "std::vector<long, slinky::uninitialized_allocator<long> >::resize(unsigned long)",
+            "samples": 4,
+            "period": 88907478,
+            "share": 0.0014916234781588392
+          },
+          {
+            "symbol": "ynn::get_dot_kernel(ynn::dot_type const&, ynn::dot_cost_models const&, ynn::dot_shape const&, ynn::dot_packed_shape, unsigned int, std::optional<bool>, unsigned long, int)",
+            "samples": 4,
+            "period": 88312460,
+            "share": 0.0014816407091196913
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::task_impl::work(unsigned long)",
+            "samples": 4,
+            "period": 85705867,
+            "share": 0.0014379092322600678
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_non_inlined(slinky::expr_ref, slinky::eval_context&)",
+            "samples": 3,
+            "period": 69257696,
+            "share": 0.0011619540641653059
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::thread_pool::task*)",
+            "samples": 3,
+            "period": 68974131,
+            "share": 0.0011571966216970344
+          },
+          {
+            "symbol": "void slinky::function_ref<void",
+            "samples": 3,
+            "period": 68625979,
+            "share": 0.001151355586624957
+          },
+          {
+            "symbol": "long slinky::raw_buffer::flat_offset_bytes_impl<long, long, int>(slinky::dim const*, unsigned long, long, long, long, int)",
+            "samples": 3,
+            "period": 66792626,
+            "share": 0.0011205969548420045
+          },
+          {
+            "symbol": "__sched_yield",
+            "samples": 3,
+            "period": 65862345,
+            "share": 0.001104989392777483
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::dequeue(int&)",
+            "samples": 3,
+            "period": 63683560,
+            "share": 0.0010684353600575321
+          },
+          {
+            "symbol": "__memmove_avx_unaligned_erms",
+            "samples": 2,
+            "period": 48482573,
+            "share": 0.0008134045166408817
+          },
+          {
+            "symbol": "ynn::quantize_fp32_to_int8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 2,
+            "period": 47781387,
+            "share": 0.0008016405399351621
+          },
+          {
+            "symbol": "lab_ynn::ExecutionProfile::Record(unsigned long, unsigned long, unsigned long)",
+            "samples": 2,
+            "period": 47330587,
+            "share": 0.0007940773531360268
+          },
+          {
+            "symbol": "ynn::dot_fp32_1x8x2_1x4x2_avx2_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 2,
+            "period": 46907335,
+            "share": 0.0007869763461726116
+          },
+          {
+            "symbol": "pthread_mutex_lock@@GLIBC_2.2.5",
+            "samples": 2,
+            "period": 46741915,
+            "share": 0.0007842010525605598
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::make_buffer>(slinky::make_buffer const*, slinky::eval_context&)",
+            "samples": 2,
+            "period": 46229315,
+            "share": 0.0007756010313688191
+          },
+          {
+            "symbol": "ynn::tanh_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 2,
+            "period": 46218564,
+            "share": 0.0007754206590944679
+          },
+          {
+            "symbol": "bool slinky::function_ref<bool",
+            "samples": 2,
+            "period": 42315970,
+            "share": 0.0007099458422728524
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::mod>(slinky::mod const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24381155,
+            "share": 0.0004090488678874658
+          },
+          {
+            "symbol": "ynn::poly3_fp32_fma3(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 1,
+            "period": 24227474,
+            "share": 0.0004064705224782424
+          },
+          {
+            "symbol": "std::_Function_handler<void",
+            "samples": 1,
+            "period": 24224268,
+            "share": 0.0004064167345969691
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::let_stmt>(slinky::let_stmt const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 23931540,
+            "share": 0.00040150556213614994
+          },
+          {
+            "symbol": "ynn::schedule_dot(slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, ynn::dot_loop*)",
+            "samples": 1,
+            "period": 23882327,
+            "share": 0.000400679903059074
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::loop>(slinky::loop const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 23869489,
+            "share": 0.00040046451665240294
+          }
+        ]
+      }
+    },
+    "qwen3_5_4b_int8": {
+      "prefill": {
+        "sample_count": 4728,
+        "sampled_cycle_period": 108742981815,
+        "symbols": [
+          {
+            "symbol": "ynn::dot_uint8_int8_int32_6x16x4_1x8x4_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 3735,
+            "period": 85622614635,
+            "share": 0.787385201379398
+          },
+          {
+            "symbol": "lab_ynn::GatedDeltaAvx2(lab_ynn::GatedDeltaCpuArgs const&, long, long)",
+            "samples": 340,
+            "period": 7977515468,
+            "share": 0.07336119844103431
+          },
+          {
+            "symbol": "ynn::dot_fp32_6x16x1_1x8x1_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 115,
+            "period": 2639169291,
+            "share": 0.02426978961722708
+          },
+          {
+            "symbol": "ynn::dequantize_dot_f32_avx2(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dequantize_dot_params const*)",
+            "samples": 106,
+            "period": 2434277325,
+            "share": 0.022385603966068694
+          },
+          {
+            "symbol": "[unknown]",
+            "samples": 70,
+            "period": 1635332697,
+            "share": 0.015038512552305443
+          },
+          {
+            "symbol": "ynn::sigmoid_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 70,
+            "period": 1630031631,
+            "share": 0.014989763971831362
+          },
+          {
+            "symbol": "ynn::multiply_fp32_fp32_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 37,
+            "period": 847142792,
+            "share": 0.0077903215256797855
+          },
+          {
+            "symbol": "__memmove_avx_unaligned_erms",
+            "samples": 35,
+            "period": 818519415,
+            "share": 0.007527101072072069
+          },
+          {
+            "symbol": "ynn::multiply_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 35,
+            "period": 811290356,
+            "share": 0.0074606226761393685
+          },
+          {
+            "symbol": "lab_ynn::CausalConvAvx2(lab_ynn::CausalConvCpuArgs const&, long, long)",
+            "samples": 24,
+            "period": 565269474,
+            "share": 0.005198215687718311
+          },
+          {
+            "symbol": "ynn::transpose_x32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 18,
+            "period": 433685026,
+            "share": 0.003988165661465957
+          },
+          {
+            "symbol": "ynn::quantize_fp32_to_uint8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 18,
+            "period": 419185208,
+            "share": 0.0038548253965772494
+          },
+          {
+            "symbol": "ynn::min_max_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 16,
+            "period": 373328018,
+            "share": 0.003433122871645434
+          },
+          {
+            "symbol": "void slinky::function_ref<void",
+            "samples": 12,
+            "period": 277161510,
+            "share": 0.0025487760715585633
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::task_impl::work(unsigned long)",
+            "samples": 8,
+            "period": 192483184,
+            "share": 0.0017700745444654423
+          },
+          {
+            "symbol": "ynn::exp_subtract_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 8,
+            "period": 186730786,
+            "share": 0.0017171755168317664
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::function_ref<bool",
+            "samples": 8,
+            "period": 185208992,
+            "share": 0.0017031811056559816
+          },
+          {
+            "symbol": "ynn::sum_squared_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 7,
+            "period": 167139892,
+            "share": 0.0015370177386191991
+          },
+          {
+            "symbol": "ynn::rsqrt_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 7,
+            "period": 163970940,
+            "share": 0.0015078760694548277
+          },
+          {
+            "symbol": "void ynn::run_dot<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1}>(slinky::span<ynn::dot_loop, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, void const*, unsigned long, void const*, unsigned long, unsigned long, void*, ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1} const&, ynn::dot_kernel_state*)",
+            "samples": 7,
+            "period": 156834134,
+            "share": 0.0014422460317192287
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::allocate>(slinky::allocate const*, slinky::eval_context&)",
+            "samples": 7,
+            "period": 154785173,
+            "share": 0.00142340379504518
+          },
+          {
+            "symbol": "std::_Function_handler<long",
+            "samples": 5,
+            "period": 120020728,
+            "share": 0.0011037101061306777
+          },
+          {
+            "symbol": "__expf_fma",
+            "samples": 4,
+            "period": 93814808,
+            "share": 0.0008627205768516014
+          },
+          {
+            "symbol": "ynn::add_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 4,
+            "period": 91808319,
+            "share": 0.0008442689125095884
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::make_buffer>(slinky::make_buffer const*, slinky::eval_context&)",
+            "samples": 3,
+            "period": 73022011,
+            "share": 0.0006715101037437926
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_unshadowed(slinky::crop_dim const*, slinky::eval_context&)",
+            "samples": 2,
+            "period": 48407053,
+            "share": 0.0004451510542754193
+          },
+          {
+            "symbol": "bool slinky::function_ref<bool",
+            "samples": 2,
+            "period": 47399034,
+            "share": 0.00043588131582264353
+          },
+          {
+            "symbol": "ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const",
+            "samples": 2,
+            "period": 46562846,
+            "share": 0.0004281917345177776
+          },
+          {
+            "symbol": "__sched_yield",
+            "samples": 2,
+            "period": 43429332,
+            "share": 0.0003993759530512466
+          },
+          {
+            "symbol": "clock_gettime@plt",
+            "samples": 1,
+            "period": 25996655,
+            "share": 0.0002390651292257835
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_non_inlined(slinky::stmt_ref, slinky::eval_context&)",
+            "samples": 1,
+            "period": 25241114,
+            "share": 0.0002321171773911964
+          },
+          {
+            "symbol": "void ynn::(anonymous namespace)::unary_impl<signed char, float, ynn::(anonymous namespace)::convert_op<float> >(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 1,
+            "period": 24968705,
+            "share": 0.00022961210538146028
+          },
+          {
+            "symbol": "ynn::schedule_dot(slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, ynn::dot_loop*)",
+            "samples": 1,
+            "period": 24903642,
+            "share": 0.00022901378630914822
+          },
+          {
+            "symbol": "ynn::abs_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 1,
+            "period": 24661846,
+            "share": 0.0002267902313176973
+          },
+          {
+            "symbol": "ynn::max_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 1,
+            "period": 23793400,
+            "share": 0.00021880400558151644
+          },
+          {
+            "symbol": "slinky::raw_buffer::init_strides_impl(long)",
+            "samples": 1,
+            "period": 23619944,
+            "share": 0.00021720890494049213
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::add>(slinky::add const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 23523548,
+            "share": 0.00021632244773294568
+          },
+          {
+            "symbol": "long std::__invoke_impl<long, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*, slinky::eval_context&>(std::__invoke_other, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*&&, slinky::eval_context&)",
+            "samples": 1,
+            "period": 23418063,
+            "share": 0.00021535240811991154
+          },
+          {
+            "symbol": "lab_ynn::ExecutionProfile::Record(unsigned long, unsigned long, unsigned long)",
+            "samples": 1,
+            "period": 23288113,
+            "share": 0.00021415738847054163
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::init_context(slinky::eval_context&, slinky::eval_context const&, slinky::let_stmt const*, slinky::var)",
+            "samples": 1,
+            "period": 23262115,
+            "share": 0.00021391831097270156
+          }
+        ]
+      },
+      "decode": {
+        "sample_count": 4702,
+        "sampled_cycle_period": 112651802619,
+        "symbols": [
+          {
+            "symbol": "ynn::dot_uint8_int8_int32_1x32x4_1x8x4_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 4411,
+            "period": 105679148117,
+            "share": 0.9381043681512826
+          },
+          {
+            "symbol": "lab_ynn::GatedDeltaAvx2(lab_ynn::GatedDeltaCpuArgs const&, long, long)",
+            "samples": 115,
+            "period": 2749303753,
+            "share": 0.024405324096751727
+          },
+          {
+            "symbol": "[unknown]",
+            "samples": 37,
+            "period": 889654234,
+            "share": 0.007897381251935242
+          },
+          {
+            "symbol": "ynn::dequantize_dot_f32_avx2(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dequantize_dot_params const*)",
+            "samples": 30,
+            "period": 716587669,
+            "share": 0.006361084797050016
+          },
+          {
+            "symbol": "ynn::dot_fp32_8x4x2_1x4x2_avx2_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 29,
+            "period": 693052829,
+            "share": 0.006152168122368854
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::allocate>(slinky::allocate const*, slinky::eval_context&)",
+            "samples": 13,
+            "period": 315308876,
+            "share": 0.002798968757441078
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::function_ref<bool",
+            "samples": 12,
+            "period": 286990800,
+            "share": 0.0025475917235930298
+          },
+          {
+            "symbol": "ynn::dot_fp32_1x32x1_1x8x1_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 5,
+            "period": 121164092,
+            "share": 0.0010755628332889571
+          },
+          {
+            "symbol": "std::_Function_handler<long",
+            "samples": 5,
+            "period": 121116011,
+            "share": 0.0010751360225421942
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::task_impl::work(unsigned long)",
+            "samples": 5,
+            "period": 119752771,
+            "share": 0.0010630346627032343
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::make_buffer>(slinky::make_buffer const*, slinky::eval_context&)",
+            "samples": 5,
+            "period": 118223010,
+            "share": 0.0010494551108058377
+          },
+          {
+            "symbol": "__memmove_avx_unaligned_erms",
+            "samples": 4,
+            "period": 97957400,
+            "share": 0.0008695590991233582
+          },
+          {
+            "symbol": "ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const",
+            "samples": 3,
+            "period": 71627392,
+            "share": 0.000635829967517264
+          },
+          {
+            "symbol": "long std::__invoke_impl<long, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*, slinky::eval_context&>(std::__invoke_other, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*&&, slinky::eval_context&)",
+            "samples": 3,
+            "period": 71199608,
+            "share": 0.0006320325671201588
+          },
+          {
+            "symbol": "lab_ynn::Graph::Run()",
+            "samples": 2,
+            "period": 49424455,
+            "share": 0.0004387364769222433
+          },
+          {
+            "symbol": "void slinky::function_ref<void",
+            "samples": 2,
+            "period": 48825085,
+            "share": 0.00043341592291364805
+          },
+          {
+            "symbol": "bool slinky::function_ref<bool",
+            "samples": 2,
+            "period": 47480597,
+            "share": 0.00042148102290545913
+          },
+          {
+            "symbol": "lab_ynn::CausalConvAvx2(lab_ynn::CausalConvCpuArgs const&, long, long)",
+            "samples": 2,
+            "period": 47294294,
+            "share": 0.0004198272277981576
+          },
+          {
+            "symbol": "slinky::copy(slinky::raw_buffer const&, slinky::raw_buffer const&, slinky::raw_buffer const&)",
+            "samples": 1,
+            "period": 24594296,
+            "share": 0.00021832137105857454
+          },
+          {
+            "symbol": "lab_ynn::Graph::GatedDeltaRule(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, std::vector<long, std::allocator<long> > const&, double)::{lambda(ynn_node const&, ynn_runtime&)#1}::operator()(ynn_node const&, ynn_runtime&) const::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}::operator()(slinky::call_stmt const*, slinky::eval_context&) const",
+            "samples": 1,
+            "period": 24572327,
+            "share": 0.0002181263542058545
+          },
+          {
+            "symbol": "ynn::sigmoid_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 1,
+            "period": 24508184,
+            "share": 0.00021755696251829368
+          },
+          {
+            "symbol": "void ynn::run_dot<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1}>(slinky::span<ynn::dot_loop, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, void const*, unsigned long, void const*, unsigned long, unsigned long, void*, ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1} const&, ynn::dot_kernel_state*)",
+            "samples": 1,
+            "period": 24477165,
+            "share": 0.00021728160962309937
+          },
+          {
+            "symbol": "ynn::quantize_fp32_to_uint8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 1,
+            "period": 24293593,
+            "share": 0.00021565205735911243
+          },
+          {
+            "symbol": "lab_ynn::ExecutionProfile::Record(unsigned long, unsigned long, unsigned long)",
+            "samples": 1,
+            "period": 24270232,
+            "share": 0.00021544468384659965
+          },
+          {
+            "symbol": "void slinky::internal::for_each_element_impl<18446744073709551615ul>(slinky::span<slinky::raw_buffer const*, 18446744073709551615ul>, slinky::function_ref<void",
+            "samples": 1,
+            "period": 24228258,
+            "share": 0.00021507208439391302
+          },
+          {
+            "symbol": "_mid_memalign",
+            "samples": 1,
+            "period": 23959767,
+            "share": 0.00021268871374419457
+          },
+          {
+            "symbol": "ynn::transpose_x64_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 1,
+            "period": 23850301,
+            "share": 0.0002117169938297763
+          },
+          {
+            "symbol": "clock_gettime@@GLIBC_2.17",
+            "samples": 1,
+            "period": 23804552,
+            "share": 0.00021131088403893053
+          },
+          {
+            "symbol": "pthread_mutex_lock@@GLIBC_2.2.5",
+            "samples": 1,
+            "period": 23742999,
+            "share": 0.00021076448355026567
+          },
+          {
+            "symbol": "__GI___pthread_mutex_unlock_usercnt",
+            "samples": 1,
+            "period": 23729070,
+            "share": 0.0002106408370601415
+          },
+          {
+            "symbol": "ynn::schedule_dot(slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, ynn::dot_loop*)",
+            "samples": 1,
+            "period": 23714664,
+            "share": 0.00021051295628357974
+          },
+          {
+            "symbol": "_int_free_chunk",
+            "samples": 1,
+            "period": 23665454,
+            "share": 0.0002100761235045568
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::add>(slinky::add const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 23559247,
+            "share": 0.00020913333344234003
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::init_context(slinky::eval_context&, slinky::eval_context const&, slinky::let_stmt const*, slinky::var)",
+            "samples": 1,
+            "period": 23390538,
+            "share": 0.00020763571870313703
+          },
+          {
+            "symbol": "__sched_yield",
+            "samples": 1,
+            "period": 23330979,
+            "share": 0.0002071070187745488
+          }
+        ]
+      }
+    },
+    "gemma4_e2b": {
+      "prefill": {
+        "sample_count": 820,
+        "sampled_cycle_period": 18733478742,
+        "symbols": [
+          {
+            "symbol": "ynn::dot_uint8_int4_int32_5x8x8_1x8x8_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 514,
+            "period": 11920130334,
+            "share": 0.6363009507292076
+          },
+          {
+            "symbol": "ynn::dot_fp32_6x16x1_1x8x1_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 97,
+            "period": 2241975924,
+            "share": 0.11967750116659032
+          },
+          {
+            "symbol": "ynn::dot_uint8_int8_int32_6x16x4_1x8x4_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 26,
+            "period": 541556481,
+            "share": 0.02890848456169775
+          },
+          {
+            "symbol": "long slinky::raw_buffer::flat_offset_bytes_impl<long, long, int>(slinky::dim const*, unsigned long, long, long, long, int)",
+            "samples": 22,
+            "period": 507642174,
+            "share": 0.027098126353963223
+          },
+          {
+            "symbol": "lab_ynn::Graph::Mask(unsigned int, unsigned int, slinky::expr, slinky::expr, int, bool)::{lambda(ynn_node const&, ynn_runtime&)#1}::operator()(ynn_node const&, ynn_runtime&) const::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}::operator()(slinky::call_stmt const*, slinky::eval_context&) const",
+            "samples": 22,
+            "period": 504202314,
+            "share": 0.026914505359305785
+          },
+          {
+            "symbol": "ynn::quantize_fp32_to_int8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 15,
+            "period": 353638304,
+            "share": 0.018877343010892663
+          },
+          {
+            "symbol": "ynn::dequantize_int8_to_fp32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 14,
+            "period": 329218044,
+            "share": 0.017573780531316974
+          },
+          {
+            "symbol": "[unknown]",
+            "samples": 11,
+            "period": 249537125,
+            "share": 0.013320383706446571
+          },
+          {
+            "symbol": "ynn::dot_uint8_int4_int32_4x8x8_1x8x8_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 19,
+            "period": 239702027,
+            "share": 0.012795382550203765
+          },
+          {
+            "symbol": "ynn::multiply_fp32_fp32_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 6,
+            "period": 139432963,
+            "share": 0.007442982956891755
+          },
+          {
+            "symbol": "void ynn::run_dot<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1}>(slinky::span<ynn::dot_loop, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, void const*, unsigned long, void const*, unsigned long, unsigned long, void*, ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1} const&, ynn::dot_kernel_state*)",
+            "samples": 6,
+            "period": 137772582,
+            "share": 0.007354351207131501
+          },
+          {
+            "symbol": "ynn::quantize_fp32_to_uint8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 6,
+            "period": 129567597,
+            "share": 0.006916366083652825
+          },
+          {
+            "symbol": "ynn::multiply_add_fp32_fp32_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 5,
+            "period": 117461238,
+            "share": 0.00627012417809271
+          },
+          {
+            "symbol": "ynn::tanh_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 5,
+            "period": 115355726,
+            "share": 0.006157731171486868
+          },
+          {
+            "symbol": "ynn::sum_squared_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 5,
+            "period": 115231453,
+            "share": 0.0061510974329425485
+          },
+          {
+            "symbol": "ynn::multiply_int32_fp32_fp32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 5,
+            "period": 114244202,
+            "share": 0.0060983976106833435
+          },
+          {
+            "symbol": "ynn::multiply_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 4,
+            "period": 92140632,
+            "share": 0.0049185008971891035
+          },
+          {
+            "symbol": "lab_ynn::Graph::Run()",
+            "samples": 3,
+            "period": 72455886,
+            "share": 0.0038677219003406815
+          },
+          {
+            "symbol": "ynn::add_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 3,
+            "period": 72324044,
+            "share": 0.0038606841257865935
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::allocate>(slinky::allocate const*, slinky::eval_context&)",
+            "samples": 3,
+            "period": 67651700,
+            "share": 0.0036112726809424105
+          },
+          {
+            "symbol": "ynn::exp_subtract_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 3,
+            "period": 67462864,
+            "share": 0.0036011925456615763
+          },
+          {
+            "symbol": "ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const",
+            "samples": 2,
+            "period": 47150489,
+            "share": 0.0025169104814627813
+          },
+          {
+            "symbol": "ynn::divide_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 2,
+            "period": 46476565,
+            "share": 0.0024809361699490804
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::let_stmt>(slinky::let_stmt const*, slinky::eval_context&)",
+            "samples": 2,
+            "period": 46389318,
+            "share": 0.0024762788929317374
+          },
+          {
+            "symbol": "__memmove_avx_unaligned_erms",
+            "samples": 2,
+            "period": 46093227,
+            "share": 0.0024604734462190473
+          },
+          {
+            "symbol": "ynn::poly3_fp32_fma3(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 2,
+            "period": 46021405,
+            "share": 0.002456639561387023
+          },
+          {
+            "symbol": "std::_Function_handler<long",
+            "samples": 2,
+            "period": 45813544,
+            "share": 0.002445543864593988
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::task_impl::work(unsigned long)",
+            "samples": 2,
+            "period": 44111414,
+            "share": 0.0023546835378259615
+          },
+          {
+            "symbol": "ynn::transpose_x2048_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 1,
+            "period": 25605198,
+            "share": 0.0013668149067580157
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::thread_pool::task*)",
+            "samples": 1,
+            "period": 24673025,
+            "share": 0.0013170551684393611
+          },
+          {
+            "symbol": "long std::__invoke_impl<long, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*, slinky::eval_context&>(std::__invoke_other, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*&&, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24650606,
+            "share": 0.0013158584339562063
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_unshadowed(slinky::crop_dim const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24156758,
+            "share": 0.001289496645694595
+          },
+          {
+            "symbol": "void slinky::function_ref<void",
+            "samples": 1,
+            "period": 23753756,
+            "share": 0.0012679842503968395
+          },
+          {
+            "symbol": "ynn::transpose_x1024_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 1,
+            "period": 23514098,
+            "share": 0.0012551912180241232
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::function_ref<bool",
+            "samples": 1,
+            "period": 23419571,
+            "share": 0.0012501453319235308
+          },
+          {
+            "symbol": "ynn::negate_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 1,
+            "period": 23164332,
+            "share": 0.0012365205800279975
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::loop>(slinky::loop const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 23037858,
+            "share": 0.0012297693512924371
+          },
+          {
+            "symbol": "void slinky::internal::for_each_element_impl<4ul>(slinky::span<slinky::raw_buffer const*, 4ul>, slinky::function_ref<void",
+            "samples": 1,
+            "period": 22882840,
+            "share": 0.0012214944333161803
+          },
+          {
+            "symbol": "std::vector<long, slinky::uninitialized_allocator<long> >::resize(unsigned long)",
+            "samples": 1,
+            "period": 22798751,
+            "share": 0.0012170057315028073
+          },
+          {
+            "symbol": "slinky::raw_buffer::init_strides_impl(long)",
+            "samples": 1,
+            "period": 21062373,
+            "share": 0.0011243172338717142
+          }
+        ]
+      },
+      "decode": {
+        "sample_count": 1946,
+        "sampled_cycle_period": 43253212608,
+        "symbols": [
+          {
+            "symbol": "ynn::dot_uint8_int2_int32_1x32x16_1x8x16_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 840,
+            "period": 18482115225,
+            "share": 0.4273004040763806
+          },
+          {
+            "symbol": "ynn::dot_uint8_int4_int32_1x16x8_1x8x8_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 717,
+            "period": 16071217061,
+            "share": 0.3715612342290503
+          },
+          {
+            "symbol": "ynn::dot_uint8_int8_int32_1x32x4_1x8x4_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 61,
+            "period": 1368298383,
+            "share": 0.03163460701522372
+          },
+          {
+            "symbol": "ynn::dot_fp32_1x16x2_1x4x2_avx2_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 45,
+            "period": 1009032532,
+            "share": 0.02332849911392182
+          },
+          {
+            "symbol": "ynn::dot_fp32_1x32x1_1x8x1_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 40,
+            "period": 880637146,
+            "share": 0.020360040165828507
+          },
+          {
+            "symbol": "[unknown]",
+            "samples": 37,
+            "period": 809986748,
+            "share": 0.018726626281863442
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::allocate>(slinky::allocate const*, slinky::eval_context&)",
+            "samples": 28,
+            "period": 632373647,
+            "share": 0.01462027000701996
+          },
+          {
+            "symbol": "std::_Function_handler<long",
+            "samples": 21,
+            "period": 477222125,
+            "share": 0.011033218025329621
+          },
+          {
+            "symbol": "ynn::multiply_int32_fp32_fp32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 20,
+            "period": 436459935,
+            "share": 0.010090809645877576
+          },
+          {
+            "symbol": "lab_ynn::Graph::Run()",
+            "samples": 16,
+            "period": 385493733,
+            "share": 0.00891248787676641
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::function_ref<bool",
+            "samples": 11,
+            "period": 235689652,
+            "share": 0.00544906696610109
+          },
+          {
+            "symbol": "ynn::dequantize_int8_to_fp32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 9,
+            "period": 200160007,
+            "share": 0.004627633300074893
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::task_impl::work(unsigned long)",
+            "samples": 8,
+            "period": 172720183,
+            "share": 0.0039932336255655175
+          },
+          {
+            "symbol": "long std::__invoke_impl<long, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*, slinky::eval_context&>(std::__invoke_other, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*&&, slinky::eval_context&)",
+            "samples": 6,
+            "period": 135613717,
+            "share": 0.003135344378440857
+          },
+          {
+            "symbol": "ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const",
+            "samples": 5,
+            "period": 113893229,
+            "share": 0.0026331738646145006
+          },
+          {
+            "symbol": "ynn::transpose_x64_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 5,
+            "period": 112969307,
+            "share": 0.002611813092910132
+          },
+          {
+            "symbol": "ynn::dequantize_dot_f32_avx2(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dequantize_dot_params const*)",
+            "samples": 5,
+            "period": 111893954,
+            "share": 0.0025869512864647743
+          },
+          {
+            "symbol": "ynn::get_dot_kernel(ynn::dot_type const&, ynn::dot_cost_models const&, ynn::dot_shape const&, ynn::dot_packed_shape, unsigned int, std::optional<bool>, unsigned long, int)",
+            "samples": 5,
+            "period": 109992998,
+            "share": 0.0025430018111453757
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::thread_pool::task*)",
+            "samples": 4,
+            "period": 96323312,
+            "share": 0.002226963182433859
+          },
+          {
+            "symbol": "ynn::tanh_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 4,
+            "period": 91218770,
+            "share": 0.002108947856121291
+          },
+          {
+            "symbol": "void ynn::run_dot<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1}>(slinky::span<ynn::dot_loop, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, void const*, unsigned long, void const*, unsigned long, unsigned long, void*, ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1} const&, ynn::dot_kernel_state*)",
+            "samples": 4,
+            "period": 88596871,
+            "share": 0.002048330416585365
+          },
+          {
+            "symbol": "bool slinky::function_ref<bool",
+            "samples": 4,
+            "period": 88503182,
+            "share": 0.00204616435782693
+          },
+          {
+            "symbol": "__sched_yield",
+            "samples": 4,
+            "period": 85097487,
+            "share": 0.001967425813458781
+          },
+          {
+            "symbol": "long slinky::raw_buffer::flat_offset_bytes_impl<long, long, int>(slinky::dim const*, unsigned long, long, long, long, int)",
+            "samples": 3,
+            "period": 67732343,
+            "share": 0.0015659494154538801
+          },
+          {
+            "symbol": "ynn::quantize_fp32_to_int8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 3,
+            "period": 67411865,
+            "share": 0.0015585400698659706
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::dequeue(int&)",
+            "samples": 3,
+            "period": 64174393,
+            "share": 0.0014836907857366985
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::make_buffer>(slinky::make_buffer const*, slinky::eval_context&)",
+            "samples": 2,
+            "period": 46174842,
+            "share": 0.0010675471072745155
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::let_stmt>(slinky::let_stmt const*, slinky::eval_context&)",
+            "samples": 2,
+            "period": 45727174,
+            "share": 0.0010571971708650011
+          },
+          {
+            "symbol": "ynn::quantize_fp32_to_uint8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 2,
+            "period": 45548789,
+            "share": 0.001053072968540039
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::add>(slinky::add const*, slinky::eval_context&)",
+            "samples": 2,
+            "period": 45218820,
+            "share": 0.0010454441941645843
+          },
+          {
+            "symbol": "ynn::sum_squared_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 2,
+            "period": 45154016,
+            "share": 0.0010439459470728061
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_non_inlined(slinky::expr_ref, slinky::eval_context&)",
+            "samples": 2,
+            "period": 45149527,
+            "share": 0.001043842162874377
+          },
+          {
+            "symbol": "void slinky::internal::for_each_element_impl<4ul>(slinky::span<slinky::raw_buffer const*, 4ul>, slinky::function_ref<void",
+            "samples": 2,
+            "period": 45026169,
+            "share": 0.001040990166628041
+          },
+          {
+            "symbol": "ynn::dot_kernel ynn::(anonymous namespace)::get_dot_kernel<float, float, float>(ynn::dot_cost_models const&, ynn::dot_shape const&, ynn::dot_packed_shape, unsigned int, std::optional<bool>, unsigned long, int)",
+            "samples": 2,
+            "period": 43137681,
+            "share": 0.000997328947353644
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::init_context(slinky::eval_context&, slinky::eval_context const&, slinky::let_stmt const*, slinky::var)",
+            "samples": 2,
+            "period": 43067850,
+            "share": 0.0009957144776810008
+          },
+          {
+            "symbol": "std::_Function_handler<void",
+            "samples": 2,
+            "period": 42567218,
+            "share": 0.0009841400310719782
+          },
+          {
+            "symbol": "clock_gettime@@GLIBC_2.17",
+            "samples": 1,
+            "period": 24132276,
+            "share": 0.000557930256388321
+          },
+          {
+            "symbol": "ynn::add_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 1,
+            "period": 24131561,
+            "share": 0.0005579137258243031
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_buffer_at(slinky::call const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24129320,
+            "share": 0.0005578619146439334
+          },
+          {
+            "symbol": "<ynnpack_lab::llm::session::Session>::invoke",
+            "samples": 1,
+            "period": 24123323,
+            "share": 0.0005577232659832119
+          }
+        ]
+      }
+    },
+    "qwen3_4b": {
+      "prefill": {
+        "sample_count": 4893,
+        "sampled_cycle_period": 115301388044,
+        "symbols": [
+          {
+            "symbol": "ynn::dot_uint8_int8_int32_6x16x4_1x8x4_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 3811,
+            "period": 89604960059,
+            "share": 0.777136872149414
+          },
+          {
+            "symbol": "ynn::dot_fp32_6x16x1_1x8x1_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 514,
+            "period": 12254504798,
+            "share": 0.10628237010749234
+          },
+          {
+            "symbol": "ynn::dequantize_dot_f32_avx2(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dequantize_dot_params const*)",
+            "samples": 68,
+            "period": 1595238042,
+            "share": 0.013835375870681135
+          },
+          {
+            "symbol": "ynn::exp_subtract_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 54,
+            "period": 1282488478,
+            "share": 0.011122923147383026
+          },
+          {
+            "symbol": "ynn::add_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 48,
+            "period": 1138122122,
+            "share": 0.009870844933503167
+          },
+          {
+            "symbol": "ynn::transpose_x32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 43,
+            "period": 1011415507,
+            "share": 0.008771928284280802
+          },
+          {
+            "symbol": "ynn::multiply_fp32_fp32_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 39,
+            "period": 932636559,
+            "share": 0.008088684575454528
+          },
+          {
+            "symbol": "[unknown]",
+            "samples": 38,
+            "period": 891147067,
+            "share": 0.007728849427727016
+          },
+          {
+            "symbol": "__memmove_avx_unaligned_erms",
+            "samples": 33,
+            "period": 801153398,
+            "share": 0.006948341313066179
+          },
+          {
+            "symbol": "ynn::sigmoid_fp32_avx2_fma3(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 31,
+            "period": 727421950,
+            "share": 0.006308874180442733
+          },
+          {
+            "symbol": "ynn::quantize_fp32_to_uint8_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 27,
+            "period": 646519102,
+            "share": 0.005607210051567486
+          },
+          {
+            "symbol": "ynn::multiply_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 28,
+            "period": 644205289,
+            "share": 0.005587142530792133
+          },
+          {
+            "symbol": "ynn::divide_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 20,
+            "period": 478598527,
+            "share": 0.004150847922293552
+          },
+          {
+            "symbol": "ynn::min_max_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 18,
+            "period": 428739541,
+            "share": 0.00371842480193204
+          },
+          {
+            "symbol": "ynn::sum_squared_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 11,
+            "period": 260659232,
+            "share": 0.0022606773120591593
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::allocate>(slinky::allocate const*, slinky::eval_context&)",
+            "samples": 11,
+            "period": 259763593,
+            "share": 0.002252909504444751
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::task_impl::work(unsigned long)",
+            "samples": 10,
+            "period": 232689663,
+            "share": 0.0020180994084061125
+          },
+          {
+            "symbol": "void ynn::run_dot<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1}>(slinky::span<ynn::dot_loop, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, void const*, unsigned long, void const*, unsigned long, unsigned long, void*, ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1} const&, ynn::dot_kernel_state*)",
+            "samples": 10,
+            "period": 232596627,
+            "share": 0.0020172925143905392
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::function_ref<bool",
+            "samples": 8,
+            "period": 192621310,
+            "share": 0.001670589689054689
+          },
+          {
+            "symbol": "std::_Function_handler<long",
+            "samples": 8,
+            "period": 192234280,
+            "share": 0.0016672330078684027
+          },
+          {
+            "symbol": "ynn::multiply_add_fp32_fp32_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 7,
+            "period": 167314065,
+            "share": 0.0014511019150623887
+          },
+          {
+            "symbol": "long std::__invoke_impl<long, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*, slinky::eval_context&>(std::__invoke_other, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*&&, slinky::eval_context&)",
+            "samples": 4,
+            "period": 96913514,
+            "share": 0.0008405233938989266
+          },
+          {
+            "symbol": "ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const",
+            "samples": 4,
+            "period": 94679524,
+            "share": 0.0008211481718144579
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::make_buffer>(slinky::make_buffer const*, slinky::eval_context&)",
+            "samples": 4,
+            "period": 94178344,
+            "share": 0.0008168014765274181
+          },
+          {
+            "symbol": "void ynn::(anonymous namespace)::unary_impl<float, float, ynn::(anonymous namespace)::convert_op<float> >(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 4,
+            "period": 92055685,
+            "share": 0.0007983918195752401
+          },
+          {
+            "symbol": "lab_ynn::Graph::Run()",
+            "samples": 4,
+            "period": 90745703,
+            "share": 0.0007870304472429305
+          },
+          {
+            "symbol": "lab_ynn::ExecutionProfile::Record(unsigned long, unsigned long, unsigned long)",
+            "samples": 3,
+            "period": 73810561,
+            "share": 0.0006401532735393719
+          },
+          {
+            "symbol": "memcpy@plt",
+            "samples": 3,
+            "period": 73265170,
+            "share": 0.0006354231396767
+          },
+          {
+            "symbol": "ynn::max_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 3,
+            "period": 73257973,
+            "share": 0.0006353607206536328
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_buffer_at(slinky::call const*, slinky::eval_context&)",
+            "samples": 2,
+            "period": 49790595,
+            "share": 0.0004318299705203851
+          },
+          {
+            "symbol": "void slinky::function_ref<void",
+            "samples": 2,
+            "period": 48137951,
+            "share": 0.00041749671722625007
+          },
+          {
+            "symbol": "ynn::rsqrt_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 2,
+            "period": 47596609,
+            "share": 0.0004128017000266877
+          },
+          {
+            "symbol": "ynn::get_dot_kernel(ynn::dot_type const&, ynn::dot_cost_models const&, ynn::dot_shape const&, ynn::dot_packed_shape, unsigned int, std::optional<bool>, unsigned long, int)",
+            "samples": 2,
+            "period": 47322725,
+            "share": 0.00041042632532698776
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_non_inlined(slinky::expr_ref, slinky::eval_context&)",
+            "samples": 2,
+            "period": 46399775,
+            "share": 0.0004024216515268094
+          },
+          {
+            "symbol": "clock_gettime@@GLIBC_2.17",
+            "samples": 2,
+            "period": 44794019,
+            "share": 0.0003884950542217776
+          },
+          {
+            "symbol": "ynn::subtract_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 2,
+            "period": 44703357,
+            "share": 0.00038770874972416476
+          },
+          {
+            "symbol": "ynn::dot_kernel ynn::(anonymous namespace)::get_dot_kernel<float, float, float>(ynn::dot_cost_models const&, ynn::dot_shape const&, ynn::dot_packed_shape, unsigned int, std::optional<bool>, unsigned long, int)",
+            "samples": 1,
+            "period": 26540924,
+            "share": 0.00023018737632084495
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::min>(slinky::min const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 25991694,
+            "share": 0.0002254239471087837
+          },
+          {
+            "symbol": "slinky::raw_buffer::init_strides_impl(long)",
+            "samples": 1,
+            "period": 25463119,
+            "share": 0.00022083965711048556
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::let_stmt>(slinky::let_stmt const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24150678,
+            "share": 0.0002094569580618049
+          }
+        ]
+      },
+      "decode": {
+        "sample_count": 4499,
+        "sampled_cycle_period": 106141973723,
+        "symbols": [
+          {
+            "symbol": "ynn::dot_uint8_int8_int32_1x32x4_1x8x4_avxvnni(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 4151,
+            "period": 97923043671,
+            "share": 0.9225666363294784
+          },
+          {
+            "symbol": "ynn::dot_fp32_8x4x2_1x4x2_avx2_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 137,
+            "period": 3200565028,
+            "share": 0.030153622697393526
+          },
+          {
+            "symbol": "[unknown]",
+            "samples": 49,
+            "period": 1152518960,
+            "share": 0.010858277075266593
+          },
+          {
+            "symbol": "ynn::dequantize_dot_f32_avx2(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dequantize_dot_params const*)",
+            "samples": 25,
+            "period": 595827414,
+            "share": 0.005613494766499614
+          },
+          {
+            "symbol": "lab_ynn::Graph::Run()",
+            "samples": 22,
+            "period": 541956004,
+            "share": 0.005105953705122812
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::function_ref<bool",
+            "samples": 15,
+            "period": 347966361,
+            "share": 0.0032783106323996955
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::allocate>(slinky::allocate const*, slinky::eval_context&)",
+            "samples": 11,
+            "period": 263657326,
+            "share": 0.0024840062489140226
+          },
+          {
+            "symbol": "__memmove_avx_unaligned_erms",
+            "samples": 7,
+            "period": 167090722,
+            "share": 0.0015742190967360254
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::make_buffer>(slinky::make_buffer const*, slinky::eval_context&)",
+            "samples": 6,
+            "period": 142194834,
+            "share": 0.00133966638279299
+          },
+          {
+            "symbol": "void slinky::function_ref<void",
+            "samples": 5,
+            "period": 119900705,
+            "share": 0.0011296257342350382
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_unshadowed(slinky::crop_dim const*, slinky::eval_context&)",
+            "samples": 5,
+            "period": 119255150,
+            "share": 0.0011235437387966953
+          },
+          {
+            "symbol": "void ynn::run_dot<ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1}>(slinky::span<ynn::dot_loop, 18446744073709551615ul>, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, unsigned long, unsigned long, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, unsigned long, void const*, unsigned long, void const*, unsigned long, unsigned long, void*, ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const::{lambda(long, long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, unsigned long, slinky::span<unsigned long const, 18446744073709551615ul>, void const*, slinky::span<unsigned long const, 18446744073709551615ul>, long, void const*, void*, ynn::dot_kernel_state*)#1} const&, ynn::dot_kernel_state*)",
+            "samples": 5,
+            "period": 118345554,
+            "share": 0.0011149741223848712
+          },
+          {
+            "symbol": "long std::__invoke_impl<long, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*, slinky::eval_context&>(std::__invoke_other, lab_ynn::ExecutionProfile::Mutator::visit(slinky::call_stmt const*)::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}&, slinky::call_stmt const*&&, slinky::eval_context&)",
+            "samples": 3,
+            "period": 73384383,
+            "share": 0.0006913794837800182
+          },
+          {
+            "symbol": "std::_Function_handler<long",
+            "samples": 3,
+            "period": 72941395,
+            "share": 0.0006872059416414852
+          },
+          {
+            "symbol": "ynn::transpose_x32_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 3,
+            "period": 72508000,
+            "share": 0.0006831227784516708
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::task_impl::work(unsigned long)",
+            "samples": 3,
+            "period": 68480505,
+            "share": 0.0006451783643925297
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::eval_non_inlined(slinky::expr_ref, slinky::eval_context&)",
+            "samples": 2,
+            "period": 48913124,
+            "share": 0.0004608273455291982
+          },
+          {
+            "symbol": "ynn::(anonymous namespace)::make_dot_impl(ynn::dot_type, bool, bool, bool, bool, unsigned long, int)::$_0::operator()(slinky::call_stmt const*, slinky::eval_context const&) const",
+            "samples": 2,
+            "period": 48610303,
+            "share": 0.0004579743648526727
+          },
+          {
+            "symbol": "slinky::(anonymous namespace)::init_context(slinky::eval_context&, slinky::eval_context const&, slinky::let_stmt const*, slinky::var)",
+            "samples": 2,
+            "period": 48391788,
+            "share": 0.0004559156599658551
+          },
+          {
+            "symbol": "slinky::thread_pool_impl::wait_for(slinky::thread_pool::task*)",
+            "samples": 2,
+            "period": 48332682,
+            "share": 0.00045535880203372123
+          },
+          {
+            "symbol": "ynn::min_max_k1_fp32_avx(unsigned long, unsigned long, unsigned long, void const*, void*, void*)",
+            "samples": 2,
+            "period": 48029848,
+            "share": 0.0004525056988797295
+          },
+          {
+            "symbol": "std::_Function_handler<void",
+            "samples": 2,
+            "period": 47912431,
+            "share": 0.0004513994729835876
+          },
+          {
+            "symbol": "void ynn::(anonymous namespace)::unary_impl<float, float, ynn::(anonymous namespace)::convert_op<float> >(unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::unary_params const*)",
+            "samples": 2,
+            "period": 47685364,
+            "share": 0.0004492601967666917
+          },
+          {
+            "symbol": "_int_free_chunk",
+            "samples": 2,
+            "period": 47455030,
+            "share": 0.0004470901410204032
+          },
+          {
+            "symbol": "void slinky::internal::for_each_element_impl<4ul>(slinky::span<slinky::raw_buffer const*, 4ul>, slinky::function_ref<void",
+            "samples": 2,
+            "period": 47354473,
+            "share": 0.00044614275897659057
+          },
+          {
+            "symbol": "ynn::dot_fp32_6x4x2_1x4x2_avx2_fma3(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void const*, unsigned long, void*, ynn::dot_kernel_state*)",
+            "samples": 2,
+            "period": 47270836,
+            "share": 0.00044535478606572056
+          },
+          {
+            "symbol": "__GI___pthread_mutex_unlock_usercnt",
+            "samples": 2,
+            "period": 47083608,
+            "share": 0.00044359084675469354
+          },
+          {
+            "symbol": "ynn::transpose_x64_avx2(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, void*)",
+            "samples": 2,
+            "period": 47021713,
+            "share": 0.00044300771269538603
+          },
+          {
+            "symbol": "sched_yield@plt",
+            "samples": 2,
+            "period": 46989205,
+            "share": 0.00044270144365911546
+          },
+          {
+            "symbol": "ynn::get_dot_kernel(ynn::dot_type const&, ynn::dot_cost_models const&, ynn::dot_shape const&, ynn::dot_packed_shape, unsigned int, std::optional<bool>, unsigned long, int)",
+            "samples": 2,
+            "period": 45762672,
+            "share": 0.0004311458548851504
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::transpose>(slinky::transpose const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 25967603,
+            "share": 0.0002446497091505757
+          },
+          {
+            "symbol": "lab_ynn::Graph::Append(unsigned int, unsigned int, unsigned int, int, slinky::expr, slinky::expr)::{lambda(ynn_node const&, ynn_runtime&)#1}::operator()(ynn_node const&, ynn_runtime&) const::{lambda(slinky::call_stmt const*, slinky::eval_context&)#1}::operator()(slinky::call_stmt const*, slinky::eval_context&) const",
+            "samples": 1,
+            "period": 24565489,
+            "share": 0.00023143991145396312
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::add>(slinky::add const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24408919,
+            "share": 0.00022996481169363078
+          },
+          {
+            "symbol": "memcpy@plt",
+            "samples": 1,
+            "period": 24360862,
+            "share": 0.00022951205018643085
+          },
+          {
+            "symbol": "ynn::multiply_fp32_fp32_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::ternary_params const*)",
+            "samples": 1,
+            "period": 24207139,
+            "share": 0.00022806377299119823
+          },
+          {
+            "symbol": "slinky::evaluate(slinky::expr const&, slinky::eval_context&)",
+            "samples": 1,
+            "period": 24102691,
+            "share": 0.00022707973249961496
+          },
+          {
+            "symbol": "ynn::multiply_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 1,
+            "period": 23739670,
+            "share": 0.00022365958694110688
+          },
+          {
+            "symbol": "long slinky::(anonymous namespace)::eval_non_inlined<slinky::div>(slinky::div const*, slinky::eval_context&)",
+            "samples": 1,
+            "period": 23674762,
+            "share": 0.0002230480663736696
+          },
+          {
+            "symbol": "ynn::subtract_fp32_avx(unsigned long, unsigned long, unsigned long, unsigned long, void const*, unsigned long, unsigned long, void const*, unsigned long, void*, ynn::binary_params const*)",
+            "samples": 1,
+            "period": 23643960,
+            "share": 0.00022275787014950307
+          },
+          {
+            "symbol": "pthread_cond_wait@@GLIBC_2.3.2",
+            "samples": 1,
+            "period": 23541300,
+            "share": 0.0002217906750201953
+          }
+        ]
+      }
+    }
+  }
+}

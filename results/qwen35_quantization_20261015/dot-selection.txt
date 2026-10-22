@@ -1,0 +1,2 @@
+rows=1 dot_uint8_int8_int32_1x32x4_1x8x4_avxvnni block=1,32,4 tile=1,8,4
+rows=8 dot_uint8_int8_int32_4x16x4_1x8x4_avxvnni block=4,16,4 tile=1,8,4

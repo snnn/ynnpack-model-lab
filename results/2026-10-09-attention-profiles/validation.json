@@ -1,0 +1,3198 @@
+{
+  "fixtures": {
+    "e2b": {
+      "sha256": "4408bee5ddb7efc262045d2c9d6dff314b9fdbdf16f6d53c5698b6152f22f827",
+      "prompt_lengths": [
+        1,
+        17,
+        128,
+        129,
+        130,
+        511,
+        512,
+        513,
+        1024,
+        2046,
+        130
+      ],
+      "forced_continuations": 2
+    },
+    "e4b": {
+      "sha256": "4408bee5ddb7efc262045d2c9d6dff314b9fdbdf16f6d53c5698b6152f22f827",
+      "prompt_lengths": [
+        1,
+        17,
+        128,
+        129,
+        130,
+        511,
+        512,
+        513,
+        1024,
+        2046,
+        130
+      ],
+      "forced_continuations": 2
+    }
+  },
+  "runs": [
+    {
+      "variant": "e2b",
+      "profile": "previous_runtime",
+      "capacity": 2048,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "716c6ff74bef201804e3ab7fad3494f07ae3d3079ca2815ece57726f85ee8260"
+    },
+    {
+      "variant": "e2b",
+      "profile": "fp32_batch",
+      "capacity": 2048,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "56f44dc4091bf5977713d0b4724095263052fd8ba6f06fa5512308595d0f6b59"
+    },
+    {
+      "variant": "e2b",
+      "profile": "fp32_rows",
+      "capacity": 2048,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "26273cca7d62c962581df14714eea39a0ec7e55f5c80345c51717cfb4f354cc8"
+    },
+    {
+      "variant": "e2b",
+      "profile": "int8_batch",
+      "capacity": 2048,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "43ed44154a6fcdce3214b1e5d7425408d3cd74fa4cb9f64cacb18beeedf85c0e"
+    },
+    {
+      "variant": "e2b",
+      "profile": "int8_rows",
+      "capacity": 2048,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "cdcf183d64c0d83d8e1637171a09bec1b41c134cf1d03d22e7e1c0d7a2469b63"
+    },
+    {
+      "variant": "e2b",
+      "profile": "fp32_batch",
+      "capacity": 8448,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "56f44dc4091bf5977713d0b4724095263052fd8ba6f06fa5512308595d0f6b59"
+    },
+    {
+      "variant": "e2b",
+      "profile": "fp32_rows",
+      "capacity": 8448,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "26273cca7d62c962581df14714eea39a0ec7e55f5c80345c51717cfb4f354cc8"
+    },
+    {
+      "variant": "e2b",
+      "profile": "int8_batch",
+      "capacity": 8448,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "43ed44154a6fcdce3214b1e5d7425408d3cd74fa4cb9f64cacb18beeedf85c0e"
+    },
+    {
+      "variant": "e2b",
+      "profile": "int8_rows",
+      "capacity": 8448,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "cdcf183d64c0d83d8e1637171a09bec1b41c134cf1d03d22e7e1c0d7a2469b63"
+    },
+    {
+      "variant": "e4b",
+      "profile": "previous_runtime",
+      "capacity": 2048,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "5c84f8c2b29ff677a84398424abca57989553aa63b280990d99fb3e92b554d1e"
+    },
+    {
+      "variant": "e4b",
+      "profile": "fp32_batch",
+      "capacity": 2048,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "d9d3672d2c70b3840cd76a1aec012a4da4d8a75eaf2c1c970bc15f7e07cd0374"
+    },
+    {
+      "variant": "e4b",
+      "profile": "fp32_rows",
+      "capacity": 2048,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "72e0649a8056e4bbfaa17375ce5f110ec76f5adb76bb153e64edb1ab660f55f8"
+    },
+    {
+      "variant": "e4b",
+      "profile": "int8_batch",
+      "capacity": 2048,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "68cdeff71e62525fc75eb060ca349b7f106c6506200f75ab7b645a19e43b4a02"
+    },
+    {
+      "variant": "e4b",
+      "profile": "int8_rows",
+      "capacity": 2048,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "22e55a496bd3a3a30c099a8f13a2b5eeb3a66b18c3779702df94d895d2880103"
+    },
+    {
+      "variant": "e4b",
+      "profile": "fp32_batch",
+      "capacity": 8448,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "d9d3672d2c70b3840cd76a1aec012a4da4d8a75eaf2c1c970bc15f7e07cd0374"
+    },
+    {
+      "variant": "e4b",
+      "profile": "fp32_rows",
+      "capacity": 8448,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "72e0649a8056e4bbfaa17375ce5f110ec76f5adb76bb153e64edb1ab660f55f8"
+    },
+    {
+      "variant": "e4b",
+      "profile": "int8_batch",
+      "capacity": 8448,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "68cdeff71e62525fc75eb060ca349b7f106c6506200f75ab7b645a19e43b4a02"
+    },
+    {
+      "variant": "e4b",
+      "profile": "int8_rows",
+      "capacity": 8448,
+      "logit_outputs": 33,
+      "view_copy_bytes": 0,
+      "binary_sha256": "22e55a496bd3a3a30c099a8f13a2b5eeb3a66b18c3779702df94d895d2880103"
+    }
+  ],
+  "comparisons": [
+    {
+      "variant": "e2b",
+      "profile": "fp32_rows",
+      "comparison": {
+        "files": 1023,
+        "byte_identical": 500,
+        "logit_outputs": 33,
+        "argmax_agreement": 32,
+        "kv_elements": 142442496,
+        "kv_different": 186944,
+        "kv_max_code_error": 28,
+        "bf16_kv_elements": 0,
+        "bf16_kv_different": 0,
+        "bf16_kv_max_abs_error": 0.0,
+        "logits": [
+          {
+            "file": "p1.decode_0001.f32",
+            "max_abs_error": 3.913524627685547,
+            "centered_cosine": 0.9790056038857965,
+            "kl_reference_to_candidate": 0.016586148306436187,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.decode_0002.f32",
+            "max_abs_error": 5.275710105895996,
+            "centered_cosine": 0.9779165827879779,
+            "kl_reference_to_candidate": 0.06554799156685613,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 236769,
+            "candidate_argmax": 236769
+          },
+          {
+            "file": "p1024.decode_0001.f32",
+            "max_abs_error": 4.640644162893295,
+            "centered_cosine": 0.9788271383390761,
+            "kl_reference_to_candidate": 0.3541515127905257,
+            "reference_argmax": 212373,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p1024.decode_0002.f32",
+            "max_abs_error": 2.395349681377411,
+            "centered_cosine": 0.990153321576976,
+            "kl_reference_to_candidate": 7.563220080024943e-05,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p1024.prefill.f32",
+            "max_abs_error": 3.568674921989441,
+            "centered_cosine": 0.9671285373277365,
+            "kl_reference_to_candidate": 3.340441415979826e-05,
+            "reference_argmax": 236772,
+            "candidate_argmax": 236772
+          },
+          {
+            "file": "p128.decode_0001.f32",
+            "max_abs_error": 2.470930576324463,
+            "centered_cosine": 0.9874122497289753,
+            "kl_reference_to_candidate": 0.04714814995337052,
+            "reference_argmax": 44602,
+            "candidate_argmax": 44602
+          },
+          {
+            "file": "p128.decode_0002.f32",
+            "max_abs_error": 2.183075428009033,
+            "centered_cosine": 0.990593215877628,
+            "kl_reference_to_candidate": 0.0003149215678684825,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p128.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 2897,
+            "candidate_argmax": 2897
+          },
+          {
+            "file": "p129.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 44602,
+            "candidate_argmax": 44602
+          },
+          {
+            "file": "p129.decode_0002.f32",
+            "max_abs_error": 2.0468223690986633,
+            "centered_cosine": 0.9926513144781497,
+            "kl_reference_to_candidate": 0.0001950110070705194,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p129.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 2342,
+            "candidate_argmax": 2342
+          },
+          {
+            "file": "p130.decode_0001.f32",
+            "max_abs_error": 4.493652522563934,
+            "centered_cosine": 0.9859214251842616,
+            "kl_reference_to_candidate": 0.06616093843378677,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p130.decode_0002.f32",
+            "max_abs_error": 2.688181161880493,
+            "centered_cosine": 0.9915367212739358,
+            "kl_reference_to_candidate": 0.00047685419127667947,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130.prefill.f32",
+            "max_abs_error": 2.2861647605895996,
+            "centered_cosine": 0.992601147936371,
+            "kl_reference_to_candidate": 0.007227115926771622,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p130_reset.decode_0001.f32",
+            "max_abs_error": 4.493652522563934,
+            "centered_cosine": 0.9859214251842616,
+            "kl_reference_to_candidate": 0.06616093843378677,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p130_reset.decode_0002.f32",
+            "max_abs_error": 2.688181161880493,
+            "centered_cosine": 0.9915367212739358,
+            "kl_reference_to_candidate": 0.00047685419127667947,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130_reset.prefill.f32",
+            "max_abs_error": 2.2861647605895996,
+            "centered_cosine": 0.992601147936371,
+            "kl_reference_to_candidate": 0.007227115926771622,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p17.decode_0001.f32",
+            "max_abs_error": 2.226881265640259,
+            "centered_cosine": 0.9912197679782276,
+            "kl_reference_to_candidate": 0.027570082906331558,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p17.decode_0002.f32",
+            "max_abs_error": 2.7883713245391846,
+            "centered_cosine": 0.9922869431413875,
+            "kl_reference_to_candidate": 0.0018552460060443717,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p17.prefill.f32",
+            "max_abs_error": 2.0927505046129227,
+            "centered_cosine": 0.9917881585621087,
+            "kl_reference_to_candidate": 0.031838867934626945,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p2046.decode_0001.f32",
+            "max_abs_error": 2.932285487651825,
+            "centered_cosine": 0.9885198617523491,
+            "kl_reference_to_candidate": 0.00029725609139776737,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p2046.decode_0002.f32",
+            "max_abs_error": 2.555849075317383,
+            "centered_cosine": 0.991692396284963,
+            "kl_reference_to_candidate": 1.152040438977202e-05,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p2046.prefill.f32",
+            "max_abs_error": 2.498849391937256,
+            "centered_cosine": 0.9738116878839975,
+            "kl_reference_to_candidate": 0.004691616752418748,
+            "reference_argmax": 603,
+            "candidate_argmax": 603
+          },
+          {
+            "file": "p511.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 15154,
+            "candidate_argmax": 15154
+          },
+          {
+            "file": "p511.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p511.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 532,
+            "candidate_argmax": 532
+          },
+          {
+            "file": "p512.decode_0001.f32",
+            "max_abs_error": 3.7789676785469055,
+            "centered_cosine": 0.9778522927271621,
+            "kl_reference_to_candidate": 0.15916888810581772,
+            "reference_argmax": 7222,
+            "candidate_argmax": 7222
+          },
+          {
+            "file": "p512.decode_0002.f32",
+            "max_abs_error": 3.331823706626892,
+            "centered_cosine": 0.9903628925249923,
+            "kl_reference_to_candidate": 0.0024981163514682797,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p512.prefill.f32",
+            "max_abs_error": 3.305297613143921,
+            "centered_cosine": 0.9875872458865261,
+            "kl_reference_to_candidate": 0.0927560688147527,
+            "reference_argmax": 7274,
+            "candidate_argmax": 7274
+          },
+          {
+            "file": "p513.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p513.decode_0002.f32",
+            "max_abs_error": 2.309544801712036,
+            "centered_cosine": 0.9918368584524501,
+            "kl_reference_to_candidate": 0.0010697825141041835,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p513.prefill.f32",
+            "max_abs_error": 3.0095971822738647,
+            "centered_cosine": 0.9861241169846954,
+            "kl_reference_to_candidate": 0.001982744166576598,
+            "reference_argmax": 17105,
+            "candidate_argmax": 17105
+          }
+        ],
+        "max_logit_abs_error": 5.275710105895996,
+        "min_centered_cosine": 0.9671285373277365,
+        "max_kl_reference_to_candidate": 0.3541515127905257
+      }
+    },
+    {
+      "variant": "e2b",
+      "profile": "int8_batch",
+      "comparison": {
+        "files": 1023,
+        "byte_identical": 95,
+        "logit_outputs": 33,
+        "argmax_agreement": 30,
+        "kv_elements": 142442496,
+        "kv_different": 391093,
+        "kv_max_code_error": 35,
+        "bf16_kv_elements": 0,
+        "bf16_kv_different": 0,
+        "bf16_kv_max_abs_error": 0.0,
+        "logits": [
+          {
+            "file": "p1.decode_0001.f32",
+            "max_abs_error": 4.469935275614262,
+            "centered_cosine": 0.9785502829523379,
+            "kl_reference_to_candidate": 0.011938533670506523,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.decode_0002.f32",
+            "max_abs_error": 5.526309013366699,
+            "centered_cosine": 0.9795312598396302,
+            "kl_reference_to_candidate": 0.05502446073772868,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 236769,
+            "candidate_argmax": 236769
+          },
+          {
+            "file": "p1024.decode_0001.f32",
+            "max_abs_error": 3.7547712326049805,
+            "centered_cosine": 0.9788867386316571,
+            "kl_reference_to_candidate": 0.3953737826258179,
+            "reference_argmax": 212373,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p1024.decode_0002.f32",
+            "max_abs_error": 2.6498632431030273,
+            "centered_cosine": 0.990913151814258,
+            "kl_reference_to_candidate": 7.563223975313578e-05,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p1024.prefill.f32",
+            "max_abs_error": 3.1161062717437744,
+            "centered_cosine": 0.962296248514205,
+            "kl_reference_to_candidate": 9.543293926686425e-05,
+            "reference_argmax": 236772,
+            "candidate_argmax": 236772
+          },
+          {
+            "file": "p128.decode_0001.f32",
+            "max_abs_error": 3.2359769344329834,
+            "centered_cosine": 0.9846158774295017,
+            "kl_reference_to_candidate": 0.09366714060026077,
+            "reference_argmax": 44602,
+            "candidate_argmax": 44602
+          },
+          {
+            "file": "p128.decode_0002.f32",
+            "max_abs_error": 2.318075656890869,
+            "centered_cosine": 0.9911316326755388,
+            "kl_reference_to_candidate": 0.0007605798522044126,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p128.prefill.f32",
+            "max_abs_error": 3.0298044681549072,
+            "centered_cosine": 0.987333832630441,
+            "kl_reference_to_candidate": 0.0001904198361746093,
+            "reference_argmax": 2897,
+            "candidate_argmax": 2897
+          },
+          {
+            "file": "p129.decode_0001.f32",
+            "max_abs_error": 3.322878360748291,
+            "centered_cosine": 0.9894927028270794,
+            "kl_reference_to_candidate": 0.09643898863836567,
+            "reference_argmax": 44602,
+            "candidate_argmax": 44602
+          },
+          {
+            "file": "p129.decode_0002.f32",
+            "max_abs_error": 2.1392273902893066,
+            "centered_cosine": 0.9911617605870774,
+            "kl_reference_to_candidate": 0.00013353667442317244,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p129.prefill.f32",
+            "max_abs_error": 2.638558864593506,
+            "centered_cosine": 0.9915117248048934,
+            "kl_reference_to_candidate": 0.008891777342061829,
+            "reference_argmax": 2342,
+            "candidate_argmax": 699
+          },
+          {
+            "file": "p130.decode_0001.f32",
+            "max_abs_error": 4.1685121059417725,
+            "centered_cosine": 0.9886850145354945,
+            "kl_reference_to_candidate": 0.04470027607781288,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p130.decode_0002.f32",
+            "max_abs_error": 2.352222442626953,
+            "centered_cosine": 0.9923053293166066,
+            "kl_reference_to_candidate": 0.00022276551226532604,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130.prefill.f32",
+            "max_abs_error": 2.320138136856258,
+            "centered_cosine": 0.9921358418731411,
+            "kl_reference_to_candidate": 0.010995559546094193,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p130_reset.decode_0001.f32",
+            "max_abs_error": 4.1685121059417725,
+            "centered_cosine": 0.9886850145354945,
+            "kl_reference_to_candidate": 0.04470027607781288,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p130_reset.decode_0002.f32",
+            "max_abs_error": 2.352222442626953,
+            "centered_cosine": 0.9923053293166066,
+            "kl_reference_to_candidate": 0.00022276551226532604,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130_reset.prefill.f32",
+            "max_abs_error": 2.320138136856258,
+            "centered_cosine": 0.9921358418731411,
+            "kl_reference_to_candidate": 0.010995559546094193,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p17.decode_0001.f32",
+            "max_abs_error": 2.226938247680664,
+            "centered_cosine": 0.9904028679654309,
+            "kl_reference_to_candidate": 0.02884580800285767,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p17.decode_0002.f32",
+            "max_abs_error": 2.3832929134368896,
+            "centered_cosine": 0.9931095880005966,
+            "kl_reference_to_candidate": 0.0010393138283804804,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p17.prefill.f32",
+            "max_abs_error": 2.159602642059326,
+            "centered_cosine": 0.9919043982399355,
+            "kl_reference_to_candidate": 0.03634128868724532,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p2046.decode_0001.f32",
+            "max_abs_error": 3.1739969849586487,
+            "centered_cosine": 0.9858995985836512,
+            "kl_reference_to_candidate": 0.0005342300105185744,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p2046.decode_0002.f32",
+            "max_abs_error": 3.192411184310913,
+            "centered_cosine": 0.9896683164276439,
+            "kl_reference_to_candidate": 3.764259248246405e-05,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p2046.prefill.f32",
+            "max_abs_error": 2.7479516118764877,
+            "centered_cosine": 0.9685047668175151,
+            "kl_reference_to_candidate": 0.0035628686239632043,
+            "reference_argmax": 603,
+            "candidate_argmax": 603
+          },
+          {
+            "file": "p511.decode_0001.f32",
+            "max_abs_error": 2.6216779947280884,
+            "centered_cosine": 0.9929962941727951,
+            "kl_reference_to_candidate": 0.02265119784266346,
+            "reference_argmax": 15154,
+            "candidate_argmax": 15154
+          },
+          {
+            "file": "p511.decode_0002.f32",
+            "max_abs_error": 2.809403896331787,
+            "centered_cosine": 0.9915173764867815,
+            "kl_reference_to_candidate": 0.0005301771694791332,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p511.prefill.f32",
+            "max_abs_error": 2.503228724002838,
+            "centered_cosine": 0.9912227910095871,
+            "kl_reference_to_candidate": 0.04189117741440603,
+            "reference_argmax": 532,
+            "candidate_argmax": 532
+          },
+          {
+            "file": "p512.decode_0001.f32",
+            "max_abs_error": 4.182650506496429,
+            "centered_cosine": 0.9796490865686934,
+            "kl_reference_to_candidate": 0.14968659545144464,
+            "reference_argmax": 7222,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p512.decode_0002.f32",
+            "max_abs_error": 3.0011793076992035,
+            "centered_cosine": 0.9908561050218626,
+            "kl_reference_to_candidate": 0.0017092093972846214,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p512.prefill.f32",
+            "max_abs_error": 3.331660270690918,
+            "centered_cosine": 0.9874224615680836,
+            "kl_reference_to_candidate": 0.05919507654794527,
+            "reference_argmax": 7274,
+            "candidate_argmax": 7274
+          },
+          {
+            "file": "p513.decode_0001.f32",
+            "max_abs_error": 3.6662631034851074,
+            "centered_cosine": 0.9747769310059105,
+            "kl_reference_to_candidate": 0.15819989561882114,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p513.decode_0002.f32",
+            "max_abs_error": 3.26059091091156,
+            "centered_cosine": 0.9888483076717863,
+            "kl_reference_to_candidate": 0.0032728853598217775,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p513.prefill.f32",
+            "max_abs_error": 3.2580647468566895,
+            "centered_cosine": 0.9861460603199032,
+            "kl_reference_to_candidate": 0.004603743593730733,
+            "reference_argmax": 17105,
+            "candidate_argmax": 17105
+          }
+        ],
+        "max_logit_abs_error": 5.526309013366699,
+        "min_centered_cosine": 0.962296248514205,
+        "max_kl_reference_to_candidate": 0.3953737826258179
+      }
+    },
+    {
+      "variant": "e2b",
+      "profile": "int8_rows",
+      "comparison": {
+        "files": 1023,
+        "byte_identical": 95,
+        "logit_outputs": 33,
+        "argmax_agreement": 30,
+        "kv_elements": 142442496,
+        "kv_different": 391093,
+        "kv_max_code_error": 35,
+        "bf16_kv_elements": 0,
+        "bf16_kv_different": 0,
+        "bf16_kv_max_abs_error": 0.0,
+        "logits": [
+          {
+            "file": "p1.decode_0001.f32",
+            "max_abs_error": 4.469935275614262,
+            "centered_cosine": 0.9785502829523379,
+            "kl_reference_to_candidate": 0.011938533670506523,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.decode_0002.f32",
+            "max_abs_error": 5.526309013366699,
+            "centered_cosine": 0.9795312598396302,
+            "kl_reference_to_candidate": 0.05502446073772868,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 236769,
+            "candidate_argmax": 236769
+          },
+          {
+            "file": "p1024.decode_0001.f32",
+            "max_abs_error": 3.7547712326049805,
+            "centered_cosine": 0.9788867386316571,
+            "kl_reference_to_candidate": 0.3953737826258179,
+            "reference_argmax": 212373,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p1024.decode_0002.f32",
+            "max_abs_error": 2.6498632431030273,
+            "centered_cosine": 0.990913151814258,
+            "kl_reference_to_candidate": 7.563223975313578e-05,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p1024.prefill.f32",
+            "max_abs_error": 3.1161062717437744,
+            "centered_cosine": 0.962296248514205,
+            "kl_reference_to_candidate": 9.543293926686425e-05,
+            "reference_argmax": 236772,
+            "candidate_argmax": 236772
+          },
+          {
+            "file": "p128.decode_0001.f32",
+            "max_abs_error": 3.2359769344329834,
+            "centered_cosine": 0.9846158774295017,
+            "kl_reference_to_candidate": 0.09366714060026077,
+            "reference_argmax": 44602,
+            "candidate_argmax": 44602
+          },
+          {
+            "file": "p128.decode_0002.f32",
+            "max_abs_error": 2.318075656890869,
+            "centered_cosine": 0.9911316326755388,
+            "kl_reference_to_candidate": 0.0007605798522044126,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p128.prefill.f32",
+            "max_abs_error": 3.0298044681549072,
+            "centered_cosine": 0.987333832630441,
+            "kl_reference_to_candidate": 0.0001904198361746093,
+            "reference_argmax": 2897,
+            "candidate_argmax": 2897
+          },
+          {
+            "file": "p129.decode_0001.f32",
+            "max_abs_error": 3.322878360748291,
+            "centered_cosine": 0.9894927028270794,
+            "kl_reference_to_candidate": 0.09643898863836567,
+            "reference_argmax": 44602,
+            "candidate_argmax": 44602
+          },
+          {
+            "file": "p129.decode_0002.f32",
+            "max_abs_error": 2.1392273902893066,
+            "centered_cosine": 0.9911617605870774,
+            "kl_reference_to_candidate": 0.00013353667442317244,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p129.prefill.f32",
+            "max_abs_error": 2.638558864593506,
+            "centered_cosine": 0.9915117248048934,
+            "kl_reference_to_candidate": 0.008891777342061829,
+            "reference_argmax": 2342,
+            "candidate_argmax": 699
+          },
+          {
+            "file": "p130.decode_0001.f32",
+            "max_abs_error": 4.1685121059417725,
+            "centered_cosine": 0.9886850145354945,
+            "kl_reference_to_candidate": 0.04470027607781288,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p130.decode_0002.f32",
+            "max_abs_error": 2.352222442626953,
+            "centered_cosine": 0.9923053293166066,
+            "kl_reference_to_candidate": 0.00022276551226532604,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130.prefill.f32",
+            "max_abs_error": 2.320138136856258,
+            "centered_cosine": 0.9921358418731411,
+            "kl_reference_to_candidate": 0.010995559546094193,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p130_reset.decode_0001.f32",
+            "max_abs_error": 4.1685121059417725,
+            "centered_cosine": 0.9886850145354945,
+            "kl_reference_to_candidate": 0.04470027607781288,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p130_reset.decode_0002.f32",
+            "max_abs_error": 2.352222442626953,
+            "centered_cosine": 0.9923053293166066,
+            "kl_reference_to_candidate": 0.00022276551226532604,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130_reset.prefill.f32",
+            "max_abs_error": 2.320138136856258,
+            "centered_cosine": 0.9921358418731411,
+            "kl_reference_to_candidate": 0.010995559546094193,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p17.decode_0001.f32",
+            "max_abs_error": 2.226938247680664,
+            "centered_cosine": 0.9904028679654309,
+            "kl_reference_to_candidate": 0.02884580800285767,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p17.decode_0002.f32",
+            "max_abs_error": 2.3832929134368896,
+            "centered_cosine": 0.9931095880005966,
+            "kl_reference_to_candidate": 0.0010393138283804804,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p17.prefill.f32",
+            "max_abs_error": 2.159602642059326,
+            "centered_cosine": 0.9919043982399355,
+            "kl_reference_to_candidate": 0.03634128868724532,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p2046.decode_0001.f32",
+            "max_abs_error": 3.1739969849586487,
+            "centered_cosine": 0.9858995985836512,
+            "kl_reference_to_candidate": 0.0005342300105185744,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p2046.decode_0002.f32",
+            "max_abs_error": 3.192411184310913,
+            "centered_cosine": 0.9896683164276439,
+            "kl_reference_to_candidate": 3.764259248246405e-05,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p2046.prefill.f32",
+            "max_abs_error": 2.7479516118764877,
+            "centered_cosine": 0.9685047668175151,
+            "kl_reference_to_candidate": 0.0035628686239632043,
+            "reference_argmax": 603,
+            "candidate_argmax": 603
+          },
+          {
+            "file": "p511.decode_0001.f32",
+            "max_abs_error": 2.6216779947280884,
+            "centered_cosine": 0.9929962941727951,
+            "kl_reference_to_candidate": 0.02265119784266346,
+            "reference_argmax": 15154,
+            "candidate_argmax": 15154
+          },
+          {
+            "file": "p511.decode_0002.f32",
+            "max_abs_error": 2.809403896331787,
+            "centered_cosine": 0.9915173764867815,
+            "kl_reference_to_candidate": 0.0005301771694791332,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p511.prefill.f32",
+            "max_abs_error": 2.503228724002838,
+            "centered_cosine": 0.9912227910095871,
+            "kl_reference_to_candidate": 0.04189117741440603,
+            "reference_argmax": 532,
+            "candidate_argmax": 532
+          },
+          {
+            "file": "p512.decode_0001.f32",
+            "max_abs_error": 4.182650506496429,
+            "centered_cosine": 0.9796490865686934,
+            "kl_reference_to_candidate": 0.14968659545144464,
+            "reference_argmax": 7222,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p512.decode_0002.f32",
+            "max_abs_error": 3.0011793076992035,
+            "centered_cosine": 0.9908561050218626,
+            "kl_reference_to_candidate": 0.0017092093972846214,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p512.prefill.f32",
+            "max_abs_error": 3.331660270690918,
+            "centered_cosine": 0.9874224615680836,
+            "kl_reference_to_candidate": 0.05919507654794527,
+            "reference_argmax": 7274,
+            "candidate_argmax": 7274
+          },
+          {
+            "file": "p513.decode_0001.f32",
+            "max_abs_error": 3.6662631034851074,
+            "centered_cosine": 0.9747769310059105,
+            "kl_reference_to_candidate": 0.15819989561882114,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p513.decode_0002.f32",
+            "max_abs_error": 3.26059091091156,
+            "centered_cosine": 0.9888483076717863,
+            "kl_reference_to_candidate": 0.0032728853598217775,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p513.prefill.f32",
+            "max_abs_error": 3.2580647468566895,
+            "centered_cosine": 0.9861460603199032,
+            "kl_reference_to_candidate": 0.004603743593730733,
+            "reference_argmax": 17105,
+            "candidate_argmax": 17105
+          }
+        ],
+        "max_logit_abs_error": 5.526309013366699,
+        "min_centered_cosine": 0.962296248514205,
+        "max_kl_reference_to_candidate": 0.3953737826258179
+      }
+    },
+    {
+      "variant": "e2b",
+      "profile": "int8_rows_vs_int8_batch",
+      "comparison": {
+        "files": 1023,
+        "byte_identical": 1023,
+        "logit_outputs": 33,
+        "argmax_agreement": 33,
+        "kv_elements": 142442496,
+        "kv_different": 0,
+        "kv_max_code_error": 0,
+        "bf16_kv_elements": 0,
+        "bf16_kv_different": 0,
+        "bf16_kv_max_abs_error": 0.0,
+        "logits": [
+          {
+            "file": "p1.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 236769,
+            "candidate_argmax": 236769
+          },
+          {
+            "file": "p1024.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p1024.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p1024.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 236772,
+            "candidate_argmax": 236772
+          },
+          {
+            "file": "p128.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 44602,
+            "candidate_argmax": 44602
+          },
+          {
+            "file": "p128.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p128.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 2897,
+            "candidate_argmax": 2897
+          },
+          {
+            "file": "p129.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 44602,
+            "candidate_argmax": 44602
+          },
+          {
+            "file": "p129.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p129.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 699,
+            "candidate_argmax": 699
+          },
+          {
+            "file": "p130.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p130.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p130_reset.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p130_reset.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130_reset.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p17.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p17.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p17.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p2046.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p2046.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p2046.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 603,
+            "candidate_argmax": 603
+          },
+          {
+            "file": "p511.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 15154,
+            "candidate_argmax": 15154
+          },
+          {
+            "file": "p511.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p511.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 532,
+            "candidate_argmax": 532
+          },
+          {
+            "file": "p512.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p512.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p512.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 7274,
+            "candidate_argmax": 7274
+          },
+          {
+            "file": "p513.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p513.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p513.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 17105,
+            "candidate_argmax": 17105
+          }
+        ],
+        "max_logit_abs_error": 0.0,
+        "min_centered_cosine": 0.9999999999999998,
+        "max_kl_reference_to_candidate": 0.0
+      }
+    },
+    {
+      "variant": "e4b",
+      "profile": "fp32_rows",
+      "comparison": {
+        "files": 3201,
+        "byte_identical": 1653,
+        "logit_outputs": 33,
+        "argmax_agreement": 31,
+        "kv_elements": 443154432,
+        "kv_different": 557960,
+        "kv_max_code_error": 43,
+        "bf16_kv_elements": 0,
+        "bf16_kv_different": 0,
+        "bf16_kv_max_abs_error": 0.0,
+        "logits": [
+          {
+            "file": "p1.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 1018,
+            "candidate_argmax": 1018
+          },
+          {
+            "file": "p1024.decode_0001.f32",
+            "max_abs_error": 3.186590552330017,
+            "centered_cosine": 0.9924475624807435,
+            "kl_reference_to_candidate": 0.03978664736640495,
+            "reference_argmax": 212373,
+            "candidate_argmax": 212373
+          },
+          {
+            "file": "p1024.decode_0002.f32",
+            "max_abs_error": 2.817744255065918,
+            "centered_cosine": 0.9925886767741688,
+            "kl_reference_to_candidate": 5.8975011146754517e-05,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p1024.prefill.f32",
+            "max_abs_error": 2.223233699798584,
+            "centered_cosine": 0.981932092239197,
+            "kl_reference_to_candidate": 2.453212534231325e-05,
+            "reference_argmax": 236772,
+            "candidate_argmax": 236772
+          },
+          {
+            "file": "p128.decode_0001.f32",
+            "max_abs_error": 2.742027759552002,
+            "centered_cosine": 0.9944576707206959,
+            "kl_reference_to_candidate": 0.02866849704200171,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p128.decode_0002.f32",
+            "max_abs_error": 1.9393362998962402,
+            "centered_cosine": 0.9945794360748733,
+            "kl_reference_to_candidate": 0.0008378993639083822,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p128.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p129.decode_0001.f32",
+            "max_abs_error": 3.6908977031707764,
+            "centered_cosine": 0.9948904715573119,
+            "kl_reference_to_candidate": 0.00952068223058659,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p129.decode_0002.f32",
+            "max_abs_error": 2.185532569885254,
+            "centered_cosine": 0.9965479387272966,
+            "kl_reference_to_candidate": 0.03900118949123955,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p129.prefill.f32",
+            "max_abs_error": 2.785537324845791,
+            "centered_cosine": 0.9957401361154232,
+            "kl_reference_to_candidate": 0.025186102537183685,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130.decode_0001.f32",
+            "max_abs_error": 1.5173838138580322,
+            "centered_cosine": 0.9984642704242923,
+            "kl_reference_to_candidate": 0.008141598276702463,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130.decode_0002.f32",
+            "max_abs_error": 2.4474098682403564,
+            "centered_cosine": 0.9923842837240999,
+            "kl_reference_to_candidate": 0.0001571486801678221,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130.prefill.f32",
+            "max_abs_error": 0.559558629989624,
+            "centered_cosine": 0.999806868527329,
+            "kl_reference_to_candidate": 0.0005679060755779244,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130_reset.decode_0001.f32",
+            "max_abs_error": 1.5173838138580322,
+            "centered_cosine": 0.9984642704242923,
+            "kl_reference_to_candidate": 0.008141598276702463,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130_reset.decode_0002.f32",
+            "max_abs_error": 2.4474098682403564,
+            "centered_cosine": 0.9923842837240999,
+            "kl_reference_to_candidate": 0.0001571486801678221,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130_reset.prefill.f32",
+            "max_abs_error": 0.559558629989624,
+            "centered_cosine": 0.999806868527329,
+            "kl_reference_to_candidate": 0.0005679060755779244,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p17.decode_0001.f32",
+            "max_abs_error": 2.7029004096984863,
+            "centered_cosine": 0.9931904890134283,
+            "kl_reference_to_candidate": 0.05351780650009547,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p17.decode_0002.f32",
+            "max_abs_error": 7.032896518707275,
+            "centered_cosine": 0.9584750127045634,
+            "kl_reference_to_candidate": 0.015754771790778957,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p17.prefill.f32",
+            "max_abs_error": 2.1317765712738037,
+            "centered_cosine": 0.9962577246245451,
+            "kl_reference_to_candidate": 0.022619627258323137,
+            "reference_argmax": 506,
+            "candidate_argmax": 236743
+          },
+          {
+            "file": "p2046.decode_0001.f32",
+            "max_abs_error": 3.6002111434936523,
+            "centered_cosine": 0.9922415009146528,
+            "kl_reference_to_candidate": 0.04783474787847263,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p2046.decode_0002.f32",
+            "max_abs_error": 1.8612322807312012,
+            "centered_cosine": 0.993239108939161,
+            "kl_reference_to_candidate": 8.389249681845373e-06,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p2046.prefill.f32",
+            "max_abs_error": 2.540218949317932,
+            "centered_cosine": 0.9816655882470526,
+            "kl_reference_to_candidate": 0.0013940244811536978,
+            "reference_argmax": 603,
+            "candidate_argmax": 603
+          },
+          {
+            "file": "p511.decode_0001.f32",
+            "max_abs_error": 2.848145104944706,
+            "centered_cosine": 0.9966726861240292,
+            "kl_reference_to_candidate": 0.012594226153873088,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p511.decode_0002.f32",
+            "max_abs_error": 2.048188090324402,
+            "centered_cosine": 0.9930066748414412,
+            "kl_reference_to_candidate": 0.000750628019112646,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p511.prefill.f32",
+            "max_abs_error": 2.0018265545368195,
+            "centered_cosine": 0.996183570862398,
+            "kl_reference_to_candidate": 0.013610167977386296,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p512.decode_0001.f32",
+            "max_abs_error": 2.6238192915916443,
+            "centered_cosine": 0.9968304321123218,
+            "kl_reference_to_candidate": 0.019825751665168374,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p512.decode_0002.f32",
+            "max_abs_error": 2.998551368713379,
+            "centered_cosine": 0.9935296964523929,
+            "kl_reference_to_candidate": 0.002541270130066272,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p512.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p513.decode_0001.f32",
+            "max_abs_error": 2.4452171325683594,
+            "centered_cosine": 0.9963442204815175,
+            "kl_reference_to_candidate": 0.018221424547850765,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p513.decode_0002.f32",
+            "max_abs_error": 2.976711392402649,
+            "centered_cosine": 0.9954073303036011,
+            "kl_reference_to_candidate": 0.019658392506552047,
+            "reference_argmax": 622,
+            "candidate_argmax": 1339
+          },
+          {
+            "file": "p513.prefill.f32",
+            "max_abs_error": 2.6183860301971436,
+            "centered_cosine": 0.9953737044487692,
+            "kl_reference_to_candidate": 0.028799585851648636,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          }
+        ],
+        "max_logit_abs_error": 7.032896518707275,
+        "min_centered_cosine": 0.9584750127045634,
+        "max_kl_reference_to_candidate": 0.05351780650009547
+      }
+    },
+    {
+      "variant": "e4b",
+      "profile": "int8_batch",
+      "comparison": {
+        "files": 3201,
+        "byte_identical": 225,
+        "logit_outputs": 33,
+        "argmax_agreement": 31,
+        "kv_elements": 443154432,
+        "kv_different": 1273941,
+        "kv_max_code_error": 54,
+        "bf16_kv_elements": 0,
+        "bf16_kv_different": 0,
+        "bf16_kv_max_abs_error": 0.0,
+        "logits": [
+          {
+            "file": "p1.decode_0001.f32",
+            "max_abs_error": 5.306702375411987,
+            "centered_cosine": 0.9720863850462355,
+            "kl_reference_to_candidate": 0.08012720375177201,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.decode_0002.f32",
+            "max_abs_error": 15.667353391647339,
+            "centered_cosine": 0.8177057761635114,
+            "kl_reference_to_candidate": 1.3203599254591378,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 1018,
+            "candidate_argmax": 1018
+          },
+          {
+            "file": "p1024.decode_0001.f32",
+            "max_abs_error": 4.043970704078674,
+            "centered_cosine": 0.9900589764279374,
+            "kl_reference_to_candidate": 0.040583111072117324,
+            "reference_argmax": 212373,
+            "candidate_argmax": 212373
+          },
+          {
+            "file": "p1024.decode_0002.f32",
+            "max_abs_error": 2.5480146408081055,
+            "centered_cosine": 0.9911204568397279,
+            "kl_reference_to_candidate": 0.00012547867497951861,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p1024.prefill.f32",
+            "max_abs_error": 2.4200692176818848,
+            "centered_cosine": 0.9771538611652444,
+            "kl_reference_to_candidate": 0.0002865871258488802,
+            "reference_argmax": 236772,
+            "candidate_argmax": 236772
+          },
+          {
+            "file": "p128.decode_0001.f32",
+            "max_abs_error": 2.409626007080078,
+            "centered_cosine": 0.9950741306956312,
+            "kl_reference_to_candidate": 0.04696464228972666,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p128.decode_0002.f32",
+            "max_abs_error": 1.9697790145874023,
+            "centered_cosine": 0.9948644588402374,
+            "kl_reference_to_candidate": 0.0025069206411088597,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p128.prefill.f32",
+            "max_abs_error": 3.434339165687561,
+            "centered_cosine": 0.9886533038545988,
+            "kl_reference_to_candidate": 0.008626237603134218,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p129.decode_0001.f32",
+            "max_abs_error": 2.461530923843384,
+            "centered_cosine": 0.9952899752883456,
+            "kl_reference_to_candidate": 0.012295689237455852,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p129.decode_0002.f32",
+            "max_abs_error": 2.9426560401916504,
+            "centered_cosine": 0.9951164586710821,
+            "kl_reference_to_candidate": 0.16253481163471167,
+            "reference_argmax": 669,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p129.prefill.f32",
+            "max_abs_error": 2.7133086919784546,
+            "centered_cosine": 0.9963331592994377,
+            "kl_reference_to_candidate": 0.03213041652239626,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130.decode_0001.f32",
+            "max_abs_error": 2.3088456094264984,
+            "centered_cosine": 0.9962666557941051,
+            "kl_reference_to_candidate": 0.013210637085626083,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130.decode_0002.f32",
+            "max_abs_error": 2.5385032892227173,
+            "centered_cosine": 0.9890683850075157,
+            "kl_reference_to_candidate": 0.00019297406186871214,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130.prefill.f32",
+            "max_abs_error": 2.6857937574386597,
+            "centered_cosine": 0.9950619312134733,
+            "kl_reference_to_candidate": 0.009891959369419404,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130_reset.decode_0001.f32",
+            "max_abs_error": 2.3088456094264984,
+            "centered_cosine": 0.9962666557941051,
+            "kl_reference_to_candidate": 0.013210637085626083,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130_reset.decode_0002.f32",
+            "max_abs_error": 2.5385032892227173,
+            "centered_cosine": 0.9890683850075157,
+            "kl_reference_to_candidate": 0.00019297406186871214,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130_reset.prefill.f32",
+            "max_abs_error": 2.6857937574386597,
+            "centered_cosine": 0.9950619312134733,
+            "kl_reference_to_candidate": 0.009891959369419404,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p17.decode_0001.f32",
+            "max_abs_error": 3.3273861408233643,
+            "centered_cosine": 0.9890483756197199,
+            "kl_reference_to_candidate": 0.112474048683284,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p17.decode_0002.f32",
+            "max_abs_error": 5.635948404669762,
+            "centered_cosine": 0.973584721836018,
+            "kl_reference_to_candidate": 0.010052916554160943,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p17.prefill.f32",
+            "max_abs_error": 3.1707488298416138,
+            "centered_cosine": 0.9947708198130737,
+            "kl_reference_to_candidate": 0.0504821394546362,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p2046.decode_0001.f32",
+            "max_abs_error": 2.957559585571289,
+            "centered_cosine": 0.9948583648487365,
+            "kl_reference_to_candidate": 0.015880631160506267,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p2046.decode_0002.f32",
+            "max_abs_error": 2.053045153617859,
+            "centered_cosine": 0.9912126227739615,
+            "kl_reference_to_candidate": 3.886990342312111e-05,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p2046.prefill.f32",
+            "max_abs_error": 1.878977358341217,
+            "centered_cosine": 0.9835686287899885,
+            "kl_reference_to_candidate": 0.00012943116079783945,
+            "reference_argmax": 603,
+            "candidate_argmax": 603
+          },
+          {
+            "file": "p511.decode_0001.f32",
+            "max_abs_error": 2.4950613975524902,
+            "centered_cosine": 0.9960250021860578,
+            "kl_reference_to_candidate": 0.017366025921012093,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p511.decode_0002.f32",
+            "max_abs_error": 1.9743833541870117,
+            "centered_cosine": 0.9928598105896066,
+            "kl_reference_to_candidate": 0.000870596321076084,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p511.prefill.f32",
+            "max_abs_error": 2.773769736289978,
+            "centered_cosine": 0.9927672866364649,
+            "kl_reference_to_candidate": 0.015648628291389043,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p512.decode_0001.f32",
+            "max_abs_error": 3.1191396713256836,
+            "centered_cosine": 0.9950959004718289,
+            "kl_reference_to_candidate": 0.019269253439549883,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p512.decode_0002.f32",
+            "max_abs_error": 3.015770673751831,
+            "centered_cosine": 0.9917039466025994,
+            "kl_reference_to_candidate": 0.0018329762929873282,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p512.prefill.f32",
+            "max_abs_error": 3.0187357664108276,
+            "centered_cosine": 0.9941002022448997,
+            "kl_reference_to_candidate": 0.024244456971460056,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p513.decode_0001.f32",
+            "max_abs_error": 2.506800651550293,
+            "centered_cosine": 0.9959550173259887,
+            "kl_reference_to_candidate": 0.019531460505630358,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p513.decode_0002.f32",
+            "max_abs_error": 3.5872573852539062,
+            "centered_cosine": 0.9926780174380513,
+            "kl_reference_to_candidate": 0.037867471830677076,
+            "reference_argmax": 622,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p513.prefill.f32",
+            "max_abs_error": 2.7207043170928955,
+            "centered_cosine": 0.9958715848739397,
+            "kl_reference_to_candidate": 0.017626149230858538,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          }
+        ],
+        "max_logit_abs_error": 15.667353391647339,
+        "min_centered_cosine": 0.8177057761635114,
+        "max_kl_reference_to_candidate": 1.3203599254591378
+      }
+    },
+    {
+      "variant": "e4b",
+      "profile": "int8_rows",
+      "comparison": {
+        "files": 3201,
+        "byte_identical": 225,
+        "logit_outputs": 33,
+        "argmax_agreement": 31,
+        "kv_elements": 443154432,
+        "kv_different": 1273941,
+        "kv_max_code_error": 54,
+        "bf16_kv_elements": 0,
+        "bf16_kv_different": 0,
+        "bf16_kv_max_abs_error": 0.0,
+        "logits": [
+          {
+            "file": "p1.decode_0001.f32",
+            "max_abs_error": 5.306702375411987,
+            "centered_cosine": 0.9720863850462355,
+            "kl_reference_to_candidate": 0.08012720375177201,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.decode_0002.f32",
+            "max_abs_error": 15.667353391647339,
+            "centered_cosine": 0.8177057761635114,
+            "kl_reference_to_candidate": 1.3203599254591378,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 1018,
+            "candidate_argmax": 1018
+          },
+          {
+            "file": "p1024.decode_0001.f32",
+            "max_abs_error": 4.043970704078674,
+            "centered_cosine": 0.9900589764279374,
+            "kl_reference_to_candidate": 0.040583111072117324,
+            "reference_argmax": 212373,
+            "candidate_argmax": 212373
+          },
+          {
+            "file": "p1024.decode_0002.f32",
+            "max_abs_error": 2.5480146408081055,
+            "centered_cosine": 0.9911204568397279,
+            "kl_reference_to_candidate": 0.00012547867497951861,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p1024.prefill.f32",
+            "max_abs_error": 2.4200692176818848,
+            "centered_cosine": 0.9771538611652444,
+            "kl_reference_to_candidate": 0.0002865871258488802,
+            "reference_argmax": 236772,
+            "candidate_argmax": 236772
+          },
+          {
+            "file": "p128.decode_0001.f32",
+            "max_abs_error": 2.409626007080078,
+            "centered_cosine": 0.9950741306956312,
+            "kl_reference_to_candidate": 0.04696464228972666,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p128.decode_0002.f32",
+            "max_abs_error": 1.9697790145874023,
+            "centered_cosine": 0.9948644588402374,
+            "kl_reference_to_candidate": 0.0025069206411088597,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p128.prefill.f32",
+            "max_abs_error": 3.434339165687561,
+            "centered_cosine": 0.9886533038545988,
+            "kl_reference_to_candidate": 0.008626237603134218,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p129.decode_0001.f32",
+            "max_abs_error": 2.461530923843384,
+            "centered_cosine": 0.9952899752883456,
+            "kl_reference_to_candidate": 0.012295689237455852,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p129.decode_0002.f32",
+            "max_abs_error": 2.9426560401916504,
+            "centered_cosine": 0.9951164586710821,
+            "kl_reference_to_candidate": 0.16253481163471167,
+            "reference_argmax": 669,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p129.prefill.f32",
+            "max_abs_error": 2.7133086919784546,
+            "centered_cosine": 0.9963331592994377,
+            "kl_reference_to_candidate": 0.03213041652239626,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130.decode_0001.f32",
+            "max_abs_error": 2.3088456094264984,
+            "centered_cosine": 0.9962666557941051,
+            "kl_reference_to_candidate": 0.013210637085626083,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130.decode_0002.f32",
+            "max_abs_error": 2.5385032892227173,
+            "centered_cosine": 0.9890683850075157,
+            "kl_reference_to_candidate": 0.00019297406186871214,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130.prefill.f32",
+            "max_abs_error": 2.6857937574386597,
+            "centered_cosine": 0.9950619312134733,
+            "kl_reference_to_candidate": 0.009891959369419404,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130_reset.decode_0001.f32",
+            "max_abs_error": 2.3088456094264984,
+            "centered_cosine": 0.9962666557941051,
+            "kl_reference_to_candidate": 0.013210637085626083,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130_reset.decode_0002.f32",
+            "max_abs_error": 2.5385032892227173,
+            "centered_cosine": 0.9890683850075157,
+            "kl_reference_to_candidate": 0.00019297406186871214,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130_reset.prefill.f32",
+            "max_abs_error": 2.6857937574386597,
+            "centered_cosine": 0.9950619312134733,
+            "kl_reference_to_candidate": 0.009891959369419404,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p17.decode_0001.f32",
+            "max_abs_error": 3.3273861408233643,
+            "centered_cosine": 0.9890483756197199,
+            "kl_reference_to_candidate": 0.112474048683284,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p17.decode_0002.f32",
+            "max_abs_error": 5.635948404669762,
+            "centered_cosine": 0.973584721836018,
+            "kl_reference_to_candidate": 0.010052916554160943,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p17.prefill.f32",
+            "max_abs_error": 3.1707488298416138,
+            "centered_cosine": 0.9947708198130737,
+            "kl_reference_to_candidate": 0.0504821394546362,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p2046.decode_0001.f32",
+            "max_abs_error": 2.957559585571289,
+            "centered_cosine": 0.9948583648487365,
+            "kl_reference_to_candidate": 0.015880631160506267,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p2046.decode_0002.f32",
+            "max_abs_error": 2.053045153617859,
+            "centered_cosine": 0.9912126227739615,
+            "kl_reference_to_candidate": 3.886990342312111e-05,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p2046.prefill.f32",
+            "max_abs_error": 1.878977358341217,
+            "centered_cosine": 0.9835686287899885,
+            "kl_reference_to_candidate": 0.00012943116079783945,
+            "reference_argmax": 603,
+            "candidate_argmax": 603
+          },
+          {
+            "file": "p511.decode_0001.f32",
+            "max_abs_error": 2.4950613975524902,
+            "centered_cosine": 0.9960250021860578,
+            "kl_reference_to_candidate": 0.017366025921012093,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p511.decode_0002.f32",
+            "max_abs_error": 1.9743833541870117,
+            "centered_cosine": 0.9928598105896066,
+            "kl_reference_to_candidate": 0.000870596321076084,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p511.prefill.f32",
+            "max_abs_error": 2.773769736289978,
+            "centered_cosine": 0.9927672866364649,
+            "kl_reference_to_candidate": 0.015648628291389043,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p512.decode_0001.f32",
+            "max_abs_error": 3.1191396713256836,
+            "centered_cosine": 0.9950959004718289,
+            "kl_reference_to_candidate": 0.019269253439549883,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p512.decode_0002.f32",
+            "max_abs_error": 3.015770673751831,
+            "centered_cosine": 0.9917039466025994,
+            "kl_reference_to_candidate": 0.0018329762929873282,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p512.prefill.f32",
+            "max_abs_error": 3.0187357664108276,
+            "centered_cosine": 0.9941002022448997,
+            "kl_reference_to_candidate": 0.024244456971460056,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p513.decode_0001.f32",
+            "max_abs_error": 2.506800651550293,
+            "centered_cosine": 0.9959550173259887,
+            "kl_reference_to_candidate": 0.019531460505630358,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p513.decode_0002.f32",
+            "max_abs_error": 3.5872573852539062,
+            "centered_cosine": 0.9926780174380513,
+            "kl_reference_to_candidate": 0.037867471830677076,
+            "reference_argmax": 622,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p513.prefill.f32",
+            "max_abs_error": 2.7207043170928955,
+            "centered_cosine": 0.9958715848739397,
+            "kl_reference_to_candidate": 0.017626149230858538,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          }
+        ],
+        "max_logit_abs_error": 15.667353391647339,
+        "min_centered_cosine": 0.8177057761635114,
+        "max_kl_reference_to_candidate": 1.3203599254591378
+      }
+    },
+    {
+      "variant": "e4b",
+      "profile": "int8_rows_vs_int8_batch",
+      "comparison": {
+        "files": 3201,
+        "byte_identical": 3201,
+        "logit_outputs": 33,
+        "argmax_agreement": 33,
+        "kv_elements": 443154432,
+        "kv_different": 0,
+        "kv_max_code_error": 0,
+        "bf16_kv_elements": 0,
+        "bf16_kv_different": 0,
+        "bf16_kv_max_abs_error": 0.0,
+        "logits": [
+          {
+            "file": "p1.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 1018,
+            "candidate_argmax": 1018
+          },
+          {
+            "file": "p1024.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 212373,
+            "candidate_argmax": 212373
+          },
+          {
+            "file": "p1024.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p1024.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 236772,
+            "candidate_argmax": 236772
+          },
+          {
+            "file": "p128.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p128.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p128.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p129.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p129.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p129.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130_reset.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130_reset.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130_reset.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p17.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p17.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p17.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p2046.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p2046.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p2046.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 603,
+            "candidate_argmax": 603
+          },
+          {
+            "file": "p511.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p511.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p511.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p512.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p512.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p512.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p513.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p513.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p513.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          }
+        ],
+        "max_logit_abs_error": 0.0,
+        "min_centered_cosine": 0.9999999999999998,
+        "max_kl_reference_to_candidate": 0.0
+      }
+    }
+  ],
+  "capacity_exact": [
+    {
+      "variant": "e2b",
+      "profile": "fp32_batch",
+      "files": 1023,
+      "exact": true
+    },
+    {
+      "variant": "e2b",
+      "profile": "fp32_rows",
+      "files": 1023,
+      "exact": true
+    },
+    {
+      "variant": "e2b",
+      "profile": "int8_batch",
+      "files": 1023,
+      "exact": true
+    },
+    {
+      "variant": "e2b",
+      "profile": "int8_rows",
+      "files": 1023,
+      "exact": true
+    },
+    {
+      "variant": "e4b",
+      "profile": "fp32_batch",
+      "files": 3201,
+      "exact": true
+    },
+    {
+      "variant": "e4b",
+      "profile": "fp32_rows",
+      "files": 3201,
+      "exact": true
+    },
+    {
+      "variant": "e4b",
+      "profile": "int8_batch",
+      "files": 3201,
+      "exact": true
+    },
+    {
+      "variant": "e4b",
+      "profile": "int8_rows",
+      "files": 3201,
+      "exact": true
+    }
+  ],
+  "reset_exact": [
+    {
+      "run": "e2b-previous_runtime-c2048",
+      "files": 93,
+      "exact": true
+    },
+    {
+      "run": "e2b-fp32_batch-c2048",
+      "files": 93,
+      "exact": true
+    },
+    {
+      "run": "e2b-fp32_rows-c2048",
+      "files": 93,
+      "exact": true
+    },
+    {
+      "run": "e2b-int8_batch-c2048",
+      "files": 93,
+      "exact": true
+    },
+    {
+      "run": "e2b-int8_rows-c2048",
+      "files": 93,
+      "exact": true
+    },
+    {
+      "run": "e2b-fp32_batch-c8448",
+      "files": 93,
+      "exact": true
+    },
+    {
+      "run": "e2b-fp32_rows-c8448",
+      "files": 93,
+      "exact": true
+    },
+    {
+      "run": "e2b-int8_batch-c8448",
+      "files": 93,
+      "exact": true
+    },
+    {
+      "run": "e2b-int8_rows-c8448",
+      "files": 93,
+      "exact": true
+    },
+    {
+      "run": "e4b-previous_runtime-c2048",
+      "files": 291,
+      "exact": true
+    },
+    {
+      "run": "e4b-fp32_batch-c2048",
+      "files": 291,
+      "exact": true
+    },
+    {
+      "run": "e4b-fp32_rows-c2048",
+      "files": 291,
+      "exact": true
+    },
+    {
+      "run": "e4b-int8_batch-c2048",
+      "files": 291,
+      "exact": true
+    },
+    {
+      "run": "e4b-int8_rows-c2048",
+      "files": 291,
+      "exact": true
+    },
+    {
+      "run": "e4b-fp32_batch-c8448",
+      "files": 291,
+      "exact": true
+    },
+    {
+      "run": "e4b-fp32_rows-c8448",
+      "files": 291,
+      "exact": true
+    },
+    {
+      "run": "e4b-int8_batch-c8448",
+      "files": 291,
+      "exact": true
+    },
+    {
+      "run": "e4b-int8_rows-c8448",
+      "files": 291,
+      "exact": true
+    }
+  ],
+  "previous_runtime_exact": [
+    {
+      "variant": "e2b",
+      "comparison": {
+        "files": 1023,
+        "byte_identical": 1023,
+        "logit_outputs": 33,
+        "argmax_agreement": 33,
+        "kv_elements": 142442496,
+        "kv_different": 0,
+        "kv_max_code_error": 0,
+        "bf16_kv_elements": 0,
+        "bf16_kv_different": 0,
+        "bf16_kv_max_abs_error": 0.0,
+        "logits": [
+          {
+            "file": "p1.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 236769,
+            "candidate_argmax": 236769
+          },
+          {
+            "file": "p1024.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 212373,
+            "candidate_argmax": 212373
+          },
+          {
+            "file": "p1024.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p1024.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 236772,
+            "candidate_argmax": 236772
+          },
+          {
+            "file": "p128.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 44602,
+            "candidate_argmax": 44602
+          },
+          {
+            "file": "p128.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p128.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 2897,
+            "candidate_argmax": 2897
+          },
+          {
+            "file": "p129.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 44602,
+            "candidate_argmax": 44602
+          },
+          {
+            "file": "p129.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p129.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 2342,
+            "candidate_argmax": 2342
+          },
+          {
+            "file": "p130.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p130.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p130_reset.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p130_reset.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130_reset.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p17.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p17.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p17.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p2046.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p2046.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p2046.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 603,
+            "candidate_argmax": 603
+          },
+          {
+            "file": "p511.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 15154,
+            "candidate_argmax": 15154
+          },
+          {
+            "file": "p511.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p511.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 532,
+            "candidate_argmax": 532
+          },
+          {
+            "file": "p512.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 7222,
+            "candidate_argmax": 7222
+          },
+          {
+            "file": "p512.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p512.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 7274,
+            "candidate_argmax": 7274
+          },
+          {
+            "file": "p513.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p513.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p513.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 17105,
+            "candidate_argmax": 17105
+          }
+        ],
+        "max_logit_abs_error": 0.0,
+        "min_centered_cosine": 0.9999999999999998,
+        "max_kl_reference_to_candidate": 0.0
+      }
+    },
+    {
+      "variant": "e4b",
+      "comparison": {
+        "files": 3201,
+        "byte_identical": 3201,
+        "logit_outputs": 33,
+        "argmax_agreement": 33,
+        "kv_elements": 443154432,
+        "kv_different": 0,
+        "kv_max_code_error": 0,
+        "bf16_kv_elements": 0,
+        "bf16_kv_different": 0,
+        "bf16_kv_max_abs_error": 0.0,
+        "logits": [
+          {
+            "file": "p1.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p1.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 1018,
+            "candidate_argmax": 1018
+          },
+          {
+            "file": "p1024.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 212373,
+            "candidate_argmax": 212373
+          },
+          {
+            "file": "p1024.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p1024.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 236772,
+            "candidate_argmax": 236772
+          },
+          {
+            "file": "p128.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p128.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p128.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p129.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p129.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p129.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130_reset.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p130_reset.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p130_reset.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p17.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 669,
+            "candidate_argmax": 669
+          },
+          {
+            "file": "p17.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p17.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 506,
+            "candidate_argmax": 506
+          },
+          {
+            "file": "p2046.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 160144,
+            "candidate_argmax": 160144
+          },
+          {
+            "file": "p2046.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p2046.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 603,
+            "candidate_argmax": 603
+          },
+          {
+            "file": "p511.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999998,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p511.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p511.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p512.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p512.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 33934,
+            "candidate_argmax": 33934
+          },
+          {
+            "file": "p512.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 0.9999999999999999,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p513.decode_0001.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          },
+          {
+            "file": "p513.decode_0002.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 622,
+            "candidate_argmax": 622
+          },
+          {
+            "file": "p513.prefill.f32",
+            "max_abs_error": 0.0,
+            "centered_cosine": 1.0000000000000002,
+            "kl_reference_to_candidate": 0.0,
+            "reference_argmax": 145399,
+            "candidate_argmax": 145399
+          }
+        ],
+        "max_logit_abs_error": 0.0,
+        "min_centered_cosine": 0.9999999999999998,
+        "max_kl_reference_to_candidate": 0.0
+      }
+    }
+  ],
+  "conditions": {
+    "platform": "Linux x86_64",
+    "cpu_model": "Intel Core i9-12900K",
+    "affinity_mask": "55",
+    "logical_cpus": [
+      0,
+      2,
+      4,
+      6
+    ],
+    "threads": 4,
+    "prefill_rows": 128,
+    "warmups": 0,
+    "measured_requests_per_case": 1,
+    "dump_outputs": true,
+    "timings_valid_for_benchmark": false,
+    "finite_outputs": true,
+    "teacher_forced": true,
+    "fixture_construction": "Take token IDs from the longest checked-in performance case, repeat them only for prompt 2046, retain the first two continuation IDs, and repeat prompt 130 after the boundary case."
+  }
+}

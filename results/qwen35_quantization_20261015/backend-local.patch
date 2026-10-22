@@ -1,0 +1,252 @@
+--- a/XNNPACK/ynnpack/kernels/binary/CMakeLists.txt
++++ b/XNNPACK/ynnpack/kernels/binary/CMakeLists.txt
+@@ -20,13 +20,13 @@
+     ADD_CUSTOM_COMMAND(
+       OUTPUT "${OUTPUT_SRC}" "${OUTPUT_INC}"
+       COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}/ynnpack/kernels/binary"
+-      COMMAND ${CMAKE_COMMAND} -E env "PYTHONPATH=${CMAKE_SOURCE_DIR}"
++      COMMAND ${CMAKE_COMMAND} -E env "PYTHONPATH=${PROJECT_SOURCE_DIR}/.."
+               ${Python3_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/generator.py"
+               "${OUTPUT_SRC}" "${OUTPUT_INC}" "${ARCH}" ${ARGN}
+       DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/generator.py"
+               "${CMAKE_CURRENT_SOURCE_DIR}/kernels.py"
+-              "${CMAKE_SOURCE_DIR}/ynnpack/kernels/elementwise/generator.py"
+-      WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
++              "${PROJECT_SOURCE_DIR}/../ynnpack/kernels/elementwise/generator.py"
++      WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}/.."
+     )
+ 
+     SET(ARCH_LIB "ynnpack_kernels_binary_${NAME}")
+--- a/XNNPACK/ynnpack/kernels/dot/CMakeLists.txt
++++ b/XNNPACK/ynnpack/kernels/dot/CMakeLists.txt
+@@ -14,10 +14,11 @@
+     LIST(APPEND OUTPUTS "${CMAKE_BINARY_DIR}/ynnpack/kernels/dot/${NAME}.cc" "${CMAKE_BINARY_DIR}/ynnpack/kernels/dot/${NAME}.inc")
+   ENDFOREACH()
+ 
++  SET_PROPERTY(GLOBAL APPEND PROPERTY LAB_DOT_OUTPUTS ${OUTPUTS})
+   ADD_CUSTOM_COMMAND(
+     OUTPUT ${OUTPUTS}
+     COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}/ynnpack/kernels/dot"
+-    COMMAND ${CMAKE_COMMAND} -E env "PYTHONPATH=${CMAKE_SOURCE_DIR}"
++    COMMAND ${CMAKE_COMMAND} -E env "PYTHONPATH=${PROJECT_SOURCE_DIR}/.."
+             ${Python3_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/generator/${SCRIPT}.py" ${OUTPUTS}
+     DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/generator/${SCRIPT}.py"
+             "${CMAKE_CURRENT_SOURCE_DIR}/generator/dot_base.py"
+@@ -25,7 +26,7 @@
+             "${CMAKE_CURRENT_SOURCE_DIR}/generator/arm.py"
+             "${CMAKE_CURRENT_SOURCE_DIR}/generator/wasm.py"
+             "${CMAKE_CURRENT_SOURCE_DIR}/generator/hexagon.py"
+-    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
++    WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}/.."
+   )
+ ENDFUNCTION()
+ 
+@@ -40,6 +41,7 @@
+ # Helper to collect variants and generate them if any are enabled.
+ FUNCTION(YNN_ADD_DOT_KERNELS SCRIPT)
+   SET(ACTIVE_VARIANTS)
++  SET(ALL_VARIANTS)
+   SET(ACTIVE_ARCHS)
+   # Arguments after SCRIPT are pairs of (ARCH, VARIANT_NAME)
+   SET(INDEX 0)
+@@ -50,6 +52,7 @@
+     LIST(GET ARGN ${INDEX} VARIANT_NAME)
+     MATH(EXPR INDEX "${INDEX} + 1")
+ 
++    LIST(APPEND ALL_VARIANTS ${VARIANT_NAME})
+     YNN_CHECK_ARCH_ENABLED(${ARCH_NAME} ENABLED)
+     IF(ENABLED)
+       LIST(APPEND ACTIVE_VARIANTS ${VARIANT_NAME})
+@@ -58,7 +61,7 @@
+   ENDWHILE()
+ 
+   IF(ACTIVE_VARIANTS)
+-    YNN_GENERATE_DOT_KERNELS(${SCRIPT} ${ACTIVE_VARIANTS})
++    YNN_GENERATE_DOT_KERNELS(${SCRIPT} ${ALL_VARIANTS})
+ 
+     LIST(LENGTH ACTIVE_VARIANTS LEN)
+     MATH(EXPR LIMIT "${LEN} - 1")
+@@ -291,3 +294,14 @@
+   ADD_EXECUTABLE(ynnpack_kernels_dot_schedule_bench schedule_bench.cc)
+   TARGET_LINK_LIBRARIES(ynnpack_kernels_dot_schedule_bench ynnpack_kernels_dot ynnpack_base ynnpack_base_test_tensor benchmark::benchmark gtest)
+ ENDIF()
++
++# dot.h includes declarations from every enabled generated kernel family.
++# Establish generation dependencies before compiling handwritten or generated sources.
++GET_PROPERTY(LAB_DOT_OUTPUTS GLOBAL PROPERTY LAB_DOT_OUTPUTS)
++ADD_CUSTOM_TARGET(ynnpack_dot_generated_headers DEPENDS ${LAB_DOT_OUTPUTS})
++GET_PROPERTY(LAB_DOT_TARGETS DIRECTORY PROPERTY BUILDSYSTEM_TARGETS)
++FOREACH(LAB_TARGET ${LAB_DOT_TARGETS})
++  IF(NOT LAB_TARGET STREQUAL "ynnpack_dot_generated_headers")
++    ADD_DEPENDENCIES(${LAB_TARGET} ynnpack_dot_generated_headers)
++  ENDIF()
++ENDFOREACH()
+--- a/XNNPACK/ynnpack/kernels/ternary/CMakeLists.txt
++++ b/XNNPACK/ynnpack/kernels/ternary/CMakeLists.txt
+@@ -20,14 +20,14 @@
+     ADD_CUSTOM_COMMAND(
+       OUTPUT "${OUTPUT_SRC}" "${OUTPUT_INC}"
+       COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}/ynnpack/kernels/ternary"
+-      COMMAND ${CMAKE_COMMAND} -E env "PYTHONPATH=${CMAKE_SOURCE_DIR}"
++      COMMAND ${CMAKE_COMMAND} -E env "PYTHONPATH=${PROJECT_SOURCE_DIR}/.."
+               ${Python3_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/generator.py"
+               "${OUTPUT_SRC}" "${OUTPUT_INC}" "${ARCH}" ${ARGN}
+       DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/generator.py"
+               "${CMAKE_CURRENT_SOURCE_DIR}/kernels.py"
+               "${CMAKE_CURRENT_SOURCE_DIR}/convert.py"
+-              "${CMAKE_SOURCE_DIR}/ynnpack/kernels/elementwise/generator.py"
+-      WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
++              "${PROJECT_SOURCE_DIR}/../ynnpack/kernels/elementwise/generator.py"
++      WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}/.."
+     )
+ 
+     SET(ARCH_LIB "ynnpack_kernels_ternary_${NAME}")
+--- a/XNNPACK/ynnpack/kernels/unary/CMakeLists.txt
++++ b/XNNPACK/ynnpack/kernels/unary/CMakeLists.txt
+@@ -20,7 +20,7 @@
+     ADD_CUSTOM_COMMAND(
+       OUTPUT "${OUTPUT_SRC}" "${OUTPUT_INC}"
+       COMMAND ${CMAKE_COMMAND} -E make_directory "${CMAKE_BINARY_DIR}/ynnpack/kernels/unary"
+-      COMMAND ${CMAKE_COMMAND} -E env "PYTHONPATH=${CMAKE_SOURCE_DIR}"
++      COMMAND ${CMAKE_COMMAND} -E env "PYTHONPATH=${PROJECT_SOURCE_DIR}/.."
+               ${Python3_EXECUTABLE} "${CMAKE_CURRENT_SOURCE_DIR}/generator.py"
+               "${OUTPUT_SRC}" "${OUTPUT_INC}" "${ARCH}" ${ARGN}
+       DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/generator.py"
+@@ -32,8 +32,8 @@
+               "${CMAKE_CURRENT_SOURCE_DIR}/sigmoid.py"
+               "${CMAKE_CURRENT_SOURCE_DIR}/trig.py"
+               "${CMAKE_CURRENT_SOURCE_DIR}/tanh.py"
+-              "${CMAKE_SOURCE_DIR}/ynnpack/kernels/elementwise/generator.py"
+-      WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
++              "${PROJECT_SOURCE_DIR}/../ynnpack/kernels/elementwise/generator.py"
++      WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}/.."
+     )
+ 
+     SET(ARCH_LIB "ynnpack_kernels_unary_${NAME}")
+--- a/XNNPACK/ynnpack/subgraph/dot.cc
++++ b/XNNPACK/ynnpack/subgraph/dot.cc
+@@ -1300,6 +1300,8 @@
+   dot_type type = {a.type, b.type, c.type};
+   dot_shape shape;
+   learn_shape_from_b(shape, num_k_dims, b);
++  // Use known rows before choosing a packing layout that constrains execution.
++  shape.m = as_constant(a.extent(num_k_dims)).value_or(unknown_dot_extent);
+   static constexpr dot_packed_shape no_tile_k = {0, 1};
+   static constexpr dot_packed_shape packed_shape = {};
+   const bool symmetric_b = (flags & YNN_NODE_FLAG_SYMMETRIC_B) != 0;
+--- a/XNNPACK/ynnpack/subgraph/reduce.cc
++++ b/XNNPACK/ynnpack/subgraph/reduce.cc
+@@ -127,6 +127,12 @@
+       } else {
+         slinky::copy(init_c, c);
+       }
++    }
++
++    // Cropping to an empty logical view can clear the base pointer. Detect
++    // empty axes before slicing any earlier nonempty axis in the loop below.
++    for (size_t d = 0; d < a.rank; ++d) {
++      if (a.dim(d).empty()) return 0;
+     }
+ 
+     // Slice off the "channel" dimension if any.
+@@ -551,12 +557,33 @@
+                                     input_a.buffer->elem_size(), split_factors);
+     }
+ 
+-    auto func = slinky::func::make(
+-        make_unary_reduce_impl(op, kernel),
++    // An internal slice_like may retain a larger physical backing buffer.
++    // input_crop applies only to Slinky copies, not callbacks. Crop the logical
++    // input explicitly, including empty reductions which still initialize c.
++    auto reduce_impl = make_unary_reduce_impl(op, kernel);
++    auto callback = [reduce_impl](const slinky::call_stmt* call,
++                                 slinky::eval_context& ctx) -> slinky::index_t {
++      slinky::buffer<const void, max_tensor_rank> a(
++          *ctx.lookup_buffer(call->inputs[0]));
++      for (size_t d = 0; d < call->scalars.size(); ++d) {
++        a.crop(d, 0, slinky::evaluate(call->scalars[d], ctx) - 1);
++      }
++      return reduce_impl(
++          a, ctx.lookup_buffer(call->inputs[1])->cast<const void>(),
++          ctx.lookup_buffer(call->outputs[0])->cast<void>(),
++          *ctx.lookup_buffer(call->outputs[1]));
++    };
++    auto logical_extents = input_a.physical_extents();
++    for (auto& extent : logical_extents) {
++      if (!extent.defined()) extent = 1;
++    }
++    auto func = slinky::func(
++        std::move(callback),
+         {{input_a.buffer, std::move(a_bounds), std::move(a_crop)},
+          {input_c.buffer, std::move(c_bounds)}},
+         {{output.buffer, std::move(output_dims)},
+          {reduction_buffer, std::move(reduction_dims)}},
++        std::move(logical_extents),
+         std::move(attrs));
+ 
+     func.user_data() = sched.get();
+--- a/XNNPACK/ynnpack/subgraph/runtime.cc
++++ b/XNNPACK/ynnpack/subgraph/runtime.cc
+@@ -1235,7 +1235,8 @@
+   options.no_checks = true;
+ #endif
+ 
+-  pipeline = slinky::build_pipeline(globals.symbols, {}, inputs, outputs,
++  scalar_parameter_values.resize(subgraph->scalar_parameters.size(), 0);
++  pipeline = slinky::build_pipeline(globals.symbols, subgraph->scalar_parameters, inputs, outputs,
+                                     globals.lets, options);
+ 
+   slinky::call_stmt::attributes attrs;
+@@ -1268,7 +1269,7 @@
+     }
+   }
+ 
+-  pipeline.setup(inputs, outputs, eval_context);
++  pipeline.setup(scalar_parameter_values, inputs, outputs, eval_context);
+   return ynn_status_success;
+ }
+ 
+--- a/XNNPACK/ynnpack/subgraph/runtime.h
++++ b/XNNPACK/ynnpack/subgraph/runtime.h
+@@ -60,6 +60,7 @@
+   // The evaluateable slinky pipeline, and the context to run it.
+   slinky::pipeline pipeline;
+   slinky::eval_context eval_context;
++  std::vector<slinky::index_t> scalar_parameter_values;
+ 
+   const ynn_runtime_value& value(uint32_t id) const {
+     assert(id < values.size());
+--- a/XNNPACK/ynnpack/subgraph/subgraph.cc
++++ b/XNNPACK/ynnpack/subgraph/subgraph.cc
+@@ -709,6 +709,8 @@
+   std::vector<int> static_refs(values.size(), 0);
+   for (ynn_node& node : nodes) {
+     if (!node.is_valid()) continue;
++    // Opaque callbacks can depend on frontend scalar parameters or state.
++    if (std::holds_alternative<ynn_node::opaque>(node.op)) continue;
+     if (std::any_of(node.inputs.begin(), node.inputs.end(), [&](uint32_t i) {
+           return i != YNN_INVALID_VALUE_ID && !value_is_static[i];
+         })) {
+@@ -1019,6 +1021,9 @@
+         input = replacements[input];
+       }
+     }
++
++    // The callback/parameter semantics are not represented in the opaque key.
++    if (std::holds_alternative<ynn_node::opaque>(node.op)) continue;
+ 
+     // If the node produces an external output, we don't want to replace it in
+     // order to preserve the graph's public interface.
+--- a/XNNPACK/ynnpack/subgraph/subgraph.h
++++ b/XNNPACK/ynnpack/subgraph/subgraph.h
+@@ -665,6 +665,10 @@
+ 
+   ynn::slinky_globals globals;
+ 
++  // Experimental frontend-bound scalar symbols. Their values are supplied
++  // when setting up a runtime, not specialized during graph construction.
++  std::vector<slinky::var> scalar_parameters;
++
+   bool is_valid_value(uint32_t id) const {
+     return id < values.size() && values[id].is_valid();
+   }

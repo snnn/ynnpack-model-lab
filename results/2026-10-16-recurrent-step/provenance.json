@@ -1,0 +1,166 @@
+{
+  "completed_utc": "2026-10-17T06:26:40.575502+00:00",
+  "dependencies": [
+    {
+      "name": "XNNPACK",
+      "revision": "0a66ebb5817fce48df605451444dcfc27a5e4ee4",
+      "archive_sha256": "cb485a0fe76dec243568ec6ce6c0b75e18909ed7df5459921b46eaada332fe8f",
+      "files_checked": 12546,
+      "differences_since_baseline": [],
+      "patches": [
+        {
+          "path": "ynnpack/kernels/binary/CMakeLists.txt",
+          "archive_sha256": "9ed60c9c3ac3dbbe7f714008565dc4fc433a6f5fc1301e30b28df9c03371cfac",
+          "actual_sha256": "19e8a4ed2f254f7322a8827bf68a4af1a15d7c46751602d0d7be9955c228f4af"
+        },
+        {
+          "path": "ynnpack/kernels/dot/CMakeLists.txt",
+          "archive_sha256": "38b49ca4691be8351605d40c4cdd71a84569660d2e1ffac916f867bf40c7cb65",
+          "actual_sha256": "eb598b1811e00cd052addcd3dfd244c1d09a1e28517946a1ab4a3707ca0c7516"
+        },
+        {
+          "path": "ynnpack/kernels/ternary/CMakeLists.txt",
+          "archive_sha256": "f2864036b76d2acd73998fff57459dee2ebeffbe99c80bdff3cfd2988447cab1",
+          "actual_sha256": "bf6072b3083fa39d5a922b070e4fbd9b0ceec2cf6aaabc46ca8e6d19b5e5a409"
+        },
+        {
+          "path": "ynnpack/kernels/unary/CMakeLists.txt",
+          "archive_sha256": "ca9dfe7e8ab46f393a23ad817e884cf94d77671e89f42d1176230b817940127e",
+          "actual_sha256": "ec3d44f70e1012d90d6e94147b460fa482173302f5b082bca644ad682454dc66"
+        },
+        {
+          "path": "ynnpack/subgraph/dot.cc",
+          "archive_sha256": "e6b020b5aeb974805b1aa2dfa4381c2396eaa19dbe9e0f97a6f7fb15abdd3dc3",
+          "actual_sha256": "8ee1e926781f566ff8ae9ad00252a6e32d8b8ec32856d76e44a17ccdd954eab9"
+        },
+        {
+          "path": "ynnpack/subgraph/reduce.cc",
+          "archive_sha256": "446c73186138d217f0833065bad8e46b665cf4356b27a993d044a8d7511c80c4",
+          "actual_sha256": "90f2c6badc4d078471efd66957146a6783a390b46913465c702f3ed18bd745fb"
+        },
+        {
+          "path": "ynnpack/subgraph/runtime.cc",
+          "archive_sha256": "79fc4da88c5cea2030f042c987add5c153b61d8e59ba39ad553bc957eb230be0",
+          "actual_sha256": "045cb49e2a5dc41c658d4a1faed62d0aa2e496cec0fce677bd85257db326bb18"
+        },
+        {
+          "path": "ynnpack/subgraph/runtime.h",
+          "archive_sha256": "1feea459b6f667ccc2973752d17947008236eb9e2f63900a90d57eaa01861bf7",
+          "actual_sha256": "9d7a8aedf2b9b9f1db067c3d22e8ee55bc2e0c90ed17ffbef78dbdabff64f17b"
+        },
+        {
+          "path": "ynnpack/subgraph/subgraph.cc",
+          "archive_sha256": "f389588c1b6633e998f0d857a78372ee2ea5dd72eacfc272f0516a1cbeb8faa3",
+          "actual_sha256": "bd96e5e0fa1d9449335479d237209afa4f30e6d6f3abb844f212c8c44cb8c64e"
+        },
+        {
+          "path": "ynnpack/subgraph/subgraph.h",
+          "archive_sha256": "fcbe7d81323bcd15df2ec5fc52e9635b8b6ceadb8b0521940dd83115cf500d8c",
+          "actual_sha256": "a2f614a97183d83444d3cd7c59fe5bc2d768a4c28dac3da8a577e310c33ec8a4"
+        }
+      ],
+      "manifest_sha256": "bafdd5136cc924df988b99e68315fb6c10d8d356414d445663d7ff317d846ff1"
+    },
+    {
+      "name": "slinky",
+      "revision": "a3eec6fcfe3093be04d6c3d7dcab7d4e70bdd0dc",
+      "archive_sha256": "cca25390873ad01a6e461edd39d220fb16c912beba2ebe02ae3b897ca63f30ef",
+      "files_checked": 146,
+      "differences_since_baseline": [],
+      "patches": [],
+      "manifest_sha256": "131d506fda1505b5c370e76025a257854557a901b0dc1dac40ca5d00d17b35f0"
+    },
+    {
+      "name": "cpuinfo",
+      "revision": "8ce83db858065145192c97af90cb668ad72a12e9",
+      "archive_sha256": "fe2aa43254838a2eb5658d1742696473a1d834a57f2a0b38d533346bcd212482",
+      "files_checked": 566,
+      "differences_since_baseline": [],
+      "patches": [],
+      "manifest_sha256": "c92e96d5c4deeadb80dda5d596043aabec04543e73c841c805f7bc0d837b6fbe"
+    }
+  ],
+  "host": "Intel Core i9-12900K",
+  "host_affinity": {
+    "1": "0",
+    "4": "0,2,4,6"
+  },
+  "arm": "Pixel 11 / Android 17",
+  "arm_affinity": {
+    "1": "40 (CPU 6)",
+    "4": "3c (CPUs 2\u20135)"
+  },
+  "arm_ndk": "r28c / ARM64 / API 28 / static libc++",
+  "math": "FP32; no_excess_precision; custom and harness -ffp-contract=off; ggml native SIMD and reduction order differ, qualified against FP64.",
+  "source_heads": {
+    "lab": "1bee1b2b0ff8d1c9d803ba47ec36f2f3c895db12",
+    "llama": "cd0e36153b3f669d3e20ad2eb59ece6f5c8e23f5"
+  },
+  "dirty_tree": true,
+  "sources": {
+    "CMakeLists.txt": "e12c9cdcf959dd4f9ed01eba1822b660d08518d465f5fc482ab237a9d9db884f",
+    "dependencies.json": "5c2c98a811a85d01240a5fc6fa6cd7951de762f7cbc56af2e85297999b0c9d9e",
+    "runtime/checked_arithmetic.h": "8c1c59d3ed25f21cd3e1bc9ad9a3cd529442268c7ff2f837d8a99214de341bd5",
+    "runtime/checked_index.h": "3f27f4412dcc48bc3049fc0744a30faaa8ece6228152fb02a709ef79c0ef9b71",
+    "runtime/execution_profile.h": "b6fc9a9cf5711a651e4965d2e44716e3792d2a33780c737a60b9973b8275fcb7",
+    "runtime/logical_state.h": "19310cc93737773d81fe81b8abe5f7daa4901f49dfbfa39ed45f1f70944b9592",
+    "runtime/model_assets.h": "c0573694f97bf7389401cd029e494c53c7c6423f122d531d35d5779e91d29785",
+    "runtime/packed_routing.h": "60f8eb5651fa846e26fbd202c3c593903ee52553db79215b4ed618f685fa8499",
+    "runtime/resource_state.h": "5f9acc26fa120a84e9276cec7ba668b1d3adb6d8fc8ea6ba718cfb217f44f4fe",
+    "runtime/rust/bridge.cc": "dfb4d0397edd223944d8f5a5c6ce48d463aabd9d449c54e965586c3a1129fa41",
+    "runtime/rust/bridge.h": "104c2551a89c24c900e32c70758be23426af8b94eca4741688b5457b0bad76ea",
+    "runtime/rust/bridge_internal.h": "d495013718cad2f135c7980d4def5af8990dfc47bfd15e432f3bc2432b568424",
+    "runtime/rust/embedding.cc": "83a272e2e670372b4efef71c2f5b202a8d3bf5a3f89fe06d4ebe50940aac36da",
+    "runtime/rust/fixture.cc": "5a69af90334744d87115b5111590919da371ff51bc61b7b7270a4534565f9bb1",
+    "runtime/rust/gemma.cc": "563158f5107e01fc7568b0b683d9417111bbae88f2f5e314bbf965d197e90ece",
+    "runtime/rust/main.cc": "36c185c0b4356a5c6781988b0e7d58bb801376cdc92eae7f426cb1a708b52031",
+    "runtime/rust/plan.cc": "fe3916dfe53df1043e1c84007e9071f689f50817a027c638a657bae2955ddce6",
+    "runtime/rust/sentencepiece.cc": "c17db967a0e4b75326153acd5eb1e9c4342b0d931ecf469d4be97398a38344a5",
+    "runtime/rust/sentencepiece.h": "9a4b5bf745f669a4d1cb28b15adc8e94b541bbd4923f8d1633faf0e216c77308",
+    "runtime/rust/vision.cc": "db334f560bf53df2bbc6057b920e9fdc429ec80113703b11bb34495305674ee3",
+    "runtime/safetensors_assets.h": "d7968c17f6306e85d1bd1a2ffd3ff4554aee363c5dd4554688caa9d505591e50",
+    "runtime/sha256.h": "3c0baa9eb78779ce50be9b6ac3c0aea9fea9347c33febe531a29098491a3e6c8",
+    "runtime/value_trace.h": "95ce88288ae0c1a18380ab1ca2cc4919a3ea8c02a16f14f61c1dd25b52d527b7",
+    "runtime/ynnpack_attention.inc": "199ee4a57cad3a9c9041794fb60519ffc9649367c9a7e26554635576dabdc2ab",
+    "runtime/ynnpack_blockwise_fc.inc": "7d3097f71a456c9387c22379048190ca559904b8e79df57ed9c2dba1b1006f7b",
+    "runtime/ynnpack_causal_conv.inc": "01039c25f72fa4c4e5c4915ae307abbda55e86d1c24894980455904d92ab7300",
+    "runtime/ynnpack_gated_delta.inc": "3cdf6ead29bdb6e02af2f23fa839f3da4e398225fdd666a004caa0c27e3dd668",
+    "runtime/ynnpack_packed.inc": "b74e298d89cbe27f23079c405c1bbad941e4b5beac4c48013eb4ad62df216c85",
+    "runtime/ynnpack_recurrent_cpu.cc": "6587534a6fb18b20a86786dfa78fe339c2a0460d6737ab8f4607001e586e673f",
+    "runtime/ynnpack_recurrent_cpu.h": "64a58000328d92e8e64e3a0b2bc7a9e6f0ccf2a710fdeacdb972be30b13bae63",
+    "runtime/ynnpack_support.h": "3ed5321ba73fa4e19736cae2e04bf40a79b4cc8eb0fd9caa4a0e83726643355b",
+    "runtime/ynnpack_weight_only.inc": "44194709c28dd566a73e949ab997d06ed7edbc53adaaefcb73d2f0fa28826e60",
+    "tools/recurrent_step_bench.cc": "815ae9ae0711c46cc8dc4cdcd21447e5d710e0f9574f102401945cf0d6d72ee6",
+    "tools/recurrent_step_diagnostics.cc": "8226a3e9e48d635b9f1cd1efd43a2164dc7f5feebd59e75a48eff7e749103b6a",
+    "tools/recurrent_step_native.h": "e384ffeb9700b6d409c6bee5259f718dbb78142421e5cd3768ef30bcbcb85479",
+    "tools/recurrent_step_test.cc": "b754daa5f38de6b1dda952c120613d6ab58311e6e0f9fe6f1a3847ac9b98d5d2"
+  },
+  "binaries": {
+    "arm-build/recurrent_step_bench": "0199fb74160eab500f67d08f76a33e366f25112d290f8e9dc243463b9e80cdb0",
+    "arm-build/recurrent_step_diagnostics": "0b172b026a03a83b465950bcfee948791d09d97e7c0567ec451433cac0cdf5ea",
+    "arm-build/recurrent_step_test": "a89c7508a34b6dc3bc0c169316414d75ab73a09353eb594c3e3170f7e69cdb97",
+    "host-build/recurrent_step_bench": "a7ce4a8ee5c91a21215ef417062f615f57c6136b3b6d5fbdf314406b571b5273",
+    "host-build/recurrent_step_diagnostics": "8f7bf7bdb630a1ec767fe85314d4ac16ea83f55f9f21657e809dd8d357e26ecb",
+    "host-build/recurrent_step_test": "0bcf4b414abd0ef944236475751b0acf6fc56ed34dd1d8a3dd0ca9fea447049c"
+  },
+  "ggml_libraries": {
+    "ggml-arm/bin/libggml-base.so": "2dbce58a3910855133fcec82d760c3cd9e359a95335c2126c34b399f096a7cdc",
+    "ggml-arm/bin/libggml-cpu.so": "ad055845e632759ded21d4f933b1de3bf77f8cccb58c4f939b39149026d3fed0",
+    "ggml-host/bin/libggml-base.so": "7e264887be10fe979e346ae0250756a6578a9b4b7badb74e93ff5c13a31440a5",
+    "ggml-host/bin/libggml-base.so.0": "7e264887be10fe979e346ae0250756a6578a9b4b7badb74e93ff5c13a31440a5",
+    "ggml-host/bin/libggml-base.so.0.25.3": "7e264887be10fe979e346ae0250756a6578a9b4b7badb74e93ff5c13a31440a5",
+    "ggml-host/bin/libggml-cpu.so": "b84797df0366bfe7d4384b192cf31f1d6d5277de35fbfc8022d3b05b00d87253",
+    "ggml-host/bin/libggml-cpu.so.0": "b84797df0366bfe7d4384b192cf31f1d6d5277de35fbfc8022d3b05b00d87253",
+    "ggml-host/bin/libggml-cpu.so.0.25.3": "b84797df0366bfe7d4384b192cf31f1d6d5277de35fbfc8022d3b05b00d87253"
+  },
+  "fixtures": {
+    "recurrent_step_generated.h": "214e39252560b0f5e7680c2146f59494770ee8f3aa110637534309da4452b62c",
+    "step_1.ynn": "0c6835eb6ccc41716317de08f306d6ff77a044a43b16c26326799225c1229df5",
+    "step_2.ynn": "08e67f89f130dea6a3d56a04947a0ec7e8d2690fbe6d21cf95b95aaec20a7135",
+    "step_4.ynn": "0e1e97bcaf291499a5be9d55def6d0c5599c7b12f628eabed2cb41620373837c",
+    "step_0.ynn": "9033f72a753ed5ec7d990fc4c1a92a59ee313672f64425e63b397744b701d1c3",
+    "step_3.ynn": "774c2790848031cfdd00e61e1ff4d11bd47b956ba292375034dcceac50f98410",
+    "step_5.ynn": "42f605f549d34d0b0dd29f50630e659a485ec612d56b5454ea2fbc9289ffc227"
+  },
+  "firmware": "google/cubs/cubs:17/CD1A.261005.003.B1/16433324:user/release-keys"
+}

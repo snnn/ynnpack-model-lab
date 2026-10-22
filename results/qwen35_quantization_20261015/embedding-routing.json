@@ -1,0 +1,99 @@
+{
+  "lab-int8": {
+    "prefill": {
+      "sample_step": 0,
+      "kernels": [
+        {
+          "stage": "Embedding",
+          "kernel": "gather",
+          "union_ms": 0.055082,
+          "worker_ms": 0.058686
+        },
+        {
+          "stage": "Embedding",
+          "kernel": "convert",
+          "union_ms": 0.12258,
+          "worker_ms": 0.128522
+        },
+        {
+          "stage": "Embedding",
+          "kernel": "multiply",
+          "union_ms": 0.17017,
+          "worker_ms": 0.36202100000000004
+        }
+      ]
+    },
+    "decode": {
+      "sample_step": 1,
+      "kernels": [
+        {
+          "stage": "Embedding",
+          "kernel": "gather",
+          "union_ms": 0.004918,
+          "worker_ms": 0.004918
+        },
+        {
+          "stage": "Embedding",
+          "kernel": "convert",
+          "union_ms": 0.001403,
+          "worker_ms": 0.001403
+        },
+        {
+          "stage": "Embedding",
+          "kernel": "multiply",
+          "union_ms": 0.000296,
+          "worker_ms": 0.000296
+        }
+      ]
+    }
+  },
+  "lab-int4": {
+    "prefill": {
+      "sample_step": 0,
+      "kernels": [
+        {
+          "stage": "Embedding",
+          "kernel": "core_packed_route",
+          "union_ms": 30.33406,
+          "worker_ms": 30.33406
+        },
+        {
+          "stage": "Embedding",
+          "kernel": "convert",
+          "union_ms": 0.119664,
+          "worker_ms": 0.125825
+        },
+        {
+          "stage": "Embedding",
+          "kernel": "multiply",
+          "union_ms": 0.205585,
+          "worker_ms": 0.311091
+        }
+      ]
+    },
+    "decode": {
+      "sample_step": 1,
+      "kernels": [
+        {
+          "stage": "Embedding",
+          "kernel": "core_packed_route",
+          "union_ms": 0.244169,
+          "worker_ms": 0.244169
+        },
+        {
+          "stage": "Embedding",
+          "kernel": "convert",
+          "union_ms": 0.000877,
+          "worker_ms": 0.000877
+        },
+        {
+          "stage": "Embedding",
+          "kernel": "multiply",
+          "union_ms": 0.000288,
+          "worker_ms": 0.000288
+        }
+      ]
+    }
+  },
+  "embedding_quantization_metadata_identical": true
+}

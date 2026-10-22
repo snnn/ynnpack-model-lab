@@ -1,0 +1,342 @@
+{
+  "build-pr-refresh-20261021": [
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=gnu++17",
+        "-O3",
+        "-ffp-contract=off"
+      ],
+      "translation_units": 5,
+      "example_files": [
+        "recurrent_step_bench.cc",
+        "recurrent_step_diagnostics.cc",
+        "recurrent_step_test.cc",
+        "ynnpack_recurrent_cpu.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=gnu++17"
+      ],
+      "translation_units": 164,
+      "example_files": [
+        "address_is_readable.cc",
+        "arg.cc",
+        "ascii.cc",
+        "barrier.cc",
+        "bind.cc",
+        "blocking_counter.cc",
+        "borrowed_fixup_buffer.cc",
+        "casts.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=gnu++17",
+        "-O2",
+        "-ffp-contract=off"
+      ],
+      "translation_units": 1,
+      "example_files": [
+        "attention_decode_bench.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=gnu++17",
+        "-ffp-contract=off"
+      ],
+      "translation_units": 3,
+      "example_files": [
+        "execution_profile_test.cc",
+        "quantized_fc_test.cc",
+        "value_trace_test.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=gnu++17",
+        "-O1",
+        "-ffp-contract=off"
+      ],
+      "translation_units": 43,
+      "example_files": [
+        "bridge.cc",
+        "embedding.cc",
+        "fixture.cc",
+        "gemma.cc",
+        "main.cc",
+        "minijson.cc",
+        "plan.cc",
+        "state_views_test.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c99"
+      ],
+      "translation_units": 40,
+      "example_files": [
+        "api.c",
+        "cache.c",
+        "cpuinfo.c",
+        "cpulist.c",
+        "descriptor.c",
+        "deterministic.c",
+        "info.c",
+        "init.c"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17"
+      ],
+      "translation_units": 68,
+      "example_files": [
+        "arch.cc",
+        "arithmetic.cc",
+        "broadcast.cc",
+        "broadcast_like.cc",
+        "buffer.cc",
+        "chrome_trace.cc",
+        "compact_nodes.cc",
+        "concatenate.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17",
+        "-O2"
+      ],
+      "translation_units": 19,
+      "example_files": [
+        "binary.cc",
+        "dequantize_dot.cc",
+        "dot.cc",
+        "interleave.cc",
+        "iota.cc",
+        "lut.cc",
+        "pack.cc",
+        "reduce.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17",
+        "-O2",
+        "-msse2",
+        "-mno-ssse3"
+      ],
+      "translation_units": 7,
+      "example_files": [
+        "x86_sse2.cc",
+        "x86_sse2_fp32.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17",
+        "-O2",
+        "-mavx",
+        "-mno-avx2",
+        "-mno-f16c",
+        "-mno-fma"
+      ],
+      "translation_units": 8,
+      "example_files": [
+        "x86_avx.cc",
+        "x86_avx_fp32.cc",
+        "x86_avx_fp64.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17",
+        "-O2",
+        "-mavx2"
+      ],
+      "translation_units": 20,
+      "example_files": [
+        "x86_avx2.cc",
+        "x86_avx2_fma3.cc",
+        "x86_avx2_fma3_bf16_bf16_fp32.cc",
+        "x86_avx2_fma3_bf16_bf16_fp32_k1.cc",
+        "x86_avx2_fma3_fp32_k2.cc",
+        "x86_avx2_fma3_fp32_k8.cc",
+        "x86_avx2_fp32_k2.cc",
+        "x86_avx2_int8_int8_int32.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17",
+        "-O2",
+        "-mavx",
+        "-mno-avx2"
+      ],
+      "translation_units": 5,
+      "example_files": [
+        "x86_f16c_fma3_fp16_fp16_fp32.cc",
+        "x86_fma3.cc",
+        "x86_fma3_fp32.cc",
+        "x86_fma3_fp64.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17",
+        "-O2",
+        "-mavx512f",
+        "-mavx512bw",
+        "-mavx512vl",
+        "-mavx512dq"
+      ],
+      "translation_units": 19,
+      "example_files": [
+        "x86_avx512.cc",
+        "x86_avx512_bf16_bf16_fp32.cc",
+        "x86_avx512_bf16_bf16_fp32_k1.cc",
+        "x86_avx512_fp32.cc",
+        "x86_avx512_fp32_k2.cc",
+        "x86_avx512_fp32_k4.cc",
+        "x86_avx512_fp64.cc",
+        "x86_avx512_int8_int8_int32.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17",
+        "-O2",
+        "-mavx512f",
+        "-mavx512bw",
+        "-mavx512vl",
+        "-mavx512dq",
+        "-mavx512bf16"
+      ],
+      "translation_units": 5,
+      "example_files": [
+        "x86_avx512bf16.cc",
+        "x86_avx512bf16_bf16_bf16_fp32.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17",
+        "-O2",
+        "-msse4.1",
+        "-mno-sse4.2"
+      ],
+      "translation_units": 5,
+      "example_files": [
+        "x86_sse41.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17",
+        "-O2",
+        "-mavx512f",
+        "-mavx512bw",
+        "-mavx512vl",
+        "-mavx512dq",
+        "-mavx512fp16"
+      ],
+      "translation_units": 1,
+      "example_files": [
+        "x86_avx512_fp16_fp16_fp32.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17",
+        "-O2",
+        "-mavx512f",
+        "-mavx512bw",
+        "-mavx512vl",
+        "-mavx512dq",
+        "-mavx512vnni"
+      ],
+      "translation_units": 4,
+      "example_files": [
+        "x86_avx512vnni_uint8_int2_int32.cc",
+        "x86_avx512vnni_uint8_int4_int32.cc",
+        "x86_avx512vnni_uint8_int8_int32.cc",
+        "x86_avx512vnni_uint8_int8_int32_k16.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17",
+        "-O2",
+        "-mavx2",
+        "-mavxvnni"
+      ],
+      "translation_units": 3,
+      "example_files": [
+        "x86_avxvnni_uint8_int2_int32.cc",
+        "x86_avxvnni_uint8_int4_int32.cc",
+        "x86_avxvnni_uint8_int8_int32.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17",
+        "-O2",
+        "-mno-sse4.1"
+      ],
+      "translation_units": 1,
+      "example_files": [
+        "x86_ssse3.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-std=c++17",
+        "-O2",
+        "-msse2"
+      ],
+      "translation_units": 1,
+      "example_files": [
+        "x86_sse2_fma.cc"
+      ]
+    },
+    {
+      "flags_in_order": [
+        "-O3",
+        "-O3",
+        "-std=gnu++17"
+      ],
+      "translation_units": 55,
+      "example_files": [
+        "arena.cc",
+        "arenastring.cc",
+        "bpe_model.cc",
+        "bpe_model_trainer.cc",
+        "builder.cc",
+        "bytestream.cc",
+        "char_model.cc",
+        "char_model_trainer.cc"
+      ]
+    }
+  ]
+}

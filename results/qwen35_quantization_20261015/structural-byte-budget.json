@@ -1,0 +1,73 @@
+{
+  "int8": {
+    "source_fp32_coefficients": 16823005184,
+    "coefficients_including_scales": 4225947648,
+    "runtime_row_sums": 5515264,
+    "weights_only": 4220432384,
+    "scales": 5515264,
+    "quantized_groups": {
+      "embedding_head": {
+        "codes": 635699200,
+        "scales": 993280,
+        "elements": 635699200,
+        "tensors": 1
+      },
+      "attention_projections": {
+        "codes": 1300234240,
+        "scales": 1835008,
+        "elements": 1300234240,
+        "tensors": 104
+      },
+      "mlp": {
+        "codes": 2264924160,
+        "scales": 2686976,
+        "elements": 2264924160,
+        "tensors": 96
+      }
+    },
+    "fixed_state_read_write": 105381888,
+    "kv_per_token": 65536,
+    "p128_mean_live_history": 136.5,
+    "p128_mean_selected_payload": 4345858564,
+    "embedding_row_bytes": 2564
+  },
+  "int4": {
+    "source_fp32_coefficients": 16823005184,
+    "coefficients_including_scales": 3373914112,
+    "runtime_row_sums": 2828288,
+    "weights_only": 3087970304,
+    "scales": 285943808,
+    "quantized_groups": {
+      "embedding_head": {
+        "codes": 635699200,
+        "scales": 993280,
+        "elements": 635699200,
+        "tensors": 1
+      },
+      "attention_projections": {
+        "codes": 1300234240,
+        "scales": 1835008,
+        "elements": 1300234240,
+        "tensors": 104
+      },
+      "mlp": {
+        "codes": 1132462080,
+        "scales": 283115520,
+        "elements": 2264924160,
+        "tensors": 96
+      }
+    },
+    "fixed_state_read_write": 105381888,
+    "kv_per_token": 65536,
+    "p128_mean_live_history": 136.5,
+    "p128_mean_selected_payload": 3491138052,
+    "embedding_row_bytes": 2564
+  },
+  "fp32": {
+    "fixed_state_read_write": 105381888,
+    "kv_per_token": 65536,
+    "p128_mean_live_history": 136.5,
+    "p128_mean_selected_payload": 16937408512,
+    "embedding_row_bytes": 10240
+  }
+}

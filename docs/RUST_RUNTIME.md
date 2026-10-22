@@ -57,14 +57,6 @@ Gemma preparation/execution runs on a Rust thread with a 64 MiB stack for large
 Slinky graphs. Library callers using `GemmaSession` must provide the same stack
 budget themselves.
 
-For Android, install the `aarch64-linux-android` Rust standard library and use
-the documented NDK r28c toolchain, ARM64, API 28 and static libc++.
-`cmake/RustRuntime.cmake` selects the matching Rust target; CMake performs the
-final native link, including the NDK compiler/archiver setup for tokenizers.
-Frontend validation includes published E2B/E4B text-to-TSV correctness on Linux
-and one Android ARM64 device at capacity 2048. Broader device/profile coverage
-and performance require separate checks.
-
 ## Ownership and execution
 
 `rust/src/ffi.rs` wraps `runtime/rust/bridge.h`. The bridge catches C++ exceptions
@@ -131,5 +123,5 @@ migration acceptance threshold. Preserve raw commands and binary/asset hashes.
 The shared [text frontend](PLAN_TEXT.md) parses readable `.ynn` source directly
 into validated commands and formats existing plans. Alternative compiler
 emitters are outside the runtime; runners require neither ISLE nor Wasmtime.
-Validate each new package on its target device; host fixture checks do not
-establish device performance or full-model numerical equivalence.
+Completed migration checks are indexed under [results](../results/README.md),
+with outstanding device/profile coverage in [open work](worklogs/README.md).

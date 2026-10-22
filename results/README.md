@@ -1,52 +1,46 @@
 <!-- Copyright 2026 @snnn. SPDX-License-Identifier: Apache-2.0 -->
 
-# Retained measurements and validation
+# Current measurements and unresolved issues
 
-Start with [performance gaps and investigation priorities](../docs/PERFORMANCE_GAPS.md).
-These records support backend investigations; each describes its captured
-configuration. Historical timing is not automatically a measurement of the
-current generated builders.
+Use the [current issue list](../docs/worklogs/README.md) to choose an
+investigation and the [benchmarking guide](../docs/BENCHMARKING.md) to reproduce
+measurements. A result applies only to its recorded binary, plans, assets,
+backend revisions, device and numerical contract.
 
-| Record | Role | Comparison scope |
-| --- | --- | --- |
-| [October 8 builder refresh](2026-10-08-builder-refresh/README.md) | Regenerated standalone artifacts, synchronized runtime, and E4B/HF profiling labels | All seven profiles; identical semantic construction and parameters; correctness validation without a timing campaign |
-| [KV-history attention investigation](2026-10-08-kv-history/README.md) | Fixed-capacity history sweep: 84 unprofiled requests, separate attention profiles, matrix-layout and packing evidence | Samsung E2B, four threads, prompts 17–1,024; reversed case/runner order exposes thermal effects; query-head layout and conversion/packing fusion remain unmeasured candidates |
-| [Capacity-invariance follow-up](2026-10-08-capacity-sweep/README.md) | Reusable harness validation: 36 measured requests, forward/reverse capacity order, separate warm latency checks and setup/RSS | Samsung E2B, four threads, prompts 17/128/1,024, capacities 2,048/8,448; paired changes within 5.2% with individual-round thermal variation |
-| [October 7 upstream refresh](2026-10-07-upstream-refresh/README.md) | Current normal mobile baseline: 104 configurations, 312 unprofiled requests, 32 separate profiles, 1,764 arithmetic-checked kernel trials and numerical/state checks | New/previous upstream E2B on TECNO/Pixel/Samsung, fresh native E2B controls, TECNO E4B; Linux/HF skipped on the busy host; Pixel throttling and additional rest intervals recorded |
-| [October 5 Oryon selection](2026-10-05-oryon-dot-selection/README.md) | One-row cost-model and dispatcher investigation: 336 kernel trials, 72 unprofiled requests, optional selection patch and exact output checks | Samsung E2B: default I8MM versus compatible INT2/INT4 DOTPROD restrictions; normal baseline unchanged |
-| [October 5 decode profiling](2026-10-05-decode-profile/README.md) | Phone comparison: 20 configurations, 96 unprofiled requests, separate execution/kernel profiles and exact profiler checks | Samsung one/four threads, focused Pixel/TECNO; previous normal packing baseline versus preserved native Tensor API/XNNPACK |
-| [October 5 packing correction](2026-10-05-packing-fix/README.md) | Known-row packing correction: 24 configurations, 72 measured requests, actual DOTPROD/VNNI kernel samples, and capacity checks | Same-pin before/fixed E2B host/phone and E4B host comparisons; exact phone controls and documented desktop numerical differences |
-| [October 5 backend refresh](2026-10-05/README.md) | Backend baseline before the packing correction: 87 configurations, 261 measured requests, actual VNNI/I8MM kernel samples, and capacity checks | Same-builder previous/adopted YNNPACK comparisons on Linux and E2B phones; E4B and HF arithmetic controls; XNNPACK comparisons remain historical |
-| [E2B original comparison](2026-10-02/README.md) | Historical cross-runtime baseline: 75 configurations, 225 measured requests, kernel samples, and capacity controls | Linux, TECNO, Pixel; YNNPACK versus static/packed LiteRT-XNNPACK and phone native Tensor API-XNNPACK |
-| [E4B integration](e4b_2026-10-02/README.md) | Historical larger-model baseline, state checks, and preparation-stack reproduction | Desktop static-QAT LiteRT-XNNPACK control; TECNO YNNPACK timing has no matched phone control |
-| [Initial HF safetensors](hf_safetensors_2026-10-02/README.md) | Precision/source-format experiment with much slower BF16 execution | YNNPACK HF profiles versus published-source YNNPACK and independent numerical references |
-| [HF integer-FC follow-up](hf_fp32_arithmetic_2026-10-02/README.md) | Quantized FC speed recovery, higher RSS, and arithmetic checks | Matched x86-64 YNNPACK profiles; not a new comparison against packed-dynamic XNNPACK |
-| [HF published-KV audit](hf_published_kv_audit_2026-10-02/README.md) | Correctness and intermediate-value investigation | Numerical references only; no performance claim |
-| [Native tokenizer validation](native_tokenizers_validation_20261005.json) | Input/reference parity and exact text-to-TSV replay | Correctness only, with dumps and no controlled latency campaign; Qwen model execution is not included |
+## Current baseline
+
+The [October 21 current baseline](2026-10-21-current/README.md) covers the
+Rust/`.ynn` host workloads, E2B on TECNO LJ9 and Pixel 8, paired capacity checks,
+vision controls, and attention/HF/recurrent screens. It retains 612 measured LLM
+requests, artifact identities, commands, numerical comparisons and selected-kernel
+evidence. The [Samsung / Pixel 11 extension](2026-10-21-current/phone-expansion/README.md)
+adds fresh phone measurements and records Samsung capacity sensitivity. Qwen3-0.6B Android preparation fails; E4B phone runs were skipped for
+resource constraints. Alternate attention/HF profiles change outputs and remain
+experiments. Older campaign timings are not substituted for this checkout.
+
+## Evidence retained for unresolved issues
+
+These records have **not been revalidated by the current refresh**. Their dates
+and original configurations are intentional; they support questions to reproduce,
+not current performance claims.
+
+| Issue | Supporting record |
+| --- | --- |
+| ARM low-bit kernel selection | [Oryon selection](2026-10-05-oryon-dot-selection/README.md) |
+| History conversion/packing | [KV history](2026-10-08-kv-history/README.md) |
+| Attention arithmetic/layout tradeoffs | [Attention profiles](2026-10-09-attention-profiles/README.md) |
+| HF global KV scale interpretation | [Source audit](hf_published_kv_audit_2026-10-02/README.md) |
+| Recursive graph preparation stack use | [E4B reproduction](e4b_2026-10-02/preparation-stack-overflow.txt) |
+| Quantized Qwen3.5 numerical gates | [Quantization](qwen35_quantization_20261015/README.md) |
+| Ordinary-op recurrence performance | [Step experiment](2026-10-16-recurrent-step/README.md), [layout/chunk follow-up](2026-10-17-recurrent-followup/README.md) |
 
 ## Retention
 
-Keep detailed timing and diagnostic records for the current baseline. Older
-studies retain reports, metrics and request observations, command templates,
-artifact hashes, selected-kernel evidence, and numerical/state checks. Remove
-duplicate process logs and per-step captures once summaries support the
-conclusions; a resolved issue normally needs a compact explanation and useful
-reproducer rather than every investigation log.
+Keep the current baseline's request observations, portable commands, artifact
+identities, validation summaries and selected-kernel evidence. Keep the minimum
+older evidence needed to reproduce an unresolved issue. Remove superseded
+campaigns and resolved migration history rather than maintaining a project diary.
+The removed campaigns have a local archive outside this repository.
 
-The October 5 backend and packing studies retain all request observations,
-including per-token latency arrays, in their `requests.json` files. Their
-duplicate `timings/` trees have been removed. The older decode profile keeps
-YNNPACK category/layer accounting, native per-layer stage totals and native
-operator-category totals; individual operator/callback tables have been pruned.
-The initial HF studies retain per-request summaries and run settings, without
-per-step timing logs. Original detailed captures remain accessible in the
-[earlier public snapshot](https://github.com/snnn/ynnpack-model-lab/tree/fa6e613f5513c61a9027659b4c5a3fe247e3780c/results).
-
-The October 7 baseline, historical host/native comparisons, unresolved Oryon
-INT4 selection and HF precision/KV evidence, and E4B preparation-stack
-reproduction remain available. A local patch or workaround does not establish
-that the corresponding upstream issue is resolved.
-
-Model payloads, raw profiles, machine logs, private compiler material, and
-temporary PR-review experiments remain local. See
-[publication contents and privacy](../docs/PUBLICATION.md).
+Model payloads, private compiler material, raw profiles, machine logs, and
+upstream PR-review experiments remain outside Git. See [publication guidance](../docs/PUBLICATION.md).

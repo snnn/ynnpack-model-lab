@@ -26,7 +26,7 @@ KV alignment 32, including padding. FC policies remain static QAT versus
 packed dynamic. These comparisons do not establish equivalent generation quality.
 
 The binaries and every model/parameter payload were rechecked against the
-[October 7 identities](../2026-10-07-upstream-refresh/identities.json).
+October 7 identities (historical record archived locally).
 There was no model/backend rebuild or execution-policy change. Linux host
 builds and performance remain skipped. The normal upstream pin is
 `d297c798ea530c12a1878bb3a3a811bdf05d715b`, with the same declared patches.
@@ -122,12 +122,14 @@ E2B has eight query heads, one KV head, 28 local and seven global attention
 layers, and 15 KV owners. At decode, YNNPACK's Q tensor is `[1,8,1,D]` and its
 probability tensor is `[1,8,1,H]`: eight batch entries, each with `M=1`. Native
 uses `[1,1,8,D]` and `[1,1,8,H]`, giving `M=8` against the same KV head.
-The checked-in [value declarations](../../models/gemma4_e2b/generated/gemma4_decode_DefineValues_1.cc)
-and [SDPA builder](../../models/gemma4_e2b/generated/gemma4_decode_RopeTablesToLayer2_4.cc)
-show the current YNNPACK shapes and explicit dequantization.
+The recorded C++ value declarations (`gemma4_decode_DefineValues_1.cc`) and
+SDPA builder (`gemma4_decode_RopeTablesToLayer2_4.cc`) supplied these shapes and
+explicit dequantization. Those builders have since been retired; the current
+[decode plan](../../models/gemma4_e2b/generated/gemma4_decode.ynn) is the public
+artifact interface, not the source identity of this historical capture.
 
 The same verified binaries' retained
-[endpoint kernel samples](../2026-10-07-upstream-refresh/kernel-samples.json)
+endpoint kernel samples (historical record archived locally)
 identify `dot_fp32_1x64x4_1x4x1_neon` in YNNPACK attention and
 `xnn_f32_qc8w_gemm_minmax_ukernel_6x8__asm_aarch64_neonfma_ld128` in native.
 Combining query heads into rows can permit a multi-row kernel to reuse KV loads
@@ -160,7 +162,7 @@ from 168 to 280. Global QK+PV worker time grows from 3.06 to 6.57 ms, while
 local QK+PV moves from 6.23 to 6.75 ms under changing thermal conditions.
 The schedule uses valid history, appends only new KV, and records zero
 history-view copies. Capacity invariance is covered by the separate
-[fixed-input capacity check](../2026-10-08-capacity-sweep/README.md).
+fixed-input capacity check (historical record archived locally).
 
 ## Concrete follow-up experiments
 
@@ -202,5 +204,5 @@ All **43 Python tests pass**. Every process succeeded; argmax sequences agree
 within each engine/case across both orders and the diagnostic capture. This is
 self-consistency evidence, not cross-engine logits/KV or generation-quality
 validation. No model/backend arithmetic changed; the stronger numerical checks
-in the [October 7 report](../2026-10-07-upstream-refresh/README.md) retain their
+in the October 7 report (historical record archived locally) retain their
 original input scope.

@@ -17,12 +17,6 @@ append-only KV writes, windowed views, and KV-owner-only prefix execution as the
 other runners. It does not add MTP, image/audio execution, E4B safetensors, or
 other model architectures.
 
-The [retained BF16 study](../results/hf_safetensors_2026-10-02/README.md) includes
-Linux/Android measurements; FP32/integer-FC execution evidence is host-only.
-These studies predate the current runner and do not establish device coverage
-for the current `.ynn` profiles. Matching KV scales does not
-establish whole-model numerical equivalence.
-
 ## Numerical profiles
 
 | Profile directory | Activation/weight arithmetic | KV storage and scales |
@@ -42,9 +36,8 @@ In the audited checkpoint, K/V scales for cache-owner layers 4, 9 and 14
 (zero-based) are 16× the published LiteRT-LM scales; local scales match.
 Dividing global scales by 16 is an explicit compatibility experiment in all
 `*_published_kv` profiles. The intended quantization range remains unresolved;
-the [numerical audit](../results/hf_published_kv_audit_2026-10-02/README.md)
-records the evidence. Confirm the source runtime's quantization policy before
-treating this as a correction.
+the [open investigation](worklogs/VALIDATION_GAPS.md#hf-global-kv-scale-interpretation)
+records the evidence and checks needed before treating this as a correction.
 
 In the three BF16 profiles, quantized linear weights are interpreted as
 `BF16(integer_codes * BF16(weight_scale))`. Calibrated FC inputs and outputs use
@@ -296,15 +289,3 @@ and state semantics; a generic container reader alone does not provide linear
 attention, different KV layouts, or other model behavior.
 
 ## Evidence and limitations
-
-The [FP32/integer-FC record](../results/hf_fp32_arithmetic_2026-10-02/README.md)
-contains desktop comparisons and capacity/chunk checks. The integer variant
-approaches the published-source YNNPACK control's warm speed in that study,
-but has higher peak RSS and does not improve overall reference agreement.
-The [numerical audit](../results/hf_published_kv_audit_2026-10-02/README.md)
-identifies early arithmetic differences and chunk-sensitive softmax rounding.
-
-The [October 5 HF timings](../results/2026-10-05/README.md) predate the packing
-correction and runtime migrations. They are historical measurements, not a
-current safetensors-loader speed claim. Current timing, KV-policy interpretation
-and generation quality require separate validation.

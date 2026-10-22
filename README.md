@@ -13,12 +13,15 @@ symbolic dimensions, runtime scalar bounds, state mutation, views, preparation
 costs and memory use. FP32 vision classifiers provide additional backend workloads.
 
 Use the [documentation index](docs/README.md) for workload guides and developer
-references. The [measurement index](results/README.md) contains published
-campaigns with their recorded runtime and configuration.
+references. [Open work](docs/worklogs/README.md) tracks unfinished performance,
+validation and reproduction questions. The [measurement index](results/README.md)
+separates completed campaigns by their actual runtime and configuration.
 
 The canonical Rust runners load checked-in `.ynn` construction plans and invoke
-native YNNPACK/Slinky graphs through a small C ABI. CMake builds `vision`,
-`gemma4_e2b`, `gemma4_e4b`, and the generic `plan_fixture` harness. Profiles are
+native YNNPACK/Slinky graphs through a small C ABI. The
+[general LLM runner](docs/GENERAL_RUNNER.md), `ynn-llm`, loads qualified Gemma4,
+Qwen3 and Qwen3.5 packages using explicit metadata. CMake also builds `vision`,
+the comparison controls `gemma4_e2b`, `gemma4_e4b`, `qwen3`, and `plan_fixture`. Profiles are
 selected by model directory. Graph authors and compiler integration stay private;
 building and running published plans needs no private compiler. Generated C++
 model builders and JSON graph loading are retired. JSON remains the format for
@@ -32,10 +35,10 @@ reshape-to-view lowering. Each `model.json` records the policy and operation
 counts. Native graph preparation and phase-specific packing still happen at
 load time. The [design](docs/DESIGN.md) explains the state and execution contracts.
 
-The [October 7 mobile baseline](results/2026-10-07-upstream-refresh/README.md)
-uses the earlier C++ runner. Historical timing is not automatically a result
-for the current checkout; measure the selected runtime, profile and device
-when comparing performance.
+The [measurement index](results/README.md) separates the current refresh from
+older evidence retained for unresolved issues. Performance claims require a
+matching runner, backend, model profile and device; archived timings do not
+validate this checkout.
 
 ## Models and workloads
 
@@ -46,14 +49,16 @@ Each integrated model has its own assets, plans, fixtures and validation scope.
 | --- | --- | --- |
 | Gemma4 E2B | Published-bundle and direct safetensors profiles | [E2B](docs/E2B.md) |
 | Gemma4 E4B | Published-bundle profile | [E4B](docs/E4B.md) |
-| Gemma4 12B | Planned integration | — |
-| Gemma4 31B | Planned integration | — |
-| Qwen models | Model execution planned; Qwen3/Qwen3.5 tokenizer recipes available | [Tokenizers](docs/TOKENIZERS.md) |
+| Gemma4 12B | Planned integration | [Integration work](docs/worklogs/MODEL_INTEGRATIONS.md) |
+| Gemma4 31B | Planned integration | [Integration work](docs/worklogs/MODEL_INTEGRATIONS.md) |
+| Qwen3-0.6B / Qwen3-4B | Dynamic INT8 linears, FP32 attention/KV; CPU forced-token execution and drift checks | [Qwen3](docs/QWEN3.md) |
+| Qwen3.5-4B | Validated FP32 text baseline; experimental INT8 / INT4-MLP profiles | [Qwen3.5](docs/QWEN35.md) |
+| Other Qwen models | Planned execution | [Integration work](docs/worklogs/MODEL_INTEGRATIONS.md), [tokenizers](docs/TOKENIZERS.md) |
 | FP32 vision classifiers | ResNet18/34/50/101/152, ResNeXt50, Wide ResNet50 and MobileNetV2 | [Vision](docs/VISION.md) |
 
 The LLM runners currently use teacher-forced benchmark requests. Integrated
-status means a runnable workload with correctness checks; it does not establish
-generation quality or performance on every device.
+status means a runnable workload with recorded checks; device coverage and
+model-quality evaluation have separate [gaps](docs/worklogs/VALIDATION_GAPS.md).
 Opt-in [attention policies](docs/ATTENTION_EXPERIMENTS.md) and
 [HF arithmetic profiles](docs/HF_GEMMA4.md) expose different numerical contracts.
 Choose a complete matching package explicitly when comparing them.
@@ -90,27 +95,31 @@ and `-DLAB_ENABLE_TOKENIZERS=OFF` for a token-ID-only build. Rust remains requir
 Dependencies live in the ignored `.deps/` directory. The repository and runtime
 dependencies are public.
 
+`runtime/ynnpack_capacity.h` provides explicit capacity migration between
+prepared variants. Each variant owns both phases, compatible resource handles,
+allocation lifetimes and unchanged fixed-state bindings. `ReserveCapacity`
+copies initialized prefixes and retires old bindings only after the replacement
+set is ready. The generic runner session also accepts a prepared larger session
+through `reserve_capacity`; ordinary invocation never grows implicitly. The
+exporter must supply equivalent programs at the different capacities. INT2/INT4
+owners support multidimensional dense or padded row-major storage; parallel
+append workers own complete bytes. Shared-owner requests remain exclusive.
+
 The [construction plan format](docs/GRAPH_PLANS.md) separates exporter checks,
 typed load-time validation and dynamic invocation checks. Model metadata binds
-phase hashes, assets and numerical profiles. Validate the selected package
-on the target platform; earlier mobile and C++ measurements retain their
-original scope.
+phase hashes, assets and numerical profiles.
 
 The backend pins are XNNPACK/YNNPACK `0a66ebb5817f` and Slinky `a3eec6fcfe30`.
-They retain upstream AVX-VNNI support and update x86 dot cost models and
-thread-pool behavior. CPUinfo and tokenizer dependencies retain their pins.
-Older records, including the October 7 mobile baseline, retain their original
-revisions and validation scope. Existing checkouts should use a fresh dependency
-and build directory; see [dependency update instructions](patches/README.md).
+Use a fresh dependency/build directory when changing pins; see
+[dependency update instructions](patches/README.md). Current validation and
+remaining gaps are tracked in the [measurement index](results/README.md).
 
 ## Android: the same CMake build
 
 Set `ANDROID_NDK` to your NDK installation and install the
 `aarch64-linux-android` Rust standard library. The earlier native baseline used
-NDK r28c (28.2.13676358), ARM64, API 28, static libc++. The current Rust/`.ynn`
-E2B/E4B input frontend has text-to-TSV correctness checks on Linux and one
-Android ARM64 device. These checks do not establish broader profile coverage
-or performance.
+NDK r28c (28.2.13676358), ARM64, API 28, static libc++. Current Rust/`.ynn` frontend correctness is checked separately from timing.
+Broader device/profile coverage remains in the [validation tracker](docs/worklogs/VALIDATION_GAPS.md).
 SME/SME2 and FP8 remain disabled; DOTPROD and I8MM remain enabled.
 
 ```sh
@@ -169,6 +178,10 @@ chunked attention, not online-softmax/FlashAttention.
 - [Measurements and validation by workload](results/README.md)
 - [Dependency patches](patches/README.md)
 
+[Model integration work](docs/worklogs/MODEL_INTEGRATIONS.md) tracks the planned
+Gemma4 and Qwen additions. Shared backend investigations include prepared-weight
+reuse and tiled online-softmax attention; see [open work](docs/worklogs/README.md).
+
 ## Licensing
 
 Lab code is Apache-2.0; retained third-party notices and licenses are listed in
@@ -176,3 +189,6 @@ Lab code is Apache-2.0; retained third-party notices and licenses are listed in
 Graph-authoring sources and compiler integration are maintained separately and
 are excluded from this repository. Generated plans and their standalone
 runtime helpers retain the applicable notices and licenses.
+
+Qwen3.5-4B text-only FP32 packages use the shared Qwen runner; see
+[the model guide](docs/QWEN35.md) for state, validation and execution contracts.

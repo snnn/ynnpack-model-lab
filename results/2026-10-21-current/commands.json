@@ -1,0 +1,1919 @@
+{
+  "kind": "normalized argv templates; substitute external variables before execution",
+  "commands": [
+    {
+      "campaign": "host",
+      "job": "gemma4_e2b_t1_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "host",
+      "job": "gemma4_e2b_t4_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "host",
+      "job": "gemma4_e4b_t1_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/gemma4_e4b/generated",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "host",
+      "job": "gemma4_e4b_t4_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/gemma4_e4b/generated",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "host",
+      "job": "qwen3_0_6b_t1_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/qwen3_0_6b/generated",
+        "--bundle_dir=models/qwen3_0_6b/generated",
+        "--parameter_dir=models/qwen3_0_6b/generated/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/qwen3_0_6b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "host",
+      "job": "qwen3_0_6b_t4_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/qwen3_0_6b/generated",
+        "--bundle_dir=models/qwen3_0_6b/generated",
+        "--parameter_dir=models/qwen3_0_6b/generated/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/qwen3_0_6b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "host",
+      "job": "qwen3_4b_t1_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/qwen3_4b/generated",
+        "--bundle_dir=models/qwen3_4b/generated",
+        "--parameter_dir=models/qwen3_4b/generated/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/qwen3_4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "host",
+      "job": "qwen3_4b_t4_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/qwen3_4b/generated",
+        "--bundle_dir=models/qwen3_4b/generated",
+        "--parameter_dir=models/qwen3_4b/generated/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/qwen3_4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "host",
+      "job": "qwen3_5_4b_fp32_t1_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/qwen3",
+        "--graph_dir=models/qwen3_5_4b/generated",
+        "--bundle_dir=models/qwen3_5_4b/generated",
+        "--parameter_dir=models/qwen3_5_4b/generated/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/qwen3_5_4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "host",
+      "job": "qwen3_5_4b_fp32_t4_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/qwen3",
+        "--graph_dir=models/qwen3_5_4b/generated",
+        "--bundle_dir=models/qwen3_5_4b/generated",
+        "--parameter_dir=models/qwen3_5_4b/generated/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/qwen3_5_4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "host",
+      "job": "qwen3_5_4b_int4_mlp_t1_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/qwen3",
+        "--graph_dir=models/qwen3_5_4b/profiles/int4_mlp/generated",
+        "--bundle_dir=models/qwen3_5_4b/profiles/int4_mlp/generated",
+        "--parameter_dir=models/qwen3_5_4b/profiles/int4_mlp/generated/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/qwen3_5_4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "host",
+      "job": "qwen3_5_4b_int4_mlp_t4_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/qwen3",
+        "--graph_dir=models/qwen3_5_4b/profiles/int4_mlp/generated",
+        "--bundle_dir=models/qwen3_5_4b/profiles/int4_mlp/generated",
+        "--parameter_dir=models/qwen3_5_4b/profiles/int4_mlp/generated/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/qwen3_5_4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "host",
+      "job": "qwen3_5_4b_int8_t1_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/qwen3_5_4b/profiles/int8/generated",
+        "--bundle_dir=models/qwen3_5_4b/profiles/int8/generated",
+        "--parameter_dir=models/qwen3_5_4b/profiles/int8/generated/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/qwen3_5_4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "host",
+      "job": "qwen3_5_4b_int8_t4_c2048_r0",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/qwen3_5_4b/profiles/int8/generated",
+        "--bundle_dir=models/qwen3_5_4b/profiles/int8/generated",
+        "--parameter_dir=models/qwen3_5_4b/profiles/int8/generated/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/qwen3_5_4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "capacity",
+      "job": "gemma4_e2b-t4-r1-c2048",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "capacity",
+      "job": "gemma4_e2b-t4-r1-c8448",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=8448",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "capacity",
+      "job": "gemma4_e2b-t4-r2-c2048",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "capacity",
+      "job": "gemma4_e2b-t4-r2-c8448",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=8448",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "capacity",
+      "job": "gemma4_e4b-t4-r1-c2048",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/generated",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "capacity",
+      "job": "gemma4_e4b-t4-r1-c8448",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/generated",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=8448",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "capacity",
+      "job": "gemma4_e4b-t4-r2-c2048",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/generated",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "capacity",
+      "job": "gemma4_e4b-t4-r2-c8448",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/generated",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=8448",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "tecno-v2",
+      "job": "gemma4_e2b_t1_c2048",
+      "argv": [
+        "taskset",
+        "80",
+        "${REMOTE_ROOT}/bin/ynn-llm",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "tecno-v2",
+      "job": "gemma4_e2b_t4_c2048",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/ynn-llm",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "tecno-v2",
+      "job": "qwen3_0_6b_t1_c2048",
+      "argv": [
+        "taskset",
+        "80",
+        "${REMOTE_ROOT}/bin/ynn-llm",
+        "--graph_dir=${REMOTE_ROOT}/qwen",
+        "--bundle_dir=${REMOTE_ROOT}/qwen",
+        "--parameter_dir=${REMOTE_ROOT}/qwen/parameters",
+        "--cases_file=${REMOTE_ROOT}/qwen/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "tecno-v2",
+      "job": "qwen3_0_6b_t4_c2048",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/ynn-llm",
+        "--graph_dir=${REMOTE_ROOT}/qwen",
+        "--bundle_dir=${REMOTE_ROOT}/qwen",
+        "--parameter_dir=${REMOTE_ROOT}/qwen/parameters",
+        "--cases_file=${REMOTE_ROOT}/qwen/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "pixel8-v2",
+      "job": "gemma4_e2b_t1_c2048",
+      "argv": [
+        "taskset",
+        "100",
+        "${REMOTE_ROOT}/bin/ynn-llm",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "pixel8-v2",
+      "job": "gemma4_e2b_t4_c2048",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/ynn-llm",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "pixel8-v2",
+      "job": "qwen3_0_6b_t1_c2048",
+      "argv": [
+        "taskset",
+        "100",
+        "${REMOTE_ROOT}/bin/ynn-llm",
+        "--graph_dir=${REMOTE_ROOT}/qwen",
+        "--bundle_dir=${REMOTE_ROOT}/qwen",
+        "--parameter_dir=${REMOTE_ROOT}/qwen/parameters",
+        "--cases_file=${REMOTE_ROOT}/qwen/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "pixel8-v2",
+      "job": "qwen3_0_6b_t4_c2048",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/ynn-llm",
+        "--graph_dir=${REMOTE_ROOT}/qwen",
+        "--bundle_dir=${REMOTE_ROOT}/qwen",
+        "--parameter_dir=${REMOTE_ROOT}/qwen/parameters",
+        "--cases_file=${REMOTE_ROOT}/qwen/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "tecno-repeat",
+      "job": "gemma4_e2b_t1_c2048",
+      "argv": [
+        "taskset",
+        "80",
+        "${REMOTE_ROOT}/bin/ynn-llm",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "tecno-repeat",
+      "job": "gemma4_e2b_t4_c2048",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/ynn-llm",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "pixel8-repeat",
+      "job": "gemma4_e2b_t1_c2048",
+      "argv": [
+        "taskset",
+        "100",
+        "${REMOTE_ROOT}/bin/ynn-llm",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "pixel8-repeat",
+      "job": "gemma4_e2b_t4_c2048",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/ynn-llm",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "tecno-capacity",
+      "job": "gemma4-e2b-t4-r1-c2048",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/gemma4_e2b",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "tecno-capacity",
+      "job": "gemma4-e2b-t4-r1-c8448",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/gemma4_e2b",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=8448",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "tecno-capacity",
+      "job": "gemma4-e2b-t4-r2-c2048",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/gemma4_e2b",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "tecno-capacity",
+      "job": "gemma4-e2b-t4-r2-c8448",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/gemma4_e2b",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=8448",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "pixel8-capacity",
+      "job": "gemma4-e2b-t4-r1-c2048",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/gemma4_e2b",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "pixel8-capacity",
+      "job": "gemma4-e2b-t4-r1-c8448",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/gemma4_e2b",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=8448",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "pixel8-capacity",
+      "job": "gemma4-e2b-t4-r2-c2048",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/gemma4_e2b",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "pixel8-capacity",
+      "job": "gemma4-e2b-t4-r2-c8448",
+      "argv": [
+        "taskset",
+        "f0",
+        "${REMOTE_ROOT}/bin/gemma4_e2b",
+        "--graph_dir=${REMOTE_ROOT}/e2b",
+        "--bundle_dir=${GEMMA_BUNDLE}",
+        "--parameter_dir=${REMOTE_ROOT}/e2b/parameters",
+        "--cases_file=${REMOTE_ROOT}/e2b/perf.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=8448",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "external-controls",
+      "job": "lab_after",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "external-controls",
+      "job": "lab_before",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--prefill_rows=128"
+      ]
+    },
+    {
+      "campaign": "external-controls",
+      "job": "litert_forward",
+      "argv": [
+        "taskset",
+        "55",
+        "${CONTROL_BINARY}",
+        "--experimental_compact_int2",
+        "--experimental_dynamic_prefill",
+        "--experimental_explicit_dynamic_shapes",
+        "--model_path=${CONTROL_MODEL}",
+        "--weight_cache_path=${CONTROL_WEIGHT_CACHE}",
+        "--bundle_dir=${CONTROL_BUNDLE}",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "campaign": "external-controls",
+      "job": "litert_reverse",
+      "argv": [
+        "taskset",
+        "55",
+        "${CONTROL_BINARY}",
+        "--experimental_compact_int2",
+        "--experimental_dynamic_prefill",
+        "--experimental_explicit_dynamic_shapes",
+        "--model_path=${CONTROL_MODEL}",
+        "--weight_cache_path=${CONTROL_WEIGHT_CACHE}",
+        "--bundle_dir=${CONTROL_BUNDLE}",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e2b_fp32_batch_t1",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e2b_fp32_batch_t4",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e2b_fp32_batch_t4_correctness",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--cases_file=results/2026-10-21-current/fixtures/screen-correctness.tsv",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e2b_fp32_rows_t1",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/attention/fp32_rows",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e2b_fp32_rows_t4",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/attention/fp32_rows",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e2b_fp32_rows_t4_correctness",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/attention/fp32_rows",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--cases_file=results/2026-10-21-current/fixtures/screen-correctness.tsv",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e2b_int8_batch_t1",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/attention/int8_batch",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e2b_int8_batch_t4",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/attention/int8_batch",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e2b_int8_batch_t4_correctness",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/attention/int8_batch",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--cases_file=results/2026-10-21-current/fixtures/screen-correctness.tsv",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e2b_int8_rows_t1",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/attention/int8_rows",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e2b_int8_rows_t4",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/attention/int8_rows",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e2b_int8_rows_t4_correctness",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/attention/int8_rows",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--cases_file=results/2026-10-21-current/fixtures/screen-correctness.tsv",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e4b_fp32_batch_t1",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/generated",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e4b_fp32_batch_t4",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/generated",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e4b_fp32_batch_t4_correctness",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/generated",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--cases_file=results/2026-10-21-current/fixtures/screen-correctness.tsv",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e4b_fp32_rows_t1",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/attention/fp32_rows",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e4b_fp32_rows_t4",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/attention/fp32_rows",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e4b_fp32_rows_t4_correctness",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/attention/fp32_rows",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--cases_file=results/2026-10-21-current/fixtures/screen-correctness.tsv",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e4b_int8_batch_t1",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/attention/int8_batch",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e4b_int8_batch_t4",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/attention/int8_batch",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e4b_int8_batch_t4_correctness",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/attention/int8_batch",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--cases_file=results/2026-10-21-current/fixtures/screen-correctness.tsv",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e4b_int8_rows_t1",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/attention/int8_rows",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e4b_int8_rows_t4",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/attention/int8_rows",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "attention",
+      "job": "gemma4_e4b_int8_rows_t4_correctness",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/attention/int8_rows",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--cases_file=results/2026-10-21-current/fixtures/screen-correctness.tsv",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_bf16_int8_published_kv_t1",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_bf16_int8_published_kv_t4",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_bf16_int8_published_kv_t4_correctness",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--cases_file=results/2026-10-21-current/fixtures/screen-correctness.tsv",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_bf16_int8_raw_kv_t1",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_bf16_int8_raw_kv_t4",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_bf16_int8_raw_kv_t4_correctness",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--cases_file=results/2026-10-21-current/fixtures/screen-correctness.tsv",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_bf16_t1",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_bf16",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_bf16/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_bf16_t4",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_bf16",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_bf16/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_bf16_t4_correctness",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_bf16",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_bf16/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--cases_file=results/2026-10-21-current/fixtures/screen-correctness.tsv",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_fp32_int8_published_kv_t1",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_fp32_int8_published_kv_t4",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_fp32_int8_published_kv_t4_correctness",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--cases_file=results/2026-10-21-current/fixtures/screen-correctness.tsv",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_static_int8_published_kv_t1",
+      "argv": [
+        "taskset",
+        "-c",
+        "0",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_static_int8_published_kv",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_static_int8_published_kv/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=1",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_static_int8_published_kv_t4",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_static_int8_published_kv",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_static_int8_published_kv/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--cases_file=models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=1",
+        "--measured_runs=3"
+      ]
+    },
+    {
+      "campaign": "hf-screen",
+      "job": "hf_static_int8_published_kv_t4_correctness",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-hf-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b_hf/generated/hf_static_int8_published_kv",
+        "--hf_model_dir=${HF_MODEL_DIR}",
+        "--asset_manifest=out/hf-e2b/manifest.json",
+        "--parameter_dir=models/gemma4_e2b_hf/generated/hf_static_int8_published_kv/parameters",
+        "--cache_dir=out/hf-e2b/cache",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--cases_file=results/2026-10-21-current/fixtures/screen-correctness.tsv",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "diagnostics",
+      "job": "gemma4_e2b",
+      "argv": [
+        "perf",
+        "record",
+        "-e",
+        "cpu_core/cycles/u",
+        "-F",
+        "199",
+        "--clockid",
+        "mono",
+        "-o",
+        "out/pr-refresh-20261021/gemma4_e2b.perf.data",
+        "--",
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e2b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--prefill_rows=128",
+        "--profile_execution=all",
+        "--report_memory"
+      ]
+    },
+    {
+      "campaign": "diagnostics",
+      "job": "gemma4_e4b",
+      "argv": [
+        "perf",
+        "record",
+        "-e",
+        "cpu_core/cycles/u",
+        "-F",
+        "199",
+        "--clockid",
+        "mono",
+        "-o",
+        "out/pr-refresh-20261021/gemma4_e4b.perf.data",
+        "--",
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/gemma4_e4b/generated",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/gemma4_e4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--prefill_rows=128",
+        "--profile_execution=all",
+        "--report_memory"
+      ]
+    },
+    {
+      "campaign": "diagnostics",
+      "job": "qwen3_0_6b",
+      "argv": [
+        "perf",
+        "record",
+        "-e",
+        "cpu_core/cycles/u",
+        "-F",
+        "199",
+        "--clockid",
+        "mono",
+        "-o",
+        "out/pr-refresh-20261021/qwen3_0_6b.perf.data",
+        "--",
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/qwen3_0_6b/generated",
+        "--bundle_dir=models/qwen3_0_6b/generated",
+        "--parameter_dir=models/qwen3_0_6b/generated/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/qwen3_0_6b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--prefill_rows=128",
+        "--profile_execution=all",
+        "--report_memory"
+      ]
+    },
+    {
+      "campaign": "diagnostics",
+      "job": "qwen3_4b",
+      "argv": [
+        "perf",
+        "record",
+        "-e",
+        "cpu_core/cycles/u",
+        "-F",
+        "199",
+        "--clockid",
+        "mono",
+        "-o",
+        "out/pr-refresh-20261021/qwen3_4b.perf.data",
+        "--",
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/qwen3_4b/generated",
+        "--bundle_dir=models/qwen3_4b/generated",
+        "--parameter_dir=models/qwen3_4b/generated/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/qwen3_4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--prefill_rows=128",
+        "--profile_execution=all",
+        "--report_memory"
+      ]
+    },
+    {
+      "campaign": "diagnostics",
+      "job": "qwen3_5_4b_int8",
+      "argv": [
+        "perf",
+        "record",
+        "-e",
+        "cpu_core/cycles/u",
+        "-F",
+        "199",
+        "--clockid",
+        "mono",
+        "-o",
+        "out/pr-refresh-20261021/qwen3_5_4b_int8.perf.data",
+        "--",
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/ynn-llm",
+        "--graph_dir=models/qwen3_5_4b/profiles/int8/generated",
+        "--bundle_dir=models/qwen3_5_4b/profiles/int8/generated",
+        "--parameter_dir=models/qwen3_5_4b/profiles/int8/generated/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/qwen3_5_4b.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--prefill_rows=128",
+        "--profile_execution=all",
+        "--report_memory"
+      ]
+    },
+    {
+      "campaign": "diagnostics-capacity",
+      "job": "gemma4_e2b_capacity_correct_c2048",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/correctness.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "diagnostics-capacity",
+      "job": "gemma4_e2b_capacity_correct_c8448",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e2b",
+        "--graph_dir=models/gemma4_e2b/generated",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/correctness.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=8448",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "diagnostics-capacity",
+      "job": "gemma4_e4b_capacity_correct_c2048",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/generated",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/correctness.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=2048",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    },
+    {
+      "campaign": "diagnostics-capacity",
+      "job": "gemma4_e4b_capacity_correct_c8448",
+      "argv": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "build-pr-refresh-20261021/gemma4_e4b",
+        "--graph_dir=models/gemma4_e4b/generated",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--cases_file=results/2026-10-21-current/fixtures/correctness.tsv",
+        "--output_dir={output}",
+        "--cache_capacity=8448",
+        "--num_threads=4",
+        "--warmup_runs=0",
+        "--measured_runs=1",
+        "--dump_outputs"
+      ]
+    }
+  ],
+  "external_binary_hashes": {
+    "litert.host": "188efd8b221c4c0f360357a4715f9731f262d14b55bbb1b92471c9797ee2152a"
+  }
+}

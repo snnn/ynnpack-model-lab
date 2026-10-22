@@ -54,6 +54,10 @@ mod gemma;
 #[cfg(feature = "gemma")]
 pub(crate) use gemma::*;
 mod plan;
+#[cfg(feature = "llm")]
+mod embedding;
+#[cfg(feature = "llm")]
+pub(crate) use embedding::Embedding;
 
 #[repr(C)]
 struct NativeError {
@@ -148,6 +152,7 @@ extern "C" {
         value: i64,
         error: *mut NativeError,
     ) -> i32;
+    fn lab_resource_bytes(graph: *mut c_void, name: *const c_char, shape: *const usize, rank: usize, out: *mut usize, error: *mut NativeError) -> i32;
     fn lab_resource_create(
         graph: *mut c_void,
         name: *const c_char,
@@ -163,6 +168,8 @@ extern "C" {
     fn lab_resource_import(resource: *mut c_void, prefix: usize, error: *mut NativeError) -> i32;
     fn lab_resource_status(resource: *mut c_void, values: *mut u64, error: *mut NativeError)
         -> i32;
+    fn lab_resources_migrate(before: *const *mut c_void, after: *const *mut c_void,
+        count: usize, capacity: usize, error: *mut NativeError) -> i32;
     fn lab_graph_resource(
         graph: *mut c_void,
         name: *const c_char,
@@ -297,6 +304,15 @@ impl Drop for Assets {
 
 // Typestate prevents calling Run before native compilation. Graph retains all
 // constant mappings through Rc; its Drop runs before that Rc is released.
+/// Explicit process-wide experiment setting; defaults preserve prior arithmetic.
+pub(crate) fn math_mode() -> Result<&'static str> {
+    match std::env::var("LAB_YNN_MATH") {
+        Err(std::env::VarError::NotPresent) => Ok("no_excess_precision"),
+        Ok(value) if value == "no_excess_precision" => Ok("no_excess_precision"),
+        Ok(value) if value == "fast_math" => Ok("fast_math"),
+        _ => Err(Error::invalid("LAB_YNN_MATH must be no_excess_precision or fast_math")),
+    }
+}
 pub(crate) struct GraphBuilder {
     graph: NativeGraph,
 }
@@ -549,6 +565,16 @@ pub(crate) struct Resource {
     bytes: usize,
 }
 impl Resource {
+    /// Migrate a complete owner set. The caller exclusively owns both sessions;
+    /// native publication retires all old bindings only after every copy succeeds.
+    pub fn migrate_set(before: &mut [(CString, Self)], after: &mut [(CString, Self)], capacity: usize) -> Result<()> {
+        if before.len() != after.len() || before.iter().zip(after.iter()).any(|(a,b)| a.0 != b.0) {
+            return Err(Error::invalid("Capacity owner set changed"));
+        }
+        let old: Vec<_> = before.iter().map(|(_,r)| r.ptr.as_ptr()).collect();
+        let new: Vec<_> = after.iter().map(|(_,r)| r.ptr.as_ptr()).collect();
+        call(|e| unsafe { lab_resources_migrate(old.as_ptr(), new.as_ptr(), old.len(), capacity, e) })
+    }
     pub fn import(&mut self, prefix: usize) -> Result<()> {
         call(|e| unsafe { lab_resource_import(self.ptr.as_ptr(), prefix, e) })
     }
@@ -590,12 +616,18 @@ impl Resource {
         if ![1, 2, 4, 8].contains(&element_bytes) {
             return Err(Error::invalid("Invalid resource element size"));
         }
-        let count = shape
-            .iter()
-            .try_fold(1usize, |n, &d| n.checked_mul(d).filter(|_| d > 0))
-            .and_then(|n| n.checked_mul(element_bytes))
-            .and_then(|n| n.checked_add(64))
-            .filter(|&n| n <= isize::MAX as usize)
+        Self::new_bits(graph, name, shape, element_bytes * 8)
+    }
+    pub fn new_packed(graph: &PreparedGraph, name: &CStr, shape: &[usize], bits: usize) -> Result<Self> {
+        if ![2, 4].contains(&bits) {
+            return Err(Error::invalid("Packed resource requires INT2/INT4"));
+        }
+        Self::new_bits(graph, name, shape, bits)
+    }
+    fn new_bits(graph: &PreparedGraph, name: &CStr, shape: &[usize], _bits: usize) -> Result<Self> {
+        let mut bytes = 0usize;
+        call(|e| unsafe { lab_resource_bytes(graph.graph.ptr.as_ptr(), name.as_ptr(), shape.as_ptr(), shape.len(), &mut bytes, e) })?;
+        let count = bytes.checked_add(64).filter(|&n| n <= isize::MAX as usize)
             .ok_or_else(|| Error::invalid("Invalid resource shape"))?;
         let data = Buffer::new(count.div_ceil(8), 0u64);
         let bytes = count - 64;
@@ -611,7 +643,7 @@ impl Resource {
                 graph.graph.ptr.as_ptr(),
                 name.as_ptr(),
                 data.native_ptr().cast(),
-                data.len() * 8,
+                bytes,
                 shape.as_ptr(),
                 shape.len(),
                 &mut ptr,

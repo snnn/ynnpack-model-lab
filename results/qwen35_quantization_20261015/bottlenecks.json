@@ -1,0 +1,218 @@
+{
+  "lab-fp32": {
+    "prefill": {
+      "graph_ms": 2816.503544,
+      "callbacks_ms": {
+        "gated_delta_rule": 437.913991,
+        "blockwise_fc_a8_w4_native_dot": 0,
+        "core_packed_route": 0
+      }
+    },
+    "decode": {
+      "graph_ms": 534.5969635,
+      "callbacks_ms": {
+        "gated_delta_rule": 16.889018999999998,
+        "blockwise_fc_a8_w4_native_dot": 0.0,
+        "core_packed_route": 0.0
+      }
+    }
+  },
+  "lab-int8": {
+    "prefill": {
+      "graph_ms": 1278.304513,
+      "callbacks_ms": {
+        "gated_delta_rule": 435.642851,
+        "blockwise_fc_a8_w4_native_dot": 0,
+        "core_packed_route": 0
+      }
+    },
+    "decode": {
+      "graph_ms": 141.71459,
+      "callbacks_ms": {
+        "gated_delta_rule": 16.900104,
+        "blockwise_fc_a8_w4_native_dot": 0.0,
+        "core_packed_route": 0.0
+      }
+    }
+  },
+  "lab-int4": {
+    "prefill": {
+      "graph_ms": 10880.049963,
+      "callbacks_ms": {
+        "gated_delta_rule": 437.185773,
+        "blockwise_fc_a8_w4_native_dot": 9868.811418,
+        "core_packed_route": 30.33406
+      }
+    },
+    "decode": {
+      "graph_ms": 598.910238,
+      "callbacks_ms": {
+        "gated_delta_rule": 16.962161000000002,
+        "blockwise_fc_a8_w4_native_dot": 519.3206084999999,
+        "core_packed_route": 0.2435775
+      }
+    }
+  },
+  "llama-f32": {
+    "prefill": {
+      "sum_of_layer_medians_ms": {
+        "ADD": 2.6213719999999996,
+        "CONCAT": 17.273967000000003,
+        "CPY": 1.793712,
+        "GATED_DELTA_NET": 63.8557,
+        "GET_ROWS": 3.7514709999999996,
+        "GLU": 7.082746000000002,
+        "MLP_MATMUL": 1196.6342,
+        "MUL": 4.52071,
+        "OTHER_MATMUL": 666.7938059999999,
+        "RESHAPE": 0.10204500000000001,
+        "RMS_NORM": 9.873754000000002,
+        "SCALE": 3.4962749999999994,
+        "SSM_CONV": 9.076609999999999,
+        "TRANSPOSE": 0.006155,
+        "UNARY": 10.871503,
+        "VIEW": 0.08777100000000003,
+        "CONT": 0.577101,
+        "FLASH_ATTN_EXT": 7.560200999999998,
+        "PERMUTE": 0.003324,
+        "ROPE": 0.760266,
+        "SET_ROWS": 0.623128,
+        "HEAD_MATMUL": 0.000263
+      }
+    },
+    "decode": {
+      "sum_of_layer_medians_ms": {
+        "ADD": 0.21414350000000001,
+        "CONCAT": 0.6871015,
+        "CPY": 1.6934984999999998,
+        "GATED_DELTA_NET": 1.0701795,
+        "GET_ROWS": 2.7370189999999988,
+        "GLU": 0.14311600000000002,
+        "MLP_MATMUL": 248.36185000000006,
+        "MUL": 0.3676215,
+        "OTHER_MATMUL": 143.74038050000001,
+        "RESHAPE": 0.06007349999999999,
+        "RMS_NORM": 0.4206825,
+        "SCALE": 0.029467999999999998,
+        "SSM_CONV": 0.163952,
+        "TRANSPOSE": 0.005279499999999999,
+        "UNARY": 0.22275350000000002,
+        "VIEW": 0.0724525,
+        "CONT": 0.0171605,
+        "FLASH_ATTN_EXT": 0.2061485,
+        "PERMUTE": 0.003137,
+        "ROPE": 0.050002,
+        "SET_ROWS": 0.007396,
+        "HEAD_MATMUL": 69.53559999999999
+      }
+    }
+  },
+  "llama-q8": {
+    "prefill": {
+      "sum_of_layer_medians_ms": {
+        "ADD": 3.193438,
+        "CONCAT": 19.247085999999996,
+        "CPY": 1.8740520000000003,
+        "GATED_DELTA_NET": 63.57974999999999,
+        "GET_ROWS": 3.099673,
+        "GLU": 10.661224000000002,
+        "MLP_MATMUL": 1213.4557,
+        "MUL": 4.172012,
+        "OTHER_MATMUL": 696.80596,
+        "RESHAPE": 0.08945499999999999,
+        "RMS_NORM": 10.714054,
+        "SCALE": 3.646932,
+        "SSM_CONV": 9.128387999999998,
+        "TRANSPOSE": 0.0055320000000000005,
+        "UNARY": 10.595608,
+        "VIEW": 0.096333,
+        "CONT": 0.39711199999999997,
+        "FLASH_ATTN_EXT": 7.6931449999999995,
+        "PERMUTE": 0.0033660000000000005,
+        "ROPE": 0.7790530000000001,
+        "SET_ROWS": 0.539834,
+        "HEAD_MATMUL": 0.000317
+      }
+    },
+    "decode": {
+      "sum_of_layer_medians_ms": {
+        "ADD": 0.19733100000000003,
+        "CONCAT": 0.683444,
+        "CPY": 1.6327900000000004,
+        "GATED_DELTA_NET": 1.0516679999999998,
+        "GET_ROWS": 2.555344,
+        "GLU": 0.13193249999999998,
+        "MLP_MATMUL": 65.10871550000002,
+        "MUL": 0.3520975,
+        "OTHER_MATMUL": 38.2357685,
+        "RESHAPE": 0.05899150000000001,
+        "RMS_NORM": 0.409625,
+        "SCALE": 0.0295865,
+        "SSM_CONV": 0.1656255,
+        "TRANSPOSE": 0.005261,
+        "UNARY": 0.21806600000000007,
+        "VIEW": 0.07412100000000002,
+        "CONT": 0.0169655,
+        "FLASH_ATTN_EXT": 0.2051855,
+        "PERMUTE": 0.0033355000000000004,
+        "ROPE": 0.0479265,
+        "SET_ROWS": 0.008197,
+        "HEAD_MATMUL": 18.10915
+      }
+    }
+  },
+  "llama-q4km": {
+    "prefill": {
+      "sum_of_layer_medians_ms": {
+        "ADD": 2.3125620000000002,
+        "CONCAT": 17.641641999999997,
+        "CPY": 1.6916110000000002,
+        "GATED_DELTA_NET": 63.60050000000001,
+        "GET_ROWS": 3.062201,
+        "GLU": 7.112906999999999,
+        "MLP_MATMUL": 764.3248900000001,
+        "MUL": 4.108041999999998,
+        "OTHER_MATMUL": 442.551417,
+        "RESHAPE": 0.06794700000000001,
+        "RMS_NORM": 9.892837999999998,
+        "SCALE": 3.4934979999999984,
+        "SSM_CONV": 9.178622,
+        "TRANSPOSE": 0.0055580000000000004,
+        "UNARY": 10.471131000000002,
+        "VIEW": 0.085671,
+        "CONT": 0.265775,
+        "FLASH_ATTN_EXT": 7.57535,
+        "PERMUTE": 0.003187,
+        "ROPE": 0.769613,
+        "SET_ROWS": 0.5197430000000001,
+        "HEAD_MATMUL": 0.000351
+      }
+    },
+    "decode": {
+      "sum_of_layer_medians_ms": {
+        "ADD": 0.2035645,
+        "CONCAT": 0.6823264999999998,
+        "CPY": 1.5690704999999996,
+        "GATED_DELTA_NET": 1.0494535000000003,
+        "GET_ROWS": 2.5132915,
+        "GLU": 0.13457049999999998,
+        "MLP_MATMUL": 40.844508,
+        "MUL": 0.36317699999999997,
+        "OTHER_MATMUL": 24.496422000000003,
+        "RESHAPE": 0.056135,
+        "RMS_NORM": 0.41985750000000005,
+        "SCALE": 0.029351500000000003,
+        "SSM_CONV": 0.1646085,
+        "TRANSPOSE": 0.005133000000000001,
+        "UNARY": 0.22140700000000002,
+        "VIEW": 0.07234049999999999,
+        "CONT": 0.017432000000000003,
+        "FLASH_ATTN_EXT": 0.2057075,
+        "PERMUTE": 0.0030950000000000005,
+        "ROPE": 0.0485585,
+        "SET_ROWS": 0.0072724999999999995,
+        "HEAD_MATMUL": 14.224450000000001
+      }
+    }
+  }
+}

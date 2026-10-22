@@ -25,9 +25,7 @@ fn diagnostic(source: &str, span: Span, message: impl std::fmt::Display) -> Erro
     // Synthetic invocations used to validate a closed function can carry spans
     // from a temporary document. Never let an error-reporting path panic.
     let mut offset = span.start.min(source.len());
-    while !source.is_char_boundary(offset) {
-        offset -= 1;
-    }
+    while !source.is_char_boundary(offset) { offset -= 1; }
     let prefix = &source[..offset];
     let line = prefix.bytes().filter(|&b| b == b'\n').count() + 1;
     let start = prefix.rfind('\n').map_or(0, |p| p + 1);

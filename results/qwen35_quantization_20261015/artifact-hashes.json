@@ -1,0 +1,378 @@
+{
+  "int8/model.json": {
+    "sha256": "493cc6abb86b4957177dafde2db79cd13fce4fdbc1a8ab4c35a50223b8fda19d",
+    "bytes": 107171
+  },
+  "int8/prefill.ynn": {
+    "sha256": "e60cb3d53fd875fa825d22557cd166c6a078dc185f04473db3e87c2101ac9bc1",
+    "bytes": 1812270
+  },
+  "int8/decode.ynn": {
+    "sha256": "1bf816490363246ccbe82728f7f7feb4362eb612b20d52b94becf3993b39a446",
+    "bytes": 1848277
+  },
+  "int8/runtime/checked_arithmetic.h": {
+    "sha256": "8c1c59d3ed25f21cd3e1bc9ad9a3cd529442268c7ff2f837d8a99214de341bd5",
+    "bytes": 2055
+  },
+  "int8/runtime/checked_index.h": {
+    "sha256": "3f27f4412dcc48bc3049fc0744a30faaa8ece6228152fb02a709ef79c0ef9b71",
+    "bytes": 2140
+  },
+  "int8/runtime/execution_profile.h": {
+    "sha256": "b6fc9a9cf5711a651e4965d2e44716e3792d2a33780c737a60b9973b8275fcb7",
+    "bytes": 12223
+  },
+  "int8/runtime/logical_state.h": {
+    "sha256": "19310cc93737773d81fe81b8abe5f7daa4901f49dfbfa39ed45f1f70944b9592",
+    "bytes": 2718
+  },
+  "int8/runtime/packed_routing.h": {
+    "sha256": "60f8eb5651fa846e26fbd202c3c593903ee52553db79215b4ed618f685fa8499",
+    "bytes": 6140
+  },
+  "int8/runtime/resource_state.h": {
+    "sha256": "5f9acc26fa120a84e9276cec7ba668b1d3adb6d8fc8ea6ba718cfb217f44f4fe",
+    "bytes": 2247
+  },
+  "int8/runtime/ynnpack_attention.inc": {
+    "sha256": "199ee4a57cad3a9c9041794fb60519ffc9649367c9a7e26554635576dabdc2ab",
+    "bytes": 6586
+  },
+  "int8/runtime/ynnpack_gated_delta.inc": {
+    "sha256": "52c355d4e1a06c49757054f729d5f791359299e263d4e0871b9193566d36bc55",
+    "bytes": 7678
+  },
+  "int8/runtime/ynnpack_packed.inc": {
+    "sha256": "b74e298d89cbe27f23079c405c1bbad941e4b5beac4c48013eb4ad62df216c85",
+    "bytes": 12244
+  },
+  "int8/runtime/ynnpack_support.h": {
+    "sha256": "70985ce661acd3a6f31edd4b7ac4a6a343c84a6d7ef0861bc4eb21b2192fec7a",
+    "bytes": 78228
+  },
+  "int8/runtime/ynnpack_weight_only.inc": {
+    "sha256": "44194709c28dd566a73e949ab997d06ed7edbc53adaaefcb73d2f0fa28826e60",
+    "bytes": 9340
+  },
+  "int4/model.json": {
+    "sha256": "4408ba607814de08d4a3b6784826f1f67bcc2f447b614a41e880bfc0fd1a4711",
+    "bytes": 106603
+  },
+  "int4/prefill.ynn": {
+    "sha256": "2220308a268f084b9a89007b17c869619b2dea9a5e8d21b0c9edafd8f7910594",
+    "bytes": 1604819
+  },
+  "int4/decode.ynn": {
+    "sha256": "2d65e8beb4cdc018ca6858b8a27690448b947d3d000b352c4f0b036d41029183",
+    "bytes": 1636596
+  },
+  "int4/runtime/checked_arithmetic.h": {
+    "sha256": "8c1c59d3ed25f21cd3e1bc9ad9a3cd529442268c7ff2f837d8a99214de341bd5",
+    "bytes": 2055
+  },
+  "int4/runtime/checked_index.h": {
+    "sha256": "3f27f4412dcc48bc3049fc0744a30faaa8ece6228152fb02a709ef79c0ef9b71",
+    "bytes": 2140
+  },
+  "int4/runtime/execution_profile.h": {
+    "sha256": "b6fc9a9cf5711a651e4965d2e44716e3792d2a33780c737a60b9973b8275fcb7",
+    "bytes": 12223
+  },
+  "int4/runtime/logical_state.h": {
+    "sha256": "19310cc93737773d81fe81b8abe5f7daa4901f49dfbfa39ed45f1f70944b9592",
+    "bytes": 2718
+  },
+  "int4/runtime/packed_routing.h": {
+    "sha256": "60f8eb5651fa846e26fbd202c3c593903ee52553db79215b4ed618f685fa8499",
+    "bytes": 6140
+  },
+  "int4/runtime/resource_state.h": {
+    "sha256": "5f9acc26fa120a84e9276cec7ba668b1d3adb6d8fc8ea6ba718cfb217f44f4fe",
+    "bytes": 2247
+  },
+  "int4/runtime/ynnpack_attention.inc": {
+    "sha256": "199ee4a57cad3a9c9041794fb60519ffc9649367c9a7e26554635576dabdc2ab",
+    "bytes": 6586
+  },
+  "int4/runtime/ynnpack_blockwise_fc.inc": {
+    "sha256": "7d3097f71a456c9387c22379048190ca559904b8e79df57ed9c2dba1b1006f7b",
+    "bytes": 8524
+  },
+  "int4/runtime/ynnpack_gated_delta.inc": {
+    "sha256": "52c355d4e1a06c49757054f729d5f791359299e263d4e0871b9193566d36bc55",
+    "bytes": 7678
+  },
+  "int4/runtime/ynnpack_packed.inc": {
+    "sha256": "b74e298d89cbe27f23079c405c1bbad941e4b5beac4c48013eb4ad62df216c85",
+    "bytes": 12244
+  },
+  "int4/runtime/ynnpack_support.h": {
+    "sha256": "8aa1626bf8817bf3981fa8cb1cbc713c9e56eedb89a1df180fa5c2d8d125d788",
+    "bytes": 78264
+  },
+  "int4/runtime/ynnpack_weight_only.inc": {
+    "sha256": "44194709c28dd566a73e949ab997d06ed7edbc53adaaefcb73d2f0fa28826e60",
+    "bytes": 9340
+  },
+  "int8-score/model.json": {
+    "sha256": "19f7f0d0a9cab95e886b6bb496f8595289691cac14a0ca79cef290f398d8d6d2",
+    "bytes": 107201
+  },
+  "int8-score/prefill.ynn": {
+    "sha256": "6d775fa5735b1f569522bab18c196ea4a296d6fa1ae50df02f8d6fd30ebdbe24",
+    "bytes": 1861659
+  },
+  "int8-score/decode.ynn": {
+    "sha256": "1bf816490363246ccbe82728f7f7feb4362eb612b20d52b94becf3993b39a446",
+    "bytes": 1848277
+  },
+  "int8-score/runtime/checked_arithmetic.h": {
+    "sha256": "8c1c59d3ed25f21cd3e1bc9ad9a3cd529442268c7ff2f837d8a99214de341bd5",
+    "bytes": 2055
+  },
+  "int8-score/runtime/checked_index.h": {
+    "sha256": "3f27f4412dcc48bc3049fc0744a30faaa8ece6228152fb02a709ef79c0ef9b71",
+    "bytes": 2140
+  },
+  "int8-score/runtime/execution_profile.h": {
+    "sha256": "b6fc9a9cf5711a651e4965d2e44716e3792d2a33780c737a60b9973b8275fcb7",
+    "bytes": 12223
+  },
+  "int8-score/runtime/logical_state.h": {
+    "sha256": "19310cc93737773d81fe81b8abe5f7daa4901f49dfbfa39ed45f1f70944b9592",
+    "bytes": 2718
+  },
+  "int8-score/runtime/packed_routing.h": {
+    "sha256": "60f8eb5651fa846e26fbd202c3c593903ee52553db79215b4ed618f685fa8499",
+    "bytes": 6140
+  },
+  "int8-score/runtime/resource_state.h": {
+    "sha256": "5f9acc26fa120a84e9276cec7ba668b1d3adb6d8fc8ea6ba718cfb217f44f4fe",
+    "bytes": 2247
+  },
+  "int8-score/runtime/ynnpack_attention.inc": {
+    "sha256": "199ee4a57cad3a9c9041794fb60519ffc9649367c9a7e26554635576dabdc2ab",
+    "bytes": 6586
+  },
+  "int8-score/runtime/ynnpack_blockwise_fc.inc": {
+    "sha256": "7d3097f71a456c9387c22379048190ca559904b8e79df57ed9c2dba1b1006f7b",
+    "bytes": 8524
+  },
+  "int8-score/runtime/ynnpack_gated_delta.inc": {
+    "sha256": "52c355d4e1a06c49757054f729d5f791359299e263d4e0871b9193566d36bc55",
+    "bytes": 7678
+  },
+  "int8-score/runtime/ynnpack_packed.inc": {
+    "sha256": "b74e298d89cbe27f23079c405c1bbad941e4b5beac4c48013eb4ad62df216c85",
+    "bytes": 12244
+  },
+  "int8-score/runtime/ynnpack_support.h": {
+    "sha256": "8aa1626bf8817bf3981fa8cb1cbc713c9e56eedb89a1df180fa5c2d8d125d788",
+    "bytes": 78264
+  },
+  "int8-score/runtime/ynnpack_weight_only.inc": {
+    "sha256": "44194709c28dd566a73e949ab997d06ed7edbc53adaaefcb73d2f0fa28826e60",
+    "bytes": 9340
+  },
+  "int4-score/model.json": {
+    "sha256": "5c1c6d2f4a22bce8a521ea4cb83fb0274af20cfe9efb3ad3342b42c3124bcaad",
+    "bytes": 106633
+  },
+  "int4-score/prefill.ynn": {
+    "sha256": "841f6d16b64f5ec911ae38e8a2d8c8dffa013b79b7d2ce64cf9a00ea7e4e2937",
+    "bytes": 1647426
+  },
+  "int4-score/decode.ynn": {
+    "sha256": "2d65e8beb4cdc018ca6858b8a27690448b947d3d000b352c4f0b036d41029183",
+    "bytes": 1636596
+  },
+  "int4-score/runtime/checked_arithmetic.h": {
+    "sha256": "8c1c59d3ed25f21cd3e1bc9ad9a3cd529442268c7ff2f837d8a99214de341bd5",
+    "bytes": 2055
+  },
+  "int4-score/runtime/checked_index.h": {
+    "sha256": "3f27f4412dcc48bc3049fc0744a30faaa8ece6228152fb02a709ef79c0ef9b71",
+    "bytes": 2140
+  },
+  "int4-score/runtime/execution_profile.h": {
+    "sha256": "b6fc9a9cf5711a651e4965d2e44716e3792d2a33780c737a60b9973b8275fcb7",
+    "bytes": 12223
+  },
+  "int4-score/runtime/logical_state.h": {
+    "sha256": "19310cc93737773d81fe81b8abe5f7daa4901f49dfbfa39ed45f1f70944b9592",
+    "bytes": 2718
+  },
+  "int4-score/runtime/packed_routing.h": {
+    "sha256": "60f8eb5651fa846e26fbd202c3c593903ee52553db79215b4ed618f685fa8499",
+    "bytes": 6140
+  },
+  "int4-score/runtime/resource_state.h": {
+    "sha256": "5f9acc26fa120a84e9276cec7ba668b1d3adb6d8fc8ea6ba718cfb217f44f4fe",
+    "bytes": 2247
+  },
+  "int4-score/runtime/ynnpack_attention.inc": {
+    "sha256": "199ee4a57cad3a9c9041794fb60519ffc9649367c9a7e26554635576dabdc2ab",
+    "bytes": 6586
+  },
+  "int4-score/runtime/ynnpack_blockwise_fc.inc": {
+    "sha256": "7d3097f71a456c9387c22379048190ca559904b8e79df57ed9c2dba1b1006f7b",
+    "bytes": 8524
+  },
+  "int4-score/runtime/ynnpack_gated_delta.inc": {
+    "sha256": "52c355d4e1a06c49757054f729d5f791359299e263d4e0871b9193566d36bc55",
+    "bytes": 7678
+  },
+  "int4-score/runtime/ynnpack_packed.inc": {
+    "sha256": "b74e298d89cbe27f23079c405c1bbad941e4b5beac4c48013eb4ad62df216c85",
+    "bytes": 12244
+  },
+  "int4-score/runtime/ynnpack_support.h": {
+    "sha256": "8aa1626bf8817bf3981fa8cb1cbc713c9e56eedb89a1df180fa5c2d8d125d788",
+    "bytes": 78264
+  },
+  "int4-score/runtime/ynnpack_weight_only.inc": {
+    "sha256": "44194709c28dd566a73e949ab997d06ed7edbc53adaaefcb73d2f0fa28826e60",
+    "bytes": 9340
+  },
+  "int8-c4096/model.json": {
+    "sha256": "913bed2d50680d6242c6e34ff337e541aaacb62766243e0ee22756b1126df13a",
+    "bytes": 107170
+  },
+  "int8-c4096/prefill.ynn": {
+    "sha256": "79e9203be7af84e1ded04cc9ec2c83c698d0e24e1cf10c6fe1ffa97b035ab261",
+    "bytes": 1812270
+  },
+  "int8-c4096/decode.ynn": {
+    "sha256": "08e67803b529e05534bc33487ff31d1bd0987e53334602e824a9edc22bedbfb8",
+    "bytes": 1848277
+  },
+  "int8-c4096/runtime/checked_arithmetic.h": {
+    "sha256": "8c1c59d3ed25f21cd3e1bc9ad9a3cd529442268c7ff2f837d8a99214de341bd5",
+    "bytes": 2055
+  },
+  "int8-c4096/runtime/checked_index.h": {
+    "sha256": "3f27f4412dcc48bc3049fc0744a30faaa8ece6228152fb02a709ef79c0ef9b71",
+    "bytes": 2140
+  },
+  "int8-c4096/runtime/execution_profile.h": {
+    "sha256": "b6fc9a9cf5711a651e4965d2e44716e3792d2a33780c737a60b9973b8275fcb7",
+    "bytes": 12223
+  },
+  "int8-c4096/runtime/logical_state.h": {
+    "sha256": "19310cc93737773d81fe81b8abe5f7daa4901f49dfbfa39ed45f1f70944b9592",
+    "bytes": 2718
+  },
+  "int8-c4096/runtime/packed_routing.h": {
+    "sha256": "60f8eb5651fa846e26fbd202c3c593903ee52553db79215b4ed618f685fa8499",
+    "bytes": 6140
+  },
+  "int8-c4096/runtime/resource_state.h": {
+    "sha256": "5f9acc26fa120a84e9276cec7ba668b1d3adb6d8fc8ea6ba718cfb217f44f4fe",
+    "bytes": 2247
+  },
+  "int8-c4096/runtime/ynnpack_attention.inc": {
+    "sha256": "199ee4a57cad3a9c9041794fb60519ffc9649367c9a7e26554635576dabdc2ab",
+    "bytes": 6586
+  },
+  "int8-c4096/runtime/ynnpack_blockwise_fc.inc": {
+    "sha256": "7d3097f71a456c9387c22379048190ca559904b8e79df57ed9c2dba1b1006f7b",
+    "bytes": 8524
+  },
+  "int8-c4096/runtime/ynnpack_gated_delta.inc": {
+    "sha256": "52c355d4e1a06c49757054f729d5f791359299e263d4e0871b9193566d36bc55",
+    "bytes": 7678
+  },
+  "int8-c4096/runtime/ynnpack_packed.inc": {
+    "sha256": "b74e298d89cbe27f23079c405c1bbad941e4b5beac4c48013eb4ad62df216c85",
+    "bytes": 12244
+  },
+  "int8-c4096/runtime/ynnpack_support.h": {
+    "sha256": "8aa1626bf8817bf3981fa8cb1cbc713c9e56eedb89a1df180fa5c2d8d125d788",
+    "bytes": 78264
+  },
+  "int8-c4096/runtime/ynnpack_weight_only.inc": {
+    "sha256": "44194709c28dd566a73e949ab997d06ed7edbc53adaaefcb73d2f0fa28826e60",
+    "bytes": 9340
+  },
+  "int4-c4096/model.json": {
+    "sha256": "c866d29367c3e7cc26e37a60cb390f1b5cdb5252381964a19d38361455454cec",
+    "bytes": 106602
+  },
+  "int4-c4096/prefill.ynn": {
+    "sha256": "26bf2198d6b3657683c49b29056ddd4c51ea82557c07ab09db814f93110c822e",
+    "bytes": 1604819
+  },
+  "int4-c4096/decode.ynn": {
+    "sha256": "23bdf6c086ed2dedb08b47ab96d3cbdeba8256a5a5a5726199d60a885650ba3f",
+    "bytes": 1636596
+  },
+  "int4-c4096/runtime/checked_arithmetic.h": {
+    "sha256": "8c1c59d3ed25f21cd3e1bc9ad9a3cd529442268c7ff2f837d8a99214de341bd5",
+    "bytes": 2055
+  },
+  "int4-c4096/runtime/checked_index.h": {
+    "sha256": "3f27f4412dcc48bc3049fc0744a30faaa8ece6228152fb02a709ef79c0ef9b71",
+    "bytes": 2140
+  },
+  "int4-c4096/runtime/execution_profile.h": {
+    "sha256": "b6fc9a9cf5711a651e4965d2e44716e3792d2a33780c737a60b9973b8275fcb7",
+    "bytes": 12223
+  },
+  "int4-c4096/runtime/logical_state.h": {
+    "sha256": "19310cc93737773d81fe81b8abe5f7daa4901f49dfbfa39ed45f1f70944b9592",
+    "bytes": 2718
+  },
+  "int4-c4096/runtime/packed_routing.h": {
+    "sha256": "60f8eb5651fa846e26fbd202c3c593903ee52553db79215b4ed618f685fa8499",
+    "bytes": 6140
+  },
+  "int4-c4096/runtime/resource_state.h": {
+    "sha256": "5f9acc26fa120a84e9276cec7ba668b1d3adb6d8fc8ea6ba718cfb217f44f4fe",
+    "bytes": 2247
+  },
+  "int4-c4096/runtime/ynnpack_attention.inc": {
+    "sha256": "199ee4a57cad3a9c9041794fb60519ffc9649367c9a7e26554635576dabdc2ab",
+    "bytes": 6586
+  },
+  "int4-c4096/runtime/ynnpack_blockwise_fc.inc": {
+    "sha256": "7d3097f71a456c9387c22379048190ca559904b8e79df57ed9c2dba1b1006f7b",
+    "bytes": 8524
+  },
+  "int4-c4096/runtime/ynnpack_gated_delta.inc": {
+    "sha256": "52c355d4e1a06c49757054f729d5f791359299e263d4e0871b9193566d36bc55",
+    "bytes": 7678
+  },
+  "int4-c4096/runtime/ynnpack_packed.inc": {
+    "sha256": "b74e298d89cbe27f23079c405c1bbad941e4b5beac4c48013eb4ad62df216c85",
+    "bytes": 12244
+  },
+  "int4-c4096/runtime/ynnpack_support.h": {
+    "sha256": "8aa1626bf8817bf3981fa8cb1cbc713c9e56eedb89a1df180fa5c2d8d125d788",
+    "bytes": 78264
+  },
+  "int4-c4096/runtime/ynnpack_weight_only.inc": {
+    "sha256": "44194709c28dd566a73e949ab997d06ed7edbc53adaaefcb73d2f0fa28826e60",
+    "bytes": 9340
+  },
+  "lab-build/qwen3": {
+    "sha256": "4ab5a0a96f9add94ab596afc3bdfa799775becd8f9008dd8eaab4dd1db62b92f",
+    "bytes": 39900168
+  },
+  "lab-build/plan_fixture": {
+    "sha256": "ef7d690afad68e2f63eba9a2b97d3c608a5d081a2ee15d8fa11f00384785e499",
+    "bytes": 40765144
+  },
+  "lab-build/ynn-plan": {
+    "sha256": "9f08c86a476baf1fa081a07e13032edeabb49916f80f4f69c8488e9c00455fd7",
+    "bytes": 16535000
+  },
+  "llama-replay-next": {
+    "sha256": "ff14cb0447a2a25aa2dc278ed67286be9b040e0e8be7392a4323ba42c7b49117",
+    "bytes": 79576
+  },
+  "qwen3-scalar-int4-baseline": {
+    "sha256": "b3472ab34bf5b59c667a0586900387cf2a083c19d5377242729d34c735a1efc4",
+    "bytes": 39899280
+  }
+}

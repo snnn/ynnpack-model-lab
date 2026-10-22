@@ -8,6 +8,7 @@
 #include <stdexcept>
 
 namespace lab_ynn_runtime {
+class StateMigrationLease;
 // Logical publication rules shared by CPU and GPU adapters. No buffer, device,
 // scheduler or allocation policy lives here. Adapters hold all participating
 // leases until completion/error handling and all publications have finished.
@@ -23,6 +24,7 @@ class LogicalState {
   size_t committed_extent() const { return committed_.load(); }
   uint64_t reset_epoch() const { return epoch_.load(); }
   bool poisoned() const { return poisoned_.load(); }
+  bool retired() const { return retired_.load(); }
 
  protected:
   bool TryAcquire() {
@@ -32,7 +34,7 @@ class LogicalState {
   void Release() { busy_.store(false); }
   void ValidateInvocation(uint64_t epoch, size_t entry,
                           size_t successor) const {
-    if (poisoned_ || epoch != epoch_)
+    if (retired_ || poisoned_ || epoch != epoch_)
       throw std::logic_error(
           "poisoned resource or stale reset epoch; reset/rebind required");
     if (entry != committed_ || successor < entry || successor > capacity_)
@@ -59,7 +61,7 @@ class LogicalState {
 
  protected:
   void ImportUnderLease(size_t initialized) {
-    if (initialized > capacity_ ||
+    if (retired_ || initialized > capacity_ ||
         epoch_ == std::numeric_limits<uint64_t>::max())
       throw std::invalid_argument(
           "invalid resource prefix or exhausted reset epoch");
@@ -71,5 +73,7 @@ class LogicalState {
   std::atomic<size_t> committed_{0};
   std::atomic<uint64_t> epoch_{0};
   std::atomic<bool> poisoned_{false}, busy_{false};
+  std::atomic<bool> retired_{false};
+  friend class StateMigrationLease;
 };
 }  // namespace lab_ynn_runtime

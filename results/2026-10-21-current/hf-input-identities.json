@@ -1,0 +1,14 @@
+{
+  "manifest_sha256": "8056757729653a6181cb0add38c0d819f96022d6ccdb8d599350ea0c56df2b9a",
+  "format": "gemma4_hf_assets_v1",
+  "source_repo": "google/gemma-4-E2B-it-qat-mobile-transformers",
+  "source_revision": "dd693ff40353f057ca5f07e945ad867f4afbf2ec",
+  "source_identity": "b454fea4385836b70181ce7f8d797413d695d7f916b21ed3dd49896cdad6d579",
+  "config_sha256": "cf6d7dc22738b5e6beb364bac833d78b869f5a6ffd57dfc96c6be3f2abc80424",
+  "shards": {
+    "model.safetensors": {
+      "bytes": 2458111846,
+      "header_sha256": "8fd4ebc21f5e9c579d9498bb6712167249cb6480c750a7738690c20ecb0e8c34"
+    }
+  }
+}

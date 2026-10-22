@@ -1,0 +1,6 @@
+input_hash rows=1 fnv1a64=556d904ed165a35
+input_hash rows=17 fnv1a64=bf2397237814b2c0
+input_hash rows=32 fnv1a64=38391c80a8933b4f
+input_hash rows=128 fnv1a64=62f99d65952c7b2f
+input_hash rows=1024 fnv1a64=8794b4bfb808bc2f
+50 immutable-input and invalid-write cases passed

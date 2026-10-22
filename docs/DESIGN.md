@@ -144,6 +144,7 @@ original desktop capacity check produced identical logits.
 Add each Gemma4 or Qwen integration from a concrete checkpoint and extend shared
 interfaces when its architecture requires them. Keep layer counts, head layouts,
 quantization and tokenizer policy in model-specific authors, assets and metadata.
-Each new integration needs matching plans, asset recipes, state contracts and
-independent numerical checks. Dated numerical/performance evidence belongs in
-[results](../results/README.md), separately from the current interface contract.
+[Planned integrations](worklogs/MODEL_INTEGRATIONS.md) track missing packages and
+their completion checks. Unfinished investigations and coverage checks are kept
+in [open work](worklogs/README.md); dated numerical/performance evidence belongs
+in [results](../results/README.md).

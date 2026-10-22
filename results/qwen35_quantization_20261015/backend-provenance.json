@@ -1,0 +1,161 @@
+[
+  {
+    "name": "XNNPACK",
+    "root": "BACKEND_ROOT/XNNPACK",
+    "revision": "0a66ebb5817fce48df605451444dcfc27a5e4ee4",
+    "archive_sha256": "cb485a0fe76dec243568ec6ce6c0b75e18909ed7df5459921b46eaada332fe8f",
+    "source_manifest_sha256": "0cfbe001127107a6145ce95b7a4614e595f308f691439f24528b9b7af059d1ee",
+    "changed_files": [
+      {
+        "path": "ynnpack/kernels/binary/CMakeLists.txt",
+        "archive_sha256": "9ed60c9c3ac3dbbe7f714008565dc4fc433a6f5fc1301e30b28df9c03371cfac",
+        "actual_sha256": "19e8a4ed2f254f7322a8827bf68a4af1a15d7c46751602d0d7be9955c228f4af"
+      },
+      {
+        "path": "ynnpack/kernels/dot/CMakeLists.txt",
+        "archive_sha256": "38b49ca4691be8351605d40c4cdd71a84569660d2e1ffac916f867bf40c7cb65",
+        "actual_sha256": "eb598b1811e00cd052addcd3dfd244c1d09a1e28517946a1ab4a3707ca0c7516"
+      },
+      {
+        "path": "ynnpack/kernels/ternary/CMakeLists.txt",
+        "archive_sha256": "f2864036b76d2acd73998fff57459dee2ebeffbe99c80bdff3cfd2988447cab1",
+        "actual_sha256": "bf6072b3083fa39d5a922b070e4fbd9b0ceec2cf6aaabc46ca8e6d19b5e5a409"
+      },
+      {
+        "path": "ynnpack/kernels/unary/CMakeLists.txt",
+        "archive_sha256": "ca9dfe7e8ab46f393a23ad817e884cf94d77671e89f42d1176230b817940127e",
+        "actual_sha256": "ec3d44f70e1012d90d6e94147b460fa482173302f5b082bca644ad682454dc66"
+      },
+      {
+        "path": "ynnpack/subgraph/dot.cc",
+        "archive_sha256": "e6b020b5aeb974805b1aa2dfa4381c2396eaa19dbe9e0f97a6f7fb15abdd3dc3",
+        "actual_sha256": "8ee1e926781f566ff8ae9ad00252a6e32d8b8ec32856d76e44a17ccdd954eab9"
+      },
+      {
+        "path": "ynnpack/subgraph/reduce.cc",
+        "archive_sha256": "446c73186138d217f0833065bad8e46b665cf4356b27a993d044a8d7511c80c4",
+        "actual_sha256": "90f2c6badc4d078471efd66957146a6783a390b46913465c702f3ed18bd745fb"
+      },
+      {
+        "path": "ynnpack/subgraph/runtime.cc",
+        "archive_sha256": "79fc4da88c5cea2030f042c987add5c153b61d8e59ba39ad553bc957eb230be0",
+        "actual_sha256": "045cb49e2a5dc41c658d4a1faed62d0aa2e496cec0fce677bd85257db326bb18"
+      },
+      {
+        "path": "ynnpack/subgraph/runtime.h",
+        "archive_sha256": "1feea459b6f667ccc2973752d17947008236eb9e2f63900a90d57eaa01861bf7",
+        "actual_sha256": "9d7a8aedf2b9b9f1db067c3d22e8ee55bc2e0c90ed17ffbef78dbdabff64f17b"
+      },
+      {
+        "path": "ynnpack/subgraph/subgraph.cc",
+        "archive_sha256": "f389588c1b6633e998f0d857a78372ee2ea5dd72eacfc272f0516a1cbeb8faa3",
+        "actual_sha256": "bd96e5e0fa1d9449335479d237209afa4f30e6d6f3abb844f212c8c44cb8c64e"
+      },
+      {
+        "path": "ynnpack/subgraph/subgraph.h",
+        "archive_sha256": "fcbe7d81323bcd15df2ec5fc52e9635b8b6ceadb8b0521940dd83115cf500d8c",
+        "actual_sha256": "a2f614a97183d83444d3cd7c59fe5bc2d768a4c28dac3da8a577e310c33ec8a4"
+      }
+    ],
+    "extra_files": [
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/rules.cpython-314.pyc",
+        "sha256": "f469c6a990b80a7386984d1d17cbf3d68550202471701ee2b1c3b8808b146d3a"
+      },
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/x86.cpython-314.pyc",
+        "sha256": "8079141d63ddf8176d9e5456f8a4236fb6fd60e41182aecf4e42d3939c167e2a"
+      },
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/wasm.cpython-314.pyc",
+        "sha256": "f087982947dbe5b0473844fd84ae2b6d38d4263be44b46aea76981b800e8ce7d"
+      },
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/compiler.cpython-314.pyc",
+        "sha256": "98ffc72bf158207e18f5a586abe11bfa5415fa735050b62b492b85d205a50961"
+      },
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/generator.cpython-314.pyc",
+        "sha256": "222df1281b54c73820a48e1460eeaac8b57cd198977b152f744b6ec5a12604fe"
+      },
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/arm.cpython-314.pyc",
+        "sha256": "064d5cccac6369ee98a9f32c7f0a801a497d9b077a81af6d3ccce93e0add03cf"
+      },
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/hexagon.cpython-314.pyc",
+        "sha256": "ab487907c3fdeba428d8d5bb314fa7bbda0e55635bf8b8d7fc3c29c70d40ab91"
+      },
+      {
+        "path": "ynnpack/kernels/dot/generator/__pycache__/dot_base.cpython-314.pyc",
+        "sha256": "851f717e65cb897961118451754c031d076a59d0d4b02893eaba140ee70e904d"
+      },
+      {
+        "path": "ynnpack/kernels/dot/generator/__pycache__/x86.cpython-314.pyc",
+        "sha256": "98a2f95a04efb5a4576d4adb52782c573505c8bc29348022f20f986dbdf008bf"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/log.cpython-314.pyc",
+        "sha256": "64e52025e423834b6dd4f34a25e0d1f5ad82fb9c8e9aa9a69b565c58b27e2779"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/sigmoid.cpython-314.pyc",
+        "sha256": "3edbb25822a7f55158b94fe83ad1da40cd6c3e6ea3099dc11da9b569ac1d320f"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/trig.cpython-314.pyc",
+        "sha256": "3c8f8336a4a8a0417fc19e53cc5a034f19663d13df80cb2edf65f5951309247f"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/exp.cpython-314.pyc",
+        "sha256": "b13e066299b5256a8fb15aa3c2a81533fb28a7379babd8ab7b672eaedec1d8d4"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/erf.cpython-314.pyc",
+        "sha256": "9d4c9d3517f038a90ca125adcd6f7fb69877593765fcb031306e8f302f4faba0"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/tanh.cpython-314.pyc",
+        "sha256": "65b047dd3b2d50459d14360413c375ddb0f9cc62db5a2ae323c6a46ed4602dcc"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/convert.cpython-314.pyc",
+        "sha256": "540bf695c4da1d4138f530ca6edc3a4b73b4dd63e3935fba952a9e80b5d0b800"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/kernels.cpython-314.pyc",
+        "sha256": "89901e7957b88ca5a929dbd9ea8bf2c732b77c334635de1f0ab6bbc8f324fda3"
+      },
+      {
+        "path": "ynnpack/kernels/binary/__pycache__/kernels.cpython-314.pyc",
+        "sha256": "33227da51696a746c7e9412ccc42dd6d497c1a165b9160d6a6536a7efb6f9fc7"
+      },
+      {
+        "path": "ynnpack/kernels/ternary/__pycache__/convert.cpython-314.pyc",
+        "sha256": "d3d8a9691cb7f48e9e381b29e81a652bd784823490948efa88ccd013f02affcc"
+      },
+      {
+        "path": "ynnpack/kernels/ternary/__pycache__/kernels.cpython-314.pyc",
+        "sha256": "2b69885da26ca402bc51890dcea66dd986c45823f58b5bfb76918970142cbfec"
+      }
+    ]
+  },
+  {
+    "name": "slinky",
+    "root": "BACKEND_ROOT/slinky",
+    "revision": "a3eec6fcfe3093be04d6c3d7dcab7d4e70bdd0dc",
+    "archive_sha256": "cca25390873ad01a6e461edd39d220fb16c912beba2ebe02ae3b897ca63f30ef",
+    "source_manifest_sha256": "3ab1fa1fa2cee815756ade78788fa19cc0e86ebfb590600471ddb6d09ab52815",
+    "changed_files": [],
+    "extra_files": []
+  },
+  {
+    "name": "cpuinfo",
+    "root": "BACKEND_ROOT/cpuinfo",
+    "revision": "8ce83db858065145192c97af90cb668ad72a12e9",
+    "archive_sha256": "fe2aa43254838a2eb5658d1742696473a1d834a57f2a0b38d533346bcd212482",
+    "source_manifest_sha256": "d1600655b96f509190816c92dbc3facad4f0b77987e62e3875362949a4b6bb10",
+    "changed_files": [],
+    "extra_files": []
+  }
+]

@@ -1,0 +1,121 @@
+[
+  {
+    "name": "XNNPACK",
+    "files": 12566,
+    "changes_from_fp32_experiment": [
+      {
+        "path": "ynnpack/kernels/binary/__pycache__/kernels.cpython-314.pyc",
+        "before": null,
+        "after": "33227da51696a746c7e9412ccc42dd6d497c1a165b9160d6a6536a7efb6f9fc7"
+      },
+      {
+        "path": "ynnpack/kernels/dot/generator/__pycache__/dot_base.cpython-314.pyc",
+        "before": null,
+        "after": "851f717e65cb897961118451754c031d076a59d0d4b02893eaba140ee70e904d"
+      },
+      {
+        "path": "ynnpack/kernels/dot/generator/__pycache__/x86.cpython-314.pyc",
+        "before": null,
+        "after": "98a2f95a04efb5a4576d4adb52782c573505c8bc29348022f20f986dbdf008bf"
+      },
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/arm.cpython-314.pyc",
+        "before": null,
+        "after": "064d5cccac6369ee98a9f32c7f0a801a497d9b077a81af6d3ccce93e0add03cf"
+      },
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/compiler.cpython-314.pyc",
+        "before": null,
+        "after": "98ffc72bf158207e18f5a586abe11bfa5415fa735050b62b492b85d205a50961"
+      },
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/generator.cpython-314.pyc",
+        "before": null,
+        "after": "222df1281b54c73820a48e1460eeaac8b57cd198977b152f744b6ec5a12604fe"
+      },
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/hexagon.cpython-314.pyc",
+        "before": null,
+        "after": "ab487907c3fdeba428d8d5bb314fa7bbda0e55635bf8b8d7fc3c29c70d40ab91"
+      },
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/rules.cpython-314.pyc",
+        "before": null,
+        "after": "f469c6a990b80a7386984d1d17cbf3d68550202471701ee2b1c3b8808b146d3a"
+      },
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/wasm.cpython-314.pyc",
+        "before": null,
+        "after": "f087982947dbe5b0473844fd84ae2b6d38d4263be44b46aea76981b800e8ce7d"
+      },
+      {
+        "path": "ynnpack/kernels/elementwise/__pycache__/x86.cpython-314.pyc",
+        "before": null,
+        "after": "8079141d63ddf8176d9e5456f8a4236fb6fd60e41182aecf4e42d3939c167e2a"
+      },
+      {
+        "path": "ynnpack/kernels/ternary/__pycache__/convert.cpython-314.pyc",
+        "before": null,
+        "after": "d3d8a9691cb7f48e9e381b29e81a652bd784823490948efa88ccd013f02affcc"
+      },
+      {
+        "path": "ynnpack/kernels/ternary/__pycache__/kernels.cpython-314.pyc",
+        "before": null,
+        "after": "2b69885da26ca402bc51890dcea66dd986c45823f58b5bfb76918970142cbfec"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/convert.cpython-314.pyc",
+        "before": null,
+        "after": "540bf695c4da1d4138f530ca6edc3a4b73b4dd63e3935fba952a9e80b5d0b800"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/erf.cpython-314.pyc",
+        "before": null,
+        "after": "9d4c9d3517f038a90ca125adcd6f7fb69877593765fcb031306e8f302f4faba0"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/exp.cpython-314.pyc",
+        "before": null,
+        "after": "b13e066299b5256a8fb15aa3c2a81533fb28a7379babd8ab7b672eaedec1d8d4"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/kernels.cpython-314.pyc",
+        "before": null,
+        "after": "89901e7957b88ca5a929dbd9ea8bf2c732b77c334635de1f0ab6bbc8f324fda3"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/log.cpython-314.pyc",
+        "before": null,
+        "after": "64e52025e423834b6dd4f34a25e0d1f5ad82fb9c8e9aa9a69b565c58b27e2779"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/sigmoid.cpython-314.pyc",
+        "before": null,
+        "after": "3edbb25822a7f55158b94fe83ad1da40cd6c3e6ea3099dc11da9b569ac1d320f"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/tanh.cpython-314.pyc",
+        "before": null,
+        "after": "65b047dd3b2d50459d14360413c375ddb0f9cc62db5a2ae323c6a46ed4602dcc"
+      },
+      {
+        "path": "ynnpack/kernels/unary/__pycache__/trig.cpython-314.pyc",
+        "before": null,
+        "after": "3c8f8336a4a8a0417fc19e53cc5a034f19663d13df80cb2edf65f5951309247f"
+      }
+    ],
+    "source_manifest_sha256": "db6d5d2f1677a1153f6ca7aa5ad792ec5fd7035518c741d7914af626aa032322"
+  },
+  {
+    "name": "slinky",
+    "files": 146,
+    "changes_from_fp32_experiment": [],
+    "source_manifest_sha256": "3ab1fa1fa2cee815756ade78788fa19cc0e86ebfb590600471ddb6d09ab52815"
+  },
+  {
+    "name": "cpuinfo",
+    "files": 566,
+    "changes_from_fp32_experiment": [],
+    "source_manifest_sha256": "d1600655b96f509190816c92dbc3facad4f0b77987e62e3875362949a4b6bb10"
+  }
+]

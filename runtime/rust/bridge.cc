@@ -10,6 +10,7 @@
 #endif
 
 #include "runtime/rust/bridge_internal.h"
+#include "runtime/ynnpack_capacity.h"
 
 namespace {
 std::vector<size_t> Shape(const size_t* shape, size_t rank) {
@@ -23,6 +24,24 @@ extern "C" {
 void lab_assets_delete(LabAssets* assets) noexcept { delete assets; }
 void lab_graph_delete(LabGraph* graph) noexcept { delete graph; }
 void lab_resource_delete(LabResource* resource) noexcept { delete resource; }
+
+int32_t lab_resources_migrate(LabResource* const* before,
+                              LabResource* const* after, size_t count,
+                              size_t capacity, LabError* error) noexcept {
+  return LabCatch(error, [&] {
+    LabRequire(count <= 512 && (!count || (before && after)), "Invalid migration owners");
+    lab_ynn::CapacityVariant old, next;
+    next.capacity = capacity;
+    for (size_t i = 0; i < count; ++i) {
+      LabRequire(before[i] && after[i], "Missing migration owner");
+      old.resources[std::to_string(i)] = before[i]->state;
+      next.resources[std::to_string(i)] = after[i]->state;
+    }
+    lab_ynn_runtime::StateMigrationLease lease(old.LogicalStates(), next.LogicalStates());
+    next.MigrateFrom(old);
+    lease.Commit();
+  });
+}
 
 int32_t lab_graph_compile(LabGraph* graph, size_t threads,
                           LabError* error) noexcept {
@@ -152,6 +171,13 @@ int32_t lab_graph_memory(LabGraph* graph, LabMemory* out,
       out->allocated = graph->scratch->allocated.load();
       out->allocations = graph->scratch->allocations.load();
     }
+  });
+}
+int32_t lab_resource_bytes(LabGraph* graph, const char* name, const size_t* shape,
+                           size_t rank, size_t* out, LabError* error) noexcept {
+  return LabCatch(error, [&] {
+    LabRequire(graph && name && out, "Invalid resource geometry query");
+    *out = graph->graph->ResourceStorageBytes(name, Shape(shape, rank));
   });
 }
 int32_t lab_resource_create(LabGraph* graph, const char* name, void* data,

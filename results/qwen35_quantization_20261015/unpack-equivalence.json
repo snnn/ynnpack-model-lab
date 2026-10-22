@@ -1,0 +1,70 @@
+{
+  "p17_r0_s9.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s3.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s15.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s0.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s13.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s4.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s2.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s7.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s5.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s11.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s10.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s14.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s12.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s1.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s16.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s6.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  },
+  "p17_r0_s8.logits.bin": {
+    "exact": true,
+    "max_abs": 0.0
+  }
+}

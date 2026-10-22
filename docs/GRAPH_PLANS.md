@@ -77,13 +77,33 @@ and write bounds remain native checks on every invocation. Rust owns buffers
 and request orchestration; native `ResourceState` remains the authority for
 committed extents and failure poisoning. A validation rejection before execution
 preserves state and permits corrected bindings on the same prepared graph. The
-fixture runner permits another step only for an expected validation error with
-`expect_unchanged`, verified buffer/resource snapshots and no injected failure.
-A backend failure can leave modified state and invalidates the session. Reset
-does not recover a poisoned graph.
+fixture runner checks expected validation errors with `expect_unchanged` and
+verified buffer/resource snapshots. An injected backend failure can leave
+modified storage; the failed graph must be discarded. Failure fixtures can reset
+the shared owner and bind another still-usable prepared phase, checking failed
+append counters, committed extents and poison before recovery. Reset alone does
+not recover the failed graph.
+
+`CompletionOutput` roots a public completion through a scheduled adapter sink.
+Copies with completion waits use scheduled callbacks; alias-only metadata waits
+remain unsupported. Serial explicit rank-one INT2/INT4 resources support
+append/view with bit offsets, partial-byte preservation and fresh-lane checks.
+The fixture runner checks physical edge-byte canaries and logical committed
+extents. Higher-rank, target-selected and concurrent packed writes are not
+supported by this extension.
 
 Version 1 covers the eight vision classifiers, thirteen Gemma packages, packed
 routing, direct SDPA, weight-only linear and dynamically quantized attention.
+Qwen3.5 also uses `GatedDeltaRule` for compact recurrence and
+`CausalDepthwiseConv` for direct convolution with replacement history. These are
+scheduled native graph operations with explicit state inputs and outputs;
+the host does not execute a per-layer or per-token callback loop. See
+[Qwen3.5](QWEN35.md) for their numerical and CPU coverage.
+They are required lab runtime extensions, not upstream YNNPACK primitives or
+composites with decomposition bodies. Reusable functions construct the operations
+written in their bodies. Mathematical reference implementations belong in tests;
+the executable plan does not carry an unused fallback. An unsupported operation
+fails construction.
 Dedicated numerical and state fixtures exercise those capabilities. Additional
 operations require explicit lowering, typed loader support and independent tests.
 
@@ -96,6 +116,6 @@ crossings, real partial chunks, stale bindings and failure after partial writes.
 
 Alternative compiler emitters must satisfy the same construction contract;
 runners do not link compiler implementations. Runtime usage and candidate
-comparison commands are in [RUST_RUNTIME.md](RUST_RUNTIME.md). Validate numerical
-and state behavior on the target device as well as the host; parser acceptance
-alone does not establish execution correctness.
+comparison commands are in [RUST_RUNTIME.md](RUST_RUNTIME.md). Dated migration
+evidence is indexed in [results](../results/README.md), separately from the
+[remaining coverage gaps](worklogs/VALIDATION_GAPS.md).

@@ -47,6 +47,3 @@ The format remains `ynn 1`. Formatting retains function hierarchy; model phase
 hashes cover the entire source. This change makes no performance claim. The
 experimental INT8/row-grouped and HF BF16 artifacts retain their separate
 representations and numerical contracts.
-
-Execution with zero query rows and nonempty history remains unsupported.
-Default prefill requests contain at least one query row.

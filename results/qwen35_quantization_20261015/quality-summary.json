@@ -1,0 +1,50 @@
+[
+  {
+    "name": "fp32",
+    "perplexity": 8.246952404473497,
+    "relative_increase_percent": 0.0,
+    "tokens": 16376
+  },
+  {
+    "name": "int8",
+    "perplexity": 8.231184788292637,
+    "relative_increase_percent": -0.19119324821501582,
+    "tokens": 16376
+  },
+  {
+    "name": "native-int8",
+    "perplexity": 8.257778895985842,
+    "relative_increase_percent": 0.13127869522409075,
+    "tokens": 16376
+  },
+  {
+    "name": "int4",
+    "perplexity": 8.55157861454752,
+    "relative_increase_percent": 3.693803421355768,
+    "tokens": 16376
+  },
+  {
+    "name": "native-int4",
+    "perplexity": 8.521533744251881,
+    "relative_increase_percent": 3.3294885954409104,
+    "tokens": 16376
+  },
+  {
+    "name": "llama-f32",
+    "perplexity": 8.24695990042,
+    "relative_increase_percent": 9.089353418811896e-05,
+    "tokens": 16376
+  },
+  {
+    "name": "llama-q8",
+    "perplexity": 8.29253157062,
+    "relative_increase_percent": 0.5526789038066804,
+    "tokens": 16376
+  },
+  {
+    "name": "llama-q4km",
+    "perplexity": 8.50670693279,
+    "relative_increase_percent": 3.1497032549333115,
+    "tokens": 16376
+  }
+]

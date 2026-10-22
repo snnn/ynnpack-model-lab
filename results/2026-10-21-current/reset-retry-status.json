@@ -1,0 +1,20 @@
+{
+  "reason": "Initial Qwen3 reset checks rejected Gemma token IDs outside vocabulary. All Qwen checks rerun using their own model token fixtures. Initial harness rejections are not model execution failures.",
+  "checks": [
+    {
+      "model": "qwen3_0_6b",
+      "returncode": 0,
+      "fixture": "qwen3_0_6b-reset.tsv"
+    },
+    {
+      "model": "qwen3_4b",
+      "returncode": 0,
+      "fixture": "qwen3_4b-reset.tsv"
+    },
+    {
+      "model": "qwen3_5_4b_int8",
+      "returncode": 0,
+      "fixture": "qwen3_5_4b_int8-reset.tsv"
+    }
+  ]
+}

@@ -1,0 +1,497 @@
+{
+  "scope": "Unpaired custom/step-native/chunk32 order; FP64 oracle and reset/chunk checks are embedded; not a full-model performance claim",
+  "warmup_calls": 5,
+  "batches": 5,
+  "minimum_batch_ms": 200,
+  "command_template": [
+    "taskset",
+    "-c",
+    "{cpus}",
+    "build-pr-refresh-20261021/recurrent_step_bench",
+    "--engine={engine}",
+    "--rows={rows}",
+    "--threads={threads}"
+  ],
+  "observations": [
+    {
+      "job": "recurrent-chunk32-t1-n1",
+      "engine": "chunk32",
+      "rows": 1,
+      "valid": 1,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 6.66690757e-08,
+      "max_scaled_error": 0.002733587474,
+      "setup_ms": 21.011846,
+      "ms": [
+        1.73462269,
+        1.735438905,
+        1.729036716,
+        1.735008155,
+        1.729970388
+      ]
+    },
+    {
+      "job": "recurrent-chunk32-t1-n1024",
+      "engine": "chunk32",
+      "rows": 1024,
+      "valid": 1024,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 1.089342661e-07,
+      "max_scaled_error": 0.004754204897,
+      "setup_ms": 17.232618,
+      "ms": [
+        46.5721418,
+        46.5743628,
+        46.6259084,
+        46.5776786,
+        46.5031864
+      ]
+    },
+    {
+      "job": "recurrent-chunk32-t1-n128",
+      "engine": "chunk32",
+      "rows": 128,
+      "valid": 128,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 8.32977959e-08,
+      "max_scaled_error": 0.003872548872,
+      "setup_ms": 17.391151,
+      "ms": [
+        5.494955865,
+        5.488169324,
+        5.486055027,
+        5.495557405,
+        5.482120622
+      ]
+    },
+    {
+      "job": "recurrent-chunk32-t1-n17",
+      "engine": "chunk32",
+      "rows": 17,
+      "valid": 17,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 3.503736684e-08,
+      "max_scaled_error": 0.00156744825,
+      "setup_ms": 17.439405,
+      "ms": [
+        1.741969148,
+        1.741960913,
+        1.744263052,
+        1.741650957,
+        1.742186487
+      ]
+    },
+    {
+      "job": "recurrent-chunk32-t4-n1",
+      "engine": "chunk32",
+      "rows": 1,
+      "valid": 1,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 6.66690757e-08,
+      "max_scaled_error": 0.002733587474,
+      "setup_ms": 18.568643,
+      "ms": [
+        0.6909898,
+        0.6860858014,
+        0.6852212911,
+        0.6831296382,
+        0.6840909078
+      ]
+    },
+    {
+      "job": "recurrent-chunk32-t4-n1024",
+      "engine": "chunk32",
+      "rows": 1024,
+      "valid": 1024,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 1.089342661e-07,
+      "max_scaled_error": 0.004754204897,
+      "setup_ms": 17.890979,
+      "ms": [
+        14.76937821,
+        14.86950957,
+        14.71373886,
+        14.70762814,
+        14.64373493
+      ]
+    },
+    {
+      "job": "recurrent-chunk32-t4-n128",
+      "engine": "chunk32",
+      "rows": 128,
+      "valid": 128,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 8.32977959e-08,
+      "max_scaled_error": 0.003872548872,
+      "setup_ms": 18.238722,
+      "ms": [
+        1.754220461,
+        1.74921107,
+        1.74975167,
+        1.747725365,
+        1.749888696
+      ]
+    },
+    {
+      "job": "recurrent-chunk32-t4-n17",
+      "engine": "chunk32",
+      "rows": 17,
+      "valid": 17,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 3.503736684e-08,
+      "max_scaled_error": 0.00156744825,
+      "setup_ms": 18.095918,
+      "ms": [
+        0.7107000461,
+        0.7106037234,
+        0.7088041555,
+        0.7093422518,
+        0.7088686396
+      ]
+    },
+    {
+      "job": "recurrent-custom-t1-n1",
+      "engine": "custom",
+      "rows": 1,
+      "valid": 1,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 5.620008842e-08,
+      "max_scaled_error": 0.002057017741,
+      "setup_ms": 9.580919,
+      "ms": [
+        0.1247887792,
+        0.1245369589,
+        0.1255724664,
+        0.1245695573,
+        0.1241366973
+      ]
+    },
+    {
+      "job": "recurrent-custom-t1-n1024",
+      "engine": "custom",
+      "rows": 1024,
+      "valid": 1024,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 3.552621791e-08,
+      "max_scaled_error": 0.001648741619,
+      "setup_ms": 0.393419,
+      "ms": [
+        53.31567675,
+        53.3311215,
+        53.77815975,
+        53.895379,
+        53.53442675
+      ]
+    },
+    {
+      "job": "recurrent-custom-t1-n128",
+      "engine": "custom",
+      "rows": 128,
+      "valid": 128,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 3.14853042e-08,
+      "max_scaled_error": 0.001462934979,
+      "setup_ms": 0.388308,
+      "ms": [
+        6.358604312,
+        6.350971625,
+        6.350053719,
+        6.347556938,
+        6.354187375
+      ]
+    },
+    {
+      "job": "recurrent-custom-t1-n17",
+      "engine": "custom",
+      "rows": 17,
+      "valid": 17,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 3.419723936e-08,
+      "max_scaled_error": 0.001636200135,
+      "setup_ms": 0.371847,
+      "ms": [
+        0.9390625467,
+        0.9350153925,
+        0.9377828505,
+        0.9349849252,
+        0.9351657056
+      ]
+    },
+    {
+      "job": "recurrent-custom-t4-n1",
+      "engine": "custom",
+      "rows": 1,
+      "valid": 1,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 5.620008842e-08,
+      "max_scaled_error": 0.002057017741,
+      "setup_ms": 0.496433,
+      "ms": [
+        0.03454253817,
+        0.03456180871,
+        0.0344891583,
+        0.03453745381,
+        0.03439644574
+      ]
+    },
+    {
+      "job": "recurrent-custom-t4-n1024",
+      "engine": "custom",
+      "rows": 1024,
+      "valid": 1024,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 3.552621791e-08,
+      "max_scaled_error": 0.001648741619,
+      "setup_ms": 0.481144,
+      "ms": [
+        13.8133522,
+        13.78872333,
+        13.83201327,
+        13.8278114,
+        13.7838766
+      ]
+    },
+    {
+      "job": "recurrent-custom-t4-n128",
+      "engine": "custom",
+      "rows": 128,
+      "valid": 128,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 3.14853042e-08,
+      "max_scaled_error": 0.001462934979,
+      "setup_ms": 0.448556,
+      "ms": [
+        1.629824146,
+        1.622930468,
+        1.625679161,
+        1.620415589,
+        1.624682968
+      ]
+    },
+    {
+      "job": "recurrent-custom-t4-n17",
+      "engine": "custom",
+      "rows": 17,
+      "valid": 17,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 3.419723936e-08,
+      "max_scaled_error": 0.001636200135,
+      "setup_ms": 0.444173,
+      "ms": [
+        0.2448960184,
+        0.2434982725,
+        0.2437010305,
+        0.2438522107,
+        0.2434617908
+      ]
+    },
+    {
+      "job": "recurrent-step-native-t1-n1",
+      "engine": "step-native",
+      "rows": 1,
+      "valid": 1,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 5.620008842e-08,
+      "max_scaled_error": 0.002039717696,
+      "setup_ms": 7.834582,
+      "ms": [
+        0.1942179117,
+        0.1939591957,
+        0.1942494505,
+        0.1960513761,
+        0.1942343165
+      ]
+    },
+    {
+      "job": "recurrent-step-native-t1-n1024",
+      "engine": "step-native",
+      "rows": 1024,
+      "valid": 1024,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 1.210090897e-07,
+      "max_scaled_error": 0.004346211573,
+      "setup_ms": 3.114348,
+      "ms": [
+        199.6483765,
+        199.795611,
+        199.563816,
+        199.5765275,
+        200.140136
+      ]
+    },
+    {
+      "job": "recurrent-step-native-t1-n128",
+      "engine": "step-native",
+      "rows": 128,
+      "valid": 128,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 8.253460571e-08,
+      "max_scaled_error": 0.003239229376,
+      "setup_ms": 3.140087,
+      "ms": [
+        24.77862611,
+        24.83333822,
+        25.93392787,
+        24.862566,
+        24.93469356
+      ]
+    },
+    {
+      "job": "recurrent-step-native-t1-n17",
+      "engine": "step-native",
+      "rows": 17,
+      "valid": 17,
+      "threads": 1,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 1.303611467e-07,
+      "max_scaled_error": 0.004322251519,
+      "setup_ms": 3.181806,
+      "ms": [
+        3.284712836,
+        3.287347197,
+        3.285533574,
+        3.29162918,
+        3.288352295
+      ]
+    },
+    {
+      "job": "recurrent-step-native-t4-n1",
+      "engine": "step-native",
+      "rows": 1,
+      "valid": 1,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 5.620008842e-08,
+      "max_scaled_error": 0.002039717696,
+      "setup_ms": 3.151809,
+      "ms": [
+        0.06094953413,
+        0.06071386677,
+        0.06091630329,
+        0.06059131536,
+        0.06063986087
+      ]
+    },
+    {
+      "job": "recurrent-step-native-t4-n1024",
+      "engine": "step-native",
+      "rows": 1024,
+      "valid": 1024,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 1.210090897e-07,
+      "max_scaled_error": 0.004346211573,
+      "setup_ms": 3.202189,
+      "ms": [
+        65.92308175,
+        65.823892,
+        65.83770025,
+        65.819092,
+        65.8251455
+      ]
+    },
+    {
+      "job": "recurrent-step-native-t4-n128",
+      "engine": "step-native",
+      "rows": 128,
+      "valid": 128,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 8.253460571e-08,
+      "max_scaled_error": 0.003239229376,
+      "setup_ms": 3.256085,
+      "ms": [
+        8.106086,
+        8.08367368,
+        8.10410788,
+        8.11530172,
+        8.0984756
+      ]
+    },
+    {
+      "job": "recurrent-step-native-t4-n17",
+      "engine": "step-native",
+      "rows": 17,
+      "valid": 17,
+      "threads": 4,
+      "geometry": 0,
+      "stress": 0,
+      "flags": 4,
+      "max_abs": 1.303611467e-07,
+      "max_scaled_error": 0.004322251519,
+      "setup_ms": 3.201277,
+      "ms": [
+        1.081107419,
+        1.074511567,
+        1.073800727,
+        1.073133898,
+        1.073803096
+      ]
+    }
+  ]
+}

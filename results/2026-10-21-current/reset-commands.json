@@ -1,0 +1,62 @@
+[
+  {
+    "job": "reset-qwen3_0_6b",
+    "argv": [
+      "taskset",
+      "-c",
+      "0,2,4,6",
+      "build-pr-refresh-20261021/ynn-llm",
+      "--graph_dir=models/qwen3_0_6b/generated",
+      "--bundle_dir=models/qwen3_0_6b/generated",
+      "--parameter_dir=models/qwen3_0_6b/generated/parameters",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--cases_file=results/2026-10-21-current/fixtures/qwen3_0_6b-reset.tsv",
+      "--warmup_runs=0",
+      "--measured_runs=2",
+      "--dump_outputs"
+    ]
+  },
+  {
+    "job": "reset-qwen3_4b",
+    "argv": [
+      "taskset",
+      "-c",
+      "0,2,4,6",
+      "build-pr-refresh-20261021/ynn-llm",
+      "--graph_dir=models/qwen3_4b/generated",
+      "--bundle_dir=models/qwen3_4b/generated",
+      "--parameter_dir=models/qwen3_4b/generated/parameters",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--cases_file=results/2026-10-21-current/fixtures/qwen3_4b-reset.tsv",
+      "--warmup_runs=0",
+      "--measured_runs=2",
+      "--dump_outputs"
+    ]
+  },
+  {
+    "job": "reset-qwen3_5_4b_int8",
+    "argv": [
+      "taskset",
+      "-c",
+      "0,2,4,6",
+      "build-pr-refresh-20261021/ynn-llm",
+      "--graph_dir=models/qwen3_5_4b/profiles/int8/generated",
+      "--bundle_dir=models/qwen3_5_4b/profiles/int8/generated",
+      "--parameter_dir=models/qwen3_5_4b/profiles/int8/generated/parameters",
+      "--output_dir={output}",
+      "--cache_capacity=2048",
+      "--num_threads=4",
+      "--prefill_rows=128",
+      "--cases_file=results/2026-10-21-current/fixtures/qwen3_5_4b_int8-reset.tsv",
+      "--warmup_runs=0",
+      "--measured_runs=2",
+      "--dump_outputs"
+    ]
+  }
+]

@@ -4,6 +4,10 @@
 //! Graph compilation and kernels remain native. No Core IR is linked.
 
 mod ffi;
+#[cfg(feature = "llm")]
+mod llm;
+#[cfg(feature = "qwen")]
+mod qwen;
 #[cfg(feature = "fixture")]
 mod fixture;
 #[cfg(feature = "input-frontend")]
@@ -79,6 +83,12 @@ unsafe extern "C" fn lab_rust_main(argc: i32, argv: *const *const std::ffi::c_ch
         let args = unsafe { ffi::arguments(argc, argv) }?;
         #[cfg(feature = "fixture")]
         return fixture::main(&args);
+        #[cfg(feature = "llm")]
+        return std::thread::Builder::new().name("llm".into()).stack_size(64*1024*1024)
+            .spawn(move || llm::main(&args))?.join().map_err(|_| Error::invalid("Runner execution thread panicked"))?;
+        #[cfg(feature = "qwen")]
+        return std::thread::Builder::new().name("qwen".into()).stack_size(64*1024*1024)
+            .spawn(move || qwen::main(&args))?.join().map_err(|_| Error::invalid("Qwen execution thread panicked"))?;
         #[cfg(feature = "native-tests")]
         return native_tests::run(&args);
         #[cfg(all(feature = "vision", not(feature = "native-tests")))]
@@ -98,6 +108,8 @@ unsafe extern "C" fn lab_rust_main(argc: i32, argv: *const *const std::ffi::c_ch
             feature = "vision",
             feature = "gemma",
             feature = "fixture",
+            feature = "qwen",
+            feature = "llm",
             feature = "tokenizer-probe",
             feature = "frontend-tests"
         )))]

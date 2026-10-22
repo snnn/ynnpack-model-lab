@@ -5,6 +5,9 @@ struct PackedDescriptor {
   int bits;
   std::vector<slinky::expr> shape;
   std::vector<std::string> parameters;
+  slinky::expr offset = 0;
+  bool resource_view = false;
+  std::vector<slinky::expr> strides;
 };
 std::map<uint32_t, PackedDescriptor> packed_;
 void PackedTensor(uint32_t id, const std::string& name, int bits,
@@ -28,6 +31,180 @@ void PackedTensor(uint32_t id, const std::string& name, int bits,
 }
 void PackedShape(uint32_t id, std::vector<slinky::expr> shape) {
   packed_.at(id).shape = std::move(shape);
+}
+std::vector<slinky::expr> PackedStridesOf(uint32_t id) const {
+  const auto& p = packed_.at(id);
+  if (!p.strides.empty()) return p.strides;
+  std::vector<slinky::expr> strides(p.shape.size());
+  slinky::expr stride = 1;
+  for (size_t i = p.shape.size(); i-- > 0;) {
+    strides[i] = stride;
+    stride = stride * slinky::max(p.shape[i], 1);
+  }
+  return strides;
+}
+void PackedStrides(uint32_t id, std::vector<slinky::expr> strides) {
+  auto& p = packed_.at(id);
+  if (runtime_ || !resources_.count(id) || !p.strides.empty())
+    throw std::invalid_argument("packed strides require an unconsumed resource declaration");
+  for (const auto& node : graph_->nodes)
+    if (std::find(node.inputs.begin(), node.inputs.end(), id) != node.inputs.end())
+      throw std::invalid_argument("packed strides cannot change after a resource consumer");
+  if (strides.size() != p.shape.size()) throw std::invalid_argument("packed stride rank");
+  p.strides = std::move(strides);
+  slinky::expr span = 1, empty = 0, inner = 1;
+  for (size_t i = p.shape.size(); i-- > 0;) {
+    Require(p.strides[i] >= inner, "overlapping packed strides");
+    span = span + slinky::max(p.shape[i] - 1, 0) * p.strides[i];
+    empty = empty || p.shape[i] == 0;
+    inner = p.strides[i] * slinky::max(p.shape[i], 1);
+  }
+  graph_->value(id).extents = {slinky::select(empty, 0, CeilDiv(span, 8 / p.bits))};
+}
+void PackedView(uint32_t in, uint32_t out, int axis, slinky::expr begin,
+                slinky::expr end) {
+  const auto source = packed_.at(in);
+  if (axis < 0 || axis >= int(source.shape.size()) || !packed_.count(out) ||
+      graph_->value(out).is_external_output())
+    throw std::invalid_argument("packed view requires a private code view");
+  Require(begin >= 0 && end >= begin && end <= source.shape[axis], "packed view bounds");
+  // Retain the complete owner carrier. The code coordinate offset, including
+  // a partial first byte, is interpreted by consumers. No history is repacked.
+  auto descriptor = source;
+  descriptor.strides = PackedStridesOf(in);
+  descriptor.shape[axis] = end - begin;
+  descriptor.offset = source.offset + begin * descriptor.strides[axis];
+  descriptor.parameters.clear();
+  descriptor.resource_view = true;
+  packed_[out] = std::move(descriptor);
+  auto& output = graph_->value(out);
+  output.extents = graph_->value(in).extents;
+  ynn_node node;
+  node.op = ynn_node::opaque{"core_packed_resource_view"};
+  node.inputs = {in};
+  node.outputs = {out};
+  node.create = [stats = counters_](const ynn_node& n, ynn_runtime& r) {
+    auto& a = r.value(n.inputs[0]);
+    auto& b = r.value(n.outputs[0]);
+    a.buffer->dim(0).stride = 1;
+    b.make_buffer(r, 1);
+    b.buffer->dim(0).stride = 1;
+    auto dims = r.globals.make_dims(1);
+    r.funcs.push_back(slinky::func::make_copy(
+        {a.buffer, {slinky::point(dims[0])}}, {b.buffer, dims},
+        [stats](const slinky::raw_buffer& src, const slinky::raw_buffer& dst,
+                const slinky::raw_buffer& pad) {
+          stats->view_copy_bytes += dst.elem_count();
+          slinky::copy(src, dst, pad);
+        }));
+    return ynn_status_success;
+  };
+  graph_->add_node(std::move(node));
+}
+void PackedAppend(uint32_t cache, uint32_t fresh, uint32_t out, int axis,
+                  slinky::expr position, slinky::expr length) {
+  const auto descriptor = packed_.at(cache);
+  const uint32_t owner = alias_owners_.count(cache) ? alias_owners_.at(cache) : cache;
+  if (axis < 0 || axis >= int(descriptor.shape.size()) || descriptor.resource_view ||
+      !resources_.count(owner) || !packed_.count(fresh) || !packed_.count(out) ||
+      packed_.at(fresh).bits != descriptor.bits ||
+      LogicalShape(fresh).size() != descriptor.shape.size() ||
+      packed_.at(fresh).resource_view || alias_owners_.count(out) ||
+      !graph_->value(out).is_external_output())
+    throw std::invalid_argument("packed append requires independent fresh codes and an effect root");
+  for (size_t i = 0; i < descriptor.shape.size(); ++i)
+    if (int(i) != axis) Require(descriptor.shape[i] == Axis(fresh, i), "packed append row shape");
+  Require(position >= 0 && length >= 0 && length == Axis(fresh, axis) &&
+          position + length <= descriptor.shape[axis], "packed append bounds");
+  resources_.at(owner).append_lengths.push_back(length);
+  packed_[out] = descriptor;
+  packed_[out].parameters.clear();
+  graph_->value(out).extents = graph_->value(cache).extents;
+  aliases_[owner].push_back(out);
+  alias_owners_.emplace(out, owner);
+  std::vector<slinky::expr> scalar{position, length};
+  scalar.insert(scalar.end(), descriptor.shape.begin(), descriptor.shape.end());
+  const auto strides = PackedStridesOf(cache);
+  scalar.insert(scalar.end(), strides.begin(), strides.end());
+  ynn_node node;
+  node.op = ynn_node::opaque{"core_packed_append"};
+  node.inputs = {cache, fresh};
+  node.outputs = {out};
+  node.create = [scalar, axis, rank = descriptor.shape.size(), bits = descriptor.bits,
+                 stats = counters_](const ynn_node& n, ynn_runtime& r) {
+    const auto& old = r.value(n.inputs[0]);
+    const auto& a = r.value(n.inputs[1]);
+    auto& b = r.value(n.outputs[0]);
+    b.make_buffer(r, 1);
+    slinky::call_stmt::attributes attrs;
+    attrs.name = "core_packed_append";
+    attrs.allow_in_place = 1;
+    auto callback = [axis, rank, bits, stats](const slinky::call_stmt* call,
+                                             slinky::eval_context& ctx) -> slinky::index_t {
+      if (stats->append_calls == stats->fail_before_append) return 1;
+      const auto* old = ctx.lookup_buffer(call->inputs[0]);
+      const auto* src = ctx.lookup_buffer(call->inputs[1]);
+      auto* dst = ctx.lookup_buffer(call->outputs[0]);
+      const int64_t p = slinky::evaluate(call->scalars[0], ctx);
+      const int64_t n = slinky::evaluate(call->scalars[1], ctx);
+      std::vector<int64_t> shape, strides;
+      for (size_t i = 0; i < rank; ++i) {
+        shape.push_back(slinky::evaluate(call->scalars[2+i], ctx));
+        strides.push_back(slinky::evaluate(call->scalars[2+rank+i], ctx));
+      }
+      const lab_ynn_runtime::StateGeometry geometry(shape, axis, strides);
+      if (old->base != dst->base || p < 0 || n < 0 || p > shape[axis] ||
+          n > shape[axis] - p || geometry.Bytes(bits) > dst->elem_count()) return 1;
+      shape[axis] = n;
+      if (packed::Bytes(packed::Count(shape), bits) > src->elem_count()) return 1;
+      if (stats->before_append) stats->before_append(stats->append_calls);
+      std::atomic<size_t> touched{0};
+      const int per = 8 / bits;
+      // Distribute whole bytes. Even different logical rows can share a byte;
+      // each read/modify/write therefore has exactly one physical owner.
+      auto work = [&](size_t chunk) {
+        std::vector<int64_t> c;
+        size_t count = 0;
+        const int64_t stop = std::min<int64_t>((chunk + 1) * 512, geometry.Bytes(bits));
+        for (int64_t byte = chunk * 512; byte < stop; ++byte) {
+          unsigned mask = 0, value = 0;
+          for (int lane = 0; lane < per; ++lane) {
+            if (!geometry.Coordinates(byte * per + lane, c) ||
+                c[axis] < p || c[axis] >= p+n) continue;
+            c[axis] -= p;
+            const int64_t index = packed::Ordinal(c, shape);
+            const unsigned code = (*static_cast<const uint8_t*>(src->address_at(index / per)) >>
+                                   ((index % per) * bits)) & ((1u << bits) - 1);
+            mask |= ((1u << bits) - 1) << (lane * bits);
+            value |= code << (lane * bits);
+          }
+          if (mask) {
+            auto* address = static_cast<uint8_t*>(dst->address_at(byte));
+            *address = uint8_t((*address & ~mask) | value);
+            ++count;
+          }
+        }
+        touched.fetch_add(count, std::memory_order_relaxed);
+      };
+      if (n) {
+        const size_t chunks = (geometry.Bytes(bits) + 511) / 512;
+        if (ctx.config->thread_pool) ctx.config->thread_pool->parallel_for(chunks, work);
+        else for (size_t i = 0; i < chunks; ++i) work(i);
+      }
+      ++stats->append_calls;
+      stats->append_bytes += touched.load();
+      return 0;
+    };
+    auto f = slinky::func(callback,
+        {{old.buffer, {slinky::min_extent(0, old.extent(0))}},
+         {a.buffer, {slinky::min_extent(0, a.extent(0))}}},
+        {{b.buffer, r.globals.make_dims(1)}}, scalar, attrs);
+    f.compute_root();
+    b.buffer->store_root();
+    r.funcs.push_back(std::move(f));
+    return ynn_status_success;
+  };
+  graph_->add_node(std::move(node));
 }
 std::vector<slinky::expr> LogicalShape(uint32_t id) const {
   auto p = packed_.find(id);
@@ -53,16 +230,20 @@ void PackedRoute(const std::string& kind, std::vector<uint32_t> inputs,
     output.extents.assign(shape.rbegin(), shape.rend());
   std::vector<std::vector<slinky::expr>> in_shapes;
   std::vector<int> bits, types;
+  std::vector<slinky::expr> offsets;
+  std::vector<std::vector<slinky::expr>> strides;
   for (auto id : inputs) {
     in_shapes.push_back(LogicalShape(id));
+    strides.push_back(packed_.count(id) ? packed_.at(id).strides : std::vector<slinky::expr>{});
     bits.push_back(packed_.count(id) ? packed_.at(id).bits : 0);
     types.push_back(graph_->value(id).type);
+    offsets.push_back(packed_.count(id) ? packed_.at(id).offset : slinky::expr(0));
   }
   ynn_node n;
   n.op = ynn_node::opaque{"core_packed_route"};
   n.inputs = inputs;
   n.outputs = {out};
-  n.create = [kind, shape, in_shapes, bits, types, out_bits, args, starts, axis,
+  n.create = [kind, shape, in_shapes, bits, types, offsets, strides, out_bits, args, starts, axis,
               mode](const ynn_node& n, ynn_runtime& r) {
     auto& b = r.value(n.outputs[0]);
     b.make_buffer(r, int64_t(out_bits ? 1 : ynn::type_size_bytes(b.type)));
@@ -78,8 +259,10 @@ void PackedRoute(const std::string& kind, std::vector<uint32_t> inputs,
     std::vector<slinky::expr> scalar = shape;
     for (const auto& s : in_shapes)
       scalar.insert(scalar.end(), s.begin(), s.end());
+    scalar.insert(scalar.end(), offsets.begin(), offsets.end());
+    for (const auto& s : strides) scalar.insert(scalar.end(), s.begin(), s.end());
     scalar.insert(scalar.end(), starts.begin(), starts.end());
-    auto callback = [kind, shape, in_shapes, bits, types, out_bits, args,
+    auto callback = [kind, shape, in_shapes, bits, types, strides, out_bits, args,
                      starts, axis,
                      mode](const slinky::call_stmt* call,
                            slinky::eval_context& ctx) -> slinky::index_t {
@@ -97,12 +280,40 @@ void PackedRoute(const std::string& kind, std::vector<uint32_t> inputs,
         for (size_t j = 0; j < in_shapes.size(); ++j)
           in.push_back({ctx.lookup_buffer(call->inputs[j]),
                         read(in_shapes[j].size()), bits[j], types[j]});
+        for (auto& tensor : in)
+          tensor.offset = slinky::evaluate(call->scalars[next++], ctx);
+        for (size_t j = 0; j < in.size(); ++j)
+          for (size_t i = 0; i < strides[j].size(); ++i)
+            in[j].strides.push_back(slinky::evaluate(call->scalars[next++], ctx));
         // Starts may contain only nonnegative indices; do not multiply them.
         std::vector<int64_t> begin;
         for (size_t j = 0; j < starts.size(); ++j)
           begin.push_back(slinky::evaluate(call->scalars[next++], ctx));
         auto* dst = ctx.lookup_buffer(call->outputs[0]);
         const auto count = packed::Count(os);
+        // Identity/reshape routes preserve row-major code order. Copy aligned
+        // byte spans directly, including byte-aligned resource windows, while
+        // keeping canonical zero padding in the last partial destination byte.
+        const bool linear = kind == "copy" || kind == "reshape" ||
+            kind == "squeeze" || kind == "expand_dims" ||
+            kind == "fuse_dims" || kind == "split_dim";
+        if (linear && out_bits && in.size() == 1 && in[0].bits == out_bits &&
+            in[0].strides.empty() &&
+            packed::Count(in[0].shape) == count && in[0].offset % (8 / out_bits) == 0 &&
+            dst->rank == 1 && in[0].buffer->rank == 1 &&
+            dst->dim(0).stride() == 1 && in[0].buffer->dim(0).stride() == 1) {
+          const int64_t first = dst->dim(0).min(), last = dst->dim(0).max();
+          if (last >= first) {
+            const int64_t offset = in[0].offset / (8 / out_bits);
+            std::memcpy(dst->address_at(first), in[0].buffer->address_at(first + offset),
+                        size_t(last - first + 1));
+            if (count % (8 / out_bits) && last == packed::Bytes(count, out_bits) - 1) {
+              auto* tail = static_cast<uint8_t*>(dst->address_at(last));
+              *tail &= uint8_t((1u << ((count % (8 / out_bits)) * out_bits)) - 1);
+            }
+          }
+          return 0;
+        }
         auto selected = [&](const std::vector<int64_t>& coord) {
           return packed::Select(kind, in, os, coord, args, begin, axis, mode);
         };
@@ -206,7 +417,7 @@ uint32_t PackedNative(uint32_t in) {
   const auto last = descriptor.shape.empty()
                         ? std::optional<slinky::index_t>{}
                         : slinky::as_constant(descriptor.shape.back());
-  if (last && *last % (8 / descriptor.bits) == 0) {
+  if (!descriptor.resource_view && descriptor.strides.empty() && last && *last % (8 / descriptor.bits) == 0) {
     // Compatible packed bytes retain their native type. Slinky can alias this
     // byte-coordinate reshape; no integer-to-float conversion is introduced.
     const auto type = descriptor.bits == 2 ? ynn_type_int2 : ynn_type_int4;
@@ -281,5 +492,6 @@ void PackedConstantOutput(uint32_t id, const std::string& name, int bits,
   Check(ynn_define_tensor(graph_.get(), ynn_type_uint8, 1, &bytes, data, 0,
                           &source));
   packed_.emplace(source, packed_.at(id));
+  constant_sources_.emplace(id, source);
   PackedRoute("copy", {source}, id, packed_.at(id).shape);
 }

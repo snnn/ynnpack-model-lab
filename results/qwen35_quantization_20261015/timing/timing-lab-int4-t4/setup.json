@@ -1,0 +1,7 @@
+{
+  "model": "qwen3_5",
+  "peak_rss_bytes": 5498077184,
+  "rss_bytes": 5498261504,
+  "setup_ms": 17133.462468,
+  "threads": 4
+}

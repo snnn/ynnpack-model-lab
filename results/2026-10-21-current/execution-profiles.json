@@ -1,0 +1,187 @@
+{
+  "qwen3_0_6b": {
+    "decode_execution_profile.jsonl": {
+      "decode": {
+        "steps": 48,
+        "mean_diagnostic_wall_ms": 23.098052916666667,
+        "worker_ms_by_category": {
+          "elementwise_norm_other": 58.01334899999999,
+          "quantization": 1.5340399999999996,
+          "fc_int8": 2961.826733,
+          "fc": 586.5994430000001,
+          "unattributed": 2.2591819999999996,
+          "packing": 2.8434689999999994
+        },
+        "scope": "Sum of scheduled worker intervals; not critical-path latency or uninstrumented throughput"
+      }
+    },
+    "prefill_execution_profile.jsonl": {
+      "prefill": {
+        "steps": 10,
+        "mean_diagnostic_wall_ms": 126.5175501,
+        "worker_ms_by_category": {
+          "elementwise_norm_other": 621.960054,
+          "quantization": 27.684742999999994,
+          "fc_int8": 2228.8678480000003,
+          "fc": 1057.9059770000001,
+          "unattributed": 57.056197000000004,
+          "packing": 141.68395900000002
+        },
+        "scope": "Sum of scheduled worker intervals; not critical-path latency or uninstrumented throughput"
+      }
+    }
+  },
+  "gemma4_e4b": {
+    "decode_execution_profile.jsonl": {
+      "decode": {
+        "steps": 48,
+        "mean_diagnostic_wall_ms": 70.73351060416667,
+        "worker_ms_by_category": {
+          "elementwise_norm_other": 55.545411,
+          "quantization": 128.92230300000006,
+          "fc_int4": 9670.206651000002,
+          "unattributed": 3.643299000000001,
+          "rope": 0.12052999999999997,
+          "kv_update": 1.812803,
+          "attention_other": 198.31035999999997,
+          "packing": 73.549487,
+          "attention_qk": 133.914973,
+          "attention_pv": 116.47114499999999,
+          "fc_int8": 306.5629990000001,
+          "head_fc_int2": 857.6159030000002,
+          "head_fc": 16.628481999999998
+        },
+        "scope": "Sum of scheduled worker intervals; not critical-path latency or uninstrumented throughput"
+      }
+    },
+    "prefill_execution_profile.jsonl": {
+      "prefill": {
+        "steps": 10,
+        "mean_diagnostic_wall_ms": 359.0666392,
+        "worker_ms_by_category": {
+          "elementwise_norm_other": 404.213339,
+          "quantization": 533.807407,
+          "fc_int4": 10489.18675,
+          "rope": 0.31907399999999997,
+          "unattributed": 56.395639,
+          "kv_update": 9.498294,
+          "attention_other": 423.612721,
+          "packing": 47.223821,
+          "attention_qk": 407.551564,
+          "attention_pv": 409.71047999999996,
+          "fc_int8": 280.499157
+        },
+        "scope": "Sum of scheduled worker intervals; not critical-path latency or uninstrumented throughput"
+      }
+    }
+  },
+  "qwen3_5_4b_int8": {
+    "decode_execution_profile.jsonl": {
+      "decode": {
+        "steps": 48,
+        "mean_diagnostic_wall_ms": 123.87431072916667,
+        "worker_ms_by_category": {
+          "elementwise_norm_other": 210.12090599999996,
+          "quantization": 3.5653879999999996,
+          "fc_int8": 21408.419317,
+          "fc": 313.612635,
+          "unattributed": 6.159177000000001,
+          "packing": 1.1741770000000002
+        },
+        "scope": "Sum of scheduled worker intervals; not critical-path latency or uninstrumented throughput"
+      }
+    },
+    "prefill_execution_profile.jsonl": {
+      "prefill": {
+        "steps": 10,
+        "mean_diagnostic_wall_ms": 623.9183547,
+        "worker_ms_by_category": {
+          "unattributed": 224.110677,
+          "elementwise_norm_other": 1575.6431680000003,
+          "quantization": 111.03721599999999,
+          "fc_int8": 17674.602777999997,
+          "fc": 1371.925209,
+          "packing": 67.659702
+        },
+        "scope": "Sum of scheduled worker intervals; not critical-path latency or uninstrumented throughput"
+      }
+    }
+  },
+  "gemma4_e2b": {
+    "decode_execution_profile.jsonl": {
+      "decode": {
+        "steps": 96,
+        "mean_diagnostic_wall_ms": 26.22050928125,
+        "worker_ms_by_category": {
+          "elementwise_norm_other": 93.84400900000003,
+          "quantization": 168.15565899999999,
+          "fc_int4": 3333.509568000001,
+          "unattributed": 5.3640229999999995,
+          "rope": 0.194224,
+          "kv_update": 1.3919499999999991,
+          "attention_other": 81.168285,
+          "packing": 28.612078,
+          "attention_qk": 160.28970500000008,
+          "attention_pv": 142.07806599999995,
+          "fc_int8": 297.347168,
+          "fc_int2": 2732.885592999999,
+          "head_fc_int2": 1022.4745459999996,
+          "head_fc": 27.229395
+        },
+        "scope": "Sum of scheduled worker intervals; not critical-path latency or uninstrumented throughput"
+      }
+    },
+    "prefill_execution_profile.jsonl": {
+      "prefill": {
+        "steps": 10,
+        "mean_diagnostic_wall_ms": 103.9919724,
+        "worker_ms_by_category": {
+          "elementwise_norm_other": 142.397295,
+          "quantization": 220.060346,
+          "rope": 0.338491,
+          "unattributed": 15.837167,
+          "fc_int4": 2507.877661,
+          "kv_update": 2.014521,
+          "attention_other": 228.05327799999998,
+          "packing": 6.701419999999999,
+          "attention_qk": 241.53670599999998,
+          "attention_pv": 253.991426,
+          "fc_int8": 122.195517
+        },
+        "scope": "Sum of scheduled worker intervals; not critical-path latency or uninstrumented throughput"
+      }
+    }
+  },
+  "qwen3_4b": {
+    "decode_execution_profile.jsonl": {
+      "decode": {
+        "steps": 48,
+        "mean_diagnostic_wall_ms": 120.02786020833334,
+        "worker_ms_by_category": {
+          "elementwise_norm_other": 103.98294200000001,
+          "quantization": 4.038804999999999,
+          "fc_int8": 19895.452835,
+          "fc": 818.004882,
+          "unattributed": 6.414061,
+          "packing": 6.589063000000001
+        },
+        "scope": "Sum of scheduled worker intervals; not critical-path latency or uninstrumented throughput"
+      }
+    },
+    "prefill_execution_profile.jsonl": {
+      "prefill": {
+        "steps": 10,
+        "mean_diagnostic_wall_ms": 642.3411751,
+        "worker_ms_by_category": {
+          "elementwise_norm_other": 1721.6508950000002,
+          "quantization": 123.23925599999998,
+          "fc_int8": 18163.541601,
+          "fc": 2811.876844,
+          "unattributed": 168.567018,
+          "packing": 218.456432
+        },
+        "scope": "Sum of scheduled worker intervals; not critical-path latency or uninstrumented throughput"
+      }
+    }
+  }
+}

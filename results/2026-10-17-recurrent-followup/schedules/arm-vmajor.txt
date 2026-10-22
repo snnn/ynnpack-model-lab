@@ -1,0 +1,170 @@
+
+let {
+  .9 = constant_buffer([], 0, {}),
+  .10 = constant_buffer([], 0, {{min=0, max=127, extent=128, stride=0}})
+} in {
+ .11 = make_buffer(buffer_at(in0), 4, {
+   {[0, 1], 4, <>},
+   {[0, 15], 8, <>}
+ }) {
+  .12 = make_buffer(buffer_at(in9), 4, {
+    {[buffer_min(in9, 0), buffer_max(in9, 0)], buffer_stride(in9, 0), buffer_fold_factor(in9, 0)},
+    {[0, 1], 512, <>},
+    {[0, 15], 1024, <>}
+  }) {
+   .13 = make_buffer(buffer_at(in1), 4, {
+     {[0, 1], 4, <>},
+     {[0, 15], 8, <>}
+   }) {
+    .14 = make_buffer(buffer_at(in8), 4, {
+      {[buffer_min(in8, 0), buffer_max(in8, 0)], buffer_stride(in8, 0), buffer_fold_factor(in8, 0)},
+      {[buffer_min(in8, 1), buffer_max(in8, 1)], buffer_stride(in8, 1), buffer_fold_factor(in8, 1)},
+      {[0, 1], 65536, <>},
+      {[0, 15], 131072, <>}
+    }) {
+     .15 = make_buffer(buffer_at(out3), 4, {
+       {[buffer_min(out3, 0), buffer_max(out3, 0)], buffer_stride(out3, 0), buffer_fold_factor(out3, 0)},
+       {[buffer_min(out3, 1), buffer_max(out3, 1)], buffer_stride(out3, 1), buffer_fold_factor(out3, 1)},
+       {[0, 1], 65536, <>},
+       {[0, 15], 131072, <>}
+     }) {
+      .16 = loop(parallel, [0, 15], 1) {
+       closure {in2, .9, .10, .11, .12, .13, .14, .15, .16} in {
+        .17 = crop_dim(.15, 3, [.16, .16]) {
+         .18 = crop_dim(in2, 1, [.16, .16]) {
+          .19 = make_buffer(buffer_at(.18, <>, .16), buffer_elem_size(.18), {
+            {[buffer_min(.18, 0), buffer_max(.18, 0)], buffer_stride(.18, 0), buffer_fold_factor(.18, 0)},
+            {[0, 0], 0, <>},
+            {[0, 0], 0, <>},
+            {[buffer_min(.18, 1), buffer_max(.18, 1)], buffer_stride(.18, 1), buffer_fold_factor(.18, 1)}
+          }) {
+           .20 = allocate(automatic, 4, {
+             {},
+             {[0, 3], 4, <>},
+             {[0, 127], 16, <>},
+             {},
+             {},
+             {[.16, .16], <>, <>}
+           }) {
+            .21 = make_buffer(buffer_at(.19, <>, <>, <>, .16), buffer_elem_size(.19), {
+              {[buffer_min(.19, 1), buffer_max(.19, 1)], buffer_stride(.19, 1), buffer_fold_factor(.19, 1)},
+              {[buffer_min(.19, 0), buffer_max(.19, 0)], buffer_stride(.19, 0), buffer_fold_factor(.19, 0)},
+              {[buffer_min(.19, 2), buffer_max(.19, 2)], buffer_stride(.19, 2), buffer_fold_factor(.19, 2)},
+              {[buffer_min(.19, 3), buffer_max(.19, 3)], buffer_stride(.19, 3), buffer_fold_factor(.19, 3)}
+            }) {
+             call(pack_b, {.21}, {.20}, {})
+            }
+            .21 = allocate(automatic, 4, {
+              {},
+              {},
+              {[0, 1], <>, <>},
+              {[.16, .16], <>, <>}
+            }) {
+             .22 = make_buffer(buffer_at(.13, <>, .16), buffer_elem_size(.13), {
+               {[0, 0], 0, <>},
+               {[0, 0], 0, <>},
+               {[buffer_min(.13, 0), buffer_max(.13, 0)], buffer_stride(.13, 0), buffer_fold_factor(.13, 0)},
+               {[.16, .16], 8, <>}
+             }) {
+              call(exp, {.22}, {.21}, {})
+             }
+             .22 = allocate(automatic, 4, {
+               {[0, 127], 4, <>},
+               {[0, 127], <>, <>},
+               {[0, 1], <>, <>},
+               {[.16, .16], <>, <>}
+             }) {
+              call(multiply, {.14, .21}, {.22}, {})
+              .23 = make_buffer(buffer_at(.12, <>, <>, .16), buffer_elem_size(.12), {
+                {[0, 0], 0, <>},
+                {[buffer_min(.12, 0), buffer_max(.12, 0)], buffer_stride(.12, 0), buffer_fold_factor(.12, 0)},
+                {[buffer_min(.12, 1), buffer_max(.12, 1)], buffer_stride(.12, 1), buffer_fold_factor(.12, 1)},
+                {[.16, .16], 1024, <>}
+              }) {
+               .24 = allocate(automatic, 4, {
+                 {},
+                 {[0, 127], <>, <>},
+                 {[0, 1], <>, <>},
+                 {[.16, .16], <>, <>}
+               }) {
+                call(dot num_k_dims=1, {.22, .20, .9}, {.24, .10}, {})
+                call(subtract, {.23, .24}, {.24}, {})
+                .25 = allocate(automatic, 4, {
+                  {[0, 127], <>, <>},
+                  {[0, 127], <>, <>},
+                  {[0, 1], <>, <>},
+                  {[.16, .16], <>, <>}
+                }) {
+                 .26 = make_buffer(buffer_at(.11, <>, .16), buffer_elem_size(.11), {
+                   {[0, 0], 0, <>},
+                   {[0, 0], 0, <>},
+                   {[buffer_min(.11, 0), buffer_max(.11, 0)], buffer_stride(.11, 0), buffer_fold_factor(.11, 0)},
+                   {[.16, .16], 8, <>}
+                 }) {
+                  call(multiply, {.26, .24, .19}, {.25}, {})
+                 }
+                 call(add, {.22, .25}, {.17}, {})
+                }
+               }
+              }
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+      .16 = make_buffer(buffer_at(out4), 4, {
+        {[0, 4095], 4, <>}
+      }) {
+       .17 = make_buffer(buffer_at(.16), buffer_elem_size(.16), {
+         {[0, 0], 4, <>},
+         {[0, 127], 4, <>},
+         {[0, 1], 512, <>},
+         {[0, 15], 1024, <>}
+       }) {
+        .18 = loop(parallel, [0, 15], 1) {
+         closure {in6, in7, .9, .10, .15, .17, .18} in {
+          .19 = crop_dim(.17, 3, [.18, .18]) {
+           .20 = crop_dim(in6, 1, [.18, .18]) {
+            .21 = allocate(automatic, 4, {
+              {[0, 127], <>, <>},
+              {},
+              {},
+              {[.18, .18], <>, <>}
+            }) {
+             .22 = make_buffer(buffer_at(.20, <>, .18), buffer_elem_size(.20), {
+               {[buffer_min(.20, 0), buffer_max(.20, 0)], buffer_stride(.20, 0), buffer_fold_factor(.20, 0)},
+               {[0, 0], 0, <>},
+               {[0, 0], 0, <>},
+               {[buffer_min(.20, 1), buffer_max(.20, 1)], buffer_stride(.20, 1), buffer_fold_factor(.20, 1)}
+             }) {
+              call(multiply, {.22, in7}, {.21}, {})
+             }
+             .22 = allocate(automatic, 4, {
+               {},
+               {[0, 3], 4, <>},
+               {[0, 127], 16, <>},
+               {},
+               {},
+               {[.18, .18], <>, <>}
+             }) {
+              .21 = transpose(.21, {1, 0, 2, 3}) {
+               call(pack_b, {.21}, {.22}, {})
+              }
+              call(dot num_k_dims=1, {.15, .22, .9}, {.19, .10}, {})
+             }
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

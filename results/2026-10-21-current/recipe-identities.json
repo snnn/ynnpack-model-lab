@@ -1,0 +1,13 @@
+{
+  "models/gemma4_e4b/tokenizer_recipe.json": "b5bc1b3724aac4d33d7332f70b985d0abe90e954ebb376cf20460324657eaff5",
+  "models/gemma4_e4b/asset_recipe.json": "e9f91db58fccf67db120b11295aebc0a13903fc9af2f68218bf898f68118abd4",
+  "models/gemma4_e4b/bundle_manifest.json": "3958d2e209388fa21f666d5afca76df623b94ee1bd9a16902006de5e35ea5862",
+  "models/gemma4_e2b/tokenizer_recipe.json": "2842b0ccd9087df0007913f86e2343789e3224d44a1c6a9afd9bba66e0d21827",
+  "models/gemma4_e2b/asset_recipe.json": "a48afde44c9290a96e58d5f051b1fb1bfe8ba5a11317b2dd164cf0295605e689",
+  "models/gemma4_e2b/bundle_manifest.json": "e6a1f0c01def6569511d01c03c6da2bd528f7f08250d60e8561eef36d9aebbc3",
+  "models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/asset_recipe.json": "f0d1ecfcb2357d538f785fe8dd702d00a40e284535c5e212802a58ff073e4623",
+  "models/gemma4_e2b_hf/generated/hf_bf16/asset_recipe.json": "f0d1ecfcb2357d538f785fe8dd702d00a40e284535c5e212802a58ff073e4623",
+  "models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv/asset_recipe.json": "f0d1ecfcb2357d538f785fe8dd702d00a40e284535c5e212802a58ff073e4623",
+  "models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/asset_recipe.json": "f0d1ecfcb2357d538f785fe8dd702d00a40e284535c5e212802a58ff073e4623",
+  "models/gemma4_e2b_hf/generated/hf_static_int8_published_kv/asset_recipe.json": "6e8046d88af6bb176457762109418fae624e23b54438204e477602186b946962"
+}

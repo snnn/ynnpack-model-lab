@@ -1,0 +1,531 @@
+{
+  "description": "Command templates. Replace external artifact placeholders with matching archived controls before use. The literal {output} is expanded by tools/benchmark.py.",
+  "initial_cooldown_seconds": 20,
+  "cooldown_seconds": 20,
+  "jobs": [
+    {
+      "name": "e2b-t4-00-fp32_batch",
+      "engine": "fp32_batch",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t4-01-fp32_rows",
+      "engine": "fp32_rows",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b_attention_fp32_rows",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t4-02-int8_batch",
+      "engine": "int8_batch",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b_attention_int8_batch",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t4-03-int8_rows",
+      "engine": "int8_rows",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b_attention_int8_rows",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t4-04-litert_static",
+      "engine": "litert_static",
+      "argv": [
+        "taskset",
+        "55",
+        "$STATIC_RUNNER",
+        "--experimental_compact_int2",
+        "--experimental_dynamic_prefill",
+        "--experimental_explicit_dynamic_shapes",
+        "--model_path=$STATIC_MODEL",
+        "--weight_cache_path=$STATIC_WEIGHT_CACHE",
+        "--bundle_dir=$STATIC_BUNDLE_DIR",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t4-05-native",
+      "engine": "native",
+      "argv": [
+        "taskset",
+        "55",
+        "$NATIVE_RUNNER",
+        "--bundle_dir=$NATIVE_BUNDLE_DIR",
+        "--prefill_chunk_rows=128",
+        "--kv_alignment=32",
+        "--reuse_runtimes=true",
+        "--share_workspace=true",
+        "--preserve_static_int2=true",
+        "--joined_decode_graph=false",
+        "--memory_report=false",
+        "--dump_full_logits=false",
+        "--dump_cache=false",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t4-06-native",
+      "engine": "native",
+      "argv": [
+        "taskset",
+        "55",
+        "$NATIVE_RUNNER",
+        "--bundle_dir=$NATIVE_BUNDLE_DIR",
+        "--prefill_chunk_rows=128",
+        "--kv_alignment=32",
+        "--reuse_runtimes=true",
+        "--share_workspace=true",
+        "--preserve_static_int2=true",
+        "--joined_decode_graph=false",
+        "--memory_report=false",
+        "--dump_full_logits=false",
+        "--dump_cache=false",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t4-07-litert_static",
+      "engine": "litert_static",
+      "argv": [
+        "taskset",
+        "55",
+        "$STATIC_RUNNER",
+        "--experimental_compact_int2",
+        "--experimental_dynamic_prefill",
+        "--experimental_explicit_dynamic_shapes",
+        "--model_path=$STATIC_MODEL",
+        "--weight_cache_path=$STATIC_WEIGHT_CACHE",
+        "--bundle_dir=$STATIC_BUNDLE_DIR",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t4-08-int8_rows",
+      "engine": "int8_rows",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b_attention_int8_rows",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t4-09-int8_batch",
+      "engine": "int8_batch",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b_attention_int8_batch",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t4-10-fp32_rows",
+      "engine": "fp32_rows",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b_attention_fp32_rows",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t4-11-fp32_batch",
+      "engine": "fp32_batch",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t1-00-fp32_batch",
+      "engine": "fp32_batch",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=1",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t1-01-fp32_rows",
+      "engine": "fp32_rows",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b_attention_fp32_rows",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=1",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t1-02-int8_batch",
+      "engine": "int8_batch",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b_attention_int8_batch",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=1",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t1-03-int8_rows",
+      "engine": "int8_rows",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b_attention_int8_rows",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=1",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t1-04-int8_rows",
+      "engine": "int8_rows",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b_attention_int8_rows",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=1",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t1-05-int8_batch",
+      "engine": "int8_batch",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b_attention_int8_batch",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=1",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t1-06-fp32_rows",
+      "engine": "fp32_rows",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b_attention_fp32_rows",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=1",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e2b-t1-07-fp32_batch",
+      "engine": "fp32_batch",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e2b",
+        "--parameter_dir=assets/gemma4_e2b/parameters",
+        "--bundle_dir=assets/gemma4_e2b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e2b/fixtures/performance.tsv",
+        "--num_threads=1",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e4b-t4-00-fp32_batch",
+      "engine": "fp32_batch",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e4b",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e4b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e4b-t4-01-fp32_rows",
+      "engine": "fp32_rows",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e4b_attention_fp32_rows",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e4b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e4b-t4-02-int8_batch",
+      "engine": "int8_batch",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e4b_attention_int8_batch",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e4b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e4b-t4-03-int8_rows",
+      "engine": "int8_rows",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e4b_attention_int8_rows",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e4b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e4b-t4-04-int8_rows",
+      "engine": "int8_rows",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e4b_attention_int8_rows",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e4b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e4b-t4-05-int8_batch",
+      "engine": "int8_batch",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e4b_attention_int8_batch",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e4b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e4b-t4-06-fp32_rows",
+      "engine": "fp32_rows",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e4b_attention_fp32_rows",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e4b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    },
+    {
+      "name": "e4b-t4-07-fp32_batch",
+      "engine": "fp32_batch",
+      "argv": [
+        "taskset",
+        "55",
+        "./build-attention/gemma4_e4b",
+        "--parameter_dir=assets/gemma4_e4b/parameters",
+        "--bundle_dir=assets/gemma4_e4b/bundle",
+        "--prefill_rows=128",
+        "--cases_file=models/gemma4_e4b/fixtures/performance.tsv",
+        "--num_threads=4",
+        "--cache_capacity=2048",
+        "--warmup_runs=1",
+        "--measured_runs=3",
+        "--output_dir={output}"
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 use crate::{ffi, Error, ErrorKind, Result};
 use serde::Deserialize;
 use serde_json::json;
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, BTreeSet};
 use std::path::{Path, PathBuf};
 
 #[derive(Deserialize)]
@@ -20,6 +20,10 @@ struct Fixture {
     parameters: PathBuf,
     #[serde(default)]
     memory: bool,
+    #[serde(default)]
+    profile: bool,
+    #[serde(default)]
+    pipeline: bool,
     buffers: Vec<BufferSpec>,
     steps: Vec<Step>,
 }
@@ -96,7 +100,7 @@ struct Session {
     graphs: BTreeMap<String, ffi::PreparedGraph>,
     resources: BTreeMap<String, ffi::Resource>,
     buffers: BTreeMap<String, Storage>,
-    append_regions: BTreeMap<String, (usize, usize)>,
+    append_regions: BTreeMap<String, (usize, usize, usize)>,
 }
 fn size(dtype: &str, shape: &[usize]) -> Result<usize> {
     let bits = match dtype {
@@ -149,7 +153,10 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
     let mut setup_ms = BTreeMap::new();
     for (name, plan) in fixture.graphs {
         let start = std::time::Instant::now();
-        let builder = ffi::GraphBuilder::from_plan(assets.clone(), &root.join(plan))?;
+        let mut builder = ffi::GraphBuilder::from_plan(assets.clone(), &root.join(plan))?;
+        if fixture.profile {
+            builder.profile(&root.join(format!("{name}.execution_profile.jsonl")))?;
+        }
         let construction = start.elapsed().as_secs_f64() * 1000.0;
         let start = std::time::Instant::now();
         let mut graph = builder.prepare(fixture.threads)?;
@@ -157,7 +164,11 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
             name.clone(),
             [construction, start.elapsed().as_secs_f64() * 1000.0],
         );
-        graph.diagnostics(None, fixture.memory)?;
+        let pipeline = root.join(format!("{name}.pipeline"));
+        graph.diagnostics(fixture.pipeline.then_some(pipeline.as_path()), fixture.memory)?;
+        if fixture.profile {
+            graph.profile_step("", 0, 0, 0, 0)?;
+        }
         session.graphs.insert(name, graph);
     }
     for spec in fixture.buffers {
@@ -171,19 +182,21 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
                 .get(&graph)
                 .ok_or_else(|| Error::invalid("Unknown resource graph"))?;
             let width = size(&spec.dtype, &[])?;
-            if ["int2", "int4"].contains(&spec.dtype.as_str()) {
-                return Err(Error::invalid("Packed persistent resource unsupported"));
-            }
-            let mut resource =
-                ffi::Resource::new_typed(graph, &ffi::string(&spec.name)?, &spec.shape, width)?;
+            let bits = match spec.dtype.as_str() { "int2" => 2, "int4" => 4, _ => width * 8 };
+            let mut resource = if bits < 8 {
+                ffi::Resource::new_packed(graph, &ffi::string(&spec.name)?, &spec.shape, bits)?
+            } else {
+                ffi::Resource::new_typed(graph, &ffi::string(&spec.name)?, &spec.shape, width)?
+            };
             if let Some(axis) = spec.append_axis {
                 if axis >= spec.shape.len() {
                     return Err(Error::invalid("Invalid fixture append axis"));
                 }
-                let stride = spec.shape[axis + 1..].iter().product::<usize>() * width;
+                let stride = spec.shape[axis + 1..].iter().product::<usize>() * bits;
+                let logical_bits = spec.shape.iter().product::<usize>() * bits;
                 session
                     .append_regions
-                    .insert(spec.name.clone(), (spec.shape[axis], stride));
+                    .insert(spec.name.clone(), (spec.shape[axis], stride, logical_bits));
             }
             if let Some(file) = spec.file {
                 resource.initialize(&std::fs::read(root.join(file))?, spec.initialized_extent)?;
@@ -208,7 +221,11 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
     }
     let mut records = Vec::new();
     let step_count = fixture.steps.len();
+    let mut failed_graphs = BTreeSet::new();
     for (index, step) in fixture.steps.into_iter().enumerate() {
+        if failed_graphs.contains(&step.graph) {
+            return Err(Error::invalid("Backend-failed graph must be recreated"));
+        }
         if step.measured_runs == 0
             || step.measured_runs > 10000
             || step.warmup_runs > 10000
@@ -350,6 +367,9 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
                     graph.scalar(&ffi::string(name)?, *value)?;
                 }
                 let start = std::time::Instant::now();
+                if fixture.profile {
+                    graph.profile_step(&step.graph, round as i32, index, 0, 1)?;
+                }
                 if let Some(appends) = &step.before_appends {
                     let checks: Vec<_> = observations
                         .iter()
@@ -367,6 +387,9 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
                     }
                 } else {
                     graph.run()?;
+                }
+                if fixture.profile {
+                    graph.profile_step(&step.graph, round as i32, index, 0, 2)?;
                 }
                 if round >= step.warmup_runs {
                     run_ms.push(start.elapsed().as_secs_f64() * 1000.0);
@@ -416,14 +439,23 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
                 records.push(
                     json!({"step":index,"expected_error":e.to_string(),"resources":resources}),
                 );
+                let counts = graph.counters()?;
+                let record = records.last_mut().unwrap();
+                record["append_calls"] = json!(counts.append_calls);
+                record["append_bytes"] = json!(counts.append_bytes);
+                record["view_copy_bytes"] = json!(counts.view_copy_bytes);
                 // A checked rejection can be followed by fresh bindings on the
-                // same graph. Backend/injected failures still terminate the
-                // fixture; native failure poisoning is never cleared here.
+                // same graph. An explicitly injected, verified poisoned failure
+                // permits recovery through another prepared graph after reset.
+                // The failed native instance itself is never reused.
                 let rejected_without_writes = e.kind == ErrorKind::Invalid
                     && step.expect_unchanged
                     && step.fail_after_appends.is_none()
                     && step.before_appends.is_none();
-                if index + 1 != step_count && !rejected_without_writes {
+                let poisoned_failure = step.fail_after_appends.is_some()
+                    && !step.expect_poisoned.is_empty();
+                if poisoned_failure { failed_graphs.insert(step.graph.clone()); }
+                if index + 1 != step_count && !rejected_without_writes && !poisoned_failure {
                     return Err(Error::invalid(
                         "Only an unchanged validation rejection may precede another step",
                     ));
@@ -439,13 +471,19 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         for (name, (before, begin)) in before_appends {
             let resource = &session.resources[&name];
             let end = resource.status()?[0] as usize;
-            let (capacity, stride) = session.append_regions[&name];
+            let (capacity, stride, logical_bits) = session.append_regions[&name];
             for (offset, (&old, &now)) in before.iter().zip(resource.data()).enumerate() {
-                let row = (offset / stride) % capacity;
-                if (row < begin || row >= end) && old != now {
-                    return Err(Error::invalid(
-                        "Append changed prefix or capacity suffix bytes",
-                    ));
+                let changed = (old ^ now) as u8;
+                if changed == 0 { continue; }
+                for lane in 0..8 {
+                    if changed & (1 << lane) == 0 { continue; }
+                    let bit = offset * 8 + lane;
+                    let row = (bit / stride) % capacity;
+                    if bit >= logical_bits || row < begin || row >= end {
+                        return Err(Error::invalid(
+                            "Append changed prefix, suffix or padding bits",
+                        ));
+                    }
                 }
             }
         }
@@ -496,6 +534,8 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         let record = records.last_mut().unwrap();
         record["run_ms"] = json!(run_ms);
         record["setup_ms"] = json!(setup_ms[&step.graph]);
+        record["ynn_math"] = json!(ffi::math_mode()?);
+        record["timings_valid_for_benchmark"] = json!(!fixture.profile && !fixture.memory);
         if fixture.memory {
             record["scratch_peak_bytes"] = json!(graph.memory()?.peak);
         }

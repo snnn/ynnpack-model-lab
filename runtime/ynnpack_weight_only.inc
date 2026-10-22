@@ -14,6 +14,9 @@
 
   void WeightOnlyLinear(uint32_t input, uint32_t weight, uint32_t scales,
                         uint32_t zero, uint32_t out, int64_t group) {
+    weight = ConstantSource(weight);
+    scales = ConstantSource(scales);
+    zero = ConstantSource(zero);
     const auto& x = graph_->value(input);
     const auto& w = graph_->value(weight);
     const auto& s = graph_->value(scales);

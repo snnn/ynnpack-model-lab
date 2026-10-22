@@ -367,9 +367,7 @@ impl<'a> Compiler<'a> {
         for s in statements {
             match &s.kind {
                 StatementKind::Invoke { .. } | StatementKind::Return(_) => {
-                    return Err(self
-                        .r
-                        .error(s.span, "Function call/return outside function expansion"));
+                    return Err(self.r.error(s.span, "Function call/return outside function expansion"));
                 }
                 StatementKind::Declaration {
                     role,

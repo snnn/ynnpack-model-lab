@@ -105,11 +105,8 @@ Slinky preparation depth; pages become resident only when touched. The
 remain recorded. A larger stack does not fix backend recursion. Library callers
 must provide the stack budget described in [RUST_RUNTIME.md](RUST_RUNTIME.md).
 
-Published-bundle text-to-TSV replay has been checked with the current Rust/`.ynn`
-runner on Linux and one Android ARM64 device at capacity 2048, including partial
-prefill chunks, window crossings and repeated requests. These checks do not
-establish broader device/profile coverage, generation quality or current
-performance. Earlier C++ device results retain their original scope.
+See [current results](../results/README.md) and
+[validation gaps](worklogs/VALIDATION_GAPS.md) for actual device coverage.
 
 Use correctness fixtures and `--dump_outputs` in separate runs, then compare
 matching logit/KV dumps:
@@ -125,17 +122,10 @@ comparisons exact where the control is exact. Cross-backend logit/KV differences
 and teacher-forced greedy agreement need separate interpretation; they do not
 certify equivalent generation quality. Disable dumps for timing runs.
 
-## Measurement records
+## Measurements and resource limits
 
-| Record | Scope |
-| --- | --- |
-| [Original E4B integration](../results/e4b_2026-10-02/README.md) | Desktop/TECNO execution, exact capacity checks, static-QAT XNNPACK host comparison and stack reproduction |
-| [October 5 backend refresh](../results/2026-10-05/README.md) | Fresh previous/adopted desktop controls and selected kernels |
-| [Packing correction](../results/2026-10-05-packing-fix/README.md) | Desktop timing and numerical changes; capacity comparisons remain exact |
-| [October 7 mobile baseline](../results/2026-10-07-upstream-refresh/README.md) | TECNO one/four-thread, capacity and numerical checks; Linux was not retimed |
-
-These records retain their C++ runners and original configurations. The October 7
-campaign skipped Pixel/Samsung E4B for available-memory limits. No matched native
-E4B phone control is included. Check current device storage and available RAM
-before deployment; mmap weights and independent phase packing contribute to
-RSS beyond the raw KV allocation.
+Use the [current results index](../results/README.md). The older
+[stack reproduction](../results/e4b_2026-10-02/preparation-stack-overflow.txt)
+remains unresolved evidence, not a current latency baseline. Check device
+storage and available RAM before deployment; mmap weights and independent
+phase packing contribute to RSS beyond the raw KV allocation.

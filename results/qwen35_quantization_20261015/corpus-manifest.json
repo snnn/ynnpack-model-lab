@@ -1,0 +1,15 @@
+{
+  "dataset": "Salesforce/wikitext",
+  "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+  "config": "wikitext-2-raw-v1",
+  "split": "test",
+  "parquet_sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91",
+  "text_join": "two newlines",
+  "tokenizer": "HF_CHECKPOINT",
+  "tokenizer_sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+  "token_sha256": "2fab4ff5b9a007b70e22530f4002b79dfd8e95d1769d41533aa474bcb50fb77c",
+  "blocks": 8,
+  "tokens_per_block": 2048,
+  "selection": "first eight non-overlapping blocks, no BOS/EOS/chat template",
+  "scored_tokens": 16376
+}

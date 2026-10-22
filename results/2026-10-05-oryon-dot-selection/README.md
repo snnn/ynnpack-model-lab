@@ -11,7 +11,7 @@ KV codes against the retained YNNPACK control.
 This experiment investigates the retained YNNPACK baseline's I8MM decode
 selection on Samsung SM-S937U1, where the preserved native Tensor API/XNNPACK
 runner executes DOTPROD for INT2/INT4. The
-[preceding profile study](../2026-10-05-decode-profile/README.md) records that
+preceding profile study (historical record archived locally) records that
 cross-runtime comparison. This follow-up compares kernel arithmetic and timing,
 then restricts YNNPACK's one-row decode selection independently for INT2, INT4,
 and both. It uses Gemma4 E2B's published weight codes and static QAT contract.
