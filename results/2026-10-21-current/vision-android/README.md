@@ -77,6 +77,40 @@ are linked. LiteRT compile actions define `XNN_ENABLE_ARM_SME=0` and
 `XNN_ENABLE_ARM_SME2=0`. The observed Pixel threading behavior cannot be
 attributed to execution of SME2 kernels in this configuration.
 
+## ResNet18 graph layout comparison
+
+A post-campaign inspection compares the serialized operators in the measured
+ResNet18 plans with the [Hugging Face ResNet18 file](https://huggingface.co/litert-community/resnet18/blob/7eabef429f15b4fcd4db3e225d81bd0fd7860c4f/resnet18.tflite).
+The [operator audit](resnet18-layout-audit.json) retains artifact hashes,
+the pinned Hugging Face revision, operator counts and transpose details.
+
+| Artifact | Transpose operations | Placement |
+| --- | ---: | --- |
+| Hugging Face TFLite | 1 | Input NCHW `[1,3,224,224]` to NHWC `[1,224,224,3]` |
+| TFLite control used in this campaign | 1 | The same input conversion; padding and convolutions stay in NHWC |
+| Checked-in YNN ResNet18 plan | 10 | One input conversion, eight activation transposes around padding boundaries, and one classifier-weight transpose |
+
+The Hugging Face artifact differs from the measured TFLite control; it was
+inspected only and did not replace that control or receive new timing runs.
+Both TFLite files keep all five explicit padding operations in NHWC.
+The YNN plan retains four internal layout round trips: one through the stem's
+batch normalization, activation and max-pool padding, and three around the
+stride-two convolution padding at residual-stage transitions. For example,
+`relu__4` goes through `NHWC -> NCHW -> PAD -> NHWC` before `conv2d_5`.
+
+The vision export enables local layout cleanup but does not enable the
+padding-aware global layout pass. The local pass stops at padding boundaries;
+the global pass supports remapping the padding axes. This is an export
+optimization gap to address through layout preparation and regeneration,
+followed by numerical validation and paired measurements.
+
+These are serialized graph counts, not counts or costs of executed copy
+kernels. No layout change or speedup is measured here, and this inspection
+does not establish the cause of Pixel 11's four-thread slowdown. The existing
+results compare the recorded export pipelines as well as their runtimes;
+they do not isolate backend kernel performance at an identical optimized
+graph layout.
+
 ## Timing method
 
 Two fresh processes per engine/model/thread/device each execute three
