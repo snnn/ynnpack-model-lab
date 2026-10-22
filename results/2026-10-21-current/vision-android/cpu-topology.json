@@ -1,0 +1,659 @@
+{
+  "captured_utc": "2026-10-22T05:38:36.462244+00:00",
+  "verified_utc": "2026-10-22T05:44:03.298791+00:00",
+  "scope": "Post-campaign audit of the same phones and firmware. Original measurements are unchanged. Core classes combine on-device MIDRs with primary CPU documentation; frequency and capacity alone do not identify microarchitecture.",
+  "sources": [
+    "https://github.com/torvalds/linux/blob/master/arch/arm64/include/asm/cputype.h",
+    "https://www.arm.com/products/silicon-ip-cpu/cortex-a/cortex-a510",
+    "https://www.arm.com/products/silicon-ip-cpu/cortex-a/cortex-a715",
+    "https://www.arm.com/products/silicon-ip-cpu/c1-pro",
+    "https://www.arm.com/products/silicon-ip-cpu/c1-ultra",
+    "https://www.qualcomm.com/content/dam/qcomm-martech/dm-assets/documents/Snapdragon-8-Elite-Platform-Product-Brief.pdf"
+  ],
+  "read_only_capture_command": "echo PROC_CPUINFO\ncat /proc/cpuinfo\necho CPU_SYSFS\nfor p in /sys/devices/system/cpu/cpu[0-9]*; do\n  echo \"$p\"\n  for f in regs/identification/midr_el1 cpu_capacity topology/core_id topology/cluster_id topology/physical_package_id topology/thread_siblings_list topology/core_siblings_list cpufreq/related_cpus cpufreq/cpuinfo_max_freq; do\n    if [ -r \"$p/$f\" ]; then echo \"$f\"; cat \"$p/$f\"; fi\n  done\ndone\necho SHELL_ALLOWED_CPUS\nsed -n '/Cpus_allowed/p' /proc/self/status\n",
+  "devices": [
+    {
+      "label": "tecno",
+      "properties": {
+        "ro.product.model": "TECNO LJ9",
+        "ro.soc.model": "MT6897",
+        "ro.build.fingerprint": "TECNO/LJ9-OP/TECNO-LJ9:15/AP3A.240905.015.A2/154010:user/release-keys",
+        "ro.build.version.release": "15",
+        "ro.build.version.sdk": "35"
+      },
+      "kernel": "6.1.115-android14-11-g6b18f0b574ab-ab12901745",
+      "online_cpus": "0-7",
+      "masks": {
+        "1": "80",
+        "4": "f0"
+      },
+      "performance_cpus": {
+        "4": "0x411fd4d0",
+        "5": "0x411fd4d0",
+        "6": "0x411fd4d0",
+        "7": "0x411fd4d0"
+      },
+      "cpu_topology": {
+        "0": {
+          "midr_el1": "0x00000000411fd461",
+          "cpu_capacity": "221",
+          "cluster_id": "0",
+          "core_id": "0",
+          "thread_siblings_list": "0",
+          "related_cpus": "0 1 2 3",
+          "cpuinfo_max_freq": "2200000",
+          "core_name": "Cortex-A510",
+          "classification": "little"
+        },
+        "1": {
+          "midr_el1": "0x00000000411fd461",
+          "cpu_capacity": "221",
+          "cluster_id": "0",
+          "core_id": "1",
+          "thread_siblings_list": "1",
+          "related_cpus": "0 1 2 3",
+          "cpuinfo_max_freq": "2200000",
+          "core_name": "Cortex-A510",
+          "classification": "little"
+        },
+        "2": {
+          "midr_el1": "0x00000000411fd461",
+          "cpu_capacity": "221",
+          "cluster_id": "0",
+          "core_id": "2",
+          "thread_siblings_list": "2",
+          "related_cpus": "0 1 2 3",
+          "cpuinfo_max_freq": "2200000",
+          "core_name": "Cortex-A510",
+          "classification": "little"
+        },
+        "3": {
+          "midr_el1": "0x00000000411fd461",
+          "cpu_capacity": "221",
+          "cluster_id": "0",
+          "core_id": "3",
+          "thread_siblings_list": "3",
+          "related_cpus": "0 1 2 3",
+          "cpuinfo_max_freq": "2200000",
+          "core_name": "Cortex-A510",
+          "classification": "little"
+        },
+        "4": {
+          "midr_el1": "0x00000000411fd4d0",
+          "cpu_capacity": "996",
+          "cluster_id": "1",
+          "core_id": "0",
+          "thread_siblings_list": "4",
+          "related_cpus": "4 5 6",
+          "cpuinfo_max_freq": "3200000",
+          "core_name": "Cortex-A715",
+          "classification": "big/performance"
+        },
+        "5": {
+          "midr_el1": "0x00000000411fd4d0",
+          "cpu_capacity": "996",
+          "cluster_id": "1",
+          "core_id": "1",
+          "thread_siblings_list": "5",
+          "related_cpus": "4 5 6",
+          "cpuinfo_max_freq": "3200000",
+          "core_name": "Cortex-A715",
+          "classification": "big/performance"
+        },
+        "6": {
+          "midr_el1": "0x00000000411fd4d0",
+          "cpu_capacity": "996",
+          "cluster_id": "1",
+          "core_id": "2",
+          "thread_siblings_list": "6",
+          "related_cpus": "4 5 6",
+          "cpuinfo_max_freq": "3200000",
+          "core_name": "Cortex-A715",
+          "classification": "big/performance"
+        },
+        "7": {
+          "midr_el1": "0x00000000411fd4d0",
+          "cpu_capacity": "1024",
+          "cluster_id": "2",
+          "core_id": "0",
+          "thread_siblings_list": "7",
+          "related_cpus": "7",
+          "cpuinfo_max_freq": "3350000",
+          "core_name": "Cortex-A715",
+          "classification": "big/performance"
+        }
+      },
+      "firmware_matches_campaign": true,
+      "proc_cpuinfo_matches_sysfs_midr": true,
+      "diagnostic_binary_sha256": {
+        "vision": "e650af22eadde0245bcc237369331512d09191244e3ade2e95c00307312b6fe1",
+        "benchmark_model": "b96d5f97b36d9193b88ff8481cf56db7b7a51fff22ebd89d6bba753b46deec03"
+      }
+    },
+    {
+      "label": "pixel11",
+      "properties": {
+        "ro.product.model": "Pixel 11",
+        "ro.soc.model": "Tensor G6",
+        "ro.build.fingerprint": "google/cubs/cubs:17/CD1A.261005.003.B1/16433324:user/release-keys",
+        "ro.build.version.release": "17",
+        "ro.build.version.sdk": "37"
+      },
+      "kernel": "6.12.69-android16-6-g70777328ed0e-ab16108597-4k",
+      "online_cpus": "0-6",
+      "masks": {
+        "1": "40",
+        "4": "3c"
+      },
+      "performance_cpus": {
+        "2": "0x411fd8b1",
+        "3": "0x411fd8b1",
+        "4": "0x411fd8b1",
+        "5": "0x411fd8b1",
+        "6": "0x411fd8c0"
+      },
+      "cpu_topology": {
+        "0": {
+          "midr_el1": "0x00000000411fd8b1",
+          "cpu_capacity": "627",
+          "cluster_id": "0",
+          "core_id": "0",
+          "thread_siblings_list": "0",
+          "related_cpus": "0 1",
+          "cpuinfo_max_freq": "2649000",
+          "core_name": "C1-Pro",
+          "classification": "lower-frequency big core, excluded"
+        },
+        "1": {
+          "midr_el1": "0x00000000411fd8b1",
+          "cpu_capacity": "627",
+          "cluster_id": "0",
+          "core_id": "1",
+          "thread_siblings_list": "1",
+          "related_cpus": "0 1",
+          "cpuinfo_max_freq": "2649000",
+          "core_name": "C1-Pro",
+          "classification": "lower-frequency big core, excluded"
+        },
+        "2": {
+          "midr_el1": "0x00000000411fd8b1",
+          "cpu_capacity": "800",
+          "cluster_id": "1",
+          "core_id": "0",
+          "thread_siblings_list": "2",
+          "related_cpus": "2 3 4 5",
+          "cpuinfo_max_freq": "3379000",
+          "core_name": "C1-Pro",
+          "classification": "big/performance"
+        },
+        "3": {
+          "midr_el1": "0x00000000411fd8b1",
+          "cpu_capacity": "800",
+          "cluster_id": "1",
+          "core_id": "1",
+          "thread_siblings_list": "3",
+          "related_cpus": "2 3 4 5",
+          "cpuinfo_max_freq": "3379000",
+          "core_name": "C1-Pro",
+          "classification": "big/performance"
+        },
+        "4": {
+          "midr_el1": "0x00000000411fd8b1",
+          "cpu_capacity": "800",
+          "cluster_id": "1",
+          "core_id": "2",
+          "thread_siblings_list": "4",
+          "related_cpus": "2 3 4 5",
+          "cpuinfo_max_freq": "3379000",
+          "core_name": "C1-Pro",
+          "classification": "big/performance"
+        },
+        "5": {
+          "midr_el1": "0x00000000411fd8b1",
+          "cpu_capacity": "800",
+          "cluster_id": "1",
+          "core_id": "3",
+          "thread_siblings_list": "5",
+          "related_cpus": "2 3 4 5",
+          "cpuinfo_max_freq": "3379000",
+          "core_name": "C1-Pro",
+          "classification": "big/performance"
+        },
+        "6": {
+          "midr_el1": "0x00000000411fd8c0",
+          "cpu_capacity": "1024",
+          "cluster_id": "2",
+          "core_id": "0",
+          "thread_siblings_list": "6",
+          "related_cpus": "6",
+          "cpuinfo_max_freq": "4109000",
+          "core_name": "C1-Ultra",
+          "classification": "prime"
+        }
+      },
+      "firmware_matches_campaign": true,
+      "proc_cpuinfo_matches_sysfs_midr": true,
+      "diagnostic_binary_sha256": {
+        "vision": "e650af22eadde0245bcc237369331512d09191244e3ade2e95c00307312b6fe1",
+        "benchmark_model": "b96d5f97b36d9193b88ff8481cf56db7b7a51fff22ebd89d6bba753b46deec03"
+      }
+    },
+    {
+      "label": "samsung",
+      "properties": {
+        "ro.product.model": "SM-S937U1",
+        "ro.soc.model": "SM8750",
+        "ro.build.fingerprint": "samsung/psquew/psq:17/CP2A.260605.016/S937U1UEU9DZIF_OYM9DZIF:user/release-keys",
+        "ro.build.version.release": "17",
+        "ro.build.version.sdk": "37"
+      },
+      "kernel": "6.6.127-android15-8-p33f4ffe-abogkiS937USQU9DZIF-4k",
+      "online_cpus": "0-7",
+      "masks": {
+        "1": "80",
+        "4": "f0"
+      },
+      "performance_cpus": {
+        "0": "0x514f0014",
+        "1": "0x514f0014",
+        "2": "0x514f0014",
+        "3": "0x514f0014",
+        "4": "0x514f0014",
+        "5": "0x514f0014",
+        "6": "0x513f0014",
+        "7": "0x513f0014"
+      },
+      "cpu_topology": {
+        "0": {
+          "midr_el1": "0x00000000514f0014",
+          "cpu_capacity": "765",
+          "cluster_id": "0",
+          "core_id": "0",
+          "thread_siblings_list": "0",
+          "related_cpus": "0 1 2 3 4 5",
+          "cpuinfo_max_freq": "3532800",
+          "core_name": "Oryon",
+          "classification": "big/performance"
+        },
+        "1": {
+          "midr_el1": "0x00000000514f0014",
+          "cpu_capacity": "765",
+          "cluster_id": "0",
+          "core_id": "1",
+          "thread_siblings_list": "1",
+          "related_cpus": "0 1 2 3 4 5",
+          "cpuinfo_max_freq": "3532800",
+          "core_name": "Oryon",
+          "classification": "big/performance"
+        },
+        "2": {
+          "midr_el1": "0x00000000514f0014",
+          "cpu_capacity": "765",
+          "cluster_id": "0",
+          "core_id": "2",
+          "thread_siblings_list": "2",
+          "related_cpus": "0 1 2 3 4 5",
+          "cpuinfo_max_freq": "3532800",
+          "core_name": "Oryon",
+          "classification": "big/performance"
+        },
+        "3": {
+          "midr_el1": "0x00000000514f0014",
+          "cpu_capacity": "765",
+          "cluster_id": "0",
+          "core_id": "3",
+          "thread_siblings_list": "3",
+          "related_cpus": "0 1 2 3 4 5",
+          "cpuinfo_max_freq": "3532800",
+          "core_name": "Oryon",
+          "classification": "big/performance"
+        },
+        "4": {
+          "midr_el1": "0x00000000514f0014",
+          "cpu_capacity": "765",
+          "cluster_id": "0",
+          "core_id": "4",
+          "thread_siblings_list": "4",
+          "related_cpus": "0 1 2 3 4 5",
+          "cpuinfo_max_freq": "3532800",
+          "core_name": "Oryon",
+          "classification": "big/performance"
+        },
+        "5": {
+          "midr_el1": "0x00000000514f0014",
+          "cpu_capacity": "765",
+          "cluster_id": "0",
+          "core_id": "5",
+          "thread_siblings_list": "5",
+          "related_cpus": "0 1 2 3 4 5",
+          "cpuinfo_max_freq": "3532800",
+          "core_name": "Oryon",
+          "classification": "big/performance"
+        },
+        "6": {
+          "midr_el1": "0x00000000513f0014",
+          "cpu_capacity": "1024",
+          "cluster_id": "1",
+          "core_id": "0",
+          "thread_siblings_list": "6",
+          "related_cpus": "6 7",
+          "cpuinfo_max_freq": "4473600",
+          "core_name": "Oryon",
+          "classification": "prime"
+        },
+        "7": {
+          "midr_el1": "0x00000000513f0014",
+          "cpu_capacity": "1024",
+          "cluster_id": "1",
+          "core_id": "1",
+          "thread_siblings_list": "7",
+          "related_cpus": "6 7",
+          "cpuinfo_max_freq": "4473600",
+          "core_name": "Oryon",
+          "classification": "prime"
+        }
+      },
+      "firmware_matches_campaign": true,
+      "proc_cpuinfo_matches_sysfs_midr": true,
+      "diagnostic_binary_sha256": {
+        "vision": "e650af22eadde0245bcc237369331512d09191244e3ade2e95c00307312b6fe1",
+        "benchmark_model": "b96d5f97b36d9193b88ff8481cf56db7b7a51fff22ebd89d6bba753b46deec03"
+      }
+    }
+  ],
+  "recorded_command_audit": [
+    {
+      "campaign": "main",
+      "command_count": 336,
+      "commands_by_device": {
+        "tecno": 112,
+        "pixel11": 112,
+        "samsung": 112
+      },
+      "all_masks_within_reviewed_cores": true,
+      "all_commands_succeeded": true
+    },
+    {
+      "campaign": "pixel11_same_cluster",
+      "command_count": 14,
+      "commands_by_device": {
+        "pixel11_cluster": 14
+      },
+      "all_masks_within_reviewed_cores": true,
+      "all_commands_succeeded": true
+    }
+  ],
+  "worker_affinity_diagnostics": {
+    "scope": "Six separate ResNet18 four-thread diagnostic processes using the retained binaries and inputs, three warmups and 30 invocations. Best-effort polling of /proc/PID/task/TID/status every 20 ms after executable identity matches. Sampling overhead means these timings are not performance evidence; this is not a retroactive trace of the original campaign.",
+    "records": [
+      {
+        "device": "tecno",
+        "engine": "ynnpack",
+        "model": "resnet18",
+        "threads": 4,
+        "utc": "2026-10-22T05:41:21.912277+00:00",
+        "returncode": 0,
+        "observed_thread_count": 4,
+        "thread_status_samples": 111,
+        "observed_allowed_cpu_lists": [
+          "4-7"
+        ],
+        "expected_mask": "f0",
+        "command": [
+          "taskset",
+          "f0",
+          "${REMOTE_ROOT}/vision",
+          "--model_dir=${REMOTE_ROOT}/resnet18",
+          "--output_dir=${REMOTE_ROOT}/affinity_tecno_ynnpack_20261022",
+          "--num_threads=4",
+          "--warmup_runs=3",
+          "--measured_runs=30",
+          "--input_file=${REMOTE_ROOT}/benchmark_input.bin"
+        ]
+      },
+      {
+        "device": "pixel11",
+        "engine": "ynnpack",
+        "model": "resnet18",
+        "threads": 4,
+        "utc": "2026-10-22T05:41:26.154822+00:00",
+        "returncode": 0,
+        "observed_thread_count": 4,
+        "thread_status_samples": 141,
+        "observed_allowed_cpu_lists": [
+          "2-5"
+        ],
+        "expected_mask": "3c",
+        "command": [
+          "taskset",
+          "3c",
+          "${REMOTE_ROOT}/vision",
+          "--model_dir=${REMOTE_ROOT}/resnet18",
+          "--output_dir=${REMOTE_ROOT}/affinity_pixel11_ynnpack_20261022",
+          "--num_threads=4",
+          "--warmup_runs=3",
+          "--measured_runs=30",
+          "--input_file=${REMOTE_ROOT}/benchmark_input.bin"
+        ]
+      },
+      {
+        "device": "samsung",
+        "engine": "ynnpack",
+        "model": "resnet18",
+        "threads": 4,
+        "utc": "2026-10-22T05:41:33.652215+00:00",
+        "returncode": 0,
+        "observed_thread_count": 4,
+        "thread_status_samples": 87,
+        "observed_allowed_cpu_lists": [
+          "4-7"
+        ],
+        "expected_mask": "f0",
+        "command": [
+          "taskset",
+          "f0",
+          "${REMOTE_ROOT}/vision",
+          "--model_dir=${REMOTE_ROOT}/resnet18",
+          "--output_dir=${REMOTE_ROOT}/affinity_samsung_ynnpack_20261022",
+          "--num_threads=4",
+          "--warmup_runs=3",
+          "--measured_runs=30",
+          "--input_file=${REMOTE_ROOT}/benchmark_input.bin"
+        ]
+      },
+      {
+        "device": "tecno",
+        "engine": "litert_xnnpack",
+        "model": "resnet18",
+        "threads": 4,
+        "utc": "2026-10-22T05:41:36.137629+00:00",
+        "returncode": 0,
+        "observed_thread_count": 4,
+        "thread_status_samples": 41,
+        "observed_allowed_cpu_lists": [
+          "4-7"
+        ],
+        "expected_mask": "f0",
+        "command": [
+          "taskset",
+          "f0",
+          "${REMOTE_ROOT}/benchmark_model",
+          "--graph=${REMOTE_ROOT}/resnet18/model.tflite",
+          "--use_cpu=true",
+          "--use_gpu=false",
+          "--use_npu=false",
+          "--num_threads=4",
+          "--warmup_runs=3",
+          "--warmup_min_secs=0",
+          "--num_runs=30",
+          "--min_secs=0",
+          "--max_secs=600",
+          "--run_delay=0",
+          "--report_peak_memory_footprint=false",
+          "--use_profiler=false",
+          "--input_layer_value_range=x,-0.5,0.5",
+          "--result_file_path=${REMOTE_ROOT}/affinity_tecno_litert_xnnpack_20261022/result.pb"
+        ]
+      },
+      {
+        "device": "pixel11",
+        "engine": "litert_xnnpack",
+        "model": "resnet18",
+        "threads": 4,
+        "utc": "2026-10-22T05:41:43.589506+00:00",
+        "returncode": 0,
+        "observed_thread_count": 4,
+        "thread_status_samples": 19,
+        "observed_allowed_cpu_lists": [
+          "2-5"
+        ],
+        "expected_mask": "3c",
+        "command": [
+          "taskset",
+          "3c",
+          "${REMOTE_ROOT}/benchmark_model",
+          "--graph=${REMOTE_ROOT}/resnet18/model.tflite",
+          "--use_cpu=true",
+          "--use_gpu=false",
+          "--use_npu=false",
+          "--num_threads=4",
+          "--warmup_runs=3",
+          "--warmup_min_secs=0",
+          "--num_runs=30",
+          "--min_secs=0",
+          "--max_secs=600",
+          "--run_delay=0",
+          "--report_peak_memory_footprint=false",
+          "--use_profiler=false",
+          "--input_layer_value_range=x,-0.5,0.5",
+          "--result_file_path=${REMOTE_ROOT}/affinity_pixel11_litert_xnnpack_20261022/result.pb"
+        ]
+      },
+      {
+        "device": "samsung",
+        "engine": "litert_xnnpack",
+        "model": "resnet18",
+        "threads": 4,
+        "utc": "2026-10-22T05:41:45.123383+00:00",
+        "returncode": 0,
+        "observed_thread_count": 4,
+        "thread_status_samples": 50,
+        "observed_allowed_cpu_lists": [
+          "4-7"
+        ],
+        "expected_mask": "f0",
+        "command": [
+          "taskset",
+          "f0",
+          "${REMOTE_ROOT}/benchmark_model",
+          "--graph=${REMOTE_ROOT}/resnet18/model.tflite",
+          "--use_cpu=true",
+          "--use_gpu=false",
+          "--use_npu=false",
+          "--num_threads=4",
+          "--warmup_runs=3",
+          "--warmup_min_secs=0",
+          "--num_runs=30",
+          "--min_secs=0",
+          "--max_secs=600",
+          "--run_delay=0",
+          "--report_peak_memory_footprint=false",
+          "--use_profiler=false",
+          "--input_layer_value_range=x,-0.5,0.5",
+          "--result_file_path=${REMOTE_ROOT}/affinity_samsung_litert_xnnpack_20261022/result.pb"
+        ]
+      }
+    ]
+  },
+  "preflight_validation": {
+    "live_device_preflights_passed": 3,
+    "negative_cases_rejected": 17,
+    "rejected_cases": [
+      {
+        "device": "tecno",
+        "case": "missing reviewed core identities",
+        "error": "tecno: provide at least four reviewed performance_cpus with MIDRs"
+      },
+      {
+        "device": "tecno",
+        "case": "negative affinity mask",
+        "error": "Affinity mask must contain the requested number of CPUs"
+      },
+      {
+        "device": "tecno",
+        "case": "one CPU for four threads",
+        "error": "Affinity mask must contain the requested number of CPUs"
+      },
+      {
+        "device": "tecno",
+        "case": "stale or mismatched MIDR",
+        "error": "tecno: reviewed CPU MIDR mismatch: 4"
+      },
+      {
+        "device": "tecno",
+        "case": "selected CPU offline",
+        "error": "tecno: affinity must use online, reviewed performance CPUs only"
+      },
+      {
+        "device": "tecno",
+        "case": "unreviewed little or lower-frequency core",
+        "error": "tecno: affinity must use online, reviewed performance CPUs only"
+      },
+      {
+        "device": "pixel11",
+        "case": "missing reviewed core identities",
+        "error": "pixel11: provide at least four reviewed performance_cpus with MIDRs"
+      },
+      {
+        "device": "pixel11",
+        "case": "negative affinity mask",
+        "error": "Affinity mask must contain the requested number of CPUs"
+      },
+      {
+        "device": "pixel11",
+        "case": "one CPU for four threads",
+        "error": "Affinity mask must contain the requested number of CPUs"
+      },
+      {
+        "device": "pixel11",
+        "case": "stale or mismatched MIDR",
+        "error": "pixel11: reviewed CPU MIDR mismatch: 2"
+      },
+      {
+        "device": "pixel11",
+        "case": "selected CPU offline",
+        "error": "pixel11: affinity must use online, reviewed performance CPUs only"
+      },
+      {
+        "device": "pixel11",
+        "case": "unreviewed little or lower-frequency core",
+        "error": "pixel11: affinity must use online, reviewed performance CPUs only"
+      },
+      {
+        "device": "samsung",
+        "case": "missing reviewed core identities",
+        "error": "samsung: provide at least four reviewed performance_cpus with MIDRs"
+      },
+      {
+        "device": "samsung",
+        "case": "negative affinity mask",
+        "error": "Affinity mask must contain the requested number of CPUs"
+      },
+      {
+        "device": "samsung",
+        "case": "one CPU for four threads",
+        "error": "Affinity mask must contain the requested number of CPUs"
+      },
+      {
+        "device": "samsung",
+        "case": "stale or mismatched MIDR",
+        "error": "samsung: reviewed CPU MIDR mismatch: 0"
+      },
+      {
+        "device": "samsung",
+        "case": "selected CPU offline",
+        "error": "samsung: affinity must use online, reviewed performance CPUs only"
+      }
+    ]
+  }
+}

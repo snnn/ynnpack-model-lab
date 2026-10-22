@@ -2,7 +2,8 @@
 # SPDX-License-Identifier: Apache-2.0
 """Deploy and validate FP32 vision models, then compare Android CPU runners.
 
-Devices JSON is a local-only list of {label, serial, masks: {"1": hex, "4": hex}}.
+Devices JSON is a local-only list with label, serial, masks ("1"/"4" -> hex),
+and performance_cpus (CPU ID -> expected MIDR hex) for reviewed non-little cores.
 Choose masks from device topology. All device processes execute sequentially.
 Raw captures belong under ignored out/. No CPU governor or clock is changed.
 """
@@ -49,14 +50,66 @@ def telemetry(device):
                 sensor_returncode=sensors.returncode)
 
 
+def cpu_list(value):
+    cpus = set()
+    for group in value.split(','):
+        first, _, last = group.partition('-')
+        cpus.update(range(int(first), int(last or first) + 1))
+    return cpus
+
+
+def cpu_topology(device):
+    fields = ('regs/identification/midr_el1', 'cpu_capacity', 'topology/cluster_id',
+              'topology/core_id', 'topology/thread_siblings_list',
+              'cpufreq/related_cpus', 'cpufreq/cpuinfo_max_freq')
+    captured = checked_shell(device, '\n'.join([
+        'for p in /sys/devices/system/cpu/cpu[0-9]*; do',
+        'echo "cpu ${p##*cpu}"',
+        'for f in ' + ' '.join(fields) + '; do',
+        'printf "%s " "$f"',
+        'if [ -r "$p/$f" ]; then cat "$p/$f"; else echo unavailable; fi',
+        'done; done',
+    ]))
+    topology = {}
+    for line in captured.splitlines():
+        key, _, value = line.partition(' ')
+        if key == 'cpu':
+            record = topology.setdefault(value, {})
+        else:
+            record[key.rsplit('/', 1)[-1]] = value if value != 'unavailable' else None
+    return topology
+
+
+def verify_affinity(device, online_cpus, topology):
+    # Core classes must be reviewed from MIDR/vendor evidence, not frequency alone.
+    reviewed = device.get('performance_cpus')
+    if not isinstance(reviewed, dict) or len(reviewed) < 4:
+        raise ValueError(device['label'] + ': provide at least four reviewed performance_cpus with MIDRs')
+    for cpu, expected in reviewed.items():
+        actual = topology.get(cpu, {}).get('midr_el1')
+        if not re.fullmatch(r'[0-9]+', cpu) or not actual or int(actual, 16) != int(expected, 16):
+            raise ValueError(device['label'] + ': reviewed CPU MIDR mismatch: ' + cpu)
+    for threads in ('1', '4'):
+        mask = int(device['masks'][threads], 16)
+        selected = {cpu for cpu in range(mask.bit_length()) if mask & (1 << cpu)}
+        if mask <= 0 or len(selected) != int(threads):
+            raise ValueError('Affinity mask must contain the requested number of CPUs')
+        if not selected <= cpu_list(online_cpus) or not selected <= {int(cpu) for cpu in reviewed}:
+            raise ValueError(device['label'] + ': affinity must use online, reviewed performance CPUs only')
+
+
 def identify(device):
     properties = {}
     for key in ('ro.product.model', 'ro.soc.model', 'ro.build.fingerprint',
                 'ro.build.version.release', 'ro.build.version.sdk'):
         properties[key] = checked_shell(device, 'getprop ' + key)
+    online_cpus = checked_shell(device, 'cat /sys/devices/system/cpu/online')
+    topology = cpu_topology(device)
+    verify_affinity(device, online_cpus, topology)
     return dict(label=device['label'], properties=properties, masks=device['masks'],
+                performance_cpus=device['performance_cpus'], cpu_topology=topology,
                 kernel=checked_shell(device, 'uname -r'),
-                online_cpus=checked_shell(device, 'cat /sys/devices/system/cpu/online'),
+                online_cpus=online_cpus,
                 memory=checked_shell(device, 'head -5 /proc/meminfo'),
                 storage=checked_shell(device, 'df -k /data/local/tmp'),
                 initial=telemetry(device))
@@ -172,9 +225,6 @@ def compare(args):
     for device in devices:
         if not re.fullmatch(r'[a-z0-9_-]+', device['label']):
             raise ValueError('Use a portable device label')
-        for threads in ('1', '4'):
-            if int(device['masks'][threads], 16).bit_count() != int(threads):
-                raise ValueError('Affinity mask must contain the requested number of CPUs')
     args.output.mkdir(parents=True, exist_ok=False)
     result_proto, runtime_proto = proto_readers(args)
     models = {name: model_files(name, args.tflite_root) for name in args.models}

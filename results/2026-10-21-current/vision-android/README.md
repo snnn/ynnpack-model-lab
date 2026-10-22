@@ -22,6 +22,31 @@ does not identify the responsible kernels or threading mechanism.
 | Pixel 11 | Tensor G6 | 17 | 6 / `40` | 2,3,4,5 / `3c` |
 | Samsung SM-S937U1 | SM8750 | 17 | 7 / `80` | 4,5,6,7 / `f0` |
 
+All three phones have at least four big/middle cores, and every retained
+Android timing, validation and delegation command excludes little cores.
+The original mask selection checked frequency policies. A subsequent
+[per-core audit](cpu-topology.json) verified MIDR, `/proc/cpuinfo`, scheduler
+capacity and topology on the same firmware:
+
+| Device | Four-thread core types | Other cores and exclusion |
+| --- | --- | --- |
+| TECNO LJ9 | CPUs 4–7: four Cortex-A715; capacity 996/996/996/1024 | CPUs 0–3: Cortex-A510 little cores, capacity 221; excluded |
+| Pixel 11 | CPUs 2–5: four C1-Pro; capacity 800 each | CPUs 0–1: lower-clocked C1-Pro, capacity 627; excluded. CPU 6: C1-Ultra, capacity 1024; used for the primary one-thread run |
+| Samsung SM-S937U1 | CPUs 4–5: two Oryon performance cores, capacity 765; CPUs 6–7: two Oryon prime cores, capacity 1024 | CPUs 0–3 are also Oryon performance cores; no little-core cluster |
+
+Core names follow the [Linux MIDR definitions](https://github.com/torvalds/linux/blob/master/arch/arm64/include/asm/cputype.h).
+Arm identifies [Cortex-A715](https://www.arm.com/products/silicon-ip-cpu/cortex-a/cortex-a715)
+and [C1-Pro](https://www.arm.com/products/silicon-ip-cpu/c1-pro) as big cores;
+Qualcomm documents the [Oryon prime/performance design](https://www.qualcomm.com/content/dam/qcomm-martech/dm-assets/documents/Snapdragon-8-Elite-Platform-Product-Brief.pdf).
+Capacity is a scheduler value, not a measured speed ratio. In particular,
+Pixel's lowest-frequency cluster is not Cortex-A510/A520-class little hardware;
+it is excluded anyway. The same-cluster follow-up uses only C1-Pro CPUs 2–5.
+Separate ResNet18 diagnostics observed all four threads of both engines
+restricted to the expected masks on every phone. Those monitored runs are
+affinity checks, not latency results. The audit confirms the existing masks,
+so it does not replace any measured values. The reusable harness now requires
+a reviewed CPU-to-MIDR map and verifies it before executing models.
+
 Each model takes one FP32 NCHW image `[1,3,224,224]` and returns 1,000
 logits. Model, parameter and fixture hashes match the earlier host screen.
 Every deployed file was hash checked on each phone.

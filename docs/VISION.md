@@ -127,10 +127,34 @@ Review that source when changing LiteRT versions. STL implementations can
 produce different sequences. The generator requires a new output file.
 
 Create an ignored devices JSON file containing a list of objects with `label`,
-`serial`, and `masks` fields. `masks` maps `"1"` and `"4"` to hexadecimal CPU
-masks containing one and four CPUs. Check each phone's online CPUs and
-`/sys/devices/system/cpu/cpufreq/policy*/related_cpus`; do not reuse another
-phone's masks. Check free storage and memory before deployment.
+`serial`, `masks`, and `performance_cpus` fields. `masks` maps `"1"` and `"4"`
+to hexadecimal CPU masks containing one and four CPUs. `performance_cpus`
+maps reviewed big/middle CPU IDs to their expected hexadecimal MIDR values.
+For the measured TECNO, for example:
+
+```json
+{
+  "label": "tecno",
+  "serial": "${ANDROID_SERIAL}",
+  "masks": {"1": "80", "4": "f0"},
+  "performance_cpus": {
+    "4": "0x411fd4d0", "5": "0x411fd4d0",
+    "6": "0x411fd4d0", "7": "0x411fd4d0"
+  }
+}
+```
+
+Substitute the serial in this JSON; the harness does not expand variables.
+Check `/sys/devices/system/cpu/cpu*/regs/identification/midr_el1`,
+`cpu_capacity`, and `cpufreq/related_cpus` against CPU/vendor documentation
+before approving that map. Frequency alone does not identify a little core.
+Exclude little cores from both timing and validation masks. The harness records
+per-core topology, checks expected MIDRs, and rejects masks outside the reviewed
+set or online CPUs before deploying or running models. This is an explicit
+reviewed map, not automatic core-class detection. Do not reuse another phone's
+map; check free storage and memory before deployment. The retained
+[topology audit](../results/2026-10-21-current/vision-android/cpu-topology.json)
+contains the three measured devices' core identities and reviewed maps.
 
 ```sh
 python tools/compare_vision_android.py \

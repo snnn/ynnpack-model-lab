@@ -979,6 +979,6 @@
     "--cooldown",
     "10"
   ],
-  "published_runner_source_sha256": "28b4be120368dbc8626fffaba5d437b9814767da0677cb34ab0108441a2694ed",
-  "runner_source_note": "The published runner differs from the measured source only by removal of trailing blank lines."
+  "published_runner_source_sha256": "540ddb8e556ab14d44b373caa2137f81aaaebabddda20bc65a61d2e2d0ff359a",
+  "runner_source_note": "The measured source is retained by runner_source_sha256. After measurement, the published runner removed trailing blank lines and added a reviewed CPU-to-MIDR preflight with per-core topology capture. The original latency and correctness records were not regenerated; cpu-topology.json records the later hardware and command audit."
 }

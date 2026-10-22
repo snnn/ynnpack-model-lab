@@ -8,6 +8,11 @@ tested binaries; the [build audit](provenance.json) verifies this. A separate
 follow-up repeats ResNet18 with one thread on CPU 2 and four threads on
 CPUs 2–5, all in the same CPU-frequency policy.
 
+The later [MIDR/topology audit](cpu-topology.json) identifies CPUs 2–5 as
+C1-Pro big cores (capacity 800 each) and CPU 6 as C1-Ultra. Neither campaign
+includes the lower-clocked CPUs 0–1. The slowdown therefore also persists
+when all four selected cores are verified big/middle cores.
+
 Binaries, model, inputs, thread counts, two engine-order rounds, three
 warmups and ten timed invocations match the primary screen. The one-thread
 affinity changes from CPU 6 (`40`) to CPU 2 (`4`); four threads retain
