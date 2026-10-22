@@ -10,7 +10,7 @@ directly; only the SentencePiece engine crosses its own small FFI. This is a res
 
 ## Build and run
 
-Use CMake and Rust/Cargo 1.87+. Bootstrap fetches the locked crates; CMake builds
+Use CMake and Rust/Cargo 1.97+. Bootstrap fetches the locked crates; CMake builds
 with frozen offline Cargo. Rust is required even when tokenizers are disabled.
 An existing hash-verified dependency directory can be selected with `LAB_DEPS`,
 and `LAB_CARGO_HOME` selects an already populated Cargo cache.
