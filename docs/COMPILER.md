@@ -118,6 +118,14 @@ must still pass every numerical check. Other failures fail the suite. Omit the
 flag to treat every backend failure as fatal. CTest uses the explicit baseline
 allowance; read its reported known-failure count as well as its exit status.
 
+The `blockwise_fc` CTest checks group-32 INT4 arithmetic under native and
+restricted CPU feature masks. The runtime uses unsigned VNNI dots when available,
+signed AVX2/NEON dots with equivalent activation zero-point recentering, or a
+portable dot with its own weight packing. AMX tiles are excluded because this
+adapter does not provide their padded row buffers. The test also checks AMX
+selection without executing unsupported instructions. CI records `lscpu` so
+kernel dispatch failures can be tied to the runner's actual capabilities.
+
 `ynn-plan compare LEFT.ynn RIGHT.ynn` expands native functions and compares
 normalized construction, public contracts, constants, state, and arithmetic. It
 ignores local value names, asset locations, and profiling labels. Different valid

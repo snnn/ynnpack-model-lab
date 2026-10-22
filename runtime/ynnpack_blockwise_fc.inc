@@ -2,7 +2,10 @@
 // Included inside lab_ynn::Graph. Per-row asymmetric A8, group-32 W4.
 // Packed weights stay packed; only a bounded tile is expanded for native dots.
   void BlockwiseFullyConnected(uint32_t input, uint32_t weight, uint32_t scales,
-                               uint32_t zero, uint32_t out, int64_t group) {
+                               uint32_t zero, uint32_t out, int64_t group,
+                               uint64_t dot_arch_flags = UINT64_MAX) {
+    // Permit restricted-ISA experiments, never instructions unsupported here.
+    dot_arch_flags &= ynn::get_supported_arch_flags();
     weight = ConstantSource(weight);
     scales = ConstantSource(scales);
     zero = ConstantSource(zero);
@@ -24,7 +27,7 @@
     node.op = ynn_node::opaque{"blockwise_fc_a8_w4_native_dot"};
     node.inputs = {input, weight, scales, zero};
     node.outputs = {out};
-    node.create = [shape](const ynn_node& node, ynn_runtime& runtime) {
+    node.create = [shape, dot_arch_flags](const ynn_node& node, ynn_runtime& runtime) {
       auto& y = runtime.value(node.outputs[0]);
       y.make_buffer(runtime, sizeof(float));
       auto dims = runtime.globals.make_dims(2);
@@ -38,7 +41,7 @@
       }
       slinky::call_stmt::attributes attrs;
       attrs.name = "blockwise_fc_a8_w4_native_dot";
-      auto callback = [](const slinky::call_stmt* call,
+      auto callback = [dot_arch_flags](const slinky::call_stmt* call,
                          slinky::eval_context& context) -> slinky::index_t {
         const auto& x = context.lookup_buffer(call->inputs[0])->cast<const float>();
         const auto& w = context.lookup_buffer(call->inputs[1])->cast<const uint8_t>();
@@ -48,12 +51,17 @@
         const size_t n = slinky::evaluate(call->scalars[0], context);
         const size_t k = slinky::evaluate(call->scalars[1], context);
         const size_t rows = slinky::evaluate(call->scalars[2], context);
-        constexpr size_t reduction = 32, channels = 128, max_rows = 8;
+        constexpr size_t reduction = detail::BlockwiseDot::kReduction;
+        constexpr size_t channels = detail::BlockwiseDot::kChannels;
+        constexpr size_t max_rows = detail::BlockwiseDot::kRows;
         if (!n || !k || k % 32 || x.dim(0).extent() != k || y.dim(0).extent() != n ||
             w.dim(0).extent() != n * k / 2 || w.dim(0).stride() != 1 || w.dim(0).min() != 0 ||
             scales.dim(0).extent() != k / 32 ||
             scales.dim(1).extent() != n || zero(0, 0) != 0) return 1;
         if (!rows) return 0;
+        const auto dot = detail::SelectBlockwiseDot(rows, n, dot_arch_flags);
+        const auto& kernel = dot.kernel;
+        const size_t tile_k = kernel.tile_k;
         const uint8_t* packed_codes = &w(0);
         // Activation storage is proportional to the input, never the weights.
         std::vector<uint8_t> a(rows * k);
@@ -72,19 +80,11 @@
           a_zero[m] = int32_t(std::clamp(-lo * inverse, 0.0f, 255.0f) + 0.5f);
           const float quant_inverse = 1.0f / a_scale[m];
           for (size_t r = 0; r < k; ++r)
-            a[m * k + r] = uint8_t(std::clamp(
-                std::nearbyint(x(r, m) * quant_inverse) + float(a_zero[m]), 0.0f, 255.0f));
+            a[m * k + r] = uint8_t(int32_t(std::clamp(
+                std::nearbyint(x(r, m) * quant_inverse) + float(a_zero[m]), 0.0f, 255.0f)) -
+                dot.activation_shift);
+          a_zero[m] -= dot.activation_shift;
         }
-        const auto kernel = ynn::get_dot_kernel(
-            {ynn_type_uint8, ynn_type_int8, ynn_type_int32},
-#if __has_include("ynnpack/kernels/dot/cost_model/cost_model.h")
-            ynn::get_dot_cost_models(),
-#endif
-            {std::min(rows, max_rows), std::min(n, channels), reduction, 1, 1},
-            {0, 4}, 0, false);
-        if (!kernel.kernel || kernel.tile_k != 4 || kernel.tile_m != 1 ||
-            kernel.block_m <= 0 || kernel.tile_n <= 0 || channels % kernel.tile_n)
-          throw std::runtime_error("YNNPACK has no compatible U8/I8 group-32 dot kernel");
         const size_t block_m = std::min(max_rows, size_t(kernel.block_m));
         auto work = [&](size_t task) {
           alignas(64) int8_t b_tile[reduction * channels];
@@ -113,16 +113,19 @@
                 constexpr uint64_t sum_lanes = UINT64_C(0x0101010101010101);
                 sums[c] += int((codes * sum_lanes) >> 56) - 16 * int(((signs >> 3) * sum_lanes) >> 56);
                 codes |= signs * 30;
-                // Canonical kernel tiles group four adjacent K codes per N.
-                for (size_t j = 0; j < 8; ++j)
-                  b_tile[((r + j) / 4) * channels * 4 + c * 4 + j % 4] =
-                      int8_t(uint8_t(codes >> (8 * j)));
+                // Pack the K interleave required by the selected kernel.
+                for (size_t j = 0; j < 8; ++j) {
+                  const size_t offset = tile_k == 4
+                      ? ((r + j) / 4) * channels * 4 + c * 4 + j % 4
+                      : (r + j) * channels + c;
+                  b_tile[offset] = int8_t(uint8_t(codes >> (8 * j)));
+                }
               }
             }
             for (size_t first_m = 0; first_m < rows; first_m += block_m) {
               const size_t height = std::min(block_m, rows - first_m);
               // B's reduction stride is per logical K element. The kernel
-              // multiplies it by tile_k=4 to advance one packed K quartet.
+              // multiplies it by tile_k to advance one packed K tile.
               kernel.kernel(height, width, 1, 1, reduction,
                   k, 0, 0, a.data() + first_m * k + g * reduction,
                   0, 0, channels, b_tile, channels * sizeof(int32_t), nullptr,
