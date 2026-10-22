@@ -115,7 +115,12 @@ capacity increase adds 175 MiB.
 
 The [model guides](README.md#run-workloads) provide single-process commands.
 Use `taskset` before the executable for explicit affinity; choose masks from the actual device topology,
-not from another phone. Keep CPUs awake, record temperatures/battery and governor
+not from another phone. On heterogeneous CPUs, use verified big/middle cores
+only for all benchmark and validation processes. Check per-core MIDR/CPU part,
+scheduler capacity and frequency-policy membership; clock speed alone does not
+identify the core class. If fewer than four suitable cores exist, reduce the
+thread count and label that configuration rather than including little cores.
+Keep CPUs awake, record temperatures/battery and governor
 state, allow cooldown between processes, and run only one benchmark per device.
 Do not compare a cold/throttled trial with a warm high-frequency one.
 

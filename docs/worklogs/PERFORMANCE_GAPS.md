@@ -19,6 +19,19 @@ The fresh host vision screen reproduces a MobileNetV2 execution gap: about
 45.9 ms versus 4.75 ms at one thread and 16.0 ms versus 5.29 ms at four,
 using the paired FP32 controls. All independent output fixtures pass. These
 measurements do not yet attribute the gap to selected depthwise or other kernels.
+The [native Android screen](../../results/2026-10-21-current/vision-android/README.md)
+reproduces the MobileNetV2 gap on TECNO LJ9, Pixel 11 and Samsung SM-S937U1:
+four-thread YNNPACK/LiteRT latency ratios are 6.51, 7.49 and 5.50. It uses
+LiteRT's official `benchmark_model_main` entry point. All 216 fixture checks
+pass. Pixel 11's YNNPACK ResNet variants also take longer with four threads
+than with one on the prime core; SME/SME2 kernels are disabled. The exact
+affinity, build audit, repeated timings and frequency/thermal snapshots are
+retained; this does not yet attribute the slowdown to a scheduler or kernel.
+The [same-cluster follow-up](../../results/2026-10-21-current/vision-android/pixel11-same-cluster.md)
+reproduces slower YNNPACK ResNet18 with four threads (170.1 ms) than one
+(97.0 ms) on the same Pixel cluster. LiteRT improves from 75.7 to 20.3 ms.
+Core choice alone does not explain the recorded slowdown; further attribution
+requires profiling, and the SME-disabled build remains the measured scope.
 Qwen3.5 INT4-MLP is also much slower than the other tested profiles; its numerical
 gates remain unresolved. See the [current baseline](../../results/2026-10-21-current/README.md).
 
@@ -40,7 +53,8 @@ unprofiled HF/INT4-MLP or ARM gaps. See the
 | Are low-bit decode kernels selected appropriately on ARM? | Use the reusable one-row benchmark with streaming working sets, then full models. [Oryon evidence](../../results/2026-10-05-oryon-dot-selection/README.md). | Record actual selected kernels, compatible packing and matched output checks. A microbenchmark win alone is insufficient. |
 | Where do setup time and memory go? | Use separate `--report_memory` runs and setup profiles; both phases currently prepare weights independently. | Attribute source residency, packed weights, KV and scratch without double counting. Separate setup from warm execution and record cache policy in comparisons. |
 | Does graph preparation still require excessive stack? | [E4B reproduction](../../results/e4b_2026-10-02/preparation-stack-overflow.txt). | Prepare the affected graph with bounded stack use. A larger execution-thread stack is a workaround, not closure. |
-| Which vision operators explain execution/setup gaps? | Rerun `tools/compare_vision.py` with matching FP32 assets; profile MobileNetV2 depthwise, ResNet convolution and ResNeXt preparation separately. | Independent output checks and fresh one/four-thread measurements with selected-kernel evidence. |
+| Which vision operators explain execution/setup gaps? | Use the [native Android comparison](../VISION.md#android-comparison-with-the-native-litert-benchmark) with matching FP32 assets; profile MobileNetV2 depthwise, ResNet convolution and ResNeXt preparation separately. | Independent output checks and fresh one/four-thread measurements with selected-kernel evidence. |
+| How much do remaining ResNet18 layout conversions cost? | The [graph audit](../../results/2026-10-21-current/vision-android/README.md#resnet18-graph-layout-comparison) finds ten YNN transpose nodes versus one in both TFLite files: eight extra activation transposes surround padding boundaries. The vision export leaves the padding-aware global layout pass disabled. | Regenerate with validated layout cleanup, verify logits, and compare paired one/four-thread runs. Graph counts alone do not attribute runtime cost or Pixel's threading slowdown. |
 | Can ordinary tensor graphs compete with custom recurrence? | [Reusable step harness](../RECURRENT_STEP_EXPERIMENT.md), [layout/chunk evidence](../../results/2026-10-17-recurrent-followup/README.md). | Independent FP64 state checks and stable paired results against the same controls; preserve allocator and reassociation labels. |
 
 No new optimization is implied by this list. Close an issue only with evidence

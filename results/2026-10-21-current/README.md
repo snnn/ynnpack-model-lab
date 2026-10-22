@@ -15,8 +15,14 @@ model-quality qualification. Existing numerical limitations remain in the
 - Host Gemma E2B/E4B and the initial TECNO/Pixel 8 E2B runs pass the paired
   capacity timing check. The Samsung extension flags capacity sensitivity. State
   comparisons and their exact scope are retained separately.
-- MobileNetV2 retains a substantial warm execution gap against the available
-  FP32 LiteRT/XNNPACK control despite passing independent output fixtures.
+- MobileNetV2 retains a substantial warm execution gap on all three tested
+  Android phones: four-thread YNNPACK/LiteRT latency ratios are 5.50–7.49 with
+  the native LiteRT/XNNPACK control. All independent output fixtures pass.
+- Pixel 11's YNNPACK ResNet runs are slower at four threads than on the
+  single prime core. A [same-cluster follow-up](vision-android/pixel11-same-cluster.md)
+  reproduces the ResNet18 slowdown: 97 ms with one thread versus 170 ms with
+  four. SME/SME2 kernels are disabled in these binaries; the cause remains
+  unprofiled.
 - Qwen3.5 INT4-MLP is very slow in this setup and remains numerically experimental.
   The refresh does not qualify it as a replacement for another profile.
 
@@ -53,9 +59,11 @@ telemetry snapshots were collected; inaccessible sensor readings remain
 unknown. Host telemetry began after the initial Gemma primary runs, so those
 runs lack temperature snapshots. Small differences are not demonstrated gains.
 
-Host Release uses Clang 22.1.8 and Rust 1.99.0; Android uses NDK r28c,
+Host Release uses Clang 22.1.8 and Rust 1.99.0; lab Android runners use NDK r28c,
 arm64-v8a/API 28/static libc++. Native runner/adapter translation units use
 `-O1`; Rust uses Cargo release, and backend kernels have their own flags. Floating-point contraction remains controlled.
+The native LiteRT vision control targets API 35; its separate build provenance
+is in the [Android vision report](vision-android/README.md).
 HF profiles use a separate BF16-patched dependency build; default pins were not
 replaced. [Identities](identities.json) record exact binaries, plans, patches and
 source hashes. [Baseline identities](baseline-identities.json) preserve the exact
@@ -177,7 +185,62 @@ These profiles differ in arithmetic and KV policy; see the numerical comparisons
 | hf_static_int8_published_kv_t4 / hf-screen | 1,038.16 | 34.51 | 1,015.20 | 32.64 | 4,804.01 |
 
 
-### Vision control measurements
+### Vision measurements on Android (native LiteRT)
+
+All eight FP32 classifiers were tested on TECNO LJ9, Pixel 11 and Samsung
+SM-S937U1. The LiteRT/XNNPACK baseline uses `benchmark_model_main` from
+`litert/tools`, built as `//litert/tools:benchmark_model`; inference does not
+use a Python wrapper. Each engine uses the same synthetic input and CPU mask.
+
+Four threads below. Values are mean warm invocation milliseconds from two
+paired rounds, each with three warmups and ten measured invocations. The
+ratio is YNNPACK latency divided by LiteRT/XNNPACK latency.
+
+| Device | Model | YNN ms | LiteRT/XNNPACK ms | Latency ratio |
+| --- | --- | ---: | ---: | ---: |
+| TECNO LJ9 | resnet18 | 57.701 | 23.534 | 2.45 |
+| TECNO LJ9 | resnet34 | 103.929 | 47.100 | 2.21 |
+| TECNO LJ9 | resnet50 | 100.220 | 56.138 | 1.79 |
+| TECNO LJ9 | resnet101 | 182.587 | 102.887 | 1.77 |
+| TECNO LJ9 | resnet152 | 266.946 | 148.857 | 1.79 |
+| TECNO LJ9 | resnext50_32x4d | 91.349 | 67.043 | 1.36 |
+| TECNO LJ9 | wide_resnet50_2 | 260.110 | 171.968 | 1.51 |
+| TECNO LJ9 | mobilenet_v2 | 33.618 | 5.165 | 6.51 |
+| Pixel 11 | resnet18 | 163.749 | 20.319 | 8.06 |
+| Pixel 11 | resnet34 | 178.831 | 38.895 | 4.60 |
+| Pixel 11 | resnet50 | 130.399 | 45.552 | 2.86 |
+| Pixel 11 | resnet101 | 320.870 | 84.990 | 3.78 |
+| Pixel 11 | resnet152 | 494.992 | 123.735 | 4.00 |
+| Pixel 11 | resnext50_32x4d | 83.564 | 55.082 | 1.52 |
+| Pixel 11 | wide_resnet50_2 | 216.225 | 137.947 | 1.57 |
+| Pixel 11 | mobilenet_v2 | 33.821 | 4.515 | 7.49 |
+| Samsung SM-S937U1 | resnet18 | 28.851 | 13.672 | 2.11 |
+| Samsung SM-S937U1 | resnet34 | 53.084 | 24.524 | 2.16 |
+| Samsung SM-S937U1 | resnet50 | 58.195 | 28.925 | 2.01 |
+| Samsung SM-S937U1 | resnet101 | 107.457 | 57.906 | 1.86 |
+| Samsung SM-S937U1 | resnet152 | 158.154 | 87.808 | 1.80 |
+| Samsung SM-S937U1 | resnext50_32x4d | 60.879 | 39.597 | 1.54 |
+| Samsung SM-S937U1 | wide_resnet50_2 | 145.074 | 92.394 | 1.57 |
+| Samsung SM-S937U1 | mobilenet_v2 | 30.115 | 5.473 | 5.50 |
+
+All 216 PyTorch fixture comparisons passed: YNNPACK at one/four threads and
+LiteRT’s native `run_model` at its default one CPU thread. Seven models are
+fully delegated to XNNPACK; ResNeXt retains 16 CPU concatenations between
+17 XNNPACK partitions. Its latency includes that fallback work.
+
+The [full Android report](vision-android/README.md) includes one/four-thread
+tables, device topology, frequency/thermal conditions, correctness scope,
+dependency revisions and native build commands. [Per-round observations](vision-android/observations.json)
+retain setup and first invocation separately. Clocks are unlocked and only
+two short rounds were collected; small differences are not established gains.
+The [Pixel threading follow-up](vision-android/pixel11-same-cluster.md) adds
+nine passing fixture checks and retains its later timing rounds separately.
+
+### Earlier Linux x86_64 vision screen (Python control)
+
+These earlier host measurements are retained with their original Python
+baseline. They were not rerun as part of the Android campaign. Their input
+and aggregation differ from the native Android screen.
 
 Median warm invocation milliseconds across the two paired rounds. LiteRT includes
 its Python invoke wrapper; setup and first invocation are recorded separately.
@@ -208,8 +271,10 @@ All 96 independent fixture comparisons passed. See [vision observations](vision-
 The clean-source build passes all 30 CTests, including the profiling regression.
 Four native ASan/UBSan tests pass; the updated session regression also passes
 under sanitizers. The benchmark harness has 11 passing unit tests. Native
-arithmetic/state checks pass on both phones, and all 96 vision fixture
-comparisons pass. Host reset checks are byte-identical for E2B (264 files),
+arithmetic/state checks pass on both initial phones, and all 96 host vision
+fixture comparisons pass. The native Android vision extension adds 216 passing
+fixture comparisons across TECNO, Pixel 11 and Samsung. Host reset checks are
+byte-identical for E2B (264 files),
 E4B (408), Qwen3-0.6B (472), Qwen3-4B (600), and Qwen3.5 INT8 (536).
 Each phone's E2B reset check matches 99 files. These are self-consistency and
 arithmetic checks, not a generation-quality qualification.

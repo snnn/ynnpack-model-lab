@@ -1,0 +1,188 @@
+{
+  "tecno": {
+    "timing_snapshots": 128,
+    "battery_temperature_c": [
+      24.2,
+      26.4
+    ],
+    "battery_level_percent": [
+      100,
+      100
+    ],
+    "cpu_temperature_c": null,
+    "cpu_policies": {
+      "policy0": {
+        "related_cpus": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "cpuinfo_max_freq_khz": 2200000,
+        "observed_governors": [],
+        "scaling_cur_freq_khz": [
+          480000,
+          2200000
+        ],
+        "scaling_max_freq_khz": null
+      },
+      "policy4": {
+        "related_cpus": [
+          4,
+          5,
+          6
+        ],
+        "cpuinfo_max_freq_khz": 3200000,
+        "observed_governors": [],
+        "scaling_cur_freq_khz": [
+          400000,
+          2800000
+        ],
+        "scaling_max_freq_khz": null
+      },
+      "policy7": {
+        "related_cpus": [
+          7
+        ],
+        "cpuinfo_max_freq_khz": 3350000,
+        "observed_governors": [
+          "sugov_ext"
+        ],
+        "scaling_cur_freq_khz": [
+          400000,
+          2700000
+        ],
+        "scaling_max_freq_khz": null
+      }
+    },
+    "usb_powered_all": true
+  },
+  "pixel11": {
+    "timing_snapshots": 128,
+    "battery_temperature_c": [
+      25.1,
+      26.6
+    ],
+    "battery_level_percent": [
+      70,
+      72
+    ],
+    "cpu_temperature_c": null,
+    "cpu_policies": {
+      "policy0": {
+        "related_cpus": [
+          0,
+          1
+        ],
+        "cpuinfo_max_freq_khz": 2649000,
+        "observed_governors": [
+          "sched_pixel"
+        ],
+        "scaling_cur_freq_khz": [
+          394000,
+          1632000
+        ],
+        "scaling_max_freq_khz": [
+          2649000,
+          2649000
+        ]
+      },
+      "policy2": {
+        "related_cpus": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "cpuinfo_max_freq_khz": 3379000,
+        "observed_governors": [
+          "sched_pixel"
+        ],
+        "scaling_cur_freq_khz": [
+          394000,
+          394000
+        ],
+        "scaling_max_freq_khz": [
+          3379000,
+          3379000
+        ]
+      },
+      "policy6": {
+        "related_cpus": [
+          6
+        ],
+        "cpuinfo_max_freq_khz": 4109000,
+        "observed_governors": [
+          "sched_pixel"
+        ],
+        "scaling_cur_freq_khz": [
+          788000,
+          788000
+        ],
+        "scaling_max_freq_khz": [
+          3033000,
+          3033000
+        ]
+      }
+    },
+    "usb_powered_all": true
+  },
+  "samsung": {
+    "timing_snapshots": 128,
+    "battery_temperature_c": [
+      25.1,
+      29.6
+    ],
+    "battery_level_percent": [
+      100,
+      100
+    ],
+    "cpu_temperature_c": [
+      28.3,
+      88.0
+    ],
+    "cpu_policies": {
+      "policy0": {
+        "related_cpus": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "cpuinfo_max_freq_khz": 3532800,
+        "observed_governors": [
+          "walt"
+        ],
+        "scaling_cur_freq_khz": [
+          748800,
+          3532800
+        ],
+        "scaling_max_freq_khz": [
+          3532800,
+          3532800
+        ]
+      },
+      "policy6": {
+        "related_cpus": [
+          6,
+          7
+        ],
+        "cpuinfo_max_freq_khz": 4473600,
+        "observed_governors": [
+          "walt"
+        ],
+        "scaling_cur_freq_khz": [
+          1017600,
+          4473600
+        ],
+        "scaling_max_freq_khz": [
+          4473600,
+          4473600
+        ]
+      }
+    },
+    "usb_powered_all": true
+  }
+}

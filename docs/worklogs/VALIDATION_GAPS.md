@@ -27,7 +27,15 @@ are missing coverage, not evidence of parity or a performance advantage.
 The October 21 clean staged-source build passes all 30 CTests. Fresh full-model
 reset checks are byte-identical for E2B/E4B, Qwen3-0.6B/4B and Qwen3.5 INT8
 on the host, and E2B on the initial TECNO/Pixel 8 phones. The extension records
-its reset and capacity checks separately. All 96 vision fixture comparisons pass.
+its reset and capacity checks separately. All 96 host vision fixture comparisons pass.
+The [native Android vision screen](../../results/2026-10-21-current/vision-android/README.md)
+adds 216 passing comparisons on TECNO LJ9, Pixel 11 and Samsung SM-S937U1:
+YNNPACK at one/four threads and LiteRT's official `run_model` at one thread,
+against the same three PyTorch fixtures per model. LiteRT four-thread timing
+does not include a separate output-dump check. Seven models fully delegate to
+XNNPACK; ResNeXt retains 16 CPU concatenations between 17 XNNPACK partitions.
+The separate Pixel 11 same-cluster ResNet18 follow-up adds nine passing fixture
+checks with the same binaries and assets.
 These checks establish the recorded state/arithmetic scope, not model-quality
 parity. Qwen3-0.6B Android preparation fails before correctness execution.
 See the [current records](../../results/2026-10-21-current/README.md).

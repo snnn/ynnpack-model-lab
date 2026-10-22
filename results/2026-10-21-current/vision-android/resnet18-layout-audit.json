@@ -1,0 +1,539 @@
+{
+  "inspected_utc": "2026-10-22T06:02:48.989571+00:00",
+  "model": "resnet18",
+  "scope": "Post-campaign serialized-graph inspection. No model changes, new latency measurements or runtime-copy attribution.",
+  "method": "TFLite FlatBuffers parsed with ai_edge_litert.schema_py_generated, including all subgraphs and constant transpose permutations; YNN typed operation declarations counted in the checked-in plan. Artifact hashes bind the inspected files.",
+  "artifacts": [
+    {
+      "label": "huggingface_current",
+      "sha256": "148178c94efcb23dfabeb5d4de512062fb88f5037c5b895d75b580c9c91e9b5a",
+      "bytes": 46750560,
+      "repository": "litert-community/resnet18",
+      "revision": "7eabef429f15b4fcd4db3e225d81bd0fd7860c4f",
+      "file": "resnet18.tflite",
+      "url": "https://huggingface.co/litert-community/resnet18/blob/7eabef429f15b4fcd4db3e225d81bd0fd7860c4f/resnet18.tflite",
+      "used_for_campaign_timing": false,
+      "subgraphs": [
+        {
+          "index": 0,
+          "inputs": [
+            {
+              "id": 85,
+              "name": "g0::x",
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "type": 0,
+              "buffer": 0
+            }
+          ],
+          "outputs": [
+            {
+              "id": 41,
+              "name": "g0::linear",
+              "shape": [
+                1,
+                1000
+              ],
+              "type": 0,
+              "buffer": 0
+            }
+          ],
+          "operator_count": 37,
+          "op_counts": {
+            "TRANSPOSE": 1,
+            "PAD": 5,
+            "CONV_2D": 20,
+            "MAX_POOL_2D": 1,
+            "ADD": 8,
+            "AVERAGE_POOL_2D": 1,
+            "FULLY_CONNECTED": 1
+          },
+          "transposes": [
+            {
+              "index": 0,
+              "kind": "TRANSPOSE",
+              "inputs": [
+                {
+                  "id": 85,
+                  "name": "g0::x",
+                  "shape": [
+                    1,
+                    3,
+                    224,
+                    224
+                  ],
+                  "type": 0,
+                  "buffer": 0
+                },
+                {
+                  "id": 31,
+                  "name": "g0::__perm_conv2d_native_nchw_to_nhwc",
+                  "shape": [
+                    4
+                  ],
+                  "type": 2,
+                  "buffer": 21
+                }
+              ],
+              "outputs": [
+                {
+                  "id": 84,
+                  "name": "g0::layout.transpose",
+                  "shape": [
+                    1,
+                    224,
+                    224,
+                    3
+                  ],
+                  "type": 0,
+                  "buffer": 0
+                }
+              ],
+              "permutation": [
+                0,
+                2,
+                3,
+                1
+              ]
+            }
+          ],
+          "padding_input_shapes": [
+            [
+              1,
+              224,
+              224,
+              3
+            ],
+            [
+              1,
+              112,
+              112,
+              64
+            ],
+            [
+              1,
+              56,
+              56,
+              64
+            ],
+            [
+              1,
+              28,
+              28,
+              128
+            ],
+            [
+              1,
+              14,
+              14,
+              256
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "benchmark_control",
+      "sha256": "a80c59cbbc2f3ad7881b8096a79028ebfa93ef91060733ebbdad1598535317ab",
+      "bytes": 46754480,
+      "used_for_campaign_timing": true,
+      "subgraphs": [
+        {
+          "index": 0,
+          "inputs": [
+            {
+              "id": 104,
+              "name": "g0::x",
+              "shape": [
+                1,
+                3,
+                224,
+                224
+              ],
+              "type": 0,
+              "buffer": 0
+            }
+          ],
+          "outputs": [
+            {
+              "id": 76,
+              "name": "g0::linear",
+              "shape": [
+                1,
+                1000
+              ],
+              "type": 0,
+              "buffer": 0
+            }
+          ],
+          "operator_count": 55,
+          "op_counts": {
+            "TRANSPOSE": 1,
+            "PAD": 5,
+            "CONV_2D": 20,
+            "RELU": 17,
+            "MAX_POOL_2D": 1,
+            "ADD": 8,
+            "AVERAGE_POOL_2D": 1,
+            "RESHAPE": 1,
+            "FULLY_CONNECTED": 1
+          },
+          "transposes": [
+            {
+              "index": 0,
+              "kind": "TRANSPOSE",
+              "inputs": [
+                {
+                  "id": 104,
+                  "name": "g0::x",
+                  "shape": [
+                    1,
+                    3,
+                    224,
+                    224
+                  ],
+                  "type": 0,
+                  "buffer": 0
+                },
+                {
+                  "id": 16,
+                  "name": "g0::__tflite/op331/perm",
+                  "shape": [
+                    4
+                  ],
+                  "type": 2,
+                  "buffer": 1
+                }
+              ],
+              "outputs": [
+                {
+                  "id": 103,
+                  "name": "g0::tp1",
+                  "shape": [
+                    1,
+                    224,
+                    224,
+                    3
+                  ],
+                  "type": 0,
+                  "buffer": 0
+                }
+              ],
+              "permutation": [
+                0,
+                2,
+                3,
+                1
+              ]
+            }
+          ],
+          "padding_input_shapes": [
+            [
+              1,
+              224,
+              224,
+              3
+            ],
+            [
+              1,
+              112,
+              112,
+              64
+            ],
+            [
+              1,
+              56,
+              56,
+              64
+            ],
+            [
+              1,
+              28,
+              28,
+              128
+            ],
+            [
+              1,
+              14,
+              14,
+              256
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "label": "ynnpack_campaign",
+      "file": "models/vision/resnet18/generated/graph.ynn",
+      "sha256": "1ae363600be3414d7e4e1fcaf6b69d3192c517f6319bcc4df0c09abf19c6c355",
+      "bytes": 52197,
+      "used_for_campaign_timing": true,
+      "op_counts": {
+        "pad": 5,
+        "transpose": 10,
+        "conv2d": 20,
+        "mul": 20,
+        "add": 29,
+        "maximum": 17,
+        "pool2d": 2,
+        "reshape": 1,
+        "matmul": 1
+      },
+      "transposes": [
+        {
+          "line": 69,
+          "input": "conv2d_pad",
+          "output": "tmp_conv2d_native_nchw_to_nhwc",
+          "input_shape": [
+            1,
+            3,
+            230,
+            230
+          ],
+          "output_shape": [
+            1,
+            230,
+            230,
+            3
+          ],
+          "permutation": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "role": "input_layout"
+        },
+        {
+          "line": 74,
+          "input": "tmp_conv2d_native_nhwc",
+          "output": "conv2d",
+          "input_shape": [
+            1,
+            112,
+            112,
+            64
+          ],
+          "output_shape": [
+            1,
+            64,
+            112,
+            112
+          ],
+          "permutation": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "role": "internal_activation_layout"
+        },
+        {
+          "line": 79,
+          "input": "max_pool2d_padded",
+          "output": "tmp_max_pool2d_native_nchw_to_nhwc",
+          "input_shape": [
+            1,
+            64,
+            114,
+            114
+          ],
+          "output_shape": [
+            1,
+            114,
+            114,
+            64
+          ],
+          "permutation": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "role": "internal_activation_layout"
+        },
+        {
+          "line": 111,
+          "input": "__region_11_relu__4_layout",
+          "output": "relu__4",
+          "input_shape": [
+            1,
+            56,
+            56,
+            64
+          ],
+          "output_shape": [
+            1,
+            64,
+            56,
+            56
+          ],
+          "permutation": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "role": "internal_activation_layout"
+        },
+        {
+          "line": 113,
+          "input": "conv2d_5_pad",
+          "output": "tmp_conv2d_5_native_nchw_to_nhwc",
+          "input_shape": [
+            1,
+            64,
+            58,
+            58
+          ],
+          "output_shape": [
+            1,
+            58,
+            58,
+            64
+          ],
+          "permutation": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "role": "internal_activation_layout"
+        },
+        {
+          "line": 150,
+          "input": "__region_51_relu__8_layout",
+          "output": "relu__8",
+          "input_shape": [
+            1,
+            28,
+            28,
+            128
+          ],
+          "output_shape": [
+            1,
+            128,
+            28,
+            28
+          ],
+          "permutation": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "role": "internal_activation_layout"
+        },
+        {
+          "line": 152,
+          "input": "conv2d_10_pad",
+          "output": "tmp_conv2d_10_native_nchw_to_nhwc",
+          "input_shape": [
+            1,
+            128,
+            30,
+            30
+          ],
+          "output_shape": [
+            1,
+            30,
+            30,
+            128
+          ],
+          "permutation": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "role": "internal_activation_layout"
+        },
+        {
+          "line": 189,
+          "input": "__region_83_relu__12_layout",
+          "output": "relu__12",
+          "input_shape": [
+            1,
+            14,
+            14,
+            256
+          ],
+          "output_shape": [
+            1,
+            256,
+            14,
+            14
+          ],
+          "permutation": [
+            0,
+            3,
+            1,
+            2
+          ],
+          "role": "internal_activation_layout"
+        },
+        {
+          "line": 191,
+          "input": "conv2d_15_pad",
+          "output": "tmp_conv2d_15_native_nchw_to_nhwc",
+          "input_shape": [
+            1,
+            256,
+            16,
+            16
+          ],
+          "output_shape": [
+            1,
+            16,
+            16,
+            256
+          ],
+          "permutation": [
+            0,
+            2,
+            3,
+            1
+          ],
+          "role": "internal_activation_layout"
+        },
+        {
+          "line": 230,
+          "input": "p_fc_weight",
+          "output": "__ynn_fc139_weight",
+          "input_shape": [
+            1000,
+            512
+          ],
+          "output_shape": [
+            512,
+            1000
+          ],
+          "permutation": [
+            1,
+            0
+          ],
+          "role": "classifier_weight"
+        }
+      ]
+    }
+  ],
+  "interpretation": {
+    "ynn_activation_transposes": 9,
+    "ynn_classifier_weight_transposes": 1,
+    "ynn_internal_activation_transposes": 8,
+    "ynn_internal_round_trips": 4,
+    "internal_boundaries": [
+      "stem batch normalization/activation and max-pool padding",
+      "conv2d_5 padding",
+      "conv2d_10 padding",
+      "conv2d_15 padding"
+    ],
+    "export_policy": "The vision export enables local layout cleanup but leaves the padding-aware global layout pass disabled. The local pass stops at pads; the global pass can remap padding axes.",
+    "measured_latency_effect": null,
+    "limitation": "Operator counts do not identify executed copy kernels or explain the Pixel four-thread slowdown. Benchmarks compare the recorded export pipelines and runtimes, without identical optimized graph layouts."
+  }
+}
