@@ -72,7 +72,7 @@ Choose a complete matching package explicitly when comparing them.
 
 Requirements: Git, Python 3.11+, [uv](https://docs.astral.sh/uv/getting-started/installation/),
 CMake 3.20+, Ninja, a recent Clang toolchain,
-and Rust/Cargo 1.87+ for the runners and optional native tokenizers.
+and Rust/Cargo 1.97+ for the runners and optional native tokenizers.
 The initial validation used Clang 22.1.8 and an x86_64 Linux host. Downloaded
 dependency archives are checked against SHA-256 hashes in `dependencies.json`.
 
