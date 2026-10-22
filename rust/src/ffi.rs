@@ -280,11 +280,39 @@ pub(crate) fn allocator_bytes() -> Option<[u64; 3]> {
     (unsafe { lab_allocator_bytes(values.as_mut_ptr()) } != 0).then_some(values)
 }
 
+#[repr(C, align(64))]
+#[derive(Clone, Copy)]
+struct ConstantBlock([u8; 64]);
+struct AlignedConstant { blocks: Box<[ConstantBlock]>, bytes: usize }
+impl AlignedConstant {
+    fn new(bytes: &[u8]) -> Self {
+        let mut blocks = vec![ConstantBlock([0; 64]); bytes.len().div_ceil(64) + 1].into_boxed_slice();
+        // SAFETY: blocks are contiguous initialized bytes with 64-byte alignment.
+        unsafe { std::ptr::copy_nonoverlapping(bytes.as_ptr(), blocks.as_mut_ptr().cast(), bytes.len()); }
+        Self { blocks, bytes: bytes.len() }
+    }
+}
 pub(crate) struct Assets {
     ptr: NonNull<c_void>,
     verified: RefCell<HashMap<String, (usize, String)>>,
+    owned: HashMap<String, AlignedConstant>,
 }
 impl Assets {
+    pub(crate) fn add_generated(&mut self, generated: std::collections::BTreeMap<String, Vec<u8>>) -> Result<usize> {
+        use sha2::{Digest, Sha256};
+        let mut total = 0;
+        for (name, bytes) in generated {
+            if format!("{:x}.bin", Sha256::digest(&bytes)) != name {
+                return Err(Error::invalid("Generated constant identity mismatch"));
+            }
+            total += bytes.len();
+            let path = format!("@parameters/{name}");
+            if self.owned.insert(path, AlignedConstant::new(&bytes)).is_some() {
+                return Err(Error::invalid("Duplicate generated constant"));
+            }
+        }
+        Ok(total)
+    }
     pub fn open(bundle: &Path, parameters: &Path) -> Result<Rc<Self>> {
         let (bundle, parameters) = (path(bundle)?, path(parameters)?);
         let mut ptr = std::ptr::null_mut();
@@ -293,6 +321,7 @@ impl Assets {
         Ok(Rc::new(Self {
             ptr: NonNull::new(ptr).ok_or_else(|| Error::invalid("Null asset handle"))?,
             verified: RefCell::new(HashMap::new()),
+            owned: HashMap::new(),
         }))
     }
 }

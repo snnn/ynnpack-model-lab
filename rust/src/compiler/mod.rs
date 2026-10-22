@@ -23,7 +23,19 @@ pub struct CompiledPackage {
     pub assets: BTreeMap<String, Vec<u8>>,
 }
 
+#[derive(Default, Clone, Debug, Serialize)]
+pub struct CompileTimings {
+    pub validate_ms: f64,
+    pub lower_ms: f64,
+    pub emit_ms: f64,
+    pub plan_check_ms: f64,
+}
 pub fn compile(program: &Program) -> Result<CompiledPackage> {
+    compile_measured(program).map(|(package, _)| package)
+}
+pub fn compile_measured(program: &Program) -> Result<(CompiledPackage, CompileTimings)> {
+    use std::time::Instant;
+    let mut timings = CompileTimings::default();
     if program.version != 1 || program.phases.is_empty() {
         return Err(Error::invalid("Unsupported compiler request version"));
     }
@@ -35,6 +47,7 @@ pub fn compile(program: &Program) -> Result<CompiledPackage> {
     };
     let mut resources = BTreeMap::new();
     for (phase, source) in &program.phases {
+        let start = Instant::now();
         validate::graph(source, 0)?;
         if phase.is_empty()
             || !phase
@@ -91,6 +104,8 @@ pub fn compile(program: &Program) -> Result<CompiledPackage> {
                 }
             }
         }
+        timings.validate_ms += start.elapsed().as_secs_f64() * 1000.0;
+        let start = Instant::now();
         let mut source = source.clone();
         // Runtime-selected quantization parameters are part of an output's ABI.
         // Keep their tensors observable even when only the codes were authored
@@ -113,16 +128,21 @@ pub fn compile(program: &Program) -> Result<CompiledPackage> {
             }
         }
         let graph = lower::lower(&source, &program.options)?;
+        timings.lower_ms += start.elapsed().as_secs_f64() * 1000.0;
+        let start = Instant::now();
         let (text, assets, report) = emit::emit(&graph, &program.options)?;
         let mut report = report;
         report["quantization_companion_outputs"] = serde_json::to_value(companions)?;
+        timings.emit_ms += start.elapsed().as_secs_f64() * 1000.0;
+        let start = Instant::now();
         crate::plan_text::check(&text)?;
+        timings.plan_check_ms += start.elapsed().as_secs_f64() * 1000.0;
         result.plans.insert(phase.clone(), text);
         result.assets.extend(assets);
         result.report.insert(phase.clone(), report);
         result.graphs.insert(phase.clone(), graph);
     }
-    Ok(result)
+    Ok((result, timings))
 }
 
 impl CompiledPackage {

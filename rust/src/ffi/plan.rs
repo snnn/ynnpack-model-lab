@@ -52,14 +52,19 @@ extern "C" {
     ) -> i32;
 }
 impl Assets {
-    pub(super) fn verify(&self, d: &Data) -> Result<*const c_void> {
+    pub(crate) fn verify(&self, d: &Data) -> Result<*const c_void> {
         let path = string(&d.path)?;
         let mut ptr = std::ptr::null();
         // SAFETY: native owner retains this immutable mapping; exact size was
         // checked by both artifact validation and the native file mapper.
-        call(|e| unsafe {
-            lab_assets_data(self.ptr.as_ptr(), path.as_ptr(), d.bytes, &mut ptr, e)
-        })?;
+        if let Some(owned) = self.owned.get(&d.path) {
+            if owned.bytes != d.bytes { return Err(Error::invalid("Generated constant size mismatch")); }
+            ptr = owned.blocks.as_ptr().cast();
+        } else {
+            call(|e| unsafe {
+                lab_assets_data(self.ptr.as_ptr(), path.as_ptr(), d.bytes, &mut ptr, e)
+            })?;
+        }
         if ptr.is_null() {
             return Err(Error::invalid("Null constant mapping"));
         }

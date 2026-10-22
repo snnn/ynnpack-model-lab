@@ -1,6 +1,6 @@
 // Copyright 2026 @snnn. SPDX-License-Identifier: Apache-2.0
 use super::package::{self, Package, Recipe};
-use crate::{ffi, io, Error, Result};
+use crate::{ffi, runtime::{self, AssetStore, ExecutionSpec, PreparedProgram, PrepareOptions, PreparationStats}, Error, Result};
 use crate::frontend::Options;
 use std::collections::BTreeMap;
 use std::ffi::CString;
@@ -16,50 +16,49 @@ pub(super) struct StateBuffers {
 }
 enum Buffer { Float(ffi::Buffer<f32>), Int(ffi::Buffer<i32>) }
 struct Input { spec: package::Input, name: CString, buffer: Buffer }
-pub(super) struct Session {
+pub struct Session {
     // Native graphs retain storage pointers. Always destroy them first.
-    pub graphs: [ffi::PreparedGraph;2],
-    pub caches: Vec<(CString, ffi::Resource)>,
-    pub states: Vec<StateBuffers>,
+    pub(super) graphs: [ffi::PreparedGraph;2],
+    pub(crate) caches: Vec<(CString, ffi::Resource)>,
+    pub(super) states: Vec<StateBuffers>,
     inputs: [Vec<Input>;2],
     embeddings: BTreeMap<String,ffi::Embedding>,
-    pub logits: ffi::Buffer<f32>,
-    pub score_logits: Option<ffi::Buffer<f32>>,
-    pub package: Package,
-    pub position: usize,
+    pub(crate) logits: ffi::Buffer<f32>,
+    pub(crate) score_logits: Option<ffi::Buffer<f32>>,
+    pub(crate) package: ExecutionSpec,
+    pub(crate) position: usize,
+    pub preparation: PreparationStats,
     failed: bool,
     decoded: bool,
     trace_output: Option<PathBuf>,
     trace_call: usize,
 }
 impl Session {
-    pub fn load(root:&Path, bundle:&Path, parameters:&Path, package:Package, options:&Options) -> Result<Self> {
-        package.validate()?;
-        package.validate_files(root)?;
-        let assets=ffi::Assets::open(bundle,parameters)?;
-        let embeddings=package.embeddings.iter().map(|(k,e)| Ok((k.clone(),ffi::Embedding::new(assets.clone(),e,package.vocabulary)?)))
+    pub(crate) fn load(root:&Path, bundle:&Path, parameters:&Path, package:Package, options:&Options) -> Result<Self> {
+        let plans = package.plans(root)?;
+        let assets = AssetStore::open(bundle, parameters)?;
+        let prepared = runtime::prepare_plans(plans, assets, prepare_options(options, &package.spec), PreparationStats::default())?;
+        Self::from_prepared(prepared, package.spec)
+    }
+    /// Consume the fully prepared phase set. No compilation or file loading occurs here.
+    pub fn from_prepared(mut prepared: PreparedProgram, package: ExecutionSpec) -> Result<Self> {
+        if prepared.execution.as_ref() != Some(&package) {
+            return Err(Error::invalid("Session requires the execution contract validated during preparation"));
+        }
+        let prefill = prepared.graphs.remove("prefill").ok_or_else(|| Error::invalid("Missing prefill"))?;
+        let decode = prepared.graphs.remove("decode").ok_or_else(|| Error::invalid("Missing decode"))?;
+        let graphs = [prefill, decode];
+        let embeddings = package.embeddings.iter().map(|(k,e)|
+            Ok((k.clone(),ffi::Embedding::new(prepared.assets.clone(),e,package.vocabulary)?)))
             .collect::<Result<BTreeMap<_,_>>>()?;
-        let mut gs=Vec::new();
-        let mut inputs=[Vec::new(),Vec::new()];
-        for (i,phase) in ["prefill","decode"].iter().enumerate() {
-            let g=&package.graphs[*phase];
-            let mut builder=ffi::GraphBuilder::from_plan(assets.clone(),&root.join(&g.file))?;
-            if !options.trace_plan.is_empty(){builder.trace(&Path::new(&options.trace_plan).join(format!("{phase}.tsv")))?;}
-            if options.profile_execution==*phase || options.profile_execution=="all" {
-                builder.profile(&Path::new(&options.output_dir).join(format!("{phase}_execution_profile.jsonl")))?;
-            }
-            let mut graph=builder.prepare(options.num_threads)?;
-            if options.profile_execution==*phase || options.profile_execution=="all" {
-                graph.profile_step("",0,0,0,0)?;
-            }
-            gs.push(graph);
-            for spec in &g.inputs {
+        let mut inputs = [Vec::new(), Vec::new()];
+        for (i, phase) in ["prefill", "decode"].iter().enumerate() {
+            for spec in &package.graphs[*phase].inputs {
                 let n=package::count(&spec.dimensions(if i==0{package.prefill_rows}else{1},package.capacity)?)?;
                 inputs[i].push(Input{spec:spec.clone(),name:ffi::string(&spec.name)?,buffer:
                     if spec.dtype=="int32"{Buffer::Int(ffi::Buffer::new(n,0))}else{Buffer::Float(ffi::Buffer::new(n,0.0))}});
             }
         }
-        let graphs:[ffi::PreparedGraph;2]=gs.try_into().map_err(|_|Error::invalid("Phase count"))?;
         let mut caches=Vec::new();
         for r in &package.resources {
             let shape=r.shape.iter().map(|d|d.value(1,package.capacity)).collect::<Result<Vec<_>>>()?;
@@ -82,8 +81,10 @@ impl Session {
             logits:ffi::Buffer::new(package.vocabulary,0.0),
             score_logits:package.graphs["prefill"].logits.as_ref().map(|_|ffi::Buffer::new(package.prefill_rows*package.vocabulary,0.0)),
             package,position:0,failed:false,decoded:false,
-            trace_output:(!options.trace_plan.is_empty()).then(||Path::new(&options.output_dir).join("trace")),trace_call:0})
+            trace_output:prepared.trace_output,trace_call:0,preparation:prepared.stats})
     }
+    pub fn logits(&self) -> &[f32] { &self.logits }
+    pub fn position(&self) -> usize { self.position }
     /// Explicitly install a prepared larger variant of the same program.
     /// `load` prepares all phases before this call. It never grows on invoke.
     pub fn reserve_capacity(&mut self, mut next: Self) -> Result<()> {
@@ -169,4 +170,10 @@ impl Session {
         for s in &mut self.states{std::mem::swap(&mut s.current,&mut s.next);}
         self.position+=valid;self.decoded|=decode;self.failed=false;Ok(elapsed)
     }
+}
+
+pub(crate) fn prepare_options<'a>(options: &'a Options, execution: &'a ExecutionSpec) -> PrepareOptions<'a> {
+    PrepareOptions { threads: options.num_threads, execution: Some(execution),
+        trace_plan: (!options.trace_plan.is_empty()).then(|| PathBuf::from(&options.trace_plan)),
+        profile_execution: &options.profile_execution, output_dir: PathBuf::from(&options.output_dir) }
 }

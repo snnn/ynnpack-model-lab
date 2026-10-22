@@ -15,7 +15,7 @@ from ynnpack_assets.fixture_runner import run
 from compare_compilers import files
 
 
-def validate(source, destination, compiler, runner, known_failures=False, package_reference=None):
+def validate(source, destination, compiler, runner, known_failures=False, package_reference=None, runtime=False):
     shutil.copytree(source, destination)
     for compressed in destination.rglob('*.bin.gz'):
         compressed.with_suffix('').write_bytes(gzip.decompress(compressed.read_bytes()))
@@ -38,6 +38,9 @@ def validate(source, destination, compiler, runner, known_failures=False, packag
             for phase, plan in fixture['graphs'].items():
                 (compiled / (phase + '.ynn')).replace(destination / plan)
             shutil.copytree(compiled / 'parameters', destination / 'parameters', dirs_exist_ok=True)
+        if runtime:
+            fixture['program'] = name + '.program.json'
+            (destination / (name + '.fixture.json')).write_text(json.dumps(fixture) + '\n')
     return run(destination, runner, known_failures=known_failures)
 
 
@@ -48,6 +51,7 @@ def main():
     parser.add_argument('--output', type=Path)
     parser.add_argument('--fixtures', type=Path, default=ROOT / 'tests/compiler/fixtures')
     parser.add_argument('--package-reference', type=Path)
+    parser.add_argument('--runtime', action='store_true', help='Prepare semantic programs inside the fixture runner')
     parser.add_argument('--known-failures', action='store_true')
     args = parser.parse_args()
     temporary = tempfile.TemporaryDirectory(prefix='ynn-compiler-tests-') if args.output is None else None
@@ -60,7 +64,7 @@ def main():
     for source in sorted(args.fixtures.iterdir()):
         if source.is_dir():
             results[source.name] = validate(source, args.output / source.name,
-                args.compiler.resolve(), args.runner.resolve(), args.known_failures, package_reference)
+                args.compiler.resolve(), args.runner.resolve(), args.known_failures, package_reference, args.runtime)
             (args.output / 'results.json').write_text(json.dumps(results, indent=2) + '\n')
 
 
