@@ -39,7 +39,7 @@ if(NOT MSVC)
   target_compile_options(lab_recurrent_cpu PRIVATE -O3 -ffp-contract=off)
 endif()
 add_library(lab_runtime INTERFACE)
-target_include_directories(lab_runtime INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}")
+target_include_directories(lab_runtime INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/common/include")
 target_link_libraries(lab_runtime INTERFACE lab_recurrent_cpu ynnpack_composites ynnpack slinky_thread_pool_impl)
 if(NOT MSVC)
   # Profiling derives a statement visitor from Slinky's RTTI-free library.
@@ -198,3 +198,5 @@ if(BUILD_TESTING)
 endif()
 
 include(cmake/RustRuntime.cmake)
+
+include(cmake/Compiler.cmake)

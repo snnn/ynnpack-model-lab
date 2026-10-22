@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "graphs": {
+    "a": "target_views_2048_invalid_3_a.ynn"
+  },
+  "buffers": [
+    {
+      "name": "cache",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        2048,
+        4
+      ],
+      "file": "target_views_2048_invalid_3_6361636865_initial.bin",
+      "resource": "a",
+      "initialized_extent": 4,
+      "append_axis": 2
+    },
+    {
+      "name": "second",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        2048,
+        4
+      ],
+      "file": "target_views_2048_invalid_3_7365636f6e64_initial.bin",
+      "resource": "a",
+      "initialized_extent": 4,
+      "append_axis": 2
+    },
+    {
+      "name": "fresh",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "out",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        1,
+        4
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 3
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "target_views_2048_invalid_3_0_6672657368.bin"
+        },
+        {
+          "name": "out",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "outputs": {
+        "out": "actual/target_views_2048_invalid_3/0_6f7574.bin"
+      },
+      "expect_error": "",
+      "expect_unchanged": true
+    }
+  ]
+}

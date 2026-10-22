@@ -42,3 +42,13 @@ unsafe_op_in_unsafe_fn = "deny"
 
 [profile.release]
 debug = 1
+
+[[bin]]
+name = "ynn-compile"
+path = "src/bin/ynn-compile.rs"
+required-features = ["plan-tool"]
+
+[[bin]]
+name = "ynn-qwen3"
+path = "src/bin/ynn-qwen3.rs"
+required-features = ["plan-tool"]

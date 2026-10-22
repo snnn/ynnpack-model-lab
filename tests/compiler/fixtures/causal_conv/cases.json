@@ -1,0 +1,586 @@
+[
+  {
+    "name": "causal_t1_c3",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "causal_t1_c3_0_in_78.bin",
+            "shape": [
+              2,
+              1,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "history": {
+            "file": "causal_t1_c3_0_in_686973746f7279.bin",
+            "shape": [
+              2,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "weights": {
+            "file": "causal_t1_c3_0_in_77656967687473.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "causal_t1_c3_0_out_6f7574707574.bin",
+            "shape": [
+              2,
+              1,
+              1,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "next": {
+            "file": "causal_t1_c3_0_out_6e657874.bin",
+            "shape": [
+              2,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "valid": 0
+        }
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "causal_t1_c3_1_in_78.bin",
+            "shape": [
+              2,
+              1,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "history": {
+            "file": "causal_t1_c3_1_in_686973746f7279.bin",
+            "shape": [
+              2,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "weights": {
+            "file": "causal_t1_c3_1_in_77656967687473.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "causal_t1_c3_1_out_6f7574707574.bin",
+            "shape": [
+              2,
+              1,
+              1,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "next": {
+            "file": "causal_t1_c3_1_out_6e657874.bin",
+            "shape": [
+              2,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "valid": 1
+        }
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "causal_t7_c67",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "causal_t7_c67_0_in_78.bin",
+            "shape": [
+              2,
+              7,
+              67
+            ],
+            "dtype": "<f4"
+          },
+          "history": {
+            "file": "causal_t7_c67_0_in_686973746f7279.bin",
+            "shape": [
+              2,
+              3,
+              67
+            ],
+            "dtype": "<f4"
+          },
+          "weights": {
+            "file": "causal_t7_c67_0_in_77656967687473.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              67
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "causal_t7_c67_0_out_6f7574707574.bin",
+            "shape": [
+              2,
+              7,
+              1,
+              67
+            ],
+            "dtype": "<f4"
+          },
+          "next": {
+            "file": "causal_t7_c67_0_out_6e657874.bin",
+            "shape": [
+              2,
+              3,
+              67
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "valid": 0
+        }
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "causal_t7_c67_1_in_78.bin",
+            "shape": [
+              2,
+              7,
+              67
+            ],
+            "dtype": "<f4"
+          },
+          "history": {
+            "file": "causal_t7_c67_1_in_686973746f7279.bin",
+            "shape": [
+              2,
+              3,
+              67
+            ],
+            "dtype": "<f4"
+          },
+          "weights": {
+            "file": "causal_t7_c67_1_in_77656967687473.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              67
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "causal_t7_c67_1_out_6f7574707574.bin",
+            "shape": [
+              2,
+              7,
+              1,
+              67
+            ],
+            "dtype": "<f4"
+          },
+          "next": {
+            "file": "causal_t7_c67_1_out_6e657874.bin",
+            "shape": [
+              2,
+              3,
+              67
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "valid": 1
+        }
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "causal_t7_c67_2_in_78.bin",
+            "shape": [
+              2,
+              7,
+              67
+            ],
+            "dtype": "<f4"
+          },
+          "history": {
+            "file": "causal_t7_c67_2_in_686973746f7279.bin",
+            "shape": [
+              2,
+              3,
+              67
+            ],
+            "dtype": "<f4"
+          },
+          "weights": {
+            "file": "causal_t7_c67_2_in_77656967687473.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              67
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "causal_t7_c67_2_out_6f7574707574.bin",
+            "shape": [
+              2,
+              7,
+              1,
+              67
+            ],
+            "dtype": "<f4"
+          },
+          "next": {
+            "file": "causal_t7_c67_2_out_6e657874.bin",
+            "shape": [
+              2,
+              3,
+              67
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "valid": 6
+        }
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "causal_t7_c67_3_in_78.bin",
+            "shape": [
+              2,
+              7,
+              67
+            ],
+            "dtype": "<f4"
+          },
+          "history": {
+            "file": "causal_t7_c67_3_in_686973746f7279.bin",
+            "shape": [
+              2,
+              3,
+              67
+            ],
+            "dtype": "<f4"
+          },
+          "weights": {
+            "file": "causal_t7_c67_3_in_77656967687473.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              67
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "causal_t7_c67_3_out_6f7574707574.bin",
+            "shape": [
+              2,
+              7,
+              1,
+              67
+            ],
+            "dtype": "<f4"
+          },
+          "next": {
+            "file": "causal_t7_c67_3_out_6e657874.bin",
+            "shape": [
+              2,
+              3,
+              67
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "valid": 7
+        }
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "causal_t128_c256",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "causal_t128_c256_0_in_78.bin",
+            "shape": [
+              2,
+              128,
+              256
+            ],
+            "dtype": "<f4"
+          },
+          "history": {
+            "file": "causal_t128_c256_0_in_686973746f7279.bin",
+            "shape": [
+              2,
+              3,
+              256
+            ],
+            "dtype": "<f4"
+          },
+          "weights": {
+            "file": "causal_t128_c256_0_in_77656967687473.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "causal_t128_c256_0_out_6f7574707574.bin",
+            "shape": [
+              2,
+              128,
+              1,
+              256
+            ],
+            "dtype": "<f4"
+          },
+          "next": {
+            "file": "causal_t128_c256_0_out_6e657874.bin",
+            "shape": [
+              2,
+              3,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "valid": 0
+        }
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "causal_t128_c256_1_in_78.bin",
+            "shape": [
+              2,
+              128,
+              256
+            ],
+            "dtype": "<f4"
+          },
+          "history": {
+            "file": "causal_t128_c256_1_in_686973746f7279.bin",
+            "shape": [
+              2,
+              3,
+              256
+            ],
+            "dtype": "<f4"
+          },
+          "weights": {
+            "file": "causal_t128_c256_1_in_77656967687473.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "causal_t128_c256_1_out_6f7574707574.bin",
+            "shape": [
+              2,
+              128,
+              1,
+              256
+            ],
+            "dtype": "<f4"
+          },
+          "next": {
+            "file": "causal_t128_c256_1_out_6e657874.bin",
+            "shape": [
+              2,
+              3,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "valid": 1
+        }
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "causal_t128_c256_2_in_78.bin",
+            "shape": [
+              2,
+              128,
+              256
+            ],
+            "dtype": "<f4"
+          },
+          "history": {
+            "file": "causal_t128_c256_2_in_686973746f7279.bin",
+            "shape": [
+              2,
+              3,
+              256
+            ],
+            "dtype": "<f4"
+          },
+          "weights": {
+            "file": "causal_t128_c256_2_in_77656967687473.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "causal_t128_c256_2_out_6f7574707574.bin",
+            "shape": [
+              2,
+              128,
+              1,
+              256
+            ],
+            "dtype": "<f4"
+          },
+          "next": {
+            "file": "causal_t128_c256_2_out_6e657874.bin",
+            "shape": [
+              2,
+              3,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "valid": 127
+        }
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "causal_t128_c256_3_in_78.bin",
+            "shape": [
+              2,
+              128,
+              256
+            ],
+            "dtype": "<f4"
+          },
+          "history": {
+            "file": "causal_t128_c256_3_in_686973746f7279.bin",
+            "shape": [
+              2,
+              3,
+              256
+            ],
+            "dtype": "<f4"
+          },
+          "weights": {
+            "file": "causal_t128_c256_3_in_77656967687473.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "output": {
+            "file": "causal_t128_c256_3_out_6f7574707574.bin",
+            "shape": [
+              2,
+              128,
+              1,
+              256
+            ],
+            "dtype": "<f4"
+          },
+          "next": {
+            "file": "causal_t128_c256_3_out_6e657874.bin",
+            "shape": [
+              2,
+              3,
+              256
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "valid": 128
+        }
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  }
+]

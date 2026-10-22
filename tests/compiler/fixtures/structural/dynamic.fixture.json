@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "dynamic.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        5,
+        4
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        5,
+        2
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            4
+          ],
+          "bytes": 32,
+          "file": "dynamic_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 16
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/dynamic/0_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            5,
+            4
+          ],
+          "bytes": 80,
+          "file": "dynamic_1_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 40
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/dynamic/1_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            4
+          ],
+          "bytes": 48,
+          "file": "dynamic_2_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 24
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/dynamic/2_79.bin"
+      }
+    }
+  ]
+}

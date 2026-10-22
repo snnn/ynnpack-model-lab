@@ -1,7 +1,7 @@
 // Copyright 2026 @snnn.
 // SPDX-License-Identifier: Apache-2.0
 //! Owned sessions and typed DSL construction around the pinned native backend.
-//! Graph compilation and kernels remain native. No Core IR is linked.
+//! Semantic compilation is Rust; graph preparation and kernels use the native backend.
 
 mod ffi;
 #[cfg(feature = "llm")]
@@ -22,6 +22,7 @@ pub mod gemma;
 ))]
 mod io;
 mod plan;
+pub mod compiler;
 pub mod plan_text;
 #[cfg(all(feature = "vision", feature = "gemma"))]
 compile_error!("Vision and Gemma have separate application entry points; build them separately");
@@ -47,7 +48,7 @@ pub enum ErrorKind {
 }
 
 impl Error {
-    pub(crate) fn invalid(message: impl Into<String>) -> Self {
+    pub fn invalid(message: impl Into<String>) -> Self {
         Self {
             kind: ErrorKind::Invalid,
             message: message.into(),
@@ -130,3 +131,5 @@ unsafe extern "C" fn lab_rust_main(argc: i32, argv: *const *const std::ffi::c_ch
         }
     }
 }
+
+pub mod models;

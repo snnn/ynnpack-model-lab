@@ -12,7 +12,7 @@ use std::fmt::Write;
 type Names = HashMap<String, String>;
 fn quote(s: &str) -> String { serde_json::to_string(s).unwrap() }
 fn name(n: &str, names: &Names) -> String { names.get(n).cloned().unwrap_or_else(|| n.into()) }
-fn value(v: &Value<'_>, names: &Names) -> String {
+pub(super) fn value(v: &Value<'_>, names: &Names) -> String {
     match &v.kind {
         ValueKind::Name(n) | ValueKind::Tensor(n) | ValueKind::Symbol(n) => name(n, names),
         ValueKind::Number(n) => (*n).into(),
@@ -24,7 +24,7 @@ fn value(v: &Value<'_>, names: &Names) -> String {
         ValueKind::Binary(op, a, b) => format!("({} {op} {})", value(a, names), value(b, names)),
     }
 }
-fn call(c: &Call<'_>, names: &Names, path: &str) -> String {
+pub(super) fn call(c: &Call<'_>, names: &Names, path: &str) -> String {
     let args = c.arguments.iter().enumerate().map(|(i, a)| {
         let mut v = value(&a.value, names);
         if matches!(c.name, "operation" | "BeginOperation" | "begin_operation" | "EndOperation" | "end_operation")
@@ -44,19 +44,19 @@ fn call(c: &Call<'_>, names: &Names, path: &str) -> String {
     }).collect::<Vec<_>>().join(", ");
     format!("{}({args})", c.name)
 }
-fn ty(t: &Type<'_>, names: &Names) -> String {
+pub(super) fn ty(t: &Type<'_>, names: &Names) -> String {
     if t.name == "index" || t.literal { return t.name.into(); }
     let inner = format!("{}[{}]", t.name, t.dims.iter().map(|d| value(d, names)).collect::<Vec<_>>().join(", "));
     if t.owner { format!("owner<{inner}>") } else if t.storage { format!("storage<{inner}>") } else { inner }
 }
-fn binding(b: &Binding<'_>, names: &Names) -> String {
+pub(super) fn binding(b: &Binding<'_>, names: &Names) -> String {
     let text = match &b.ty { Some(t) => format!("{}: {}", name(b.name, names), ty(t, names)), None => name(b.name, names) };
     match &b.default { Some(v) => format!("{text} = {}", value(v, names)), None => text }
 }
-fn header(doc: &Document<'_>) -> String {
+pub(super) fn header(doc: &Document<'_>) -> String {
     format!("ynn {} resource_contract={} completion_contract={} profiling={} {{\n", doc.version, doc.resource, doc.completion, if doc.auto_profile { "auto" } else { "explicit" })
 }
-fn render(s: &Statement<'_>, names: &Names, path: &str) -> String {
+pub(super) fn render(s: &Statement<'_>, names: &Names, path: &str) -> String {
     let mut out = String::new();
     for a in &s.attributes { write!(out, "@{} ", call(a, names, path)).unwrap(); }
     match &s.kind {
@@ -98,7 +98,7 @@ fn declarations<'a, 'b>(ss: &'b [Statement<'a>], out: &mut Vec<&'b Binding<'a>>)
         _ => (),
     } }
 }
-fn metadata(doc: &Document<'_>, extra_order: &[String], extra: &[String]) -> String {
+pub(super) fn metadata(doc: &Document<'_>, extra_order: &[String], extra: &[String]) -> String {
     let mut out = "metadata {\n".to_string();
     if doc.order_set {
         writeln!(out, "order [{}];", doc.order.iter().map(|n| n.to_string()).chain(extra_order.iter().cloned()).collect::<Vec<_>>().join(", ")).unwrap();

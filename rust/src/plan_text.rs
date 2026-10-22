@@ -7,6 +7,11 @@ use crate::{Error, Result};
 
 mod compile;
 mod functions;
+mod intern;
+mod compare;
+mod cpp;
+pub use compare::compare;
+pub(crate) use intern::intern;
 mod lexer;
 mod parser;
 mod printer;
@@ -103,13 +108,19 @@ pub fn inspect(source: &str) -> Result<String> {
 /// Standalone CLI shared with the Cargo binary. Output files must be new.
 pub fn main(args: &[String]) -> Result<()> {
     use std::io::{Read, Write};
-    let usage = "ynn-plan check INPUT.ynn\nynn-plan format INPUT.ynn [-o NEW.ynn]\nynn-plan expand INPUT.ynn [-o NEW.ynn]\nynn-plan inspect INPUT.ynn [-o REPORT.json]\nUse - for stdin. Formatting discards comments and does not update model.json hashes.";
+    if args.len()==3 && args[0]=="compare" {
+        let left=std::fs::read_to_string(&args[1])?;
+        let right=std::fs::read_to_string(&args[2])?;
+        println!("{}",serde_json::to_string_pretty(&compare(&left,&right)?)?);
+        return Ok(());
+    }
+    let usage = "ynn-plan compare LEFT.ynn RIGHT.ynn\nynn-plan check INPUT.ynn\nynn-plan format INPUT.ynn [-o NEW.ynn]\nynn-plan expand INPUT.ynn [-o NEW.ynn]\nynn-plan inspect INPUT.ynn [-o REPORT.json]\nynn-plan cpp-static INPUT.ynn [-o STATEMENTS.inc]\nUse - for stdin. Formatting discards comments and does not update model.json hashes.";
     if args.len() == 1 && matches!(args[0].as_str(), "--help" | "-h") {
         println!("{usage}");
         return Ok(());
     }
     if !(args.len() == 2 || args.len() == 4 && args[2] == "-o")
-        || !matches!(args[0].as_str(), "check" | "format" | "inspect" | "expand")
+        || !matches!(args[0].as_str(), "check" | "format" | "inspect" | "expand" | "cpp-static")
         || args[0] == "check" && args.len() != 2
     {
         return Err(Error::invalid(usage));
@@ -133,6 +144,7 @@ pub fn main(args: &[String]) -> Result<()> {
             std::str::from_utf8(&bytes).map_err(|_| Error::invalid("Source must be UTF-8"))?;
         match args[0].as_str() {
             "inspect" => inspect(source).map(String::into_bytes),
+            "cpp-static" => cpp::statements(source).map(String::into_bytes),
             "format" => format(source).map(String::into_bytes),
             "expand" => printer::print(&parse(source)?).map(String::into_bytes),
             _ => check(source).map(|_| Vec::new()),

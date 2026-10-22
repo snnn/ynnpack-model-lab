@@ -1,0 +1,447 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "routing_i2.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "int2",
+      "shape": [
+        13,
+        5
+      ]
+    },
+    {
+      "name": "fill",
+      "dtype": "int2",
+      "shape": []
+    },
+    {
+      "name": "cond",
+      "dtype": "uint8",
+      "shape": [
+        1,
+        5
+      ]
+    },
+    {
+      "name": "reverse",
+      "dtype": "int2",
+      "shape": [
+        13,
+        5
+      ]
+    },
+    {
+      "name": "transpose",
+      "dtype": "int2",
+      "shape": [
+        5,
+        13
+      ]
+    },
+    {
+      "name": "reshape",
+      "dtype": "int2",
+      "shape": [
+        65
+      ]
+    },
+    {
+      "name": "tile",
+      "dtype": "int2",
+      "shape": [
+        13,
+        15
+      ]
+    },
+    {
+      "name": "slice",
+      "dtype": "int2",
+      "shape": [
+        13,
+        3
+      ]
+    },
+    {
+      "name": "pad",
+      "dtype": "int2",
+      "shape": [
+        16,
+        7
+      ]
+    },
+    {
+      "name": "select",
+      "dtype": "int2",
+      "shape": [
+        13,
+        5
+      ]
+    },
+    {
+      "name": "concat",
+      "dtype": "int2",
+      "shape": [
+        13,
+        10
+      ]
+    },
+    {
+      "name": "stack",
+      "dtype": "int2",
+      "shape": [
+        2,
+        13,
+        5
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            7,
+            5
+          ],
+          "bytes": 9,
+          "file": "routing_i2_0_in_78.bin"
+        },
+        {
+          "name": "fill",
+          "shape": [],
+          "bytes": 1,
+          "file": "routing_i2_0_in_66696c6c.bin"
+        },
+        {
+          "name": "cond",
+          "shape": [
+            1,
+            5
+          ],
+          "bytes": 5,
+          "file": "routing_i2_0_in_636f6e64.bin"
+        },
+        {
+          "name": "reverse",
+          "shape": [],
+          "bytes": 9
+        },
+        {
+          "name": "transpose",
+          "shape": [],
+          "bytes": 9
+        },
+        {
+          "name": "reshape",
+          "shape": [],
+          "bytes": 9
+        },
+        {
+          "name": "tile",
+          "shape": [],
+          "bytes": 27
+        },
+        {
+          "name": "slice",
+          "shape": [],
+          "bytes": 6
+        },
+        {
+          "name": "pad",
+          "shape": [],
+          "bytes": 18
+        },
+        {
+          "name": "select",
+          "shape": [],
+          "bytes": 9
+        },
+        {
+          "name": "concat",
+          "shape": [],
+          "bytes": 18
+        },
+        {
+          "name": "stack",
+          "shape": [],
+          "bytes": 18
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "reverse": "actual/routing_i2/0_72657665727365.bin",
+        "transpose": "actual/routing_i2/0_7472616e73706f7365.bin",
+        "reshape": "actual/routing_i2/0_72657368617065.bin",
+        "tile": "actual/routing_i2/0_74696c65.bin",
+        "slice": "actual/routing_i2/0_736c696365.bin",
+        "pad": "actual/routing_i2/0_706164.bin",
+        "select": "actual/routing_i2/0_73656c656374.bin",
+        "concat": "actual/routing_i2/0_636f6e636174.bin",
+        "stack": "actual/routing_i2/0_737461636b.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            1,
+            5
+          ],
+          "bytes": 2,
+          "file": "routing_i2_1_in_78.bin"
+        },
+        {
+          "name": "fill",
+          "shape": [],
+          "bytes": 1,
+          "file": "routing_i2_1_in_66696c6c.bin"
+        },
+        {
+          "name": "cond",
+          "shape": [
+            1,
+            5
+          ],
+          "bytes": 5,
+          "file": "routing_i2_1_in_636f6e64.bin"
+        },
+        {
+          "name": "reverse",
+          "shape": [],
+          "bytes": 2
+        },
+        {
+          "name": "transpose",
+          "shape": [],
+          "bytes": 2
+        },
+        {
+          "name": "reshape",
+          "shape": [],
+          "bytes": 2
+        },
+        {
+          "name": "tile",
+          "shape": [],
+          "bytes": 4
+        },
+        {
+          "name": "slice",
+          "shape": [],
+          "bytes": 1
+        },
+        {
+          "name": "pad",
+          "shape": [],
+          "bytes": 7
+        },
+        {
+          "name": "select",
+          "shape": [],
+          "bytes": 2
+        },
+        {
+          "name": "concat",
+          "shape": [],
+          "bytes": 3
+        },
+        {
+          "name": "stack",
+          "shape": [],
+          "bytes": 3
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "reverse": "actual/routing_i2/1_72657665727365.bin",
+        "transpose": "actual/routing_i2/1_7472616e73706f7365.bin",
+        "reshape": "actual/routing_i2/1_72657368617065.bin",
+        "tile": "actual/routing_i2/1_74696c65.bin",
+        "slice": "actual/routing_i2/1_736c696365.bin",
+        "pad": "actual/routing_i2/1_706164.bin",
+        "select": "actual/routing_i2/1_73656c656374.bin",
+        "concat": "actual/routing_i2/1_636f6e636174.bin",
+        "stack": "actual/routing_i2/1_737461636b.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            0,
+            5
+          ],
+          "bytes": 0,
+          "file": "routing_i2_2_in_78.bin"
+        },
+        {
+          "name": "fill",
+          "shape": [],
+          "bytes": 1,
+          "file": "routing_i2_2_in_66696c6c.bin"
+        },
+        {
+          "name": "cond",
+          "shape": [
+            1,
+            5
+          ],
+          "bytes": 5,
+          "file": "routing_i2_2_in_636f6e64.bin"
+        },
+        {
+          "name": "reverse",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "transpose",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "reshape",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "tile",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "slice",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "pad",
+          "shape": [],
+          "bytes": 6
+        },
+        {
+          "name": "select",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "concat",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "stack",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "reverse": "actual/routing_i2/2_72657665727365.bin",
+        "transpose": "actual/routing_i2/2_7472616e73706f7365.bin",
+        "reshape": "actual/routing_i2/2_72657368617065.bin",
+        "tile": "actual/routing_i2/2_74696c65.bin",
+        "slice": "actual/routing_i2/2_736c696365.bin",
+        "pad": "actual/routing_i2/2_706164.bin",
+        "select": "actual/routing_i2/2_73656c656374.bin",
+        "concat": "actual/routing_i2/2_636f6e636174.bin",
+        "stack": "actual/routing_i2/2_737461636b.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            13,
+            5
+          ],
+          "bytes": 17,
+          "file": "routing_i2_3_in_78.bin"
+        },
+        {
+          "name": "fill",
+          "shape": [],
+          "bytes": 1,
+          "file": "routing_i2_3_in_66696c6c.bin"
+        },
+        {
+          "name": "cond",
+          "shape": [
+            1,
+            5
+          ],
+          "bytes": 5,
+          "file": "routing_i2_3_in_636f6e64.bin"
+        },
+        {
+          "name": "reverse",
+          "shape": [],
+          "bytes": 17
+        },
+        {
+          "name": "transpose",
+          "shape": [],
+          "bytes": 17
+        },
+        {
+          "name": "reshape",
+          "shape": [],
+          "bytes": 17
+        },
+        {
+          "name": "tile",
+          "shape": [],
+          "bytes": 49
+        },
+        {
+          "name": "slice",
+          "shape": [],
+          "bytes": 10
+        },
+        {
+          "name": "pad",
+          "shape": [],
+          "bytes": 28
+        },
+        {
+          "name": "select",
+          "shape": [],
+          "bytes": 17
+        },
+        {
+          "name": "concat",
+          "shape": [],
+          "bytes": 33
+        },
+        {
+          "name": "stack",
+          "shape": [],
+          "bytes": 33
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "reverse": "actual/routing_i2/3_72657665727365.bin",
+        "transpose": "actual/routing_i2/3_7472616e73706f7365.bin",
+        "reshape": "actual/routing_i2/3_72657368617065.bin",
+        "tile": "actual/routing_i2/3_74696c65.bin",
+        "slice": "actual/routing_i2/3_736c696365.bin",
+        "pad": "actual/routing_i2/3_706164.bin",
+        "select": "actual/routing_i2/3_73656c656374.bin",
+        "concat": "actual/routing_i2/3_636f6e636174.bin",
+        "stack": "actual/routing_i2/3_737461636b.bin"
+      }
+    }
+  ]
+}

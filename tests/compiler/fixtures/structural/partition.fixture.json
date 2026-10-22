@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "partition.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        6
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        6
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            6
+          ],
+          "bytes": 48,
+          "file": "partition_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 48
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/partition/0_79.bin"
+      }
+    }
+  ]
+}

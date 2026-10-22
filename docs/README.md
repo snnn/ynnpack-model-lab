@@ -31,6 +31,7 @@ does not imply model-execution support.
 | Reference | Contents |
 | --- | --- |
 | [Design](DESIGN.md) | Architecture, state invariants, numerical contracts and model extension |
+| [Rust authoring and compiler](COMPILER.md) | Semantic graph API, shared lowering, Qwen3 checkpoint preparation and compiler validation |
 | [Model artifacts](AUTHORING.md) | Public package layout, asset identities and author/runtime responsibilities |
 | [Construction plans](GRAPH_PLANS.md) | Typed construction model, validation stages and execution limits |
 | [Plan text](PLAN_TEXT.md) | `.ynn` syntax, formatter, inspection tool and diagnostics |

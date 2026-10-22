@@ -1,0 +1,435 @@
+{
+  "version": 1,
+  "graphs": {
+    "a": "required_direct_32_a.ynn",
+    "b": "required_direct_32_b.ynn"
+  },
+  "buffers": [
+    {
+      "name": "cache",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        32,
+        4
+      ],
+      "file": "required_direct_32_6361636865_initial.bin",
+      "resource": "a",
+      "initialized_extent": 0,
+      "append_axis": 2
+    },
+    {
+      "name": "fresh0",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        8,
+        4
+      ]
+    },
+    {
+      "name": "fresh1",
+      "dtype": "int8",
+      "shape": [
+        2,
+        3,
+        8,
+        4
+      ]
+    },
+    {
+      "name": "old_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        27,
+        4
+      ]
+    },
+    {
+      "name": "middle_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        27,
+        4
+      ]
+    },
+    {
+      "name": "final_codes",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        27,
+        4
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "required_direct_32_0_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "required_direct_32_0_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/required_direct_32/0_6f6c645f636f646573.bin",
+        "middle_codes": "actual/required_direct_32/0_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/required_direct_32/0_66696e616c5f636f646573.bin",
+        "cache": "actual/required_direct_32/0_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "required_direct_32_0_6f6c645f636f646573.bin"
+        },
+        {
+          "old_codes": "required_direct_32_0_6f6c645f636f646573.bin",
+          "middle_codes": "required_direct_32_0_6d6964646c655f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "required_direct_32_1_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            1,
+            4
+          ],
+          "bytes": 24,
+          "file": "required_direct_32_1_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 96
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 192
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/required_direct_32/1_6f6c645f636f646573.bin",
+        "middle_codes": "actual/required_direct_32/1_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/required_direct_32/1_66696e616c5f636f646573.bin",
+        "cache": "actual/required_direct_32/1_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "required_direct_32_1_6f6c645f636f646573.bin"
+        },
+        {
+          "old_codes": "required_direct_32_1_6f6c645f636f646573.bin",
+          "middle_codes": "required_direct_32_1_6d6964646c655f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 2
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            7,
+            4
+          ],
+          "bytes": 168,
+          "file": "required_direct_32_2_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "required_direct_32_2_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 192
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 864
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 864
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/required_direct_32/2_6f6c645f636f646573.bin",
+        "middle_codes": "actual/required_direct_32/2_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/required_direct_32/2_66696e616c5f636f646573.bin",
+        "cache": "actual/required_direct_32/2_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "required_direct_32_2_6f6c645f636f646573.bin"
+        },
+        {
+          "old_codes": "required_direct_32_2_6f6c645f636f646573.bin",
+          "middle_codes": "required_direct_32_2_6d6964646c655f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 9
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "required_direct_32_3_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            2,
+            4
+          ],
+          "bytes": 48,
+          "file": "required_direct_32_3_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 864
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 864
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 1056
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/required_direct_32/3_6f6c645f636f646573.bin",
+        "middle_codes": "actual/required_direct_32/3_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/required_direct_32/3_66696e616c5f636f646573.bin",
+        "cache": "actual/required_direct_32/3_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "required_direct_32_3_6f6c645f636f646573.bin"
+        },
+        {
+          "old_codes": "required_direct_32_3_6f6c645f636f646573.bin",
+          "middle_codes": "required_direct_32_3_6d6964646c655f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 11
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            8,
+            4
+          ],
+          "bytes": 192,
+          "file": "required_direct_32_4_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            8,
+            4
+          ],
+          "bytes": 192,
+          "file": "required_direct_32_4_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 1056
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 1824
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 2592
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/required_direct_32/4_6f6c645f636f646573.bin",
+        "middle_codes": "actual/required_direct_32/4_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/required_direct_32/4_66696e616c5f636f646573.bin",
+        "cache": "actual/required_direct_32/4_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "required_direct_32_4_6f6c645f636f646573.bin"
+        },
+        {
+          "old_codes": "required_direct_32_4_6f6c645f636f646573.bin",
+          "middle_codes": "required_direct_32_4_6d6964646c655f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 27
+      },
+      "bindings": [
+        {
+          "name": "fresh0",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "required_direct_32_5_667265736830.bin"
+        },
+        {
+          "name": "fresh1",
+          "shape": [
+            2,
+            3,
+            0,
+            4
+          ],
+          "bytes": 0,
+          "file": "required_direct_32_5_667265736831.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 2592
+        },
+        {
+          "name": "middle_codes",
+          "shape": [],
+          "bytes": 2592
+        },
+        {
+          "name": "final_codes",
+          "shape": [],
+          "bytes": 2592
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/required_direct_32/5_6f6c645f636f646573.bin",
+        "middle_codes": "actual/required_direct_32/5_6d6964646c655f636f646573.bin",
+        "final_codes": "actual/required_direct_32/5_66696e616c5f636f646573.bin",
+        "cache": "actual/required_direct_32/5_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "required_direct_32_5_6f6c645f636f646573.bin"
+        },
+        {
+          "old_codes": "required_direct_32_5_6f6c645f636f646573.bin",
+          "middle_codes": "required_direct_32_5_6d6964646c655f636f646573.bin"
+        }
+      ]
+    }
+  ]
+}

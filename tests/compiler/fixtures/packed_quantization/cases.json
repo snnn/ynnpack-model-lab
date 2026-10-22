@@ -1,0 +1,2618 @@
+[
+  {
+    "name": "routing_i2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "routing_i2_0_in_78.bin",
+            "shape": [
+              7,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "fill": {
+            "file": "routing_i2_0_in_66696c6c.bin",
+            "shape": [],
+            "dtype": "<i8"
+          },
+          "cond": {
+            "file": "routing_i2_0_in_636f6e64.bin",
+            "shape": [
+              1,
+              5
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "reverse": {
+            "file": "routing_i2_0_out_72657665727365.bin",
+            "shape": [
+              9
+            ],
+            "dtype": "|u1"
+          },
+          "transpose": {
+            "file": "routing_i2_0_out_7472616e73706f7365.bin",
+            "shape": [
+              9
+            ],
+            "dtype": "|u1"
+          },
+          "reshape": {
+            "file": "routing_i2_0_out_72657368617065.bin",
+            "shape": [
+              9
+            ],
+            "dtype": "|u1"
+          },
+          "tile": {
+            "file": "routing_i2_0_out_74696c65.bin",
+            "shape": [
+              27
+            ],
+            "dtype": "|u1"
+          },
+          "slice": {
+            "file": "routing_i2_0_out_736c696365.bin",
+            "shape": [
+              6
+            ],
+            "dtype": "|u1"
+          },
+          "pad": {
+            "file": "routing_i2_0_out_706164.bin",
+            "shape": [
+              18
+            ],
+            "dtype": "|u1"
+          },
+          "select": {
+            "file": "routing_i2_0_out_73656c656374.bin",
+            "shape": [
+              9
+            ],
+            "dtype": "|u1"
+          },
+          "concat": {
+            "file": "routing_i2_0_out_636f6e636174.bin",
+            "shape": [
+              18
+            ],
+            "dtype": "|u1"
+          },
+          "stack": {
+            "file": "routing_i2_0_out_737461636b.bin",
+            "shape": [
+              18
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "routing_i2_1_in_78.bin",
+            "shape": [
+              1,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "fill": {
+            "file": "routing_i2_1_in_66696c6c.bin",
+            "shape": [],
+            "dtype": "<i8"
+          },
+          "cond": {
+            "file": "routing_i2_1_in_636f6e64.bin",
+            "shape": [
+              1,
+              5
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "reverse": {
+            "file": "routing_i2_1_out_72657665727365.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          },
+          "transpose": {
+            "file": "routing_i2_1_out_7472616e73706f7365.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          },
+          "reshape": {
+            "file": "routing_i2_1_out_72657368617065.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          },
+          "tile": {
+            "file": "routing_i2_1_out_74696c65.bin",
+            "shape": [
+              4
+            ],
+            "dtype": "|u1"
+          },
+          "slice": {
+            "file": "routing_i2_1_out_736c696365.bin",
+            "shape": [
+              1
+            ],
+            "dtype": "|u1"
+          },
+          "pad": {
+            "file": "routing_i2_1_out_706164.bin",
+            "shape": [
+              7
+            ],
+            "dtype": "|u1"
+          },
+          "select": {
+            "file": "routing_i2_1_out_73656c656374.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          },
+          "concat": {
+            "file": "routing_i2_1_out_636f6e636174.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "|u1"
+          },
+          "stack": {
+            "file": "routing_i2_1_out_737461636b.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "routing_i2_2_in_78.bin",
+            "shape": [
+              0,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "fill": {
+            "file": "routing_i2_2_in_66696c6c.bin",
+            "shape": [],
+            "dtype": "<i8"
+          },
+          "cond": {
+            "file": "routing_i2_2_in_636f6e64.bin",
+            "shape": [
+              1,
+              5
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "reverse": {
+            "file": "routing_i2_2_out_72657665727365.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "transpose": {
+            "file": "routing_i2_2_out_7472616e73706f7365.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "reshape": {
+            "file": "routing_i2_2_out_72657368617065.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "tile": {
+            "file": "routing_i2_2_out_74696c65.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "slice": {
+            "file": "routing_i2_2_out_736c696365.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "pad": {
+            "file": "routing_i2_2_out_706164.bin",
+            "shape": [
+              6
+            ],
+            "dtype": "|u1"
+          },
+          "select": {
+            "file": "routing_i2_2_out_73656c656374.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "concat": {
+            "file": "routing_i2_2_out_636f6e636174.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "stack": {
+            "file": "routing_i2_2_out_737461636b.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "routing_i2_3_in_78.bin",
+            "shape": [
+              13,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "fill": {
+            "file": "routing_i2_3_in_66696c6c.bin",
+            "shape": [],
+            "dtype": "<i8"
+          },
+          "cond": {
+            "file": "routing_i2_3_in_636f6e64.bin",
+            "shape": [
+              1,
+              5
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "reverse": {
+            "file": "routing_i2_3_out_72657665727365.bin",
+            "shape": [
+              17
+            ],
+            "dtype": "|u1"
+          },
+          "transpose": {
+            "file": "routing_i2_3_out_7472616e73706f7365.bin",
+            "shape": [
+              17
+            ],
+            "dtype": "|u1"
+          },
+          "reshape": {
+            "file": "routing_i2_3_out_72657368617065.bin",
+            "shape": [
+              17
+            ],
+            "dtype": "|u1"
+          },
+          "tile": {
+            "file": "routing_i2_3_out_74696c65.bin",
+            "shape": [
+              49
+            ],
+            "dtype": "|u1"
+          },
+          "slice": {
+            "file": "routing_i2_3_out_736c696365.bin",
+            "shape": [
+              10
+            ],
+            "dtype": "|u1"
+          },
+          "pad": {
+            "file": "routing_i2_3_out_706164.bin",
+            "shape": [
+              28
+            ],
+            "dtype": "|u1"
+          },
+          "select": {
+            "file": "routing_i2_3_out_73656c656374.bin",
+            "shape": [
+              17
+            ],
+            "dtype": "|u1"
+          },
+          "concat": {
+            "file": "routing_i2_3_out_636f6e636174.bin",
+            "shape": [
+              33
+            ],
+            "dtype": "|u1"
+          },
+          "stack": {
+            "file": "routing_i2_3_out_737461636b.bin",
+            "shape": [
+              33
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "partition_i2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "partition_i2_0_in_78.bin",
+            "shape": [
+              7,
+              6
+            ],
+            "dtype": "<i8"
+          },
+          "scalar": {
+            "file": "partition_i2_0_in_7363616c6172.bin",
+            "shape": [],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "a": {
+            "file": "partition_i2_0_out_61.bin",
+            "shape": [
+              6
+            ],
+            "dtype": "|u1"
+          },
+          "b": {
+            "file": "partition_i2_0_out_62.bin",
+            "shape": [
+              6
+            ],
+            "dtype": "|u1"
+          },
+          "first": {
+            "file": "partition_i2_0_out_6669727374.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          },
+          "empty": {
+            "file": "partition_i2_0_out_656d707479.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "rest": {
+            "file": "partition_i2_0_out_72657374.bin",
+            "shape": [
+              9
+            ],
+            "dtype": "|u1"
+          },
+          "u": {
+            "file": "partition_i2_0_out_75.bin",
+            "shape": [
+              6
+            ],
+            "dtype": "|u1"
+          },
+          "v": {
+            "file": "partition_i2_0_out_76.bin",
+            "shape": [
+              6
+            ],
+            "dtype": "|u1"
+          },
+          "broadcast": {
+            "file": "partition_i2_0_out_62726f616463617374.bin",
+            "shape": [
+              11
+            ],
+            "dtype": "|u1"
+          },
+          "reshaped": {
+            "file": "partition_i2_0_out_7265736861706564.bin",
+            "shape": [
+              11
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "partition_i2_1_in_78.bin",
+            "shape": [
+              1,
+              6
+            ],
+            "dtype": "<i8"
+          },
+          "scalar": {
+            "file": "partition_i2_1_in_7363616c6172.bin",
+            "shape": [],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "a": {
+            "file": "partition_i2_1_out_61.bin",
+            "shape": [
+              1
+            ],
+            "dtype": "|u1"
+          },
+          "b": {
+            "file": "partition_i2_1_out_62.bin",
+            "shape": [
+              1
+            ],
+            "dtype": "|u1"
+          },
+          "first": {
+            "file": "partition_i2_1_out_6669727374.bin",
+            "shape": [
+              1
+            ],
+            "dtype": "|u1"
+          },
+          "empty": {
+            "file": "partition_i2_1_out_656d707479.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "rest": {
+            "file": "partition_i2_1_out_72657374.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          },
+          "u": {
+            "file": "partition_i2_1_out_75.bin",
+            "shape": [
+              1
+            ],
+            "dtype": "|u1"
+          },
+          "v": {
+            "file": "partition_i2_1_out_76.bin",
+            "shape": [
+              1
+            ],
+            "dtype": "|u1"
+          },
+          "broadcast": {
+            "file": "partition_i2_1_out_62726f616463617374.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          },
+          "reshaped": {
+            "file": "partition_i2_1_out_7265736861706564.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "partition_i2_2_in_78.bin",
+            "shape": [
+              0,
+              6
+            ],
+            "dtype": "<i8"
+          },
+          "scalar": {
+            "file": "partition_i2_2_in_7363616c6172.bin",
+            "shape": [],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "a": {
+            "file": "partition_i2_2_out_61.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "b": {
+            "file": "partition_i2_2_out_62.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "first": {
+            "file": "partition_i2_2_out_6669727374.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "empty": {
+            "file": "partition_i2_2_out_656d707479.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "rest": {
+            "file": "partition_i2_2_out_72657374.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "u": {
+            "file": "partition_i2_2_out_75.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "v": {
+            "file": "partition_i2_2_out_76.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "broadcast": {
+            "file": "partition_i2_2_out_62726f616463617374.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "reshaped": {
+            "file": "partition_i2_2_out_7265736861706564.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "partition_i2_3_in_78.bin",
+            "shape": [
+              13,
+              6
+            ],
+            "dtype": "<i8"
+          },
+          "scalar": {
+            "file": "partition_i2_3_in_7363616c6172.bin",
+            "shape": [],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "a": {
+            "file": "partition_i2_3_out_61.bin",
+            "shape": [
+              10
+            ],
+            "dtype": "|u1"
+          },
+          "b": {
+            "file": "partition_i2_3_out_62.bin",
+            "shape": [
+              10
+            ],
+            "dtype": "|u1"
+          },
+          "first": {
+            "file": "partition_i2_3_out_6669727374.bin",
+            "shape": [
+              4
+            ],
+            "dtype": "|u1"
+          },
+          "empty": {
+            "file": "partition_i2_3_out_656d707479.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "rest": {
+            "file": "partition_i2_3_out_72657374.bin",
+            "shape": [
+              17
+            ],
+            "dtype": "|u1"
+          },
+          "u": {
+            "file": "partition_i2_3_out_75.bin",
+            "shape": [
+              10
+            ],
+            "dtype": "|u1"
+          },
+          "v": {
+            "file": "partition_i2_3_out_76.bin",
+            "shape": [
+              10
+            ],
+            "dtype": "|u1"
+          },
+          "broadcast": {
+            "file": "partition_i2_3_out_62726f616463617374.bin",
+            "shape": [
+              20
+            ],
+            "dtype": "|u1"
+          },
+          "reshaped": {
+            "file": "partition_i2_3_out_7265736861706564.bin",
+            "shape": [
+              20
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "pad_reflect_i2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "pad_reflect_i2_0_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "pad_reflect_i2_0_out_79.bin",
+            "shape": [
+              12
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "pad_symmetric_i2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "pad_symmetric_i2_0_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "pad_symmetric_i2_0_out_79.bin",
+            "shape": [
+              12
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "quant_gather_i2",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "quant_gather_i2_0_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "indices": {
+            "file": "quant_gather_i2_0_in_696e6469636573.bin",
+            "shape": [
+              7
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "q": {
+            "file": "quant_gather_i2_0_out_71.bin",
+            "shape": [
+              9
+            ],
+            "dtype": "|u1"
+          },
+          "y": {
+            "file": "quant_gather_i2_0_out_79.bin",
+            "shape": [
+              7,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter": {
+            "file": "quant_gather_i2_0_out_5f5f7175616e742f302f706172616d65746572.bin",
+            "shape": [
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter_": {
+            "file": "quant_gather_i2_0_out_5f5f7175616e742f302f706172616d657465725f.bin",
+            "shape": [
+              7
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "quant_gather_i2_1_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "indices": {
+            "file": "quant_gather_i2_1_in_696e6469636573.bin",
+            "shape": [
+              1
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "q": {
+            "file": "quant_gather_i2_1_out_71.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          },
+          "y": {
+            "file": "quant_gather_i2_1_out_79.bin",
+            "shape": [
+              1,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter": {
+            "file": "quant_gather_i2_1_out_5f5f7175616e742f302f706172616d65746572.bin",
+            "shape": [
+              1
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter_": {
+            "file": "quant_gather_i2_1_out_5f5f7175616e742f302f706172616d657465725f.bin",
+            "shape": [
+              1
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "quant_gather_i2_2_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "indices": {
+            "file": "quant_gather_i2_2_in_696e6469636573.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "q": {
+            "file": "quant_gather_i2_2_out_71.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "y": {
+            "file": "quant_gather_i2_2_out_79.bin",
+            "shape": [
+              0,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter": {
+            "file": "quant_gather_i2_2_out_5f5f7175616e742f302f706172616d65746572.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter_": {
+            "file": "quant_gather_i2_2_out_5f5f7175616e742f302f706172616d657465725f.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "quant_gather_i2_3_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "indices": {
+            "file": "quant_gather_i2_3_in_696e6469636573.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "q": {
+            "file": "quant_gather_i2_3_out_71.bin",
+            "shape": [
+              17
+            ],
+            "dtype": "|u1"
+          },
+          "y": {
+            "file": "quant_gather_i2_3_out_79.bin",
+            "shape": [
+              13,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter": {
+            "file": "quant_gather_i2_3_out_5f5f7175616e742f302f706172616d65746572.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter_": {
+            "file": "quant_gather_i2_3_out_5f5f7175616e742f302f706172616d657465725f.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "quant_gather_i2_invalid_neg1",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "quant_gather_i2_invalid_neg1_0_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "indices": {
+            "file": "quant_gather_i2_invalid_neg1_0_in_696e6469636573.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "q": {
+            "file": "quant_gather_i2_invalid_neg1_0_out_71.bin",
+            "shape": [
+              17
+            ],
+            "dtype": "|u1"
+          },
+          "y": {
+            "file": "quant_gather_i2_invalid_neg1_0_out_79.bin",
+            "shape": [
+              13,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter": {
+            "file": "quant_gather_i2_invalid_neg1_0_out_5f5f7175616e742f302f706172616d65746572.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter_": {
+            "file": "quant_gather_i2_invalid_neg1_0_out_5f5f7175616e742f302f706172616d657465725f.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "quant_gather_i2_invalid_3",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "quant_gather_i2_invalid_3_0_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "indices": {
+            "file": "quant_gather_i2_invalid_3_0_in_696e6469636573.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "q": {
+            "file": "quant_gather_i2_invalid_3_0_out_71.bin",
+            "shape": [
+              17
+            ],
+            "dtype": "|u1"
+          },
+          "y": {
+            "file": "quant_gather_i2_invalid_3_0_out_79.bin",
+            "shape": [
+              13,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter": {
+            "file": "quant_gather_i2_invalid_3_0_out_5f5f7175616e742f302f706172616d65746572.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter_": {
+            "file": "quant_gather_i2_invalid_3_0_out_5f5f7175616e742f302f706172616d657465725f.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "quant_select_i2",
+    "runs": [
+      {
+        "inputs": {
+          "a": {
+            "file": "quant_select_i2_0_in_61.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "b": {
+            "file": "quant_select_i2_0_in_62.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "cond": {
+            "file": "quant_select_i2_0_in_636f6e64.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "quant_select_i2_0_out_79.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "routing_i4",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "routing_i4_0_in_78.bin",
+            "shape": [
+              7,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "fill": {
+            "file": "routing_i4_0_in_66696c6c.bin",
+            "shape": [],
+            "dtype": "<i8"
+          },
+          "cond": {
+            "file": "routing_i4_0_in_636f6e64.bin",
+            "shape": [
+              1,
+              5
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "reverse": {
+            "file": "routing_i4_0_out_72657665727365.bin",
+            "shape": [
+              18
+            ],
+            "dtype": "|u1"
+          },
+          "transpose": {
+            "file": "routing_i4_0_out_7472616e73706f7365.bin",
+            "shape": [
+              18
+            ],
+            "dtype": "|u1"
+          },
+          "reshape": {
+            "file": "routing_i4_0_out_72657368617065.bin",
+            "shape": [
+              18
+            ],
+            "dtype": "|u1"
+          },
+          "tile": {
+            "file": "routing_i4_0_out_74696c65.bin",
+            "shape": [
+              53
+            ],
+            "dtype": "|u1"
+          },
+          "slice": {
+            "file": "routing_i4_0_out_736c696365.bin",
+            "shape": [
+              11
+            ],
+            "dtype": "|u1"
+          },
+          "pad": {
+            "file": "routing_i4_0_out_706164.bin",
+            "shape": [
+              35
+            ],
+            "dtype": "|u1"
+          },
+          "select": {
+            "file": "routing_i4_0_out_73656c656374.bin",
+            "shape": [
+              18
+            ],
+            "dtype": "|u1"
+          },
+          "concat": {
+            "file": "routing_i4_0_out_636f6e636174.bin",
+            "shape": [
+              35
+            ],
+            "dtype": "|u1"
+          },
+          "stack": {
+            "file": "routing_i4_0_out_737461636b.bin",
+            "shape": [
+              35
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "routing_i4_1_in_78.bin",
+            "shape": [
+              1,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "fill": {
+            "file": "routing_i4_1_in_66696c6c.bin",
+            "shape": [],
+            "dtype": "<i8"
+          },
+          "cond": {
+            "file": "routing_i4_1_in_636f6e64.bin",
+            "shape": [
+              1,
+              5
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "reverse": {
+            "file": "routing_i4_1_out_72657665727365.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "|u1"
+          },
+          "transpose": {
+            "file": "routing_i4_1_out_7472616e73706f7365.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "|u1"
+          },
+          "reshape": {
+            "file": "routing_i4_1_out_72657368617065.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "|u1"
+          },
+          "tile": {
+            "file": "routing_i4_1_out_74696c65.bin",
+            "shape": [
+              8
+            ],
+            "dtype": "|u1"
+          },
+          "slice": {
+            "file": "routing_i4_1_out_736c696365.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          },
+          "pad": {
+            "file": "routing_i4_1_out_706164.bin",
+            "shape": [
+              14
+            ],
+            "dtype": "|u1"
+          },
+          "select": {
+            "file": "routing_i4_1_out_73656c656374.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "|u1"
+          },
+          "concat": {
+            "file": "routing_i4_1_out_636f6e636174.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "|u1"
+          },
+          "stack": {
+            "file": "routing_i4_1_out_737461636b.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "routing_i4_2_in_78.bin",
+            "shape": [
+              0,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "fill": {
+            "file": "routing_i4_2_in_66696c6c.bin",
+            "shape": [],
+            "dtype": "<i8"
+          },
+          "cond": {
+            "file": "routing_i4_2_in_636f6e64.bin",
+            "shape": [
+              1,
+              5
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "reverse": {
+            "file": "routing_i4_2_out_72657665727365.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "transpose": {
+            "file": "routing_i4_2_out_7472616e73706f7365.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "reshape": {
+            "file": "routing_i4_2_out_72657368617065.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "tile": {
+            "file": "routing_i4_2_out_74696c65.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "slice": {
+            "file": "routing_i4_2_out_736c696365.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "pad": {
+            "file": "routing_i4_2_out_706164.bin",
+            "shape": [
+              11
+            ],
+            "dtype": "|u1"
+          },
+          "select": {
+            "file": "routing_i4_2_out_73656c656374.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "concat": {
+            "file": "routing_i4_2_out_636f6e636174.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "stack": {
+            "file": "routing_i4_2_out_737461636b.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "routing_i4_3_in_78.bin",
+            "shape": [
+              13,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "fill": {
+            "file": "routing_i4_3_in_66696c6c.bin",
+            "shape": [],
+            "dtype": "<i8"
+          },
+          "cond": {
+            "file": "routing_i4_3_in_636f6e64.bin",
+            "shape": [
+              1,
+              5
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "reverse": {
+            "file": "routing_i4_3_out_72657665727365.bin",
+            "shape": [
+              33
+            ],
+            "dtype": "|u1"
+          },
+          "transpose": {
+            "file": "routing_i4_3_out_7472616e73706f7365.bin",
+            "shape": [
+              33
+            ],
+            "dtype": "|u1"
+          },
+          "reshape": {
+            "file": "routing_i4_3_out_72657368617065.bin",
+            "shape": [
+              33
+            ],
+            "dtype": "|u1"
+          },
+          "tile": {
+            "file": "routing_i4_3_out_74696c65.bin",
+            "shape": [
+              98
+            ],
+            "dtype": "|u1"
+          },
+          "slice": {
+            "file": "routing_i4_3_out_736c696365.bin",
+            "shape": [
+              20
+            ],
+            "dtype": "|u1"
+          },
+          "pad": {
+            "file": "routing_i4_3_out_706164.bin",
+            "shape": [
+              56
+            ],
+            "dtype": "|u1"
+          },
+          "select": {
+            "file": "routing_i4_3_out_73656c656374.bin",
+            "shape": [
+              33
+            ],
+            "dtype": "|u1"
+          },
+          "concat": {
+            "file": "routing_i4_3_out_636f6e636174.bin",
+            "shape": [
+              65
+            ],
+            "dtype": "|u1"
+          },
+          "stack": {
+            "file": "routing_i4_3_out_737461636b.bin",
+            "shape": [
+              65
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "partition_i4",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "partition_i4_0_in_78.bin",
+            "shape": [
+              7,
+              6
+            ],
+            "dtype": "<i8"
+          },
+          "scalar": {
+            "file": "partition_i4_0_in_7363616c6172.bin",
+            "shape": [],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "a": {
+            "file": "partition_i4_0_out_61.bin",
+            "shape": [
+              11
+            ],
+            "dtype": "|u1"
+          },
+          "b": {
+            "file": "partition_i4_0_out_62.bin",
+            "shape": [
+              11
+            ],
+            "dtype": "|u1"
+          },
+          "first": {
+            "file": "partition_i4_0_out_6669727374.bin",
+            "shape": [
+              4
+            ],
+            "dtype": "|u1"
+          },
+          "empty": {
+            "file": "partition_i4_0_out_656d707479.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "rest": {
+            "file": "partition_i4_0_out_72657374.bin",
+            "shape": [
+              18
+            ],
+            "dtype": "|u1"
+          },
+          "u": {
+            "file": "partition_i4_0_out_75.bin",
+            "shape": [
+              11
+            ],
+            "dtype": "|u1"
+          },
+          "v": {
+            "file": "partition_i4_0_out_76.bin",
+            "shape": [
+              11
+            ],
+            "dtype": "|u1"
+          },
+          "broadcast": {
+            "file": "partition_i4_0_out_62726f616463617374.bin",
+            "shape": [
+              21
+            ],
+            "dtype": "|u1"
+          },
+          "reshaped": {
+            "file": "partition_i4_0_out_7265736861706564.bin",
+            "shape": [
+              21
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "partition_i4_1_in_78.bin",
+            "shape": [
+              1,
+              6
+            ],
+            "dtype": "<i8"
+          },
+          "scalar": {
+            "file": "partition_i4_1_in_7363616c6172.bin",
+            "shape": [],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "a": {
+            "file": "partition_i4_1_out_61.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          },
+          "b": {
+            "file": "partition_i4_1_out_62.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          },
+          "first": {
+            "file": "partition_i4_1_out_6669727374.bin",
+            "shape": [
+              1
+            ],
+            "dtype": "|u1"
+          },
+          "empty": {
+            "file": "partition_i4_1_out_656d707479.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "rest": {
+            "file": "partition_i4_1_out_72657374.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "|u1"
+          },
+          "u": {
+            "file": "partition_i4_1_out_75.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          },
+          "v": {
+            "file": "partition_i4_1_out_76.bin",
+            "shape": [
+              2
+            ],
+            "dtype": "|u1"
+          },
+          "broadcast": {
+            "file": "partition_i4_1_out_62726f616463617374.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "|u1"
+          },
+          "reshaped": {
+            "file": "partition_i4_1_out_7265736861706564.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "partition_i4_2_in_78.bin",
+            "shape": [
+              0,
+              6
+            ],
+            "dtype": "<i8"
+          },
+          "scalar": {
+            "file": "partition_i4_2_in_7363616c6172.bin",
+            "shape": [],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "a": {
+            "file": "partition_i4_2_out_61.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "b": {
+            "file": "partition_i4_2_out_62.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "first": {
+            "file": "partition_i4_2_out_6669727374.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "empty": {
+            "file": "partition_i4_2_out_656d707479.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "rest": {
+            "file": "partition_i4_2_out_72657374.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "u": {
+            "file": "partition_i4_2_out_75.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "v": {
+            "file": "partition_i4_2_out_76.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "broadcast": {
+            "file": "partition_i4_2_out_62726f616463617374.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "reshaped": {
+            "file": "partition_i4_2_out_7265736861706564.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "partition_i4_3_in_78.bin",
+            "shape": [
+              13,
+              6
+            ],
+            "dtype": "<i8"
+          },
+          "scalar": {
+            "file": "partition_i4_3_in_7363616c6172.bin",
+            "shape": [],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "a": {
+            "file": "partition_i4_3_out_61.bin",
+            "shape": [
+              20
+            ],
+            "dtype": "|u1"
+          },
+          "b": {
+            "file": "partition_i4_3_out_62.bin",
+            "shape": [
+              20
+            ],
+            "dtype": "|u1"
+          },
+          "first": {
+            "file": "partition_i4_3_out_6669727374.bin",
+            "shape": [
+              7
+            ],
+            "dtype": "|u1"
+          },
+          "empty": {
+            "file": "partition_i4_3_out_656d707479.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "rest": {
+            "file": "partition_i4_3_out_72657374.bin",
+            "shape": [
+              33
+            ],
+            "dtype": "|u1"
+          },
+          "u": {
+            "file": "partition_i4_3_out_75.bin",
+            "shape": [
+              20
+            ],
+            "dtype": "|u1"
+          },
+          "v": {
+            "file": "partition_i4_3_out_76.bin",
+            "shape": [
+              20
+            ],
+            "dtype": "|u1"
+          },
+          "broadcast": {
+            "file": "partition_i4_3_out_62726f616463617374.bin",
+            "shape": [
+              39
+            ],
+            "dtype": "|u1"
+          },
+          "reshaped": {
+            "file": "partition_i4_3_out_7265736861706564.bin",
+            "shape": [
+              39
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "pad_reflect_i4",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "pad_reflect_i4_0_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "pad_reflect_i4_0_out_79.bin",
+            "shape": [
+              23
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "pad_symmetric_i4",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "pad_symmetric_i4_0_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "pad_symmetric_i4_0_out_79.bin",
+            "shape": [
+              23
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "quant_gather_i4",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "quant_gather_i4_0_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "indices": {
+            "file": "quant_gather_i4_0_in_696e6469636573.bin",
+            "shape": [
+              7
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "q": {
+            "file": "quant_gather_i4_0_out_71.bin",
+            "shape": [
+              18
+            ],
+            "dtype": "|u1"
+          },
+          "y": {
+            "file": "quant_gather_i4_0_out_79.bin",
+            "shape": [
+              7,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter": {
+            "file": "quant_gather_i4_0_out_5f5f7175616e742f302f706172616d65746572.bin",
+            "shape": [
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter_": {
+            "file": "quant_gather_i4_0_out_5f5f7175616e742f302f706172616d657465725f.bin",
+            "shape": [
+              7
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "quant_gather_i4_1_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "indices": {
+            "file": "quant_gather_i4_1_in_696e6469636573.bin",
+            "shape": [
+              1
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "q": {
+            "file": "quant_gather_i4_1_out_71.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "|u1"
+          },
+          "y": {
+            "file": "quant_gather_i4_1_out_79.bin",
+            "shape": [
+              1,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter": {
+            "file": "quant_gather_i4_1_out_5f5f7175616e742f302f706172616d65746572.bin",
+            "shape": [
+              1
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter_": {
+            "file": "quant_gather_i4_1_out_5f5f7175616e742f302f706172616d657465725f.bin",
+            "shape": [
+              1
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "quant_gather_i4_2_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "indices": {
+            "file": "quant_gather_i4_2_in_696e6469636573.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "q": {
+            "file": "quant_gather_i4_2_out_71.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "|u1"
+          },
+          "y": {
+            "file": "quant_gather_i4_2_out_79.bin",
+            "shape": [
+              0,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter": {
+            "file": "quant_gather_i4_2_out_5f5f7175616e742f302f706172616d65746572.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter_": {
+            "file": "quant_gather_i4_2_out_5f5f7175616e742f302f706172616d657465725f.bin",
+            "shape": [
+              0
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "quant_gather_i4_3_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "indices": {
+            "file": "quant_gather_i4_3_in_696e6469636573.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "q": {
+            "file": "quant_gather_i4_3_out_71.bin",
+            "shape": [
+              33
+            ],
+            "dtype": "|u1"
+          },
+          "y": {
+            "file": "quant_gather_i4_3_out_79.bin",
+            "shape": [
+              13,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter": {
+            "file": "quant_gather_i4_3_out_5f5f7175616e742f302f706172616d65746572.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter_": {
+            "file": "quant_gather_i4_3_out_5f5f7175616e742f302f706172616d657465725f.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "quant_gather_i4_invalid_neg1",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "quant_gather_i4_invalid_neg1_0_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "indices": {
+            "file": "quant_gather_i4_invalid_neg1_0_in_696e6469636573.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "q": {
+            "file": "quant_gather_i4_invalid_neg1_0_out_71.bin",
+            "shape": [
+              33
+            ],
+            "dtype": "|u1"
+          },
+          "y": {
+            "file": "quant_gather_i4_invalid_neg1_0_out_79.bin",
+            "shape": [
+              13,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter": {
+            "file": "quant_gather_i4_invalid_neg1_0_out_5f5f7175616e742f302f706172616d65746572.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter_": {
+            "file": "quant_gather_i4_invalid_neg1_0_out_5f5f7175616e742f302f706172616d657465725f.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "quant_gather_i4_invalid_3",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "quant_gather_i4_invalid_3_0_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "indices": {
+            "file": "quant_gather_i4_invalid_3_0_in_696e6469636573.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "q": {
+            "file": "quant_gather_i4_invalid_3_0_out_71.bin",
+            "shape": [
+              33
+            ],
+            "dtype": "|u1"
+          },
+          "y": {
+            "file": "quant_gather_i4_invalid_3_0_out_79.bin",
+            "shape": [
+              13,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter": {
+            "file": "quant_gather_i4_invalid_3_0_out_5f5f7175616e742f302f706172616d65746572.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<f4"
+          },
+          "__quant/0/parameter_": {
+            "file": "quant_gather_i4_invalid_3_0_out_5f5f7175616e742f302f706172616d657465725f.bin",
+            "shape": [
+              13
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "quant_select_i4",
+    "runs": [
+      {
+        "inputs": {
+          "a": {
+            "file": "quant_select_i4_0_in_61.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "b": {
+            "file": "quant_select_i4_0_in_62.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "cond": {
+            "file": "quant_select_i4_0_in_636f6e64.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "quant_select_i4_0_out_79.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "constant_fold_i2",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "constant_fold_i2_0_out_79.bin",
+            "shape": [
+              4
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "constant_fold_i4",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "constant_fold_i4_0_out_79.bin",
+            "shape": [
+              8
+            ],
+            "dtype": "|u1"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "dot_i2_n8",
+    "runs": [
+      {
+        "inputs": {
+          "a": {
+            "file": "dot_i2_n8_0_in_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "|i1"
+          },
+          "w": {
+            "file": "dot_i2_n8_0_in_77.bin",
+            "shape": [
+              8,
+              3
+            ],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "dot_i2_n8_0_out_79.bin",
+            "shape": [
+              2,
+              8
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "dot_i2_n7",
+    "runs": [
+      {
+        "inputs": {
+          "a": {
+            "file": "dot_i2_n7_0_in_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "|i1"
+          },
+          "w": {
+            "file": "dot_i2_n7_0_in_77.bin",
+            "shape": [
+              7,
+              3
+            ],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "dot_i2_n7_0_out_79.bin",
+            "shape": [
+              2,
+              7
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "dot_i4_n8",
+    "runs": [
+      {
+        "inputs": {
+          "a": {
+            "file": "dot_i4_n8_0_in_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "|i1"
+          },
+          "w": {
+            "file": "dot_i4_n8_0_in_77.bin",
+            "shape": [
+              8,
+              3
+            ],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "dot_i4_n8_0_out_79.bin",
+            "shape": [
+              2,
+              8
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "dot_i4_n7",
+    "runs": [
+      {
+        "inputs": {
+          "a": {
+            "file": "dot_i4_n7_0_in_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "|i1"
+          },
+          "w": {
+            "file": "dot_i4_n7_0_in_77.bin",
+            "shape": [
+              7,
+              3
+            ],
+            "dtype": "<i8"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "dot_i4_n7_0_out_79.bin",
+            "shape": [
+              2,
+              7
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "blockwise_crop",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_crop_0_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "s": {
+            "file": "blockwise_crop_0_in_73.bin",
+            "shape": [
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "z": {
+            "file": "blockwise_crop_0_in_7a.bin",
+            "shape": [
+              3,
+              3
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_crop_0_out_79.bin",
+            "shape": [
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_crop_1_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "s": {
+            "file": "blockwise_crop_1_in_73.bin",
+            "shape": [
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "z": {
+            "file": "blockwise_crop_1_in_7a.bin",
+            "shape": [
+              3,
+              3
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_crop_1_out_79.bin",
+            "shape": [
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "blockwise_crop_2_in_78.bin",
+            "shape": [
+              3,
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "s": {
+            "file": "blockwise_crop_2_in_73.bin",
+            "shape": [
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "z": {
+            "file": "blockwise_crop_2_in_7a.bin",
+            "shape": [
+              3,
+              3
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "blockwise_crop_2_out_79.bin",
+            "shape": [
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "scale_f16",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "scale_f16_0_in_78.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "s": {
+            "file": "scale_f16_0_in_73.bin",
+            "shape": [],
+            "dtype": "<f2"
+          },
+          "z": {
+            "file": "scale_f16_0_in_7a.bin",
+            "shape": [],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "scale_f16_0_out_79.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  },
+  {
+    "name": "scale_bf16",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "scale_bf16_0_in_78.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "<i8"
+          },
+          "s": {
+            "file": "scale_bf16_0_in_73.bin",
+            "shape": [],
+            "dtype": "<u2"
+          },
+          "z": {
+            "file": "scale_bf16_0_in_7a.bin",
+            "shape": [],
+            "dtype": "<i4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "scale_bf16_0_out_79.bin",
+            "shape": [
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ]
+  }
+]

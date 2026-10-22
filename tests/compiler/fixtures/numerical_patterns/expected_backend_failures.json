@@ -1,0 +1,14 @@
+{
+  "numerical_affine_symbolic_prefix_before": {
+    "returncode": -11,
+    "reason": "Intermittent baseline AVX2 dot kernel SIGSEGV on the symbolic zero-row FC sequence. Successful runs must still pass numerical checks."
+  },
+  "numerical_affine_symbolic_prefix_shared": {
+    "returncode": -11,
+    "reason": "Intermittent baseline AVX2 dot kernel SIGSEGV on the symbolic zero-row FC sequence. Successful runs must still pass numerical checks."
+  },
+  "numerical_affine_symbolic_prefix_native": {
+    "returncode": -11,
+    "reason": "Intermittent baseline AVX2 dot kernel SIGSEGV on the symbolic zero-row FC sequence. Successful runs must still pass numerical checks."
+  }
+}

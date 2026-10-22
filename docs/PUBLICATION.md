@@ -13,9 +13,10 @@ identifies retained evidence.
 | Contents | Purpose |
 | --- | --- |
 | CMake files, pinned dependencies, and public backend/tokenizer patches | Rebuild the standalone Linux/Android workloads with known dependency changes. |
+| Rust semantic compiler, graph API, model authors, and checkpoint preparation tools | Author models and produce `.ynn` packages using this checkout. |
 | `.ynn` construction plans, model metadata, Rust runners, and native runtime helpers | Execute the full models and their symbolic state contracts without a private compiler. Include both phases and their matching metadata hashes. |
 | Public architecture/asset readers, hash-verified extraction recipes, and manifests | Obtain the same source weights, scales, and precision without distributing model payloads. |
-| Token-ID fixtures, native input/tokenizer tools, and tiny synthetic tokenizer fixtures | Compare the same IDs and construct controlled prompt lengths. Qwen recipes currently cover tokenization only. |
+| Token-ID fixtures, native input/tokenizer tools, and tiny synthetic tokenizer fixtures | Compare the same IDs and construct controlled prompt lengths. |
 | Independent arithmetic/state tests and focused backend bug reproductions | Establish what is correct and isolate failures, including E4B preparation depth and BF16 rounding. |
 | Retained baseline metrics, request timings, kernel summaries, artifact hashes, and portable command records | Make performance claims inspectable, including uncertainty and different quantization/cache policies. |
 | Numerical and capacity-consistency summaries | Distinguish backend arithmetic differences from changes to logically identical work. |
@@ -46,9 +47,9 @@ text corpora. Existing ignore rules cover the standard asset/build/output
 directories. Temporary upstream PR reviews remain local experiments, including
 their patches, reports, profiles, and timings.
 
-Private graph authors, compiler sources/imports, binding patches, installation
-instructions, raw compiler reports, and private provenance stay in their
-separate repository. Local agent guidance is excluded as well. Standalone
+Proprietary frontend sources, binding patches, installation instructions, raw
+frontend reports, and private provenance stay in their separate repository.
+Local agent guidance is excluded as well. Standalone
 `.ynn` plans and runtime helpers retain their notices; see [AUTHORING.md](AUTHORING.md).
 
 ## Portable measurement records

@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "numerical_constant_cast_f4_i4_shared.ynn"
+  },
+  "buffers": [
+    {
+      "name": "y",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "a",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 24
+        },
+        {
+          "name": "a",
+          "shape": [],
+          "bytes": 24
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/numerical_constant_cast_f4_i4_shared/0_79.bin",
+        "a": "actual/numerical_constant_cast_f4_i4_shared/0_61.bin"
+      }
+    }
+  ]
+}

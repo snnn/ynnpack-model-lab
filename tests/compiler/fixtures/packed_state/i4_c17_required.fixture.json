@@ -1,0 +1,478 @@
+{
+  "version": 1,
+  "graphs": {
+    "a": "i4_c17_required_a.ynn",
+    "b": "i4_c17_required_b.ynn"
+  },
+  "buffers": [
+    {
+      "name": "cache",
+      "dtype": "int4",
+      "shape": [
+        17
+      ],
+      "file": "i4_c17_required_6361636865_initial.bin",
+      "resource": "a",
+      "initialized_extent": 0,
+      "append_axis": 0
+    },
+    {
+      "name": "fresh",
+      "dtype": "int4",
+      "shape": [
+        129
+      ]
+    },
+    {
+      "name": "old_codes",
+      "dtype": "int4",
+      "shape": [
+        17
+      ]
+    },
+    {
+      "name": "codes",
+      "dtype": "int4",
+      "shape": [
+        17
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 0,
+        "begin": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            0
+          ],
+          "bytes": 0,
+          "file": "i4_c17_required_0_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i4_c17_required/0_6f6c645f636f646573.bin",
+        "codes": "actual/i4_c17_required/0_636f646573.bin",
+        "cache": "actual/i4_c17_required/0_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "i4_c17_required_0_6f6c645f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 0,
+        "begin": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            1
+          ],
+          "bytes": 1,
+          "file": "i4_c17_required_1_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 1
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i4_c17_required/1_6f6c645f636f646573.bin",
+        "codes": "actual/i4_c17_required/1_636f646573.bin",
+        "cache": "actual/i4_c17_required/1_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "i4_c17_required_1_6f6c645f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 1,
+        "begin": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            2
+          ],
+          "bytes": 1,
+          "file": "i4_c17_required_2_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 1
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 2
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i4_c17_required/2_6f6c645f636f646573.bin",
+        "codes": "actual/i4_c17_required/2_636f646573.bin",
+        "cache": "actual/i4_c17_required/2_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "i4_c17_required_2_6f6c645f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 3,
+        "begin": 1
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            3
+          ],
+          "bytes": 2,
+          "file": "i4_c17_required_3_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 2
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 3
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i4_c17_required/3_6f6c645f636f646573.bin",
+        "codes": "actual/i4_c17_required/3_636f646573.bin",
+        "cache": "actual/i4_c17_required/3_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "i4_c17_required_3_6f6c645f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 6,
+        "begin": 1
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            0
+          ],
+          "bytes": 0,
+          "file": "i4_c17_required_4_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 3
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 3
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i4_c17_required/4_6f6c645f636f646573.bin",
+        "codes": "actual/i4_c17_required/4_636f646573.bin",
+        "cache": "actual/i4_c17_required/4_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "i4_c17_required_4_6f6c645f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 6,
+        "begin": 6
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            5
+          ],
+          "bytes": 3,
+          "file": "i4_c17_required_5_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 3
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 3
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i4_c17_required/5_6f6c645f636f646573.bin",
+        "codes": "actual/i4_c17_required/5_636f646573.bin",
+        "cache": "actual/i4_c17_required/5_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "i4_c17_required_5_6f6c645f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "b",
+      "scalars": {
+        "position": 11,
+        "begin": 7
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            1
+          ],
+          "bytes": 1,
+          "file": "i4_c17_required_6_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 6
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 3
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i4_c17_required/6_6f6c645f636f646573.bin",
+        "codes": "actual/i4_c17_required/6_636f646573.bin",
+        "cache": "actual/i4_c17_required/6_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "i4_c17_required_6_6f6c645f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 12,
+        "begin": 7
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            0
+          ],
+          "bytes": 0,
+          "file": "i4_c17_required_7_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 6
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 3
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i4_c17_required/7_6f6c645f636f646573.bin",
+        "codes": "actual/i4_c17_required/7_636f646573.bin",
+        "cache": "actual/i4_c17_required/7_6361636865.bin"
+      },
+      "before_appends": [
+        {
+          "old_codes": "i4_c17_required_7_6f6c645f636f646573.bin"
+        }
+      ]
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 11,
+        "begin": 7
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            1
+          ],
+          "bytes": 1,
+          "file": "i4_c17_required_8_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 9
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 9
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i4_c17_required/8_6f6c645f636f646573.bin",
+        "codes": "actual/i4_c17_required/8_636f646573.bin"
+      },
+      "expect_error": "committed",
+      "expect_unchanged": true
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 12,
+        "begin": 14
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            1
+          ],
+          "bytes": 1,
+          "file": "i4_c17_required_9_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 9
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 9
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i4_c17_required/9_6f6c645f636f646573.bin",
+        "codes": "actual/i4_c17_required/9_636f646573.bin"
+      },
+      "expect_error": "view",
+      "expect_unchanged": true
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 12,
+        "begin": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            129
+          ],
+          "bytes": 65,
+          "file": "i4_c17_required_10_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 9
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 9
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i4_c17_required/10_6f6c645f636f646573.bin",
+        "codes": "actual/i4_c17_required/10_636f646573.bin"
+      },
+      "expect_error": "bounds",
+      "expect_unchanged": true
+    },
+    {
+      "graph": "a",
+      "scalars": {
+        "position": 0,
+        "begin": 0
+      },
+      "bindings": [
+        {
+          "name": "fresh",
+          "shape": [
+            1
+          ],
+          "bytes": 1,
+          "file": "i4_c17_required_11_6672657368.bin"
+        },
+        {
+          "name": "old_codes",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "codes",
+          "shape": [],
+          "bytes": 1
+        }
+      ],
+      "outputs": {
+        "old_codes": "actual/i4_c17_required/11_6f6c645f636f646573.bin",
+        "codes": "actual/i4_c17_required/11_636f646573.bin",
+        "cache": "actual/i4_c17_required/11_6361636865.bin"
+      },
+      "reset": [
+        "cache"
+      ],
+      "before_appends": [
+        {
+          "old_codes": "i4_c17_required_11_6f6c645f636f646573.bin"
+        }
+      ]
+    }
+  ]
+}

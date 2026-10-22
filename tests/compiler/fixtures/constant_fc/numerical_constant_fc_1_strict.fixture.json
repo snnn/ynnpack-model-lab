@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "numerical_constant_fc_1_strict.ynn"
+  },
+  "buffers": [
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "w",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "weight_alias",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 16
+        },
+        {
+          "name": "w",
+          "shape": [],
+          "bytes": 24
+        },
+        {
+          "name": "weight_alias",
+          "shape": [],
+          "bytes": 24
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/numerical_constant_fc_1_strict/0_79.bin",
+        "w": "actual/numerical_constant_fc_1_strict/0_77.bin",
+        "weight_alias": "actual/numerical_constant_fc_1_strict/0_7765696768745f616c696173.bin"
+      }
+    }
+  ]
+}

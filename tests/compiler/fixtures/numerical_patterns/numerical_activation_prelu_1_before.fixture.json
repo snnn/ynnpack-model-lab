@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "numerical_activation_prelu_1_before.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "negative",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            3
+          ],
+          "bytes": 24,
+          "file": "numerical_activation_prelu_1_before_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 24
+        },
+        {
+          "name": "negative",
+          "shape": [],
+          "bytes": 24
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/numerical_activation_prelu_1_before/0_79.bin",
+        "negative": "actual/numerical_activation_prelu_1_before/0_6e65676174697665.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            3
+          ],
+          "bytes": 24,
+          "file": "numerical_activation_prelu_1_before_1_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 24
+        },
+        {
+          "name": "negative",
+          "shape": [],
+          "bytes": 24
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/numerical_activation_prelu_1_before/1_79.bin",
+        "negative": "actual/numerical_activation_prelu_1_before/1_6e65676174697665.bin"
+      }
+    }
+  ]
+}

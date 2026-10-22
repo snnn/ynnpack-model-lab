@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "numerical_constant_transpose_i4_shared.ynn"
+  },
+  "buffers": [
+    {
+      "name": "y",
+      "dtype": "int32",
+      "shape": [
+        4,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "a",
+      "dtype": "int32",
+      "shape": [
+        2,
+        3,
+        4
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 96
+        },
+        {
+          "name": "a",
+          "shape": [],
+          "bytes": 96
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/numerical_constant_transpose_i4_shared/0_79.bin",
+        "a": "actual/numerical_constant_transpose_i4_shared/0_61.bin"
+      }
+    }
+  ]
+}

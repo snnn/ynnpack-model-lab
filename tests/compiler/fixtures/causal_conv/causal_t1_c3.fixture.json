@@ -1,0 +1,163 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "causal_t1_c3.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "name": "history",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "weights",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        4,
+        1,
+        3
+      ]
+    },
+    {
+      "name": "output",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "name": "next",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3,
+        3
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            1,
+            3
+          ],
+          "bytes": 24,
+          "file": "causal_t1_c3_0_in_78.bin"
+        },
+        {
+          "name": "history",
+          "shape": [
+            2,
+            3,
+            3
+          ],
+          "bytes": 72,
+          "file": "causal_t1_c3_0_in_686973746f7279.bin"
+        },
+        {
+          "name": "weights",
+          "shape": [
+            1,
+            4,
+            1,
+            3
+          ],
+          "bytes": 48,
+          "file": "causal_t1_c3_0_in_77656967687473.bin"
+        },
+        {
+          "name": "output",
+          "shape": [],
+          "bytes": 24
+        },
+        {
+          "name": "next",
+          "shape": [],
+          "bytes": 72
+        }
+      ],
+      "scalars": {
+        "valid": 0
+      },
+      "outputs": {
+        "output": "actual/causal_t1_c3/0_6f7574707574.bin",
+        "next": "actual/causal_t1_c3/0_6e657874.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            1,
+            3
+          ],
+          "bytes": 24,
+          "file": "causal_t1_c3_1_in_78.bin"
+        },
+        {
+          "name": "history",
+          "shape": [
+            2,
+            3,
+            3
+          ],
+          "bytes": 72,
+          "file": "causal_t1_c3_1_in_686973746f7279.bin"
+        },
+        {
+          "name": "weights",
+          "shape": [
+            1,
+            4,
+            1,
+            3
+          ],
+          "bytes": 48,
+          "file": "causal_t1_c3_1_in_77656967687473.bin"
+        },
+        {
+          "name": "output",
+          "shape": [],
+          "bytes": 24
+        },
+        {
+          "name": "next",
+          "shape": [],
+          "bytes": 72
+        }
+      ],
+      "scalars": {
+        "valid": 1
+      },
+      "outputs": {
+        "output": "actual/causal_t1_c3/1_6f7574707574.bin",
+        "next": "actual/causal_t1_c3/1_6e657874.bin"
+      }
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "pad_symmetric_i2.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "int2",
+      "shape": [
+        3,
+        5
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "int2",
+      "shape": [
+        5,
+        9
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            5
+          ],
+          "bytes": 4,
+          "file": "pad_symmetric_i2_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 12
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/pad_symmetric_i2/0_79.bin"
+      }
+    }
+  ]
+}

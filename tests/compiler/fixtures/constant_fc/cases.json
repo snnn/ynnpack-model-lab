@@ -1,0 +1,1846 @@
+[
+  {
+    "name": "numerical_constant_add_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_add_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_add_before_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_add_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_add_strict_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_add_strict_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_add_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_add_legacy_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_add_legacy_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_add_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_add_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_add_shared_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_sub_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_sub_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_sub_before_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_sub_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_sub_strict_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_sub_strict_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_sub_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_sub_legacy_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_sub_legacy_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_sub_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_sub_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_sub_shared_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_mul_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_mul_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_mul_before_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_mul_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_mul_strict_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_mul_strict_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_mul_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_mul_legacy_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_mul_legacy_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_mul_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_mul_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_mul_shared_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_div_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_div_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_div_before_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_div_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_div_strict_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_div_strict_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_div_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_div_legacy_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_div_legacy_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_div_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_div_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_div_shared_0_out_61.bin",
+            "shape": [
+              2,
+              1
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_wrap_i4_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_wrap_i4_before_0_out_79.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_wrap_i4_before_0_out_61.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_wrap_i4_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_wrap_i4_strict_0_out_79.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_wrap_i4_strict_0_out_61.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_wrap_i4_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_wrap_i4_legacy_0_out_79.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_wrap_i4_legacy_0_out_61.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_wrap_i4_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_wrap_i4_shared_0_out_79.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_wrap_i4_shared_0_out_61.bin",
+            "shape": [
+              3
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_cast_f4_i4_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_cast_f4_i4_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_cast_f4_i4_before_0_out_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_cast_f4_i4_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_cast_f4_i4_strict_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_cast_f4_i4_strict_0_out_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_cast_f4_i4_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_cast_f4_i4_legacy_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_cast_f4_i4_legacy_0_out_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_cast_f4_i4_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_cast_f4_i4_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_cast_f4_i4_shared_0_out_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_cast_f4_bool_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_cast_f4_bool_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          },
+          "a": {
+            "file": "numerical_constant_cast_f4_bool_before_0_out_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_cast_f4_bool_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_cast_f4_bool_strict_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          },
+          "a": {
+            "file": "numerical_constant_cast_f4_bool_strict_0_out_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_cast_f4_bool_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_cast_f4_bool_legacy_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          },
+          "a": {
+            "file": "numerical_constant_cast_f4_bool_legacy_0_out_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_cast_f4_bool_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_cast_f4_bool_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          },
+          "a": {
+            "file": "numerical_constant_cast_f4_bool_shared_0_out_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_cast_bool_i4_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_cast_bool_i4_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_cast_bool_i4_before_0_out_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_cast_bool_i4_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_cast_bool_i4_strict_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_cast_bool_i4_strict_0_out_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_cast_bool_i4_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_cast_bool_i4_legacy_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_cast_bool_i4_legacy_0_out_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_cast_bool_i4_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_cast_bool_i4_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_cast_bool_i4_shared_0_out_61.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_slice_f4_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_slice_f4_before_0_out_79.bin",
+            "shape": [
+              2,
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_slice_f4_before_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_slice_f4_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_slice_f4_strict_0_out_79.bin",
+            "shape": [
+              2,
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_slice_f4_strict_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_slice_f4_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_slice_f4_legacy_0_out_79.bin",
+            "shape": [
+              2,
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_slice_f4_legacy_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_slice_f4_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_slice_f4_shared_0_out_79.bin",
+            "shape": [
+              2,
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_slice_f4_shared_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_slice_i4_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_slice_i4_before_0_out_79.bin",
+            "shape": [
+              2,
+              2,
+              2
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_slice_i4_before_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_slice_i4_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_slice_i4_strict_0_out_79.bin",
+            "shape": [
+              2,
+              2,
+              2
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_slice_i4_strict_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_slice_i4_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_slice_i4_legacy_0_out_79.bin",
+            "shape": [
+              2,
+              2,
+              2
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_slice_i4_legacy_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_slice_i4_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_slice_i4_shared_0_out_79.bin",
+            "shape": [
+              2,
+              2,
+              2
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_slice_i4_shared_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_transpose_f4_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_transpose_f4_before_0_out_79.bin",
+            "shape": [
+              4,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_transpose_f4_before_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_transpose_f4_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_transpose_f4_strict_0_out_79.bin",
+            "shape": [
+              4,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_transpose_f4_strict_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_transpose_f4_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_transpose_f4_legacy_0_out_79.bin",
+            "shape": [
+              4,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_transpose_f4_legacy_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_transpose_f4_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_transpose_f4_shared_0_out_79.bin",
+            "shape": [
+              4,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "a": {
+            "file": "numerical_constant_transpose_f4_shared_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_transpose_i4_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_transpose_i4_before_0_out_79.bin",
+            "shape": [
+              4,
+              2,
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_transpose_i4_before_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_transpose_i4_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_transpose_i4_strict_0_out_79.bin",
+            "shape": [
+              4,
+              2,
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_transpose_i4_strict_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_transpose_i4_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_transpose_i4_legacy_0_out_79.bin",
+            "shape": [
+              4,
+              2,
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_transpose_i4_legacy_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_transpose_i4_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_transpose_i4_shared_0_out_79.bin",
+            "shape": [
+              4,
+              2,
+              3
+            ],
+            "dtype": "<i4"
+          },
+          "a": {
+            "file": "numerical_constant_transpose_i4_shared_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "<i4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_transpose_bool_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_transpose_bool_before_0_out_79.bin",
+            "shape": [
+              4,
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          },
+          "a": {
+            "file": "numerical_constant_transpose_bool_before_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_transpose_bool_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_transpose_bool_strict_0_out_79.bin",
+            "shape": [
+              4,
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          },
+          "a": {
+            "file": "numerical_constant_transpose_bool_strict_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_transpose_bool_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_transpose_bool_legacy_0_out_79.bin",
+            "shape": [
+              4,
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          },
+          "a": {
+            "file": "numerical_constant_transpose_bool_legacy_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_transpose_bool_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_transpose_bool_shared_0_out_79.bin",
+            "shape": [
+              4,
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          },
+          "a": {
+            "file": "numerical_constant_transpose_bool_shared_0_out_61.bin",
+            "shape": [
+              2,
+              3,
+              4
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_fc_0_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_fc_0_before_0_out_79.bin",
+            "shape": [
+              1,
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_constant_fc_0_before_0_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "weight_alias": {
+            "file": "numerical_constant_fc_0_before_0_out_7765696768745f616c696173.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_fc_0_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_fc_0_strict_0_out_79.bin",
+            "shape": [
+              1,
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_constant_fc_0_strict_0_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "weight_alias": {
+            "file": "numerical_constant_fc_0_strict_0_out_7765696768745f616c696173.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_fc_0_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_fc_0_legacy_0_out_79.bin",
+            "shape": [
+              1,
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_constant_fc_0_legacy_0_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "weight_alias": {
+            "file": "numerical_constant_fc_0_legacy_0_out_7765696768745f616c696173.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_fc_0_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_fc_0_shared_0_out_79.bin",
+            "shape": [
+              1,
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_constant_fc_0_shared_0_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "weight_alias": {
+            "file": "numerical_constant_fc_0_shared_0_out_7765696768745f616c696173.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_fc_1_before",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_fc_1_before_0_out_79.bin",
+            "shape": [
+              1,
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_constant_fc_1_before_0_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "weight_alias": {
+            "file": "numerical_constant_fc_1_before_0_out_7765696768745f616c696173.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_fc_1_strict",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_fc_1_strict_0_out_79.bin",
+            "shape": [
+              1,
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_constant_fc_1_strict_0_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "weight_alias": {
+            "file": "numerical_constant_fc_1_strict_0_out_7765696768745f616c696173.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_fc_1_legacy",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_fc_1_legacy_0_out_79.bin",
+            "shape": [
+              1,
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_constant_fc_1_legacy_0_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "weight_alias": {
+            "file": "numerical_constant_fc_1_legacy_0_out_7765696768745f616c696173.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_constant_fc_1_shared",
+    "runs": [
+      {
+        "inputs": {},
+        "outputs": {
+          "y": {
+            "file": "numerical_constant_fc_1_shared_0_out_79.bin",
+            "shape": [
+              1,
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_constant_fc_1_shared_0_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "weight_alias": {
+            "file": "numerical_constant_fc_1_shared_0_out_7765696768745f616c696173.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  }
+]

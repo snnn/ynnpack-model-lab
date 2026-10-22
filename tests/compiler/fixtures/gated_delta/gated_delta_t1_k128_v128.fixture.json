@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "gated_delta_t1_k128_v128.ynn"
+  },
+  "buffers": [
+    {
+      "name": "q",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "name": "k",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        1,
+        2,
+        128
+      ]
+    },
+    {
+      "name": "v",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        1,
+        4,
+        128
+      ]
+    },
+    {
+      "name": "g",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "beta",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        1,
+        4
+      ]
+    },
+    {
+      "name": "state",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        4,
+        128,
+        128
+      ]
+    },
+    {
+      "name": "valid",
+      "dtype": "int32",
+      "shape": []
+    },
+    {
+      "name": "output",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        1,
+        4,
+        128
+      ]
+    },
+    {
+      "name": "next_state",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        4,
+        128,
+        128
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "q",
+          "shape": [
+            2,
+            1,
+            2,
+            128
+          ],
+          "bytes": 2048,
+          "file": "gated_delta_t1_k128_v128_0_in_71.bin"
+        },
+        {
+          "name": "k",
+          "shape": [
+            2,
+            1,
+            2,
+            128
+          ],
+          "bytes": 2048,
+          "file": "gated_delta_t1_k128_v128_0_in_6b.bin"
+        },
+        {
+          "name": "v",
+          "shape": [
+            2,
+            1,
+            4,
+            128
+          ],
+          "bytes": 4096,
+          "file": "gated_delta_t1_k128_v128_0_in_76.bin"
+        },
+        {
+          "name": "g",
+          "shape": [
+            2,
+            1,
+            4
+          ],
+          "bytes": 32,
+          "file": "gated_delta_t1_k128_v128_0_in_67.bin"
+        },
+        {
+          "name": "beta",
+          "shape": [
+            2,
+            1,
+            4
+          ],
+          "bytes": 32,
+          "file": "gated_delta_t1_k128_v128_0_in_62657461.bin"
+        },
+        {
+          "name": "state",
+          "shape": [
+            2,
+            4,
+            128,
+            128
+          ],
+          "bytes": 524288,
+          "file": "gated_delta_t1_k128_v128_0_in_7374617465.bin"
+        },
+        {
+          "name": "valid",
+          "shape": [],
+          "bytes": 4,
+          "file": "gated_delta_t1_k128_v128_0_in_76616c6964.bin"
+        },
+        {
+          "name": "output",
+          "shape": [],
+          "bytes": 4096
+        },
+        {
+          "name": "next_state",
+          "shape": [],
+          "bytes": 524288
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "output": "actual/gated_delta_t1_k128_v128/0_6f7574707574.bin",
+        "next_state": "actual/gated_delta_t1_k128_v128/0_6e6578745f7374617465.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "q",
+          "shape": [
+            2,
+            1,
+            2,
+            128
+          ],
+          "bytes": 2048,
+          "file": "gated_delta_t1_k128_v128_1_in_71.bin"
+        },
+        {
+          "name": "k",
+          "shape": [
+            2,
+            1,
+            2,
+            128
+          ],
+          "bytes": 2048,
+          "file": "gated_delta_t1_k128_v128_1_in_6b.bin"
+        },
+        {
+          "name": "v",
+          "shape": [
+            2,
+            1,
+            4,
+            128
+          ],
+          "bytes": 4096,
+          "file": "gated_delta_t1_k128_v128_1_in_76.bin"
+        },
+        {
+          "name": "g",
+          "shape": [
+            2,
+            1,
+            4
+          ],
+          "bytes": 32,
+          "file": "gated_delta_t1_k128_v128_1_in_67.bin"
+        },
+        {
+          "name": "beta",
+          "shape": [
+            2,
+            1,
+            4
+          ],
+          "bytes": 32,
+          "file": "gated_delta_t1_k128_v128_1_in_62657461.bin"
+        },
+        {
+          "name": "state",
+          "shape": [
+            2,
+            4,
+            128,
+            128
+          ],
+          "bytes": 524288,
+          "file": "gated_delta_t1_k128_v128_1_in_7374617465.bin"
+        },
+        {
+          "name": "valid",
+          "shape": [],
+          "bytes": 4,
+          "file": "gated_delta_t1_k128_v128_1_in_76616c6964.bin"
+        },
+        {
+          "name": "output",
+          "shape": [],
+          "bytes": 4096
+        },
+        {
+          "name": "next_state",
+          "shape": [],
+          "bytes": 524288
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "output": "actual/gated_delta_t1_k128_v128/1_6f7574707574.bin",
+        "next_state": "actual/gated_delta_t1_k128_v128/1_6e6578745f7374617465.bin"
+      }
+    }
+  ]
+}

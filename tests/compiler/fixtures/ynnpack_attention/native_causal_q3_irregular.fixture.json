@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "native_causal_q3_irregular.ynn"
+  },
+  "buffers": [
+    {
+      "name": "q",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        4,
+        3,
+        16
+      ]
+    },
+    {
+      "name": "k",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        2,
+        7,
+        16
+      ]
+    },
+    {
+      "name": "v",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        2,
+        7,
+        8
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        4,
+        3,
+        8
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "q",
+          "shape": [
+            1,
+            4,
+            3,
+            16
+          ],
+          "bytes": 768,
+          "file": "native_causal_q3_irregular_0_in_71.bin"
+        },
+        {
+          "name": "k",
+          "shape": [
+            1,
+            2,
+            7,
+            16
+          ],
+          "bytes": 896,
+          "file": "native_causal_q3_irregular_0_in_6b.bin"
+        },
+        {
+          "name": "v",
+          "shape": [
+            1,
+            2,
+            7,
+            8
+          ],
+          "bytes": 448,
+          "file": "native_causal_q3_irregular_0_in_76.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 384
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/native_causal_q3_irregular/0_79.bin"
+      }
+    }
+  ]
+}

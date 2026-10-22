@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "linear1.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        17,
+        129
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        17,
+        65
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            0,
+            129
+          ],
+          "bytes": 0,
+          "file": "linear1_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/linear1/0_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            1,
+            129
+          ],
+          "bytes": 516,
+          "file": "linear1_1_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 260
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/linear1/1_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            129
+          ],
+          "bytes": 1548,
+          "file": "linear1_2_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 780
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/linear1/2_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            17,
+            129
+          ],
+          "bytes": 8772,
+          "file": "linear1_3_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 4420
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/linear1/3_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            129
+          ],
+          "bytes": 1032,
+          "file": "linear1_4_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 520
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/linear1/4_79.bin"
+      }
+    }
+  ]
+}

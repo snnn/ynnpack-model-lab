@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "numerical_activation_gelu_1_native.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "term",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            3
+          ],
+          "bytes": 24,
+          "file": "numerical_activation_gelu_1_native_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 24
+        },
+        {
+          "name": "term",
+          "shape": [],
+          "bytes": 24
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/numerical_activation_gelu_1_native/0_79.bin",
+        "term": "actual/numerical_activation_gelu_1_native/0_7465726d.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            3
+          ],
+          "bytes": 24,
+          "file": "numerical_activation_gelu_1_native_1_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 24
+        },
+        {
+          "name": "term",
+          "shape": [],
+          "bytes": 24
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/numerical_activation_gelu_1_native/1_79.bin",
+        "term": "actual/numerical_activation_gelu_1_native/1_7465726d.bin"
+      }
+    }
+  ]
+}

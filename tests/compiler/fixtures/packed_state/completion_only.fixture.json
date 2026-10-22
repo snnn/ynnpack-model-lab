@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "completion_only.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "int8",
+      "shape": [
+        4
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            4
+          ],
+          "bytes": 4,
+          "file": "completion_only_0_in_78.bin"
+        }
+      ],
+      "scalars": {},
+      "outputs": {}
+    }
+  ],
+  "profile": true
+}

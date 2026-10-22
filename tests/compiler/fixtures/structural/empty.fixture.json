@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "empty.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        0,
+        3
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            3
+          ],
+          "bytes": 24,
+          "file": "empty_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/empty/0_79.bin"
+      }
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "boolean_1.ynn"
+  },
+  "buffers": [
+    {
+      "name": "q",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        4,
+        2,
+        4
+      ]
+    },
+    {
+      "name": "k",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "name": "v",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "name": "mask",
+      "dtype": "uint8",
+      "shape": [
+        2,
+        4,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        4,
+        2,
+        5
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "q",
+          "shape": [
+            2,
+            4,
+            2,
+            4
+          ],
+          "bytes": 256,
+          "file": "boolean_1_0_in_71.bin"
+        },
+        {
+          "name": "k",
+          "shape": [
+            2,
+            2,
+            3,
+            4
+          ],
+          "bytes": 192,
+          "file": "boolean_1_0_in_6b.bin"
+        },
+        {
+          "name": "v",
+          "shape": [
+            2,
+            2,
+            3,
+            5
+          ],
+          "bytes": 240,
+          "file": "boolean_1_0_in_76.bin"
+        },
+        {
+          "name": "mask",
+          "shape": [
+            2,
+            4,
+            2,
+            3
+          ],
+          "bytes": 48,
+          "file": "boolean_1_0_in_6d61736b.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 320
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/boolean_1/0_79.bin"
+      }
+    }
+  ]
+}

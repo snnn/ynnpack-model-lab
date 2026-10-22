@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "linear4.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        17,
+        132
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        17,
+        67
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            0,
+            132
+          ],
+          "bytes": 0,
+          "file": "linear4_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/linear4/0_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            1,
+            132
+          ],
+          "bytes": 528,
+          "file": "linear4_1_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 268
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/linear4/1_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            132
+          ],
+          "bytes": 1584,
+          "file": "linear4_2_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 804
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/linear4/2_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            17,
+            132
+          ],
+          "bytes": 8976,
+          "file": "linear4_3_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 4556
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/linear4/3_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            132
+          ],
+          "bytes": 1056,
+          "file": "linear4_4_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 536
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/linear4/4_79.bin"
+      }
+    }
+  ]
+}

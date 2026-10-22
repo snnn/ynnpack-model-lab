@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "numerical_affine_symbolic_prefix_shared.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        5,
+        2,
+        3
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "w",
+      "dtype": "fp32",
+      "shape": [
+        2,
+        3
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            2,
+            3
+          ],
+          "bytes": 48,
+          "file": "numerical_affine_symbolic_prefix_shared_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 32
+        },
+        {
+          "name": "w",
+          "shape": [],
+          "bytes": 24
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/numerical_affine_symbolic_prefix_shared/0_79.bin",
+        "w": "actual/numerical_affine_symbolic_prefix_shared/0_77.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            0,
+            2,
+            3
+          ],
+          "bytes": 0,
+          "file": "numerical_affine_symbolic_prefix_shared_1_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 0
+        },
+        {
+          "name": "w",
+          "shape": [],
+          "bytes": 24
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/numerical_affine_symbolic_prefix_shared/1_79.bin",
+        "w": "actual/numerical_affine_symbolic_prefix_shared/1_77.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            1,
+            2,
+            3
+          ],
+          "bytes": 24,
+          "file": "numerical_affine_symbolic_prefix_shared_2_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 16
+        },
+        {
+          "name": "w",
+          "shape": [],
+          "bytes": 24
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/numerical_affine_symbolic_prefix_shared/2_79.bin",
+        "w": "actual/numerical_affine_symbolic_prefix_shared/2_77.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            5,
+            2,
+            3
+          ],
+          "bytes": 120,
+          "file": "numerical_affine_symbolic_prefix_shared_3_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 80
+        },
+        {
+          "name": "w",
+          "shape": [],
+          "bytes": 24
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/numerical_affine_symbolic_prefix_shared/3_79.bin",
+        "w": "actual/numerical_affine_symbolic_prefix_shared/3_77.bin"
+      }
+    }
+  ]
+}

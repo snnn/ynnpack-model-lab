@@ -1,6 +1,14 @@
-# Standalone model artifacts
+# Authoring models
 
-Graph authors and compiler integration live in a separate private repository.
+The public Rust compiler and Qwen3 author are described in [COMPILER.md](COMPILER.md).
+Both direct Rust authors and source importers produce the same semantic program;
+the public compiler owns all YNNPACK lowering. The following artifact conventions
+also apply to models maintained by external frontends.
+
+## Standalone model artifacts
+
+Existing imported model authors live in their source frontend repository; the
+public Rust Qwen3 author and generic compiler live here.
 This lab publishes `.ynn` construction plans, model metadata, parameter recipes,
 state fixtures, and the matching native YNNPACK/Slinky adapter. Building and
 running them requires no private compiler, Python authoring package, or ISLE.
@@ -97,8 +105,8 @@ its numerical references are supplied independently. See
 ## Publication
 
 Publish reviewed `.ynn` plans, recipes, metadata and standalone runtime helpers
-with their original notices. Keep private authors, compiler sources, binding
-patches, installation instructions and raw compiler reports outside this
-repository. Learned model payloads, downloads, builds and large dumps remain
+with their original notices. Keep proprietary frontend authors, binding patches, and private generation
+reports outside this repository. The public compiler, Rust authors, and their
+source-independent tests are maintained here. Learned model payloads, downloads, builds and large dumps remain
 ignored. Small deterministic state-test parameters are checked in with their
 plans. Publication history must also exclude the private sources.

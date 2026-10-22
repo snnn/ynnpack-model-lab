@@ -15,6 +15,12 @@ and free-running generation quality have not been established.
 The 4B package is not Qwen3-4B-Instruct-2507. Both vocabularies have 151,936
 entries. The checkpoint snapshot identities are recorded in each `model.json`.
 
+For independent model authoring, `rust/src/models/qwen3.rs` builds prefill and
+decode programs through the public Rust API. The [compiler guide](COMPILER.md#qwen3)
+shows how to prepare a Qwen3-0.6B checkpoint, compile it with `ynn-qwen3`, and run
+the resulting package. This authoring path currently uses the INT8 recipe
+described below with FP32 KV state.
+
 ## Package and arithmetic
 
 The generated directory contains `prefill.ynn`, `decode.ynn`, and `model.json`.

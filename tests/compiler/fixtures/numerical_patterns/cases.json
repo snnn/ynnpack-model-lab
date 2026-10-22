@@ -1,0 +1,3335 @@
+[
+  {
+    "name": "numerical_activation_relu6_0_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu6_0_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu6_0_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu6_0_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu6_0_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_relu6_0_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu6_0_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu6_0_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu6_0_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu6_0_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_relu6_0_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu6_0_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu6_0_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu6_0_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu6_0_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_relu6_1_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu6_1_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu6_1_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "positive": {
+            "file": "numerical_activation_relu6_1_before_0_out_706f736974697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu6_1_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu6_1_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "positive": {
+            "file": "numerical_activation_relu6_1_before_1_out_706f736974697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_relu6_1_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu6_1_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu6_1_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "positive": {
+            "file": "numerical_activation_relu6_1_shared_0_out_706f736974697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu6_1_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu6_1_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "positive": {
+            "file": "numerical_activation_relu6_1_shared_1_out_706f736974697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_relu6_1_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu6_1_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu6_1_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "positive": {
+            "file": "numerical_activation_relu6_1_native_0_out_706f736974697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu6_1_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu6_1_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "positive": {
+            "file": "numerical_activation_relu6_1_native_1_out_706f736974697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_relu_0_to_1_0_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu_0_to_1_0_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu_0_to_1_0_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu_0_to_1_0_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu_0_to_1_0_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_relu_0_to_1_0_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu_0_to_1_0_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu_0_to_1_0_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu_0_to_1_0_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu_0_to_1_0_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_relu_0_to_1_0_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu_0_to_1_0_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu_0_to_1_0_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu_0_to_1_0_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu_0_to_1_0_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_relu_0_to_1_1_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu_0_to_1_1_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu_0_to_1_1_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "cap": {
+            "file": "numerical_activation_relu_0_to_1_1_before_0_out_636170.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu_0_to_1_1_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu_0_to_1_1_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "cap": {
+            "file": "numerical_activation_relu_0_to_1_1_before_1_out_636170.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_relu_0_to_1_1_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu_0_to_1_1_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu_0_to_1_1_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "cap": {
+            "file": "numerical_activation_relu_0_to_1_1_shared_0_out_636170.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu_0_to_1_1_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu_0_to_1_1_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "cap": {
+            "file": "numerical_activation_relu_0_to_1_1_shared_1_out_636170.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_relu_0_to_1_1_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu_0_to_1_1_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu_0_to_1_1_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "cap": {
+            "file": "numerical_activation_relu_0_to_1_1_native_0_out_636170.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_relu_0_to_1_1_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_relu_0_to_1_1_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "cap": {
+            "file": "numerical_activation_relu_0_to_1_1_native_1_out_636170.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_leaky_relu_0_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_relu_0_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_relu_0_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_relu_0_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_relu_0_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_leaky_relu_0_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_relu_0_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_relu_0_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_relu_0_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_relu_0_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_leaky_relu_0_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_relu_0_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_relu_0_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_relu_0_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_relu_0_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_leaky_relu_1_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_relu_1_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_relu_1_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_leaky_relu_1_before_0_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_relu_1_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_relu_1_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_leaky_relu_1_before_1_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_leaky_relu_1_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_relu_1_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_relu_1_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_leaky_relu_1_shared_0_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_relu_1_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_relu_1_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_leaky_relu_1_shared_1_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_leaky_relu_1_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_relu_1_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_relu_1_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_leaky_relu_1_native_0_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_relu_1_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_relu_1_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_leaky_relu_1_native_1_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_leaky_select_0_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_select_0_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_select_0_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_select_0_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_select_0_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_leaky_select_0_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_select_0_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_select_0_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_select_0_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_select_0_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_leaky_select_0_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_select_0_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_select_0_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_select_0_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_select_0_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_leaky_select_1_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_select_1_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_select_1_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_leaky_select_1_before_0_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_select_1_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_select_1_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_leaky_select_1_before_1_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_leaky_select_1_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_select_1_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_select_1_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_leaky_select_1_shared_0_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_select_1_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_select_1_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_leaky_select_1_shared_1_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_leaky_select_1_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_select_1_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_select_1_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_leaky_select_1_native_0_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_leaky_select_1_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_leaky_select_1_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_leaky_select_1_native_1_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_prelu_0_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_prelu_0_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_prelu_0_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_prelu_0_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_prelu_0_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_prelu_0_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_prelu_0_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_prelu_0_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_prelu_0_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_prelu_0_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_prelu_0_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_prelu_0_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_prelu_0_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_prelu_0_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_prelu_0_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_prelu_1_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_prelu_1_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_prelu_1_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_prelu_1_before_0_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_prelu_1_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_prelu_1_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_prelu_1_before_1_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_prelu_1_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_prelu_1_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_prelu_1_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_prelu_1_shared_0_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_prelu_1_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_prelu_1_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_prelu_1_shared_1_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_prelu_1_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_prelu_1_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_prelu_1_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_prelu_1_native_0_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_prelu_1_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_prelu_1_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_prelu_1_native_1_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_hard_swish_0_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_hard_swish_0_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_hard_swish_0_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_hard_swish_0_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_hard_swish_0_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_hard_swish_0_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_hard_swish_0_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_hard_swish_0_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_hard_swish_0_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_hard_swish_0_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_hard_swish_0_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_hard_swish_0_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_hard_swish_0_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_hard_swish_0_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_hard_swish_0_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_hard_swish_1_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_hard_swish_1_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_hard_swish_1_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "positive": {
+            "file": "numerical_activation_hard_swish_1_before_0_out_706f736974697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_hard_swish_1_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_hard_swish_1_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "positive": {
+            "file": "numerical_activation_hard_swish_1_before_1_out_706f736974697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_hard_swish_1_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_hard_swish_1_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_hard_swish_1_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "positive": {
+            "file": "numerical_activation_hard_swish_1_shared_0_out_706f736974697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_hard_swish_1_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_hard_swish_1_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "positive": {
+            "file": "numerical_activation_hard_swish_1_shared_1_out_706f736974697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_hard_swish_1_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_hard_swish_1_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_hard_swish_1_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "positive": {
+            "file": "numerical_activation_hard_swish_1_native_0_out_706f736974697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_hard_swish_1_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_hard_swish_1_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "positive": {
+            "file": "numerical_activation_hard_swish_1_native_1_out_706f736974697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_gelu_0_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_gelu_0_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_gelu_0_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_gelu_0_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_gelu_0_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_gelu_0_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_gelu_0_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_gelu_0_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_gelu_0_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_gelu_0_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_gelu_0_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_gelu_0_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_gelu_0_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_gelu_0_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_gelu_0_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_gelu_1_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_gelu_1_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_gelu_1_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "term": {
+            "file": "numerical_activation_gelu_1_before_0_out_7465726d.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_gelu_1_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_gelu_1_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "term": {
+            "file": "numerical_activation_gelu_1_before_1_out_7465726d.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_gelu_1_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_gelu_1_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_gelu_1_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "term": {
+            "file": "numerical_activation_gelu_1_shared_0_out_7465726d.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_gelu_1_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_gelu_1_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "term": {
+            "file": "numerical_activation_gelu_1_shared_1_out_7465726d.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_gelu_1_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_gelu_1_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_gelu_1_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "term": {
+            "file": "numerical_activation_gelu_1_native_0_out_7465726d.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_gelu_1_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_gelu_1_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "term": {
+            "file": "numerical_activation_gelu_1_native_1_out_7465726d.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_elu_0_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_elu_0_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_elu_0_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_elu_0_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_elu_0_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_elu_0_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_elu_0_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_elu_0_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_elu_0_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_elu_0_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_elu_0_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_elu_0_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_elu_0_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_elu_0_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_elu_0_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_elu_1_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_elu_1_before_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_elu_1_before_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_elu_1_before_0_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_elu_1_before_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_elu_1_before_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_elu_1_before_1_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_elu_1_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_elu_1_shared_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_elu_1_shared_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_elu_1_shared_0_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_elu_1_shared_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_elu_1_shared_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_elu_1_shared_1_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_activation_elu_1_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_elu_1_native_0_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_elu_1_native_0_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_elu_1_native_0_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_activation_elu_1_native_1_in_78.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_activation_elu_1_native_1_out_79.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          },
+          "negative": {
+            "file": "numerical_activation_elu_1_native_1_out_6e65676174697665.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_affine_symbolic_prefix_before",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_affine_symbolic_prefix_before_0_in_78.bin",
+            "shape": [
+              2,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_affine_symbolic_prefix_before_0_out_79.bin",
+            "shape": [
+              4,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_affine_symbolic_prefix_before_0_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_affine_symbolic_prefix_before_1_in_78.bin",
+            "shape": [
+              0,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_affine_symbolic_prefix_before_1_out_79.bin",
+            "shape": [
+              0,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_affine_symbolic_prefix_before_1_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_affine_symbolic_prefix_before_2_in_78.bin",
+            "shape": [
+              1,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_affine_symbolic_prefix_before_2_out_79.bin",
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_affine_symbolic_prefix_before_2_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_affine_symbolic_prefix_before_3_in_78.bin",
+            "shape": [
+              5,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_affine_symbolic_prefix_before_3_out_79.bin",
+            "shape": [
+              10,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_affine_symbolic_prefix_before_3_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_affine_symbolic_prefix_shared",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_affine_symbolic_prefix_shared_0_in_78.bin",
+            "shape": [
+              2,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_affine_symbolic_prefix_shared_0_out_79.bin",
+            "shape": [
+              4,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_affine_symbolic_prefix_shared_0_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_affine_symbolic_prefix_shared_1_in_78.bin",
+            "shape": [
+              0,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_affine_symbolic_prefix_shared_1_out_79.bin",
+            "shape": [
+              0,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_affine_symbolic_prefix_shared_1_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_affine_symbolic_prefix_shared_2_in_78.bin",
+            "shape": [
+              1,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_affine_symbolic_prefix_shared_2_out_79.bin",
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_affine_symbolic_prefix_shared_2_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_affine_symbolic_prefix_shared_3_in_78.bin",
+            "shape": [
+              5,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_affine_symbolic_prefix_shared_3_out_79.bin",
+            "shape": [
+              10,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_affine_symbolic_prefix_shared_3_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  },
+  {
+    "name": "numerical_affine_symbolic_prefix_native",
+    "runs": [
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_affine_symbolic_prefix_native_0_in_78.bin",
+            "shape": [
+              2,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_affine_symbolic_prefix_native_0_out_79.bin",
+            "shape": [
+              4,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_affine_symbolic_prefix_native_0_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_affine_symbolic_prefix_native_1_in_78.bin",
+            "shape": [
+              0,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_affine_symbolic_prefix_native_1_out_79.bin",
+            "shape": [
+              0,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_affine_symbolic_prefix_native_1_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_affine_symbolic_prefix_native_2_in_78.bin",
+            "shape": [
+              1,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_affine_symbolic_prefix_native_2_out_79.bin",
+            "shape": [
+              2,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_affine_symbolic_prefix_native_2_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      },
+      {
+        "inputs": {
+          "x": {
+            "file": "numerical_affine_symbolic_prefix_native_3_in_78.bin",
+            "shape": [
+              5,
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "numerical_affine_symbolic_prefix_native_3_out_79.bin",
+            "shape": [
+              10,
+              2
+            ],
+            "dtype": "<f4"
+          },
+          "w": {
+            "file": "numerical_affine_symbolic_prefix_native_3_out_77.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "atol": 2e-05,
+    "negate_zero_profile": null
+  }
+]

@@ -1,0 +1,4152 @@
+[
+  {
+    "name": "boolean_0",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "boolean_0_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              2,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "boolean_0_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              3,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "boolean_0_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "boolean_0_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "boolean_0_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "boolean_1",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "boolean_1_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              2,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "boolean_1_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              3,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "boolean_1_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "boolean_1_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              2,
+              3
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "boolean_1_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "boolean_2",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "boolean_2_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              2,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "boolean_2_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              3,
+              4
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "boolean_2_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "boolean_2_0_in_6d61736b.bin",
+            "shape": [],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "boolean_2_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_additive_q1_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_additive_q1_irregular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_additive_q1_irregular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_additive_q1_irregular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_additive_q1_irregular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_additive_q1_irregular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_boolean_q1_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_boolean_q1_irregular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_boolean_q1_irregular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_boolean_q1_irregular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_boolean_q1_irregular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              7
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_boolean_q1_irregular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_causal_q1_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_causal_q1_irregular_0_in_71.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_causal_q1_irregular_0_in_6b.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_causal_q1_irregular_0_in_76.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_causal_q1_irregular_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_window_q1_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_window_q1_irregular_0_in_71.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_window_q1_irregular_0_in_6b.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_window_q1_irregular_0_in_76.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_window_q1_irregular_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_all_masked_q1_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_all_masked_q1_irregular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_all_masked_q1_irregular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_all_masked_q1_irregular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_all_masked_q1_irregular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_all_masked_q1_irregular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_masked_nan_q1_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_masked_nan_q1_irregular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_masked_nan_q1_irregular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_masked_nan_q1_irregular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_masked_nan_q1_irregular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_masked_nan_q1_irregular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_additive_q1_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_additive_q1_regular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_additive_q1_regular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_additive_q1_regular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_additive_q1_regular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_additive_q1_regular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_boolean_q1_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_boolean_q1_regular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_boolean_q1_regular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_boolean_q1_regular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_boolean_q1_regular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              7
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_boolean_q1_regular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_causal_q1_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_causal_q1_regular_0_in_71.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_causal_q1_regular_0_in_6b.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_causal_q1_regular_0_in_76.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_causal_q1_regular_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_window_q1_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_window_q1_regular_0_in_71.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_window_q1_regular_0_in_6b.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_window_q1_regular_0_in_76.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_window_q1_regular_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_all_masked_q1_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_all_masked_q1_regular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_all_masked_q1_regular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_all_masked_q1_regular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_all_masked_q1_regular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_all_masked_q1_regular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_masked_nan_q1_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_masked_nan_q1_regular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_masked_nan_q1_regular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_masked_nan_q1_regular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_masked_nan_q1_regular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_masked_nan_q1_regular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              1,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_additive_q3_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_additive_q3_irregular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_additive_q3_irregular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_additive_q3_irregular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_additive_q3_irregular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_additive_q3_irregular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_boolean_q3_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_boolean_q3_irregular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_boolean_q3_irregular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_boolean_q3_irregular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_boolean_q3_irregular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              7
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_boolean_q3_irregular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_causal_q3_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_causal_q3_irregular_0_in_71.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_causal_q3_irregular_0_in_6b.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_causal_q3_irregular_0_in_76.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_causal_q3_irregular_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_window_q3_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_window_q3_irregular_0_in_71.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_window_q3_irregular_0_in_6b.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_window_q3_irregular_0_in_76.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_window_q3_irregular_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_all_masked_q3_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_all_masked_q3_irregular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_all_masked_q3_irregular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_all_masked_q3_irregular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_all_masked_q3_irregular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_all_masked_q3_irregular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_masked_nan_q3_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_masked_nan_q3_irregular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_masked_nan_q3_irregular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_masked_nan_q3_irregular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_masked_nan_q3_irregular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_masked_nan_q3_irregular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_additive_q3_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_additive_q3_regular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_additive_q3_regular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_additive_q3_regular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_additive_q3_regular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_additive_q3_regular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_boolean_q3_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_boolean_q3_regular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_boolean_q3_regular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_boolean_q3_regular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_boolean_q3_regular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              7
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_boolean_q3_regular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_causal_q3_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_causal_q3_regular_0_in_71.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_causal_q3_regular_0_in_6b.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_causal_q3_regular_0_in_76.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_causal_q3_regular_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_window_q3_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_window_q3_regular_0_in_71.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_window_q3_regular_0_in_6b.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_window_q3_regular_0_in_76.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_window_q3_regular_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_all_masked_q3_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_all_masked_q3_regular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_all_masked_q3_regular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_all_masked_q3_regular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_all_masked_q3_regular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_all_masked_q3_regular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_masked_nan_q3_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_masked_nan_q3_regular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_masked_nan_q3_regular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_masked_nan_q3_regular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_masked_nan_q3_regular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_masked_nan_q3_regular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              3,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_additive_q5_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_additive_q5_irregular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_additive_q5_irregular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_additive_q5_irregular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_additive_q5_irregular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_additive_q5_irregular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_boolean_q5_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_boolean_q5_irregular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_boolean_q5_irregular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_boolean_q5_irregular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_boolean_q5_irregular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              7
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_boolean_q5_irregular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_causal_q5_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_causal_q5_irregular_0_in_71.bin",
+            "shape": [
+              1,
+              4,
+              5,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_causal_q5_irregular_0_in_6b.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_causal_q5_irregular_0_in_76.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_causal_q5_irregular_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              5,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_window_q5_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_window_q5_irregular_0_in_71.bin",
+            "shape": [
+              1,
+              4,
+              5,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_window_q5_irregular_0_in_6b.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_window_q5_irregular_0_in_76.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_window_q5_irregular_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              5,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_all_masked_q5_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_all_masked_q5_irregular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_all_masked_q5_irregular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_all_masked_q5_irregular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_all_masked_q5_irregular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_all_masked_q5_irregular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_masked_nan_q5_irregular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_masked_nan_q5_irregular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_masked_nan_q5_irregular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_masked_nan_q5_irregular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_masked_nan_q5_irregular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_masked_nan_q5_irregular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_additive_q5_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_additive_q5_regular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_additive_q5_regular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_additive_q5_regular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_additive_q5_regular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_additive_q5_regular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_boolean_q5_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_boolean_q5_regular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_boolean_q5_regular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_boolean_q5_regular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_boolean_q5_regular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              7
+            ],
+            "dtype": "|b1"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_boolean_q5_regular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_causal_q5_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_causal_q5_regular_0_in_71.bin",
+            "shape": [
+              1,
+              4,
+              5,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_causal_q5_regular_0_in_6b.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_causal_q5_regular_0_in_76.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_causal_q5_regular_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              5,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_window_q5_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_window_q5_regular_0_in_71.bin",
+            "shape": [
+              1,
+              4,
+              5,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_window_q5_regular_0_in_6b.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_window_q5_regular_0_in_76.bin",
+            "shape": [
+              1,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_window_q5_regular_0_out_79.bin",
+            "shape": [
+              1,
+              4,
+              5,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_all_masked_q5_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_all_masked_q5_regular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_all_masked_q5_regular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_all_masked_q5_regular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_all_masked_q5_regular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_all_masked_q5_regular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "native_masked_nan_q5_regular",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "native_masked_nan_q5_regular_0_in_71.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "native_masked_nan_q5_regular_0_in_6b.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              16
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "native_masked_nan_q5_regular_0_in_76.bin",
+            "shape": [
+              2,
+              2,
+              7,
+              8
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "native_masked_nan_q5_regular_0_in_6d61736b.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "native_masked_nan_q5_regular_0_out_79.bin",
+            "shape": [
+              2,
+              4,
+              5,
+              8
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {}
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "append",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "append_0_71.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "k_fresh": {
+            "file": "append_0_6b5f6672657368.bin",
+            "shape": [
+              1,
+              2,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v_fresh": {
+            "file": "append_0_765f6672657368.bin",
+            "shape": [
+              1,
+              2,
+              3,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "append_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "append_0_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "append_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "append_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 0,
+          "begin": 0
+        },
+        "resources": {
+          "k": 3,
+          "v": 3
+        },
+        "append_bytes": 288,
+        "append_calls": 2,
+        "view_copy_bytes": 0
+      },
+      {
+        "inputs": {
+          "q": {
+            "file": "append_1_71.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "k_fresh": {
+            "file": "append_1_6b5f6672657368.bin",
+            "shape": [
+              1,
+              2,
+              1,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v_fresh": {
+            "file": "append_1_765f6672657368.bin",
+            "shape": [
+              1,
+              2,
+              1,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "append_1_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "append_1_79.bin",
+            "shape": [
+              1,
+              4,
+              1,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "append_1_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "append_1_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 3,
+          "begin": 1
+        },
+        "resources": {
+          "k": 4,
+          "v": 4
+        },
+        "append_bytes": 96,
+        "append_calls": 2,
+        "view_copy_bytes": 0
+      },
+      {
+        "inputs": {
+          "q": {
+            "file": "append_2_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "k_fresh": {
+            "file": "append_2_6b5f6672657368.bin",
+            "shape": [
+              1,
+              2,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v_fresh": {
+            "file": "append_2_765f6672657368.bin",
+            "shape": [
+              1,
+              2,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "append_2_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              4
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "append_2_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "append_2_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "append_2_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 4,
+          "begin": 2
+        },
+        "resources": {
+          "k": 6,
+          "v": 6
+        },
+        "append_bytes": 480,
+        "append_calls": 4,
+        "view_copy_bytes": 0
+      },
+      {
+        "inputs": {
+          "q": {
+            "file": "append_3_71.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "k_fresh": {
+            "file": "append_3_6b5f6672657368.bin",
+            "shape": [
+              1,
+              2,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v_fresh": {
+            "file": "append_3_765f6672657368.bin",
+            "shape": [
+              1,
+              2,
+              3,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "append_3_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "append_3_79.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "append_3_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "append_3_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 6,
+          "begin": 4
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 768,
+        "append_calls": 6,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_0",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_0_0_71.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_0_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_0_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_0_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_0_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_1",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_1_0_71.bin",
+            "shape": [
+              1,
+              4,
+              3,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_1_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_1_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_1_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_1_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_2",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_2_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_2_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              0
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_2_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_2_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_2_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 0,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_3",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_3_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_3_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              0
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_3_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_3_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_3_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 0,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_4",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_4_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_4_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              0,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_4_0_79.bin",
+            "shape": [
+              1,
+              4,
+              0,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_4_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_4_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 3,
+          "queries": 0
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_5",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_5_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_5_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              0,
+              3
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_5_0_79.bin",
+            "shape": [
+              1,
+              4,
+              0,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_5_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_5_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 3,
+          "queries": 0
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_6",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_6_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_6_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_6_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_6_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_6_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_7",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_7_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_7_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_7_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_7_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_7_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_8",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_8_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_8_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_8_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_8_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_8_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_9",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_9_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_9_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_9_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_9_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_9_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_10",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_10_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_10_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_10_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_10_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_10_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_11",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_11_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_11_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_11_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_11_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_11_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_12",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_12_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_12_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_12_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_12_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_12_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_13",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_13_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_13_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_13_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_13_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_13_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_14",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_14_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_14_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_14_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_14_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_14_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_15",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_15_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_15_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_15_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_15_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_15_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_16",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_16_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_16_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_16_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_16_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_16_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  },
+  {
+    "name": "read_17",
+    "runs": [
+      {
+        "inputs": {
+          "q": {
+            "file": "read_17_0_71.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "mask": {
+            "file": "read_17_0_6d61736b.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              5
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "outputs": {
+          "y": {
+            "file": "read_17_0_79.bin",
+            "shape": [
+              1,
+              4,
+              2,
+              7
+            ],
+            "dtype": "<f4"
+          },
+          "k": {
+            "file": "read_17_0_6b.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              5
+            ],
+            "dtype": "<f4"
+          },
+          "v": {
+            "file": "read_17_0_76.bin",
+            "shape": [
+              1,
+              2,
+              9,
+              7
+            ],
+            "dtype": "<f4"
+          }
+        },
+        "scalars": {
+          "position": 9,
+          "begin": 4,
+          "keys": 5,
+          "queries": 2
+        },
+        "resources": {
+          "k": 9,
+          "v": 9
+        },
+        "append_bytes": 0,
+        "append_calls": 0,
+        "view_copy_bytes": 0
+      }
+    ],
+    "compare": "numeric",
+    "atol": 2e-05,
+    "rtol": 2e-05
+  }
+]

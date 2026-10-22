@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "blockwise_131_256.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "fp32",
+      "shape": [
+        17,
+        256
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        17,
+        131
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            0,
+            256
+          ],
+          "bytes": 0,
+          "file": "blockwise_131_256_0_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 0
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/blockwise_131_256/0_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            1,
+            256
+          ],
+          "bytes": 1024,
+          "file": "blockwise_131_256_1_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 524
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/blockwise_131_256/1_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            256
+          ],
+          "bytes": 3072,
+          "file": "blockwise_131_256_2_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 1572
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/blockwise_131_256/2_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            17,
+            256
+          ],
+          "bytes": 17408,
+          "file": "blockwise_131_256_3_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 8908
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/blockwise_131_256/3_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            2,
+            256
+          ],
+          "bytes": 2048,
+          "file": "blockwise_131_256_4_in_78.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 1048
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/blockwise_131_256/4_79.bin"
+      }
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "blockwise_crop.ynn"
+  },
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "int4",
+      "shape": [
+        3,
+        5
+      ]
+    },
+    {
+      "name": "s",
+      "dtype": "fp32",
+      "shape": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "z",
+      "dtype": "int32",
+      "shape": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        3,
+        3
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            5
+          ],
+          "bytes": 8,
+          "file": "blockwise_crop_0_in_78.bin"
+        },
+        {
+          "name": "s",
+          "shape": [
+            3,
+            3
+          ],
+          "bytes": 36,
+          "file": "blockwise_crop_0_in_73.bin"
+        },
+        {
+          "name": "z",
+          "shape": [
+            3,
+            3
+          ],
+          "bytes": 36,
+          "file": "blockwise_crop_0_in_7a.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 36
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/blockwise_crop/0_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            5
+          ],
+          "bytes": 8,
+          "file": "blockwise_crop_1_in_78.bin"
+        },
+        {
+          "name": "s",
+          "shape": [
+            3,
+            3
+          ],
+          "bytes": 36,
+          "file": "blockwise_crop_1_in_73.bin"
+        },
+        {
+          "name": "z",
+          "shape": [
+            3,
+            3
+          ],
+          "bytes": 36,
+          "file": "blockwise_crop_1_in_7a.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 36
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/blockwise_crop/1_79.bin"
+      }
+    },
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            5
+          ],
+          "bytes": 8,
+          "file": "blockwise_crop_2_in_78.bin"
+        },
+        {
+          "name": "s",
+          "shape": [
+            3,
+            3
+          ],
+          "bytes": 36,
+          "file": "blockwise_crop_2_in_73.bin"
+        },
+        {
+          "name": "z",
+          "shape": [
+            3,
+            3
+          ],
+          "bytes": 36,
+          "file": "blockwise_crop_2_in_7a.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 36
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/blockwise_crop/2_79.bin"
+      }
+    }
+  ]
+}

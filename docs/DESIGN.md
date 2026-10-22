@@ -9,7 +9,10 @@ not make a model the default design or documentation entry point.
 
 | Component | Responsibility |
 | --- | --- |
-| External graph author | Offline graph preparation and `.ynn` plan export; maintained separately |
+| `rust/src/compiler/` | Semantic program validation, YNNPACK lowering and `.ynn` plan emission |
+| `rust/src/models/` | Rust model architectures using the public graph API |
+| `python/ynnpack_assets/` | Checkpoint preparation, quantization recipes and artifact publication |
+| Source importer | Translation from a source frontend into the same semantic program contract |
 | `runtime/ynnpack_support.h` | Pinned YNNPACK/Slinky API adapter, bindings, state/view contracts |
 | `runtime/model_assets.h` | Read-only mappings and Gemma4 embedding unpacking |
 | `rust/src/frontend.rs`, `rust/src/frontend/` | Shared argument/input handling, direct HF tokenization, manifest policy, provenance and fixture export |
@@ -123,9 +126,10 @@ original desktop capacity check produced identical logits.
 
 ## Adding another model
 
-1. Add a model directory with architecture, weight provenance, extraction or
-   import logic, token fixtures, and standalone `.ynn` plans. Maintain compiler
-   integration and graph-authoring sources in their separate repository.
+1. Author the model with the [Rust graph API](COMPILER.md), or supply a semantic
+   program through a source importer. Add architecture, weight provenance,
+   extraction recipes, token fixtures, and standalone `.ynn` plans. Reuse the
+   shared compiler for target lowering.
    Reuse the tokenizer and benchmark-case frontend with a hash-pinned asset
    recipe and explicit prompt prefix/suffix policy; pass the model's vocabulary
    bound to case resolution. See [TOKENIZERS.md](TOKENIZERS.md).

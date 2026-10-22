@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "read_9_model.ynn"
+  },
+  "buffers": [
+    {
+      "name": "k",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        2,
+        9,
+        5
+      ],
+      "file": "read_9_6b_initial.bin",
+      "resource": "model",
+      "initialized_extent": 9,
+      "append_axis": 2
+    },
+    {
+      "name": "v",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        2,
+        9,
+        7
+      ],
+      "file": "read_9_76_initial.bin",
+      "resource": "model",
+      "initialized_extent": 9,
+      "append_axis": 2
+    },
+    {
+      "name": "q",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        4,
+        2,
+        5
+      ]
+    },
+    {
+      "name": "mask",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        4,
+        2,
+        5
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        1,
+        4,
+        2,
+        7
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "scalars": {
+        "position": 9,
+        "begin": 4,
+        "keys": 5,
+        "queries": 2
+      },
+      "bindings": [
+        {
+          "name": "q",
+          "shape": [
+            1,
+            4,
+            2,
+            5
+          ],
+          "bytes": 160,
+          "file": "read_9_0_71.bin"
+        },
+        {
+          "name": "mask",
+          "shape": [
+            1,
+            4,
+            2,
+            5
+          ],
+          "bytes": 160,
+          "file": "read_9_0_6d61736b.bin"
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 224
+        }
+      ],
+      "outputs": {
+        "y": "actual/read_9/0_79.bin",
+        "k": "actual/read_9/0_6b.bin",
+        "v": "actual/read_9/0_76.bin"
+      }
+    }
+  ]
+}

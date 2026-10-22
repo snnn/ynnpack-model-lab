@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "graphs": {
+    "model": "constant_fold_i4.ynn"
+  },
+  "buffers": [
+    {
+      "name": "y",
+      "dtype": "int4",
+      "shape": [
+        3,
+        5
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 8
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "y": "actual/constant_fold_i4/0_79.bin"
+      }
+    }
+  ]
+}
