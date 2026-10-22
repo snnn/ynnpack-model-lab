@@ -52,7 +52,11 @@ Inputs are raw little-endian FP32 values. Repeat `--input_file` to run multiple
 cases through one prepared graph. The output directory must be new. The runner
 writes `measurements.json` and, with `--dump_outputs`, `output_<case>.bin` logits.
 
-## Correctness and CPU comparison
+## Historical host Python comparison
+
+This workflow reproduces the earlier Linux measurements with the Python
+interpreter wrapper. New baseline measurements use LiteRT's native benchmark;
+the Android workflow below documents that path.
 
 Each validation asset set contains two seeded random inputs, a photograph
 processed with the checkpoint's transform, PyTorch logits, and their hashes.
@@ -88,4 +92,75 @@ incremental RSS is also reported and is not a tensor-allocation measurement.
 
 Raw invocations, per-run medians, setup, memory, correctness, commands and model
 identities are retained in the output directory. These fixed-input checks do
-not measure ImageNet classification accuracy or establish device performance.
+not measure ImageNet classification accuracy. Timing claims apply only to the
+measured device and configuration.
+
+## Android comparison with the native LiteRT benchmark
+
+Use LiteRT's `//litert/tools:benchmark_model` target, whose entry point is
+`benchmark_model_main` in `litert/tools/BUILD`, for the Android control. Build it
+with the LiteRT checkout's documented Android Bazel command, adding
+`--define=litert_enable_ynnpack=false`, `--define=xnn_enable_arm_sme=false`, and
+`--define=xnn_enable_arm_sme2=false`. These select the ordinary XNNPACK CPU
+control and keep SME studies separate. Build `//litert/tools:run_model` with
+the same options for independent fixture validation. On Android, add
+`--per_file_copt=litert/tools/run_model.cc@-DABSL_FLAGS_STRIP_NAMES=0` to preserve
+that tool's CLI flags. Keep copies of both binaries before another build.
+
+The native benchmark generates its own input; it does not consume the saved
+photograph. Reproduce its default FP32 input using the same C++ standard library
+as the benchmark. With NDK r28c and static libc++:
+
+```sh
+"$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android28-clang++" \
+  -std=c++20 -O2 -static-libstdc++ tools/vision_benchmark_input.cc \
+  -o out/vision_benchmark_input
+adb -s "$ANDROID_SERIAL" push out/vision_benchmark_input /data/local/tmp/
+adb -s "$ANDROID_SERIAL" shell \
+  /data/local/tmp/vision_benchmark_input /data/local/tmp/vision-input.bin
+adb -s "$ANDROID_SERIAL" pull /data/local/tmp/vision-input.bin out/vision-input.bin
+```
+
+The generator mirrors `tflite/tools/utils.cc`: default-seeded `std::mt19937`
+and `std::uniform_real_distribution<float>(-0.5, 0.5)` for `[1,3,224,224]`.
+Review that source when changing LiteRT versions. STL implementations can
+produce different sequences. The generator requires a new output file.
+
+Create an ignored devices JSON file containing a list of objects with `label`,
+`serial`, and `masks` fields. `masks` maps `"1"` and `"4"` to hexadecimal CPU
+masks containing one and four CPUs. Check each phone's online CPUs and
+`/sys/devices/system/cpu/cpufreq/policy*/related_cpus`; do not reuse another
+phone's masks. Check free storage and memory before deployment.
+
+```sh
+python tools/compare_vision_android.py \
+  --devices-json out/vision-devices.json \
+  --ynn-binary build-android/vision \
+  --benchmark-binary "$LITERT_BENCHMARK" \
+  --validation-binary "$LITERT_RUN_MODEL" \
+  --benchmark-input out/vision-input.bin \
+  --litert-root "$LITERT_ROOT" --protoc "$PROTOC" \
+  --tflite-root "$TFLITE_MODELS" \
+  --remote-root /data/local/tmp/vision-comparison \
+  --output out/vision-android --warmup 3 --runs 10 --repeats 2 --cooldown 10
+```
+
+Run with NumPy and protobuf installed. `PROTOC` is a host executable; the harness
+reads the benchmark's own result and runtime-info schemas. It verifies local
+and deployed hashes, runs every process sequentially, reverses engine order
+between rounds, captures battery/frequency/thermal snapshots, and restores the
+original stay-awake setting. Governors and frequency limits are unchanged.
+The device directory and local result directory must be new. An explicit
+`--reuse-deployment` permits an existing device directory, rechecks every file,
+and still rejects existing per-job output directories.
+
+YNNPACK fixture checks cover one and four threads. LiteRT fixture checks use
+`run_model`'s default one CPU thread and the same three PyTorch references.
+Separate `benchmark_model` diagnostic runs retain actual delegate coverage.
+Both timed engines use one/four threads and the matched synthetic input; neither
+Python inference nor output dumping runs inside the timed processes.
+The Android summary reports mean warm invocation time across the rounds. Native
+benchmark protobufs retain per-process mean, median, range, setup, first invoke,
+and run counts; YNNPACK also retains individual invocation times. LiteRT's memory
+footprint fields are increments in process peak RSS on these platforms, whereas
+YNNPACK records current and absolute peak RSS. Peak-memory polling is disabled.

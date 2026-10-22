@@ -1,0 +1,6626 @@
+[
+  {
+    "device": "tecno",
+    "model": "resnet18",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4796416,
+      "cases": [
+        {
+          "first_invoke_ms": 133.139077,
+          "inference_ms": [
+            134.672923,
+            133.078154,
+            135.270461,
+            134.881846,
+            134.729461,
+            135.156923,
+            134.834384,
+            134.696385,
+            135.649615,
+            135.095615
+          ],
+          "rss_bytes": 107089920
+        }
+      ],
+      "compile_ms": 104.02615399999999,
+      "construction_ms": 156.956231,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 115662848,
+      "prepared_rss_bytes": 106278912,
+      "runner": "rust",
+      "setup_ms": 260.983308,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet18",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4997120,
+      "cases": [
+        {
+          "first_invoke_ms": 46.775964,
+          "inference_ms": [
+            46.048099,
+            46.073775,
+            45.987187,
+            45.989844000000005,
+            45.652301,
+            45.829479,
+            45.787551,
+            46.013047,
+            46.751197000000005,
+            45.984921
+          ],
+          "rss_bytes": 107212800
+        }
+      ],
+      "compile_ms": 85.921041,
+      "construction_ms": 172.789582,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 115752960,
+      "prepared_rss_bytes": 106475520,
+      "runner": "rust",
+      "setup_ms": 258.711299,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet18",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4136960,
+      "cases": [
+        {
+          "first_invoke_ms": 43.427448,
+          "inference_ms": [
+            45.531406000000004,
+            45.600157,
+            45.957188,
+            45.949531,
+            46.185209,
+            46.370937,
+            46.42125,
+            46.56625,
+            46.572292000000004,
+            46.213281
+          ],
+          "rss_bytes": 106287104
+        }
+      ],
+      "compile_ms": 57.079634999999996,
+      "construction_ms": 105.50302,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 114745344,
+      "prepared_rss_bytes": 105549824,
+      "runner": "rust",
+      "setup_ms": 162.58302,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet18",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 91.7237,
+        "min_ms": 90.29,
+        "max_ms": 93.387,
+        "stddev_ms": 0.953,
+        "median_ms": 91.778,
+        "p5_ms": 90.29,
+        "p95_ms": 93.387,
+        "init_ms": 64.265,
+        "first_inference_ms": 91.514,
+        "average_warm_up_ms": 91.454
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "109028",
+        "overall_footprint_kb": "110156"
+      },
+      "misc_metrics": {
+        "model_size_mb": 46.75448,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 6.2603097
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet18",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 40.2889,
+        "min_ms": 39.95,
+        "max_ms": 40.478,
+        "stddev_ms": 0.142,
+        "median_ms": 40.354,
+        "p5_ms": 39.95,
+        "p95_ms": 40.478,
+        "init_ms": 54.698,
+        "first_inference_ms": 40.266,
+        "average_warm_up_ms": 40.342667
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "108244",
+        "overall_footprint_kb": "109396"
+      },
+      "misc_metrics": {
+        "model_size_mb": 46.75448,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 14.25253
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet18",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 29.8428,
+        "min_ms": 29.321,
+        "max_ms": 30.217,
+        "stddev_ms": 0.273,
+        "median_ms": 29.896,
+        "p5_ms": 29.321,
+        "p95_ms": 30.217,
+        "init_ms": 42.719,
+        "first_inference_ms": 31.562,
+        "average_warm_up_ms": 29.533667
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "107520",
+        "overall_footprint_kb": "108672"
+      },
+      "misc_metrics": {
+        "model_size_mb": 46.75448,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 19.24145
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet18",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 91.4519,
+        "min_ms": 90.177,
+        "max_ms": 92.726,
+        "stddev_ms": 0.841,
+        "median_ms": 91.274,
+        "p5_ms": 90.177,
+        "p95_ms": 92.726,
+        "init_ms": 67.289,
+        "first_inference_ms": 93.729,
+        "average_warm_up_ms": 92.94833
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "109180",
+        "overall_footprint_kb": "110304"
+      },
+      "misc_metrics": {
+        "model_size_mb": 46.75448,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 6.2789154
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet18",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 40.4911,
+        "min_ms": 39.157,
+        "max_ms": 40.783,
+        "stddev_ms": 0.451,
+        "median_ms": 40.628,
+        "p5_ms": 39.157,
+        "p95_ms": 40.783,
+        "init_ms": 54.559,
+        "first_inference_ms": 40.286,
+        "average_warm_up_ms": 40.352665
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "108244",
+        "overall_footprint_kb": "109396"
+      },
+      "misc_metrics": {
+        "model_size_mb": 46.75448,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 14.181357
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet18",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 29.6973,
+        "min_ms": 28.966,
+        "max_ms": 30.042,
+        "stddev_ms": 0.338,
+        "median_ms": 29.823,
+        "p5_ms": 28.966,
+        "p95_ms": 30.042,
+        "init_ms": 42.163,
+        "first_inference_ms": 35.4,
+        "average_warm_up_ms": 31.494667
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "107520",
+        "overall_footprint_kb": "108672"
+      },
+      "misc_metrics": {
+        "model_size_mb": 46.75448,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 19.335722
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet18",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3739648,
+      "cases": [
+        {
+          "first_invoke_ms": 131.821616,
+          "inference_ms": [
+            132.92553800000002,
+            131.611615,
+            132.80061600000002,
+            132.83138499999998,
+            133.726462,
+            133.035077,
+            133.104308,
+            133.427616,
+            133.339077,
+            132.844
+          ],
+          "rss_bytes": 107134976
+        }
+      ],
+      "compile_ms": 102.254154,
+      "construction_ms": 157.196539,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 115707904,
+      "prepared_rss_bytes": 106323968,
+      "runner": "rust",
+      "setup_ms": 259.45138499999996,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet18",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 5062656,
+      "cases": [
+        {
+          "first_invoke_ms": 47.103176,
+          "inference_ms": [
+            45.704572999999996,
+            45.927682,
+            46.41664,
+            46.427448000000005,
+            46.32875,
+            45.902656,
+            45.805068,
+            45.865103,
+            45.8094,
+            46.148817
+          ],
+          "rss_bytes": 107171840
+        }
+      ],
+      "compile_ms": 86.92151,
+      "construction_ms": 171.148799,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 115769344,
+      "prepared_rss_bytes": 106434560,
+      "runner": "rust",
+      "setup_ms": 258.070621,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet18",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4255744,
+      "cases": [
+        {
+          "first_invoke_ms": 43.586666,
+          "inference_ms": [
+            46.191406,
+            46.411666999999994,
+            45.85625,
+            46.029791,
+            46.232656,
+            46.480520999999996,
+            46.62927,
+            46.744426999999995,
+            46.84349,
+            46.942031
+          ],
+          "rss_bytes": 106344448
+        }
+      ],
+      "compile_ms": 58.022656,
+      "construction_ms": 106.212812,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 114876416,
+      "prepared_rss_bytes": 105574400,
+      "runner": "rust",
+      "setup_ms": 164.235885,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet18",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3608576,
+      "cases": [
+        {
+          "first_invoke_ms": 77.481308,
+          "inference_ms": [
+            58.693923000000005,
+            55.936,
+            58.701846,
+            57.559154,
+            61.368846,
+            56.975308000000005,
+            57.372847,
+            57.559768999999996,
+            58.142768999999994,
+            57.728538
+          ],
+          "rss_bytes": 107433984
+        }
+      ],
+      "compile_ms": 102.596,
+      "construction_ms": 159.538154,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 115568640,
+      "prepared_rss_bytes": 106315776,
+      "runner": "rust",
+      "setup_ms": 262.135308,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet18",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 5038080,
+      "cases": [
+        {
+          "first_invoke_ms": 242.740371,
+          "inference_ms": [
+            168.199555,
+            151.820519,
+            163.88893,
+            174.310935,
+            182.468878,
+            181.104764,
+            173.23856500000002,
+            188.06966,
+            180.024971,
+            172.090293
+          ],
+          "rss_bytes": 107261952
+        }
+      ],
+      "compile_ms": 89.507343,
+      "construction_ms": 210.29372099999998,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 115916800,
+      "prepared_rss_bytes": 106389504,
+      "runner": "rust",
+      "setup_ms": 299.801872,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet18",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4169728,
+      "cases": [
+        {
+          "first_invoke_ms": 62.92,
+          "inference_ms": [
+            29.78974,
+            27.814947999999998,
+            27.354739,
+            28.732031000000003,
+            27.933438000000002,
+            28.284375,
+            28.707396,
+            28.224791999999997,
+            28.625937,
+            28.624323
+          ],
+          "rss_bytes": 106688512
+        }
+      ],
+      "compile_ms": 123.815937,
+      "construction_ms": 217.99025999999998,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 114745344,
+      "prepared_rss_bytes": 105644032,
+      "runner": "rust",
+      "setup_ms": 341.806718,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet18",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 23.5744,
+        "min_ms": 23.208,
+        "max_ms": 24.79,
+        "stddev_ms": 0.517,
+        "median_ms": 23.357,
+        "p5_ms": 23.208,
+        "p95_ms": 24.79,
+        "init_ms": 67.102,
+        "first_inference_ms": 33.587,
+        "average_warm_up_ms": 27.115334
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "108424",
+        "overall_footprint_kb": "109548"
+      },
+      "misc_metrics": {
+        "model_size_mb": 46.75448,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 24.357725
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet18",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 19.7368,
+        "min_ms": 19.539,
+        "max_ms": 19.875,
+        "stddev_ms": 0.106,
+        "median_ms": 19.796,
+        "p5_ms": 19.539,
+        "p95_ms": 19.875,
+        "init_ms": 65.63,
+        "first_inference_ms": 21.089,
+        "average_warm_up_ms": 20.299
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "108240",
+        "overall_footprint_kb": "109392"
+      },
+      "misc_metrics": {
+        "model_size_mb": 46.75448,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 29.093813
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet18",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 13.1672,
+        "min_ms": 11.953,
+        "max_ms": 14.34,
+        "stddev_ms": 0.888,
+        "median_ms": 13.384,
+        "p5_ms": 11.953,
+        "p95_ms": 14.34,
+        "init_ms": 114.741,
+        "first_inference_ms": 54.662,
+        "average_warm_up_ms": 28.947666
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "107776",
+        "overall_footprint_kb": "109056"
+      },
+      "misc_metrics": {
+        "model_size_mb": 46.75448,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 43.609783
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet18",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 23.4935,
+        "min_ms": 23.235,
+        "max_ms": 23.752,
+        "stddev_ms": 0.136,
+        "median_ms": 23.522,
+        "p5_ms": 23.235,
+        "p95_ms": 23.752,
+        "init_ms": 67.882,
+        "first_inference_ms": 29.964,
+        "average_warm_up_ms": 27.707333
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "109252",
+        "overall_footprint_kb": "110376"
+      },
+      "misc_metrics": {
+        "model_size_mb": 46.75448,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 24.4416
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet18",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 20.901,
+        "min_ms": 19.614,
+        "max_ms": 27.728,
+        "stddev_ms": 2.412,
+        "median_ms": 19.924,
+        "p5_ms": 19.614,
+        "p95_ms": 27.728,
+        "init_ms": 66.454,
+        "first_inference_ms": 22.027,
+        "average_warm_up_ms": 30.258667
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "108224",
+        "overall_footprint_kb": "109376"
+      },
+      "misc_metrics": {
+        "model_size_mb": 46.75448,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 27.473267
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet18",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 14.1767,
+        "min_ms": 14.056,
+        "max_ms": 14.313,
+        "stddev_ms": 0.068,
+        "median_ms": 14.186,
+        "p5_ms": 14.056,
+        "p95_ms": 14.313,
+        "init_ms": 114.601,
+        "first_inference_ms": 57.647,
+        "average_warm_up_ms": 30.639334
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "107648",
+        "overall_footprint_kb": "108928"
+      },
+      "misc_metrics": {
+        "model_size_mb": 46.75448,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 40.504402
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet18",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3702784,
+      "cases": [
+        {
+          "first_invoke_ms": 73.083384,
+          "inference_ms": [
+            57.548923,
+            57.180231,
+            57.121231,
+            57.398077,
+            55.979154,
+            56.753538999999996,
+            58.889615,
+            57.873308,
+            56.652923,
+            58.590846
+          ],
+          "rss_bytes": 107720704
+        }
+      ],
+      "compile_ms": 103.035692,
+      "construction_ms": 158.640307,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 116076544,
+      "prepared_rss_bytes": 106680320,
+      "runner": "rust",
+      "setup_ms": 261.676923,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet18",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 5021696,
+      "cases": [
+        {
+          "first_invoke_ms": 203.684633,
+          "inference_ms": [
+            155.344337,
+            159.305831,
+            148.979061,
+            139.518227,
+            136.959268,
+            167.94221100000001,
+            166.19565,
+            152.797316,
+            158.197576,
+            154.51510199999998
+          ],
+          "rss_bytes": 107749376
+        }
+      ],
+      "compile_ms": 86.946395,
+      "construction_ms": 209.222794,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 116183040,
+      "prepared_rss_bytes": 106778624,
+      "runner": "rust",
+      "setup_ms": 296.16994400000004,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet18",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4263936,
+      "cases": [
+        {
+          "first_invoke_ms": 63.733541,
+          "inference_ms": [
+            29.660156,
+            29.631822,
+            28.919166,
+            28.756042,
+            30.213594,
+            28.106718,
+            30.10552,
+            29.242864,
+            27.651145,
+            30.645885
+          ],
+          "rss_bytes": 106692608
+        }
+      ],
+      "compile_ms": 120.400781,
+      "construction_ms": 214.471562,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet18",
+      "peak_rss_bytes": 114974720,
+      "prepared_rss_bytes": 105615360,
+      "runner": "rust",
+      "setup_ms": 334.87291600000003,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet34",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3678208,
+      "cases": [
+        {
+          "first_invoke_ms": 250.772308,
+          "inference_ms": [
+            253.50530700000002,
+            255.317,
+            254.99884600000001,
+            254.59253900000002,
+            254.969231,
+            250.03515399999998,
+            252.40400000000002,
+            253.415308,
+            251.426769,
+            252.69723100000002
+          ],
+          "rss_bytes": 191361024
+        }
+      ],
+      "compile_ms": 226.603308,
+      "construction_ms": 287.859692,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 199933952,
+      "prepared_rss_bytes": 190488576,
+      "runner": "rust",
+      "setup_ms": 514.463385,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet34",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 5021696,
+      "cases": [
+        {
+          "first_invoke_ms": 82.55309700000001,
+          "inference_ms": [
+            81.705989,
+            81.68708299999999,
+            81.139009,
+            81.407005,
+            81.169399,
+            80.903401,
+            81.625285,
+            81.425129,
+            81.62539000000001,
+            82.069764
+          ],
+          "rss_bytes": 191684608
+        }
+      ],
+      "compile_ms": 188.217524,
+      "construction_ms": 618.715148,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 200224768,
+      "prepared_rss_bytes": 190947328,
+      "runner": "rust",
+      "setup_ms": 806.933323,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet34",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4337664,
+      "cases": [
+        {
+          "first_invoke_ms": 79.93224000000001,
+          "inference_ms": [
+            83.588907,
+            84.080833,
+            84.869635,
+            84.709584,
+            84.855365,
+            85.04203100000001,
+            84.93291599999999,
+            85.127187,
+            85.351042,
+            85.751563
+          ],
+          "rss_bytes": 190992384
+        }
+      ],
+      "compile_ms": 124.958959,
+      "construction_ms": 186.725312,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 199536640,
+      "prepared_rss_bytes": 190222336,
+      "runner": "rust",
+      "setup_ms": 311.684635,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet34",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 182.8482,
+        "min_ms": 180.356,
+        "max_ms": 184.909,
+        "stddev_ms": 1.576,
+        "median_ms": 183.643,
+        "p5_ms": 180.356,
+        "p95_ms": 184.909,
+        "init_ms": 116.82,
+        "first_inference_ms": 182.346,
+        "average_warm_up_ms": 185.11333
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "188688",
+        "overall_footprint_kb": "189820"
+      },
+      "misc_metrics": {
+        "model_size_mb": 87.18264,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 3.1404123
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet34",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 79.0794,
+        "min_ms": 78.862,
+        "max_ms": 79.29,
+        "stddev_ms": 0.138,
+        "median_ms": 79.05,
+        "p5_ms": 78.862,
+        "p95_ms": 79.29,
+        "init_ms": 91.773,
+        "first_inference_ms": 79.129,
+        "average_warm_up_ms": 79.030334
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "188228",
+        "overall_footprint_kb": "189380"
+      },
+      "misc_metrics": {
+        "model_size_mb": 87.18264,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 7.261294
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet34",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 59.6994,
+        "min_ms": 58.699,
+        "max_ms": 60.71,
+        "stddev_ms": 0.513,
+        "median_ms": 59.835,
+        "p5_ms": 58.699,
+        "p95_ms": 60.71,
+        "init_ms": 75.404,
+        "first_inference_ms": 55.573,
+        "average_warm_up_ms": 57.169334
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "187648",
+        "overall_footprint_kb": "188800"
+      },
+      "misc_metrics": {
+        "model_size_mb": 87.18264,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 9.618502
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet34",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 181.8184,
+        "min_ms": 179.906,
+        "max_ms": 183.643,
+        "stddev_ms": 1.0,
+        "median_ms": 181.74,
+        "p5_ms": 179.906,
+        "p95_ms": 183.643,
+        "init_ms": 116.826,
+        "first_inference_ms": 184.674,
+        "average_warm_up_ms": 183.241
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "188960",
+        "overall_footprint_kb": "190088"
+      },
+      "misc_metrics": {
+        "model_size_mb": 87.18264,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 3.1581993
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet34",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 78.8873,
+        "min_ms": 78.641,
+        "max_ms": 79.126,
+        "stddev_ms": 0.136,
+        "median_ms": 78.887,
+        "p5_ms": 78.641,
+        "p95_ms": 79.126,
+        "init_ms": 90.818,
+        "first_inference_ms": 78.888,
+        "average_warm_up_ms": 78.65567
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "188100",
+        "overall_footprint_kb": "189252"
+      },
+      "misc_metrics": {
+        "model_size_mb": 87.18264,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 7.278976
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet34",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 59.4409,
+        "min_ms": 58.553,
+        "max_ms": 59.994,
+        "stddev_ms": 0.436,
+        "median_ms": 59.586,
+        "p5_ms": 58.553,
+        "p95_ms": 59.994,
+        "init_ms": 71.645,
+        "first_inference_ms": 62.087,
+        "average_warm_up_ms": 58.799
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "187520",
+        "overall_footprint_kb": "188672"
+      },
+      "misc_metrics": {
+        "model_size_mb": 87.18264,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 9.660331
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet34",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3747840,
+      "cases": [
+        {
+          "first_invoke_ms": 251.67015399999997,
+          "inference_ms": [
+            252.94853899999998,
+            251.939154,
+            252.853538,
+            250.909231,
+            253.05023100000003,
+            252.73476900000003,
+            253.969923,
+            252.54176900000002,
+            250.434154,
+            251.31630700000002
+          ],
+          "rss_bytes": 191569920
+        }
+      ],
+      "compile_ms": 226.074153,
+      "construction_ms": 288.17976899999996,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 200142848,
+      "prepared_rss_bytes": 190763008,
+      "runner": "rust",
+      "setup_ms": 514.254846,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet34",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 5029888,
+      "cases": [
+        {
+          "first_invoke_ms": 82.440546,
+          "inference_ms": [
+            82.09203,
+            81.770312,
+            82.007238,
+            81.949843,
+            82.13805500000001,
+            82.322213,
+            81.969374,
+            82.260154,
+            82.275416,
+            81.507342
+          ],
+          "rss_bytes": 191721472
+        }
+      ],
+      "compile_ms": 184.40669000000003,
+      "construction_ms": 272.610464,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 200327168,
+      "prepared_rss_bytes": 190918656,
+      "runner": "rust",
+      "setup_ms": 457.017598,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet34",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4378624,
+      "cases": [
+        {
+          "first_invoke_ms": 80.04921900000001,
+          "inference_ms": [
+            83.774427,
+            84.025469,
+            84.481875,
+            84.309219,
+            84.751146,
+            85.353594,
+            85.29015600000001,
+            85.40406300000001,
+            85.884218,
+            86.116563
+          ],
+          "rss_bytes": 191066112
+        }
+      ],
+      "compile_ms": 125.09265599999999,
+      "construction_ms": 199.814844,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 199565312,
+      "prepared_rss_bytes": 190296064,
+      "runner": "rust",
+      "setup_ms": 324.908125,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet34",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3600384,
+      "cases": [
+        {
+          "first_invoke_ms": 116.07384599999999,
+          "inference_ms": [
+            101.99138500000001,
+            104.477846,
+            102.83577000000001,
+            103.22030699999999,
+            103.80707699999999,
+            106.34823,
+            101.303692,
+            105.388615,
+            109.140077,
+            104.425154
+          ],
+          "rss_bytes": 191524864
+        }
+      ],
+      "compile_ms": 223.890385,
+      "construction_ms": 290.578154,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 198590464,
+      "prepared_rss_bytes": 190590976,
+      "runner": "rust",
+      "setup_ms": 514.4693070000001,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet34",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4993024,
+      "cases": [
+        {
+          "first_invoke_ms": 87.540806,
+          "inference_ms": [
+            105.415207,
+            122.219831,
+            142.30893,
+            152.17127399999998,
+            162.578201,
+            171.581222,
+            206.141117,
+            211.09293000000002,
+            226.34918000000002,
+            237.69546499999998
+          ],
+          "rss_bytes": 191643648
+        }
+      ],
+      "compile_ms": 184.866518,
+      "construction_ms": 322.939657,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 199176192,
+      "prepared_rss_bytes": 191119360,
+      "runner": "rust",
+      "setup_ms": 507.80702499999995,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet34",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4227072,
+      "cases": [
+        {
+          "first_invoke_ms": 78.960313,
+          "inference_ms": [
+            54.775312,
+            53.239323,
+            52.072187,
+            53.712448,
+            51.481249999999996,
+            52.339375000000004,
+            52.0675,
+            52.891511,
+            50.759427,
+            54.877655999999995
+          ],
+          "rss_bytes": 191172608
+        }
+      ],
+      "compile_ms": 190.26838600000002,
+      "construction_ms": 385.28229200000004,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 198389760,
+      "prepared_rss_bytes": 190275584,
+      "runner": "rust",
+      "setup_ms": 575.55125,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet34",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 47.0323,
+        "min_ms": 45.888,
+        "max_ms": 51.036,
+        "stddev_ms": 1.497,
+        "median_ms": 46.559,
+        "p5_ms": 45.888,
+        "p95_ms": 51.036,
+        "init_ms": 117.5,
+        "first_inference_ms": 52.659,
+        "average_warm_up_ms": 48.388668
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "189228",
+        "overall_footprint_kb": "190356"
+      },
+      "misc_metrics": {
+        "model_size_mb": 87.18264,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 12.20903
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet34",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 38.8279,
+        "min_ms": 38.417,
+        "max_ms": 39.127,
+        "stddev_ms": 0.222,
+        "median_ms": 38.905,
+        "p5_ms": 38.417,
+        "p95_ms": 39.127,
+        "init_ms": 106.507,
+        "first_inference_ms": 42.143,
+        "average_warm_up_ms": 39.900665
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "188364",
+        "overall_footprint_kb": "189644"
+      },
+      "misc_metrics": {
+        "model_size_mb": 87.18264,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 14.788818
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet34",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 24.4375,
+        "min_ms": 23.677,
+        "max_ms": 25.439,
+        "stddev_ms": 0.522,
+        "median_ms": 24.287,
+        "p5_ms": 23.677,
+        "p95_ms": 25.439,
+        "init_ms": 210.169,
+        "first_inference_ms": 73.21,
+        "average_warm_up_ms": 40.477665
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "187648",
+        "overall_footprint_kb": "188928"
+      },
+      "misc_metrics": {
+        "model_size_mb": 87.18264,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 23.497442
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet34",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 47.1677,
+        "min_ms": 45.764,
+        "max_ms": 48.933,
+        "stddev_ms": 1.056,
+        "median_ms": 47.43,
+        "p5_ms": 45.764,
+        "p95_ms": 48.933,
+        "init_ms": 116.817,
+        "first_inference_ms": 53.338,
+        "average_warm_up_ms": 49.707333
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "189340",
+        "overall_footprint_kb": "190468"
+      },
+      "misc_metrics": {
+        "model_size_mb": 87.18264,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 12.173983
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet34",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 38.9621,
+        "min_ms": 38.569,
+        "max_ms": 39.311,
+        "stddev_ms": 0.199,
+        "median_ms": 38.975,
+        "p5_ms": 38.569,
+        "p95_ms": 39.311,
+        "init_ms": 110.462,
+        "first_inference_ms": 40.938,
+        "average_warm_up_ms": 39.455
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "188148",
+        "overall_footprint_kb": "189428"
+      },
+      "misc_metrics": {
+        "model_size_mb": 87.18264,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 14.73788
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet34",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 24.6096,
+        "min_ms": 23.635,
+        "max_ms": 25.615,
+        "stddev_ms": 0.574,
+        "median_ms": 24.678,
+        "p5_ms": 23.635,
+        "p95_ms": 25.615,
+        "init_ms": 209.618,
+        "first_inference_ms": 56.48,
+        "average_warm_up_ms": 34.903667
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "187648",
+        "overall_footprint_kb": "188800"
+      },
+      "misc_metrics": {
+        "model_size_mb": 87.18264,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 23.33312
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet34",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3616768,
+      "cases": [
+        {
+          "first_invoke_ms": 120.24300000000001,
+          "inference_ms": [
+            100.526846,
+            101.643,
+            106.198846,
+            103.208,
+            103.470154,
+            105.520616,
+            101.076077,
+            106.541231,
+            103.758077,
+            103.69176900000001
+          ],
+          "rss_bytes": 191545344
+        }
+      ],
+      "compile_ms": 226.344001,
+      "construction_ms": 288.20669300000003,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 198938624,
+      "prepared_rss_bytes": 190939136,
+      "runner": "rust",
+      "setup_ms": 514.5510770000001,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet34",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 5042176,
+      "cases": [
+        {
+          "first_invoke_ms": 86.93622300000001,
+          "inference_ms": [
+            112.16796699999999,
+            129.626171,
+            153.62231500000001,
+            165.775284,
+            174.28906,
+            186.546664,
+            197.670415,
+            228.23896599999998,
+            254.884137,
+            236.250611
+          ],
+          "rss_bytes": 191881216
+        }
+      ],
+      "compile_ms": 185.614868,
+      "construction_ms": 322.776271,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 199122944,
+      "prepared_rss_bytes": 191049728,
+      "runner": "rust",
+      "setup_ms": 508.39173800000003,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet34",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4222976,
+      "cases": [
+        {
+          "first_invoke_ms": 89.3175,
+          "inference_ms": [
+            54.028437,
+            53.727655999999996,
+            54.645625,
+            53.198905999999994,
+            50.510156,
+            52.696979,
+            54.922968000000004,
+            53.867969,
+            53.862864,
+            51.995833
+          ],
+          "rss_bytes": 191328256
+        }
+      ],
+      "compile_ms": 193.93796899999998,
+      "construction_ms": 377.605938,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet34",
+      "peak_rss_bytes": 198406144,
+      "prepared_rss_bytes": 190287872,
+      "runner": "rust",
+      "setup_ms": 571.5446870000001,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet50",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3600384,
+      "cases": [
+        {
+          "first_invoke_ms": 273.907385,
+          "inference_ms": [
+            279.048846,
+            278.376615,
+            275.39046099999996,
+            278.148924,
+            280.650692,
+            279.61315399999995,
+            278.920616,
+            277.460308,
+            278.48953900000004,
+            277.973615
+          ],
+          "rss_bytes": 224788480
+        }
+      ],
+      "compile_ms": 333.955154,
+      "construction_ms": 340.92177000000004,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 253612032,
+      "prepared_rss_bytes": 223948800,
+      "runner": "rust",
+      "setup_ms": 674.8775390000001,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet50",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 5009408,
+      "cases": [
+        {
+          "first_invoke_ms": 108.050989,
+          "inference_ms": [
+            106.35677,
+            107.98992,
+            107.98416399999999,
+            107.8894,
+            107.794972,
+            107.490363,
+            107.62624899999999,
+            107.951874,
+            107.892576,
+            107.187213
+          ],
+          "rss_bytes": 225533952
+        }
+      ],
+      "compile_ms": 269.956116,
+      "construction_ms": 307.52045,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 254488576,
+      "prepared_rss_bytes": 224796672,
+      "runner": "rust",
+      "setup_ms": 577.477164,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet50",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4145152,
+      "cases": [
+        {
+          "first_invoke_ms": 101.191927,
+          "inference_ms": [
+            103.814531,
+            103.776615,
+            103.96776000000001,
+            104.59942699999999,
+            104.761875,
+            104.84645900000001,
+            105.063802,
+            105.90864499999999,
+            106.369219,
+            105.159375
+          ],
+          "rss_bytes": 224735232
+        }
+      ],
+      "compile_ms": 187.31104100000002,
+      "construction_ms": 219.965,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 253702144,
+      "prepared_rss_bytes": 223997952,
+      "runner": "rust",
+      "setup_ms": 407.276354,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet50",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 213.9309,
+        "min_ms": 210.847,
+        "max_ms": 216.934,
+        "stddev_ms": 2.059,
+        "median_ms": 214.776,
+        "p5_ms": 210.847,
+        "p95_ms": 216.934,
+        "init_ms": 98.522,
+        "first_inference_ms": 213.125,
+        "average_warm_up_ms": 212.79767
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "218092",
+        "overall_footprint_kb": "219384"
+      },
+      "misc_metrics": {
+        "model_size_mb": 102.15856,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 2.6841319
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet50",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 86.1529,
+        "min_ms": 85.65,
+        "max_ms": 86.468,
+        "stddev_ms": 0.288,
+        "median_ms": 86.289,
+        "p5_ms": 85.65,
+        "p95_ms": 86.468,
+        "init_ms": 82.604,
+        "first_inference_ms": 86.007,
+        "average_warm_up_ms": 86.208336
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "219872",
+        "overall_footprint_kb": "221024"
+      },
+      "misc_metrics": {
+        "model_size_mb": 102.15856,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 6.6651125
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet50",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 68.3947,
+        "min_ms": 67.414,
+        "max_ms": 69.088,
+        "stddev_ms": 0.522,
+        "median_ms": 68.607,
+        "p5_ms": 67.414,
+        "p95_ms": 69.088,
+        "init_ms": 66.714,
+        "first_inference_ms": 70.612,
+        "average_warm_up_ms": 67.53167
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "218880",
+        "overall_footprint_kb": "220160"
+      },
+      "misc_metrics": {
+        "model_size_mb": 102.15856,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 8.395661
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet50",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 211.8698,
+        "min_ms": 208.272,
+        "max_ms": 218.24,
+        "stddev_ms": 2.801,
+        "median_ms": 212.355,
+        "p5_ms": 208.272,
+        "p95_ms": 218.24,
+        "init_ms": 99.95,
+        "first_inference_ms": 214.088,
+        "average_warm_up_ms": 213.62367
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "217632",
+        "overall_footprint_kb": "218916"
+      },
+      "misc_metrics": {
+        "model_size_mb": 102.15856,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 2.7102435
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet50",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 86.8907,
+        "min_ms": 86.549,
+        "max_ms": 87.167,
+        "stddev_ms": 0.207,
+        "median_ms": 86.918,
+        "p5_ms": 86.549,
+        "p95_ms": 87.167,
+        "init_ms": 83.426,
+        "first_inference_ms": 86.302,
+        "average_warm_up_ms": 86.850334
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "219760",
+        "overall_footprint_kb": "220912"
+      },
+      "misc_metrics": {
+        "model_size_mb": 102.15856,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 6.608518
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet50",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 68.5267,
+        "min_ms": 67.752,
+        "max_ms": 69.162,
+        "stddev_ms": 0.428,
+        "median_ms": 68.618,
+        "p5_ms": 67.752,
+        "p95_ms": 69.162,
+        "init_ms": 66.761,
+        "first_inference_ms": 71.38,
+        "average_warm_up_ms": 67.981
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "219392",
+        "overall_footprint_kb": "220544"
+      },
+      "misc_metrics": {
+        "model_size_mb": 102.15856,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 8.379489
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet50",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3702784,
+      "cases": [
+        {
+          "first_invoke_ms": 275.51838499999997,
+          "inference_ms": [
+            277.201461,
+            277.407692,
+            276.369462,
+            280.130154,
+            276.441846,
+            275.693308,
+            276.92884699999996,
+            277.742154,
+            277.34700000000004,
+            277.771154
+          ],
+          "rss_bytes": 224919552
+        }
+      ],
+      "compile_ms": 332.927077,
+      "construction_ms": 340.012847,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 253743104,
+      "prepared_rss_bytes": 224079872,
+      "runner": "rust",
+      "setup_ms": 672.940616,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet50",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4988928,
+      "cases": [
+        {
+          "first_invoke_ms": 107.741535,
+          "inference_ms": [
+            107.441926,
+            107.084296,
+            107.34604,
+            107.455311,
+            107.454487,
+            107.333879,
+            107.974425,
+            107.368332,
+            107.023332,
+            107.153124
+          ],
+          "rss_bytes": 225529856
+        }
+      ],
+      "compile_ms": 268.541377,
+      "construction_ms": 306.949788,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 254496768,
+      "prepared_rss_bytes": 224727040,
+      "runner": "rust",
+      "setup_ms": 575.491867,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet50",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4300800,
+      "cases": [
+        {
+          "first_invoke_ms": 100.941042,
+          "inference_ms": [
+            103.90161400000001,
+            104.00125,
+            104.717969,
+            104.438959,
+            105.339844,
+            105.673021,
+            105.66505199999999,
+            105.780469,
+            104.988073,
+            105.786407
+          ],
+          "rss_bytes": 224813056
+        }
+      ],
+      "compile_ms": 186.52906199999998,
+      "construction_ms": 216.51890600000002,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 253837312,
+      "prepared_rss_bytes": 224043008,
+      "runner": "rust",
+      "setup_ms": 403.04828100000003,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet50",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3555328,
+      "cases": [
+        {
+          "first_invoke_ms": 112.876539,
+          "inference_ms": [
+            100.075077,
+            102.70277,
+            99.070461,
+            100.586692,
+            99.686769,
+            98.20823,
+            101.145154,
+            98.899692,
+            98.955307,
+            100.98215300000001
+          ],
+          "rss_bytes": 224382976
+        }
+      ],
+      "compile_ms": 334.586077,
+      "construction_ms": 339.851385,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 254353408,
+      "prepared_rss_bytes": 223928320,
+      "runner": "rust",
+      "setup_ms": 674.4381539999999,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet50",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4988928,
+      "cases": [
+        {
+          "first_invoke_ms": 80.91005,
+          "inference_ms": [
+            84.291978,
+            87.97609200000001,
+            97.63413999999999,
+            105.872394,
+            116.342446,
+            131.793185,
+            142.504269,
+            154.614816,
+            167.23966000000001,
+            170.64653299999998
+          ],
+          "rss_bytes": 225038336
+        }
+      ],
+      "compile_ms": 267.272992,
+      "construction_ms": 357.942364,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 255426560,
+      "prepared_rss_bytes": 224813056,
+      "runner": "rust",
+      "setup_ms": 625.216154,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet50",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4296704,
+      "cases": [
+        {
+          "first_invoke_ms": 86.92099,
+          "inference_ms": [
+            57.386667,
+            58.724323000000005,
+            57.868801999999995,
+            57.980312,
+            58.206875,
+            58.00349,
+            58.109531,
+            58.588594,
+            56.937084,
+            58.732656
+          ],
+          "rss_bytes": 224579584
+        }
+      ],
+      "compile_ms": 283.852188,
+      "construction_ms": 436.12349,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 254619648,
+      "prepared_rss_bytes": 224075776,
+      "runner": "rust",
+      "setup_ms": 719.9761460000001,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet50",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 56.093,
+        "min_ms": 55.588,
+        "max_ms": 56.595,
+        "stddev_ms": 0.298,
+        "median_ms": 56.159,
+        "p5_ms": 55.588,
+        "p95_ms": 56.595,
+        "init_ms": 98.148,
+        "first_inference_ms": 64.022,
+        "average_warm_up_ms": 58.518665
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "218696",
+        "overall_footprint_kb": "219980"
+      },
+      "misc_metrics": {
+        "model_size_mb": 102.15856,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 10.236906
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet50",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 45.2961,
+        "min_ms": 44.578,
+        "max_ms": 45.84,
+        "stddev_ms": 0.432,
+        "median_ms": 45.476,
+        "p5_ms": 44.578,
+        "p95_ms": 45.84,
+        "init_ms": 95.316,
+        "first_inference_ms": 51.687,
+        "average_warm_up_ms": 47.394333
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "219756",
+        "overall_footprint_kb": "220908"
+      },
+      "misc_metrics": {
+        "model_size_mb": 102.15856,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 12.677002
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet50",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 29.15,
+        "min_ms": 27.362,
+        "max_ms": 31.777,
+        "stddev_ms": 1.175,
+        "median_ms": 29.292,
+        "p5_ms": 27.362,
+        "p95_ms": 31.777,
+        "init_ms": 163.41,
+        "first_inference_ms": 81.02,
+        "average_warm_up_ms": 45.342667
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "219136",
+        "overall_footprint_kb": "220416"
+      },
+      "misc_metrics": {
+        "model_size_mb": 102.15856,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 19.698757
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet50",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 56.1822,
+        "min_ms": 55.518,
+        "max_ms": 56.933,
+        "stddev_ms": 0.487,
+        "median_ms": 56.356,
+        "p5_ms": 55.518,
+        "p95_ms": 56.933,
+        "init_ms": 99.14,
+        "first_inference_ms": 64.693,
+        "average_warm_up_ms": 58.725334
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "218148",
+        "overall_footprint_kb": "219428"
+      },
+      "misc_metrics": {
+        "model_size_mb": 102.15856,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 10.220653
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet50",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 45.8079,
+        "min_ms": 45.193,
+        "max_ms": 46.366,
+        "stddev_ms": 0.332,
+        "median_ms": 45.85,
+        "p5_ms": 45.193,
+        "p95_ms": 46.366,
+        "init_ms": 184.539,
+        "first_inference_ms": 48.45,
+        "average_warm_up_ms": 46.547
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "219756",
+        "overall_footprint_kb": "220908"
+      },
+      "misc_metrics": {
+        "model_size_mb": 102.15856,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 12.535365
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet50",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 28.699,
+        "min_ms": 26.943,
+        "max_ms": 29.975,
+        "stddev_ms": 0.99,
+        "median_ms": 29.252,
+        "p5_ms": 26.943,
+        "p95_ms": 29.975,
+        "init_ms": 161.839,
+        "first_inference_ms": 82.564,
+        "average_warm_up_ms": 46.144
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "219264",
+        "overall_footprint_kb": "220416"
+      },
+      "misc_metrics": {
+        "model_size_mb": 102.15856,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 20.00832
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet50",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3665920,
+      "cases": [
+        {
+          "first_invoke_ms": 111.408539,
+          "inference_ms": [
+            102.286231,
+            100.518231,
+            99.53538400000001,
+            100.030461,
+            99.827692,
+            97.944923,
+            100.16638499999999,
+            103.389847,
+            100.433154,
+            99.948923
+          ],
+          "rss_bytes": 224825344
+        }
+      ],
+      "compile_ms": 335.90461500000004,
+      "construction_ms": 342.031923,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 254767104,
+      "prepared_rss_bytes": 224432128,
+      "runner": "rust",
+      "setup_ms": 677.937231,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet50",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 5017600,
+      "cases": [
+        {
+          "first_invoke_ms": 82.13109200000001,
+          "inference_ms": [
+            86.250858,
+            94.787551,
+            103.042081,
+            116.809149,
+            128.67041600000002,
+            142.90275799999998,
+            159.957899,
+            170.347576,
+            172.29166500000002,
+            174.01270699999998
+          ],
+          "rss_bytes": 225447936
+        }
+      ],
+      "compile_ms": 263.322679,
+      "construction_ms": 361.721713,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 255770624,
+      "prepared_rss_bytes": 225181696,
+      "runner": "rust",
+      "setup_ms": 625.045288,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet50",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4292608,
+      "cases": [
+        {
+          "first_invoke_ms": 85.856302,
+          "inference_ms": [
+            57.005624999999995,
+            57.122813,
+            56.423125,
+            58.772447,
+            58.31375,
+            58.166562,
+            59.060052,
+            58.729167,
+            59.894115,
+            59.865938
+          ],
+          "rss_bytes": 224587776
+        }
+      ],
+      "compile_ms": 280.24406200000004,
+      "construction_ms": 426.710156,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet50",
+      "peak_rss_bytes": 254451712,
+      "prepared_rss_bytes": 224108544,
+      "runner": "rust",
+      "setup_ms": 706.954688,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet101",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3641344,
+      "cases": [
+        {
+          "first_invoke_ms": 514.172231,
+          "inference_ms": [
+            508.32807700000006,
+            518.1949999999999,
+            515.7316920000001,
+            511.094692,
+            511.76707700000003,
+            515.44,
+            517.3076920000001,
+            515.7609229999999,
+            517.2483070000001,
+            517.544615
+          ],
+          "rss_bytes": 393408512
+        }
+      ],
+      "compile_ms": 1137.408384,
+      "construction_ms": 595.3846149999999,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 439431168,
+      "prepared_rss_bytes": 392536064,
+      "runner": "rust",
+      "setup_ms": 1732.7938459999998,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet101",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4980736,
+      "cases": [
+        {
+          "first_invoke_ms": 189.627758,
+          "inference_ms": [
+            188.290414,
+            187.882888,
+            187.654399,
+            189.349061,
+            187.469241,
+            187.84926900000002,
+            187.924869,
+            187.872784,
+            187.920726,
+            188.82001300000002
+          ],
+          "rss_bytes": 393256960
+        }
+      ],
+      "compile_ms": 917.3289460000001,
+      "construction_ms": 1350.001831,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 439427072,
+      "prepared_rss_bytes": 392519680,
+      "runner": "rust",
+      "setup_ms": 2267.331767,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet101",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4317184,
+      "cases": [
+        {
+          "first_invoke_ms": 206.44750000000002,
+          "inference_ms": [
+            192.053125,
+            191.906146,
+            192.140312,
+            193.012656,
+            193.63718699999998,
+            193.263698,
+            193.892448,
+            194.423437,
+            193.97036500000002,
+            194.383177
+          ],
+          "rss_bytes": 393482240
+        }
+      ],
+      "compile_ms": 636.9151039999999,
+      "construction_ms": 384.519219,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 439664640,
+      "prepared_rss_bytes": 392712192,
+      "runner": "rust",
+      "setup_ms": 1021.4346350000001,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet101",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 393.8076,
+        "min_ms": 387.147,
+        "max_ms": 399.447,
+        "stddev_ms": 4.267,
+        "median_ms": 393.565,
+        "p5_ms": 387.147,
+        "p95_ms": 399.447,
+        "init_ms": 163.729,
+        "first_inference_ms": 408.232,
+        "average_warm_up_ms": 400.546
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "367724",
+        "overall_footprint_kb": "368996"
+      },
+      "misc_metrics": {
+        "model_size_mb": 178.05263,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 1.45812
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet101",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 159.117,
+        "min_ms": 158.536,
+        "max_ms": 159.537,
+        "stddev_ms": 0.287,
+        "median_ms": 159.183,
+        "p5_ms": 158.536,
+        "p95_ms": 159.537,
+        "init_ms": 129.801,
+        "first_inference_ms": 158.567,
+        "average_warm_up_ms": 159.136
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "368976",
+        "overall_footprint_kb": "370128"
+      },
+      "misc_metrics": {
+        "model_size_mb": 178.05263,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 3.6087832
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet101",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 130.4745,
+        "min_ms": 127.746,
+        "max_ms": 132.437,
+        "stddev_ms": 1.426,
+        "median_ms": 130.698,
+        "p5_ms": 127.746,
+        "p95_ms": 132.437,
+        "init_ms": 113.072,
+        "first_inference_ms": 128.762,
+        "average_warm_up_ms": 127.591
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "368632",
+        "overall_footprint_kb": "369784"
+      },
+      "misc_metrics": {
+        "model_size_mb": 178.05263,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 4.401004
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet101",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 395.2602,
+        "min_ms": 391.012,
+        "max_ms": 399.231,
+        "stddev_ms": 2.858,
+        "median_ms": 394.819,
+        "p5_ms": 391.012,
+        "p95_ms": 399.231,
+        "init_ms": 159.08,
+        "first_inference_ms": 394.41,
+        "average_warm_up_ms": 395.69568
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "367516",
+        "overall_footprint_kb": "368784"
+      },
+      "misc_metrics": {
+        "model_size_mb": 178.05263,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 1.4527614
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet101",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 158.55,
+        "min_ms": 158.185,
+        "max_ms": 159.641,
+        "stddev_ms": 0.406,
+        "median_ms": 158.579,
+        "p5_ms": 158.185,
+        "p95_ms": 159.641,
+        "init_ms": 129.448,
+        "first_inference_ms": 157.917,
+        "average_warm_up_ms": 158.15266
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "369180",
+        "overall_footprint_kb": "370460"
+      },
+      "misc_metrics": {
+        "model_size_mb": 178.05263,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 3.6216888
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet101",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 130.27,
+        "min_ms": 128.233,
+        "max_ms": 132.096,
+        "stddev_ms": 1.279,
+        "median_ms": 130.749,
+        "p5_ms": 128.233,
+        "p95_ms": 132.096,
+        "init_ms": 112.81,
+        "first_inference_ms": 124.001,
+        "average_warm_up_ms": 126.156
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "368496",
+        "overall_footprint_kb": "369648"
+      },
+      "misc_metrics": {
+        "model_size_mb": 178.05263,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 4.4079123
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet101",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3686400,
+      "cases": [
+        {
+          "first_invoke_ms": 515.6781540000001,
+          "inference_ms": [
+            516.124615,
+            519.213616,
+            519.8215379999999,
+            520.373154,
+            523.164,
+            518.056384,
+            520.527615,
+            512.269,
+            513.5586930000001,
+            516.4104609999999
+          ],
+          "rss_bytes": 393342976
+        }
+      ],
+      "compile_ms": 1145.452538,
+      "construction_ms": 594.296615,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 439365632,
+      "prepared_rss_bytes": 392536064,
+      "runner": "rust",
+      "setup_ms": 1739.749923,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet101",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4988928,
+      "cases": [
+        {
+          "first_invoke_ms": 188.267393,
+          "inference_ms": [
+            188.567081,
+            188.273357,
+            188.479216,
+            188.699607,
+            188.165207,
+            187.34532000000002,
+            188.35580499999998,
+            188.196743,
+            188.102185,
+            186.82520599999998
+          ],
+          "rss_bytes": 394035200
+        }
+      ],
+      "compile_ms": 929.020145,
+      "construction_ms": 495.452806,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 440205312,
+      "prepared_rss_bytes": 393297920,
+      "runner": "rust",
+      "setup_ms": 1424.4735500000002,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet101",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4243456,
+      "cases": [
+        {
+          "first_invoke_ms": 185.95474000000002,
+          "inference_ms": [
+            189.260885,
+            189.85265700000002,
+            189.927083,
+            190.03703099999998,
+            190.704375,
+            190.645,
+            190.908594,
+            191.630781,
+            192.360833,
+            192.546615
+          ],
+          "rss_bytes": 392433664
+        }
+      ],
+      "compile_ms": 673.9287499999999,
+      "construction_ms": 367.61401,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 438550528,
+      "prepared_rss_bytes": 391663616,
+      "runner": "rust",
+      "setup_ms": 1041.543124,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet101",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3698688,
+      "cases": [
+        {
+          "first_invoke_ms": 199.80800000000002,
+          "inference_ms": [
+            186.083384,
+            181.219615,
+            179.12930799999998,
+            178.338231,
+            177.704307,
+            181.939923,
+            186.67884600000002,
+            180.860231,
+            196.300692,
+            188.096308
+          ],
+          "rss_bytes": 393289728
+        }
+      ],
+      "compile_ms": 1142.4214610000001,
+      "construction_ms": 593.266077,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 440279040,
+      "prepared_rss_bytes": 392814592,
+      "runner": "rust",
+      "setup_ms": 1735.688,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet101",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 5111808,
+      "cases": [
+        {
+          "first_invoke_ms": 152.456144,
+          "inference_ms": [
+            224.14791300000002,
+            272.135257,
+            308.411298,
+            331.884318,
+            345.70304200000004,
+            374.65468200000004,
+            350.053486,
+            354.610855,
+            371.39385000000004,
+            363.599631
+          ],
+          "rss_bytes": 393818112
+        }
+      ],
+      "compile_ms": 923.512279,
+      "construction_ms": 573.7560860000001,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 441126912,
+      "prepared_rss_bytes": 393510912,
+      "runner": "rust",
+      "setup_ms": 1497.268704,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet101",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4292608,
+      "cases": [
+        {
+          "first_invoke_ms": 136.782656,
+          "inference_ms": [
+            103.06968800000001,
+            105.735469,
+            108.739531,
+            108.698906,
+            108.191198,
+            107.979583,
+            105.21968700000001,
+            108.57244800000001,
+            111.821875,
+            104.528698
+          ],
+          "rss_bytes": 392400896
+        }
+      ],
+      "compile_ms": 1025.4904170000002,
+      "construction_ms": 678.458698,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 439468032,
+      "prepared_rss_bytes": 391806976,
+      "runner": "rust",
+      "setup_ms": 1703.9496870000003,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet101",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 102.6722,
+        "min_ms": 101.587,
+        "max_ms": 103.878,
+        "stddev_ms": 0.68,
+        "median_ms": 102.758,
+        "p5_ms": 101.587,
+        "p95_ms": 103.878,
+        "init_ms": 167.406,
+        "first_inference_ms": 108.083,
+        "average_warm_up_ms": 103.985
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "367556",
+        "overall_footprint_kb": "368876"
+      },
+      "misc_metrics": {
+        "model_size_mb": 178.05263,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 5.592738
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet101",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 86.0245,
+        "min_ms": 82.841,
+        "max_ms": 95.737,
+        "stddev_ms": 4.556,
+        "median_ms": 84.008,
+        "p5_ms": 82.841,
+        "p95_ms": 95.737,
+        "init_ms": 152.192,
+        "first_inference_ms": 89.41,
+        "average_warm_up_ms": 96.98333
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "369236",
+        "overall_footprint_kb": "370388"
+      },
+      "misc_metrics": {
+        "model_size_mb": 178.05263,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 6.6750607
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet101",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 57.696,
+        "min_ms": 55.099,
+        "max_ms": 59.545,
+        "stddev_ms": 1.692,
+        "median_ms": 58.826,
+        "p5_ms": 55.099,
+        "p95_ms": 59.545,
+        "init_ms": 273.344,
+        "first_inference_ms": 86.808,
+        "average_warm_up_ms": 63.616665
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "368676",
+        "overall_footprint_kb": "369828"
+      },
+      "misc_metrics": {
+        "model_size_mb": 178.05263,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 9.952488
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet101",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 103.1008,
+        "min_ms": 101.178,
+        "max_ms": 108.61,
+        "stddev_ms": 2.505,
+        "median_ms": 102.116,
+        "p5_ms": 101.178,
+        "p95_ms": 108.61,
+        "init_ms": 167.125,
+        "first_inference_ms": 111.602,
+        "average_warm_up_ms": 105.651665
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "367212",
+        "overall_footprint_kb": "368484"
+      },
+      "misc_metrics": {
+        "model_size_mb": 178.05263,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 5.569489
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet101",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 83.9559,
+        "min_ms": 83.569,
+        "max_ms": 84.342,
+        "stddev_ms": 0.255,
+        "median_ms": 84.069,
+        "p5_ms": 83.569,
+        "p95_ms": 84.342,
+        "init_ms": 151.96,
+        "first_inference_ms": 88.506,
+        "average_warm_up_ms": 85.49533
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "369072",
+        "overall_footprint_kb": "370224"
+      },
+      "misc_metrics": {
+        "model_size_mb": 178.05263,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 6.839528
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet101",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 58.1159,
+        "min_ms": 55.275,
+        "max_ms": 60.195,
+        "stddev_ms": 1.644,
+        "median_ms": 58.63,
+        "p5_ms": 55.275,
+        "p95_ms": 60.195,
+        "init_ms": 267.811,
+        "first_inference_ms": 94.436,
+        "average_warm_up_ms": 66.30233
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "368560",
+        "overall_footprint_kb": "369712"
+      },
+      "misc_metrics": {
+        "model_size_mb": 178.05263,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 9.880579
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet101",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3686400,
+      "cases": [
+        {
+          "first_invoke_ms": 197.965615,
+          "inference_ms": [
+            179.100385,
+            181.788615,
+            182.62584700000002,
+            183.793,
+            185.10215399999998,
+            181.544308,
+            178.673923,
+            181.183693,
+            179.401769,
+            182.167461
+          ],
+          "rss_bytes": 393105408
+        }
+      ],
+      "compile_ms": 1136.0503849999998,
+      "construction_ms": 594.656308,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 440152064,
+      "prepared_rss_bytes": 392740864,
+      "runner": "rust",
+      "setup_ms": 1730.707077,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet101",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4952064,
+      "cases": [
+        {
+          "first_invoke_ms": 151.19005099999998,
+          "inference_ms": [
+            204.74247100000002,
+            246.648122,
+            294.495021,
+            323.813329,
+            332.480777,
+            341.24510000000004,
+            347.280673,
+            342.483382,
+            335.724579,
+            351.896463
+          ],
+          "rss_bytes": 393928704
+        }
+      ],
+      "compile_ms": 926.4212630000001,
+      "construction_ms": 573.226503,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 441221120,
+      "prepared_rss_bytes": 393486336,
+      "runner": "rust",
+      "setup_ms": 1499.648652,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet101",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4280320,
+      "cases": [
+        {
+          "first_invoke_ms": 124.515416,
+          "inference_ms": [
+            104.38541599999999,
+            104.45484300000001,
+            108.568073,
+            110.54750000000001,
+            109.4475,
+            106.421042,
+            107.216719,
+            108.248229,
+            107.792187,
+            109.496146
+          ],
+          "rss_bytes": 392486912
+        }
+      ],
+      "compile_ms": 1024.451771,
+      "construction_ms": 680.8030200000001,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet101",
+      "peak_rss_bytes": 439590912,
+      "prepared_rss_bytes": 391876608,
+      "runner": "rust",
+      "setup_ms": 1705.255468,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet152",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3682304,
+      "cases": [
+        {
+          "first_invoke_ms": 750.578769,
+          "inference_ms": [
+            749.5945389999999,
+            750.550769,
+            748.373154,
+            750.387692,
+            747.987615,
+            753.479307,
+            749.771769,
+            748.858539,
+            751.751769,
+            745.8046149999999
+          ],
+          "rss_bytes": 540631040
+        }
+      ],
+      "compile_ms": 2374.093231,
+      "construction_ms": 808.836692,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 607866880,
+      "prepared_rss_bytes": 539824128,
+      "runner": "rust",
+      "setup_ms": 3182.930538,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet152",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 5009408,
+      "cases": [
+        {
+          "first_invoke_ms": 269.943164,
+          "inference_ms": [
+            267.694814,
+            270.353172,
+            269.863305,
+            268.958799,
+            270.75799,
+            270.0782,
+            269.816767,
+            269.881533,
+            268.92877300000004,
+            269.564112
+          ],
+          "rss_bytes": 539840512
+        }
+      ],
+      "compile_ms": 1926.9321889999999,
+      "construction_ms": 653.060877,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 607289344,
+      "prepared_rss_bytes": 539103232,
+      "runner": "rust",
+      "setup_ms": 2579.993614,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet152",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4145152,
+      "cases": [
+        {
+          "first_invoke_ms": 276.5425,
+          "inference_ms": [
+            280.74489600000004,
+            280.178594,
+            280.93249999999995,
+            281.67031199999997,
+            282.832032,
+            283.813541,
+            282.79265599999997,
+            283.689167,
+            283.057968,
+            284.37296899999996
+          ],
+          "rss_bytes": 539488256
+        }
+      ],
+      "compile_ms": 1346.734635,
+      "construction_ms": 511.76937499999997,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 606986240,
+      "prepared_rss_bytes": 538816512,
+      "runner": "rust",
+      "setup_ms": 1858.5045309999998,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet152",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 574.2122,
+        "min_ms": 568.528,
+        "max_ms": 581.091,
+        "stddev_ms": 3.949,
+        "median_ms": 573.74,
+        "p5_ms": 568.528,
+        "p95_ms": 581.091,
+        "init_ms": 215.372,
+        "first_inference_ms": 575.91,
+        "average_warm_up_ms": 574.4683
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "491084",
+        "overall_footprint_kb": "492352"
+      },
+      "misc_metrics": {
+        "model_size_mb": 240.56895,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 1.0000114
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet152",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 229.64,
+        "min_ms": 224.451,
+        "max_ms": 230.999,
+        "stddev_ms": 2.219,
+        "median_ms": 230.775,
+        "p5_ms": 224.451,
+        "p95_ms": 230.999,
+        "init_ms": 173.751,
+        "first_inference_ms": 230.148,
+        "average_warm_up_ms": 230.38533
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "492608",
+        "overall_footprint_kb": "493760"
+      },
+      "misc_metrics": {
+        "model_size_mb": 240.56895,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 2.5005171
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet152",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 193.8405,
+        "min_ms": 189.826,
+        "max_ms": 196.364,
+        "stddev_ms": 1.861,
+        "median_ms": 194.616,
+        "p5_ms": 189.826,
+        "p95_ms": 196.364,
+        "init_ms": 147.68,
+        "first_inference_ms": 187.928,
+        "average_warm_up_ms": 187.94234
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "491756",
+        "overall_footprint_kb": "492908"
+      },
+      "misc_metrics": {
+        "model_size_mb": 240.56895,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 2.962326
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet152",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 576.9003,
+        "min_ms": 574.13,
+        "max_ms": 580.816,
+        "stddev_ms": 2.024,
+        "median_ms": 577.172,
+        "p5_ms": 574.13,
+        "p95_ms": 580.816,
+        "init_ms": 222.929,
+        "first_inference_ms": 576.606,
+        "average_warm_up_ms": 575.402
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "490872",
+        "overall_footprint_kb": "492136"
+      },
+      "misc_metrics": {
+        "model_size_mb": 240.56895,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 0.9953518
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet152",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 230.6618,
+        "min_ms": 229.943,
+        "max_ms": 231.814,
+        "stddev_ms": 0.478,
+        "median_ms": 230.666,
+        "p5_ms": 229.943,
+        "p95_ms": 231.814,
+        "init_ms": 172.237,
+        "first_inference_ms": 231.21,
+        "average_warm_up_ms": 230.68033
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "492572",
+        "overall_footprint_kb": "493724"
+      },
+      "misc_metrics": {
+        "model_size_mb": 240.56895,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 2.4894402
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet152",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 193.9899,
+        "min_ms": 190.458,
+        "max_ms": 196.422,
+        "stddev_ms": 1.928,
+        "median_ms": 194.633,
+        "p5_ms": 190.458,
+        "p95_ms": 196.422,
+        "init_ms": 145.363,
+        "first_inference_ms": 184.035,
+        "average_warm_up_ms": 186.691
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "491748",
+        "overall_footprint_kb": "492900"
+      },
+      "misc_metrics": {
+        "model_size_mb": 240.56895,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 2.9600446
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet152",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3678208,
+      "cases": [
+        {
+          "first_invoke_ms": 744.814462,
+          "inference_ms": [
+            743.994154,
+            751.3160770000001,
+            748.662384,
+            749.799461,
+            742.550154,
+            749.48577,
+            750.3541540000001,
+            745.139692,
+            750.822077,
+            747.003307
+          ],
+          "rss_bytes": 540663808
+        }
+      ],
+      "compile_ms": 2379.511,
+      "construction_ms": 808.616615,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 607899648,
+      "prepared_rss_bytes": 539856896,
+      "runner": "rust",
+      "setup_ms": 3188.128077,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet152",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4829184,
+      "cases": [
+        {
+          "first_invoke_ms": 274.933981,
+          "inference_ms": [
+            275.347157,
+            276.42807000000005,
+            275.925308,
+            275.705128,
+            275.71150700000004,
+            275.007157,
+            274.00452800000005,
+            273.740569,
+            275.92551799999995,
+            275.10069999999996
+          ],
+          "rss_bytes": 539049984
+        }
+      ],
+      "compile_ms": 1913.0259760000001,
+      "construction_ms": 648.2553049999999,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 606441472,
+      "prepared_rss_bytes": 538406912,
+      "runner": "rust",
+      "setup_ms": 2561.2821559999998,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet152",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4075520,
+      "cases": [
+        {
+          "first_invoke_ms": 277.207812,
+          "inference_ms": [
+            280.250469,
+            281.463124,
+            282.293125,
+            282.695885,
+            283.666719,
+            283.07849,
+            284.31046799999996,
+            283.762343,
+            284.53499999999997,
+            284.94046899999995
+          ],
+          "rss_bytes": 539508736
+        }
+      ],
+      "compile_ms": 1390.665052,
+      "construction_ms": 502.47474000000005,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 606875648,
+      "prepared_rss_bytes": 538820608,
+      "runner": "rust",
+      "setup_ms": 1893.1404679999998,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet152",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3674112,
+      "cases": [
+        {
+          "first_invoke_ms": 272.50861599999996,
+          "inference_ms": [
+            269.601462,
+            270.363385,
+            264.47384600000004,
+            264.484308,
+            265.419077,
+            263.221231,
+            263.411,
+            269.440231,
+            266.657539,
+            266.083077
+          ],
+          "rss_bytes": 540401664
+        }
+      ],
+      "compile_ms": 2381.170231,
+      "construction_ms": 808.189846,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 608948224,
+      "prepared_rss_bytes": 540221440,
+      "runner": "rust",
+      "setup_ms": 3189.360846,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet152",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4812800,
+      "cases": [
+        {
+          "first_invoke_ms": 240.629423,
+          "inference_ms": [
+            469.05194700000004,
+            508.185722,
+            551.379316,
+            488.173831,
+            512.611947,
+            515.226956,
+            515.148015,
+            496.239212,
+            463.047285,
+            492.135541
+          ],
+          "rss_bytes": 539103232
+        }
+      ],
+      "compile_ms": 1933.832189,
+      "construction_ms": 749.643688,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 607723520,
+      "prepared_rss_bytes": 538902528,
+      "runner": "rust",
+      "setup_ms": 2683.4762680000003,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet152",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4157440,
+      "cases": [
+        {
+          "first_invoke_ms": 192.300365,
+          "inference_ms": [
+            155.93703200000002,
+            157.87395800000002,
+            161.304375,
+            156.04000000000002,
+            158.895,
+            158.30239600000002,
+            159.29093699999999,
+            162.619063,
+            154.356407,
+            153.761979
+          ],
+          "rss_bytes": 539238400
+        }
+      ],
+      "compile_ms": 2089.5808850000003,
+      "construction_ms": 880.979687,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 607727616,
+      "prepared_rss_bytes": 538783744,
+      "runner": "rust",
+      "setup_ms": 2970.5610930000003,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet152",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 148.9969,
+        "min_ms": 148.384,
+        "max_ms": 150.415,
+        "stddev_ms": 0.619,
+        "median_ms": 148.958,
+        "p5_ms": 148.384,
+        "p95_ms": 150.415,
+        "init_ms": 221.866,
+        "first_inference_ms": 156.17,
+        "average_warm_up_ms": 152.07066
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "490872",
+        "overall_footprint_kb": "492136"
+      },
+      "misc_metrics": {
+        "model_size_mb": 240.56895,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 3.8538973
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet152",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 123.3745,
+        "min_ms": 122.789,
+        "max_ms": 124.15,
+        "stddev_ms": 0.433,
+        "median_ms": 123.561,
+        "p5_ms": 122.789,
+        "p95_ms": 124.15,
+        "init_ms": 209.657,
+        "first_inference_ms": 127.968,
+        "average_warm_up_ms": 125.104
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "492360",
+        "overall_footprint_kb": "493512"
+      },
+      "misc_metrics": {
+        "model_size_mb": 240.56895,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 4.654274
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet152",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 87.9932,
+        "min_ms": 84.07,
+        "max_ms": 93.974,
+        "stddev_ms": 2.788,
+        "median_ms": 87.421,
+        "p5_ms": 84.07,
+        "p95_ms": 93.974,
+        "init_ms": 345.22,
+        "first_inference_ms": 106.613,
+        "average_warm_up_ms": 88.27533
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "490268",
+        "overall_footprint_kb": "491420"
+      },
+      "misc_metrics": {
+        "model_size_mb": 240.56895,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 6.5257173
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet152",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 148.7168,
+        "min_ms": 147.766,
+        "max_ms": 150.895,
+        "stddev_ms": 0.865,
+        "median_ms": 148.715,
+        "p5_ms": 147.766,
+        "p95_ms": 150.895,
+        "init_ms": 221.06,
+        "first_inference_ms": 157.117,
+        "average_warm_up_ms": 151.901
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "490728",
+        "overall_footprint_kb": "491992"
+      },
+      "misc_metrics": {
+        "model_size_mb": 240.56895,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 3.861156
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet152",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 124.0951,
+        "min_ms": 123.492,
+        "max_ms": 124.836,
+        "stddev_ms": 0.429,
+        "median_ms": 124.213,
+        "p5_ms": 123.492,
+        "p95_ms": 124.836,
+        "init_ms": 208.718,
+        "first_inference_ms": 126.391,
+        "average_warm_up_ms": 124.919334
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "492364",
+        "overall_footprint_kb": "493516"
+      },
+      "misc_metrics": {
+        "model_size_mb": 240.56895,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 4.6272473
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet152",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 87.6218,
+        "min_ms": 83.252,
+        "max_ms": 92.418,
+        "stddev_ms": 2.769,
+        "median_ms": 87.295,
+        "p5_ms": 83.252,
+        "p95_ms": 92.418,
+        "init_ms": 346.332,
+        "first_inference_ms": 112.282,
+        "average_warm_up_ms": 90.50933
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "490128",
+        "overall_footprint_kb": "491280"
+      },
+      "misc_metrics": {
+        "model_size_mb": 240.56895,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 6.5533776
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnet152",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3686400,
+      "cases": [
+        {
+          "first_invoke_ms": 270.594769,
+          "inference_ms": [
+            265.13077000000004,
+            260.48369199999996,
+            265.71438400000005,
+            271.338385,
+            264.05784700000004,
+            274.444692,
+            267.974539,
+            272.177846,
+            267.146154,
+            267.300923
+          ],
+          "rss_bytes": 538988544
+        }
+      ],
+      "compile_ms": 2380.801846,
+      "construction_ms": 809.9568459999999,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 608858112,
+      "prepared_rss_bytes": 540155904,
+      "runner": "rust",
+      "setup_ms": 3190.759384,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet152",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4890624,
+      "cases": [
+        {
+          "first_invoke_ms": 223.49281,
+          "inference_ms": [
+            444.39062,
+            486.222832,
+            456.864995,
+            450.20408299999997,
+            496.744619,
+            546.85054,
+            495.709839,
+            486.116166,
+            485.398119,
+            540.129133
+          ],
+          "rss_bytes": 538865664
+        }
+      ],
+      "compile_ms": 1932.31723,
+      "construction_ms": 749.2881150000001,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 607342592,
+      "prepared_rss_bytes": 538857472,
+      "runner": "rust",
+      "setup_ms": 2681.60584,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnet152",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4108288,
+      "cases": [
+        {
+          "first_invoke_ms": 192.495625,
+          "inference_ms": [
+            154.618125,
+            155.86333399999998,
+            158.678489,
+            157.871875,
+            158.752969,
+            157.886719,
+            161.70150999999998,
+            159.346094,
+            158.671198,
+            161.300261
+          ],
+          "rss_bytes": 539185152
+        }
+      ],
+      "compile_ms": 2117.685312,
+      "construction_ms": 872.59026,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnet152",
+      "peak_rss_bytes": 607522816,
+      "prepared_rss_bytes": 538734592,
+      "runner": "rust",
+      "setup_ms": 2990.276196,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3620864,
+      "cases": [
+        {
+          "first_invoke_ms": 304.725231,
+          "inference_ms": [
+            303.057231,
+            301.884308,
+            298.75692399999997,
+            294.87692300000003,
+            297.25046199999997,
+            297.499077,
+            299.36638500000004,
+            296.751923,
+            295.71538499999997,
+            298.03569200000004
+          ],
+          "rss_bytes": 416169984
+        }
+      ],
+      "compile_ms": 22755.941154999997,
+      "construction_ms": 403.445846,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 459649024,
+      "prepared_rss_bytes": 415358976,
+      "runner": "rust",
+      "setup_ms": 23159.387463000003,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4730880,
+      "cases": [
+        {
+          "first_invoke_ms": 132.93149200000002,
+          "inference_ms": [
+            133.92156,
+            133.88339399999998,
+            133.744686,
+            134.25885200000002,
+            131.673019,
+            133.185389,
+            132.614946,
+            133.04411199999998,
+            133.120129,
+            133.026483
+          ],
+          "rss_bytes": 414720000
+        }
+      ],
+      "compile_ms": 14816.256607,
+      "construction_ms": 962.453346,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 458211328,
+      "prepared_rss_bytes": 414072832,
+      "runner": "rust",
+      "setup_ms": 15778.710890999999,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4104192,
+      "cases": [
+        {
+          "first_invoke_ms": 132.591354,
+          "inference_ms": [
+            133.09432299999997,
+            133.689792,
+            133.58099,
+            133.1375,
+            133.476667,
+            134.180781,
+            133.43765599999998,
+            133.70838500000002,
+            133.490312,
+            134.009219
+          ],
+          "rss_bytes": 414765056
+        }
+      ],
+      "compile_ms": 10514.759996,
+      "construction_ms": 249.22640700000002,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 458252288,
+      "prepared_rss_bytes": 414076928,
+      "runner": "rust",
+      "setup_ms": 10763.986819,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 231.2518,
+        "min_ms": 228.237,
+        "max_ms": 234.463,
+        "stddev_ms": 1.765,
+        "median_ms": 231.67,
+        "p5_ms": 228.237,
+        "p95_ms": 234.463,
+        "init_ms": 103.807,
+        "first_inference_ms": 232.618,
+        "average_warm_up_ms": 233.75534
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "258356",
+        "overall_footprint_kb": "268412"
+      },
+      "misc_metrics": {
+        "model_size_mb": 100.331566,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 2.4830887
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 94.014,
+        "min_ms": 93.805,
+        "max_ms": 94.232,
+        "stddev_ms": 0.116,
+        "median_ms": 94.019,
+        "p5_ms": 93.805,
+        "p95_ms": 94.232,
+        "init_ms": 97.022,
+        "first_inference_ms": 96.631,
+        "average_warm_up_ms": 94.866
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "257492",
+        "overall_footprint_kb": "267744"
+      },
+      "misc_metrics": {
+        "model_size_mb": 100.331566,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 6.1078005
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 83.565,
+        "min_ms": 80.86,
+        "max_ms": 93.332,
+        "stddev_ms": 3.674,
+        "median_ms": 82.111,
+        "p5_ms": 80.86,
+        "p95_ms": 93.332,
+        "init_ms": 89.05,
+        "first_inference_ms": 97.562,
+        "average_warm_up_ms": 89.49733
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "254936",
+        "overall_footprint_kb": "264916"
+      },
+      "misc_metrics": {
+        "model_size_mb": 100.331566,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 6.871522
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 231.7053,
+        "min_ms": 226.22,
+        "max_ms": 237.2,
+        "stddev_ms": 2.905,
+        "median_ms": 232.554,
+        "p5_ms": 226.22,
+        "p95_ms": 237.2,
+        "init_ms": 102.571,
+        "first_inference_ms": 239.978,
+        "average_warm_up_ms": 233.16034
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "258740",
+        "overall_footprint_kb": "268732"
+      },
+      "misc_metrics": {
+        "model_size_mb": 100.331566,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 2.4782288
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 93.8925,
+        "min_ms": 93.444,
+        "max_ms": 94.853,
+        "stddev_ms": 0.387,
+        "median_ms": 93.916,
+        "p5_ms": 93.444,
+        "p95_ms": 94.853,
+        "init_ms": 98.69,
+        "first_inference_ms": 96.499,
+        "average_warm_up_ms": 94.85633
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "257480",
+        "overall_footprint_kb": "267724"
+      },
+      "misc_metrics": {
+        "model_size_mb": 100.331566,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 6.115704
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 81.9239,
+        "min_ms": 79.917,
+        "max_ms": 83.228,
+        "stddev_ms": 0.985,
+        "median_ms": 82.235,
+        "p5_ms": 79.917,
+        "p95_ms": 83.228,
+        "init_ms": 102.067,
+        "first_inference_ms": 96.627,
+        "average_warm_up_ms": 87.177666
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "256220",
+        "overall_footprint_kb": "266324"
+      },
+      "misc_metrics": {
+        "model_size_mb": 100.331566,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 7.0091724
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3686400,
+      "cases": [
+        {
+          "first_invoke_ms": 303.716384,
+          "inference_ms": [
+            299.867384,
+            301.604846,
+            296.586077,
+            300.239153,
+            298.56669200000005,
+            299.221,
+            297.710539,
+            297.453615,
+            299.604231,
+            299.86492300000003
+          ],
+          "rss_bytes": 416219136
+        }
+      ],
+      "compile_ms": 23539.714771,
+      "construction_ms": 403.927923,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 459698176,
+      "prepared_rss_bytes": 415408128,
+      "runner": "rust",
+      "setup_ms": 23943.643386,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4812800,
+      "cases": [
+        {
+          "first_invoke_ms": 133.333852,
+          "inference_ms": [
+            131.877993,
+            133.07703,
+            133.02640399999999,
+            132.346327,
+            133.83814999999998,
+            134.792862,
+            132.480796,
+            133.33161199999998,
+            132.875363,
+            131.850234
+          ],
+          "rss_bytes": 414855168
+        }
+      ],
+      "compile_ms": 14853.003508,
+      "construction_ms": 359.922817,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 458334208,
+      "prepared_rss_bytes": 414167040,
+      "runner": "rust",
+      "setup_ms": 15212.926976,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4067328,
+      "cases": [
+        {
+          "first_invoke_ms": 134.714896,
+          "inference_ms": [
+            134.407292,
+            134.90828199999999,
+            134.865885,
+            134.768125,
+            134.96739499999998,
+            134.94817700000002,
+            134.94442700000002,
+            134.73890699999998,
+            134.989687,
+            135.405938
+          ],
+          "rss_bytes": 414760960
+        }
+      ],
+      "compile_ms": 10941.130152,
+      "construction_ms": 247.05432299999998,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 458305536,
+      "prepared_rss_bytes": 414101504,
+      "runner": "rust",
+      "setup_ms": 11188.18484,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3657728,
+      "cases": [
+        {
+          "first_invoke_ms": 99.942846,
+          "inference_ms": [
+            90.477231,
+            91.305154,
+            90.879385,
+            92.908231,
+            89.39538499999999,
+            92.539385,
+            91.15353900000001,
+            90.97284599999999,
+            95.218846,
+            91.21946200000001
+          ],
+          "rss_bytes": 416387072
+        }
+      ],
+      "compile_ms": 22766.983694,
+      "construction_ms": 402.442769,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 460443648,
+      "prepared_rss_bytes": 415531008,
+      "runner": "rust",
+      "setup_ms": 23169.427463,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4726784,
+      "cases": [
+        {
+          "first_invoke_ms": 78.813577,
+          "inference_ms": [
+            78.843869,
+            81.050103,
+            83.82137900000001,
+            83.342004,
+            85.099149,
+            84.38122200000001,
+            83.353046,
+            85.047602,
+            84.687187,
+            82.882942
+          ],
+          "rss_bytes": 415330304
+        }
+      ],
+      "compile_ms": 17596.206676,
+      "construction_ms": 415.204813,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 459337728,
+      "prepared_rss_bytes": 414654464,
+      "runner": "rust",
+      "setup_ms": 18011.412088,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4026368,
+      "cases": [
+        {
+          "first_invoke_ms": 93.451823,
+          "inference_ms": [
+            59.117969,
+            61.048906,
+            60.829896,
+            60.205573,
+            60.915259999999996,
+            60.796875,
+            61.202344,
+            62.261094,
+            61.132082999999994,
+            61.376406
+          ],
+          "rss_bytes": 414580736
+        }
+      ],
+      "compile_ms": 16741.306295000002,
+      "construction_ms": 486.152969,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 458727424,
+      "prepared_rss_bytes": 413859840,
+      "runner": "rust",
+      "setup_ms": 17227.459941999998,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 67.646,
+        "min_ms": 66.244,
+        "max_ms": 75.485,
+        "stddev_ms": 2.665,
+        "median_ms": 66.881,
+        "p5_ms": 66.244,
+        "p95_ms": 75.485,
+        "init_ms": 103.642,
+        "first_inference_ms": 83.971,
+        "average_warm_up_ms": 72.93667
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "258304",
+        "overall_footprint_kb": "268284"
+      },
+      "misc_metrics": {
+        "model_size_mb": 100.331566,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 8.488584
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 55.0794,
+        "min_ms": 54.072,
+        "max_ms": 55.816,
+        "stddev_ms": 0.507,
+        "median_ms": 55.221,
+        "p5_ms": 54.072,
+        "p95_ms": 55.816,
+        "init_ms": 107.81,
+        "first_inference_ms": 60.898,
+        "average_warm_up_ms": 56.811333
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "257532",
+        "overall_footprint_kb": "267392"
+      },
+      "misc_metrics": {
+        "model_size_mb": 100.331566,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 10.42529
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 39.4769,
+        "min_ms": 37.559,
+        "max_ms": 41.404,
+        "stddev_ms": 1.039,
+        "median_ms": 39.706,
+        "p5_ms": 37.559,
+        "p95_ms": 41.404,
+        "init_ms": 171.885,
+        "first_inference_ms": 84.217,
+        "average_warm_up_ms": 54.069332
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "256528",
+        "overall_footprint_kb": "266504"
+      },
+      "misc_metrics": {
+        "model_size_mb": 100.331566,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 14.54569
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 66.4408,
+        "min_ms": 65.605,
+        "max_ms": 68.592,
+        "stddev_ms": 0.911,
+        "median_ms": 66.054,
+        "p5_ms": 65.605,
+        "p95_ms": 68.592,
+        "init_ms": 108.276,
+        "first_inference_ms": 85.6,
+        "average_warm_up_ms": 73.182
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "258896",
+        "overall_footprint_kb": "268648"
+      },
+      "misc_metrics": {
+        "model_size_mb": 100.331566,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 8.642562
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 55.0847,
+        "min_ms": 53.687,
+        "max_ms": 55.743,
+        "stddev_ms": 0.574,
+        "median_ms": 55.279,
+        "p5_ms": 53.687,
+        "p95_ms": 55.743,
+        "init_ms": 105.604,
+        "first_inference_ms": 60.558,
+        "average_warm_up_ms": 57.197666
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "257500",
+        "overall_footprint_kb": "267496"
+      },
+      "misc_metrics": {
+        "model_size_mb": 100.331566,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 10.424288
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 39.7173,
+        "min_ms": 38.077,
+        "max_ms": 43.829,
+        "stddev_ms": 1.613,
+        "median_ms": 38.982,
+        "p5_ms": 38.077,
+        "p95_ms": 43.829,
+        "init_ms": 172.686,
+        "first_inference_ms": 98.988,
+        "average_warm_up_ms": 57.61767
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "256360",
+        "overall_footprint_kb": "266464"
+      },
+      "misc_metrics": {
+        "model_size_mb": 100.331566,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 14.457648
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3764224,
+      "cases": [
+        {
+          "first_invoke_ms": 98.09076999999999,
+          "inference_ms": [
+            89.780616,
+            92.617539,
+            93.332,
+            90.636923,
+            89.39907699999999,
+            90.18638499999999,
+            93.72984600000001,
+            90.574692,
+            89.833538,
+            90.829231
+          ],
+          "rss_bytes": 416473088
+        }
+      ],
+      "compile_ms": 22761.317001,
+      "construction_ms": 405.131461,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 460685312,
+      "prepared_rss_bytes": 415588352,
+      "runner": "rust",
+      "setup_ms": 23166.449232000003,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4939776,
+      "cases": [
+        {
+          "first_invoke_ms": 81.433202,
+          "inference_ms": [
+            77.84182100000001,
+            84.08914,
+            84.487421,
+            81.48335800000001,
+            84.266378,
+            82.658879,
+            87.165599,
+            83.858801,
+            85.645623,
+            87.28263
+          ],
+          "rss_bytes": 415637504
+        }
+      ],
+      "compile_ms": 17856.029616,
+      "construction_ms": 417.238771,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 459689984,
+      "prepared_rss_bytes": 414969856,
+      "runner": "rust",
+      "setup_ms": 18273.268985000002,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4083712,
+      "cases": [
+        {
+          "first_invoke_ms": 82.34770900000001,
+          "inference_ms": [
+            59.355781,
+            61.839115,
+            61.301823,
+            59.163021,
+            60.424844,
+            62.226406,
+            61.137031,
+            61.923125000000006,
+            60.057552,
+            61.263749
+          ],
+          "rss_bytes": 414547968
+        }
+      ],
+      "compile_ms": 17396.008119000002,
+      "construction_ms": 481.114167,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "resnext50_32x4d",
+      "peak_rss_bytes": 458391552,
+      "prepared_rss_bytes": 413536256,
+      "runner": "rust",
+      "setup_ms": 17877.122962,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3743744,
+      "cases": [
+        {
+          "first_invoke_ms": 804.62123,
+          "inference_ms": [
+            802.831384,
+            805.399077,
+            806.394231,
+            812.3439999999999,
+            811.666538,
+            806.48523,
+            803.1277690000001,
+            800.552538,
+            803.411,
+            815.5673850000001
+          ],
+          "rss_bytes": 571097088
+        }
+      ],
+      "compile_ms": 456.129923,
+      "construction_ms": 887.255,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 608460800,
+      "prepared_rss_bytes": 570253312,
+      "runner": "rust",
+      "setup_ms": 1343.385539,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4792320,
+      "cases": [
+        {
+          "first_invoke_ms": 286.287507,
+          "inference_ms": [
+            285.581663,
+            284.19182,
+            283.680969,
+            283.112523,
+            285.315465,
+            282.80756,
+            284.880882,
+            282.990456,
+            287.448319,
+            283.573539
+          ],
+          "rss_bytes": 570867712
+        }
+      ],
+      "compile_ms": 334.725751,
+      "construction_ms": 1140.2086570000001,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 608018432,
+      "prepared_rss_bytes": 570179584,
+      "runner": "rust",
+      "setup_ms": 1474.935059,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4079616,
+      "cases": [
+        {
+          "first_invoke_ms": 296.099375,
+          "inference_ms": [
+            304.336875,
+            304.46166600000004,
+            306.10062500000004,
+            308.74234299999995,
+            306.975,
+            306.62093699999997,
+            308.487968,
+            308.38687500000003,
+            308.735416,
+            309.322761
+          ],
+          "rss_bytes": 570626048
+        }
+      ],
+      "compile_ms": 249.270781,
+      "construction_ms": 617.569687,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 607768576,
+      "prepared_rss_bytes": 569966592,
+      "runner": "rust",
+      "setup_ms": 866.840781,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 587.202,
+        "min_ms": 579.344,
+        "max_ms": 601.593,
+        "stddev_ms": 6.326,
+        "median_ms": 586.784,
+        "p5_ms": 579.344,
+        "p95_ms": 601.593,
+        "init_ms": 275.019,
+        "first_inference_ms": 604.712,
+        "average_warm_up_ms": 593.69934
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "559312",
+        "overall_footprint_kb": "560568"
+      },
+      "misc_metrics": {
+        "model_size_mb": 275.4332,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 0.97788966
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 255.3253,
+        "min_ms": 254.37,
+        "max_ms": 256.196,
+        "stddev_ms": 0.52,
+        "median_ms": 255.418,
+        "p5_ms": 254.37,
+        "p95_ms": 256.196,
+        "init_ms": 211.309,
+        "first_inference_ms": 256.071,
+        "average_warm_up_ms": 255.333
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "557416",
+        "overall_footprint_kb": "558696"
+      },
+      "misc_metrics": {
+        "model_size_mb": 275.4332,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 2.2489693
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 199.4337,
+        "min_ms": 196.425,
+        "max_ms": 201.854,
+        "stddev_ms": 1.692,
+        "median_ms": 199.91,
+        "p5_ms": 196.425,
+        "p95_ms": 201.854,
+        "init_ms": 294.186,
+        "first_inference_ms": 188.711,
+        "average_warm_up_ms": 191.516
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "556672",
+        "overall_footprint_kb": "557824"
+      },
+      "misc_metrics": {
+        "model_size_mb": 275.4332,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 2.8792462
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 585.9886,
+        "min_ms": 577.48,
+        "max_ms": 594.693,
+        "stddev_ms": 5.6,
+        "median_ms": 586.72,
+        "p5_ms": 577.48,
+        "p95_ms": 594.693,
+        "init_ms": 273.824,
+        "first_inference_ms": 598.587,
+        "average_warm_up_ms": 590.1117
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "558428",
+        "overall_footprint_kb": "559696"
+      },
+      "misc_metrics": {
+        "model_size_mb": 275.4332,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 0.97991455
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 255.5255,
+        "min_ms": 254.563,
+        "max_ms": 256.397,
+        "stddev_ms": 0.6,
+        "median_ms": 255.62,
+        "p5_ms": 254.563,
+        "p95_ms": 256.397,
+        "init_ms": 212.478,
+        "first_inference_ms": 254.438,
+        "average_warm_up_ms": 255.338
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "557408",
+        "overall_footprint_kb": "558560"
+      },
+      "misc_metrics": {
+        "model_size_mb": 275.4332,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 2.2472072
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 198.7677,
+        "min_ms": 195.071,
+        "max_ms": 201.234,
+        "stddev_ms": 1.995,
+        "median_ms": 199.088,
+        "p5_ms": 195.071,
+        "p95_ms": 201.234,
+        "init_ms": 199.643,
+        "first_inference_ms": 196.284,
+        "average_warm_up_ms": 193.526
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "556544",
+        "overall_footprint_kb": "557696"
+      },
+      "misc_metrics": {
+        "model_size_mb": 275.4332,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 2.8888936
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3702784,
+      "cases": [
+        {
+          "first_invoke_ms": 810.616,
+          "inference_ms": [
+            802.186154,
+            799.540539,
+            803.4510769999999,
+            805.567692,
+            803.859462,
+            804.508,
+            804.265153,
+            817.350692,
+            819.221154,
+            820.012538
+          ],
+          "rss_bytes": 571068416
+        }
+      ],
+      "compile_ms": 459.169538,
+      "construction_ms": 888.368385,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 608432128,
+      "prepared_rss_bytes": 570224640,
+      "runner": "rust",
+      "setup_ms": 1347.5387699999999,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 5115904,
+      "cases": [
+        {
+          "first_invoke_ms": 283.716064,
+          "inference_ms": [
+            283.374018,
+            282.522964,
+            284.960648,
+            285.116351,
+            283.17661100000004,
+            283.572314,
+            283.234424,
+            283.248199,
+            282.885516,
+            286.17731499999996
+          ],
+          "rss_bytes": 570658816
+        }
+      ],
+      "compile_ms": 340.812964,
+      "construction_ms": 716.8745220000001,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 607862784,
+      "prepared_rss_bytes": 570015744,
+      "runner": "rust",
+      "setup_ms": 1057.6881119999998,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4091904,
+      "cases": [
+        {
+          "first_invoke_ms": 297.130521,
+          "inference_ms": [
+            303.435469,
+            305.57937499999997,
+            305.065156,
+            307.750468,
+            306.724375,
+            308.581718,
+            308.062344,
+            309.293437,
+            308.95140599999996,
+            310.348593
+          ],
+          "rss_bytes": 570613760
+        }
+      ],
+      "compile_ms": 279.49697899999995,
+      "construction_ms": 703.084218,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 607760384,
+      "prepared_rss_bytes": 569954304,
+      "runner": "rust",
+      "setup_ms": 982.5815100000001,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3690496,
+      "cases": [
+        {
+          "first_invoke_ms": 260.816308,
+          "inference_ms": [
+            255.624077,
+            261.82930799999997,
+            261.274769,
+            260.67238399999997,
+            260.347616,
+            255.28115400000002,
+            262.687,
+            258.905846,
+            257.361308,
+            261.408231
+          ],
+          "rss_bytes": 571355136
+        }
+      ],
+      "compile_ms": 462.954769,
+      "construction_ms": 921.131385,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 609140736,
+      "prepared_rss_bytes": 570449920,
+      "runner": "rust",
+      "setup_ms": 1384.087077,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4911104,
+      "cases": [
+        {
+          "first_invoke_ms": 189.79304399999998,
+          "inference_ms": [
+            210.67867,
+            213.014945,
+            215.467263,
+            211.815414,
+            210.486481,
+            216.49642,
+            220.770726,
+            223.180466,
+            223.101768,
+            225.854581
+          ],
+          "rss_bytes": 571441152
+        }
+      ],
+      "compile_ms": 350.050125,
+      "construction_ms": 818.2696510000001,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 609402880,
+      "prepared_rss_bytes": 570687488,
+      "runner": "rust",
+      "setup_ms": 1168.32087,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4046848,
+      "cases": [
+        {
+          "first_invoke_ms": 189.450521,
+          "inference_ms": [
+            141.749219,
+            143.945625,
+            146.583125,
+            148.603438,
+            145.183646,
+            146.205677,
+            148.7625,
+            144.310885,
+            148.763594,
+            145.849375
+          ],
+          "rss_bytes": 570429440
+        }
+      ],
+      "compile_ms": 360.308906,
+      "construction_ms": 961.574219,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 608227328,
+      "prepared_rss_bytes": 569458688,
+      "runner": "rust",
+      "setup_ms": 1321.88375,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 172.6683,
+        "min_ms": 168.726,
+        "max_ms": 182.993,
+        "stddev_ms": 3.802,
+        "median_ms": 172.927,
+        "p5_ms": 168.726,
+        "p95_ms": 182.993,
+        "init_ms": 281.899,
+        "first_inference_ms": 176.363,
+        "average_warm_up_ms": 174.82567
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "559240",
+        "overall_footprint_kb": "560496"
+      },
+      "misc_metrics": {
+        "model_size_mb": 275.4332,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 3.3255599
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 137.9976,
+        "min_ms": 134.19,
+        "max_ms": 142.07,
+        "stddev_ms": 2.69,
+        "median_ms": 138.556,
+        "p5_ms": 134.19,
+        "p95_ms": 142.07,
+        "init_ms": 253.598,
+        "first_inference_ms": 139.621,
+        "average_warm_up_ms": 137.23267
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "557540",
+        "overall_footprint_kb": "558692"
+      },
+      "misc_metrics": {
+        "model_size_mb": 275.4332,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 4.161078
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 92.7523,
+        "min_ms": 89.468,
+        "max_ms": 95.253,
+        "stddev_ms": 1.85,
+        "median_ms": 93.534,
+        "p5_ms": 89.468,
+        "p95_ms": 95.253,
+        "init_ms": 452.047,
+        "first_inference_ms": 111.531,
+        "average_warm_up_ms": 95.228
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "556800",
+        "overall_footprint_kb": "558080"
+      },
+      "misc_metrics": {
+        "model_size_mb": 275.4332,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 6.190884
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 171.2673,
+        "min_ms": 168.944,
+        "max_ms": 173.427,
+        "stddev_ms": 1.461,
+        "median_ms": 171.585,
+        "p5_ms": 168.944,
+        "p95_ms": 173.427,
+        "init_ms": 277.757,
+        "first_inference_ms": 179.474,
+        "average_warm_up_ms": 175.01266
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "558900",
+        "overall_footprint_kb": "560168"
+      },
+      "misc_metrics": {
+        "model_size_mb": 275.4332,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 3.3527634
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 137.8966,
+        "min_ms": 133.164,
+        "max_ms": 141.437,
+        "stddev_ms": 2.241,
+        "median_ms": 138.471,
+        "p5_ms": 133.164,
+        "p95_ms": 141.437,
+        "init_ms": 250.76,
+        "first_inference_ms": 133.163,
+        "average_warm_up_ms": 135.32834
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "557544",
+        "overall_footprint_kb": "558696"
+      },
+      "misc_metrics": {
+        "model_size_mb": 275.4332,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 4.1641254
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 92.0356,
+        "min_ms": 86.596,
+        "max_ms": 95.427,
+        "stddev_ms": 2.716,
+        "median_ms": 93.084,
+        "p5_ms": 86.596,
+        "p95_ms": 95.427,
+        "init_ms": 451.642,
+        "first_inference_ms": 152.427,
+        "average_warm_up_ms": 109.242
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "556544",
+        "overall_footprint_kb": "557696"
+      },
+      "misc_metrics": {
+        "model_size_mb": 275.4332,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 6.239094
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3641344,
+      "cases": [
+        {
+          "first_invoke_ms": 260.378153,
+          "inference_ms": [
+            255.52246200000002,
+            260.974077,
+            270.207692,
+            258.23046100000005,
+            258.881462,
+            261.289923,
+            258.835385,
+            261.916616,
+            260.324923,
+            260.627385
+          ],
+          "rss_bytes": 571138048
+        }
+      ],
+      "compile_ms": 460.39484600000003,
+      "construction_ms": 891.3587689999999,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 608923648,
+      "prepared_rss_bytes": 570171392,
+      "runner": "rust",
+      "setup_ms": 1351.754461,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4894720,
+      "cases": [
+        {
+          "first_invoke_ms": 195.491741,
+          "inference_ms": [
+            216.58559699999998,
+            212.95734099999999,
+            216.75986799999998,
+            215.972184,
+            213.62239399999999,
+            212.934164,
+            214.022289,
+            216.48967,
+            217.44057,
+            216.844841
+          ],
+          "rss_bytes": 571146240
+        }
+      ],
+      "compile_ms": 352.27819900000003,
+      "construction_ms": 822.58676,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 609181696,
+      "prepared_rss_bytes": 570359808,
+      "runner": "rust",
+      "setup_ms": 1174.865818,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4079616,
+      "cases": [
+        {
+          "first_invoke_ms": 177.203229,
+          "inference_ms": [
+            141.33453100000003,
+            140.489115,
+            141.760312,
+            143.81406199999998,
+            142.719479,
+            146.907344,
+            141.455937,
+            146.151406,
+            144.044895,
+            152.84776
+          ],
+          "rss_bytes": 570560512
+        }
+      ],
+      "compile_ms": 376.013229,
+      "construction_ms": 970.436249,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "wide_resnet50_2",
+      "peak_rss_bytes": 608370688,
+      "prepared_rss_bytes": 569597952,
+      "runner": "rust",
+      "setup_ms": 1346.450051,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3665920,
+      "cases": [
+        {
+          "first_invoke_ms": 65.47592300000001,
+          "inference_ms": [
+            64.925231,
+            65.181538,
+            65.425461,
+            64.205307,
+            63.169923000000004,
+            65.47292300000001,
+            65.04223,
+            64.95623,
+            65.148615,
+            65.521539
+          ],
+          "rss_bytes": 50982912
+        }
+      ],
+      "compile_ms": 317.612615,
+      "construction_ms": 59.642461,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 65540096,
+      "prepared_rss_bytes": 50176000,
+      "runner": "rust",
+      "setup_ms": 377.255923,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4829184,
+      "cases": [
+        {
+          "first_invoke_ms": 86.279729,
+          "inference_ms": [
+            38.381484,
+            38.237187999999996,
+            37.747524999999996,
+            36.918046000000004,
+            38.075833,
+            37.780261,
+            37.737265,
+            37.452577,
+            38.070859,
+            37.673073
+          ],
+          "rss_bytes": 50925568
+        }
+      ],
+      "compile_ms": 290.593121,
+      "construction_ms": 268.06754900000004,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 65363968,
+      "prepared_rss_bytes": 50151424,
+      "runner": "rust",
+      "setup_ms": 558.6618159999999,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4055040,
+      "cases": [
+        {
+          "first_invoke_ms": 43.953959,
+          "inference_ms": [
+            39.951146,
+            40.447031,
+            40.411094,
+            40.770312000000004,
+            40.909375,
+            40.660937000000004,
+            40.895104,
+            40.831406,
+            40.895469,
+            40.985625
+          ],
+          "rss_bytes": 50139136
+        }
+      ],
+      "compile_ms": 191.973386,
+      "construction_ms": 83.382864,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 64495616,
+      "prepared_rss_bytes": 49451008,
+      "runner": "rust",
+      "setup_ms": 275.35645800000003,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 17.8588,
+        "min_ms": 17.708,
+        "max_ms": 18.019,
+        "stddev_ms": 0.099,
+        "median_ms": 17.859,
+        "p5_ms": 17.708,
+        "p95_ms": 18.019,
+        "init_ms": 10.242,
+        "first_inference_ms": 19.525,
+        "average_warm_up_ms": 19.056667
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "40392",
+        "overall_footprint_kb": "41544"
+      },
+      "misc_metrics": {
+        "model_size_mb": 13.983552,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 32.153267
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 7.2966,
+        "min_ms": 7.19,
+        "max_ms": 7.406,
+        "stddev_ms": 0.062,
+        "median_ms": 7.312,
+        "p5_ms": 7.19,
+        "p95_ms": 7.406,
+        "init_ms": 14.028,
+        "first_inference_ms": 8.538,
+        "average_warm_up_ms": 7.967
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "39500",
+        "overall_footprint_kb": "40652"
+      },
+      "misc_metrics": {
+        "model_size_mb": 13.983552,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 78.696754
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 6.4561,
+        "min_ms": 5.737,
+        "max_ms": 7.247,
+        "stddev_ms": 0.715,
+        "median_ms": 6.92,
+        "p5_ms": 5.737,
+        "p95_ms": 7.247,
+        "init_ms": 18.327,
+        "first_inference_ms": 6.844,
+        "average_warm_up_ms": 7.1223335
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "38656",
+        "overall_footprint_kb": "39936"
+      },
+      "misc_metrics": {
+        "model_size_mb": 13.983552,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 88.94205
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 17.6923,
+        "min_ms": 17.44,
+        "max_ms": 18.816,
+        "stddev_ms": 0.397,
+        "median_ms": 17.561,
+        "p5_ms": 17.44,
+        "p95_ms": 18.816,
+        "init_ms": 10.384,
+        "first_inference_ms": 18.88,
+        "average_warm_up_ms": 18.227
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "40316",
+        "overall_footprint_kb": "41468"
+      },
+      "misc_metrics": {
+        "model_size_mb": 13.983552,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 32.455856
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 7.3515,
+        "min_ms": 7.263,
+        "max_ms": 7.492,
+        "stddev_ms": 0.07,
+        "median_ms": 7.329,
+        "p5_ms": 7.263,
+        "p95_ms": 7.492,
+        "init_ms": 14.182,
+        "first_inference_ms": 8.715,
+        "average_warm_up_ms": 7.9566665
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "39500",
+        "overall_footprint_kb": "40780"
+      },
+      "misc_metrics": {
+        "model_size_mb": 13.983552,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 78.10906
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 6.3741,
+        "min_ms": 5.689,
+        "max_ms": 7.261,
+        "stddev_ms": 0.689,
+        "median_ms": 6.07,
+        "p5_ms": 5.689,
+        "p95_ms": 7.261,
+        "init_ms": 7.561,
+        "first_inference_ms": 5.818,
+        "average_warm_up_ms": 5.7603335
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "38656",
+        "overall_footprint_kb": "39936"
+      },
+      "misc_metrics": {
+        "model_size_mb": 13.983552,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 90.08625
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3649536,
+      "cases": [
+        {
+          "first_invoke_ms": 63.635616000000006,
+          "inference_ms": [
+            63.878077000000005,
+            63.133230999999995,
+            63.773231,
+            62.839383999999995,
+            63.400308,
+            63.147154,
+            63.817231,
+            63.685538,
+            63.049539,
+            63.511154
+          ],
+          "rss_bytes": 50954240
+        }
+      ],
+      "compile_ms": 314.39815300000004,
+      "construction_ms": 59.781616,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 65511424,
+      "prepared_rss_bytes": 50147328,
+      "runner": "rust",
+      "setup_ms": 374.180385,
+      "threads": 1
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4755456,
+      "cases": [
+        {
+          "first_invoke_ms": 38.961405,
+          "inference_ms": [
+            38.040025,
+            37.821573,
+            37.634885,
+            37.747188,
+            38.271692,
+            37.922151,
+            37.801432000000005,
+            37.750521,
+            38.265364000000005,
+            37.982682
+          ],
+          "rss_bytes": 50962432
+        }
+      ],
+      "compile_ms": 262.61309500000004,
+      "construction_ms": 98.806302,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 65400832,
+      "prepared_rss_bytes": 50274304,
+      "runner": "rust",
+      "setup_ms": 361.420283,
+      "threads": 1
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4038656,
+      "cases": [
+        {
+          "first_invoke_ms": 40.594688,
+          "inference_ms": [
+            40.807604,
+            40.948802,
+            41.008281000000004,
+            41.236406,
+            41.147084,
+            41.054791,
+            40.877239,
+            41.089219,
+            41.213542,
+            41.466615
+          ],
+          "rss_bytes": 50126848
+        }
+      ],
+      "compile_ms": 178.251875,
+      "construction_ms": 41.857552,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 64491520,
+      "prepared_rss_bytes": 49438720,
+      "runner": "rust",
+      "setup_ms": 220.10974,
+      "threads": 1
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 3751936,
+      "cases": [
+        {
+          "first_invoke_ms": 46.223077,
+          "inference_ms": [
+            32.800846,
+            34.854769,
+            33.602231,
+            33.927692,
+            32.652846,
+            32.713231,
+            33.964923,
+            34.116846,
+            34.304077,
+            33.876923000000005
+          ],
+          "rss_bytes": 51277824
+        }
+      ],
+      "compile_ms": 313.612308,
+      "construction_ms": 61.892923,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 64577536,
+      "prepared_rss_bytes": 50368512,
+      "runner": "rust",
+      "setup_ms": 375.505923,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4870144,
+      "cases": [
+        {
+          "first_invoke_ms": 41.258983,
+          "inference_ms": [
+            33.986395,
+            32.338932,
+            35.630704,
+            34.415911,
+            34.592136,
+            35.325311,
+            34.240911,
+            34.705557,
+            33.742499,
+            33.040600000000005
+          ],
+          "rss_bytes": 51326976
+        }
+      ],
+      "compile_ms": 252.382314,
+      "construction_ms": 125.708254,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 64557056,
+      "prepared_rss_bytes": 50307072,
+      "runner": "rust",
+      "setup_ms": 378.09122,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 0,
+    "measurements": {
+      "base_rss_bytes": 4100096,
+      "cases": [
+        {
+          "first_invoke_ms": 56.235572999999995,
+          "inference_ms": [
+            28.352968,
+            28.56651,
+            27.952187,
+            29.396406,
+            28.924947,
+            28.380677,
+            29.606094,
+            28.174688,
+            28.856719,
+            29.3625
+          ],
+          "rss_bytes": 50577408
+        }
+      ],
+      "compile_ms": 346.78375,
+      "construction_ms": 80.59359400000001,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 63635456,
+      "prepared_rss_bytes": 49557504,
+      "runner": "rust",
+      "setup_ms": 427.378281,
+      "threads": 4
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 5.264,
+        "min_ms": 4.846,
+        "max_ms": 7.23,
+        "stddev_ms": 0.689,
+        "median_ms": 4.988,
+        "p5_ms": 4.846,
+        "p95_ms": 7.23,
+        "init_ms": 10.554,
+        "first_inference_ms": 7.605,
+        "average_warm_up_ms": 7.6846666
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "41200",
+        "overall_footprint_kb": "42352"
+      },
+      "misc_metrics": {
+        "model_size_mb": 13.983552,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 109.08411
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 4.7731,
+        "min_ms": 3.853,
+        "max_ms": 6.142,
+        "stddev_ms": 0.822,
+        "median_ms": 4.355,
+        "p5_ms": 3.853,
+        "p95_ms": 6.142,
+        "init_ms": 13.733,
+        "first_inference_ms": 7.675,
+        "average_warm_up_ms": 6.9603333
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "39372",
+        "overall_footprint_kb": "40524"
+      },
+      "misc_metrics": {
+        "model_size_mb": 13.983552,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 120.30311
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 0,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 5.2667,
+        "min_ms": 3.262,
+        "max_ms": 11.101,
+        "stddev_ms": 2.937,
+        "median_ms": 4.072,
+        "p5_ms": 3.262,
+        "p95_ms": 11.101,
+        "init_ms": 17.655,
+        "first_inference_ms": 10.902,
+        "average_warm_up_ms": 10.969334
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "38912",
+        "overall_footprint_kb": "40064"
+      },
+      "misc_metrics": {
+        "model_size_mb": 13.983552,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 109.02818
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 5.0653,
+        "min_ms": 4.978,
+        "max_ms": 5.272,
+        "stddev_ms": 0.078,
+        "median_ms": 5.056,
+        "p5_ms": 4.978,
+        "p95_ms": 5.272,
+        "init_ms": 11.373,
+        "first_inference_ms": 10.356,
+        "average_warm_up_ms": 8.086
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "40568",
+        "overall_footprint_kb": "41720"
+      },
+      "misc_metrics": {
+        "model_size_mb": 13.983552,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 113.36323
+      }
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 4.2561,
+        "min_ms": 3.867,
+        "max_ms": 4.889,
+        "stddev_ms": 0.287,
+        "median_ms": 4.325,
+        "p5_ms": 3.867,
+        "p95_ms": 4.889,
+        "init_ms": 14.036,
+        "first_inference_ms": 8.276,
+        "average_warm_up_ms": 6.983667
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "39612",
+        "overall_footprint_kb": "40764"
+      },
+      "misc_metrics": {
+        "model_size_mb": 13.983552,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 134.91666
+      }
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "engine": "litert_xnnpack",
+    "repetition": 1,
+    "measurements": {
+      "latency_metrics": {
+        "avg_ms": 5.6803,
+        "min_ms": 3.309,
+        "max_ms": 11.206,
+        "stddev_ms": 3.083,
+        "median_ms": 4.066,
+        "p5_ms": 3.309,
+        "p95_ms": 11.206,
+        "init_ms": 17.731,
+        "first_inference_ms": 11.262,
+        "average_warm_up_ms": 11.101666
+      },
+      "memory_metrics": {
+        "init_footprint_kb": "38912",
+        "overall_footprint_kb": "40064"
+      },
+      "misc_metrics": {
+        "model_size_mb": 13.983552,
+        "num_runs": 10,
+        "num_warmup_runs": 3,
+        "model_throughput_in_mb_per_sec": 101.08951
+      }
+    }
+  },
+  {
+    "device": "tecno",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 3731456,
+      "cases": [
+        {
+          "first_invoke_ms": 47.116845999999995,
+          "inference_ms": [
+            33.354846,
+            33.409,
+            33.571692,
+            33.716384000000005,
+            33.284616,
+            33.476615,
+            35.640692,
+            32.677231,
+            32.753307,
+            33.657230000000006
+          ],
+          "rss_bytes": 51335168
+        }
+      ],
+      "compile_ms": 314.536539,
+      "construction_ms": 59.548385,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 64393216,
+      "prepared_rss_bytes": 50270208,
+      "runner": "rust",
+      "setup_ms": 374.085846,
+      "threads": 4
+    }
+  },
+  {
+    "device": "pixel11",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4812800,
+      "cases": [
+        {
+          "first_invoke_ms": 36.469989,
+          "inference_ms": [
+            33.386770000000006,
+            32.50236,
+            32.274843,
+            32.383567,
+            33.523958,
+            34.430885,
+            34.073021000000004,
+            34.604088999999995,
+            33.700937,
+            33.522787
+          ],
+          "rss_bytes": 51310592
+        }
+      ],
+      "compile_ms": 248.75603900000002,
+      "construction_ms": 123.78092000000001,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 64552960,
+      "prepared_rss_bytes": 50262016,
+      "runner": "rust",
+      "setup_ms": 372.53747999999996,
+      "threads": 4
+    }
+  },
+  {
+    "device": "samsung",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "engine": "ynnpack",
+    "repetition": 1,
+    "measurements": {
+      "base_rss_bytes": 4173824,
+      "cases": [
+        {
+          "first_invoke_ms": 52.400937,
+          "inference_ms": [
+            30.696458,
+            31.816823,
+            30.390311999999998,
+            31.902812000000004,
+            31.195833,
+            31.363229,
+            31.825,
+            33.033593,
+            31.632865000000002,
+            30.877447999999998
+          ],
+          "rss_bytes": 50630656
+        }
+      ],
+      "compile_ms": 355.456145,
+      "construction_ms": 84.211041,
+      "engine": "ynnpack",
+      "graph_file": null,
+      "model": "mobilenet_v2",
+      "peak_rss_bytes": 63733760,
+      "prepared_rss_bytes": 49618944,
+      "runner": "rust",
+      "setup_ms": 439.66812500000003,
+      "threads": 4
+    }
+  }
+]

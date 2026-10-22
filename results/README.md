@@ -18,6 +18,12 @@ adds fresh phone measurements and records Samsung capacity sensitivity. Qwen3-0.
 resource constraints. Alternate attention/HF profiles change outputs and remain
 experiments. Older campaign timings are not substituted for this checkout.
 
+The [Android vision extension](2026-10-21-current/vision-android/README.md)
+tests all eight FP32 classifiers on TECNO LJ9, Pixel 11 and Samsung SM-S937U1
+at one/four threads. Its baseline is LiteRT's native `benchmark_model_main`
+entry point, with 216 passing independent fixture comparisons. The earlier
+Linux Python control remains labeled separately.
+
 ## Evidence retained for unresolved issues
 
 These records have **not been revalidated by the current refresh**. Their dates

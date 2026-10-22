@@ -1,0 +1,1154 @@
+[
+  {
+    "device": "tecno",
+    "model": "resnet18",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 133.88557305,
+      "run_means_ms": [
+        134.8065767,
+        132.96456940000002
+      ],
+      "setup_ms": 260.21734649999996,
+      "first_invoke_ms": 132.4803465
+    },
+    "litert_xnnpack": {
+      "mean_ms": 91.58779999999999,
+      "run_means_ms": [
+        91.7237,
+        91.4519
+      ],
+      "setup_ms": 65.777,
+      "first_invoke_ms": 92.6215
+    },
+    "ynn_over_litert_latency": 1.461827591120215
+  },
+  {
+    "device": "tecno",
+    "model": "resnet18",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 57.701342350000004,
+      "run_means_ms": [
+        58.0039,
+        57.3987847
+      ],
+      "setup_ms": 261.9061155,
+      "first_invoke_ms": 75.28234599999999
+    },
+    "litert_xnnpack": {
+      "mean_ms": 23.53395,
+      "run_means_ms": [
+        23.5744,
+        23.4935
+      ],
+      "setup_ms": 67.492,
+      "first_invoke_ms": 31.7755
+    },
+    "ynn_over_litert_latency": 2.451834152362863
+  },
+  {
+    "device": "tecno",
+    "model": "resnet34",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 252.80295,
+      "run_means_ms": [
+        253.3361385,
+        252.26976150000002
+      ],
+      "setup_ms": 514.3591155,
+      "first_invoke_ms": 251.221231
+    },
+    "litert_xnnpack": {
+      "mean_ms": 182.3333,
+      "run_means_ms": [
+        182.8482,
+        181.8184
+      ],
+      "setup_ms": 116.823,
+      "first_invoke_ms": 183.51
+    },
+    "ynn_over_litert_latency": 1.386488096250109
+  },
+  {
+    "device": "tecno",
+    "model": "resnet34",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 103.92863845,
+      "run_means_ms": [
+        104.2938153,
+        103.5634616
+      ],
+      "setup_ms": 514.5101920000001,
+      "first_invoke_ms": 118.158423
+    },
+    "litert_xnnpack": {
+      "mean_ms": 47.1,
+      "run_means_ms": [
+        47.0323,
+        47.1677
+      ],
+      "setup_ms": 117.1585,
+      "first_invoke_ms": 52.9985
+    },
+    "ynn_over_litert_latency": 2.2065528333333333
+  },
+  {
+    "device": "tecno",
+    "model": "resnet50",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 277.85529240000005,
+      "run_means_ms": [
+        278.407277,
+        277.3033078
+      ],
+      "setup_ms": 673.9090775,
+      "first_invoke_ms": 274.71288499999997
+    },
+    "litert_xnnpack": {
+      "mean_ms": 212.90035,
+      "run_means_ms": [
+        213.9309,
+        211.8698
+      ],
+      "setup_ms": 99.236,
+      "first_invoke_ms": 213.60649999999998
+    },
+    "ynn_over_litert_latency": 1.3050955172220244
+  },
+  {
+    "device": "tecno",
+    "model": "resnet50",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 100.2196768,
+      "run_means_ms": [
+        100.0312305,
+        100.4081231
+      ],
+      "setup_ms": 676.1876924999999,
+      "first_invoke_ms": 112.142539
+    },
+    "litert_xnnpack": {
+      "mean_ms": 56.137600000000006,
+      "run_means_ms": [
+        56.093,
+        56.1822
+      ],
+      "setup_ms": 98.644,
+      "first_invoke_ms": 64.3575
+    },
+    "ynn_over_litert_latency": 1.7852504702730432
+  },
+  {
+    "device": "tecno",
+    "model": "resnet101",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 516.39685755,
+      "run_means_ms": [
+        514.8418075000001,
+        517.9519076
+      ],
+      "setup_ms": 1736.2718845,
+      "first_invoke_ms": 514.9251925000001
+    },
+    "litert_xnnpack": {
+      "mean_ms": 394.5339,
+      "run_means_ms": [
+        393.8076,
+        395.2602
+      ],
+      "setup_ms": 161.4045,
+      "first_invoke_ms": 401.321
+    },
+    "ynn_over_litert_latency": 1.3088782929679807
+  },
+  {
+    "device": "tecno",
+    "model": "resnet101",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 182.5866,
+      "run_means_ms": [
+        183.6350845,
+        181.5381155
+      ],
+      "setup_ms": 1733.1975385,
+      "first_invoke_ms": 198.88680750000003
+    },
+    "litert_xnnpack": {
+      "mean_ms": 102.88650000000001,
+      "run_means_ms": [
+        102.6722,
+        103.1008
+      ],
+      "setup_ms": 167.2655,
+      "first_invoke_ms": 109.8425
+    },
+    "ynn_over_litert_latency": 1.7746409878847078
+  },
+  {
+    "device": "tecno",
+    "model": "resnet152",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 748.7843499,
+      "run_means_ms": [
+        749.6559768,
+        747.912723
+      ],
+      "setup_ms": 3185.5293075,
+      "first_invoke_ms": 747.6966155
+    },
+    "litert_xnnpack": {
+      "mean_ms": 575.5562500000001,
+      "run_means_ms": [
+        574.2122,
+        576.9003
+      ],
+      "setup_ms": 219.15050000000002,
+      "first_invoke_ms": 576.258
+    },
+    "ynn_over_litert_latency": 1.3009751000010858
+  },
+  {
+    "device": "tecno",
+    "model": "resnet152",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 266.9462194,
+      "run_means_ms": [
+        266.3155156,
+        267.5769232
+      ],
+      "setup_ms": 3190.060115,
+      "first_invoke_ms": 271.55169249999994
+    },
+    "litert_xnnpack": {
+      "mean_ms": 148.85685,
+      "run_means_ms": [
+        148.9969,
+        148.7168
+      ],
+      "setup_ms": 221.46300000000002,
+      "first_invoke_ms": 156.6435
+    },
+    "ynn_over_litert_latency": 1.7933082649538803
+  },
+  {
+    "device": "tecno",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 298.6956385,
+      "run_means_ms": [
+        298.319431,
+        299.071846
+      ],
+      "setup_ms": 23551.5154245,
+      "first_invoke_ms": 304.2208075
+    },
+    "litert_xnnpack": {
+      "mean_ms": 231.47854999999998,
+      "run_means_ms": [
+        231.2518,
+        231.7053
+      ],
+      "setup_ms": 103.189,
+      "first_invoke_ms": 236.298
+    },
+    "ynn_over_litert_latency": 1.2903814997113123
+  },
+  {
+    "device": "tecno",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 91.34946554999999,
+      "run_means_ms": [
+        91.6069464,
+        91.0919847
+      ],
+      "setup_ms": 23167.9383475,
+      "first_invoke_ms": 99.016808
+    },
+    "litert_xnnpack": {
+      "mean_ms": 67.04339999999999,
+      "run_means_ms": [
+        67.646,
+        66.4408
+      ],
+      "setup_ms": 105.959,
+      "first_invoke_ms": 84.7855
+    },
+    "ynn_over_litert_latency": 1.362542256955942
+  },
+  {
+    "device": "tecno",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 807.38708065,
+      "run_means_ms": [
+        806.7779152,
+        807.9962461
+      ],
+      "setup_ms": 1345.4621545,
+      "first_invoke_ms": 807.618615
+    },
+    "litert_xnnpack": {
+      "mean_ms": 586.5953,
+      "run_means_ms": [
+        587.202,
+        585.9886
+      ],
+      "setup_ms": 274.42150000000004,
+      "first_invoke_ms": 601.6495
+    },
+    "ynn_over_litert_latency": 1.3763954137545937
+  },
+  {
+    "device": "tecno",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 260.11010395000005,
+      "run_means_ms": [
+        259.5391693,
+        260.6810386
+      ],
+      "setup_ms": 1367.9207689999998,
+      "first_invoke_ms": 260.5972305
+    },
+    "litert_xnnpack": {
+      "mean_ms": 171.9678,
+      "run_means_ms": [
+        172.6683,
+        171.2673
+      ],
+      "setup_ms": 279.828,
+      "first_invoke_ms": 177.9185
+    },
+    "ynn_over_litert_latency": 1.5125512098776634
+  },
+  {
+    "device": "tecno",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 64.1641922,
+      "run_means_ms": [
+        64.9048997,
+        63.4234847
+      ],
+      "setup_ms": 375.718154,
+      "first_invoke_ms": 64.55576950000001
+    },
+    "litert_xnnpack": {
+      "mean_ms": 17.77555,
+      "run_means_ms": [
+        17.8588,
+        17.6923
+      ],
+      "setup_ms": 10.313,
+      "first_invoke_ms": 19.2025
+    },
+    "ynn_over_litert_latency": 3.6096881502963343
+  },
+  {
+    "device": "tecno",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 33.61779985,
+      "run_means_ms": [
+        33.6814384,
+        33.554161300000004
+      ],
+      "setup_ms": 374.7958845,
+      "first_invoke_ms": 46.6699615
+    },
+    "litert_xnnpack": {
+      "mean_ms": 5.16465,
+      "run_means_ms": [
+        5.264,
+        5.0653
+      ],
+      "setup_ms": 10.9635,
+      "first_invoke_ms": 8.9805
+    },
+    "ynn_over_litert_latency": 6.509211630991451
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet18",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 46.02267689999999,
+      "run_means_ms": [
+        46.0117401,
+        46.0336137
+      ],
+      "setup_ms": 258.39096,
+      "first_invoke_ms": 46.93957
+    },
+    "litert_xnnpack": {
+      "mean_ms": 40.39,
+      "run_means_ms": [
+        40.2889,
+        40.4911
+      ],
+      "setup_ms": 54.6285,
+      "first_invoke_ms": 40.275999999999996
+    },
+    "ynn_over_litert_latency": 1.1394572146570932
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet18",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 163.74858245000001,
+      "run_means_ms": [
+        173.521707,
+        153.9754579
+      ],
+      "setup_ms": 297.985908,
+      "first_invoke_ms": 223.212502
+    },
+    "litert_xnnpack": {
+      "mean_ms": 20.3189,
+      "run_means_ms": [
+        19.7368,
+        20.901
+      ],
+      "setup_ms": 66.042,
+      "first_invoke_ms": 21.558
+    },
+    "ynn_over_litert_latency": 8.058929491753984
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet34",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 81.75247155,
+      "run_means_ms": [
+        81.4757454,
+        82.0291977
+      ],
+      "setup_ms": 631.9754605,
+      "first_invoke_ms": 82.49682150000001
+    },
+    "litert_xnnpack": {
+      "mean_ms": 78.98335,
+      "run_means_ms": [
+        79.0794,
+        78.8873
+      ],
+      "setup_ms": 91.2955,
+      "first_invoke_ms": 79.0085
+    },
+    "ynn_over_litert_latency": 1.035059560654239
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet34",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 178.83124735,
+      "run_means_ms": [
+        173.7553357,
+        183.907159
+      ],
+      "setup_ms": 508.0993815,
+      "first_invoke_ms": 87.23851450000001
+    },
+    "litert_xnnpack": {
+      "mean_ms": 38.894999999999996,
+      "run_means_ms": [
+        38.8279,
+        38.9621
+      ],
+      "setup_ms": 108.4845,
+      "first_invoke_ms": 41.5405
+    },
+    "ynn_over_litert_latency": 4.597795278313408
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet50",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 107.48993265,
+      "run_means_ms": [
+        107.6163501,
+        107.3635152
+      ],
+      "setup_ms": 576.4845155,
+      "first_invoke_ms": 107.89626200000001
+    },
+    "litert_xnnpack": {
+      "mean_ms": 86.5218,
+      "run_means_ms": [
+        86.1529,
+        86.8907
+      ],
+      "setup_ms": 83.015,
+      "first_invoke_ms": 86.15450000000001
+    },
+    "ynn_over_litert_latency": 1.2423450812396413
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet50",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 130.39940865,
+      "run_means_ms": [
+        125.8915513,
+        134.907266
+      ],
+      "setup_ms": 625.130721,
+      "first_invoke_ms": 81.520571
+    },
+    "litert_xnnpack": {
+      "mean_ms": 45.552,
+      "run_means_ms": [
+        45.2961,
+        45.8079
+      ],
+      "setup_ms": 139.9275,
+      "first_invoke_ms": 50.0685
+    },
+    "ynn_over_litert_latency": 2.8626494698366702
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet101",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 188.10216954999999,
+      "run_means_ms": [
+        188.1033664,
+        188.1009727
+      ],
+      "setup_ms": 1845.9026585000001,
+      "first_invoke_ms": 188.9475755
+    },
+    "litert_xnnpack": {
+      "mean_ms": 158.83350000000002,
+      "run_means_ms": [
+        159.117,
+        158.55
+      ],
+      "setup_ms": 129.6245,
+      "first_invoke_ms": 158.24200000000002
+    },
+    "ynn_over_litert_latency": 1.1842726474578724
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet101",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 320.87021245000005,
+      "run_means_ms": [
+        329.6594332,
+        312.0809917
+      ],
+      "setup_ms": 1498.458678,
+      "first_invoke_ms": 151.8230975
+    },
+    "litert_xnnpack": {
+      "mean_ms": 84.9902,
+      "run_means_ms": [
+        86.0245,
+        83.9559
+      ],
+      "setup_ms": 152.07600000000002,
+      "first_invoke_ms": 88.958
+    },
+    "ynn_over_litert_latency": 3.775378954867738
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet152",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 272.43965534999995,
+      "run_means_ms": [
+        269.5897465,
+        275.2895642
+      ],
+      "setup_ms": 2570.637885,
+      "first_invoke_ms": 272.4385725
+    },
+    "litert_xnnpack": {
+      "mean_ms": 230.15089999999998,
+      "run_means_ms": [
+        229.64,
+        230.6618
+      ],
+      "setup_ms": 172.994,
+      "first_invoke_ms": 230.679
+    },
+    "ynn_over_litert_latency": 1.1837436019150913
+  },
+  {
+    "device": "pixel11",
+    "model": "resnet152",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 494.99153590000003,
+      "run_means_ms": [
+        501.1199772,
+        488.8630946
+      ],
+      "setup_ms": 2682.5410540000003,
+      "first_invoke_ms": 232.0611165
+    },
+    "litert_xnnpack": {
+      "mean_ms": 123.7348,
+      "run_means_ms": [
+        123.3745,
+        124.0951
+      ],
+      "setup_ms": 209.1875,
+      "first_invoke_ms": 127.1795
+    },
+    "ynn_over_litert_latency": 4.0004229683161086
+  },
+  {
+    "device": "pixel11",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 133.09846705,
+      "run_means_ms": [
+        133.247257,
+        132.9496771
+      ],
+      "setup_ms": 15495.818933499999,
+      "first_invoke_ms": 133.132672
+    },
+    "litert_xnnpack": {
+      "mean_ms": 93.95325,
+      "run_means_ms": [
+        94.014,
+        93.8925
+      ],
+      "setup_ms": 97.856,
+      "first_invoke_ms": 96.565
+    },
+    "ynn_over_litert_latency": 1.4166456940020704
+  },
+  {
+    "device": "pixel11",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 83.56440764999999,
+      "run_means_ms": [
+        83.2508503,
+        83.877965
+      ],
+      "setup_ms": 18142.3405365,
+      "first_invoke_ms": 80.1233895
+    },
+    "litert_xnnpack": {
+      "mean_ms": 55.082049999999995,
+      "run_means_ms": [
+        55.0794,
+        55.0847
+      ],
+      "setup_ms": 106.707,
+      "first_invoke_ms": 60.728
+    },
+    "ynn_over_litert_latency": 1.5170896444486
+  },
+  {
+    "device": "pixel11",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 284.0925778,
+      "run_means_ms": [
+        284.3583196,
+        283.826836
+      ],
+      "setup_ms": 1266.3115854999999,
+      "first_invoke_ms": 285.0017855
+    },
+    "litert_xnnpack": {
+      "mean_ms": 255.4254,
+      "run_means_ms": [
+        255.3253,
+        255.5255
+      ],
+      "setup_ms": 211.89350000000002,
+      "first_invoke_ms": 255.2545
+    },
+    "ynn_over_litert_latency": 1.1122330739229538
+  },
+  {
+    "device": "pixel11",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 216.2247826,
+      "run_means_ms": [
+        217.0866734,
+        215.3628918
+      ],
+      "setup_ms": 1171.593344,
+      "first_invoke_ms": 192.64239249999997
+    },
+    "litert_xnnpack": {
+      "mean_ms": 137.9471,
+      "run_means_ms": [
+        137.9976,
+        137.8966
+      ],
+      "setup_ms": 252.179,
+      "first_invoke_ms": 136.392
+    },
+    "ynn_over_litert_latency": 1.5674471054483927
+  },
+  {
+    "device": "pixel11",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 37.8655812,
+      "run_means_ms": [
+        37.8074111,
+        37.9237513
+      ],
+      "setup_ms": 460.0410495,
+      "first_invoke_ms": 62.620567
+    },
+    "litert_xnnpack": {
+      "mean_ms": 7.32405,
+      "run_means_ms": [
+        7.2966,
+        7.3515
+      ],
+      "setup_ms": 14.105,
+      "first_invoke_ms": 8.6265
+    },
+    "ynn_over_litert_latency": 5.170033137403486
+  },
+  {
+    "device": "pixel11",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 33.82110865,
+      "run_means_ms": [
+        34.2018956,
+        33.4403217
+      ],
+      "setup_ms": 375.31435,
+      "first_invoke_ms": 38.864486
+    },
+    "litert_xnnpack": {
+      "mean_ms": 4.5146,
+      "run_means_ms": [
+        4.7731,
+        4.2561
+      ],
+      "setup_ms": 13.8845,
+      "first_invoke_ms": 7.9755
+    },
+    "ynn_over_litert_latency": 7.491496179063483
+  },
+  {
+    "device": "samsung",
+    "model": "resnet18",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 46.2864505,
+      "run_means_ms": [
+        46.1367501,
+        46.4361509
+      ],
+      "setup_ms": 163.4094525,
+      "first_invoke_ms": 43.507057
+    },
+    "litert_xnnpack": {
+      "mean_ms": 29.770049999999998,
+      "run_means_ms": [
+        29.8428,
+        29.6973
+      ],
+      "setup_ms": 42.441,
+      "first_invoke_ms": 33.481
+    },
+    "ynn_over_litert_latency": 1.5547992193496485
+  },
+  {
+    "device": "samsung",
+    "model": "resnet18",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 28.85123155,
+      "run_means_ms": [
+        28.4091719,
+        29.2932912
+      ],
+      "setup_ms": 338.33981700000004,
+      "first_invoke_ms": 63.3267705
+    },
+    "litert_xnnpack": {
+      "mean_ms": 13.671949999999999,
+      "run_means_ms": [
+        13.1672,
+        14.1767
+      ],
+      "setup_ms": 114.67099999999999,
+      "first_invoke_ms": 56.1545
+    },
+    "ynn_over_litert_latency": 2.110249931428948
+  },
+  {
+    "device": "samsung",
+    "model": "resnet34",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 84.88498965000001,
+      "run_means_ms": [
+        84.83090630000001,
+        84.93907300000001
+      ],
+      "setup_ms": 318.29638,
+      "first_invoke_ms": 79.99072950000001
+    },
+    "litert_xnnpack": {
+      "mean_ms": 59.57015,
+      "run_means_ms": [
+        59.6994,
+        59.4409
+      ],
+      "setup_ms": 73.52449999999999,
+      "first_invoke_ms": 58.83
+    },
+    "ynn_over_litert_latency": 1.424958467453918
+  },
+  {
+    "device": "samsung",
+    "model": "resnet34",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 53.083669099999995,
+      "run_means_ms": [
+        52.8215989,
+        53.3457393
+      ],
+      "setup_ms": 573.5479685,
+      "first_invoke_ms": 84.13890649999999
+    },
+    "litert_xnnpack": {
+      "mean_ms": 24.52355,
+      "run_means_ms": [
+        24.4375,
+        24.6096
+      ],
+      "setup_ms": 209.89350000000002,
+      "first_invoke_ms": 64.845
+    },
+    "ynn_over_litert_latency": 2.1645997051813457
+  },
+  {
+    "device": "samsung",
+    "model": "resnet50",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 104.9280183,
+      "run_means_ms": [
+        104.8267708,
+        105.0292658
+      ],
+      "setup_ms": 405.16231750000003,
+      "first_invoke_ms": 101.0664845
+    },
+    "litert_xnnpack": {
+      "mean_ms": 68.4607,
+      "run_means_ms": [
+        68.3947,
+        68.5267
+      ],
+      "setup_ms": 66.7375,
+      "first_invoke_ms": 70.996
+    },
+    "ynn_over_litert_latency": 1.5326752180448053
+  },
+  {
+    "device": "samsung",
+    "model": "resnet50",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 58.1945964,
+      "run_means_ms": [
+        58.0538334,
+        58.3353594
+      ],
+      "setup_ms": 713.4654170000001,
+      "first_invoke_ms": 86.388646
+    },
+    "litert_xnnpack": {
+      "mean_ms": 28.924500000000002,
+      "run_means_ms": [
+        29.15,
+        28.699
+      ],
+      "setup_ms": 162.6245,
+      "first_invoke_ms": 81.792
+    },
+    "ynn_over_litert_latency": 2.0119482238240938
+  },
+  {
+    "device": "samsung",
+    "model": "resnet101",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 192.02782025,
+      "run_means_ms": [
+        193.2682551,
+        190.7873854
+      ],
+      "setup_ms": 1031.4888795000002,
+      "first_invoke_ms": 196.20112
+    },
+    "litert_xnnpack": {
+      "mean_ms": 130.37225,
+      "run_means_ms": [
+        130.4745,
+        130.27
+      ],
+      "setup_ms": 112.941,
+      "first_invoke_ms": 126.3815
+    },
+    "ynn_over_litert_latency": 1.4729194307070712
+  },
+  {
+    "device": "samsung",
+    "model": "resnet101",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 107.45673690000001,
+      "run_means_ms": [
+        107.25570830000001,
+        107.6577655
+      ],
+      "setup_ms": 1704.6025775000003,
+      "first_invoke_ms": 130.649036
+    },
+    "litert_xnnpack": {
+      "mean_ms": 57.905950000000004,
+      "run_means_ms": [
+        57.696,
+        58.1159
+      ],
+      "setup_ms": 270.5775,
+      "first_invoke_ms": 90.62200000000001
+    },
+    "ynn_over_litert_latency": 1.855711492515018
+  },
+  {
+    "device": "samsung",
+    "model": "resnet152",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 282.75403635,
+      "run_means_ms": [
+        282.4084635,
+        283.0996092
+      ],
+      "setup_ms": 1875.8224994999998,
+      "first_invoke_ms": 276.875156
+    },
+    "litert_xnnpack": {
+      "mean_ms": 193.9152,
+      "run_means_ms": [
+        193.8405,
+        193.9899
+      ],
+      "setup_ms": 146.5215,
+      "first_invoke_ms": 185.98149999999998
+    },
+    "ynn_over_litert_latency": 1.4581324019468302
+  },
+  {
+    "device": "samsung",
+    "model": "resnet152",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 158.15358605,
+      "run_means_ms": [
+        157.8381147,
+        158.4690574
+      ],
+      "setup_ms": 2980.4186445,
+      "first_invoke_ms": 192.39799499999998
+    },
+    "litert_xnnpack": {
+      "mean_ms": 87.8075,
+      "run_means_ms": [
+        87.9932,
+        87.6218
+      ],
+      "setup_ms": 345.776,
+      "first_invoke_ms": 109.44749999999999
+    },
+    "ynn_over_litert_latency": 1.8011398348660421
+  },
+  {
+    "device": "samsung",
+    "model": "resnext50_32x4d",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 134.237487,
+      "run_means_ms": [
+        133.58056249999998,
+        134.8944115
+      ],
+      "setup_ms": 10976.0858295,
+      "first_invoke_ms": 133.653125
+    },
+    "litert_xnnpack": {
+      "mean_ms": 82.74445,
+      "run_means_ms": [
+        83.565,
+        81.9239
+      ],
+      "setup_ms": 95.5585,
+      "first_invoke_ms": 97.0945
+    },
+    "ynn_over_litert_latency": 1.6223140887394862
+  },
+  {
+    "device": "samsung",
+    "model": "resnext50_32x4d",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 60.87894265,
+      "run_means_ms": [
+        60.8886406,
+        60.8692447
+      ],
+      "setup_ms": 17552.291451999998,
+      "first_invoke_ms": 87.899766
+    },
+    "litert_xnnpack": {
+      "mean_ms": 39.5971,
+      "run_means_ms": [
+        39.4769,
+        39.7173
+      ],
+      "setup_ms": 172.2855,
+      "first_invoke_ms": 91.60249999999999
+    },
+    "ynn_over_litert_latency": 1.5374596283566222
+  },
+  {
+    "device": "samsung",
+    "model": "wide_resnet50_2",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 307.29814035000004,
+      "run_means_ms": [
+        307.2170466,
+        307.3792341
+      ],
+      "setup_ms": 924.7111455,
+      "first_invoke_ms": 296.614948
+    },
+    "litert_xnnpack": {
+      "mean_ms": 199.1007,
+      "run_means_ms": [
+        199.4337,
+        198.7677
+      ],
+      "setup_ms": 246.91449999999998,
+      "first_invoke_ms": 192.4975
+    },
+    "ynn_over_litert_latency": 1.5434307380637038
+  },
+  {
+    "device": "samsung",
+    "model": "wide_resnet50_2",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 145.07409625000003,
+      "run_means_ms": [
+        145.9957084,
+        144.1524841
+      ],
+      "setup_ms": 1334.1669004999999,
+      "first_invoke_ms": 183.326875
+    },
+    "litert_xnnpack": {
+      "mean_ms": 92.39395,
+      "run_means_ms": [
+        92.7523,
+        92.0356
+      ],
+      "setup_ms": 451.84450000000004,
+      "first_invoke_ms": 131.97899999999998
+    },
+    "ynn_over_litert_latency": 1.5701687854020747
+  },
+  {
+    "device": "samsung",
+    "model": "mobilenet_v2",
+    "threads": 1,
+    "ynnpack": {
+      "mean_ms": 40.8803541,
+      "run_means_ms": [
+        40.6757499,
+        41.0849583
+      ],
+      "setup_ms": 247.733099,
+      "first_invoke_ms": 42.274323499999994
+    },
+    "litert_xnnpack": {
+      "mean_ms": 6.415100000000001,
+      "run_means_ms": [
+        6.4561,
+        6.3741
+      ],
+      "setup_ms": 12.944,
+      "first_invoke_ms": 6.3309999999999995
+    },
+    "ynn_over_litert_latency": 6.372520163364561
+  },
+  {
+    "device": "samsung",
+    "model": "mobilenet_v2",
+    "threads": 4,
+    "ynnpack": {
+      "mean_ms": 30.115403450000002,
+      "run_means_ms": [
+        28.7573696,
+        31.4734373
+      ],
+      "setup_ms": 433.523203,
+      "first_invoke_ms": 54.31825499999999
+    },
+    "litert_xnnpack": {
+      "mean_ms": 5.4735,
+      "run_means_ms": [
+        5.2667,
+        5.6803
+      ],
+      "setup_ms": 17.693,
+      "first_invoke_ms": 11.082
+    },
+    "ynn_over_litert_latency": 5.5020377180962825
+  }
+]
