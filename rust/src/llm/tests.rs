@@ -5,6 +5,7 @@ use std::path::Path;
 
 pub(super) fn run(args:&[String])->Result<()> {
     runtime_session()?;
+    resource_output_bindings()?;
     let root=Path::new(&args[1]);
     let mut options=Options::parse(&["test".into(),format!("--bundle_dir={}",root.display()),
         format!("--parameter_dir={}/parameters",root.display()),"--cache_capacity=8".into(),
@@ -113,5 +114,33 @@ fn runtime_session() -> Result<()> {
     session.reset()?;
     session.invoke(&[0],true,None)?;
     assert_eq!(session.logits(),&[1.,2.,3.,4.]);
+    Ok(())
+}
+
+// Resource updates have the owner's binding; an unrelated output still needs
+// an explicit interface entry even when its name resembles a cache update.
+fn resource_output_bindings() -> Result<()> {
+    use crate::{plan::ValidatedPlan, runtime::ExecutionSpec};
+    let source = r#"ynn 1 resource_contract=1 completion_contract=1 profiling=auto {
+      input x: fp32[1, 4];
+      @resource(name="cache", axis=0, encoding=encoding(dtype=fp32, axis=none, scales=[], zero_points=[]))
+      state cache: fp32[8, 4];
+      require committed(cache) == 0;
+      require 1 <= 8;
+      let updated = append(cache, x, axis=0, position=0, rows=1);
+      let logits = copy(x);
+      output updated; output logits;
+    }"#;
+    let phase = serde_json::json!({"logits":"logits","row_policy":"valid","scalars":{},
+      "inputs":[{"name":"x","dtype":"fp32","shape":[1,4],"recipe":{"kind":"positions"}}]});
+    let spec: ExecutionSpec = serde_json::from_value(serde_json::json!({
+      "format":"ynn-llm-execution","model":"resource-alias","capacity":8,"prefill_rows":1,
+      "vocabulary":4,"prefill_after_decode":false,"graphs":{"prefill":phase,"decode":phase},
+      "resources":[{"name":"cache","dtype":"fp32","axis":0,"shape":["capacity",4]}],
+      "fixed_states":[],"embeddings":{}}))?;
+    spec.validate_plan("decode", &ValidatedPlan::from_bytes(source.as_bytes())?)?;
+    let unbound = source.replace("output updated;", "let cache_update = copy(x); output cache_update; output updated;");
+    let error = spec.validate_plan("decode", &ValidatedPlan::from_bytes(unbound.as_bytes())?).err().unwrap();
+    assert!(error.message.contains("Unbound plan output: cache_update"));
     Ok(())
 }

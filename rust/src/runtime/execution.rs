@@ -278,6 +278,33 @@ impl ExecutionSpec {
         if plan.scalar_names() != g.scalars.keys().map(String::as_str).collect() {
             return Err(Error::invalid("Scalar recipe coverage mismatch"));
         }
+        // Append results share a persistent owner's binding, including chains
+        // of updates. They require no additional caller buffer/history copy.
+        let mut bound_aliases = plan
+            .commands()
+            .iter()
+            .filter_map(|c| match c {
+                Command::Tensor { id, name, .. }
+                    if self.resources.iter().any(|r| &r.name == name) =>
+                {
+                    Some(id.0)
+                }
+                _ => None,
+            })
+            .collect::<BTreeSet<_>>();
+        loop {
+            let count = bound_aliases.len();
+            for c in plan.commands() {
+                if let Command::Append { owner, output, .. } = c {
+                    if bound_aliases.contains(&owner.0) {
+                        bound_aliases.insert(output.0);
+                    }
+                }
+            }
+            if bound_aliases.len() == count {
+                break;
+            }
+        }
         let outputs = self
             .resources
             .iter()
@@ -290,7 +317,10 @@ impl ExecutionSpec {
                 id, name, flags, ..
             } = c
             {
-                if flags & 2 != 0 && !outputs.contains(name.as_str()) {
+                if flags & 2 != 0
+                    && !outputs.contains(name.as_str())
+                    && !bound_aliases.contains(&id.0)
+                {
                     return Err(Error::invalid(format!("Unbound plan output: {name}")));
                 }
                 if flags & 1 != 0

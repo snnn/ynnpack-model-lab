@@ -5,6 +5,8 @@ plans used by the existing runners. It owns YNNPACK decomposition, target views,
 packed representations, native function sharing, and construction serialization.
 The runtime and native kernels remain separate from model authoring. There is one
 compiler implementation, in `rust/src/compiler`, shared by every frontend.
+The experimental [runtime preparation API](RUNTIME_PREPARATION.md) invokes that
+same compiler in process and prepares reusable graphs without plan files.
 
 FC, attention, and selected graph rewrites use build-time generated Rust from
 [ISLE rules](ISLE_LOWERING.md). That guide describes rule ownership, extension,

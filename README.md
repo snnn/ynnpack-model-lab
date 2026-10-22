@@ -31,7 +31,8 @@ and checkpoint preparation tools. Source importers can supply the same program
 contract. Generated C++
 model builders and JSON graph loading are retired. JSON remains the format for
 metadata, manifests, fixture controls and measurements. See the
-[artifact interface](docs/AUTHORING.md), [Rust runtime](docs/RUST_RUNTIME.md), and
+[artifact interface](docs/AUTHORING.md), [Rust runtime](docs/RUST_RUNTIME.md),
+[in-process preparation](docs/RUNTIME_PREPARATION.md), and
 [plan text reference](docs/PLAN_TEXT.md).
 
 The Gemma plans record the `target_views` preparation policy: shared constant
