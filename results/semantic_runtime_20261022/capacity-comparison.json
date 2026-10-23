@@ -1,0 +1,128 @@
+{
+  "jobs": [
+    {
+      "name": "gemma4_e2b_generated-t1-c8448",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "14",
+        "$CONTROL/build/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b/generated",
+        "--parameter_dir=$LAB/assets/gemma4_e2b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-capacity.tsv",
+        "--cache_capacity=8448",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "14",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b/generated",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-capacity.tsv",
+        "--cache_capacity=8448",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b/generated/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_generated-t4-c8448",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b/generated",
+        "--parameter_dir=$LAB/assets/gemma4_e2b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-capacity.tsv",
+        "--cache_capacity=8448",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b/generated",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-capacity.tsv",
+        "--cache_capacity=8448",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b/generated/execution.json"
+    },
+    {
+      "name": "gemma4_e4b_generated-t1-c8448",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "14",
+        "$CONTROL/build/gemma4_e4b",
+        "--graph_dir=$CONTROL/models/gemma4_e4b/generated",
+        "--parameter_dir=$LAB/assets/gemma4_e4b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-capacity.tsv",
+        "--cache_capacity=8448",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "14",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e4b/generated",
+        "--parameter_dir=/data$LAB/models/gemma4_e4b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-capacity.tsv",
+        "--cache_capacity=8448",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e4b/generated/execution.json"
+    },
+    {
+      "name": "gemma4_e4b_generated-t4-c8448",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/gemma4_e4b",
+        "--graph_dir=$CONTROL/models/gemma4_e4b/generated",
+        "--parameter_dir=$LAB/assets/gemma4_e4b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-capacity.tsv",
+        "--cache_capacity=8448",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e4b/generated",
+        "--parameter_dir=/data$LAB/models/gemma4_e4b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-capacity.tsv",
+        "--cache_capacity=8448",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e4b/generated/execution.json"
+    }
+  ]
+}

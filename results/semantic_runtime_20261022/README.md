@@ -44,6 +44,21 @@ encoding; compressed programs are bounded to 128 MiB after decoding.
 
 ## Correctness protocol
 
+[correctness.json](correctness.json) records the completed checks:
+
+| Check | Result |
+| --- | --- |
+| 26 host packages × one/four threads | 52/52 exact comparisons passed; 2,232 decoded steps |
+| E2B/E4B capacity 8,448 × one/four threads | 4/4 matched the frozen control |
+| Capacity 2,048 versus 8,448 | 3,840 live logit/KV arrays were identical |
+| Public Rust Qwen3-0.6B author, four threads | Full prompt/reset matrix matched the serialized package |
+| Final host CTest | 36/36 targets passed; 386 compiler fixtures, 2,196 passed numerical requests |
+| Compiler worklist change | Complete outputs for all 26 packages were byte-identical |
+| Pixel 8 and Pixel 11 | All 12 native/session/arithmetic/vision records passed |
+
+The host comparisons performed 43,392 exact file comparisons, including resolved
+token files. The three unchanged expected backend failures are listed below.
+
 Host model checks use the same assets, token IDs, shapes, capacity, and numerical
 profile on each side. Dumping and profiling are excluded from latency runs.
 Each profile is checked at one and four threads.
@@ -83,13 +98,22 @@ Full-model verification exposed two issues that are fixed in this baseline:
   including signed-zero ties. All 837 logit/KV arrays in the failing HF case were
   already identical; this was a selection-policy difference, not arithmetic drift.
 
+The full-model campaign retains the identity of the candidate used for each job.
+Some jobs completed before the final worklist, tie-selection, and diagnostic-dump
+changes. Compiler byte-parity covers all 26 programs after the worklist change;
+the tie case is rerun with the corrected runner. The lowest-token policy also
+matches all 1,530 retained Qwen full-matrix logits. The final binaries run CTest,
+the Android checks, and the separate correctness checks for the 11-job timing
+configuration. [provenance.json](provenance.json) distinguishes the intermediate
+and final binaries rather than attributing every capture to one executable.
+
 ## Performance protocol
 
 [comparison.json](comparison.json) is the portable 11-job configuration. It covers
 published E2B, HF BF16 E2B, Qwen3-0.6B, Qwen3.5-4B INT4 MLP, and ResNet18 at one
-and four threads, plus published E4B at four threads. LLM fixtures use prompts
-17/128/1024 and their recorded continuation counts: E2B 32, HF 8, E4B 16,
-and Qwen 16.
+and four threads, plus published E4B at four threads. Gemma and Qwen3.5 fixtures
+use prompts 17/128/1024; Qwen3-0.6B's retained performance fixture uses 129/1025.
+Continuation counts are E2B 32, HF 8, E4B 16, and Qwen 16.
 
 Each comparison uses six alternating fresh-process pairs, one warmup and three
 measured requests per case. Processes run sequentially, with no concurrent
@@ -128,6 +152,12 @@ than assuming the same CPU topology.
 ```sh
 ctest --test-dir build --output-on-failure
 python tools/check_model_packages.py --runner build/ynn-llm
+python tools/compare_runtime.py \
+  --config results/semantic_runtime_20261022/correctness-comparison.json \
+  --output out/semantic-full-checks --mode check
+python tools/compare_runtime.py \
+  --config results/semantic_runtime_20261022/capacity-comparison.json \
+  --output out/semantic-capacity-checks --mode check
 python tools/compare_runtime.py \
   --config results/semantic_runtime_20261022/comparison.json \
   --output out/semantic-checks --mode check

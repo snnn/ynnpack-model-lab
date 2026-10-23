@@ -1,0 +1,1588 @@
+{
+  "jobs": [
+    {
+      "name": "gemma4_e2b_attention_fp32_rows-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b/attention/fp32_rows",
+        "--parameter_dir=$LAB/assets/gemma4_e2b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b/attention/fp32_rows",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b/attention/fp32_rows/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b/attention/fp32_rows/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_attention_fp32_rows-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b/attention/fp32_rows",
+        "--parameter_dir=$LAB/assets/gemma4_e2b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b/attention/fp32_rows",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b/attention/fp32_rows/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b/attention/fp32_rows/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_attention_int8_batch-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b/attention/int8_batch",
+        "--parameter_dir=$LAB/assets/gemma4_e2b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b/attention/int8_batch",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b/attention/int8_batch/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b/attention/int8_batch/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_attention_int8_batch-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b/attention/int8_batch",
+        "--parameter_dir=$LAB/assets/gemma4_e2b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b/attention/int8_batch",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b/attention/int8_batch/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b/attention/int8_batch/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_attention_int8_rows-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b/attention/int8_rows",
+        "--parameter_dir=$LAB/assets/gemma4_e2b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b/attention/int8_rows",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b/attention/int8_rows/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b/attention/int8_rows/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_attention_int8_rows-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b/attention/int8_rows",
+        "--parameter_dir=$LAB/assets/gemma4_e2b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b/attention/int8_rows",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b/attention/int8_rows/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b/attention/int8_rows/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_generated-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b/generated",
+        "--parameter_dir=$LAB/assets/gemma4_e2b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b/generated",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b/generated/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_generated-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b/generated",
+        "--parameter_dir=$LAB/assets/gemma4_e2b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b/generated",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b/generated/execution.json"
+    },
+    {
+      "name": "vision_mobilenet_v2_generated-t1",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/mobilenet_v2/generated",
+        "--graph_file=$CONTROL/models/vision/mobilenet_v2/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/mobilenet_v2/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/mobilenet_v2/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/mobilenet_v2/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/mobilenet_v2/generated",
+        "--input_file=$LAB/assets/vision/mobilenet_v2/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/mobilenet_v2/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/mobilenet_v2/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "fixtures": "$LAB/assets/vision/mobilenet_v2/validation"
+    },
+    {
+      "name": "vision_mobilenet_v2_generated-t4",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/mobilenet_v2/generated",
+        "--graph_file=$CONTROL/models/vision/mobilenet_v2/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/mobilenet_v2/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/mobilenet_v2/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/mobilenet_v2/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/mobilenet_v2/generated",
+        "--input_file=$LAB/assets/vision/mobilenet_v2/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/mobilenet_v2/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/mobilenet_v2/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "fixtures": "$LAB/assets/vision/mobilenet_v2/validation"
+    },
+    {
+      "name": "vision_resnet101_generated-t1",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/resnet101/generated",
+        "--graph_file=$CONTROL/models/vision/resnet101/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnet101/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet101/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet101/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/resnet101/generated",
+        "--input_file=$LAB/assets/vision/resnet101/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet101/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet101/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "fixtures": "$LAB/assets/vision/resnet101/validation"
+    },
+    {
+      "name": "vision_resnet101_generated-t4",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/resnet101/generated",
+        "--graph_file=$CONTROL/models/vision/resnet101/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnet101/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet101/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet101/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/resnet101/generated",
+        "--input_file=$LAB/assets/vision/resnet101/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet101/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet101/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "fixtures": "$LAB/assets/vision/resnet101/validation"
+    },
+    {
+      "name": "vision_resnet152_generated-t1",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/resnet152/generated",
+        "--graph_file=$CONTROL/models/vision/resnet152/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnet152/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet152/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet152/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/resnet152/generated",
+        "--input_file=$LAB/assets/vision/resnet152/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet152/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet152/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "fixtures": "$LAB/assets/vision/resnet152/validation"
+    },
+    {
+      "name": "vision_resnet152_generated-t4",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/resnet152/generated",
+        "--graph_file=$CONTROL/models/vision/resnet152/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnet152/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet152/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet152/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/resnet152/generated",
+        "--input_file=$LAB/assets/vision/resnet152/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet152/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet152/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "fixtures": "$LAB/assets/vision/resnet152/validation"
+    },
+    {
+      "name": "vision_resnet18_generated-t1",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/resnet18/generated",
+        "--graph_file=$CONTROL/models/vision/resnet18/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/resnet18/generated",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "fixtures": "$LAB/assets/vision/resnet18/validation"
+    },
+    {
+      "name": "vision_resnet18_generated-t4",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/resnet18/generated",
+        "--graph_file=$CONTROL/models/vision/resnet18/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/resnet18/generated",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "fixtures": "$LAB/assets/vision/resnet18/validation"
+    },
+    {
+      "name": "vision_resnet34_generated-t1",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/resnet34/generated",
+        "--graph_file=$CONTROL/models/vision/resnet34/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnet34/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet34/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet34/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/resnet34/generated",
+        "--input_file=$LAB/assets/vision/resnet34/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet34/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet34/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "fixtures": "$LAB/assets/vision/resnet34/validation"
+    },
+    {
+      "name": "vision_resnet34_generated-t4",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/resnet34/generated",
+        "--graph_file=$CONTROL/models/vision/resnet34/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnet34/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet34/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet34/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/resnet34/generated",
+        "--input_file=$LAB/assets/vision/resnet34/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet34/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet34/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "fixtures": "$LAB/assets/vision/resnet34/validation"
+    },
+    {
+      "name": "vision_resnet50_generated-t1",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/resnet50/generated",
+        "--graph_file=$CONTROL/models/vision/resnet50/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnet50/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet50/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet50/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/resnet50/generated",
+        "--input_file=$LAB/assets/vision/resnet50/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet50/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet50/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "fixtures": "$LAB/assets/vision/resnet50/validation"
+    },
+    {
+      "name": "vision_resnet50_generated-t4",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/resnet50/generated",
+        "--graph_file=$CONTROL/models/vision/resnet50/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnet50/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet50/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet50/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/resnet50/generated",
+        "--input_file=$LAB/assets/vision/resnet50/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet50/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet50/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "fixtures": "$LAB/assets/vision/resnet50/validation"
+    },
+    {
+      "name": "vision_resnext50_32x4d_generated-t1",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/resnext50_32x4d/generated",
+        "--graph_file=$CONTROL/models/vision/resnext50_32x4d/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnext50_32x4d/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnext50_32x4d/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnext50_32x4d/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/resnext50_32x4d/generated",
+        "--input_file=$LAB/assets/vision/resnext50_32x4d/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnext50_32x4d/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnext50_32x4d/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "fixtures": "$LAB/assets/vision/resnext50_32x4d/validation"
+    },
+    {
+      "name": "vision_resnext50_32x4d_generated-t4",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/resnext50_32x4d/generated",
+        "--graph_file=$CONTROL/models/vision/resnext50_32x4d/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnext50_32x4d/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnext50_32x4d/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnext50_32x4d/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/resnext50_32x4d/generated",
+        "--input_file=$LAB/assets/vision/resnext50_32x4d/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnext50_32x4d/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnext50_32x4d/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "fixtures": "$LAB/assets/vision/resnext50_32x4d/validation"
+    },
+    {
+      "name": "vision_wide_resnet50_2_generated-t1",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/wide_resnet50_2/generated",
+        "--graph_file=$CONTROL/models/vision/wide_resnet50_2/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/wide_resnet50_2/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/wide_resnet50_2/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/wide_resnet50_2/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/wide_resnet50_2/generated",
+        "--input_file=$LAB/assets/vision/wide_resnet50_2/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/wide_resnet50_2/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/wide_resnet50_2/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "fixtures": "$LAB/assets/vision/wide_resnet50_2/validation"
+    },
+    {
+      "name": "vision_wide_resnet50_2_generated-t4",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/vision",
+        "--model_dir=$LAB/models/vision/wide_resnet50_2/generated",
+        "--graph_file=$CONTROL/models/vision/wide_resnet50_2/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/wide_resnet50_2/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/wide_resnet50_2/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/wide_resnet50_2/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/vision",
+        "--model_dir=/data$LAB/models/vision/wide_resnet50_2/generated",
+        "--input_file=$LAB/assets/vision/wide_resnet50_2/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/wide_resnet50_2/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/wide_resnet50_2/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "fixtures": "$LAB/assets/vision/wide_resnet50_2/validation"
+    },
+    {
+      "name": "qwen3_0_6b_generated-t1",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_0_6b/generated",
+        "--parameter_dir=$LAB/models/qwen3_0_6b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_0_6b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/qwen3_0_6b/generated",
+        "--parameter_dir=/data$LAB/models/qwen3_0_6b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_0_6b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/qwen3_0_6b/generated/execution.json"
+    },
+    {
+      "name": "qwen3_0_6b_generated-t4",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_0_6b/generated",
+        "--parameter_dir=$LAB/models/qwen3_0_6b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_0_6b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/qwen3_0_6b/generated",
+        "--parameter_dir=/data$LAB/models/qwen3_0_6b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_0_6b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/qwen3_0_6b/generated/execution.json"
+    },
+    {
+      "name": "qwen3_4b_generated-t1",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_4b/generated",
+        "--parameter_dir=$LAB/models/qwen3_4b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/qwen3_4b/generated",
+        "--parameter_dir=/data$LAB/models/qwen3_4b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/qwen3_4b/generated/execution.json"
+    },
+    {
+      "name": "qwen3_4b_generated-t4",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_4b/generated",
+        "--parameter_dir=$LAB/models/qwen3_4b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/qwen3_4b/generated",
+        "--parameter_dir=/data$LAB/models/qwen3_4b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/qwen3_4b/generated/execution.json"
+    },
+    {
+      "name": "qwen3_5_4b_generated-t1",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_5_4b/generated",
+        "--parameter_dir=$LAB/models/qwen3_5_4b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_5_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/qwen3_5_4b/generated",
+        "--parameter_dir=/data$LAB/models/qwen3_5_4b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_5_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/qwen3_5_4b/generated/execution.json"
+    },
+    {
+      "name": "qwen3_5_4b_generated-t4",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_5_4b/generated",
+        "--parameter_dir=$LAB/models/qwen3_5_4b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_5_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/qwen3_5_4b/generated",
+        "--parameter_dir=/data$LAB/models/qwen3_5_4b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_5_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/qwen3_5_4b/generated/execution.json"
+    },
+    {
+      "name": "qwen3_5_4b_profiles_int4_mlp_generated-t1",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_5_4b/profiles/int4_mlp/generated",
+        "--parameter_dir=$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_5_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated",
+        "--parameter_dir=/data$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_5_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/execution.json"
+    },
+    {
+      "name": "qwen3_5_4b_profiles_int4_mlp_generated-t4",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_5_4b/profiles/int4_mlp/generated",
+        "--parameter_dir=$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_5_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated",
+        "--parameter_dir=/data$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_5_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/execution.json"
+    },
+    {
+      "name": "qwen3_5_4b_profiles_int8_generated-t1",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_5_4b/profiles/int8/generated",
+        "--parameter_dir=$LAB/models/qwen3_5_4b/profiles/int8/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_5_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/qwen3_5_4b/profiles/int8/generated",
+        "--parameter_dir=/data$LAB/models/qwen3_5_4b/profiles/int8/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_5_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/qwen3_5_4b/profiles/int8/generated/execution.json"
+    },
+    {
+      "name": "qwen3_5_4b_profiles_int8_generated-t4",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_5_4b/profiles/int8/generated",
+        "--parameter_dir=$LAB/models/qwen3_5_4b/profiles/int8/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_5_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/qwen3_5_4b/profiles/int8/generated",
+        "--parameter_dir=/data$LAB/models/qwen3_5_4b/profiles/int8/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/qwen3_5_4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/qwen3_5_4b/profiles/int8/generated/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_hf_generated_hf_bf16-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "10",
+        "$CONTROL/build-hf/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b_hf/generated/hf_bf16",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_bf16/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "10",
+        "/data$LAB/build-hf/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_hf_generated_hf_bf16-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "8,10,12,14",
+        "$CONTROL/build-hf/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b_hf/generated/hf_bf16",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_bf16/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8,10,12,14",
+        "/data$LAB/build-hf/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_hf_generated_hf_bf16_int8_published_kv-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "10",
+        "$CONTROL/build-hf/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "10",
+        "/data$LAB/build-hf/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_hf_generated_hf_bf16_int8_published_kv-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "8,10,12,14",
+        "$CONTROL/build-hf/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8,10,12,14",
+        "/data$LAB/build-hf/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_hf_generated_hf_bf16_int8_raw_kv-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "10",
+        "$CONTROL/build-hf/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "10",
+        "/data$LAB/build-hf/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_hf_generated_hf_bf16_int8_raw_kv-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "8,10,12,14",
+        "$CONTROL/build-hf/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8,10,12,14",
+        "/data$LAB/build-hf/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_hf_generated_hf_fp32_int8_published_kv-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "10",
+        "$CONTROL/build-hf/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "10",
+        "/data$LAB/build-hf/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_hf_generated_hf_fp32_int8_published_kv-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "8,10,12,14",
+        "$CONTROL/build-hf/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8,10,12,14",
+        "/data$LAB/build-hf/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_hf_generated_hf_static_int8_published_kv-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "10",
+        "$CONTROL/build-hf/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b_hf/generated/hf_static_int8_published_kv",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_static_int8_published_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "10",
+        "/data$LAB/build-hf/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_static_int8_published_kv",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_static_int8_published_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b_hf/generated/hf_static_int8_published_kv/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_hf_generated_hf_static_int8_published_kv-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "8,10,12,14",
+        "$CONTROL/build-hf/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b_hf/generated/hf_static_int8_published_kv",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_static_int8_published_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8,10,12,14",
+        "/data$LAB/build-hf/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_static_int8_published_kv",
+        "--parameter_dir=/data$LAB/models/gemma4_e2b_hf/generated/hf_static_int8_published_kv/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e2b_hf-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e2b_hf/generated/hf_static_int8_published_kv/execution.json"
+    },
+    {
+      "name": "gemma4_e4b_attention_fp32_rows-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "12",
+        "$CONTROL/build/gemma4_e4b",
+        "--graph_dir=$CONTROL/models/gemma4_e4b/attention/fp32_rows",
+        "--parameter_dir=$LAB/assets/gemma4_e4b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "12",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e4b/attention/fp32_rows",
+        "--parameter_dir=/data$LAB/models/gemma4_e4b/attention/fp32_rows/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e4b/attention/fp32_rows/execution.json"
+    },
+    {
+      "name": "gemma4_e4b_attention_fp32_rows-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "16,18,20,22",
+        "$CONTROL/build/gemma4_e4b",
+        "--graph_dir=$CONTROL/models/gemma4_e4b/attention/fp32_rows",
+        "--parameter_dir=$LAB/assets/gemma4_e4b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "16,18,20,22",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e4b/attention/fp32_rows",
+        "--parameter_dir=/data$LAB/models/gemma4_e4b/attention/fp32_rows/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e4b/attention/fp32_rows/execution.json"
+    },
+    {
+      "name": "gemma4_e4b_attention_int8_batch-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "12",
+        "$CONTROL/build/gemma4_e4b",
+        "--graph_dir=$CONTROL/models/gemma4_e4b/attention/int8_batch",
+        "--parameter_dir=$LAB/assets/gemma4_e4b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "12",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e4b/attention/int8_batch",
+        "--parameter_dir=/data$LAB/models/gemma4_e4b/attention/int8_batch/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e4b/attention/int8_batch/execution.json"
+    },
+    {
+      "name": "gemma4_e4b_attention_int8_batch-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "16,18,20,22",
+        "$CONTROL/build/gemma4_e4b",
+        "--graph_dir=$CONTROL/models/gemma4_e4b/attention/int8_batch",
+        "--parameter_dir=$LAB/assets/gemma4_e4b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "16,18,20,22",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e4b/attention/int8_batch",
+        "--parameter_dir=/data$LAB/models/gemma4_e4b/attention/int8_batch/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e4b/attention/int8_batch/execution.json"
+    },
+    {
+      "name": "gemma4_e4b_attention_int8_rows-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "12",
+        "$CONTROL/build/gemma4_e4b",
+        "--graph_dir=$CONTROL/models/gemma4_e4b/attention/int8_rows",
+        "--parameter_dir=$LAB/assets/gemma4_e4b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "12",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e4b/attention/int8_rows",
+        "--parameter_dir=/data$LAB/models/gemma4_e4b/attention/int8_rows/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e4b/attention/int8_rows/execution.json"
+    },
+    {
+      "name": "gemma4_e4b_attention_int8_rows-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "16,18,20,22",
+        "$CONTROL/build/gemma4_e4b",
+        "--graph_dir=$CONTROL/models/gemma4_e4b/attention/int8_rows",
+        "--parameter_dir=$LAB/assets/gemma4_e4b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "16,18,20,22",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e4b/attention/int8_rows",
+        "--parameter_dir=/data$LAB/models/gemma4_e4b/attention/int8_rows/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e4b/attention/int8_rows/execution.json"
+    },
+    {
+      "name": "gemma4_e4b_generated-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "12",
+        "$CONTROL/build/gemma4_e4b",
+        "--graph_dir=$CONTROL/models/gemma4_e4b/generated",
+        "--parameter_dir=$LAB/assets/gemma4_e4b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "12",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e4b/generated",
+        "--parameter_dir=/data$LAB/models/gemma4_e4b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=1"
+      ],
+      "execution": "/data$LAB/models/gemma4_e4b/generated/execution.json"
+    },
+    {
+      "name": "gemma4_e4b_generated-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "16,18,20,22",
+        "$CONTROL/build/gemma4_e4b",
+        "--graph_dir=$CONTROL/models/gemma4_e4b/generated",
+        "--parameter_dir=$LAB/assets/gemma4_e4b/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "16,18,20,22",
+        "/data$LAB/build/ynn-llm",
+        "--model_dir=/data$LAB/models/gemma4_e4b/generated",
+        "--parameter_dir=/data$LAB/models/gemma4_e4b/generated/parameters",
+        "--cases_file=$LAB/results/semantic_runtime_20261022/cases/gemma4_e4b-correctness.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=4"
+      ],
+      "execution": "/data$LAB/models/gemma4_e4b/generated/execution.json"
+    }
+  ]
+}
