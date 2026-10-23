@@ -154,6 +154,53 @@ plus the final prompt-token decode and excludes setup. Retained RSS is sampled
 after preparation and session allocation; peak RSS is the process high-water
 mark after the full case sequence. Mapped resident pages count toward both.
 
+## Performance results
+
+The final DSL campaign completed on October 23 with **all 11 configurations
+passing every gate**: 66 paired comparisons and 132 fresh processes. The tested
+implementation is `9f5caa4589374f8c3dcdd2fa6080e9071b0c72fc`; later commits
+contain documentation and validation records.
+
+The worst warm-latency upper bound is 1.042 for E4B's 1,024-token decode case,
+below the 1.05 limit. The largest setup upper bound is 1.126 for four-thread
+ResNet18, below 1.25. Every individual pair meets both memory limits. These
+results meet the declared host cutover criteria within the qualification scope
+below. They do not establish full-LLM Android coverage.
+
+Ratios compare the semantic runtime with the frozen control. The setup point
+estimate is the geometric mean of paired ratios; its one-sided 95% upper bound
+is in parentheses. The warm column is the largest upper bound across that
+configuration's measured cases and latency fields. Memory columns show the
+largest paired byte increase; negative entries mean every pair decreased.
+
+| Configuration | Setup ratio (upper 95%) | Worst warm upper 95% | Max retained increase | Max peak increase | Gates |
+| --- | --- | --- | --- | --- | --- |
+| Qwen3-0.6B, 1 thread | 1.012 (1.015) | 0.998 | +88.2 MiB | +23.0 MiB | Pass |
+| Qwen3-0.6B, 4 threads | 1.012 (1.016) | 1.002 | +87.8 MiB | +27.3 MiB | Pass |
+| Published E2B, 1 thread | 1.111 (1.113) | 1.009 | -19.1 MiB | -26.9 MiB | Pass |
+| Published E2B, 4 threads | 1.100 (1.108) | 1.007 | -20.0 MiB | -21.2 MiB | Pass |
+| HF BF16 E2B, 1 thread | 1.044 (1.050) | 1.002 | +191.4 MiB | +182.1 MiB | Pass |
+| HF BF16 E2B, 4 threads | 1.059 (1.072) | 1.011 | +175.3 MiB | +172.4 MiB | Pass |
+| Published E4B, 4 threads | 1.042 (1.051) | 1.042 | -48.2 MiB | -55.4 MiB | Pass |
+| Qwen3.5 INT4 MLP, 1 thread | 1.085 (1.105) | 1.004 | +82.7 MiB | +49.5 MiB | Pass |
+| Qwen3.5 INT4 MLP, 4 threads | 1.099 (1.103) | 1.014 | +82.8 MiB | +57.5 MiB | Pass |
+| ResNet18, 1 thread | 1.121 (1.126) | 1.011 | +1.8 MiB | +1.5 MiB | Pass |
+| ResNet18, 4 threads | 1.123 (1.126) | 1.005 | +1.7 MiB | +1.5 MiB | Pass |
+
+[performance.json](performance.json) retains every paired observation and gate.
+The [correctness prechecks](performance-checks.json),
+[artifact identities](performance-identities.json),
+[portable commands](performance-commands.json), and
+[host conditions](performance-conditions.json) bind those results to the tested
+inputs and binaries.
+
+The [earlier JSON-package trial](initial-memory-failure.json) found one
+Qwen3-0.6B four-thread retained-memory increase of 116.49 MiB against a
+115.99 MiB allowance. The subsequent implementation releases owned semantic
+source before native construction and uses the compact DSL representation.
+The final four-thread maximum is 87.79 MiB. The earlier failure and the original
+acceptance limits remain in the record.
+
 ## Reproduction
 
 Build the candidate and a separate checkout of the frozen control with CMake,

@@ -13,8 +13,9 @@ records all 26 packages and distinguishes the earlier full-model matrix from
 the final DSL checks. All 423 migrated sources retain exact typed identities;
 all 26 model compiler outputs are byte-identical. Final DSL binaries pass 36
 host CTests, all 11 timing-configuration correctness checks, the public Qwen3
-author matrix, and 14 checks on Pixel 8/Pixel 11. Android coverage includes
-native state, arithmetic and ResNet18; full-LLM qualification remains blocked
+author matrix, and 14 checks on Pixel 8/Pixel 11. All 11 paired host performance
+configurations pass the original setup, latency and memory gates. Android
+coverage includes native state, arithmetic and ResNet18; full-LLM qualification remains blocked
 by the frozen Qwen control's allocation failure during native compilation.
 
 The earlier October 21 refresh covers the i9-12900K host, TECNO LJ9 and Pixel 8, plus a
