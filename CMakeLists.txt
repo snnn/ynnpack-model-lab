@@ -184,6 +184,9 @@ if(BUILD_TESTING)
   add_test(NAME benchmark_summary COMMAND ${Python3_EXECUTABLE} -m unittest discover
     -s tests -p test_benchmark.py)
   set_tests_properties(benchmark_summary PROPERTIES WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
+  add_test(NAME runtime_comparison COMMAND ${Python3_EXECUTABLE} -m unittest discover
+    -s tests -p test_runtime_comparison.py)
+  set_tests_properties(runtime_comparison PROPERTIES WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
   add_test(NAME safetensors COMMAND ${Python3_EXECUTABLE} -m unittest discover
     -s tests -p test_safetensors.py)
   set_tests_properties(safetensors PROPERTIES WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"

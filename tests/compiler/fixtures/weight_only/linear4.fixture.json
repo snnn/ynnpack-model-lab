@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "linear4.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -137,5 +134,6 @@
         "y": "actual/linear4/4_79.bin"
       }
     }
-  ]
+  ],
+  "program": "linear4.program.json"
 }

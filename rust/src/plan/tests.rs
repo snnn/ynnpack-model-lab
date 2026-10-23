@@ -162,50 +162,6 @@ fn expressions_reject_unbound_symbols_overflow_and_invalid_division() {
     assert!(bounds(Expr::Min(vec![])).is_err());
 }
 
-#[test]
-fn validates_all_published_plans_without_model_weights() {
-    let models = Path::new(env!("CARGO_MANIFEST_DIR")).join("../models");
-    for model in [
-        "resnet18",
-        "resnet34",
-        "resnet50",
-        "resnet101",
-        "resnet152",
-        "resnext50_32x4d",
-        "wide_resnet50_2",
-        "mobilenet_v2",
-    ] {
-        ValidatedPlan::read(
-            &models
-                .join("vision")
-                .join(model)
-                .join("generated/graph.ynn"),
-        )
-        .unwrap_or_else(|e| panic!("{model}: {e}"));
-    }
-    let mut packages = Vec::new();
-    for model in ["gemma4_e2b", "gemma4_e4b"] {
-        packages.push(models.join(model).join("generated"));
-        for profile in ["fp32_rows", "int8_batch", "int8_rows"] {
-            packages.push(models.join(model).join("attention").join(profile));
-        }
-    }
-    for profile in [
-        "hf_static_int8_published_kv",
-        "hf_fp32_int8_published_kv",
-        "hf_bf16",
-        "hf_bf16_int8_raw_kv",
-        "hf_bf16_int8_published_kv",
-    ] {
-        packages.push(models.join("gemma4_e2b_hf/generated").join(profile));
-    }
-    for package in packages {
-        for phase in ["prefill", "decode"] {
-            let path = package.join(format!("gemma4_{phase}.ynn"));
-            ValidatedPlan::read(&path).unwrap_or_else(|e| panic!("{}: {e}", path.display()));
-        }
-    }
-}
 
 #[test]
 fn gated_delta_validates_geometry_mapping_and_result_types() {

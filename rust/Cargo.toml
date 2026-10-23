@@ -19,19 +19,20 @@ required-features = ["plan-tool"]
 [features]
 default = []
 vision = []
-gemma = ["input-frontend"]
+gemma = ["llm"]
 input-frontend = []
 tokenizers = ["dep:tokenizers"]
 tokenizer-probe = ["input-frontend"]
 frontend-tests = ["input-frontend"]
 native-tests = []
 fixture = []
-qwen = ["input-frontend"]
+qwen = ["llm"]
 llm = ["input-frontend"]
 llm-tests = ["llm"]
 plan-tool = []
 
 [dependencies]
+flate2 = "=1.1.5"
 serde = { version = "=1.0.229", features = ["derive"] }
 serde_json = "=1.0.151"
 sha2 = "=0.10.9"

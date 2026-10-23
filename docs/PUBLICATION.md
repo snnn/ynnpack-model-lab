@@ -13,8 +13,8 @@ identifies retained evidence.
 | Contents | Purpose |
 | --- | --- |
 | CMake files, pinned dependencies, and public backend/tokenizer patches | Rebuild the standalone Linux/Android workloads with known dependency changes. |
-| Rust semantic compiler, graph API, model authors, and checkpoint preparation tools | Author models and produce `.ynn` packages using this checkout. |
-| `.ynn` construction plans, model metadata, Rust runners, and native runtime helpers | Execute the full models and their symbolic state contracts without a private compiler. Include both phases and their matching metadata hashes. |
+| Rust semantic compiler, graph API, model authors, and checkpoint preparation tools | Author semantic model packages using this checkout. |
+| Semantic programs, execution contracts, model metadata, Rust runners, and native runtime helpers | Execute the full models and their symbolic state contracts without a private compiler. Include all phases and matching semantic identities. |
 | Public architecture/asset readers, hash-verified extraction recipes, and manifests | Obtain the same source weights, scales, and precision without distributing model payloads. |
 | Token-ID fixtures, native input/tokenizer tools, and tiny synthetic tokenizer fixtures | Compare the same IDs and construct controlled prompt lengths. |
 | Independent arithmetic/state tests and focused backend bug reproductions | Establish what is correct and isolate failures, including E4B preparation depth and BF16 rounding. |
@@ -50,7 +50,7 @@ their patches, reports, profiles, and timings.
 Proprietary frontend sources, binding patches, installation instructions, raw
 frontend reports, and private provenance stay in their separate repository.
 Local agent guidance is excluded as well. Standalone
-`.ynn` plans and runtime helpers retain their notices; see [AUTHORING.md](AUTHORING.md).
+semantic artifacts and runtime helpers retain their notices; see [AUTHORING.md](AUTHORING.md).
 
 ## Portable measurement records
 
@@ -91,7 +91,8 @@ DNS and delivery checks are disabled; detection does not require network access.
 Third-party license files and copyright attribution retain their email notices.
 Missing dependencies fail with setup instructions instead of skipping the check.
 
-The publication check scans tracked files and unignored candidate files. It
+The publication check scans tracked files and unignored candidate files, including
+the decoded contents of compressed semantic JSON. It
 flags common host paths, device identifiers, contact information, private
 compiler provenance, and accidentally included local artifacts. CI runs it
 before bootstrapping runtime dependencies. It does not inspect ignored captures or

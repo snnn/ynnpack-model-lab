@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "required_copy_wait_4096_a.ynn",
-    "b": "required_copy_wait_4096_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -483,5 +479,6 @@
         }
       ]
     }
-  ]
+  ],
+  "program": "required_copy_wait_4096.program.json"
 }

@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "dot_i2_n8.ynn"
-  },
   "buffers": [
     {
       "name": "a",
@@ -62,5 +59,6 @@
         "y": "actual/dot_i2_n8/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "dot_i2_n8.program.json"
 }

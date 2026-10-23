@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "max_pool2d_1_1.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -101,5 +98,6 @@
         "y": "actual/max_pool2d_1_1/2_79.bin"
       }
     }
-  ]
+  ],
+  "program": "max_pool2d_1_1.program.json"
 }

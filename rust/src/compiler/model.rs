@@ -536,6 +536,8 @@ pub struct Program {
     pub phases: BTreeMap<String, Graph>,
     #[serde(default)]
     pub options: CompileOptions,
+    #[serde(default, skip_serializing_if = "BTreeMap::is_empty")]
+    pub phase_options: BTreeMap<String, CompileOptions>,
 }
 impl Default for Program {
     fn default() -> Self {
@@ -543,6 +545,7 @@ impl Default for Program {
             version: 1,
             phases: BTreeMap::new(),
             options: CompileOptions::default(),
+            phase_options: BTreeMap::new(),
         }
     }
 }

@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "i2_c2048_required_failure_a.ynn",
-    "b": "i2_c2048_required_failure_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -151,5 +147,6 @@
         "cache"
       ]
     }
-  ]
+  ],
+  "program": "i2_c2048_required_failure.program.json"
 }

@@ -1,6 +1,24 @@
 // Copyright 2026 @snnn. SPDX-License-Identifier: Apache-2.0
 use super::*;
 use std::collections::BTreeMap;
+
+// Quantization parameters are semantic operands. Expand them when a value
+// first becomes live instead of rescanning the entire live set for every node.
+fn mark_live(g: &Graph, live: &mut BTreeSet<String>, roots: impl IntoIterator<Item = String>) {
+    let mut pending = roots.into_iter().collect::<Vec<_>>();
+    while let Some(name) = pending.pop() {
+        if !live.insert(name.clone()) {
+            continue;
+        }
+        if let Some(parameters) = g.values.get(&name)
+            .and_then(|v| v.tensor.quant.as_ref())
+            .and_then(|q| q.parameters.as_ref()) {
+            pending.push(parameters.scales.clone());
+            pending.push(parameters.zeros.clone());
+        }
+    }
+}
+
 pub(super) fn run(mut g: Graph, options: &CompileOptions, function: bool) -> Result<Graph> {
     // Quantized public values carry their parameter tensors as part of the ABI.
     if !function {
@@ -310,65 +328,24 @@ pub(super) fn run(mut g: Graph, options: &CompileOptions, function: bool) -> Res
         }
         g.nodes
             .retain(|n| !n.outputs.iter().any(|y| replacements.contains_key(y)));
-        let mut live: BTreeSet<_> = g.outputs.iter().cloned().collect();
+        let mut live = BTreeSet::new();
+        mark_live(&g, &mut live, g.outputs.iter().cloned());
         let mut live_completions: BTreeSet<_> = g.completions.iter().cloned().collect();
         let mut keep = vec![];
         for n in g.nodes.iter().rev() {
-            loop {
-                let prev = live.len();
-                for name in live.clone() {
-                    if let Some(p) = g
-                        .values
-                        .get(&name)
-                        .and_then(|v| v.tensor.quant.as_ref())
-                        .and_then(|q| q.parameters.as_ref())
-                    {
-                        live.insert(p.scales.clone());
-                        live.insert(p.zeros.clone());
-                    }
-                }
-                if prev == live.len() {
-                    break;
-                }
-            }
             let needed = n.outputs.iter().any(|x| live.contains(x))
                 || n.completes.iter().any(|x| live_completions.contains(x))
                 || matches!(n.op, Op::ResourceAppend | Op::Call);
             if needed {
-                live.extend(n.inputs.iter().cloned());
+                mark_live(&g, &mut live, n.inputs.iter().cloned());
                 live_completions.extend(n.waits.iter().cloned());
                 keep.push(n.clone());
             }
         }
         keep.reverse();
         g.nodes = keep;
-        for n in &g.nodes {
-            for x in n.inputs.iter().chain(&n.outputs) {
-                live.insert(x.clone());
-            }
-        }
-        live.extend(g.inputs.iter().cloned());
-        for r in &g.resources {
-            live.insert(r.owner.clone());
-        }
-        // Quantization descriptors are semantic references even when not ordinary operands.
-        loop {
-            let prev = live.len();
-            for name in live.clone() {
-                if let Some(p) = g
-                    .values
-                    .get(&name)
-                    .and_then(|v| v.tensor.quant.as_ref())
-                    .and_then(|q| q.parameters.as_ref())
-                {
-                    live.insert(p.scales.clone());
-                    live.insert(p.zeros.clone());
-                }
-            }
-            if prev == live.len() {
-                break;
-            }
-        }
+        mark_live(&g, &mut live, g.nodes.iter().flat_map(|n| n.inputs.iter().chain(&n.outputs))
+            .chain(&g.inputs).cloned().chain(g.resources.iter().map(|r| r.owner.clone())));
         g.values.retain(|name, _| live.contains(name));
     }
     Ok(g)

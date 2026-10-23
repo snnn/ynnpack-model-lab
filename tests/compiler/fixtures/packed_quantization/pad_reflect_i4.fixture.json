@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "pad_reflect_i4.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -45,5 +42,6 @@
         "y": "actual/pad_reflect_i4/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "pad_reflect_i4.program.json"
 }

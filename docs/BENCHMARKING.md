@@ -31,9 +31,9 @@ calls, followed by step events. Keep that first record when processing traces;
 event IDs alone are not interpretable. The session test checks both phase files,
 including their first step. Profiling runs are diagnostics, not latency baselines.
 
-General-runner packages declare a fixed capacity. The currently checked-in
-qualified packages use 2048; a different capacity requires a matching package.
-Use the Gemma comparison runners for their supported 2048/8448 capacity sweep.
+Packages declare a default capacity. Gemma additionally declares a symbolic
+capacity range, supporting the 2048/8448 sweep through the general runner.
+Fixed-capacity Qwen packages require reauthoring for different geometry.
 
 Start with prompts 17, 128, and 1024, capacities 2048/8448, and one/four threads.
 The checked-in performance fixtures have different continuation counts:
@@ -56,7 +56,7 @@ tokens correspond to exactly 128 prefix rows here.
 
 | Metric | Calculation / scope |
 | --- | --- |
-| Setup | Metadata/plan validation, constant hashing, mapping, embedding initialization, graph construction and preparation |
+| Setup | Semantic input loading/lowering, validation, constant hashing, mapping, embedding initialization and native preparation |
 | Tokenizer load/encode | Separate process frontend fields in `frontend.json`; excluded from model setup and warm TTFT |
 | Prefix throughput | `(prompt_tokens - 1) * 1000 / prefix_ms` |
 | Warm TTFT | `prefix_ms + token_ms` for step zero |

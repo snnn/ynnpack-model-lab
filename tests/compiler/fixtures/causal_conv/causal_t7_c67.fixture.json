@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "causal_t7_c67.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -265,5 +262,6 @@
         "next": "actual/causal_t7_c67/3_6e657874.bin"
       }
     }
-  ]
+  ],
+  "program": "causal_t7_c67.program.json"
 }

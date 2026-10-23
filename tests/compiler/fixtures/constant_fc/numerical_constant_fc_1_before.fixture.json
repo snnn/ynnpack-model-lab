@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "numerical_constant_fc_1_before.ynn"
-  },
   "buffers": [
     {
       "name": "y",
@@ -57,5 +54,6 @@
         "weight_alias": "actual/numerical_constant_fc_1_before/0_7765696768745f616c696173.bin"
       }
     }
-  ]
+  ],
+  "program": "numerical_constant_fc_1_before.program.json"
 }

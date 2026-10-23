@@ -29,7 +29,7 @@ float Source(int64_t h, int64_t t, int64_t d, int salt) {
 void Test(std::unique_ptr<lab_ynn::Graph> g, int c, int heads, int window,
           int threads, const std::string& path, int query_heads = 0) {
   if (!query_heads) query_heads = heads;
-  g->Compile(threads);
+  // Prepared by the same Rust runtime entry point as model sessions.
   const auto scratch = g->TrackScratchAllocations();
   std::ofstream ir(path);
   g->Print(ir);

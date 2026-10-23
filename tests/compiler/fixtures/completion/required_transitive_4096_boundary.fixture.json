@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "required_transitive_4096_boundary_a.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -194,5 +191,6 @@
         "extra_old_codes": "actual/required_transitive_4096_boundary/1_65787472615f6f6c645f636f646573.bin"
       }
     }
-  ]
+  ],
+  "program": "required_transitive_4096_boundary.program.json"
 }

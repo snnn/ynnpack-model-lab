@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "target_views_copy_wait_32_partial_failure_a.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -147,5 +144,6 @@
         }
       ]
     }
-  ]
+  ],
+  "program": "target_views_copy_wait_32_partial_failure.program.json"
 }

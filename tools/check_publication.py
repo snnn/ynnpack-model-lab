@@ -5,6 +5,8 @@
 """Check the public file set without reading ignored local captures or Git identities."""
 
 import argparse
+import gzip
+import io
 import json
 from pathlib import Path
 import re
@@ -74,6 +76,16 @@ def contains_email(text):
 
 def issues(name, data):
     """Return locations/categories, never the potentially private matched value."""
+    if name.endswith('.json.gz'):
+        try:
+            # Inspect serialized content too; compression is not a privacy boundary.
+            with gzip.GzipFile(fileobj=io.BytesIO(data)) as stream:
+                decoded = stream.read((128 << 20) + 1)
+            if len(decoded) > 128 << 20:
+                return [(0, 'oversized compressed JSON')]
+            return issues(name[:-3], decoded)
+        except (OSError, EOFError):
+            return [(0, 'invalid compressed JSON')]
     path = Path(name)
     parts = path.parts
     problems = []

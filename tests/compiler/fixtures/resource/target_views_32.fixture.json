@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "target_views_32_a.ynn",
-    "b": "target_views_32_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -353,5 +349,6 @@
         "second": "actual/target_views_32/9_7365636f6e64.bin"
       }
     }
-  ]
+  ],
+  "program": "target_views_32.program.json"
 }

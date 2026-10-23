@@ -7,9 +7,8 @@ pub(crate) fn run(args: &[String]) -> Result<()> {
     let model = Path::new(&args[1]);
     assert!(VisionBuilder::load(model)?.prepare(0).is_err());
     for threads in [1, 4] {
-        let plan = model.join("square.ynn");
-        for source in [None, Some(plan.as_path())] {
-            let mut session = VisionBuilder::load_with_plan(model, source)?.prepare(threads)?;
+        {
+            let mut session = VisionBuilder::load(model)?.prepare(threads)?;
             session.input_mut().copy_from_slice(&[-3.0, 0.5, 0.0, 4.0]);
             assert_eq!(session.run()?, &[9.0, 0.25, 0.0, 16.0]);
             session.input_mut().copy_from_slice(&[2.0, -2.0, 1.0, 8.0]);
@@ -67,8 +66,7 @@ pub(crate) fn run(args: &[String]) -> Result<()> {
                 format!("_q{queries}")
             };
             let name = format!("c{capacity}_h{heads}_w{window}{suffix}");
-            let assets = ffi::Assets::open(Path::new(""), &plans.join("parameters"))?;
-            ffi::GraphBuilder::from_plan(assets, &plans.join(format!("{name}.ynn")))?
+            prepare_fixture(&plans, &name, threads as usize)?
                 .state_fixture(
                     capacity,
                     heads,
@@ -164,10 +162,7 @@ struct StateFixture {
 const NAMES: [&std::ffi::CStr; 3] = [c"kcache", c"vcache", c"onlycache"];
 impl StateFixture {
     fn new(capacity: usize, threads: usize, plans: &Path) -> Result<Self> {
-        let assets = ffi::Assets::open(Path::new(""), &plans.join("parameters"))?;
-        let builder =
-            ffi::GraphBuilder::from_plan(assets, &plans.join(format!("c{capacity}_h2_w512.ynn")))?;
-        let graph = builder.prepare(threads)?;
+        let graph = prepare_fixture(plans, &format!("c{capacity}_h2_w512"), threads)?;
         let mut states = Vec::new();
         for name in NAMES {
             states.push(ffi::Resource::new(&graph, name, &[1, 2, capacity, 8])?);
@@ -321,4 +316,12 @@ fn state_checks(capacity: usize, threads: usize, plans: &Path) -> Result<()> {
     f.bind(0, 1)?;
     assert!(f.graph.run().is_err());
     Ok(())
+}
+
+fn prepare_fixture(root: &Path, name: &str, threads: usize) -> Result<ffi::PreparedGraph> {
+    let program = serde_json::from_slice(&std::fs::read(root.join(format!("{name}.program.json")))?)?;
+    let mut prepared = crate::runtime::prepare(&program,
+        crate::runtime::AssetStore::open(Path::new(""), &root.join("parameters"))?,
+        crate::runtime::PrepareOptions { threads, ..Default::default() })?;
+    prepared.graphs.remove("model").ok_or_else(|| crate::Error::invalid("Missing fixture phase"))
 }

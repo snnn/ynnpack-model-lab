@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "numerical_constant_transpose_bool_strict.ynn"
-  },
   "buffers": [
     {
       "name": "y",
@@ -44,5 +41,6 @@
         "a": "actual/numerical_constant_transpose_bool_strict/0_61.bin"
       }
     }
-  ]
+  ],
+  "program": "numerical_constant_transpose_bool_strict.program.json"
 }

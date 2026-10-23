@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "read_4_model.ynn"
-  },
   "buffers": [
     {
       "name": "k",
@@ -107,5 +104,6 @@
         "v": "actual/read_4/0_76.bin"
       }
     }
-  ]
+  ],
+  "program": "read_4.program.json"
 }

@@ -653,18 +653,20 @@
     "fe9c86f5c6e228c31035aceae5ec0f0aa93251313579c1d75416f94c9ca8684b.bin": {
       "bytes": 640,
       "sha256": "fe9c86f5c6e228c31035aceae5ec0f0aa93251313579c1d75416f94c9ca8684b"
-    },
-    "fedcca07b1ccdacce623cb6d8afdeed0314e8508d763e228871f18d4e0ebb7c4.bin": {
-      "bytes": 4,
-      "sha256": "fedcca07b1ccdacce623cb6d8afdeed0314e8508d763e228871f18d4e0ebb7c4"
     }
   },
-  "execution": {
-    "format": "vision-execution",
+  "package": {
+    "format": "ynn-semantic-package",
     "version": 1,
-    "graph": {
-      "file": "graph.ynn",
-      "sha256": "4d7e89ecf5fdeae60436d0a2d9a75da2e4f87ab03dbd54f33c83d056161dbb61"
+    "program.json": {
+      "file": "program.json.gz",
+      "bytes": 68148,
+      "sha256": "a8b2564bc4118c4baa717825caeb4ae65399cf627c6fa4e477877b2986919d09"
+    },
+    "execution.json": {
+      "file": "execution.json",
+      "bytes": 455,
+      "sha256": "7d78b1d3c21e16339b36bc6ca6c3f0ddbc6a8576e91fe618e8651bbf77a08a4b"
     }
   }
 }

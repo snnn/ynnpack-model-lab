@@ -3,7 +3,7 @@
 # Qwen3
 
 The `qwen3` runner executes Qwen3-0.6B and the original Qwen3-4B as standalone
-`.ynn` packages. Both use global grouped-query attention. These are experimental
+semantic packages. Both use global grouped-query attention. These are experimental
 CPU comparison workloads; cross-runtime INT8 drift remains, and task accuracy
 and free-running generation quality have not been established.
 
@@ -17,16 +17,17 @@ entries. The checkpoint snapshot identities are recorded in each `model.json`.
 
 For independent model authoring, `rust/src/models/qwen3.rs` builds prefill and
 decode programs through the public Rust API. The [compiler guide](COMPILER.md#qwen3)
-shows how to prepare a Qwen3-0.6B checkpoint, compile it with `ynn-qwen3`, and run
+shows how to prepare a Qwen3-0.6B checkpoint, author it with `ynn-qwen3`, and run
 the resulting package. This authoring path currently uses the INT8 recipe
 described below with FP32 KV state.
 
 ## Package and arithmetic
 
-The generated directory contains `prefill.ynn`, `decode.ynn`, and `model.json`.
+The generated directory contains `program.json.gz`, `execution.json`, and
+`model.json`.
 Matching weight payloads belong in its ignored `parameters/` directory and
 tokenizer assets in its ignored `tokenizer/` directory. Parameter filenames are
-SHA-256 identities; the runtime checks the plans against the manifest and
+SHA-256 identities; the runtime checks the semantic identity and execution contract and
 validates parameter payloads. Use a complete matching package. Copying a
 different checkpoint into the parameter directory is not an asset conversion.
 
@@ -50,14 +51,14 @@ real K/V rows are appended. Decode has one row. The FP32 cache layouts are
 Follow the root build instructions, then build the model runner:
 
 ```sh
-cmake --build build --target qwen3 ynn_plan --parallel 8
+cmake --build build --target ynn-llm --parallel 8
 ```
 
 With a complete package in `models/qwen3_0_6b/generated`:
 
 ```sh
-LAB_YNN_MATH=fast_math build/qwen3 \
-  --bundle_dir=models/qwen3_0_6b/generated \
+LAB_YNN_MATH=fast_math build/ynn-llm \
+  --model_dir=models/qwen3_0_6b/generated \
   --parameter_dir=models/qwen3_0_6b/generated/parameters \
   --cases_file=models/qwen3_0_6b/fixtures/perf.tsv \
   --output_dir=out/qwen3_0_6b \

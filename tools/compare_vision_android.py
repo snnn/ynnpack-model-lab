@@ -120,10 +120,11 @@ def model_files(name, tflite_root):
     fixtures = ROOT / 'assets/vision' / name / 'validation'
     metadata = json.loads((generated / 'model.json').read_text())
     contract = json.loads((fixtures / 'fixtures.json').read_text())
-    files = {'model.json': generated / 'model.json', 'graph.ynn': generated / 'graph.ynn',
-             'model.tflite': tflite_root / name / 'model.tflite'}
-    if digest(generated / 'graph.ynn') != metadata['execution']['graph']['sha256']:
-        raise ValueError('Plan identity mismatch: ' + name)
+    import sys
+    sys.path.insert(0, str(ROOT / 'python'))
+    from ynnpack_assets.artifacts import semantic_files
+    files = semantic_files(generated)
+    files['model.tflite'] = tflite_root / name / 'model.tflite'
     for file, item in metadata['parameters'].items():
         path = generated / 'parameters' / file
         if path.stat().st_size != item['bytes'] or digest(path) != item['sha256']:
@@ -147,7 +148,7 @@ def deploy(device, args, models, log):
         checked_shell(device, shlex.join(['mkdir', '-p', remote + '/' + name + '/parameters']))
         files.update({name + '/' + key: value for key, value in mapping.items()})
         source = ROOT / 'models/vision' / name / 'generated'
-        commands = [adb + ['push', '--sync', str(source / 'model.json'), str(source / 'graph.ynn'),
+        commands = [adb + ['push', '--sync', *[str(p) for k, p in mapping.items() if k in ('model.json', 'execution.json', 'program.json', 'program.json.gz')],
                            str(source / 'parameters'), remote + '/' + name + '/'],
                     adb + ['push', '--sync', str(mapping['model.tflite']), remote + '/' + name + '/model.tflite'],
                     adb + ['push', '--sync', *[str(p) for k, p in mapping.items() if k.startswith('input_')],

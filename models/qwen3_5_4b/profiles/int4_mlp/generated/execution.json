@@ -1,0 +1,796 @@
+{
+  "format": "ynn-llm-execution",
+  "contract": 2,
+  "compatibility": {
+    "backend": "ynnpack",
+    "backend_api": 1,
+    "artifact_abi": "data-only-v1",
+    "parameter_encoding": "little-endian-typed-v1",
+    "required_features": [
+      "shape-preflight-v1",
+      "resource-state-v1",
+      "completion-v1",
+      "fixed-state-v1"
+    ]
+  },
+  "model": "qwen3_5",
+  "capacity": 2048,
+  "prefill_rows": 128,
+  "vocabulary": 248320,
+  "prefill_after_decode": true,
+  "graphs": {
+    "prefill": {
+      "logits": null,
+      "row_policy": "padded",
+      "scalars": {
+        "position": "position",
+        "valid_rows": "valid_rows"
+      },
+      "inputs": [
+        {
+          "name": "token_ids",
+          "dtype": "int32",
+          "shape": [
+            1,
+            "rows"
+          ],
+          "recipe": {
+            "kind": "tokens"
+          }
+        },
+        {
+          "name": "input_pos",
+          "dtype": "int32",
+          "shape": [
+            "rows"
+          ],
+          "recipe": {
+            "kind": "positions"
+          }
+        },
+        {
+          "name": "param_tensor",
+          "dtype": "int32",
+          "shape": [
+            1,
+            1,
+            1,
+            7
+          ],
+          "recipe": {
+            "kind": "controls",
+            "values": [
+              "position",
+              "end",
+              "end",
+              "zero",
+              "zero",
+              "zero",
+              "zero"
+            ]
+          }
+        },
+        {
+          "name": "mask",
+          "dtype": "fp32",
+          "shape": [
+            1,
+            1,
+            "rows",
+            "capacity"
+          ],
+          "recipe": {
+            "kind": "mask",
+            "masked": "finite_min",
+            "window": null
+          }
+        }
+      ]
+    },
+    "decode": {
+      "logits": "logits",
+      "row_policy": "padded",
+      "scalars": {
+        "position": "position",
+        "valid_rows": "valid_rows"
+      },
+      "inputs": [
+        {
+          "name": "token_ids",
+          "dtype": "int32",
+          "shape": [
+            1,
+            "rows"
+          ],
+          "recipe": {
+            "kind": "tokens"
+          }
+        },
+        {
+          "name": "input_pos",
+          "dtype": "int32",
+          "shape": [
+            "rows"
+          ],
+          "recipe": {
+            "kind": "positions"
+          }
+        },
+        {
+          "name": "param_tensor",
+          "dtype": "int32",
+          "shape": [
+            1,
+            1,
+            1,
+            7
+          ],
+          "recipe": {
+            "kind": "controls",
+            "values": [
+              "position",
+              "end",
+              "end",
+              "zero",
+              "zero",
+              "zero",
+              "zero"
+            ]
+          }
+        },
+        {
+          "name": "mask",
+          "dtype": "fp32",
+          "shape": [
+            1,
+            1,
+            "rows",
+            "capacity"
+          ],
+          "recipe": {
+            "kind": "mask",
+            "masked": "finite_min",
+            "window": null
+          }
+        }
+      ]
+    }
+  },
+  "resources": [
+    {
+      "name": "k_cache_11",
+      "shape": [
+        1,
+        4,
+        2048,
+        256
+      ],
+      "axis": 2,
+      "dtype": "fp32"
+    },
+    {
+      "name": "k_cache_15",
+      "shape": [
+        1,
+        4,
+        2048,
+        256
+      ],
+      "axis": 2,
+      "dtype": "fp32"
+    },
+    {
+      "name": "k_cache_19",
+      "shape": [
+        1,
+        4,
+        2048,
+        256
+      ],
+      "axis": 2,
+      "dtype": "fp32"
+    },
+    {
+      "name": "k_cache_23",
+      "shape": [
+        1,
+        4,
+        2048,
+        256
+      ],
+      "axis": 2,
+      "dtype": "fp32"
+    },
+    {
+      "name": "k_cache_27",
+      "shape": [
+        1,
+        4,
+        2048,
+        256
+      ],
+      "axis": 2,
+      "dtype": "fp32"
+    },
+    {
+      "name": "k_cache_3",
+      "shape": [
+        1,
+        4,
+        2048,
+        256
+      ],
+      "axis": 2,
+      "dtype": "fp32"
+    },
+    {
+      "name": "k_cache_31",
+      "shape": [
+        1,
+        4,
+        2048,
+        256
+      ],
+      "axis": 2,
+      "dtype": "fp32"
+    },
+    {
+      "name": "k_cache_7",
+      "shape": [
+        1,
+        4,
+        2048,
+        256
+      ],
+      "axis": 2,
+      "dtype": "fp32"
+    },
+    {
+      "name": "v_cache_11",
+      "shape": [
+        1,
+        4,
+        256,
+        2048
+      ],
+      "axis": 3,
+      "dtype": "fp32"
+    },
+    {
+      "name": "v_cache_15",
+      "shape": [
+        1,
+        4,
+        256,
+        2048
+      ],
+      "axis": 3,
+      "dtype": "fp32"
+    },
+    {
+      "name": "v_cache_19",
+      "shape": [
+        1,
+        4,
+        256,
+        2048
+      ],
+      "axis": 3,
+      "dtype": "fp32"
+    },
+    {
+      "name": "v_cache_23",
+      "shape": [
+        1,
+        4,
+        256,
+        2048
+      ],
+      "axis": 3,
+      "dtype": "fp32"
+    },
+    {
+      "name": "v_cache_27",
+      "shape": [
+        1,
+        4,
+        256,
+        2048
+      ],
+      "axis": 3,
+      "dtype": "fp32"
+    },
+    {
+      "name": "v_cache_3",
+      "shape": [
+        1,
+        4,
+        256,
+        2048
+      ],
+      "axis": 3,
+      "dtype": "fp32"
+    },
+    {
+      "name": "v_cache_31",
+      "shape": [
+        1,
+        4,
+        256,
+        2048
+      ],
+      "axis": 3,
+      "dtype": "fp32"
+    },
+    {
+      "name": "v_cache_7",
+      "shape": [
+        1,
+        4,
+        256,
+        2048
+      ],
+      "axis": 3,
+      "dtype": "fp32"
+    }
+  ],
+  "fixed_states": [
+    {
+      "input": "conv_state_0",
+      "output": "conv_state_0_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_0",
+      "output": "recurrent_state_0_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_1",
+      "output": "conv_state_1_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_1",
+      "output": "recurrent_state_1_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_2",
+      "output": "conv_state_2_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_2",
+      "output": "recurrent_state_2_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_4",
+      "output": "conv_state_4_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_4",
+      "output": "recurrent_state_4_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_5",
+      "output": "conv_state_5_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_5",
+      "output": "recurrent_state_5_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_6",
+      "output": "conv_state_6_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_6",
+      "output": "recurrent_state_6_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_8",
+      "output": "conv_state_8_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_8",
+      "output": "recurrent_state_8_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_9",
+      "output": "conv_state_9_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_9",
+      "output": "recurrent_state_9_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_10",
+      "output": "conv_state_10_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_10",
+      "output": "recurrent_state_10_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_12",
+      "output": "conv_state_12_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_12",
+      "output": "recurrent_state_12_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_13",
+      "output": "conv_state_13_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_13",
+      "output": "recurrent_state_13_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_14",
+      "output": "conv_state_14_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_14",
+      "output": "recurrent_state_14_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_16",
+      "output": "conv_state_16_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_16",
+      "output": "recurrent_state_16_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_17",
+      "output": "conv_state_17_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_17",
+      "output": "recurrent_state_17_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_18",
+      "output": "conv_state_18_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_18",
+      "output": "recurrent_state_18_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_20",
+      "output": "conv_state_20_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_20",
+      "output": "recurrent_state_20_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_21",
+      "output": "conv_state_21_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_21",
+      "output": "recurrent_state_21_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_22",
+      "output": "conv_state_22_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_22",
+      "output": "recurrent_state_22_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_24",
+      "output": "conv_state_24_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_24",
+      "output": "recurrent_state_24_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_25",
+      "output": "conv_state_25_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_25",
+      "output": "recurrent_state_25_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_26",
+      "output": "conv_state_26_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_26",
+      "output": "recurrent_state_26_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_28",
+      "output": "conv_state_28_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_28",
+      "output": "recurrent_state_28_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_29",
+      "output": "conv_state_29_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_29",
+      "output": "recurrent_state_29_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    },
+    {
+      "input": "conv_state_30",
+      "output": "conv_state_30_next",
+      "shape": [
+        1,
+        3,
+        8192
+      ]
+    },
+    {
+      "input": "recurrent_state_30",
+      "output": "recurrent_state_30_next",
+      "shape": [
+        1,
+        32,
+        128,
+        128
+      ]
+    }
+  ],
+  "embeddings": {}
+}

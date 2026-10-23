@@ -13,6 +13,21 @@ fn program(g: Graph) -> Program {
         ..Program::default()
     }
 }
+#[test]
+fn phase_options_are_local_and_reject_unknown_phases() {
+    let mut b = GraphBuilder::default();
+    b.input("x", ty(&[2, 3, 4])).unwrap();
+    b.operation(Op::Reshape, &["x"], "y", Attributes { shape: ty(&[6, 4]).shape, ..Default::default() }).unwrap();
+    let graph = b.finish(&["y"]);
+    let mut p = Program { phases: BTreeMap::from([("prefill".into(), graph.clone()), ("decode".into(), graph)]), ..Default::default() };
+    let original = compile(&p).unwrap();
+    p.phase_options.insert("prefill".into(), CompileOptions { target_views: false, ..Default::default() });
+    let changed = compile(&p).unwrap();
+    assert_eq!(original.plans["decode"], changed.plans["decode"]);
+    assert_ne!(original.plans["prefill"], changed.plans["prefill"]);
+    p.phase_options.insert("typo".into(), CompileOptions::default());
+    assert!(compile(&p).is_err());
+}
 fn simple(op: Op) -> Graph {
     let mut b = GraphBuilder::default();
     b.input("x", ty(&[2, 3])).unwrap();

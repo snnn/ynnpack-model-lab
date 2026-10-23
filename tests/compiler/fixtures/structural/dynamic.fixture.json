@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "dynamic.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -91,5 +88,6 @@
         "y": "actual/dynamic/2_79.bin"
       }
     }
-  ]
+  ],
+  "program": "dynamic.program.json"
 }

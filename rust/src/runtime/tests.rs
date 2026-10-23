@@ -22,6 +22,17 @@ pub(crate) fn preparation() -> Result<()> {
         .flat_map(f32::to_le_bytes)
         .collect::<Vec<_>>();
     std::fs::write(root.join("weights.bin"), &weights)?;
+    let assets = AssetStore::open(&root, &root)?;
+    let data = crate::plan::Data { path: "@parameters/weights.bin".into(), bytes: weights.len(), sha256: format!("{:x}", Sha256::digest(&weights)) };
+    assets.assets.verify_embedding(&data)?;
+    assert!(!assets.assets.verify(&data)?.is_null());
+    let mut bad_embedding = data.clone();
+    bad_embedding.sha256 = "0".repeat(64);
+    assert!(assets.assets.verify_embedding(&bad_embedding).is_err());
+    let fresh = AssetStore::open(&root, &root)?;
+    assert!(fresh.assets.verify_embedding(&bad_embedding).is_err());
+    drop(fresh);
+    drop(assets);
     let ty = TensorType {
         shape: vec![Expr::Known(4)],
         ..Default::default()
@@ -63,6 +74,84 @@ pub(crate) fn preparation() -> Result<()> {
             },
         )
     };
+
+    // The tensor contract must bind exactly the graph interface before native
+    // construction. Keep storage alive independently of the source contract.
+    let binding = |name: &str| tensor::TensorBinding {
+        name: name.into(), dtype: "fp32".into(), shape: vec![4],
+    };
+    let phase = tensor::TensorPhase {
+        inputs: vec![binding("x")], outputs: vec![binding("y")],
+    };
+    let spec = tensor::TensorExecutionSpec {
+        format: "ynn-tensor-execution".into(), version: 1,
+        graphs: BTreeMap::from([("prefill".into(), phase.clone()), ("decode".into(), phase)]),
+    };
+    let tensor_prepare = |spec: &tensor::TensorExecutionSpec| prepare(
+        &program, AssetStore::open(&root, &root)?,
+        PrepareOptions { threads: 1, tensors: Some(spec), ..Default::default() },
+    );
+    for invalid in 0..5 {
+        let mut bad = spec.clone();
+        let phase = bad.graphs.get_mut("decode").unwrap();
+        match invalid {
+            0 => phase.outputs.clear(),
+            1 => phase.inputs[0].shape = vec![5],
+            2 => phase.inputs[0].dtype = "int4".into(),
+            3 => phase.outputs[0].name = "x".into(),
+            _ => { bad.graphs.remove("decode"); },
+        }
+        assert!(tensor_prepare(&bad).is_err());
+        assert_eq!(live(), baseline);
+    }
+    let mut tensors = tensor::TensorSession::from_prepared(tensor_prepare(&spec)?)?;
+    drop(spec);
+    assert!(tensors.input_mut("decode", "y").is_err());
+    assert!(tensors.output("decode", "x").is_err());
+    assert!(tensors.invoke("missing").is_err());
+    tensors.input_f32_mut("decode", "x")?.copy_from_slice(&[2., 4., 6., 8.]);
+    tensors.invoke("decode")?;
+    assert_eq!(tensors.output_f32("decode", "y")?, &[4., 7., 10., 13.]);
+    tensors.input_f32_mut("decode", "x")?.fill(0.);
+    tensors.invoke("decode")?;
+    assert_eq!(tensors.output_f32("decode", "y")?, &[2., 3., 4., 5.]);
+    drop(tensors);
+    assert_eq!(live(), baseline);
+
+    // Both stored representations carry an identity. A valid compressed member
+    // followed by another member or junk must not hide unvalidated content.
+    use std::io::Write;
+    let bytes = serde_json::to_vec(&program)?;
+    let execution = b"{}";
+    std::fs::write(root.join("execution.json"), execution)?;
+    let write_package = |file: &str, stored: &[u8]| -> Result<()> {
+        std::fs::write(root.join(file), stored)?;
+        std::fs::write(root.join("model.json"), serde_json::to_vec(&serde_json::json!({
+            "package": {"format":"ynn-semantic-package", "version":1,
+                "program.json":{"file":file,"bytes":stored.len(),"sha256":format!("{:x}",Sha256::digest(stored))},
+                "execution.json":{"bytes":execution.len(),"sha256":format!("{:x}",Sha256::digest(execution))}}
+        }))?)?;
+        Ok(())
+    };
+    write_package("program.json", &bytes)?;
+    assert_eq!(package::ModelPackage::read(&root)?.program.phases.len(), 2);
+    let mut encoder = flate2::write::GzEncoder::new(Vec::new(), flate2::Compression::default());
+    encoder.write_all(&bytes)?;
+    let compressed = encoder.finish()?;
+    write_package("program.json.gz", &compressed)?;
+    assert_eq!(package::ModelPackage::read(&root)?.program.phases.len(), 2);
+    std::fs::write(root.join("execution.json"), b"[]")?;
+    assert!(package::ModelPackage::read(&root).is_err());
+    std::fs::write(root.join("execution.json"), execution)?;
+    let mut trailing = compressed.clone();
+    trailing.extend_from_slice(&compressed);
+    write_package("program.json.gz", &trailing)?;
+    assert!(package::ModelPackage::read(&root).is_err());
+    write_package("program.json.gz", &compressed[..compressed.len()-4])?;
+    assert!(package::ModelPackage::read(&root).is_err());
+    for file in ["program.json", "program.json.gz", "execution.json", "model.json"] {
+        std::fs::remove_file(root.join(file))?;
+    }
 
     let mut bad = program.clone();
     bad.version = 999;

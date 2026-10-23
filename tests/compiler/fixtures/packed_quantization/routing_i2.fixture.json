@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "routing_i2.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -443,5 +440,6 @@
         "stack": "actual/routing_i2/3_737461636b.bin"
       }
     }
-  ]
+  ],
+  "program": "routing_i2.program.json"
 }

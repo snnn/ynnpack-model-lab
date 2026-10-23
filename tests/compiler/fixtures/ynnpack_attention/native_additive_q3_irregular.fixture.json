@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "native_additive_q3_irregular.ynn"
-  },
   "buffers": [
     {
       "name": "q",
@@ -114,5 +111,6 @@
         "y": "actual/native_additive_q3_irregular/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "native_additive_q3_irregular.program.json"
 }

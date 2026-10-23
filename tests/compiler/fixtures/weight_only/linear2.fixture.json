@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "linear2.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -137,5 +134,6 @@
         "y": "actual/linear2/4_79.bin"
       }
     }
-  ]
+  ],
+  "program": "linear2.program.json"
 }

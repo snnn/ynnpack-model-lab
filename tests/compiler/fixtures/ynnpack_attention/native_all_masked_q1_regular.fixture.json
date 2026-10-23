@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "native_all_masked_q1_regular.ynn"
-  },
   "buffers": [
     {
       "name": "q",
@@ -114,5 +111,6 @@
         "y": "actual/native_all_masked_q1_regular/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "native_all_masked_q1_regular.program.json"
 }

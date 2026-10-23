@@ -11,7 +11,7 @@ validated scope. LiteRT-LM is not used as the reference for these packages.
 ## Model and state
 
 The 32 layers repeat three gated-delta layers followed by one global-attention
-layer. Each `.ynn` phase retains reusable gated-delta and global-attention
+layer. Each semantic phase retains reusable gated-delta and global-attention
 functions. Gated-delta recurrence is one scheduled native operation per layer,
 with a sequential token loop and parallel independent heads/value tiles. Its
 AVX2 CPU kernel retains the state layout and uses a compact stack tile during
@@ -46,8 +46,8 @@ Build the shared runner with the repository's pinned dependencies:
 
 ```sh
 cmake --build build --target qwen3 ynn_plan --parallel 8
-LAB_YNN_MATH=no_excess_precision build/qwen3 \
-  --bundle_dir=models/qwen3_5_4b/generated \
+LAB_YNN_MATH=no_excess_precision build/ynn-llm \
+  --model_dir=models/qwen3_5_4b/generated \
   --parameter_dir=models/qwen3_5_4b/generated/parameters \
   --cases_file=models/qwen3_5_4b/fixtures/perf.tsv \
   --output_dir=out/qwen35-fp32 \
@@ -96,7 +96,7 @@ error was about `0.0194`, with normalized RMS error `7.77e-5` in that cache.
 
 ## Experimental quantized profiles
 
-Choose the complete package with `--bundle_dir` and its matching
+Choose the complete package with `--model_dir` and its matching
 `--parameter_dir`. The original `generated` directory remains FP32.
 
 | Profile directory | MLP weights | Other large projections | Tied embedding/head |

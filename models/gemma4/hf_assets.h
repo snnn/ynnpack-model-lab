@@ -55,6 +55,14 @@ class HfEmbedding {
     scales_ = provider.Raw(module + ".weight_scale");
   }
   template <typename T>
+  void LookupSlice(const int32_t* tokens, size_t count, size_t begin,
+                   size_t columns, T* output) const {
+    if (begin > width_ || columns > width_ - begin)
+      throw std::invalid_argument("HF embedding slice");
+    for (size_t t = 0; t < count; ++t)
+      Decode(tokens[t], begin, columns, output + t * columns);
+  }
+  template <typename T>
   void Lookup(const int32_t* tokens, size_t count, T* output) const {
     for (size_t t = 0; t < count; ++t)
       Decode(tokens[t], 0, width_, output + t * width_);
@@ -110,21 +118,4 @@ class HfEmbedding {
   const uint8_t *data_, *scales_;
 };
 
-struct HfModelAssets {
-  std::unique_ptr<HfEmbedding> token_embedding, emb_per_layer_table;
-  std::vector<KvOwner> owners;
-  HfModelAssets(TensorProvider& provider, const char* identity) {
-    const auto& manifest = provider.manifest();
-    if (Field<std::string>(manifest, "format") != "gemma4_hf_assets_v1" ||
-        Field<std::string>(manifest, "source_identity") != identity)
-      throw std::invalid_argument("HF manifest does not match generated graph");
-    token_embedding =
-        std::make_unique<HfEmbedding>(provider, "model.embed_tokens", 262144,
-                                      1536, 1536, 2, std::sqrt(1536.0f));
-    emb_per_layer_table = std::make_unique<HfEmbedding>(
-        provider, "model.embed_tokens_per_layer", 262144, 8960, 256, 4, 16.0f);
-    for (int i = 0; i < 15; ++i)
-      owners.push_back({i, i % 5 == 4 ? 512 : 256, 1});
-  }
-};
 }  // namespace lab

@@ -28,9 +28,7 @@ struct LabAssets {
   LabTestLifetime lifetime{lab_test_assets};
 #endif
   lab::Weights weights;
-  std::unique_ptr<lab::ModelAssets> model;
   std::unique_ptr<lab::TensorProvider> hf_weights;
-  std::unique_ptr<lab::HfModelAssets> hf_model;
   bool bf16_activations = false;
   LabAssets(const char* bundle, const char* parameters)
       : weights(bundle, parameters) {}

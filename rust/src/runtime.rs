@@ -2,6 +2,8 @@
 //! Experimental preparation of semantic programs in the invoking process.
 //! Compilation happens once here; invocation only uses prepared native graphs.
 pub mod execution;
+pub mod package;
+pub mod tensor;
 #[cfg(feature = "native-tests")]
 pub(crate) mod tests;
 use crate::{
@@ -29,11 +31,18 @@ impl AssetStore {
             assets: ffi::Assets::open(bundle, parameters)?,
         })
     }
+    #[cfg(feature = "llm")]
+    pub fn open_hf(source: &Path, manifest: &Path, cache: &Path, parameters: &Path,
+                   identity: &str, bf16: bool) -> Result<Self> {
+        Ok(Self { assets: ffi::Assets::open_hf(source, manifest, cache, parameters, identity, bf16)? })
+    }
+
 }
 
 pub struct PrepareOptions<'a> {
     pub threads: usize,
     pub execution: Option<&'a ExecutionSpec>,
+    pub tensors: Option<&'a tensor::TensorExecutionSpec>,
     pub trace_plan: Option<PathBuf>,
     pub profile_execution: &'a str,
     pub output_dir: PathBuf,
@@ -43,6 +52,7 @@ impl Default for PrepareOptions<'_> {
         Self {
             threads: 4,
             execution: None,
+            tensors: None,
             trace_plan: None,
             profile_execution: "none",
             output_dir: PathBuf::new(),
@@ -71,6 +81,7 @@ pub struct PreparedProgram {
     pub(crate) graphs: BTreeMap<String, ffi::PreparedGraph>,
     pub(crate) assets: Rc<ffi::Assets>,
     pub(crate) execution: Option<ExecutionSpec>,
+    pub(crate) tensors: Option<tensor::TensorExecutionSpec>,
     pub(crate) trace_output: Option<PathBuf>,
     pub stats: PreparationStats,
 }
@@ -120,6 +131,10 @@ pub(crate) fn prepare_plans(
     }
     let start = Instant::now();
     let at = Instant::now();
+    if let Some(spec) = options.tensors {
+        if options.execution.is_some() { return Err(Error::invalid("Choose one execution contract")); }
+        spec.validate(&plans)?;
+    }
     if let Some(spec) = options.execution {
         spec.validate()?;
         if spec.graphs.keys().ne(plans.keys()) {
@@ -144,7 +159,7 @@ pub(crate) fn prepare_plans(
     if let Some(spec) = options.execution {
         for embedding in spec.embeddings.values() {
             for asset in &embedding.assets {
-                assets.assets.verify(&crate::plan::Data {
+                assets.assets.verify_embedding(&crate::plan::Data {
                     path: asset.path.clone(),
                     bytes: asset.bytes,
                     sha256: asset.sha256.clone(),
@@ -185,6 +200,7 @@ pub(crate) fn prepare_plans(
         graphs,
         assets: assets.assets,
         execution: options.execution.cloned(),
+        tensors: options.tensors.cloned(),
         trace_output: options.trace_plan.map(|_| options.output_dir.join("trace")),
         stats,
     })

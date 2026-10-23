@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "boolean_1.ynn"
-  },
   "buffers": [
     {
       "name": "q",
@@ -114,5 +111,6 @@
         "y": "actual/boolean_1/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "boolean_1.program.json"
 }

@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "target_views_8448_continuity_a.ynn",
-    "b": "target_views_8448_continuity_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -715,5 +711,6 @@
         "second": "actual/target_views_8448_continuity/22_7365636f6e64.bin"
       }
     }
-  ]
+  ],
+  "program": "target_views_8448_continuity.program.json"
 }

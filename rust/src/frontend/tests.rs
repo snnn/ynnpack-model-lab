@@ -89,8 +89,8 @@ fn cases(temp: &Path) -> Result<()> {
         vec![&option, "--profile_execution=other"],
         vec![&option, "--unknown=x"],
         vec![&option, "--output_dir=x"],
-        vec![&option, "--graph_dir="],
-        vec![&option, "--graph_dir=x", "--graph_dir=y"],
+        vec![&option, "--model_dir="],
+        vec![&option, "--model_dir=x", "--model_dir=y"],
         vec![&option, "--num_threads=1x"],
         vec![&option, "--num_threads=99999999999999"],
         vec![&option, "--measured_runs"],
@@ -98,11 +98,11 @@ fn cases(temp: &Path) -> Result<()> {
         fails(parse(&extra))?;
     }
     check(
-        parse(&[&option, "--graph_dir", "plans"])?
-            .graph_dir
+        parse(&[&option, "--model_dir", "plans"])?
+            .model_dir
             .as_deref()
             == Some("plans"),
-        "Space-separated graph_dir failed",
+        "Space-separated model_dir failed",
     )?;
     let o = parse(&[
         &option,

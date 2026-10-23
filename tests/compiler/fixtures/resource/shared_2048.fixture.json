@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "shared_2048_a.ynn",
-    "b": "shared_2048_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -353,5 +349,6 @@
         "second": "actual/shared_2048/9_7365636f6e64.bin"
       }
     }
-  ]
+  ],
+  "program": "shared_2048.program.json"
 }

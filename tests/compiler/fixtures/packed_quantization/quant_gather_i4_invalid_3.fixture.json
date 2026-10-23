@@ -1,1 +1,103 @@
-{"version": 1, "graphs": {"model": "quant_gather_i4_invalid_3.ynn"}, "buffers": [{"name": "x", "dtype": "int4", "shape": [3, 5]}, {"name": "indices", "dtype": "int32", "shape": [13]}, {"name": "q", "dtype": "int4", "shape": [13, 5]}, {"name": "y", "dtype": "fp32", "shape": [13, 5]}, {"name": "__quant/0/parameter", "dtype": "fp32", "shape": [13]}, {"name": "__quant/0/parameter_", "dtype": "int32", "shape": [13]}], "steps": [{"graph": "model", "bindings": [{"name": "x", "shape": [3, 5], "bytes": 8, "file": "quant_gather_i4_invalid_3_0_in_78.bin"}, {"name": "indices", "shape": [13], "bytes": 52, "file": "quant_gather_i4_invalid_3_0_in_696e6469636573.bin"}, {"name": "q", "shape": [], "bytes": 33}, {"name": "y", "shape": [], "bytes": 260}, {"name": "__quant/0/parameter", "shape": [], "bytes": 52}, {"name": "__quant/0/parameter_", "shape": [], "bytes": 52}], "scalars": {}, "outputs": {"q": "actual/quant_gather_i4_invalid_3/0_71.bin", "y": "actual/quant_gather_i4_invalid_3/0_79.bin", "__quant/0/parameter": "actual/quant_gather_i4_invalid_3/0_5f5f7175616e742f302f706172616d65746572.bin", "__quant/0/parameter_": "actual/quant_gather_i4_invalid_3/0_5f5f7175616e742f302f706172616d657465725f.bin"}, "expect_error": ""}]}
+{
+  "version": 1,
+  "buffers": [
+    {
+      "name": "x",
+      "dtype": "int4",
+      "shape": [
+        3,
+        5
+      ]
+    },
+    {
+      "name": "indices",
+      "dtype": "int32",
+      "shape": [
+        13
+      ]
+    },
+    {
+      "name": "q",
+      "dtype": "int4",
+      "shape": [
+        13,
+        5
+      ]
+    },
+    {
+      "name": "y",
+      "dtype": "fp32",
+      "shape": [
+        13,
+        5
+      ]
+    },
+    {
+      "name": "__quant/0/parameter",
+      "dtype": "fp32",
+      "shape": [
+        13
+      ]
+    },
+    {
+      "name": "__quant/0/parameter_",
+      "dtype": "int32",
+      "shape": [
+        13
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "graph": "model",
+      "bindings": [
+        {
+          "name": "x",
+          "shape": [
+            3,
+            5
+          ],
+          "bytes": 8,
+          "file": "quant_gather_i4_invalid_3_0_in_78.bin"
+        },
+        {
+          "name": "indices",
+          "shape": [
+            13
+          ],
+          "bytes": 52,
+          "file": "quant_gather_i4_invalid_3_0_in_696e6469636573.bin"
+        },
+        {
+          "name": "q",
+          "shape": [],
+          "bytes": 33
+        },
+        {
+          "name": "y",
+          "shape": [],
+          "bytes": 260
+        },
+        {
+          "name": "__quant/0/parameter",
+          "shape": [],
+          "bytes": 52
+        },
+        {
+          "name": "__quant/0/parameter_",
+          "shape": [],
+          "bytes": 52
+        }
+      ],
+      "scalars": {},
+      "outputs": {
+        "q": "actual/quant_gather_i4_invalid_3/0_71.bin",
+        "y": "actual/quant_gather_i4_invalid_3/0_79.bin",
+        "__quant/0/parameter": "actual/quant_gather_i4_invalid_3/0_5f5f7175616e742f302f706172616d65746572.bin",
+        "__quant/0/parameter_": "actual/quant_gather_i4_invalid_3/0_5f5f7175616e742f302f706172616d657465725f.bin"
+      },
+      "expect_error": ""
+    }
+  ],
+  "program": "quant_gather_i4_invalid_3.program.json"
+}

@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "scale_bf16.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -64,5 +61,6 @@
         "y": "actual/scale_bf16/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "scale_bf16.program.json"
 }

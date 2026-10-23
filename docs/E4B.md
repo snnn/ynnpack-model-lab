@@ -1,6 +1,6 @@
 # Gemma4 E4B
 
-E4B uses the shared Gemma4 author and Rust runner with its own `.ynn` plans
+E4B uses the shared Gemma4 author and Rust runner with its own semantic programs
 and hash-verified asset recipe. The executable is `gemma4_e4b`; its published
 bundle preserves packed weights, static QAT activation scales and INT8 KV.
 
@@ -19,7 +19,7 @@ python3 tools/prepare_gemma4.py --variant e4b \
   --model assets/download-e4b/gemma-4-E4B-it.litertlm \
   --output assets/gemma4_e4b
 ./build/gemma4_e4b \
-  --graph_dir=models/gemma4_e4b/generated \
+  --model_dir=models/gemma4_e4b/generated \
   --bundle_dir=assets/gemma4_e4b/bundle \
   --parameter_dir=assets/gemma4_e4b/parameters \
   --cases_file=models/gemma4_e4b/fixtures/performance.tsv \
@@ -30,8 +30,8 @@ python3 tools/prepare_gemma4.py --variant e4b \
 
 Source identity: 3,654,467,584 bytes, SHA-256
 `f335f2bfd1b758dc6476db16c0f41854bd6237e2658d604cbe566bcefd00a7bc`.
-The preparer verifies 2,143 files / 1,570 unique payloads. The two phase plans use
-426 generated parameter files. There is no new quantization or calibration.
+The preparer verifies 1,724 files / 1,495 unique payloads. The runtime creates derived constants while preparing both phases; deployment
+only needs the source parameter files selected by the semantic package. There is no new quantization or calibration.
 Its format remains an artifact-specific extraction recipe, not a general
 LiteRT-LM importer.
 
@@ -87,7 +87,7 @@ adb -s "$ANDROID_SERIAL" push build-android/gemma4_e4b \
   models/gemma4_e4b/fixtures models/gemma4_e4b/generated \
   /data/local/tmp/ynnpack-model-lab/gemma4_e4b/
 adb -s "$ANDROID_SERIAL" shell 'cd /data/local/tmp/ynnpack-model-lab/gemma4_e4b && \
-  ./gemma4_e4b --graph_dir=generated \
+  ./gemma4_e4b --model_dir=generated \
   --bundle_dir=bundle --parameter_dir=parameters \
   --cases_file=fixtures/performance.tsv --output_dir=c2048-t4 \
   --cache_capacity=2048 --num_threads=4 --prefill_rows=128 \
@@ -108,12 +108,13 @@ must provide the stack budget described in [RUST_RUNTIME.md](RUST_RUNTIME.md).
 See [current results](../results/README.md) and
 [validation gaps](worklogs/VALIDATION_GAPS.md) for actual device coverage.
 
-Use correctness fixtures and `--dump_outputs` in separate runs, then compare
+Use correctness fixtures and `--dump_outputs --dump_state_steps` in separate runs, then compare
 matching logit/KV dumps:
 
 ```sh
 uv run --no-project --with numpy python tools/compare_outputs.py \
   --reference out/reference-dumps --candidate out/candidate-dumps \
+  --execution "$MODEL_DIR/execution.json" \
   --output out/comparison.json
 ```
 

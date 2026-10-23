@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "numerical_activation_leaky_select_1_shared.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -88,5 +85,6 @@
         "negative": "actual/numerical_activation_leaky_select_1_shared/1_6e65676174697665.bin"
       }
     }
-  ]
+  ],
+  "program": "numerical_activation_leaky_select_1_shared.program.json"
 }

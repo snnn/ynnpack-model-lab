@@ -55,12 +55,13 @@ def main():
                 if original.parent == ROOT / 'tests' / subdir:
                     shutil.copyfile(artifact, tmp / subdir / original.name)
         shutil.copytree(ROOT / 'tests/generated/parameters', tmp / 'generated/parameters')
-        metadata = json.loads((ROOT / 'tests/rust/model.json').read_bytes())
-        metadata['execution']['graph']['sha256'] = hashlib.sha256((tmp / 'rust/graph.ynn').read_bytes()).hexdigest()
-        (tmp / 'rust/model.json').write_text(json.dumps(metadata))
+        for source in (ROOT / 'tests/generated').glob('*.program.json'):
+            shutil.copyfile(source, tmp / 'generated' / source.name)
+        for name in ['model.json', 'program.json', 'execution.json']:
+            shutil.copyfile(ROOT / 'tests/rust' / name, tmp / 'rust' / name)
         result = run(args.state_runner, tmp / 'rust')
         assert 'Rust/native ownership and arithmetic checks passed' in result.stdout
-        print('Direct text plans pass the square and all nine native state oracles at one/four threads')
+        print('Prepared semantic programs pass the square and all nine native state oracles at one/four threads')
 
 
 if __name__ == '__main__':

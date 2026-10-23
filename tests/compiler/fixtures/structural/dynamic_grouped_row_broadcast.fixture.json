@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "dynamic_grouped_row_broadcast.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -92,5 +89,6 @@
         "y": "actual/dynamic_grouped_row_broadcast/2_79.bin"
       }
     }
-  ]
+  ],
+  "program": "dynamic_grouped_row_broadcast.program.json"
 }

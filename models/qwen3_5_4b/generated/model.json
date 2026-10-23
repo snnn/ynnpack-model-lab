@@ -6,13 +6,9 @@
   "vocabulary": 248320,
   "graphs": {
     "prefill": {
-      "file": "prefill.ynn",
-      "sha256": "2858b953a6e4afef52e80d516172439b29e10eca441acc2a01e993da70f1f628",
       "logits": null
     },
     "decode": {
-      "file": "decode.ynn",
-      "sha256": "2b1f9d063ed0e71c53dd4d4ce40544385d65e74c706b52418fdf1c2639532bbc",
       "logits": "logits"
     }
   },
@@ -649,5 +645,19 @@
       "axis": 3
     }
   ],
-  "evaluation_only": false
+  "evaluation_only": false,
+  "package": {
+    "format": "ynn-semantic-package",
+    "version": 1,
+    "program.json": {
+      "file": "program.json.gz",
+      "bytes": 147122,
+      "sha256": "4f3f94f94240e1b3ec1c4c94fc1b2192df14ae96102b0882a9ab1d2fcd39377a"
+    },
+    "execution.json": {
+      "file": "execution.json",
+      "bytes": 13094,
+      "sha256": "3f8f3fee1635c6e22190bf94cce40ef7c569a31bb6a816063fbc5ce6667ce19a"
+    }
+  }
 }

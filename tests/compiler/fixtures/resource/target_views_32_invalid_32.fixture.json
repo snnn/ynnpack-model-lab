@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "target_views_32_invalid_32_a.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -83,5 +80,6 @@
       "expect_error": "",
       "expect_unchanged": true
     }
-  ]
+  ],
+  "program": "target_views_32_invalid_32.program.json"
 }

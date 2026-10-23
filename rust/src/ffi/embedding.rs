@@ -6,13 +6,13 @@ extern "C" {
         width: usize, bits: i32, block: usize, out: *mut *mut c_void, error: *mut NativeError) -> i32;
     fn lab_embedding_delete(value: *mut c_void);
     fn lab_embedding_slice(value: *mut c_void, tokens: *const i32, count: usize,
-        begin: usize, columns: usize, output: *mut f32, elements: usize, error: *mut NativeError) -> i32;
+        begin: usize, columns: usize, output: *mut c_void, elements: usize, bf16: i32, error: *mut NativeError) -> i32;
 }
 pub(crate) struct Embedding { ptr: NonNull<c_void>, _assets: Rc<Assets> }
 impl Embedding {
     pub fn new(assets: Rc<Assets>, e: &package::Embedding, vocabulary: usize) -> Result<Self> {
         for a in &e.assets {
-            assets.verify(&crate::plan::Data { path:a.path.clone(), bytes:a.bytes, sha256:a.sha256.clone() })?;
+            assets.verify_embedding(&crate::plan::Data { path:a.path.clone(), bytes:a.bytes, sha256:a.sha256.clone() })?;
         }
         let json=string(&serde_json::to_string(&e.record)?)?;
         let mut ptr=std::ptr::null_mut();
@@ -22,7 +22,12 @@ impl Embedding {
     }
     pub fn lookup(&self, tokens:&[i32], begin:usize, columns:usize, output:&mut Buffer<f32>) -> Result<()> {
         call(|err| unsafe {lab_embedding_slice(self.ptr.as_ptr(),tokens.as_ptr(),tokens.len(),begin,
-            columns,output.native_ptr(),output.len(),err)})
+            columns,output.native_ptr().cast(),output.len(),0,err)})
     }
+    pub fn lookup_bf16(&self, tokens:&[i32], begin:usize, columns:usize, output:&mut Buffer<u16>) -> Result<()> {
+        call(|err| unsafe {lab_embedding_slice(self.ptr.as_ptr(),tokens.as_ptr(),tokens.len(),begin,
+            columns,output.native_ptr().cast(),output.len(),1,err)})
+    }
+
 }
 impl Drop for Embedding {fn drop(&mut self){unsafe{lab_embedding_delete(self.ptr.as_ptr())}}}

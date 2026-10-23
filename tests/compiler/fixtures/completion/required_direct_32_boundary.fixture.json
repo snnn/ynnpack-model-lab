@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "required_direct_32_boundary_a.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -172,5 +169,6 @@
         "cache": "actual/required_direct_32_boundary/1_6361636865.bin"
       }
     }
-  ]
+  ],
+  "program": "required_direct_32_boundary.program.json"
 }

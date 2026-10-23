@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "average_pool2d_0_2.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -101,5 +98,6 @@
         "y": "actual/average_pool2d_0_2/2_79.bin"
       }
     }
-  ]
+  ],
+  "program": "average_pool2d_0_2.program.json"
 }

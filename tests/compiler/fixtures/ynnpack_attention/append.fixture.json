@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "prefill": "append_prefill.ynn",
-    "decode": "append_decode.ynn"
-  },
   "buffers": [
     {
       "name": "k",
@@ -337,5 +333,6 @@
         "v": "actual/append/3_76.bin"
       }
     }
-  ]
+  ],
+  "program": "append.program.json"
 }

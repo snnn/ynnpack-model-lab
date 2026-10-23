@@ -31,7 +31,6 @@ typedef struct LabKvSpec {
   uint32_t owner, heads, width;
 } LabKvSpec;
 
-const char* lab_model_name(void) LAB_NOEXCEPT;
 int32_t lab_assets_create(const char* bundle, const char* parameters,
                           LabAssets** out, LabError* error) LAB_NOEXCEPT;
 int32_t lab_assets_create_hf(const char* source, const char* manifest,

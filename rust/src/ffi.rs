@@ -49,10 +49,8 @@ impl<T> DerefMut for Buffer<T> {
     }
 }
 
-#[cfg(feature = "gemma")]
+#[cfg(any(feature = "gemma", feature = "llm"))]
 mod gemma;
-#[cfg(feature = "gemma")]
-pub(crate) use gemma::*;
 mod plan;
 #[cfg(feature = "llm")]
 mod embedding;
@@ -90,7 +88,6 @@ pub(crate) struct Memory {
 }
 
 extern "C" {
-    fn lab_model_name() -> *const c_char;
     fn lab_assets_create(
         bundle: *const c_char,
         parameters: *const c_char,
@@ -244,12 +241,7 @@ fn path(p: &Path) -> Result<CString> {
     use std::os::unix::ffi::OsStrExt;
     CString::new(p.as_os_str().as_bytes()).map_err(|_| Error::invalid("NUL in path"))
 }
-pub(crate) fn model_name() -> &'static str {
-    // SAFETY: bridge returns a static string literal for the linked factory.
-    unsafe { CStr::from_ptr(lab_model_name()) }
-        .to_str()
-        .expect("ASCII model name")
-}
+
 pub(crate) unsafe fn arguments(argc: i32, argv: *const *const c_char) -> Result<Vec<String>> {
     if argc < 1 || argv.is_null() {
         return Err(Error::invalid("Invalid argv"));
@@ -296,6 +288,7 @@ pub(crate) struct Assets {
     ptr: NonNull<c_void>,
     verified: RefCell<HashMap<String, (usize, String)>>,
     owned: HashMap<String, AlignedConstant>,
+    source_dirs: Option<(std::path::PathBuf, std::path::PathBuf)>,
 }
 impl Assets {
     pub(crate) fn add_generated(&mut self, generated: std::collections::BTreeMap<String, Vec<u8>>) -> Result<usize> {
@@ -314,6 +307,7 @@ impl Assets {
         Ok(total)
     }
     pub fn open(bundle: &Path, parameters: &Path) -> Result<Rc<Self>> {
+        let source_dirs = Some((bundle.to_owned(), parameters.to_owned()));
         let (bundle, parameters) = (path(bundle)?, path(parameters)?);
         let mut ptr = std::ptr::null_mut();
         // SAFETY: strings and out/error storage live until this call returns.
@@ -322,6 +316,7 @@ impl Assets {
             ptr: NonNull::new(ptr).ok_or_else(|| Error::invalid("Null asset handle"))?,
             verified: RefCell::new(HashMap::new()),
             owned: HashMap::new(),
+            source_dirs,
         }))
     }
 }
@@ -358,31 +353,6 @@ impl Drop for NativeGraph {
     }
 }
 impl GraphBuilder {
-    #[cfg(feature = "native-tests")]
-    pub fn state_fixture(
-        self,
-        capacity: i32,
-        heads: i32,
-        window: i32,
-        threads: i32,
-        output: &Path,
-        queries: i32,
-    ) -> Result<()> {
-        let output = path(output)?;
-        call(|e| unsafe {
-            lab_test_state_views(
-                self.graph.ptr.as_ptr(),
-                capacity,
-                heads,
-                window,
-                threads,
-                output.as_ptr(),
-                queries,
-                e,
-            )
-        })
-    }
-
     pub fn trace(&mut self, plan: &Path) -> Result<()> {
         let plan = path(plan)?;
         call(|e| unsafe {
@@ -697,4 +667,33 @@ impl Drop for Resource {
     fn drop(&mut self) {
         unsafe { lab_resource_delete(self.ptr.as_ptr()) };
     }
+}
+
+#[cfg(feature = "native-tests")]
+impl PreparedGraph {
+    #[cfg(feature = "native-tests")]
+    pub fn state_fixture(
+        self,
+        capacity: i32,
+        heads: i32,
+        window: i32,
+        threads: i32,
+        output: &Path,
+        queries: i32,
+    ) -> Result<()> {
+        let output = path(output)?;
+        call(|e| unsafe {
+            lab_test_state_views(
+                self.graph.ptr.as_ptr(),
+                capacity,
+                heads,
+                window,
+                threads,
+                output.as_ptr(),
+                queries,
+                e,
+            )
+        })
+    }
+
 }

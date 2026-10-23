@@ -9,12 +9,18 @@
   "output_shape": [
     4
   ],
-  "execution": {
-    "format": "vision-execution",
+  "package": {
+    "format": "ynn-semantic-package",
     "version": 1,
-    "graph": {
-      "file": "graph.ynn",
-      "sha256": "82cb768ff4539b25dd73217af5648bb54d9c1a7144d73a2456c94972855f5573"
+    "program.json": {
+      "file": "program.json",
+      "bytes": 289,
+      "sha256": "9710891e229a68b01324c0aa77a0e320cad18e206cad16d22cc379046705b624"
+    },
+    "execution.json": {
+      "file": "execution.json",
+      "bytes": 195,
+      "sha256": "94a31be65bc246275c8438db76ca3e45b4919ec786277ed8da270c520360a46d"
     }
   }
 }

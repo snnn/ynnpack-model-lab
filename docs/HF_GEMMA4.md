@@ -107,7 +107,7 @@ when explaining memory measurements. There is no automatic `madvise` eviction.
 
 ## Prepare and build standalone profiles
 
-The checked-in plans and small parameter recipes require no private compiler
+The checked-in semantic programs and source parameter recipes require no private compiler
 package at build or runtime. Preparing and running the checkpoint requires no
 TFLite export or Torch/Transformers installation; the optional independent
 reference below uses those Python packages. Download only the config and tensor shard for this
@@ -146,7 +146,7 @@ This correctness example selects the BF16 profile explicitly:
 
 ```sh
 ./build-hf/gemma4_e2b \
-  --graph_dir=models/gemma4_e2b_hf/generated/hf_bf16 \
+  --model_dir=models/gemma4_e2b_hf/generated/hf_bf16 \
   --hf_model_dir=assets/hf-checkpoint \
   --asset_manifest=assets/gemma4_e2b_hf/manifest.json \
   --parameter_dir=assets/gemma4_e2b_hf/parameters \
@@ -154,14 +154,16 @@ This correctness example selects the BF16 profile explicitly:
   --cases_file=models/gemma4_e2b_hf/fixtures/correctness.tsv \
   --output_dir=out/hf-bf16-correctness \
   --cache_capacity=2048 --prefill_rows=128 --num_threads=4 \
-  --warmup_runs=0 --measured_runs=1 --dump_outputs
+  --warmup_runs=0 --measured_runs=1 --dump_outputs --dump_state_steps
 ```
 
-Choose a profile directory with `--graph_dir` to select arithmetic and KV policy.
+Choose a profile directory with `--model_dir` to select arithmetic and KV policy.
 All profiles share the source files and derived packed cache. The asset preparer materializes
 the union of their constant recipes into its parameter directory. A run writes
 its profile, source identity, dimensions, and repetition settings to `run.json`.
-BF16 KV dumps end in `.bf16`; INT8 KV dumps end in `.i8`; logits are FP32 dumps.
+The shared runner writes `.bin` state dumps; `execution.json` declares BF16 or
+INT8 KV storage. Logits are FP32. The comparison tool normalizes these snapshots
+to the reference runner's typed active-prefix dumps.
 Only current tokens are appended: 18,432 bytes/token for BF16 KV or 9,216 for
 INT8 KV. History-view copy bytes must stay zero.
 
@@ -183,6 +185,7 @@ python tools/hf_reference.py \
   --output out/hf-reference
 python tools/compare_outputs.py \
   --reference out/hf-reference --candidate out/hf-bf16-correctness \
+  --execution models/gemma4_e2b_hf/generated/hf_bf16/execution.json \
   --output out/hf-comparison.json
 ```
 
@@ -206,7 +209,7 @@ For an integer-FC timing example using the same prepared checkpoint:
 
 ```sh
 ./build-hf/gemma4_e2b \
-  --graph_dir=models/gemma4_e2b_hf/generated/hf_static_int8_published_kv \
+  --model_dir=models/gemma4_e2b_hf/generated/hf_static_int8_published_kv \
   --hf_model_dir=assets/hf-checkpoint \
   --asset_manifest=assets/gemma4_e2b_hf/manifest.json \
   --parameter_dir=assets/gemma4_e2b_hf/parameters \
@@ -219,7 +222,7 @@ For an integer-FC timing example using the same prepared checkpoint:
 
 Android uses the usual NDK CMake toolchain plus `LAB_DEPS` above and the Rust
 Android target. Push the source shard, manifest, parameter directory, case file,
-selected plans, metadata and executable. The phone needs only the standalone
+selected semantic package, metadata and executable. The phone needs only the standalone
 runner and its assets.
 Check storage and available memory first and run one benchmark at a time per
 device. Keep SME disabled for this experiment.
@@ -229,13 +232,14 @@ it creates and removes temporary fixture files in that directory.
 ## Reauthoring and extension points
 
 Graph authors and compiler integration are maintained in a separate private
-repository. The public lab contains the standalone `.ynn` plans and parameter
+repository. The public lab contains the standalone semantic programs and parameter
 recipes, plus the source-mapping and asset-validation tools. See
 [AUTHORING.md](AUTHORING.md) for the artifact interface and validation requirements.
 
-Select an alternative package with `--graph_dir`. Keep both phase plans,
+Select an alternative package with `--model_dir`. Keep the program, execution contract,
 execution metadata, parameter recipes and the native adapter synchronized.
-Compiler reports and graph authors stay with the external compiler.
+Source frontend reports and authors stay with their frontend. Public lowering
+is maintained in the shared Rust compiler.
 
 ## FP32 arithmetic and integer FCs
 
@@ -275,10 +279,10 @@ When reusing assets prepared before these profiles existed, rerun the asset
 preparer with a fresh manifest/parameter destination so it materializes the new
 integer-FC scale constants. The source checkpoint and derived packed-code cache
 can be reused.
-Only plans/metadata/recipes belong in the repository; tensor payloads and
+Only programs/metadata/recipes belong in the repository; tensor payloads and
 large diagnostic outputs remain external.
 
-The Rust loader validates both `.ynn` phase plans and constructs one prepared
+The Rust runtime lowers both semantic phases and constructs one prepared
 prefill graph and one prepared decode graph. Symbolic bounds remain Slinky
 expressions; steady-state execution invokes the prepared native graphs.
 

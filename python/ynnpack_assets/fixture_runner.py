@@ -39,7 +39,7 @@ def run(directory, runner, threads=(1, 4), selected='', known_failures=False):
                 raise AssertionError(f'{name}: missing invocation records')
             if case.get('required_callbacks'):
                 profile = [json.loads(line) for line in
-                           (directory / ('model_execution_profile.jsonl' if fixture.get('program') else 'model.execution_profile.jsonl')).read_text().splitlines()]
+                           (directory / 'model_execution_profile.jsonl').read_text().splitlines()]
                 calls = {c['id']:c['name'] for c in profile[0]['calls']}
                 seen = {calls[e[1]] for step in profile[1:] for e in step.get('events', [])}
                 if not set(case['required_callbacks']) <= seen or not all(

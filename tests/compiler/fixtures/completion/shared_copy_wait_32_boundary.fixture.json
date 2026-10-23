@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "shared_copy_wait_32_boundary_a.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -194,5 +191,6 @@
         "extra_old_codes": "actual/shared_copy_wait_32_boundary/1_65787472615f6f6c645f636f646573.bin"
       }
     }
-  ]
+  ],
+  "program": "shared_copy_wait_32_boundary.program.json"
 }

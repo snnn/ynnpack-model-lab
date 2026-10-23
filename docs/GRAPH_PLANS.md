@@ -3,18 +3,17 @@
 A construction plan is a standalone sequence of typed calls to this lab's
 native graph adapter. The Rust runner validates and executes that sequence once
 to construct a YNNPACK graph, then prepares and reuses the native pipeline.
-The executable artifact is the [`.ynn` language](PLAN_TEXT.md), with result
+The internal construction representation is the [`.ynn` language](PLAN_TEXT.md), with result
 bindings, symbolic shapes, explicit attributes and profiling metadata. Rust
 parses it directly into the typed construction model and validates it before
-native construction. No graph JSON serialization or decoding occurs. The format
+native construction. The deployed semantic program is JSON; `.ynn` text is emitted and parsed in memory. The format
 is experimental and tied to the pinned adapter; unsupported versions fail.
 
-Vision packages contain `graph.ynn` alongside `model.json` and their
-hash-addressed parameters. Gemma packages contain `gemma4_prefill.ynn` and
-`gemma4_decode.ynn`, using the existing bundle and parameter recipes. The
-plans preserve packed weight codes, quantization scales, symbolic expressions,
-resource declarations, and operation completion dependencies. They contain no
-private compiler code or installation dependency.
+Vision packages contain semantic programs and tensor execution contracts. LLM packages
+contain semantic prefill/decode programs with their request/state contract.
+The compiler emits construction plans in process. Plans preserve packed codes,
+scales, symbolic expressions, resources and completion dependencies. Diagnostic
+`ynn-compile` output can be inspected separately; runners do not load plan files.
 
 ## Format
 
@@ -109,13 +108,13 @@ operations require explicit lowering, typed loader support and independent tests
 
 ## Validation
 
-The exporter emits `.ynn` plans only. The public comparison harness checks exact
+Model exporters emit semantic programs and source assets. The public comparison harness checks exact
 outputs and state counters against archived C++ controls. Independent weights-free
-state tests load `.ynn` plans and cover bounds, reset, multiple KV heads, window
+state tests prepare semantic programs and cover bounds, reset, multiple KV heads, window
 crossings, real partial chunks, stale bindings and failure after partial writes.
 
 Alternative compiler emitters must satisfy the same construction contract;
-runners do not link compiler implementations. Runtime usage and candidate
+every runner uses the same public compiler implementation. Runtime usage and candidate
 comparison commands are in [RUST_RUNTIME.md](RUST_RUNTIME.md). Dated migration
 evidence is indexed in [results](../results/README.md), separately from the
 [remaining coverage gaps](worklogs/VALIDATION_GAPS.md).

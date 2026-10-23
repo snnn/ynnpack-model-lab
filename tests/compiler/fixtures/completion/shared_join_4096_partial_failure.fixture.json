@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "shared_join_4096_partial_failure_a.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -147,5 +144,6 @@
         }
       ]
     }
-  ]
+  ],
+  "program": "shared_join_4096_partial_failure.program.json"
 }

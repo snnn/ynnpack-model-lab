@@ -18,18 +18,19 @@ not define a preferred workload or the order of future integrations.
 | Qwen3.5-4B | FP32 baseline and experimental INT8/INT4-MLP packages integrated | Quantized quality and broader device validation; see [Qwen3.5](../QWEN35.md) |
 | Other Qwen models | Qwen3.5-0.8B tokenizer recipe; execution planned | Per-model architecture/state semantics, assets, plans, runtime compatibility and validation |
 
-The [CMake targets](../../cmake/RustRuntime.cmake) bind Gemma executables
-to E2B/E4B; `qwen3` selects either admitted Qwen3 package at runtime. The
-[Gemma package loader](../../rust/src/gemma/package.rs) validates its variant
-binding, and the [public model specification](../../models/gemma4/model_spec.py)
-covers those variants. Supplying another checkpoint or tokenizer does not add
-model execution. New families may require different asset and state contracts.
+The [CMake targets](../../cmake/RustRuntime.cmake) use the shared semantic
+runtime. Gemma names select a default package directory; all model interfaces
+come from the [execution contract](../../rust/src/runtime/execution.rs).
+The [public model specification](../../models/gemma4/model_spec.py) covers
+Gemma architecture and checkpoint interpretation. Supplying another checkpoint
+or tokenizer does not add model execution; a new family needs an authored
+program and supported asset/state contracts.
 
 ## Completion checks for each addition
 
 1. Record the exact checkpoint, architecture, numerical profile and tokenizer
    policy; provide hash-verified public asset preparation.
-2. Export matching standalone plans and metadata. Keep model-specific behavior
+2. Export a matching semantic program, execution contract and metadata. Keep model-specific behavior
    in its author/package and add any required shared runtime operations with
    independent arithmetic/state checks. Private authoring remains separate.
 3. Validate model outputs against a named reference and test the model's actual

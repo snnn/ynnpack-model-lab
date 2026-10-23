@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "slice_transpose.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -48,5 +45,6 @@
         "y": "actual/slice_transpose/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "slice_transpose.program.json"
 }

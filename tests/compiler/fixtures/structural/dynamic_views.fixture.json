@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "dynamic_views.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -99,5 +96,6 @@
         "y": "actual/dynamic_views/2_79.bin"
       }
     }
-  ]
+  ],
+  "program": "dynamic_views.program.json"
 }

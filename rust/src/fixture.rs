@@ -11,9 +11,7 @@ use std::path::{Path, PathBuf};
 #[serde(deny_unknown_fields)]
 struct Fixture {
     version: u32,
-    graphs: BTreeMap<String, PathBuf>,
-    #[serde(default)]
-    program: Option<PathBuf>,
+    program: PathBuf,
     #[serde(default = "one")]
     threads: usize,
     #[serde(default)]
@@ -142,7 +140,7 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
     let path = Path::new(&args[1]);
     let root = path.parent().unwrap_or(Path::new("."));
     let fixture: Fixture = serde_json::from_slice(&std::fs::read(path)?)?;
-    if fixture.version != 1 || fixture.graphs.is_empty() {
+    if fixture.version != 1 {
         return Err(Error::invalid("Unsupported/empty fixture"));
     }
     let assets = ffi::Assets::open(&root.join(fixture.bundle), &root.join(fixture.parameters))?;
@@ -152,44 +150,18 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         buffers: BTreeMap::new(),
         append_regions: BTreeMap::new(),
     };
-    let mut setup_ms = BTreeMap::new();
-    let mut preparation = None;
-    if let Some(path) = &fixture.program {
-        let program: crate::compiler::Program = serde_json::from_slice(&std::fs::read(root.join(path))?)?;
-        if program.phases.keys().ne(fixture.graphs.keys()) {
-            return Err(Error::invalid("Fixture program phases differ"));
-        }
-        let prepared = crate::runtime::prepare(&program, crate::runtime::AssetStore { assets },
-            crate::runtime::PrepareOptions { threads: fixture.threads,
-                profile_execution: if fixture.profile { "all" } else { "none" },
-                output_dir: root.to_path_buf(), ..Default::default() })?;
-        preparation = Some(prepared.stats);
-        session.graphs = prepared.graphs;
-        for (name, graph) in &mut session.graphs {
-            let pipeline = root.join(format!("{name}.pipeline"));
-            graph.diagnostics(fixture.pipeline.then_some(pipeline.as_path()), fixture.memory)?;
-        }
-    } else {
-    for (name, plan) in fixture.graphs {
-        let start = std::time::Instant::now();
-        let mut builder = ffi::GraphBuilder::from_plan(assets.clone(), &root.join(plan))?;
-        if fixture.profile {
-            builder.profile(&root.join(format!("{name}.execution_profile.jsonl")))?;
-        }
-        let construction = start.elapsed().as_secs_f64() * 1000.0;
-        let start = std::time::Instant::now();
-        let mut graph = builder.prepare(fixture.threads)?;
-        setup_ms.insert(
-            name.clone(),
-            [construction, start.elapsed().as_secs_f64() * 1000.0],
-        );
+    let setup_ms: BTreeMap<String, [f64;2]> = BTreeMap::new();
+    let program: crate::compiler::Program = serde_json::from_slice(&std::fs::read(root.join(&fixture.program))?)?;
+    let prepared = crate::runtime::prepare(&program, crate::runtime::AssetStore { assets },
+        crate::runtime::PrepareOptions { threads: fixture.threads,
+            profile_execution: if fixture.profile { "all" } else { "none" },
+            output_dir: root.to_path_buf(), ..Default::default() })?;
+    let preparation = Some(prepared.stats);
+    session.graphs = prepared.graphs;
+    drop(program);
+    for (name, graph) in &mut session.graphs {
         let pipeline = root.join(format!("{name}.pipeline"));
         graph.diagnostics(fixture.pipeline.then_some(pipeline.as_path()), fixture.memory)?;
-        if fixture.profile {
-            graph.profile_step("", 0, 0, 0, 0)?;
-        }
-        session.graphs.insert(name, graph);
-    }
     }
     for spec in fixture.buffers {
         if session.buffers.contains_key(&spec.name) || session.resources.contains_key(&spec.name) {

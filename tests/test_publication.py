@@ -3,6 +3,7 @@
 
 from contextlib import redirect_stdout
 import io
+import gzip
 import json
 from pathlib import Path
 import subprocess
@@ -15,6 +16,11 @@ from tools.check_publication import candidates, issues, main
 
 
 class PublicationTest(unittest.TestCase):
+    def test_compressed_semantic_data_is_scanned(self):
+        source = json.dumps({'source': '/' + 'home' + '/sample/source'}).encode()
+        self.assertTrue(issues('models/test/program.json.gz', gzip.compress(source)))
+        self.assertFalse(issues('models/test/program.json.gz', gzip.compress(b'{"version":1}')))
+        self.assertTrue(issues('models/test/program.json.gz', b'not gzip'))
     def test_host_path_and_contact(self):
         path = "/" + "home" + "/sample/project/build"
         email = "sample" + "@" + "example.org"

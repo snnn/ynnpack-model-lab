@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "required_8448_a.ynn",
-    "b": "required_8448_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -353,5 +349,6 @@
         "second": "actual/required_8448/9_7365636f6e64.bin"
       }
     }
-  ]
+  ],
+  "program": "required_8448.program.json"
 }

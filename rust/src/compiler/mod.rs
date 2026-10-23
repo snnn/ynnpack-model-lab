@@ -36,7 +36,7 @@ pub fn compile(program: &Program) -> Result<CompiledPackage> {
 pub fn compile_measured(program: &Program) -> Result<(CompiledPackage, CompileTimings)> {
     use std::time::Instant;
     let mut timings = CompileTimings::default();
-    if program.version != 1 || program.phases.is_empty() {
+    if program.version != 1 || program.phases.is_empty() || program.phase_options.keys().any(|name| !program.phases.contains_key(name)) {
         return Err(Error::invalid("Unsupported compiler request version"));
     }
     let mut result = CompiledPackage {
@@ -127,10 +127,11 @@ pub fn compile_measured(program: &Program) -> Result<(CompiledPackage, CompileTi
                 companions.insert(name, parameters);
             }
         }
-        let graph = lower::lower(&source, &program.options)?;
+        let options = program.phase_options.get(phase).unwrap_or(&program.options);
+        let graph = lower::lower(&source, options)?;
         timings.lower_ms += start.elapsed().as_secs_f64() * 1000.0;
         let start = Instant::now();
-        let (text, assets, report) = emit::emit(&graph, &program.options)?;
+        let (text, assets, report) = emit::emit(&graph, options)?;
         let mut report = report;
         report["quantization_companion_outputs"] = serde_json::to_value(companions)?;
         timings.emit_ms += start.elapsed().as_secs_f64() * 1000.0;

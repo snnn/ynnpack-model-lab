@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "target_views_transitive_4096_a.ynn",
-    "b": "target_views_transitive_4096_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -483,5 +479,6 @@
         }
       ]
     }
-  ]
+  ],
+  "program": "target_views_transitive_4096.program.json"
 }

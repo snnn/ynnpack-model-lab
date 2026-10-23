@@ -97,31 +97,6 @@ class Weights {
   std::map<std::string, std::pair<void*, size_t>> maps_;
 };
 
-struct KvOwner {
-  int owner, head_dim, num_heads;
-};
-
-// Model dimensions remain separate from capacity and active execution extents.
-struct Gemma4Config {
-  int vocab_size = 262144, embed_dim = 1536, num_layers = 35;
-  int per_layer_input_dim = 256;
-  int num_kv_heads = 1, num_kv_owners = 15, attention_pattern = 5;
-  int per_layer_bits = 4;
-  std::string variant = "e2b";
-  static Gemma4Config E2B() { return {}; }
-  static Gemma4Config E4B() {
-    Gemma4Config c;
-    c.embed_dim = 2560;
-    c.num_layers = 42;
-    c.num_kv_heads = 2;
-    c.num_kv_owners = 24;
-    c.attention_pattern = 6;
-    c.per_layer_bits = 2;
-    c.variant = "e4b";
-    return c;
-  }
-};
-
 class Embedding {
  public:
   Embedding(const Object& record, size_t rows, size_t width, int expected_bits,
@@ -208,59 +183,4 @@ class Embedding {
   const float* scales_;
 };
 
-struct ModelAssets {
-  std::unique_ptr<Embedding> token_embedding, emb_per_layer_table;
-  std::vector<KvOwner> owners;
-  ModelAssets(const std::string& bundle, Weights& weights,
-              const Gemma4Config& config) {
-    const auto manifest = ReadJson(bundle + "/manifest.json");
-    if (Field<std::string>(manifest, "status") != "complete" ||
-        Field<std::string>(manifest, "experimental_storage") !=
-            "compact_int2_v1")
-      throw std::invalid_argument("A validated compact Gemma4 bundle is required");
-    if (config.variant == "e4b") {
-      const auto metadata = Field<Object>(manifest, "model_config");
-      if (Field<std::string>(metadata, "variant") != "e4b" ||
-          Integer(metadata, "num_kv_heads") != 2 ||
-          Integer(metadata, "num_layers") != 42 ||
-          Integer(metadata, "embed_dim") != 2560)
-        throw std::invalid_argument("E4B architecture mismatch");
-    }
-    for (const auto& value : Field<Array>(manifest, "tensors")) {
-      if (!value.as<Object>()) throw std::invalid_argument("Tensor record");
-      const auto& rec = *value.as<Object>();
-      const auto name = Field<std::string>(rec, "name");
-      if (name == "model.embed_tokens.weight")
-        token_embedding = std::make_unique<Embedding>(
-            rec, config.vocab_size, config.embed_dim, 2, config.embed_dim,
-            weights);
-      if (name == "model.embed_tokens_per_layer.weight")
-        emb_per_layer_table = std::make_unique<Embedding>(
-            rec, config.vocab_size,
-            config.num_layers * config.per_layer_input_dim,
-            config.per_layer_bits, 256, weights);
-    }
-    if (!token_embedding || !emb_per_layer_table)
-      throw std::invalid_argument("Missing embeddings");
-    const auto kv = Field<Array>(manifest, "kv_cache_specs");
-    if (kv.size() != size_t(config.num_kv_owners))
-      throw std::invalid_argument("Incorrect KV owner count");
-    owners.resize(config.num_kv_owners);
-    std::vector<bool> seen(config.num_kv_owners);
-    for (const auto& value : kv) {
-      if (!value.as<Object>()) throw std::invalid_argument("KV record");
-      const auto& rec = *value.as<Object>();
-      auto owner = Integer(rec, "owner"), dim = Integer(rec, "head_dim");
-      if (owner >= size_t(config.num_kv_owners) || seen[owner] ||
-          dim != ((owner + 1) % config.attention_pattern == 0 ? 512 : 256) ||
-          Integer(rec, "zero_point") != 0)
-        throw std::invalid_argument("Unexpected KV owner layout");
-      if (config.num_kv_heads > 1 &&
-          Integer(rec, "num_kv_heads") != size_t(config.num_kv_heads))
-        throw std::invalid_argument("KV head count mismatch");
-      seen[owner] = true;
-      owners[owner] = {int(owner), int(dim), config.num_kv_heads};
-    }
-  }
-};
 }  // namespace lab

@@ -1,0 +1,766 @@
+{
+  "format": "ynn-llm-execution",
+  "model": "qwen3",
+  "capacity": 2048,
+  "prefill_rows": 128,
+  "vocabulary": 151936,
+  "prefill_after_decode": false,
+  "graphs": {
+    "prefill": {
+      "logits": null,
+      "row_policy": "padded",
+      "scalars": {
+        "position": "position",
+        "valid_rows": "valid_rows"
+      },
+      "inputs": [
+        {
+          "name": "token_ids",
+          "dtype": "int32",
+          "shape": [
+            1,
+            "rows"
+          ],
+          "recipe": {
+            "kind": "tokens"
+          }
+        },
+        {
+          "name": "input_pos",
+          "dtype": "int32",
+          "shape": [
+            "rows"
+          ],
+          "recipe": {
+            "kind": "positions"
+          }
+        },
+        {
+          "name": "param_tensor",
+          "dtype": "int32",
+          "shape": [
+            1,
+            1,
+            1,
+            7
+          ],
+          "recipe": {
+            "kind": "controls",
+            "values": [
+              "position",
+              "end",
+              "end",
+              "zero",
+              "zero",
+              "zero",
+              "zero"
+            ]
+          }
+        },
+        {
+          "name": "mask",
+          "dtype": "fp32",
+          "shape": [
+            1,
+            1,
+            "rows",
+            "capacity"
+          ],
+          "recipe": {
+            "kind": "mask",
+            "window": null,
+            "masked": "finite_min"
+          }
+        }
+      ]
+    },
+    "decode": {
+      "logits": "linear_196",
+      "row_policy": "padded",
+      "scalars": {
+        "position": "position",
+        "valid_rows": "valid_rows"
+      },
+      "inputs": [
+        {
+          "name": "token_ids",
+          "dtype": "int32",
+          "shape": [
+            1,
+            "rows"
+          ],
+          "recipe": {
+            "kind": "tokens"
+          }
+        },
+        {
+          "name": "input_pos",
+          "dtype": "int32",
+          "shape": [
+            "rows"
+          ],
+          "recipe": {
+            "kind": "positions"
+          }
+        },
+        {
+          "name": "param_tensor",
+          "dtype": "int32",
+          "shape": [
+            1,
+            1,
+            1,
+            7
+          ],
+          "recipe": {
+            "kind": "controls",
+            "values": [
+              "position",
+              "end",
+              "end",
+              "zero",
+              "zero",
+              "zero",
+              "zero"
+            ]
+          }
+        },
+        {
+          "name": "mask",
+          "dtype": "fp32",
+          "shape": [
+            1,
+            1,
+            "rows",
+            "capacity"
+          ],
+          "recipe": {
+            "kind": "mask",
+            "window": null,
+            "masked": "finite_min"
+          }
+        }
+      ]
+    }
+  },
+  "resources": [
+    {
+      "name": "kv_cache_k_0",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_1",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_10",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_11",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_12",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_13",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_14",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_15",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_16",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_17",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_18",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_19",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_2",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_20",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_21",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_22",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_23",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_24",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_25",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_26",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_27",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_3",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_4",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_5",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_6",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_7",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_8",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_k_9",
+      "axis": 2,
+      "shape": [
+        1,
+        8,
+        2048,
+        128
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_0",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_1",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_10",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_11",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_12",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_13",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_14",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_15",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_16",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_17",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_18",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_19",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_2",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_20",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_21",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_22",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_23",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_24",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_25",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_26",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_27",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_3",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_4",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_5",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_6",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_7",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_8",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    },
+    {
+      "name": "kv_cache_v_9",
+      "axis": 3,
+      "shape": [
+        1,
+        8,
+        128,
+        2048
+      ],
+      "dtype": "fp32"
+    }
+  ],
+  "fixed_states": [],
+  "embeddings": {}
+}

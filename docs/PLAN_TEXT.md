@@ -9,7 +9,8 @@ model weights or native backend linkage is required by the authoring tool.
 
 This is a construction language, with limited local type inference. It does not
 replace a model compiler's graph transformations or prove model numerics.
-Runners load `.ynn` directly. The same parser serves the offline authoring tool.
+Runtime preparation uses `.ynn` internally after semantic lowering. The same
+parser serves diagnostic tools; runners accept semantic packages, not plan files.
 
 ## Build and use
 
@@ -23,9 +24,10 @@ build/ynn-plan check tests/rust/square.ynn
 build/ynn-plan check tests/rust/kv_append.ynn
 build/ynn-plan format tests/rust/square.ynn -o out/plan-text/square.ynn
 build/ynn-plan inspect tests/rust/kv_append.ynn -o out/plan-text/state-report.json
-build/ynn-plan expand models/gemma4_e2b/generated/gemma4_decode.ynn -o out/plan-text/decode-flat.ynn
+build/ynn-compile --request program.json --output out/diagnostic-plans
+build/ynn-plan expand out/diagnostic-plans/decode.ynn -o out/plan-text/decode-flat.ynn
 build/ynn-plan check tests/generated/c2048_h2_w512_q8.ynn
-build/ynn-plan check models/vision/resnet18/generated/graph.ynn
+build/ynn-plan check out/diagnostic-plans/decode.ynn
 ```
 
 `format`, `expand` and `inspect` write to standard output when `-o` is omitted. `-` reads

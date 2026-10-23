@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "partition.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -45,5 +42,6 @@
         "y": "actual/partition/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "partition.program.json"
 }

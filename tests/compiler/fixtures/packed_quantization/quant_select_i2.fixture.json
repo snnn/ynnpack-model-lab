@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "quant_select_i2.ynn"
-  },
   "buffers": [
     {
       "name": "a",
@@ -72,5 +69,6 @@
         "y": "actual/quant_select_i2/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "quant_select_i2.program.json"
 }

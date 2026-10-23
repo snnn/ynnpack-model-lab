@@ -20,26 +20,21 @@ references. [Open work](docs/worklogs/README.md) tracks unfinished performance,
 validation and reproduction questions. The [measurement index](results/README.md)
 separates completed campaigns by their actual runtime and configuration.
 
-The canonical Rust runners load checked-in `.ynn` construction plans and invoke
-native YNNPACK/Slinky graphs through a small C ABI. The
-[general LLM runner](docs/GENERAL_RUNNER.md), `ynn-llm`, loads qualified Gemma4,
-Qwen3 and Qwen3.5 packages using explicit metadata. CMake also builds `vision`,
-the comparison controls `gemma4_e2b`, `gemma4_e4b`, `qwen3`, and `plan_fixture`. Profiles are
-selected by model directory. The [Rust compiler and authoring API](docs/COMPILER.md)
-build these plans from semantic tensor programs, with a standalone Qwen3 author
-and checkpoint preparation tools. Source importers can supply the same program
-contract. Generated C++
-model builders and JSON graph loading are retired. JSON remains the format for
-metadata, manifests, fixture controls and measurements. See the
-[artifact interface](docs/AUTHORING.md), [Rust runtime](docs/RUST_RUNTIME.md),
-[in-process preparation](docs/RUNTIME_PREPARATION.md), and
-[plan text reference](docs/PLAN_TEXT.md).
+The canonical Rust runners load semantic programs and prepare native
+YNNPACK/Slinky graphs in process through one shared compiler and adapter.
+The [general LLM runner](docs/GENERAL_RUNNER.md), `ynn-llm`, serves all Gemma4,
+Qwen3 and Qwen3.5 profiles. CMake also builds `vision`, `plan_fixture`, and thin
+`gemma4_e2b`, `gemma4_e4b`, `qwen3` executable aliases. There is one LLM session
+implementation. Select profiles with `--model_dir`.
 
-The Gemma plans record the `target_views` preparation policy: shared constant
-deduplication and simplification, scheduled attention masks and eligible
-reshape-to-view lowering. Each `model.json` records the policy and operation
-counts. Native graph preparation and phase-specific packing still happen at
-load time. The [design](docs/DESIGN.md) explains the state and execution contracts.
+A model package holds a serialized public `Program`, an execution contract and
+immutable source assets. Rust authors and source importers produce that same
+contract. Runtime preparation validates and lowers the program once, owns
+its generated constants, and prepares reusable native graphs. `.ynn` remains
+an internal/diagnostic construction representation; runners no longer load it
+as a deployment artifact. See [authoring](docs/AUTHORING.md),
+[runtime preparation](docs/RUNTIME_PREPARATION.md), and
+[diagnostic plan tools](docs/PLAN_TEXT.md).
 
 The [measurement index](results/README.md) separates the current refresh from
 older evidence retained for unresolved issues. Performance claims require a
@@ -113,7 +108,7 @@ append workers own complete bytes. Shared-owner requests remain exclusive.
 
 The [construction plan format](docs/GRAPH_PLANS.md) separates exporter checks,
 typed load-time validation and dynamic invocation checks. Model metadata binds
-phase hashes, assets and numerical profiles.
+semantic program/execution hashes, assets and numerical profiles.
 
 The backend pins are XNNPACK/YNNPACK `0a66ebb5817f` and Slinky `a3eec6fcfe30`.
 Use a fresh dependency/build directory when changing pins; see
@@ -124,7 +119,7 @@ remaining gaps are tracked in the [measurement index](results/README.md).
 
 Set `ANDROID_NDK` to your NDK installation and install the
 `aarch64-linux-android` Rust standard library. The earlier native baseline used
-NDK r28c (28.2.13676358), ARM64, API 28, static libc++. Current Rust/`.ynn` frontend correctness is checked separately from timing.
+NDK r28c (28.2.13676358), ARM64, API 28, static libc++. Current semantic-runtime correctness is checked separately from timing.
 Broader device/profile coverage remains in the [validation tracker](docs/worklogs/VALIDATION_GAPS.md).
 SME/SME2 and FP8 remain disabled; DOTPROD and I8MM remain enabled.
 
@@ -161,11 +156,11 @@ flowchart LR
   W[Published model] --> E[Verified asset extraction]
   E --> A[Packed weights and scales]
   P[Rust model author or source importer] --> T[Semantic tensor program]
-  T --> B[Rust compiler]
-  B --> C[`.ynn` plans and metadata]
-  C --> R[Rust loader and runner]
+  T --> R[Shared Rust runtime preparation]
   A --> R
-  R --> Y[YNNPACK graph]
+  R --> B[Rust and ISLE lowering]
+  B --> Y[Prepared YNNPACK graphs]
+  Y --> Q[Owned LLM or tensor session]
   Y --> S[Slinky pipeline]
   S --> K[CPU kernels]
 ```

@@ -18,12 +18,12 @@ not make a model the default design or documentation entry point.
 | `rust/src/frontend.rs`, `rust/src/frontend/` | Shared argument/input handling, direct HF tokenization, manifest policy, provenance and fixture export |
 | `runtime/rust/sentencepiece.h` | Small FFI for the SentencePiece C++ engine |
 | `models/gemma4/model_spec.py`, `hf_assets.py` | E2B/E4B architecture, source mapping and asset validation |
-| `models/gemma4_*/generated/` | Reviewed, reproducible plans; no large learned tensors |
-| `rust/src/gemma.rs`, `rust/src/gemma/` | Request orchestration, package validation, state ownership and timing |
+| `models/gemma4_*/generated/` | Reviewed semantic programs and execution contracts; no large learned tensors |
+| `rust/src/llm/`, `rust/src/runtime/` | Request orchestration, package validation, state ownership and timing |
 | `tools/` | Dependency setup, asset extraction, benchmark orchestration |
 
-The [Rust runtime](RUST_RUNTIME.md) owns vision/Gemma request orchestration and
-buffers. Typed, validated `.ynn` plans construct native graphs through one adapter.
+The [Rust runtime](RUST_RUNTIME.md) owns LLM/tensor sessions and their buffers.
+One semantic compiler prepares typed native graphs through one adapter.
 Embedding arithmetic and authoritative resource-state checks remain native.
 There is no generated C++ model path. See [the plan format](GRAPH_PLANS.md).
 

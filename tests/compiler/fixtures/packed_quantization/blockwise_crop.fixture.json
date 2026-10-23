@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "blockwise_crop.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -161,5 +158,6 @@
         "y": "actual/blockwise_crop/2_79.bin"
       }
     }
-  ]
+  ],
+  "program": "blockwise_crop.program.json"
 }
