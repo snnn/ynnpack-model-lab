@@ -40,7 +40,6 @@ let mut session = Session::from_prepared(prepared, execution)?;
 drop(program);
 session.invoke(&[42], true, None)?;
 let logits = session.logits();
-# Ok::<(), ynnpack_lab::Error>(())
 ```
 
 Library callers must provide the same 64 MiB preparation-thread stack used by
@@ -153,3 +152,5 @@ for timing definitions and device controls.
 This interface remains experimental. Broader model/device coverage and the
 paired correctness, memory, and latency decision gates must precede a default
 change. Missing evidence or a confidence interval crossing a gate is inconclusive.
+The [October 22 prototype report](../results/runtime_preparation_20261022/README.md)
+records the measured outcomes and the remaining qualification limits.

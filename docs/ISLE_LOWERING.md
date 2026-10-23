@@ -30,6 +30,16 @@ is Rust analysis; the computation for each run is an ISLE rule. Constant folding
 target views, packing, global cleanup, function sharing, and `.ynn` serialization
 remain Rust passes.
 
+Runtime operation preparation has a separate, small rule family in
+`rust/operations/src/dispatch.isle`. It chooses unsigned K4, signed K4, or
+portable K1 blockwise dot strategies from immutable backend facts and tile
+compatibility checks. The generated selector executes during preparation;
+ISLE itself is still only a build dependency. Rust owns the operation's
+quantization, packing, accumulation, scratch, and task partitioning. C++ supplies
+the existing backend kernel catalogue, opaque invocation state, and thread-pool
+bridge. See [RUNTIME_PREPARATION.md](RUNTIME_PREPARATION.md) for this boundary,
+feature-mask restrictions, and validation.
+
 A rule must express a meaningful choice or decomposition. Do not add a rule that
 merely calls a Rust implementation of the entire same lowering family. Do not
 retain a second handwritten selection tree or a legacy implementation behind a
