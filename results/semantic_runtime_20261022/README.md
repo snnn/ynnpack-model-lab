@@ -146,7 +146,9 @@ uses Rust 1.99 and Clang 22.1.8. SME/SME2 are disabled.
 
 Prepare assets using the model guides. Set absolute `LAB` and `CONTROL` checkout
 paths and the `HF_MODEL_DIR`, `HF_ASSET_MANIFEST`, and `HF_CACHE_DIR` paths used by
-the HF guide. Adjust the explicit affinity masks for a different host rather
+the HF guide. Vision controls must read their original metadata from `CONTROL`;
+link their `models/vision/*/generated/parameters` directories to the same verified
+payload directories used by the candidate. Adjust the explicit affinity masks for a different host rather
 than assuming the same CPU topology.
 
 ```sh
