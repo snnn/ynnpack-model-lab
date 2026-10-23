@@ -33,13 +33,12 @@ use ynnpack_lab::runtime::{self, AssetStore, PrepareOptions, Session};
 // `program` comes from a Rust author or a deserialized public Program.
 // `execution` describes this program's phase interface and state.
 let assets = AssetStore::open(Path::new("bundle"), Path::new("parameters"))?;
-let prepared = runtime::prepare(&program, assets, PrepareOptions {
+let prepared = runtime::prepare(program, assets, PrepareOptions {
     threads: 4,
     execution: Some(&execution),
     ..Default::default()
 })?;
 let mut session = Session::from_prepared(prepared, execution)?;
-drop(program);
 session.invoke(&[42], true, None)?;
 let logits = session.logits();
 ```
@@ -71,7 +70,11 @@ There is one semantic compiler and one set of lowering rules. Preparation
 reuses in-memory `.ynn` emission and parsing, so it requires no compiler
 subprocess or temporary plan files. It does not yet have a direct typed native
 builder or persistent preparation cache. Compilation reports, text, and temporary
-generated-constant vectors are released after preparation.
+generated-constant vectors are released before native graph construction.
+Runners pass an owned `Program` so its semantic allocations are released at that
+boundary too. This lets native construction reuse that storage and avoids
+interleaving freed source allocations with long-lived graph storage. Library
+callers can pass `&program` when retaining the source for reuse is intentional.
 
 Source weights use immutable mappings. Generated constants use owned, aligned
 storage with backend padding. Prepared graphs retain the asset owner and are

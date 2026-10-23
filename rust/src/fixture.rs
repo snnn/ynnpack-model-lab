@@ -152,13 +152,12 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
     };
     let setup_ms: BTreeMap<String, [f64;2]> = BTreeMap::new();
     let program: crate::compiler::Program = serde_json::from_slice(&std::fs::read(root.join(&fixture.program))?)?;
-    let prepared = crate::runtime::prepare(&program, crate::runtime::AssetStore { assets },
+    let prepared = crate::runtime::prepare(program, crate::runtime::AssetStore { assets },
         crate::runtime::PrepareOptions { threads: fixture.threads,
             profile_execution: if fixture.profile { "all" } else { "none" },
             output_dir: root.to_path_buf(), ..Default::default() })?;
     let preparation = Some(prepared.stats);
     session.graphs = prepared.graphs;
-    drop(program);
     for (name, graph) in &mut session.graphs {
         let pipeline = root.join(format!("{name}.pipeline"));
         graph.diagnostics(fixture.pipeline.then_some(pipeline.as_path()), fixture.memory)?;

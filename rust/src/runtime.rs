@@ -14,6 +14,7 @@ use crate::{
 pub use execution::ExecutionSpec;
 use serde::Serialize;
 use std::{
+    borrow::Borrow,
     collections::BTreeMap,
     path::{Path, PathBuf},
     rc::Rc,
@@ -86,13 +87,17 @@ pub struct PreparedProgram {
     pub stats: PreparationStats,
 }
 
+/// Pass an owned program for one-time preparation so its semantic allocations
+/// are released before native graph construction. Borrow it when retaining the
+/// source for another preparation or diagnostic inspection is intentional.
 pub fn prepare(
-    program: &compiler::Program,
+    program: impl Borrow<compiler::Program>,
     mut assets: AssetStore,
     options: PrepareOptions<'_>,
 ) -> Result<PreparedProgram> {
     let start = Instant::now();
-    let (mut compiled, compiler) = compiler::compile_measured(program)?;
+    let (mut compiled, compiler) = compiler::compile_measured(program.borrow())?;
+    drop(program);
     let mut stats = PreparationStats {
         compiler,
         compiler_calls: 1,

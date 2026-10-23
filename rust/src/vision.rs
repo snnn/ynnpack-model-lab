@@ -52,7 +52,7 @@ impl VisionBuilder {
             outputs: vec![crate::runtime::tensor::TensorBinding { name: self.contract.output_name.clone(), dtype: "fp32".into(), shape: self.contract.output_shape.clone() }],
         };
         if spec.graphs.get("model") != Some(&expected) { return Err(Error::invalid("Vision metadata differs from tensor contract")); }
-        let prepared = crate::runtime::prepare(&self.package.program,
+        let prepared = crate::runtime::prepare(self.package.program,
             crate::runtime::AssetStore::open(Path::new(""), &self.root.join("parameters"))?,
             crate::runtime::PrepareOptions { threads, tensors: Some(&spec), ..Default::default() })?;
         let session = crate::runtime::tensor::TensorSession::from_prepared(prepared)?;

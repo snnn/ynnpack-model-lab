@@ -123,7 +123,7 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         !o.trace_plan.is_empty() || o.dump_pipeline) {
         return Err(Error::invalid("Scoring requires zero warmups, one repetition and no diagnostics"));
     }
-    let root = Path::new(o.model_dir.as_deref().unwrap_or(&o.bundle_dir));
+    let root = Path::new(o.model_dir.as_deref().unwrap_or(&o.bundle_dir)).to_path_buf();
     if o.model_dir.is_some() && (program_path.is_some() || qwen_assets.is_some()) {
         return Err(Error::invalid("Runtime program input and --model_dir are mutually exclusive"));
     }
@@ -142,7 +142,7 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         let spec = assets.execution(&p, o.cache_capacity as i64, o.prefill_rows as i64)?;
         (p, spec, "qwen-assets")
     } else {
-        let p = Package::read(root)?;
+        let p = Package::read(&root)?;
         let spec = p.spec.clone();
         metadata = p.metadata;
         (p.program, spec, "semantic-package")
@@ -208,8 +208,7 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
     }
     let start = Instant::now();
     let assets = session::open_assets(Path::new(&o.bundle_dir), Path::new(&o.parameter_dir), &o, &metadata)?;
-    let prepared = crate::runtime::prepare(&program, assets, session::prepare_options(&o, &package))?;
-    drop(program);
+    let prepared = crate::runtime::prepare(program, assets, session::prepare_options(&o, &package))?;
     let mut session = Session::from_prepared(prepared, package)?;
     io::json(
         &output.join("setup.json"),

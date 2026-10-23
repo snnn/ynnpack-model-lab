@@ -40,7 +40,7 @@ impl Session {
     pub(crate) fn load(root:&Path, bundle:&Path, parameters:&Path, package:Package, options:&Options) -> Result<Self> {
         let _ = root;
         let assets = open_assets(bundle, parameters, options, &package.metadata)?;
-        let prepared = crate::runtime::prepare(&package.program, assets, prepare_options(options, &package.spec))?;
+        let prepared = crate::runtime::prepare(package.program, assets, prepare_options(options, &package.spec))?;
         Self::from_prepared(prepared, package.spec)
     }
     /// Consume the fully prepared phase set. No compilation or file loading occurs here.

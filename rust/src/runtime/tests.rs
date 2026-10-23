@@ -104,7 +104,30 @@ pub(crate) fn preparation() -> Result<()> {
         assert!(tensor_prepare(&bad).is_err());
         assert_eq!(live(), baseline);
     }
-    let mut tensors = tensor::TensorSession::from_prepared(tensor_prepare(&spec)?)?;
+    // Consuming source input must release it before any native graph exists.
+    // Prepared constants and mappings must remain valid for later invocation.
+    struct OwnedInput {
+        program: Program,
+        dropped: Rc<std::cell::Cell<bool>>,
+        live_graphs: usize,
+    }
+    impl std::borrow::Borrow<Program> for OwnedInput {
+        fn borrow(&self) -> &Program { &self.program }
+    }
+    impl Drop for OwnedInput {
+        fn drop(&mut self) {
+            assert_eq!(live().0, self.live_graphs);
+            self.dropped.set(true);
+        }
+    }
+    let dropped = Rc::new(std::cell::Cell::new(false));
+    let prepared = prepare(
+        OwnedInput { program: program.clone(), dropped: dropped.clone(), live_graphs: baseline.0 },
+        AssetStore::open(&root, &root)?,
+        PrepareOptions { threads: 1, tensors: Some(&spec), ..Default::default() },
+    )?;
+    assert!(dropped.get());
+    let mut tensors = tensor::TensorSession::from_prepared(prepared)?;
     drop(spec);
     assert!(tensors.input_mut("decode", "y").is_err());
     assert!(tensors.output("decode", "x").is_err());
