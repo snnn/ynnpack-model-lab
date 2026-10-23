@@ -104,6 +104,36 @@ fn cases(temp: &Path) -> Result<()> {
             == Some("plans"),
         "Space-separated model_dir failed",
     )?;
+    for extra in [
+        vec![&option[..], "--cache_capacity=8448", "--prefill_rows=32"],
+        vec![
+            &option[..],
+            "--cache_capacity",
+            "8448",
+            "--prefill_rows",
+            "32",
+        ],
+    ] {
+        let mut options = parse(&extra)?;
+        options.apply_model_defaults(2048, 128);
+        check(
+            options.cache_capacity == 8448 && options.prefill_rows == 32,
+            "Model defaults replaced explicit geometry",
+        )?;
+    }
+    let mut options = parse(&[&option, "--cache_capacity", "8448"])?;
+    options.apply_model_defaults(2048, 64);
+    check(
+        options.cache_capacity == 8448 && options.prefill_rows == 64,
+        "Model defaults did not preserve partially explicit geometry",
+    )?;
+    // An option-looking value is a filename, not an explicit capacity option.
+    let mut options = parse(&["--cases_file", "--cache_capacity=8448"])?;
+    options.apply_model_defaults(4096, 64);
+    check(
+        options.cache_capacity == 4096 && options.prefill_rows == 64,
+        "Option values affected model defaults",
+    )?;
     let o = parse(&[
         &option,
         "--dump_outputs=0",

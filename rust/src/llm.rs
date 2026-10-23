@@ -148,12 +148,7 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         (p.program, spec, "semantic-package")
     };
     let load_ms = load_start.elapsed().as_secs_f64()*1000.0;
-    if !arguments.iter().any(|a| a.starts_with("--cache_capacity=")) {
-        o.cache_capacity = package.capacity;
-    }
-    if !arguments.iter().any(|a| a.starts_with("--prefill_rows=")) {
-        o.prefill_rows = package.prefill_rows;
-    }
+    o.apply_model_defaults(package.capacity, package.prefill_rows);
     let package = package.with_capacity(o.cache_capacity)?;
     if o.prefill_rows != package.prefill_rows {
         return Err(Error::invalid("Prefill rows differ from package; use --prefill_chunk_size to select smaller chunks"));

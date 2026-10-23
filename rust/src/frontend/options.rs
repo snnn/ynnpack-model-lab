@@ -37,8 +37,10 @@ pub(crate) struct Options {
     pub tokenizer_dir: String,
     pub input: Input,
     pub cache_capacity: usize,
+    cache_capacity_explicit: bool,
     pub num_threads: usize,
     pub prefill_rows: usize,
+    prefill_rows_explicit: bool,
     pub warmup_runs: i32,
     pub measured_runs: i32,
     pub dump_outputs: bool,
@@ -48,6 +50,15 @@ pub(crate) struct Options {
 }
 
 impl Options {
+    pub(crate) fn apply_model_defaults(&mut self, capacity: usize, prefill_rows: usize) {
+        if !self.cache_capacity_explicit {
+            self.cache_capacity = capacity;
+        }
+        if !self.prefill_rows_explicit {
+            self.prefill_rows = prefill_rows;
+        }
+    }
+
     // None means --help was printed. No process exit from library code.
     pub fn parse(args: &[String], require_model: bool) -> Result<Option<Self>> {
         let mut values = BTreeMap::new();
@@ -230,8 +241,10 @@ Diagnostics: --trace_plan=DIR (changes graph outputs; do not use for performance
             tokenizer_dir,
             input,
             cache_capacity,
+            cache_capacity_explicit: has("--cache_capacity"),
             num_threads,
             prefill_rows,
+            prefill_rows_explicit: has("--prefill_rows"),
             warmup_runs,
             measured_runs,
             dump_outputs,
