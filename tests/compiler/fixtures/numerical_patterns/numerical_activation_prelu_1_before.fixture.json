@@ -86,5 +86,5 @@
       }
     }
   ],
-  "program": "numerical_activation_prelu_1_before.program.json"
+  "program": "numerical_activation_prelu_1_before.program.ynn"
 }

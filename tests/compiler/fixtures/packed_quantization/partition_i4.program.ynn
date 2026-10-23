@@ -1,0 +1,28 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    symbol {binding: {axis: 0, source: "axis", value: "x"}, id: 1, lower: 0, upper: 13};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(13)};
+    value "a": i4[s1, 3];
+    value "b": i4[s1, 3];
+    value "broadcast": i4[s1, 6];
+    value "empty": i4[s1, 0];
+    value "first": i4[s1, 1];
+    value "reshaped": i4[s1, 2, 3];
+    value "rest": i4[s1, 5];
+    value "scalar": i4[];
+    value "stacked": i4[2, s1, 3];
+    value "u": i4[s1, 3];
+    value "v": i4[s1, 3];
+    value "x": i4[s1, 6];
+    inputs ("x", "scalar");
+    outputs ("a", "b", "first", "empty", "rest", "u", "v", "broadcast", "reshaped");
+    node even_split ("x") -> ("a", "b") attrs {axis: 1} scope "Compute";
+    node split ("x") -> ("first", "empty", "rest") attrs {axis: 1, lengths: [known(1), known(0), known(5)]} scope "Compute";
+    node stack ("a", "b") -> ("stacked") scope "Compute";
+    node unstack ("stacked") -> ("u", "v") scope "Compute";
+    node broadcast_to ("scalar") -> ("broadcast") attrs {shape: [symbol(1), known(6)]} scope "Compute";
+    node reshape ("x") -> ("reshaped") attrs {shape: [symbol(1), known(2), known(3)]} scope "Compute";
+  }
+}

@@ -26,5 +26,5 @@
       }
     }
   ],
-  "program": "constant_fold_i2.program.json"
+  "program": "constant_fold_i2.program.ynn"
 }

@@ -99,5 +99,5 @@
       "expect_error": ""
     }
   ],
-  "program": "quant_gather_i4_invalid_3.program.json"
+  "program": "quant_gather_i4_invalid_3.program.ynn"
 }

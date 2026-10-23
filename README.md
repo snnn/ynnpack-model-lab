@@ -27,12 +27,12 @@ Qwen3 and Qwen3.5 profiles. CMake also builds `vision`, `plan_fixture`, and thin
 `gemma4_e2b`, `gemma4_e4b`, `qwen3` executable aliases. There is one LLM session
 implementation. Select profiles with `--model_dir`.
 
-A model package holds a serialized public `Program`, an execution contract and
+A model package holds a compact [semantic DSL](docs/PROGRAM_TEXT.md) `Program`, an execution contract and
 immutable source assets. Rust authors and source importers produce that same
 contract. Runtime preparation validates and lowers the program once, owns
-its generated constants, and prepares reusable native graphs. `.ynn` remains
-an internal/diagnostic construction representation; runners no longer load it
-as a deployment artifact. See [authoring](docs/AUTHORING.md),
+its generated constants, and prepares reusable native graphs. `program.ynn`
+starts with `ynn_program 1`; native construction plans start with `ynn 1` and
+remain internal/diagnostic artifacts. See [authoring](docs/AUTHORING.md),
 [runtime preparation](docs/RUNTIME_PREPARATION.md), and
 [diagnostic plan tools](docs/PLAN_TEXT.md).
 

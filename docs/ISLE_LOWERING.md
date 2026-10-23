@@ -115,7 +115,8 @@ For differential checking against a saved compiler:
 ```sh
 python3 tools/compare_compilers.py \
   --baseline /path/to/saved/ynn-compile --candidate build/ynn-compile \
-  --fixtures tests/compiler/fixtures --output out/compiler-comparison
+  --fixtures tests/compiler/fixtures --output out/compiler-comparison \
+  --program-tool build/ynn-program
 ```
 
 Use repeated `--program` arguments for model programs. Comparison includes every

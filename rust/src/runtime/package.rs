@@ -26,16 +26,18 @@ impl ModelPackage {
         let metadata: serde_json::Value =
             serde_json::from_slice(&read(&root.join("model.json"), 16 << 20)?)?;
         let identity = &metadata["package"];
-        if identity["format"] != "ynn-semantic-package" || identity["version"] != 1 {
-            return Err(Error::invalid("Expected a semantic package; regenerate this model with program.json and execution.json. Offline .ynn loading is retired."));
+        if identity["format"] != "ynn-semantic-package" || identity["version"] != 2 {
+            return Err(Error::invalid("Expected semantic package version 2 with program.ynn and execution.json; regenerate this model."));
         }
         let mut files = Vec::new();
-        for (name, limit) in [("program.json", 128 << 20), ("execution.json", 16 << 20)] {
-            let file = identity[name]["file"].as_str().unwrap_or(name);
-            if file != name && !(name == "program.json" && file == "program.json.gz") {
+        for (name, limit) in [
+            ("program.ynn", crate::program_text::MAX_TEXT as u64),
+            ("execution.json", 16 << 20),
+        ] {
+            if identity[name]["file"].as_str().unwrap_or(name) != name {
                 return Err(Error::invalid("Invalid semantic artifact filename"));
             }
-            let bytes = read(&root.join(file), limit)?;
+            let bytes = read(&root.join(name), limit)?;
             if identity[name]["sha256"].as_str()
                 != Some(format!("{:x}", Sha256::digest(&bytes)).as_str())
                 || identity[name]["bytes"].as_u64() != Some(bytes.len() as u64)
@@ -44,23 +46,18 @@ impl ModelPackage {
                     "Semantic artifact identity mismatch: {name}"
                 )));
             }
-            if file.ends_with(".gz") {
-                use std::io::Read;
-                let mut decoder = flate2::bufread::GzDecoder::new(bytes.as_slice());
-                let mut decoded = Vec::new();
-                decoder.by_ref().take(limit + 1).read_to_end(&mut decoded)?;
-                if decoded.len() as u64 > limit || !decoder.into_inner().is_empty() {
-                    return Err(Error::invalid(
-                        "Oversized or trailing compressed semantic data",
-                    ));
-                }
-                files.push(decoded);
-            } else {
-                files.push(bytes);
-            }
+            files.push(bytes);
         }
+        let source = std::str::from_utf8(&files[0])
+            .map_err(|_| Error::invalid("Semantic source is not UTF-8"))?;
+        let program = crate::program_text::decode(source, |hash, bytes| {
+            read(
+                &root.join("program-data").join(format!("{hash}.bin")),
+                bytes as u64,
+            )
+        })?;
         Ok(Self {
-            program: serde_json::from_slice(&files[0])?,
+            program,
             execution: serde_json::from_slice(&files[1])?,
             metadata,
         })

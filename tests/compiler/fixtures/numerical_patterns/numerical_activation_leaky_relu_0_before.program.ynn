@@ -1,0 +1,13 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    const "alpha": f32[] floats [real(0.20000000298023224)];
+    value "negative": f32[2, 3];
+    value "x": f32[2, 3];
+    value "y": f32[2, 3];
+    inputs ("x");
+    outputs ("y");
+    node mul ("x", "alpha") -> ("negative") scope "Compute";
+    node maximum ("negative", "x") -> ("y") scope "Compute";
+  }
+}

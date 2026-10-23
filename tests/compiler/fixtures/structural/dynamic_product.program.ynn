@@ -1,0 +1,13 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    symbol {binding: {axis: 0, source: "axis", value: "x"}, id: 1, lower: 1, upper: 6};
+    guard {lhs: known(1), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(6)};
+    value "x": f32[s1, 4];
+    value "y": f32[add(0, mul(4, s1))];
+    inputs ("x");
+    outputs ("y");
+    node reshape ("x") -> ("y") attrs {shape: [add([known(0), mul([known(4), symbol(1)])])]} scope "Compute";
+  }
+}

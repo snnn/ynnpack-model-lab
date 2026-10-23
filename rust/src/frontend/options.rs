@@ -90,7 +90,7 @@ HF packages: replace --bundle_dir with --hf_model_dir=DIR --asset_manifest=FILE 
                 );
                 if require_model {
                     println!(
-                        "Model package: --model_dir=DIR (program.json, execution.json and model.json)\n\
+                        "Model package: --model_dir=DIR (program.ynn, execution.json and model.json)\n\
 Diagnostics: --trace_plan=DIR (changes graph outputs; do not use for performance measurements)"
                     );
                 }

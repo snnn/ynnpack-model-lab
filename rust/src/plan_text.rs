@@ -12,7 +12,7 @@ mod compare;
 mod cpp;
 pub use compare::compare;
 pub(crate) use intern::intern;
-mod lexer;
+pub(crate) mod lexer;
 mod parser;
 mod printer;
 mod resolve;
@@ -21,12 +21,12 @@ mod schema;
 mod tests;
 
 #[derive(Clone, Copy, Debug)]
-struct Span {
-    start: usize,
-    end: usize,
+pub(crate) struct Span {
+    pub(crate) start: usize,
+    pub(crate) end: usize,
 }
 
-fn diagnostic(source: &str, span: Span, message: impl std::fmt::Display) -> Error {
+pub(crate) fn diagnostic(source: &str, span: Span, message: impl std::fmt::Display) -> Error {
     // Synthetic invocations used to validate a closed function can carry spans
     // from a temporary document. Never let an error-reporting path panic.
     let mut offset = span.start.min(source.len());

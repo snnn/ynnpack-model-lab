@@ -86,5 +86,5 @@
       }
     }
   ],
-  "program": "numerical_activation_leaky_relu_1_before.program.json"
+  "program": "numerical_activation_leaky_relu_1_before.program.ynn"
 }

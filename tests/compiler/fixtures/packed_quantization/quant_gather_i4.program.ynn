@@ -1,0 +1,28 @@
+ynn_program 1 {
+  quant q0 {axis: -1, parameters: {axes: [0], blocks: [1], scales: "__quant/0/parameter", zeros: "__quant/0/parameter_"}};
+  quant q1 {axis: 0, scales: [real(0.25), real(0.5), real(2.0)], zeros: [0, -1, 1]};
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    symbol {binding: {axis: 0, source: "axis", value: "indices"}, id: 1, lower: 0, upper: 13};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(13)};
+    value "__quant/0/codes": i4[3, 5];
+    value "__quant/0/parameter": f32[s1];
+    value "__quant/0/parameter_": i32[s1];
+    value "__quant/0/routed_codes": i4[s1, 5];
+    const "__quant/0/scale": f32[3] floats [real(0.25), real(0.5), real(2.0)];
+    const "__quant/0/zero": i32[3] integers [0, -1, 1];
+    value "indices": i32[s1];
+    value "q": i4[s1, 5] quant q0;
+    value "x": i4[3, 5] quant q1;
+    value "y": f32[s1, 5];
+    inputs ("x", "indices");
+    outputs ("q", "y");
+    node quantization_codes ("x") -> ("__quant/0/codes") scope "Compute";
+    node gather ("__quant/0/codes", "indices") -> ("__quant/0/routed_codes") scope "Compute";
+    node gather ("__quant/0/scale", "indices") -> ("__quant/0/parameter") scope "Compute";
+    node gather ("__quant/0/zero", "indices") -> ("__quant/0/parameter_") scope "Compute";
+    node with_quantization ("__quant/0/routed_codes", "__quant/0/parameter", "__quant/0/parameter_") -> ("q") attrs {axes: [0], integers: [1]} scope "Compute";
+    node dequantize ("q") -> ("y") attrs {result_dtype: "f32"} scope "Compute";
+  }
+}

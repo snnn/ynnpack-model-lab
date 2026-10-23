@@ -141,38 +141,34 @@ pub(crate) fn preparation() -> Result<()> {
     drop(tensors);
     assert_eq!(live(), baseline);
 
-    // Both stored representations carry an identity. A valid compressed member
-    // followed by another member or junk must not hide unvalidated content.
-    use std::io::Write;
-    let bytes = serde_json::to_vec(&program)?;
+    // Sealed DSL is the only deployment representation. Source and execution
+    // corruption fail before native construction; legacy JSON is rejected.
+    let encoded = crate::program_text::encode(&program)?;
+    let bytes = encoded.text.as_bytes();
+    assert!(encoded.blobs.is_empty());
     let execution = b"{}";
     std::fs::write(root.join("execution.json"), execution)?;
-    let write_package = |file: &str, stored: &[u8]| -> Result<()> {
-        std::fs::write(root.join(file), stored)?;
+    let write_package = |version: u32, stored: &[u8]| -> Result<()> {
+        std::fs::write(root.join("program.ynn"), stored)?;
         std::fs::write(root.join("model.json"), serde_json::to_vec(&serde_json::json!({
-            "package": {"format":"ynn-semantic-package", "version":1,
-                "program.json":{"file":file,"bytes":stored.len(),"sha256":format!("{:x}",Sha256::digest(stored))},
+            "package": {"format":"ynn-semantic-package", "version":version,
+                "program.ynn":{"bytes":stored.len(),"sha256":format!("{:x}",Sha256::digest(stored))},
                 "execution.json":{"bytes":execution.len(),"sha256":format!("{:x}",Sha256::digest(execution))}}
         }))?)?;
         Ok(())
     };
-    write_package("program.json", &bytes)?;
-    assert_eq!(package::ModelPackage::read(&root)?.program.phases.len(), 2);
-    let mut encoder = flate2::write::GzEncoder::new(Vec::new(), flate2::Compression::default());
-    encoder.write_all(&bytes)?;
-    let compressed = encoder.finish()?;
-    write_package("program.json.gz", &compressed)?;
+    write_package(2, bytes)?;
     assert_eq!(package::ModelPackage::read(&root)?.program.phases.len(), 2);
     std::fs::write(root.join("execution.json"), b"[]")?;
     assert!(package::ModelPackage::read(&root).is_err());
     std::fs::write(root.join("execution.json"), execution)?;
-    let mut trailing = compressed.clone();
-    trailing.extend_from_slice(&compressed);
-    write_package("program.json.gz", &trailing)?;
+    std::fs::write(root.join("program.ynn"), b"changed")?;
     assert!(package::ModelPackage::read(&root).is_err());
-    write_package("program.json.gz", &compressed[..compressed.len()-4])?;
+    write_package(1, &serde_json::to_vec(&program)?)?;
     assert!(package::ModelPackage::read(&root).is_err());
-    for file in ["program.json", "program.json.gz", "execution.json", "model.json"] {
+    write_package(2, &serde_json::to_vec(&program)?)?;
+    assert!(package::ModelPackage::read(&root).is_err());
+    for file in ["program.ynn", "execution.json", "model.json"] {
         std::fs::remove_file(root.join(file))?;
     }
 

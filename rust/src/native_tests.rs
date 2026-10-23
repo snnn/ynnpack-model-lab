@@ -319,7 +319,7 @@ fn state_checks(capacity: usize, threads: usize, plans: &Path) -> Result<()> {
 }
 
 fn prepare_fixture(root: &Path, name: &str, threads: usize) -> Result<ffi::PreparedGraph> {
-    let program = serde_json::from_slice(&std::fs::read(root.join(format!("{name}.program.json")))?)?;
+    let program = crate::program_text::read(&root.join(format!("{name}.program.ynn")))?;
     let mut prepared = crate::runtime::prepare(&program,
         crate::runtime::AssetStore::open(Path::new(""), &root.join("parameters"))?,
         crate::runtime::PrepareOptions { threads, ..Default::default() })?;

@@ -58,7 +58,7 @@ build/ynn-llm --qwen-assets=out/qwen-assets/assets.json \
   --output_dir=out/qwen-runtime --warmup_runs=1 --measured_runs=3
 ```
 
-For a serialized semantic input, substitute `--program=program.json` and
+For a serialized semantic input, substitute `--program=program.ynn` and
 `--execution=execution.json`. The latter defaults to a sibling `execution.json`.
 Choose one input mode: `--program` (with its execution contract), `--qwen-assets`,
 or `--model_dir`.

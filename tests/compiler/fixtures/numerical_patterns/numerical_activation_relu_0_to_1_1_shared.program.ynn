@@ -1,0 +1,13 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "cap": f32[2, 3];
+    const "one": f32[] floats [real(1.0)];
+    value "x": f32[2, 3];
+    value "y": f32[2, 3];
+    inputs ("x");
+    outputs ("y", "cap");
+    node minimum ("x", "one") -> ("cap") scope "Compute";
+    node relu_0_to_1 ("x") -> ("y") attrs {beta: real(0.0)} scope "Compute";
+  }
+}

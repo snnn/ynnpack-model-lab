@@ -1,0 +1,16 @@
+ynn_program 1 {
+  phase "model" {
+    value "beta": f32[2, 7, 4];
+    value "g": f32[2, 7, 4];
+    value "k": f32[2, 7, 2, 5];
+    value "next_state": f32[2, 4, 5, 3];
+    value "output": f32[2, 7, 4, 3];
+    value "q": f32[2, 7, 2, 5];
+    value "state": f32[2, 4, 5, 3];
+    value "v": f32[2, 7, 4, 3];
+    value "valid": i32[];
+    inputs ("q", "k", "v", "g", "beta", "state", "valid");
+    outputs ("output", "next_state");
+    node gated_delta_rule ("q", "k", "v", "g", "beta", "state", "valid") -> ("output", "next_state") attrs {beta: real(0.4472135954999579), integers: [1, 0, 1, 0]} scope "Compute";
+  }
+}

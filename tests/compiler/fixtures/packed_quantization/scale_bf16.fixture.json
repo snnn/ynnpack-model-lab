@@ -62,5 +62,5 @@
       }
     }
   ],
-  "program": "scale_bf16.program.json"
+  "program": "scale_bf16.program.ynn"
 }

@@ -24,7 +24,7 @@ build/ynn-plan check tests/rust/square.ynn
 build/ynn-plan check tests/rust/kv_append.ynn
 build/ynn-plan format tests/rust/square.ynn -o out/plan-text/square.ynn
 build/ynn-plan inspect tests/rust/kv_append.ynn -o out/plan-text/state-report.json
-build/ynn-compile --request program.json --output out/diagnostic-plans
+build/ynn-compile --request program.ynn --output out/diagnostic-plans
 build/ynn-plan expand out/diagnostic-plans/decode.ynn -o out/plan-text/decode-flat.ynn
 build/ynn-plan check tests/generated/c2048_h2_w512_q8.ynn
 build/ynn-plan check out/diagnostic-plans/decode.ynn

@@ -151,7 +151,7 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         append_regions: BTreeMap::new(),
     };
     let setup_ms: BTreeMap<String, [f64;2]> = BTreeMap::new();
-    let program: crate::compiler::Program = serde_json::from_slice(&std::fs::read(root.join(&fixture.program))?)?;
+    let program: crate::compiler::Program = crate::program_text::read(&root.join(&fixture.program))?;
     let prepared = crate::runtime::prepare(program, crate::runtime::AssetStore { assets },
         crate::runtime::PrepareOptions { threads: fixture.threads,
             profile_execution: if fixture.profile { "all" } else { "none" },

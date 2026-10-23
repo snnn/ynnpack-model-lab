@@ -1,0 +1,13 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "positive": f32[2, 3];
+    value "x": f32[2, 3];
+    value "y": f32[2, 3];
+    const "zero": f32[] data {bytes: 4, path: "@parameters/df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119.bin", sha256: "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"} floats [real(0.0)];
+    inputs ("x");
+    outputs ("y", "positive");
+    node maximum ("x", "zero") -> ("positive") attrs {result_dtype: "f32"} scope "Compute";
+    node relu6 ("x") -> ("y") attrs {result_dtype: "f32"} scope "Compute";
+  }
+}

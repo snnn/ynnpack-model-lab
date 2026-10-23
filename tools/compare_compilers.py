@@ -25,18 +25,24 @@ def main():
     parser.add_argument('--program', type=Path, action='append', default=[])
     parser.add_argument('--fixtures', type=Path)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--program-tool', type=Path, help='Export a temporary JSON bridge for a pre-DSL baseline compiler')
     args = parser.parse_args()
-    programs = args.program + (sorted(args.fixtures.rglob('*.program.json')) if args.fixtures else [])
+    programs = args.program + (sorted(args.fixtures.rglob('*.program.ynn')) if args.fixtures else [])
     if not programs:
         parser.error('provide --program or --fixtures')
     args.output.mkdir(parents=True, exist_ok=False)
     results = []
     for i, program in enumerate(programs):
         outputs = []
+        bridge = None
+        if args.program_tool:
+            bridge = args.output / f'{i}.projection.json'
+            with bridge.open('wb') as stream:
+                subprocess.run([str(args.program_tool.resolve()), 'to-json', str(program.resolve())], stdout=stream, check=True)
         for label, binary in [('baseline', args.baseline), ('candidate', args.candidate)]:
             out = args.output / str(i) / label
             out.parent.mkdir(parents=True, exist_ok=True)
-            run = subprocess.run([str(binary.resolve()), '--request', str(program.resolve()),
+            run = subprocess.run([str(binary.resolve()), '--request', str(bridge.resolve() if label == 'baseline' and bridge else program.resolve()),
                                   '--output', str(out)], text=True, capture_output=True)
             (out.parent / (label + '.log')).write_text(run.stdout + run.stderr)
             if run.returncode:

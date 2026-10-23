@@ -66,5 +66,5 @@
       }
     }
   ],
-  "program": "numerical_activation_elu_0_shared.program.json"
+  "program": "numerical_activation_elu_0_shared.program.ynn"
 }

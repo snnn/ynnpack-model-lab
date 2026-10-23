@@ -27,6 +27,7 @@ def main():
     plans = sorted((ROOT / 'models').rglob('*.ynn'))
     plans += sorted((ROOT / 'tests/generated').glob('*.ynn'))
     plans += sorted((ROOT / 'tests/rust').glob('*.ynn'))
+    plans = [p for p in plans if not p.name.endswith('.program.ynn') and p.name != 'program.ynn']
     with tempfile.TemporaryDirectory(prefix='ynn-plan-text-') as temporary:
         tmp = Path(temporary)
         rebuilt = {}
@@ -55,10 +56,13 @@ def main():
                 if original.parent == ROOT / 'tests' / subdir:
                     shutil.copyfile(artifact, tmp / subdir / original.name)
         shutil.copytree(ROOT / 'tests/generated/parameters', tmp / 'generated/parameters')
-        for source in (ROOT / 'tests/generated').glob('*.program.json'):
+        for source in (ROOT / 'tests/generated').glob('*.program.ynn'):
             shutil.copyfile(source, tmp / 'generated' / source.name)
-        for name in ['model.json', 'program.json', 'execution.json']:
+        for name in ['model.json', 'program.ynn', 'execution.json']:
             shutil.copyfile(ROOT / 'tests/rust' / name, tmp / 'rust' / name)
+        for subdir in ['rust', 'generated']:
+            numeric = ROOT / 'tests' / subdir / 'program-data'
+            if numeric.exists():shutil.copytree(numeric, tmp / subdir / 'program-data')
         result = run(args.state_runner, tmp / 'rust')
         assert 'Rust/native ownership and arithmetic checks passed' in result.stdout
         print('Prepared semantic programs pass the square and all nine native state oracles at one/four threads')

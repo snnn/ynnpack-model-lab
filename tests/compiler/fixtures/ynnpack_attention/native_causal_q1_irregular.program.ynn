@@ -1,0 +1,12 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "k": f32[1, 2, 7, 16];
+    value "q": f32[1, 4, 1, 16];
+    value "v": f32[1, 2, 7, 8];
+    value "y": f32[1, 4, 1, 8];
+    inputs ("q", "k", "v");
+    outputs ("y");
+    node sdpa ("q", "k", "v") -> ("y") attrs {attention: {all_masked_nan: true, causal: true, fp32: true, heads: [1, 0, 1, 0], key_length: null, key_position: known(0), mask: 0, masked_nonfinite: true, query_length: null, query_position: known(3), reassociate: true, reorder_reduction: true, scale: real(0.25), window: 0}} scope "Compute";
+  }
+}

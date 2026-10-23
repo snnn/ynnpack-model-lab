@@ -19,6 +19,7 @@ mod frontend;
 mod io;
 mod plan;
 pub mod compiler;
+pub mod program_text;
 pub mod runtime;
 pub mod plan_text;
 #[cfg(all(feature = "vision", feature = "gemma"))]

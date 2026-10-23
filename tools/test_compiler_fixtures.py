@@ -25,9 +25,11 @@ def validate(source, destination, compiler, runner, known_failures=False, packag
         fixture = json.loads((destination / (name + '.fixture.json')).read_text())
         with tempfile.TemporaryDirectory(dir=destination) as temporary:
             compiled = Path(temporary) / 'compiled'
-            subprocess.run([str(compiler), '--request', str(destination / (name + '.program.json')),
+            subprocess.run([str(compiler), '--request', str(destination / (name + '.program.ynn')),
                             '--output', str(compiled)], check=True, stdout=subprocess.DEVNULL)
             if package_reference is not None:
+                # Historical labels identify frozen native outputs, not the
+                # current source encoding. Do not regenerate these fingerprints.
                 key = source.name + '/' + name + '.program.json'
                 expected = package_reference[key]
                 actual = files(compiled)
@@ -36,7 +38,7 @@ def validate(source, destination, compiler, runner, known_failures=False, packag
                                        if actual.get(k) != expected.get(k))
                     raise AssertionError(f'{key}: changed package files: {different}')
         fixture.pop('graphs', None)
-        fixture['program'] = name + '.program.json'
+        fixture['program'] = name + '.program.ynn'
         (destination / (name + '.fixture.json')).write_text(json.dumps(fixture) + '\n')
     return run(destination, runner, known_failures=known_failures)
 

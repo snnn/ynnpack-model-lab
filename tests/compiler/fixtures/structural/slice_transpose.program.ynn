@@ -1,0 +1,12 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "a": f32[2, 2, 2];
+    value "x": f32[2, 3, 4];
+    value "y": f32[2, 2, 2];
+    inputs ("x");
+    outputs ("y");
+    node slice ("x") -> ("a") attrs {lengths: [known(2), known(2), known(2)], starts: [known(0), known(1), known(1)]} scope "Compute";
+    node transpose ("a") -> ("y") attrs {integers: [2, 0, 1]} scope "Compute";
+  }
+}

@@ -1285,11 +1285,11 @@
   },
   "package": {
     "format": "ynn-semantic-package",
-    "version": 1,
-    "program.json": {
-      "file": "program.json.gz",
-      "bytes": 57585,
-      "sha256": "6029da27552affcd6ccab7c1b41dbe68a1065e7c94fcb42f91d564e21ce57e4d"
+    "version": 2,
+    "program.ynn": {
+      "file": "program.ynn",
+      "bytes": 183643,
+      "sha256": "0e4559def3307deaa4bb4c83ed2d5ab66c79102a016cc904ca20ef59dcc2185f"
     },
     "execution.json": {
       "file": "execution.json",

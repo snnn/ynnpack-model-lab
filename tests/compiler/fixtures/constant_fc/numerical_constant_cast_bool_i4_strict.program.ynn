@@ -1,0 +1,10 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    const "a": bool[2, 3] data {bytes: 6, path: "@parameters/720f38c53dc2c0bd04f77ab4f1e2876b59a4c2db97c8fb75758818b6d73919b5.bin", sha256: "720f38c53dc2c0bd04f77ab4f1e2876b59a4c2db97c8fb75758818b6d73919b5"};
+    value "y": i32[2, 3];
+    inputs ();
+    outputs ("y", "a");
+    node cast ("a") -> ("y") attrs {result_dtype: "i32"} scope "Compute";
+  }
+}

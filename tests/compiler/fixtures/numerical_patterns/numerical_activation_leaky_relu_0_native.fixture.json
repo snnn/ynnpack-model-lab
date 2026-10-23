@@ -66,5 +66,5 @@
       }
     }
   ],
-  "program": "numerical_activation_leaky_relu_0_native.program.json"
+  "program": "numerical_activation_leaky_relu_0_native.program.ynn"
 }

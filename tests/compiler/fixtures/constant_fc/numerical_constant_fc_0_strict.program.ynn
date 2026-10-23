@@ -1,0 +1,12 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    const "w": f32[2, 3] data {bytes: 24, path: "@parameters/a8c89550c4e88be32be648ba5ad0f7a3aa5595ef1fe4f8908ed19e9b35b2a29a.bin", sha256: "a8c89550c4e88be32be648ba5ad0f7a3aa5595ef1fe4f8908ed19e9b35b2a29a"} floats [real(0.5), real(-1.0), real(2.0), real(2.0), real(0.0), real(0.5)];
+    const "weight_alias": f32[2, 3] data {bytes: 24, path: "@parameters/a8c89550c4e88be32be648ba5ad0f7a3aa5595ef1fe4f8908ed19e9b35b2a29a.bin", sha256: "a8c89550c4e88be32be648ba5ad0f7a3aa5595ef1fe4f8908ed19e9b35b2a29a"} floats [real(0.5), real(-1.0), real(2.0), real(2.0), real(0.0), real(0.5)];
+    const "x": f32[1, 2, 3] data {bytes: 24, path: "@parameters/18a3e73bf2554f1e2cd77b5313c530e026cd44a6565c21ef075a8055bf9329dd.bin", sha256: "18a3e73bf2554f1e2cd77b5313c530e026cd44a6565c21ef075a8055bf9329dd"} floats [real(-1.0), real(2.0), real(-3.0), real(4.0), real(-5.0), real(6.0)];
+    value "y": f32[1, 2, 2];
+    inputs ();
+    outputs ("y", "w", "weight_alias");
+    node fully_connected ("x", "w") -> ("y") attrs {result_dtype: "f32"} scope "Compute";
+  }
+}

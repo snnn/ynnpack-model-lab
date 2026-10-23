@@ -13,7 +13,7 @@ from tools.safetensors import Checkpoint
 
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'python'))
-from ynnpack_assets.artifacts import read_program, _assets
+from ynnpack_assets.artifacts import inspect_program
 
 
 class SafetensorsTest(unittest.TestCase):
@@ -32,7 +32,7 @@ class SafetensorsTest(unittest.TestCase):
                         name,
                     )
                 references = set()
-                for data in _assets(read_program(path.parent)):
+                for data in inspect_program(path.parent/'program.ynn')['source_assets']:
                     if data['path'].startswith('@parameters/'):
                         name = data['path'].removeprefix('@parameters/')
                         references.add(name)

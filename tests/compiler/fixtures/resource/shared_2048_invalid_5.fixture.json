@@ -81,5 +81,5 @@
       "expect_unchanged": true
     }
   ],
-  "program": "shared_2048_invalid_5.program.json"
+  "program": "shared_2048_invalid_5.program.ynn"
 }

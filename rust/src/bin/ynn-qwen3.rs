@@ -63,14 +63,14 @@ fn run() -> Result<()> {
         counts += 1;
     }
     let execution = assets.execution(&program, capacity, rows)?;
-    let program = serde_json::to_vec(&program)?;
+    ynnpack_lab::program_text::write(&stage.join("program.ynn"), &program)?;
+    let program = std::fs::read(stage.join("program.ynn"))?;
     let execution = serde_json::to_vec(&execution)?;
-    std::fs::write(stage.join("program.json"), &program)?;
     std::fs::write(stage.join("execution.json"), &execution)?;
     std::fs::write(stage.join("model.json"), serde_json::to_vec_pretty(&json!({
         "format":"qwen3-rust-author", "recipe":assets.recipe,
-        "package":{"format":"ynn-semantic-package","version":1,
-            "program.json":{"bytes":program.len(),"sha256":format!("{:x}",Sha256::digest(&program))},
+        "package":{"format":"ynn-semantic-package","version":2,
+            "program.ynn":{"bytes":program.len(),"sha256":format!("{:x}",Sha256::digest(&program))},
             "execution.json":{"bytes":execution.len(),"sha256":format!("{:x}",Sha256::digest(&execution))}}
     }))?)?;
     let tokenizer = base.join("tokenizer");

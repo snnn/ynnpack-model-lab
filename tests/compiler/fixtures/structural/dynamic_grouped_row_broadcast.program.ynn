@@ -1,0 +1,20 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    symbol {binding: {axis: 0, source: "axis", value: "x"}, id: 1, lower: 1, upper: 4};
+    guard {lhs: known(1), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(4)};
+    guard {lhs: symbol(1), mode: "ordinary", reason: "slice bounds", relation: "le", rhs: symbol(1)};
+    value "broadcast_table": f32[s1, 1, 4];
+    value "heads": f32[s1, 2, 4];
+    value "table": f32[s1, 4];
+    value "x": f32[s1, 8];
+    value "y": f32[s1, 2, 4];
+    inputs ("x");
+    outputs ("y");
+    node reshape ("x") -> ("heads") attrs {shape: [symbol(1), known(2), known(4)]} scope "Compute";
+    node slice ("x") -> ("table") attrs {lengths: [symbol(1), known(4)], starts: [known(0), known(0)]} scope "Compute";
+    node reshape ("table") -> ("broadcast_table") attrs {shape: [symbol(1), known(1), known(4)]} scope "Compute";
+    node mul ("heads", "broadcast_table") -> ("y") scope "Compute";
+  }
+}

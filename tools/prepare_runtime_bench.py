@@ -11,10 +11,13 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import sys
 
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'python'))
+from ynnpack_assets.artifacts import program_tool, write_program
 
 
 def main():
@@ -27,7 +30,7 @@ def main():
     out.mkdir(parents=True, exist_ok=False)
     parameters = out / 'parameters'
     parameters.mkdir()
-    template = json.loads((ROOT / 'tests/compiler/fixtures/blockwise_fc/blockwise_7_64.program.json').read_text())
+    template = json.loads(subprocess.check_output([program_tool(), 'to-json', str(ROOT / 'tests/compiler/fixtures/blockwise_fc/blockwise_7_64.program.ynn')], text=True))
     program = dict(version=1, options=template['options'], phases={})
 
     def asset(data):
@@ -63,9 +66,10 @@ def main():
             steps.append(dict(graph=name, bindings=[dict(name='x', shape=[rows,k], bytes=x.nbytes, file=input_file),
                 dict(name='y', shape=[], bytes=rows*n*4)], warmup_runs=1, measured_runs=3))
             manifest.append(dict(phase=name, n=n, k=k, rows=rows))
-    (out / 'program.json').write_text(json.dumps(program) + '\n')
+    write_program(program, out / 'program.ynn')
     if args.baseline_compiler:
-        subprocess.run([str(args.baseline_compiler.resolve()), '--request', str(out / 'program.json'),
+        (out / 'projection.json').write_text(json.dumps(program) + '\n')
+        subprocess.run([str(args.baseline_compiler.resolve()), '--request', str(out / 'projection.json'),
                         '--output', str(out / 'compiled')], check=True, stdout=subprocess.DEVNULL)
         for path in (out / 'compiled').glob('*.ynn'):
             path.rename(out / path.name)
@@ -81,7 +85,7 @@ def main():
         for mode in (['runtime', 'offline'] if args.baseline_compiler else ['runtime']):
             item = copy.deepcopy(fixture)
             if mode == 'runtime':
-                item['program'] = 'program.json'
+                item['program'] = 'program.ynn'
             else:
                 item['graphs'] = graphs
             (out / f'{mode}-t{threads}.json').write_text(json.dumps(item) + '\n')

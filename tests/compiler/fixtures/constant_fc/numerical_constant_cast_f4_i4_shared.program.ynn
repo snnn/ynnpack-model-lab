@@ -1,0 +1,9 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    const "a": f32[2, 3] data {bytes: 24, path: "@parameters/7d145ac0239b3a8b49e7655bba55b8c968ba1c22be8a3d3546b3d22c05bc1957.bin", sha256: "7d145ac0239b3a8b49e7655bba55b8c968ba1c22be8a3d3546b3d22c05bc1957"} floats [real(-3.0), real(0.0), real(2.0), real(7.0), real(-1.0), real(1.0)];
+    const "y": i32[2, 3] data {bytes: 24, path: "@parameters/daee3984e6735e77e2449c006cf9373c82164b5b48775f6b50f944dcf5efc81b.bin", sha256: "daee3984e6735e77e2449c006cf9373c82164b5b48775f6b50f944dcf5efc81b"} integers [-3, 0, 2, 7, -1, 1];
+    inputs ();
+    outputs ("y", "a");
+  }
+}

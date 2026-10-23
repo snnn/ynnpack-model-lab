@@ -1,0 +1,17 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    const "coefficient": f32[] data {bytes: 4, path: "@parameters/ac360a3243369e56d750bc267781e455e3f11dc14b900b0a6e639eda5ce1b4df.bin", sha256: "ac360a3243369e56d750bc267781e455e3f11dc14b900b0a6e639eda5ce1b4df"} floats [real(0.044714998453855515)];
+    value "cube": f32[2, 3];
+    value "square": f32[2, 3];
+    value "term": f32[2, 3];
+    value "x": f32[2, 3];
+    value "y": f32[2, 3];
+    inputs ("x");
+    outputs ("y", "term");
+    node square ("x") -> ("square") attrs {result_dtype: "f32"} scope "Compute";
+    node mul ("x", "square") -> ("cube") attrs {result_dtype: "f32"} scope "Compute";
+    node mul ("cube", "coefficient") -> ("term") attrs {result_dtype: "f32"} scope "Compute";
+    node gelu ("x") -> ("y") attrs {approximate: true, result_dtype: "f32"} scope "Compute";
+  }
+}

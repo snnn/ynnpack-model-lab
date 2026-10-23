@@ -1,0 +1,10 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    const "w": f32[2, 3] data {bytes: 24, path: "@parameters/a8c89550c4e88be32be648ba5ad0f7a3aa5595ef1fe4f8908ed19e9b35b2a29a.bin", sha256: "a8c89550c4e88be32be648ba5ad0f7a3aa5595ef1fe4f8908ed19e9b35b2a29a"} floats [real(0.5), real(-1.0), real(2.0), real(2.0), real(0.0), real(0.5)];
+    const "weight_alias": f32[2, 3] data {bytes: 24, path: "@parameters/a8c89550c4e88be32be648ba5ad0f7a3aa5595ef1fe4f8908ed19e9b35b2a29a.bin", sha256: "a8c89550c4e88be32be648ba5ad0f7a3aa5595ef1fe4f8908ed19e9b35b2a29a"} floats [real(0.5), real(-1.0), real(2.0), real(2.0), real(0.0), real(0.5)];
+    const "y": f32[1, 2, 2] data {bytes: 16, path: "@parameters/44810830bd2cd34a21e4c57e7b21bc232b37796184f968140a2e156fb47906e9.bin", sha256: "44810830bd2cd34a21e4c57e7b21bc232b37796184f968140a2e156fb47906e9"} floats [real(-8.5), real(-3.5), real(19.0), real(11.0)];
+    inputs ();
+    outputs ("y", "w", "weight_alias");
+  }
+}

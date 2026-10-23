@@ -3,11 +3,11 @@
     "package": "models/gemma4_e2b/attention/fp32_rows",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 23130231,
-        "sha256": "5ad9493caa89a7f066a565e41c72284c1173e0d87a3dce5ba5cb3b4156bfe214"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 1490920,
+        "sha256": "01becf121cb3635923feed4d661244a7131bc39139b931fc46fa4f1aaa192227"
       },
       "execution.json": {
         "file": "execution.json",
@@ -26,17 +26,30 @@
         "bytes": 931897,
         "git_blob": "00ee777679b72db7bdc9d335c4c8dac9ee75ea53"
       }
+    ],
+    "semantic_sha256": "cbd905e3ef4e5af503dc7f2f49d5b1a81b41b1e4536c2c9e74bcb1c1c32b84ba",
+    "numeric_files": [
+      {
+        "bytes": 1310720,
+        "path": "program-data/2bc6dbb3b8bc7c6762907b032ebc0a4c11f2e77dfb2f8a3bcaa705579442764e.bin",
+        "sha256": "2bc6dbb3b8bc7c6762907b032ebc0a4c11f2e77dfb2f8a3bcaa705579442764e"
+      },
+      {
+        "bytes": 8388608,
+        "path": "program-data/8a16e577f17ecf6098db8b691a70d7910092265f61842b3c676fb1a2a2b398f6.bin",
+        "sha256": "8a16e577f17ecf6098db8b691a70d7910092265f61842b3c676fb1a2a2b398f6"
+      }
     ]
   },
   {
     "package": "models/gemma4_e2b/attention/int8_batch",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 23129312,
-        "sha256": "a458d688f68a00a82861e1f9ee02dc977c0b4120164d480f9eb6ee0aebddd73d"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 1478695,
+        "sha256": "f08ad834b9ce146e1ae5d61dacbcd3ef8b2e5cc6c1675287b2cb09cc0f3f7f98"
       },
       "execution.json": {
         "file": "execution.json",
@@ -55,17 +68,30 @@
         "bytes": 931897,
         "git_blob": "00ee777679b72db7bdc9d335c4c8dac9ee75ea53"
       }
+    ],
+    "semantic_sha256": "7d23bf9dc6a74cc00e737d0c31624397d80d46075e5186428fb1393f72a77a97",
+    "numeric_files": [
+      {
+        "bytes": 1310720,
+        "path": "program-data/2bc6dbb3b8bc7c6762907b032ebc0a4c11f2e77dfb2f8a3bcaa705579442764e.bin",
+        "sha256": "2bc6dbb3b8bc7c6762907b032ebc0a4c11f2e77dfb2f8a3bcaa705579442764e"
+      },
+      {
+        "bytes": 8388608,
+        "path": "program-data/8a16e577f17ecf6098db8b691a70d7910092265f61842b3c676fb1a2a2b398f6.bin",
+        "sha256": "8a16e577f17ecf6098db8b691a70d7910092265f61842b3c676fb1a2a2b398f6"
+      }
     ]
   },
   {
     "package": "models/gemma4_e2b/attention/int8_rows",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 23133419,
-        "sha256": "8889bbf937fd9c93fae5460a6bfe4a1cb7ea90e10c78fbc92351d7afedd09d40"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 1524309,
+        "sha256": "138f360deb3df6b6bd895a6de09f83b1866e03cc44f056ef6d8962246714356d"
       },
       "execution.json": {
         "file": "execution.json",
@@ -84,17 +110,30 @@
         "bytes": 931897,
         "git_blob": "00ee777679b72db7bdc9d335c4c8dac9ee75ea53"
       }
+    ],
+    "semantic_sha256": "404258af8733b780d3e9d5fd17da91ca3a9bc6dc881bd8d3d49125381b19b29e",
+    "numeric_files": [
+      {
+        "bytes": 1310720,
+        "path": "program-data/2bc6dbb3b8bc7c6762907b032ebc0a4c11f2e77dfb2f8a3bcaa705579442764e.bin",
+        "sha256": "2bc6dbb3b8bc7c6762907b032ebc0a4c11f2e77dfb2f8a3bcaa705579442764e"
+      },
+      {
+        "bytes": 8388608,
+        "path": "program-data/8a16e577f17ecf6098db8b691a70d7910092265f61842b3c676fb1a2a2b398f6.bin",
+        "sha256": "8a16e577f17ecf6098db8b691a70d7910092265f61842b3c676fb1a2a2b398f6"
+      }
     ]
   },
   {
     "package": "models/gemma4_e2b/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 23146209,
-        "sha256": "361f6ead94b5431d78ad7e32e923d468daaa2430e45aed0705be39ea5f55b364"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 1581249,
+        "sha256": "e2cb04aa176cc4bcffeaf2c52ccb8bd0447233340cc88197f34cebe0cd27a8d7"
       },
       "execution.json": {
         "file": "execution.json",
@@ -113,17 +152,30 @@
         "bytes": 874251,
         "git_blob": "42b26ef2dfb9f2b03243f4b98c55da70b00dd68b"
       }
+    ],
+    "semantic_sha256": "500ac03e6c3e31c377d8bef35fb4e9e1dffbc551e8872f0cbe5ec236f0c8ef39",
+    "numeric_files": [
+      {
+        "bytes": 1310720,
+        "path": "program-data/2bc6dbb3b8bc7c6762907b032ebc0a4c11f2e77dfb2f8a3bcaa705579442764e.bin",
+        "sha256": "2bc6dbb3b8bc7c6762907b032ebc0a4c11f2e77dfb2f8a3bcaa705579442764e"
+      },
+      {
+        "bytes": 8388608,
+        "path": "program-data/8a16e577f17ecf6098db8b691a70d7910092265f61842b3c676fb1a2a2b398f6.bin",
+        "sha256": "8a16e577f17ecf6098db8b691a70d7910092265f61842b3c676fb1a2a2b398f6"
+      }
     ]
   },
   {
     "package": "models/gemma4_e2b_hf/generated/hf_bf16",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 523517,
-        "sha256": "6e4268a387c033d6fd09e35bbea772bf291b3787969489993f08931f45e0022f"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 4024558,
+        "sha256": "1c7406a0cd26d014caebf2366a0e8a5f42a49c4eef7723f755863ad132ab3e82"
       },
       "execution.json": {
         "file": "execution.json",
@@ -142,17 +194,19 @@
         "bytes": 1577658,
         "git_blob": "e9a2392c1ef0c7e017ba090637a33125cac684ad"
       }
-    ]
+    ],
+    "semantic_sha256": "6fa67633d0ab271cdb2d6180a5f20b769f760f9b06aed679d01e3507d67f798c",
+    "numeric_files": []
   },
   {
     "package": "models/gemma4_e2b_hf/generated/hf_bf16_int8_published_kv",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 531907,
-        "sha256": "aab1e0dcf34cbbdc49209db82ca5c4ce1d8b445c4afd40a352130139fe47df2e"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 4052675,
+        "sha256": "e55ebf36eb6ea0ecdbef1475179fbd8a5fe72154a9104b33cfd3ce276fe14767"
       },
       "execution.json": {
         "file": "execution.json",
@@ -171,17 +225,19 @@
         "bytes": 1593745,
         "git_blob": "47bda9de7c7987ff5c8b42a8fde069eadeb34155"
       }
-    ]
+    ],
+    "semantic_sha256": "303d20005b0a41a4b03053591ccb310816399d9e05dae3e2d2d8f24d77fb3308",
+    "numeric_files": []
   },
   {
     "package": "models/gemma4_e2b_hf/generated/hf_bf16_int8_raw_kv",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 531906,
-        "sha256": "691bb7895b6a5c1afa9e28e44883281d72e7812d3aa62220b4a6c6f7635c8b10"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 4052671,
+        "sha256": "1be7b4a8f1301c5e647a961522688e1ce30ac65d88f3e0454a7c0593b37bd3fd"
       },
       "execution.json": {
         "file": "execution.json",
@@ -200,17 +256,19 @@
         "bytes": 1593728,
         "git_blob": "a61adf5e3c0eb1bf25e9d924fa46b07ce45adc26"
       }
-    ]
+    ],
+    "semantic_sha256": "656ddc821c1bf57de575428a9e420971d83fc315897301c030f4ce5b19dbf496",
+    "numeric_files": []
   },
   {
     "package": "models/gemma4_e2b_hf/generated/hf_fp32_int8_published_kv",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 347139,
-        "sha256": "96c101b18bfd67a2980d2c5c2c6d9b3354309e181bf2a7356742a787083ff0b3"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 2439345,
+        "sha256": "8e16586b70e1da670054949bd0e429861f20a11ce00c3067685d937525a8a469"
       },
       "execution.json": {
         "file": "execution.json",
@@ -229,17 +287,19 @@
         "bytes": 1046485,
         "git_blob": "d3dd1c7b4e27f1e29e4094f5486cb7800777c0a3"
       }
-    ]
+    ],
+    "semantic_sha256": "996a47775d7bcbf25280b59ae862b1d808e4d15c546325110c3060163bdcc1d3",
+    "numeric_files": []
   },
   {
     "package": "models/gemma4_e2b_hf/generated/hf_static_int8_published_kv",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 12588706,
-        "sha256": "cc2acc465f95e666483f461ab04213f8e569defc872b6a1b368383c52b30c67b"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 1409733,
+        "sha256": "a113d1a03f39e1ec3e5e4cc4ff499e33f751cc0161020c8f1f6ac61e0fc5ebf7"
       },
       "execution.json": {
         "file": "execution.json",
@@ -258,17 +318,30 @@
         "bytes": 921529,
         "git_blob": "2a1838b67334ef3b9b0650c822350b633a8fc814"
       }
+    ],
+    "semantic_sha256": "29aecabf71380fbc0889dfb2da5ac3b951acb43903a1051b74aeb8b51f430a15",
+    "numeric_files": [
+      {
+        "bytes": 1239040,
+        "path": "program-data/5631fe67931ccaa73b387da2ee5fe8c67b54a1a6ed2d138bfdd778523fa10fd9.bin",
+        "sha256": "5631fe67931ccaa73b387da2ee5fe8c67b54a1a6ed2d138bfdd778523fa10fd9"
+      },
+      {
+        "bytes": 8388608,
+        "path": "program-data/8a16e577f17ecf6098db8b691a70d7910092265f61842b3c676fb1a2a2b398f6.bin",
+        "sha256": "8a16e577f17ecf6098db8b691a70d7910092265f61842b3c676fb1a2a2b398f6"
+      }
     ]
   },
   {
     "package": "models/gemma4_e4b/attention/fp32_rows",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 37058343,
-        "sha256": "98b0973aafa6c6b3af227ac027069d0f4c2ba176378f2b44cdd699f4028009ae"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 2304513,
+        "sha256": "09988d3bf48a3e5e5b462c33cb540445d01c544b961e364741190af55cc2fa2b"
       },
       "execution.json": {
         "file": "execution.json",
@@ -287,17 +360,30 @@
         "bytes": 1612067,
         "git_blob": "18d332a158dbcde552acab289a9ee64b1b948805"
       }
+    ],
+    "semantic_sha256": "d4b09616024e87c6113e8972ae8afb96ffb71a6fafb31f149f4ae9ee25153562",
+    "numeric_files": [
+      {
+        "bytes": 8388608,
+        "path": "program-data/4691a37729133ba48e4430da94a9273e3abeb826742ad6df6b09827c6428bb70.bin",
+        "sha256": "4691a37729133ba48e4430da94a9273e3abeb826742ad6df6b09827c6428bb70"
+      },
+      {
+        "bytes": 4374528,
+        "path": "program-data/c22958e94562b69698a126640ac41476211d92ff5b07c453d86539b248f130db.bin",
+        "sha256": "c22958e94562b69698a126640ac41476211d92ff5b07c453d86539b248f130db"
+      }
     ]
   },
   {
     "package": "models/gemma4_e4b/attention/int8_batch",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 37053168,
-        "sha256": "2d0b51753a54df223f40405598bc5130730a772a33c5f0e4e15e566913b8adc6"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 2200464,
+        "sha256": "881dddf7804d8df6a3a57c2090a0633d97404ff4927bd1df6471605e5972d24f"
       },
       "execution.json": {
         "file": "execution.json",
@@ -316,17 +402,30 @@
         "bytes": 1612067,
         "git_blob": "18d332a158dbcde552acab289a9ee64b1b948805"
       }
+    ],
+    "semantic_sha256": "29ee53641d8e300ccdb621b7934de523600a6b7c38141a13a55b21a40d9f9001",
+    "numeric_files": [
+      {
+        "bytes": 8388608,
+        "path": "program-data/4691a37729133ba48e4430da94a9273e3abeb826742ad6df6b09827c6428bb70.bin",
+        "sha256": "4691a37729133ba48e4430da94a9273e3abeb826742ad6df6b09827c6428bb70"
+      },
+      {
+        "bytes": 4374528,
+        "path": "program-data/c22958e94562b69698a126640ac41476211d92ff5b07c453d86539b248f130db.bin",
+        "sha256": "c22958e94562b69698a126640ac41476211d92ff5b07c453d86539b248f130db"
+      }
     ]
   },
   {
     "package": "models/gemma4_e4b/attention/int8_rows",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 37061877,
-        "sha256": "7ed8f1d33e39c79952e8117c74b1a313ed67bb64ea9d8c3bf23b3d4690165d99"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 2300282,
+        "sha256": "8c7a69552778b611e044caf92001c92cf0b14cafabf89c590f5b098ea00d9273"
       },
       "execution.json": {
         "file": "execution.json",
@@ -345,17 +444,30 @@
         "bytes": 1612067,
         "git_blob": "18d332a158dbcde552acab289a9ee64b1b948805"
       }
+    ],
+    "semantic_sha256": "c17d1a9a2f825a1bc7a05afe2f8825cbd4c5ac03d0af5c4b1c4177c631c1eca2",
+    "numeric_files": [
+      {
+        "bytes": 8388608,
+        "path": "program-data/4691a37729133ba48e4430da94a9273e3abeb826742ad6df6b09827c6428bb70.bin",
+        "sha256": "4691a37729133ba48e4430da94a9273e3abeb826742ad6df6b09827c6428bb70"
+      },
+      {
+        "bytes": 4374528,
+        "path": "program-data/c22958e94562b69698a126640ac41476211d92ff5b07c453d86539b248f130db.bin",
+        "sha256": "c22958e94562b69698a126640ac41476211d92ff5b07c453d86539b248f130db"
+      }
     ]
   },
   {
     "package": "models/gemma4_e4b/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 37081065,
-        "sha256": "7823f8449c6cac7ebb2442ac3bf54028706aa583308a6488cce44a82c22fc450"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 2378109,
+        "sha256": "d8fbd941c4ffa41d7dd0555b6c7a57045ee605cd834fc792196e26eb1e765603"
       },
       "execution.json": {
         "file": "execution.json",
@@ -374,17 +486,30 @@
         "bytes": 1429877,
         "git_blob": "cfc7b219fe081cd4dc7c75485259160b9eb7cf46"
       }
+    ],
+    "semantic_sha256": "7b9afe025ad51902a46ecd5fa7940c95f195eea8e2dfbbf78112d723da6e23b1",
+    "numeric_files": [
+      {
+        "bytes": 8388608,
+        "path": "program-data/4691a37729133ba48e4430da94a9273e3abeb826742ad6df6b09827c6428bb70.bin",
+        "sha256": "4691a37729133ba48e4430da94a9273e3abeb826742ad6df6b09827c6428bb70"
+      },
+      {
+        "bytes": 4374528,
+        "path": "program-data/c22958e94562b69698a126640ac41476211d92ff5b07c453d86539b248f130db.bin",
+        "sha256": "c22958e94562b69698a126640ac41476211d92ff5b07c453d86539b248f130db"
+      }
     ]
   },
   {
     "package": "models/qwen3_0_6b/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 2957476,
-        "sha256": "55249ae68e96eea6abbbaf680842397583ec62a8f9a772558feedb82fc504c73"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 673306,
+        "sha256": "d17d6cd43fd3374e009b1986fd8a43690fe474b36be757a3039eaef2a86d592f"
       },
       "execution.json": {
         "file": "execution.json",
@@ -403,17 +528,25 @@
         "bytes": 1544761,
         "git_blob": "149aa468fb4f62f74b93a5bfcf5612ffa8997e88"
       }
+    ],
+    "semantic_sha256": "aeb0c7963302db9e72bb1cc043a7626a8c4d409ba5eab178ffd3fbd0b40e51a5",
+    "numeric_files": [
+      {
+        "bytes": 4492928,
+        "path": "program-data/e51f04d894a5d031407d8018f6c580a945c80fd0f0c73a7b2aacb10de7944cca.bin",
+        "sha256": "e51f04d894a5d031407d8018f6c580a945c80fd0f0c73a7b2aacb10de7944cca"
+      }
     ]
   },
   {
     "package": "models/qwen3_4b/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 6193471,
-        "sha256": "58f2fdb2d62d3db581d753866faf0abc0d9011d4f0addb228cb2683f9244cf5f"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 847591,
+        "sha256": "106f31815c7503086f5d63febba592b4401be7b0a8006fbb55e64241a38ae5ea"
       },
       "execution.json": {
         "file": "execution.json",
@@ -432,17 +565,30 @@
         "bytes": 1994017,
         "git_blob": "f67bb15f4e52f1cf839aac258a81bbf7681f6e02"
       }
+    ],
+    "semantic_sha256": "9e617a55783ffcbb9f42d78945013d43bbeae3f72c70d9cdc4a467e6971ba8a4",
+    "numeric_files": [
+      {
+        "bytes": 1748736,
+        "path": "program-data/0dcd19a6d3943be61e4a75369cba893a8b78ba9eafb8ece6e4f7dc5e754b2c77.bin",
+        "sha256": "0dcd19a6d3943be61e4a75369cba893a8b78ba9eafb8ece6e4f7dc5e754b2c77"
+      },
+      {
+        "bytes": 8388608,
+        "path": "program-data/21e0e7f8500791dfe926d65794448a0141910fb2e8eb5f41273c4c2c5d62a8f9.bin",
+        "sha256": "21e0e7f8500791dfe926d65794448a0141910fb2e8eb5f41273c4c2c5d62a8f9"
+      }
     ]
   },
   {
     "package": "models/qwen3_5_4b/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 147122,
-        "sha256": "4f3f94f94240e1b3ec1c4c94fc1b2192df14ae96102b0882a9ab1d2fcd39377a"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 405582,
+        "sha256": "ccc09b30ceb62cf6b8b8c749c22b01028382727cecf778e4805c78736c2eb54d"
       },
       "execution.json": {
         "file": "execution.json",
@@ -461,17 +607,25 @@
         "bytes": 1003343,
         "git_blob": "616a22da7e4ad92e1a5c3c754592048d82035a56"
       }
+    ],
+    "semantic_sha256": "537256a7a7ecd826f56145886ad0ec0bc95d54a0e4f9de653d72e82a33ca7a44",
+    "numeric_files": [
+      {
+        "bytes": 37248,
+        "path": "program-data/5b8331130ad53c4bdc9dbd06806065412c692fb7eff128cf13a226320fe4c5c0.bin",
+        "sha256": "5b8331130ad53c4bdc9dbd06806065412c692fb7eff128cf13a226320fe4c5c0"
+      }
     ]
   },
   {
     "package": "models/qwen3_5_4b/profiles/int4_mlp/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 3160938,
-        "sha256": "0f88bd9d23dab8be1aebc79dd273c6ec8958b2b9227e899a7cdb61573049a4f8"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 714146,
+        "sha256": "e2a6215f9fbe66882da9d1fe79badb149765aadf14a9c0f461097f9fd88abbaa"
       },
       "execution.json": {
         "file": "execution.json",
@@ -490,17 +644,25 @@
         "bytes": 1590965,
         "git_blob": "39c6a901a5a16e130b4e56f3654c037e5b1b290a"
       }
+    ],
+    "semantic_sha256": "83e602575065a7c56bdae7500d03f80ee6b7a4fbb626d36a6a8d29557f71f136",
+    "numeric_files": [
+      {
+        "bytes": 5693824,
+        "path": "program-data/884b1920ebc490bbbe91b07934eb7ba1afd205ef8f719d91c42a1b0c6eaa3cb1.bin",
+        "sha256": "884b1920ebc490bbbe91b07934eb7ba1afd205ef8f719d91c42a1b0c6eaa3cb1"
+      }
     ]
   },
   {
     "package": "models/qwen3_5_4b/profiles/int8/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 6265228,
-        "sha256": "411899881aba8896e5ed47a1da13c75c2d6a7736ac894bb0a6fb8f91246af8e3"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 736035,
+        "sha256": "076a8ae69a9f807c4240e8dc46a525b125fcb18e6b731614bca8fa8f29da4444"
       },
       "execution.json": {
         "file": "execution.json",
@@ -519,17 +681,30 @@
         "bytes": 1798391,
         "git_blob": "3ac3c6ea2a6bc315d876dab281b64dadbc012346"
       }
+    ],
+    "semantic_sha256": "c2f98b024c46a698e50a73d18573a3aa9f1d3f263e0a9d725c251f9614d1bfac",
+    "numeric_files": [
+      {
+        "bytes": 8388608,
+        "path": "program-data/3539e6c02e9fc07a35b05d293437d9c0c9dd093acf618a59fed6212ed30833ea.bin",
+        "sha256": "3539e6c02e9fc07a35b05d293437d9c0c9dd093acf618a59fed6212ed30833ea"
+      },
+      {
+        "bytes": 2679168,
+        "path": "program-data/e0d583ad6d918df5bc9f2493d307027b908c0c375d8f31c8ae8358b5ff336656.bin",
+        "sha256": "e0d583ad6d918df5bc9f2493d307027b908c0c375d8f31c8ae8358b5ff336656"
+      }
     ]
   },
   {
     "package": "models/vision/mobilenet_v2/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 68148,
-        "sha256": "a8b2564bc4118c4baa717825caeb4ae65399cf627c6fa4e477877b2986919d09"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 90322,
+        "sha256": "0788cf8426133af242c08525c5ee93c87ecc7b039e32e8f82ea8e1345306b745"
       },
       "execution.json": {
         "file": "execution.json",
@@ -543,17 +718,25 @@
         "bytes": 128734,
         "git_blob": "fe39d69617e00fc371a0b482f890f57e63a134c4"
       }
+    ],
+    "semantic_sha256": "99dfbd603f6201d35727e32c4437eed3bf7f8b58b5a409b082839e26106b7f3a",
+    "numeric_files": [
+      {
+        "bytes": 44352,
+        "path": "program-data/0673594d53bf844214d8d217ee47788273fc046f84e02a3a449d1fe6c3c84ddd.bin",
+        "sha256": "0673594d53bf844214d8d217ee47788273fc046f84e02a3a449d1fe6c3c84ddd"
+      }
     ]
   },
   {
     "package": "models/vision/resnet101/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 57585,
-        "sha256": "6029da27552affcd6ccab7c1b41dbe68a1065e7c94fcb42f91d564e21ce57e4d"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 183643,
+        "sha256": "0e4559def3307deaa4bb4c83ed2d5ab66c79102a016cc904ca20ef59dcc2185f"
       },
       "execution.json": {
         "file": "execution.json",
@@ -567,17 +750,25 @@
         "bytes": 250930,
         "git_blob": "df3a892a91cce0cc35cf93ca8e0cffa03d2778d2"
       }
+    ],
+    "semantic_sha256": "bfb5f5dd268729b4b90f7589180227d3816c263e6bd9783cbffd94cef1a11908",
+    "numeric_files": [
+      {
+        "bytes": 23360,
+        "path": "program-data/8184770b7102f761257cfd6838a1974ad9aca0874a03a42a77c484496292efa4.bin",
+        "sha256": "8184770b7102f761257cfd6838a1974ad9aca0874a03a42a77c484496292efa4"
+      }
     ]
   },
   {
     "package": "models/vision/resnet152/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 69813,
-        "sha256": "e3aad451d4be19ad611505895155f74a312b972abb2677be4f80d58af0b62b7a"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 273187,
+        "sha256": "9f1aa41c37f0d46be11b3071bbb26187fb41334156bb974a8e9373f13b6084d4"
       },
       "execution.json": {
         "file": "execution.json",
@@ -591,17 +782,25 @@
         "bytes": 375004,
         "git_blob": "00c27e23a2d78c032dec2ea5651ba8f3a1b39ff8"
       }
+    ],
+    "semantic_sha256": "90672f99f12db19ee5e820ab373d7063370669edfb52b889619bb734d01fd340",
+    "numeric_files": [
+      {
+        "bytes": 23360,
+        "path": "program-data/c17b717d6e860f4f7717415025a413964b57fde51fdec41adfcc4cbc10bb376c.bin",
+        "sha256": "c17b717d6e860f4f7717415025a413964b57fde51fdec41adfcc4cbc10bb376c"
+      }
     ]
   },
   {
     "package": "models/vision/resnet18/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 18540,
-        "sha256": "e697b1578def1246247137b99cd13858930c80ea56e1745b3ee84a13439a2bd6"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 38676,
+        "sha256": "dfc77ca27ad781da0af7a2225932387e0eb3d0e0250bc26ac2e2c05954d260c1"
       },
       "execution.json": {
         "file": "execution.json",
@@ -615,17 +814,25 @@
         "bytes": 52197,
         "git_blob": "a95911a9d8347acd90f0e81aef14714355633e32"
       }
+    ],
+    "semantic_sha256": "ac6223b045582ef29a79646d437c3f35768917c408ab8e0bae7488c86c78ca31",
+    "numeric_files": [
+      {
+        "bytes": 9024,
+        "path": "program-data/2f9dd0ea45cea9642b9ce7eab10732ab429aee5819ca24f190e9e5ded30d080b.bin",
+        "sha256": "2f9dd0ea45cea9642b9ce7eab10732ab429aee5819ca24f190e9e5ded30d080b"
+      }
     ]
   },
   {
     "package": "models/vision/resnet34/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 22821,
-        "sha256": "1448eb3e0c4df38ae720094dd1de1bd2b81cdbfd99c16fbac24d9178191bc252"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 66896,
+        "sha256": "9cd47fd69cb51ca8920c604003d4d6059e1d720d72a37cc659c6c0b71317e79b"
       },
       "execution.json": {
         "file": "execution.json",
@@ -639,17 +846,25 @@
         "bytes": 91067,
         "git_blob": "95d0874be7bce21267b5fca67587550d2da56d10"
       }
+    ],
+    "semantic_sha256": "dccb95ed3a5d2b24ee203d9eb1ca22e6b6614ce7fc5545b9ef018b05cf35376d",
+    "numeric_files": [
+      {
+        "bytes": 9024,
+        "path": "program-data/25609566638df86cc4b55db5be988ceeb870c8db62f944cd9e5187edb3ae7fad.bin",
+        "sha256": "25609566638df86cc4b55db5be988ceeb870c8db62f944cd9e5187edb3ae7fad"
+      }
     ]
   },
   {
     "package": "models/vision/resnet50/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 44298,
-        "sha256": "693cdb587f42293c2c2c40ad9c20f62dcaf738edeb81f099722cb9275838d6ad"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 94756,
+        "sha256": "4224d9ca4afbf77d7dfd17033a1ac281cf1737a3612faaebb5b322dbe2c2590c"
       },
       "execution.json": {
         "file": "execution.json",
@@ -663,17 +878,25 @@
         "bytes": 128171,
         "git_blob": "1befdd5be351b886ae9211555f0168ee93ac03ae"
       }
+    ],
+    "semantic_sha256": "e78e115a883023cd873aeeace30b94a6ad2cd1bd884300b0d86c57cdfd2d094c",
+    "numeric_files": [
+      {
+        "bytes": 23360,
+        "path": "program-data/61fd7f9cb1c58d696a4d445c875a93d965104557b468323848bf9408fa96ebbe.bin",
+        "sha256": "61fd7f9cb1c58d696a4d445c875a93d965104557b468323848bf9408fa96ebbe"
+      }
     ]
   },
   {
     "package": "models/vision/resnext50_32x4d/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 860243,
-        "sha256": "4235b3c0ede0529bee537f4c357a584890a8f30e2a9418e809e4d997e76637de"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 510674,
+        "sha256": "7e25f9eb55a18039b0bb13ef0af169699480dc2c8686d019a0d9640951b3ef85"
       },
       "execution.json": {
         "file": "execution.json",
@@ -687,17 +910,25 @@
         "bytes": 514864,
         "git_blob": "082a2e1a588a39809d803a131f110f28fadd5b00"
       }
+    ],
+    "semantic_sha256": "183f9ea8077dd7a24986891c19f5b9bc7615f5103436ce557928892779a79734",
+    "numeric_files": [
+      {
+        "bytes": 709440,
+        "path": "program-data/375387db5f63dc552b222f94ec8d4882cd7b41d56fc7cba59b12bd001532041a.bin",
+        "sha256": "375387db5f63dc552b222f94ec8d4882cd7b41d56fc7cba59b12bd001532041a"
+      }
     ]
   },
   {
     "package": "models/vision/wide_resnet50_2/generated",
     "identity": {
       "format": "ynn-semantic-package",
-      "version": 1,
-      "program.json": {
-        "file": "program.json.gz",
-        "bytes": 59826,
-        "sha256": "a2cc0e92d56a49810aecb8915828bf375afc5d409c7747d6456cb9e3fbdd2aa3"
+      "version": 2,
+      "program.ynn": {
+        "file": "program.ynn",
+        "bytes": 94889,
+        "sha256": "0d2573fba972d75f1441e5de77384ac4f46d4a1096ae86cb0641c907859777d6"
       },
       "execution.json": {
         "file": "execution.json",
@@ -710,6 +941,14 @@
         "file": "graph.ynn",
         "bytes": 128311,
         "git_blob": "3fd9f601e48db7182dcde0d3cde1291f940fc471"
+      }
+    ],
+    "semantic_sha256": "c385ea45341962d0f4a5b4860dd16ef6bb9cee7693b2a3e1cf571121ac69fbf5",
+    "numeric_files": [
+      {
+        "bytes": 37696,
+        "path": "program-data/2bdd948f37e7717259f76920ea370b6fc4c8c2c832a43c411005cc973503cc85.bin",
+        "sha256": "2bdd948f37e7717259f76920ea370b6fc4c8c2c832a43c411005cc973503cc85"
       }
     ]
   }

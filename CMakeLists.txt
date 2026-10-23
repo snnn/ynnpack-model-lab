@@ -190,11 +190,11 @@ if(BUILD_TESTING)
   add_test(NAME safetensors COMMAND ${Python3_EXECUTABLE} -m unittest discover
     -s tests -p test_safetensors.py)
   set_tests_properties(safetensors PROPERTIES WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-    ENVIRONMENT "YNNPACK_PLAN_TOOL=${CMAKE_CURRENT_BINARY_DIR}/ynn-plan")
+    ENVIRONMENT "YNNPACK_PLAN_TOOL=${CMAKE_CURRENT_BINARY_DIR}/ynn-plan;YNNPACK_PROGRAM_TOOL=${CMAKE_CURRENT_BINARY_DIR}/ynn-program")
   add_test(NAME asset_recipes COMMAND ${Python3_EXECUTABLE} -m unittest discover
     -s tests -p test_assets.py)
   set_tests_properties(asset_recipes PROPERTIES WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
-    ENVIRONMENT "YNNPACK_PLAN_TOOL=${CMAKE_CURRENT_BINARY_DIR}/ynn-plan")
+    ENVIRONMENT "YNNPACK_PLAN_TOOL=${CMAKE_CURRENT_BINARY_DIR}/ynn-plan;YNNPACK_PROGRAM_TOOL=${CMAKE_CURRENT_BINARY_DIR}/ynn-program")
   add_executable(quantized_fc_test tests/quantized_fc_test.cc)
   target_link_libraries(quantized_fc_test PRIVATE lab_runtime)
   add_test(NAME quantized_fc COMMAND quantized_fc_test)

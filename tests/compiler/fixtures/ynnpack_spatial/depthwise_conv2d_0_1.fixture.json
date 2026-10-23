@@ -99,5 +99,5 @@
       }
     }
   ],
-  "program": "depthwise_conv2d_0_1.program.json"
+  "program": "depthwise_conv2d_0_1.program.ynn"
 }

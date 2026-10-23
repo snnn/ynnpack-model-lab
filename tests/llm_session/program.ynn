@@ -1,0 +1,27 @@
+ynn_program 1 {
+  phase "decode" {
+    value "ids": i32[1];
+    value "memory": f32[1, 4];
+    value "next": f32[1, 4];
+    value "row": f32[1, 4];
+    value "scores": f32[1, 4];
+    const "table": f32[4, 4] data {bytes: 64, path: "@parameters/5ea6540b76f84340381a244977fc8cfc1e808c6f957123d82b381e619fbf198e.bin", sha256: "5ea6540b76f84340381a244977fc8cfc1e808c6f957123d82b381e619fbf198e"};
+    inputs ("ids", "memory");
+    outputs ("next", "scores");
+    node gather ("table", "ids") -> ("row");
+    node add ("row", "memory") -> ("next");
+    node copy ("next") -> ("scores");
+  }
+  phase "prefill" {
+    value "ids": i32[1];
+    value "memory": f32[1, 4];
+    value "next": f32[1, 4];
+    value "row": f32[1, 4];
+    value "scores": f32[1, 4];
+    const "table": f32[4, 4] data {bytes: 64, path: "@parameters/5ea6540b76f84340381a244977fc8cfc1e808c6f957123d82b381e619fbf198e.bin", sha256: "5ea6540b76f84340381a244977fc8cfc1e808c6f957123d82b381e619fbf198e"};
+    inputs ("ids", "memory");
+    outputs ("next");
+    node gather ("table", "ids") -> ("row");
+    node add ("row", "memory") -> ("next");
+  }
+}

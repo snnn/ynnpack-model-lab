@@ -91,5 +91,5 @@
       }
     }
   ],
-  "program": "native_causal_q3_irregular.program.json"
+  "program": "native_causal_q3_irregular.program.ynn"
 }

@@ -159,5 +159,5 @@
       }
     }
   ],
-  "program": "blockwise_crop.program.json"
+  "program": "blockwise_crop.program.ynn"
 }

@@ -27,5 +27,5 @@
     }
   ],
   "profile": true,
-  "program": "completion_only.program.json"
+  "program": "completion_only.program.ynn"
 }

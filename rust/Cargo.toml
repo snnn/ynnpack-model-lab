@@ -32,7 +32,6 @@ llm-tests = ["llm"]
 plan-tool = []
 
 [dependencies]
-flate2 = "=1.1.5"
 serde = { version = "=1.0.229", features = ["derive"] }
 serde_json = "=1.0.151"
 sha2 = "=0.10.9"
@@ -52,6 +51,11 @@ required-features = ["plan-tool"]
 [[bin]]
 name = "ynn-qwen3"
 path = "src/bin/ynn-qwen3.rs"
+required-features = ["plan-tool"]
+
+[[bin]]
+name = "ynn-program"
+path = "src/bin/ynn-program.rs"
 required-features = ["plan-tool"]
 
 [build-dependencies]

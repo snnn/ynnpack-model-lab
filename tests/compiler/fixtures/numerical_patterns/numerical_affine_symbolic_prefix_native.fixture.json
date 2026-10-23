@@ -149,5 +149,5 @@
       }
     }
   ],
-  "program": "numerical_affine_symbolic_prefix_native.program.json"
+  "program": "numerical_affine_symbolic_prefix_native.program.ynn"
 }

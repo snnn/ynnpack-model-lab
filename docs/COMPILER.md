@@ -40,7 +40,7 @@ Build the host tools through CMake after the usual dependency bootstrap:
 
 ```sh
 cmake --build build --target ynn_compile ynn_qwen3 ynn_plan
-build/ynn-compile --request program.json --output out/new-package
+build/ynn-compile --request program.ynn --output out/new-package
 build/ynn-plan check out/new-package/decode.ynn
 ```
 

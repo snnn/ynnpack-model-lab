@@ -447,5 +447,5 @@
       }
     }
   ],
-  "program": "gated_delta_t128_k128_v128.program.json"
+  "program": "gated_delta_t128_k128_v128.program.ynn"
 }

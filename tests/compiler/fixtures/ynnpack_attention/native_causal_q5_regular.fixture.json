@@ -91,5 +91,5 @@
       }
     }
   ],
-  "program": "native_causal_q5_regular.program.json"
+  "program": "native_causal_q5_regular.program.ynn"
 }

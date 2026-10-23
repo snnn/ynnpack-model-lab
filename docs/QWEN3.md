@@ -23,7 +23,7 @@ described below with FP32 KV state.
 
 ## Package and arithmetic
 
-The generated directory contains `program.json.gz`, `execution.json`, and
+The generated directory contains `program.ynn`, `execution.json`, and
 `model.json`.
 Matching weight payloads belong in its ignored `parameters/` directory and
 tokenizer assets in its ignored `tokenizer/` directory. Parameter filenames are

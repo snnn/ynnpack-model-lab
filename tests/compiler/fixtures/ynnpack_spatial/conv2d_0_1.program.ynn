@@ -1,0 +1,15 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    symbol {binding: {axis: 0, source: "axis", value: "x"}, id: 1, lower: 1, upper: 3};
+    guard {lhs: known(1), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(3)};
+    const "b": f32[5] data {bytes: 20, path: "@parameters/5aeb0dc358a031939768da385e25d421185545881831523033f0914f7ce6dac0.bin", sha256: "5aeb0dc358a031939768da385e25d421185545881831523033f0914f7ce6dac0"};
+    const "w": f32[5, 3, 2, 3] data {bytes: 360, path: "@parameters/1a8bc8801fd6ea8a82d95d9fc6e7a781de51dac4cb2057c69f5a8ed8baa852bf.bin", sha256: "1a8bc8801fd6ea8a82d95d9fc6e7a781de51dac4cb2057c69f5a8ed8baa852bf"};
+    value "x": f32[s1, 7, 8, 3];
+    value "y": f32[s1, 3, 3, 5];
+    inputs ("x");
+    outputs ("y");
+    node conv2d ("x", "w", "b") -> ("y") attrs {spatial: {dilations: [1, 1], kernel: [3, 2], multiplier: 1, same: false, strides: [2, 3]}} scope "Compute";
+  }
+}

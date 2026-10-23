@@ -1,0 +1,30 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    const "coefficient": f32[] floats [real(0.044714998453855515)];
+    value "cube": f32[2, 3];
+    value "factor": f32[2, 3];
+    const "half": f32[] floats [real(0.5)];
+    value "half_x": f32[2, 3];
+    const "one": f32[] floats [real(1.0)];
+    const "scale": f32[] floats [real(0.7978845834732056)];
+    value "scaled": f32[2, 3];
+    value "square": f32[2, 3];
+    value "sum": f32[2, 3];
+    value "tanh": f32[2, 3];
+    value "term": f32[2, 3];
+    value "x": f32[2, 3];
+    value "y": f32[2, 3];
+    inputs ("x");
+    outputs ("y", "term");
+    node square ("x") -> ("square") scope "Compute";
+    node mul ("x", "square") -> ("cube") scope "Compute";
+    node mul ("cube", "coefficient") -> ("term") scope "Compute";
+    node add ("x", "term") -> ("sum") scope "Compute";
+    node mul ("sum", "scale") -> ("scaled") scope "Compute";
+    node tanh ("scaled") -> ("tanh") scope "Compute";
+    node add ("tanh", "one") -> ("factor") scope "Compute";
+    node mul ("x", "half") -> ("half_x") scope "Compute";
+    node mul ("half_x", "factor") -> ("y") scope "Compute";
+  }
+}

@@ -1,0 +1,10 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "x": i2[3, 5];
+    value "y": i2[5, 9];
+    inputs ("x");
+    outputs ("y");
+    node pad ("x") -> ("y") attrs {lengths: [known(1), known(2)], pad_mode: 1, starts: [known(1), known(2)]} scope "Compute";
+  }
+}

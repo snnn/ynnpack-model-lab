@@ -5,7 +5,7 @@ from pathlib import Path
 import sys
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / 'python'))
-from ynnpack_assets.artifacts import seal
+from ynnpack_assets.artifacts import seal, write_program
 
 
 def value(dtype, shape, **kwargs):
@@ -20,7 +20,8 @@ def generate():
     root=ROOT/'tests/rust'
     g=dict(values={n:value('f32',[4]) for n in ['x','squared']}, inputs=['x'], outputs=['squared'],
            nodes=[node('mul',['x','x'],'squared')])
-    (root/'program.json').write_text(json.dumps(dict(version=1,phases=dict(model=g)))+'\n')
+    (root/'program.ynn').unlink(missing_ok=True)
+    write_program(dict(version=1,phases=dict(model=g)),root/'program.ynn')
     (root/'execution.json').write_text(json.dumps(dict(format='ynn-tensor-execution',version=1,graphs=dict(model=dict(
         inputs=[dict(name='x',dtype='fp32',shape=[4])],outputs=[dict(name='squared',dtype='fp32',shape=[4])]))))+'\n')
     meta=json.loads((root/'model.json').read_text());meta.pop('execution',None);seal(root,meta)
@@ -37,7 +38,8 @@ def generate():
         nodes=[node('gather',['table','ids'],'row'),node('add',['row','memory'],'next')]
         if phase=='decode':nodes.append(node('copy',['next'],'scores'))
         phases[phase]=dict(values=values,inputs=['ids','memory'],outputs=['next']+(['scores'] if phase=='decode' else []),nodes=nodes)
-    (root/'program.json').write_text(json.dumps(dict(version=1,phases=phases))+'\n')
+    (root/'program.ynn').unlink(missing_ok=True)
+    write_program(dict(version=1,phases=phases),root/'program.ynn')
     m=json.loads((root/'model.json').read_text())
     spec=m.pop('runner',None) or json.loads((root/'execution.json').read_text())
     for g in spec['graphs'].values():g.pop('file',None);g.pop('sha256',None)

@@ -1,1 +1,0 @@
-{"version": 1, "phases": {"model": {"values": {"x": {"tensor": {"dtype": "f32", "shape": [{"known": 4}]}}, "squared": {"tensor": {"dtype": "f32", "shape": [{"known": 4}]}}}, "inputs": ["x"], "outputs": ["squared"], "nodes": [{"op": "mul", "inputs": ["x", "x"], "outputs": ["squared"]}]}}}

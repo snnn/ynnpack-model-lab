@@ -1438,11 +1438,11 @@
   "prefill_plan": "included",
   "package": {
     "format": "ynn-semantic-package",
-    "version": 1,
-    "program.json": {
-      "file": "program.json.gz",
-      "bytes": 23130231,
-      "sha256": "5ad9493caa89a7f066a565e41c72284c1173e0d87a3dce5ba5cb3b4156bfe214"
+    "version": 2,
+    "program.ynn": {
+      "file": "program.ynn",
+      "bytes": 1490920,
+      "sha256": "01becf121cb3635923feed4d661244a7131bc39139b931fc46fa4f1aaa192227"
     },
     "execution.json": {
       "file": "execution.json",

@@ -9,19 +9,22 @@ run a target compiler. See [COMPILER.md](COMPILER.md) for the Rust authoring API
 
 A deployed model directory contains:
 
-- `program.json` or `program.json.gz`: semantic operations, exact tensor/asset
+- `program.ynn`: compact semantic DSL for operations, exact tensor/asset
   types, symbolic dimensions, resources, completion dependencies and phases.
+- `program-data/`: shared, hash-verified numeric metadata in chunks of at most 8 MiB.
 - `execution.json`: phase bindings and request/state behavior. LLM contracts
   describe token, position, mask and embedding recipes; tensor contracts describe
   typed inputs and outputs without LLM conventions.
-- `model.json`: descriptive metadata and a version-1 `ynn-semantic-package`
+- `model.json`: descriptive metadata and a version-2 `ynn-semantic-package`
   identity binding the stored program and execution files by byte count/SHA-256.
 - Immutable source parameters, or an asset recipe/provider for obtaining them.
 
-Compression only changes storage. The runtime verifies the compressed identity,
-bounds decompression, rejects trailing members/data, and deserializes the same
-`Program`. Generated constants are produced and owned during preparation.
-`.ynn` files and compiler reports are diagnostics, not deployed model inputs.
+The DSL keeps small attributes inline, shares repeated quantization descriptions,
+and stores large exact numeric arrays in binary tables. The runtime verifies all
+source identities; no decompression is needed. Generated constants are produced
+and owned during preparation. See [PROGRAM_TEXT.md](PROGRAM_TEXT.md) for syntax
+and the single Rust parser/writer. Native plans (`ynn 1` header) and compiler
+reports remain diagnostics; semantic source uses `ynn_program 1`.
 
 `ynn-llm --model_dir=DIR` serves every LLM profile. `gemma4_e2b`, `gemma4_e4b`
 and `qwen3` are thin executable aliases of the same implementation. The two
@@ -64,9 +67,9 @@ architecture remain authored semantics.
 
 `ynnpack_assets.artifacts.seal` records semantic identities;
 `ynnpack_assets.artifacts.publish` validates and atomically publishes a fresh
-package without a compiler subprocess. It verifies referenced source parameters
-and excludes diagnostic plans/reports/runtime source. Publication scans inspect
-compressed JSON as well as plain text.
+package using the public source formatter, without target lowering. It verifies referenced source parameters
+and excludes diagnostic plans/reports/runtime source. Set `YNNPACK_PROGRAM_TOOL` to the built `ynn-program` executable. Publication
+verifies every referenced numeric chunk as well as program and execution text.
 
 Use `ynn-llm --check_package=DIR` for structural lowering/interface checks;
 actual preparation additionally checks assets and the native backend. Compare

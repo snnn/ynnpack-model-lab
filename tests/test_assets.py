@@ -10,7 +10,7 @@ from tools.prepare_gemma4 import extract, relative_path
 
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'python'))
-from ynnpack_assets.artifacts import read_program, _assets
+from ynnpack_assets.artifacts import inspect_program
 
 
 class AssetRecipesTest(unittest.TestCase):
@@ -21,7 +21,7 @@ class AssetRecipesTest(unittest.TestCase):
             recipe = json.loads((model / "asset_recipe.json").read_text())
             generated = model / "generated"
             references = set()
-            for data in _assets(read_program(generated)):
+            for data in inspect_program(generated/'program.ynn')['source_assets']:
                 if data['path'].startswith('@parameters/'):
                     references.add(data['path'])
                     self.assertEqual(recipe['files'][data['path']], data['sha256'])

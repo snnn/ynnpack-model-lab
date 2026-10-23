@@ -1,0 +1,10 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "x": f32[2, 3];
+    value "y": f32[0, 3];
+    inputs ("x");
+    outputs ("y");
+    node slice ("x") -> ("y") attrs {lengths: [known(0), known(3)], starts: [known(0), known(0)]} scope "Compute";
+  }
+}

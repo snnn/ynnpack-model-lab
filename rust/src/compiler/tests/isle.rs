@@ -3,8 +3,8 @@ use super::*;
 fn fixture(name: &str) -> Program {
     let path = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
         .join("../tests/compiler/fixtures")
-        .join(format!("{name}.program.json"));
-    serde_json::from_slice(&std::fs::read(path).unwrap()).unwrap()
+        .join(format!("{name}.program.ynn"));
+    crate::program_text::read(&path).unwrap()
 }
 #[test]
 fn attention_permissions_preserve_native_operation() {

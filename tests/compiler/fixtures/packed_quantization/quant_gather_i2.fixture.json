@@ -245,5 +245,5 @@
       }
     }
   ],
-  "program": "quant_gather_i2.program.json"
+  "program": "quant_gather_i2.program.ynn"
 }

@@ -148,8 +148,8 @@ def deploy(device, args, models, log):
         checked_shell(device, shlex.join(['mkdir', '-p', remote + '/' + name + '/parameters']))
         files.update({name + '/' + key: value for key, value in mapping.items()})
         source = ROOT / 'models/vision' / name / 'generated'
-        commands = [adb + ['push', '--sync', *[str(p) for k, p in mapping.items() if k in ('model.json', 'execution.json', 'program.json', 'program.json.gz')],
-                           str(source / 'parameters'), remote + '/' + name + '/'],
+        commands = [adb + ['push', '--sync', *[str(p) for k, p in mapping.items() if k in ('model.json', 'execution.json', 'program.ynn')],
+                           str(source / 'parameters'), *([str(source / 'program-data')] if (source/'program-data').exists() else []), remote + '/' + name + '/'],
                     adb + ['push', '--sync', str(mapping['model.tflite']), remote + '/' + name + '/model.tflite'],
                     adb + ['push', '--sync', *[str(p) for k, p in mapping.items() if k.startswith('input_')],
                            remote + '/' + name + '/']]

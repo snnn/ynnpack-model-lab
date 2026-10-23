@@ -1,0 +1,13 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "cap": f32[2, 3];
+    const "one": f32[] data {bytes: 4, path: "@parameters/e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c.bin", sha256: "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c"} floats [real(1.0)];
+    value "x": f32[2, 3];
+    value "y": f32[2, 3];
+    inputs ("x");
+    outputs ("y", "cap");
+    node minimum ("x", "one") -> ("cap") attrs {result_dtype: "f32"} scope "Compute";
+    node relu_0_to_1 ("x") -> ("y") attrs {result_dtype: "f32"} scope "Compute";
+  }
+}

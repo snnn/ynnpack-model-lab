@@ -13,9 +13,9 @@ records the native-to-Rust operation comparison and its limitations.
 
 ## Implementation and scope
 
-- `model.json` seals `program.json[.gz]` and `execution.json` by stored byte count
-  and SHA-256. The reader bounds both compressed and decoded input and rejects
-  truncated streams, multiple gzip members, and trailing compressed data.
+- Version-2 `model.json` seals the compact semantic `program.ynn` and
+  `execution.json`; the DSL binds shared exact numeric chunks by size/SHA-256.
+  Source, chunk and numeric expansion limits are checked before native construction.
 - A single preparation path validates all phase interfaces and assets before
   native graph construction. Generated constants have aligned owned storage;
   source mappings and constants outlive the graphs that use them. A later-phase
@@ -28,7 +28,7 @@ records the native-to-Rust operation comparison and its limitations.
   fixed-capacity programs reject an incompatible override before preparation.
   Capacity remains storage: attention reads the live prefix and appends only
   newly produced rows.
-- Deployment no longer reads precompiled `.ynn` files. The same compiler still
+- Deployment reads `ynn_program 1` semantic source, not precompiled `ynn 1` plans. The same compiler still
   emits and parses text internally, and the diagnostic CLI and frozen compiler
   fingerprints remain available. There is no second lowering implementation,
   compiler subprocess, persistent preparation cache, or temporary plan file.
@@ -37,14 +37,27 @@ The package inventory is 26 profiles: four published E2B profiles, four E4B
 profiles, five HF E2B profiles, five Qwen profiles, and eight vision models.
 [packages.json](packages.json) records every semantic artifact identity and the
 corresponding control plan identity. Source weights remain external. Quantization
-metadata is part of the semantic representation: the 26 stored program/contract
-pairs total 275,678,952 bytes, versus 67,917,587 bytes of control plans. This
-prototype favors a directly inspectable semantic schema over a compact binary
-encoding; compressed programs are bounded to 128 MiB after decoding.
+metadata is part of the semantic representation. The DSL migration reduces model
+source from 1,008,887,738 raw JSON bytes (275,242,308 gzip bytes) to 35,967,226
+text bytes plus 131,786,240 numeric bytes, without compression. The largest text
+file is 4,052,675 bytes and numeric files are at most 8,388,608 bytes. Execution
+contracts are unchanged. Native control plans totaled 67,917,587 bytes; they
+represent a different compiler stage and exclude generated constant payloads.
+
+[dsl-migration.json](dsl-migration.json) records all 423 lossless typed-program
+round trips: 26 model packages, 386 compiler fixtures, nine state fixtures and
+two session fixtures. Complete compiler output files for all 26 old/new model
+programs are byte-identical. The DSL migration does not change lowering rules.
+The current host suite passes 36/36 targets, including exact-bit parser tests,
+chunk integrity checks, all frozen compiler fingerprints and numerical fixtures.
+Both private projection/publication suites pass (14 and seven tests).
 
 ## Correctness protocol
 
-[correctness.json](correctness.json) records the completed checks:
+[correctness.json](correctness.json) records the earlier semantic runtime
+checks, performed before the DSL storage change. The lossless source and full
+compiler-output comparisons above connect that evidence to the new format.
+Fresh final-binary model checks and paired measurements are recorded separately:
 
 | Check | Result |
 | --- | --- |

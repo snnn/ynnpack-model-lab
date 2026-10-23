@@ -595,11 +595,11 @@
   "request_contract": "Reset; prefill the prompt prefix in fixed-size chunks with at most one short final chunk; decode the final prompt token and continuations. Continue-prefill after decoding is outside the paired LiteRT-LM ABI.",
   "package": {
     "format": "ynn-semantic-package",
-    "version": 1,
-    "program.json": {
-      "file": "program.json.gz",
-      "bytes": 2957476,
-      "sha256": "55249ae68e96eea6abbbaf680842397583ec62a8f9a772558feedb82fc504c73"
+    "version": 2,
+    "program.ynn": {
+      "file": "program.ynn",
+      "bytes": 673306,
+      "sha256": "d17d6cd43fd3374e009b1986fd8a43690fe474b36be757a3039eaef2a86d592f"
     },
     "execution.json": {
       "file": "execution.json",

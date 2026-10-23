@@ -130,7 +130,7 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
     let load_start = Instant::now();
     let mut metadata = serde_json::Value::Null;
     let (program, package, source) = if let Some(path) = &program_path {
-        let program = serde_json::from_slice::<crate::compiler::Program>(&io::read_limited(Path::new(path), 128*1024*1024)?)?;
+        let program = crate::program_text::read(Path::new(path))?;
         let default = Path::new(path).with_file_name("execution.json");
         let spec = execution_path.as_ref().map(Path::new).unwrap_or(&default);
         let spec: crate::runtime::ExecutionSpec = serde_json::from_slice(&io::read_limited(spec,16*1024*1024)?)?;

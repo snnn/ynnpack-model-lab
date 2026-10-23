@@ -86,5 +86,5 @@
       }
     }
   ],
-  "program": "numerical_activation_gelu_1_shared.program.json"
+  "program": "numerical_activation_gelu_1_shared.program.ynn"
 }

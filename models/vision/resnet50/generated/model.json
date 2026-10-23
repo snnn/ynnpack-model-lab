@@ -673,11 +673,11 @@
   },
   "package": {
     "format": "ynn-semantic-package",
-    "version": 1,
-    "program.json": {
-      "file": "program.json.gz",
-      "bytes": 44298,
-      "sha256": "693cdb587f42293c2c2c40ad9c20f62dcaf738edeb81f099722cb9275838d6ad"
+    "version": 2,
+    "program.ynn": {
+      "file": "program.ynn",
+      "bytes": 94756,
+      "sha256": "4224d9ca4afbf77d7dfd17033a1ac281cf1737a3612faaebb5b322dbe2c2590c"
     },
     "execution.json": {
       "file": "execution.json",

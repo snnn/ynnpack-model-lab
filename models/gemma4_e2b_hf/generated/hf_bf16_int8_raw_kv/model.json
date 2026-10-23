@@ -61,11 +61,11 @@
   "decode_transpose_cleanup": true,
   "package": {
     "format": "ynn-semantic-package",
-    "version": 1,
-    "program.json": {
-      "file": "program.json.gz",
-      "bytes": 531906,
-      "sha256": "691bb7895b6a5c1afa9e28e44883281d72e7812d3aa62220b4a6c6f7635c8b10"
+    "version": 2,
+    "program.ynn": {
+      "file": "program.ynn",
+      "bytes": 4052671,
+      "sha256": "1be7b4a8f1301c5e647a961522688e1ce30ac65d88f3e0454a7c0593b37bd3fd"
     },
     "execution.json": {
       "file": "execution.json",

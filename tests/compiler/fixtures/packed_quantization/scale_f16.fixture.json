@@ -62,5 +62,5 @@
       }
     }
   ],
-  "program": "scale_f16.program.json"
+  "program": "scale_f16.program.ynn"
 }

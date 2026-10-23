@@ -10,6 +10,14 @@ if(NOT CMAKE_CROSSCOMPILING)
     COMMAND ${CMAKE_COMMAND} -E copy "${lab_compile_cargo_dir}/release/ynn-compile" "${lab_compile_tool}"
     DEPENDS ${lab_rust_sources} rust/Cargo.toml rust/Cargo.lock VERBATIM)
   add_custom_target(ynn_compile ALL DEPENDS "${lab_compile_tool}")
+  set(lab_program_tool "${CMAKE_CURRENT_BINARY_DIR}/ynn-program${CMAKE_EXECUTABLE_SUFFIX}")
+  add_custom_command(OUTPUT "${lab_program_tool}"
+    COMMAND ${CMAKE_COMMAND} -E env "CARGO_HOME=${LAB_CARGO_HOME}"
+      "CARGO_TARGET_DIR=${lab_compile_cargo_dir}" ${LAB_CARGO} build --release --frozen
+      --manifest-path "${CMAKE_CURRENT_SOURCE_DIR}/rust/Cargo.toml" --features plan-tool --bin ynn-program
+    COMMAND ${CMAKE_COMMAND} -E copy "${lab_compile_cargo_dir}/release/ynn-program" "${lab_program_tool}"
+    DEPENDS ${lab_rust_sources} rust/Cargo.toml rust/Cargo.lock VERBATIM)
+  add_custom_target(ynn_program ALL DEPENDS "${lab_program_tool}")
 endif()
 if(NOT CMAKE_CROSSCOMPILING)
   set(lab_qwen_author "${CMAKE_CURRENT_BINARY_DIR}/ynn-qwen3${CMAKE_EXECUTABLE_SUFFIX}")
@@ -35,5 +43,5 @@ if(BUILD_TESTING AND NOT CMAKE_CROSSCOMPILING)
   add_test(NAME compiler_packages COMMAND ${Python3_EXECUTABLE} -m unittest discover
     -s ${CMAKE_CURRENT_SOURCE_DIR}/tests -p test_compiler_packages.py)
   set_tests_properties(compiler_packages PROPERTIES
-    ENVIRONMENT "YNNPACK_PLAN_TOOL=${CMAKE_CURRENT_BINARY_DIR}/ynn-plan;PYTHONDONTWRITEBYTECODE=1")
+    ENVIRONMENT "YNNPACK_PLAN_TOOL=${CMAKE_CURRENT_BINARY_DIR}/ynn-plan;YNNPACK_PROGRAM_TOOL=${lab_program_tool};PYTHONDONTWRITEBYTECODE=1")
 endif()

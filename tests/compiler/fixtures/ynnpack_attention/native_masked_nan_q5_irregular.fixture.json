@@ -112,5 +112,5 @@
       }
     }
   ],
-  "program": "native_masked_nan_q5_irregular.program.json"
+  "program": "native_masked_nan_q5_irregular.program.ynn"
 }

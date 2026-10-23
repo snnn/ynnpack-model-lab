@@ -1,0 +1,32 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    symbol {binding: {axis: 0, source: "axis", value: "x"}, id: 1, lower: 0, upper: 13};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(13)};
+    guard {lhs: symbol(1), mode: "ordinary", reason: "slice bounds", relation: "le", rhs: symbol(1)};
+    value "concat": i2[s1, 10];
+    value "cond": bool[1, 5];
+    value "fill": i2[];
+    value "pad": i2[add(3, mul(1, s1)), 7];
+    value "reshape": i2[add(0, mul(5, s1))];
+    value "reverse": i2[s1, 5];
+    value "select": i2[s1, 5];
+    value "slice": i2[s1, 3];
+    value "stack": i2[2, s1, 5];
+    value "tile": i2[s1, 15];
+    value "transpose": i2[5, s1];
+    value "x": i2[s1, 5];
+    inputs ("x", "fill", "cond");
+    outputs ("reverse", "transpose", "reshape", "tile", "slice", "pad", "select", "concat", "stack");
+    node reverse ("x") -> ("reverse") attrs {axes: [0, 1]} scope "Compute";
+    node transpose ("x") -> ("transpose") attrs {integers: [1, 0]} scope "Compute";
+    node reshape ("x") -> ("reshape") attrs {shape: [add([known(0), mul([known(5), symbol(1)])])]} scope "Compute";
+    node tile ("x") -> ("tile") attrs {integers: [1, 3]} scope "Compute";
+    node slice ("x") -> ("slice") attrs {lengths: [symbol(1), known(3)], starts: [known(0), known(1)]} scope "Compute";
+    node pad ("x", "fill") -> ("pad") attrs {lengths: [known(2), known(1)], starts: [known(1), known(1)]} scope "Compute";
+    node select ("cond", "x", "fill") -> ("select") scope "Compute";
+    node concat ("x", "x") -> ("concat") attrs {axis: 1} scope "Compute";
+    node stack ("x", "x") -> ("stack") scope "Compute";
+  }
+}

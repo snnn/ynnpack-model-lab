@@ -35,8 +35,7 @@ To inspect a diagnostic construction stream:
 
 ```sh
 mkdir -p out/attention-inspect
-gzip -dc models/gemma4_e2b/generated/program.json.gz > out/attention-inspect/program.json
-build/ynn-compile --request out/attention-inspect/program.json --output out/attention-inspect/plans
+build/ynn-compile --request models/gemma4_e2b/generated/program.ynn --output out/attention-inspect/plans
 build/ynn-plan expand out/attention-inspect/plans/decode.ynn -o out/attention-inspect/decode-flat.ynn
 ```
 
