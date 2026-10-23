@@ -9,7 +9,17 @@ backend revisions, device and numerical contract.
 
 ## Current baseline
 
-The [October 21 current baseline](2026-10-21-current/README.md) covers the
+The [October 22 semantic runtime baseline](semantic_runtime_20261022/README.md)
+records the shared Rust preparation path and compact semantic DSL. It includes
+all 26 model packages, exact source/compiler comparisons, host and Android
+correctness, and the paired setup/memory/latency protocol. Capture identities
+distinguish checks before the DSL migration from final DSL binaries. The
+[runtime prototype](runtime_preparation_20261022/README.md) separately records
+the earlier native-to-Rust blockwise operation comparison and its limitations.
+
+## Native-plan baseline and device coverage
+
+The [October 21 baseline](2026-10-21-current/README.md) covers the
 Rust/`.ynn` host workloads, E2B on TECNO LJ9 and Pixel 8, paired capacity checks,
 vision controls, and attention/HF/recurrent screens. It retains 612 measured LLM
 requests, artifact identities, commands, numerical comparisons and selected-kernel

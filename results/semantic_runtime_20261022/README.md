@@ -40,17 +40,20 @@ corresponding control plan identity. Source weights remain external. Quantizatio
 metadata is part of the semantic representation. The DSL migration reduces model
 source from 1,008,887,738 raw JSON bytes (275,242,308 gzip bytes) to 35,967,226
 text bytes plus 131,786,240 numeric bytes, without compression. The largest text
-file is 4,052,675 bytes and numeric files are at most 8,388,608 bytes. Execution
+file is 4,052,675 bytes and numeric files are at most 8,388,608 bytes. There are
+56,010,240 bytes of distinct numeric payloads before Git compression. Execution
 contracts are unchanged. Native control plans totaled 67,917,587 bytes; they
 represent a different compiler stage and exclude generated constant payloads.
 
 [dsl-migration.json](dsl-migration.json) records all 423 lossless typed-program
 round trips: 26 model packages, 386 compiler fixtures, nine state fixtures and
-two session fixtures. Complete compiler output files for all 26 old/new model
+two session fixtures. [dsl-validation.json](dsl-validation.json) records the
+final DSL checks, including public Rust author parity, all 11 timing-configuration
+correctness checks, 14 Android records and both successful Linux CI runs.
+Complete compiler output files for all 26 old/new model
 programs are byte-identical. The DSL migration does not change lowering rules.
 The current host suite passes 36/36 targets, including exact-bit parser tests,
 chunk integrity checks, all frozen compiler fingerprints and numerical fixtures.
-Both private projection/publication suites pass (14 and seven tests).
 
 ## Correctness protocol
 
@@ -59,17 +62,20 @@ checks, performed before the DSL storage change. The lossless source and full
 compiler-output comparisons above connect that evidence to the new format.
 Fresh final-binary model checks and paired measurements are recorded separately:
 
-| Check | Result |
-| --- | --- |
-| 26 host packages × one/four threads | 52/52 exact comparisons passed; 2,232 decoded steps |
-| E2B/E4B capacity 8,448 × one/four threads | 4/4 matched the frozen control |
-| Capacity 2,048 versus 8,448 | 3,840 live logit/KV arrays were identical |
-| Public Rust Qwen3-0.6B author, four threads | Full prompt/reset matrix matched the serialized package |
-| Final host CTest | 36/36 targets passed; 386 compiler fixtures, 2,196 passed numerical requests |
-| Compiler worklist change | Complete outputs for all 26 packages were byte-identical |
-| Pixel 8 and Pixel 11 | All 12 native/session/arithmetic/vision records passed |
+| Check | Capture | Result |
+| --- | --- | --- |
+| 26 host packages × one/four threads | Before DSL | 52/52 exact comparisons passed; 2,232 decoded steps |
+| E2B/E4B capacity 8,448 × one/four threads | Before DSL | 4/4 matched the frozen control |
+| Capacity 2,048 versus 8,448 | Before DSL | 3,840 live logit/KV arrays were identical |
+| Compiler worklist change | Before DSL | Complete outputs for all 26 packages were byte-identical |
+| Pixel 8 and Pixel 11 | Before DSL | All 12 native/session/arithmetic/vision records passed |
+| Source and compiler identity | Final DSL | 423 exact typed-program round trips; all 26 compiler packages byte-identical |
+| Public Rust Qwen3-0.6B author, four threads | Final DSL | 658 exact arrays across 153 decode steps; full prompt/reset matrix |
+| Host CTest | Final DSL | 36/36 targets passed; 386 compiler fixtures, 2,196 passed numerical requests |
+| Timing configurations | Final DSL | All 11 correctness prechecks passed |
+| Pixel 8 and Pixel 11 | Final DSL | All 14 native/session/CLI/arithmetic/vision records passed |
 
-The host comparisons performed 43,392 exact file comparisons, including resolved
+The earlier host comparisons performed 43,392 exact file comparisons, including resolved
 token files. The three unchanged expected backend failures are listed below.
 
 Host model checks use the same assets, token IDs, shapes, capacity, and numerical

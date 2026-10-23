@@ -1,6 +1,5 @@
 {
   "control_revision": "d3e66dc4a103c4a8302f810e132a15a98ff31301",
-  "implementation_revision": "3571957e2672a95366ab7ff64c2387c913691783",
   "host_compilers": {
     "rustc": "rustc 1.99.0 (b940084d7 2026-09-28) (Fedora 1.99.0-1.fc44)",
     "clang": "clang version 22.1.8 (Fedora 22.1.8-4.fc44)",
@@ -292,12 +291,88 @@
     "control/build-android/vision": {
       "sha256": "1503539607d9886a8117e3339170f906f6e3a10fc7ae45429640a992b1b0e90d",
       "bytes": 100496632
+    },
+    "dsl-candidate/build/ynn-llm": {
+      "sha256": "29e27bcb6418509364a01cc9f197823b494844648e4b99da3702b943edcb1c18",
+      "bytes": 86047008
+    },
+    "dsl-candidate/build/vision": {
+      "sha256": "3432060edee6ed57b942ff55f750c5cbac345a6b3845b68d98143177d7932f87",
+      "bytes": 53190000
+    },
+    "dsl-candidate/build/ynn-compile": {
+      "sha256": "347776934d801ad4a58d57e0f100ca26860b053c52d9631a6e6a66d9be6ed2b8",
+      "bytes": 32553888
+    },
+    "dsl-candidate/build-hf/ynn-llm": {
+      "sha256": "e42897c0e444c2320a85d01130f8969b7bd32999f67f560830938b3f7d658662",
+      "bytes": 55287112
+    },
+    "dsl-candidate/build-android/vision": {
+      "sha256": "fb910d507e598fbf820c90bed4ca2043dd44f80811ea39fd6a11163fbaab04ec",
+      "bytes": 104722248
+    },
+    "dsl-candidate/build-android/rust_native_test": {
+      "sha256": "131ef8745b7fdd226417ab93d3389e80f8ceb419dbd5c038d1b551dba3567e46",
+      "bytes": 107317752
+    },
+    "dsl-candidate/build-android/llm_session_test": {
+      "sha256": "93cadb1bb33abda913ef924000f9c9e0df239ecbf28affee3b5566887c337de4",
+      "bytes": 106905328
+    },
+    "dsl-candidate/build-android/quantized_fc_test": {
+      "sha256": "0c5b95c2412918e58a561117d392ac754b3061da919ba4c73add1e12e9e3b9ed",
+      "bytes": 63843440
+    },
+    "dsl-candidate/build-android/blockwise_fc_test": {
+      "sha256": "7b571903b93a879c96139551401d54f4a5890624b45b58489bcb64c4726a23d7",
+      "bytes": 67704944
+    },
+    "dsl-candidate/build/ynn-program": {
+      "sha256": "3af744c9c2d2f06dabdeeb18a05208dbcf859706dc7e0470cf99300b8656f9b4",
+      "bytes": 31449952
+    },
+    "dsl-candidate/build/ynn-qwen3": {
+      "sha256": "e4a4f1f36420ea33502cf09194f41e5c98869eb1b9c463c5bb725ca2c476ce1d",
+      "bytes": 30459680
+    },
+    "dsl-deployed-android/blockwise_fc_test": {
+      "sha256": "63337c863688b9ec5ac593deea38459d6ed11b45691a45bbba4e487df6287714",
+      "bytes": 3714000
+    },
+    "dsl-deployed-android/frontend_test": {
+      "sha256": "071d6c96cda3aa7f304542671bd9e3d2b3e21150ef970579d95a50f6c54ba410",
+      "bytes": 5350008
+    },
+    "dsl-deployed-android/llm_session_test": {
+      "sha256": "65027be6da5c7b9faf652a9556d3663d0f0ec06b02fcdf8b7e95068bffdae7b6",
+      "bytes": 6477976
+    },
+    "dsl-deployed-android/quantized_fc_test": {
+      "sha256": "5ddafadcea5e6cec5e55e24fde7299b108ffedaf3b37719233b2d11372607ffe",
+      "bytes": 3428256
+    },
+    "dsl-deployed-android/rust_native_test": {
+      "sha256": "3e14379722cf5092beee479146a7de235e225dbf15904ba1fe8babcc0423e3d3",
+      "bytes": 6405904
+    },
+    "dsl-deployed-android/vision": {
+      "sha256": "f88b1ae1d26559e559d65bff5e162632e95f1bca1c54622c28c80cc60a5120d4",
+      "bytes": 6210984
+    },
+    "dsl-deployed-android/vision-control": {
+      "sha256": "66152fad673b25e7d57d54ea0c2e5f904146bebd904701618023b238e34927e9",
+      "bytes": 5051872
     }
   },
   "binary_notes": {
     "candidate/build-final/ynn-llm": "Intermediate full-matrix candidate before the worklist, lowest-token tie policy, and opt-in per-step diagnostic dump changes. Compiler output parity and the retained Qwen argmax audit cover those computational changes.",
-    "candidate/build/ynn-llm": "Final standard host runner used for timing-configuration correctness, measurements, and CTest.",
-    "candidate/build-hf/ynn-llm": "Final HF runner with the BF16-rounding dependency patch and tokenizers disabled.",
-    "candidate/build-android": "Rust 1.97 minimum-toolchain native/session/arithmetic tests and ResNet18 on both phones."
-  }
+    "candidate/build/ynn-llm": "Earlier JSON-package runner. Historical full-model and first-campaign evidence retains per-job executable identities.",
+    "candidate/build-hf/ynn-llm": "Earlier JSON-package HF runner with the BF16-rounding dependency patch.",
+    "candidate/build-android": "Earlier JSON-package Android binaries; the final DSL qualification uses dsl-deployed-android identities.",
+    "dsl-candidate": "Final semantic DSL binaries. All source code matches implementation_revision; subsequent changes are validation records/documentation. Native dependencies and build flags are unchanged.",
+    "dsl-deployed-android": "Stripped binaries actually deployed for the final 14 Android checks; phone metadata remains in the local archive."
+  },
+  "initial_implementation_revision": "3571957e2672a95366ab7ff64c2387c913691783",
+  "implementation_revision": "9f5caa4589374f8c3dcdd2fa6080e9071b0c72fc"
 }

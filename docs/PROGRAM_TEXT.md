@@ -32,7 +32,8 @@ Shapes use integer dimensions, `s0` symbol references, and prefix expressions
 such as `mul(s0, 8)` and `add(s1, 1)`. Structured attributes use records and lists;
 expression-valued record fields use constructors such as `known(1)`, `symbol(0)`
 and `add([symbol(0), known(1)])`. Omitted attributes and compiler options take
-exactly the public Rust type's defaults. `options {...};` applies to all phases;
+the version-1 public defaults. Changing their meaning requires a source-format
+version change. `options {...};` applies to all phases;
 `phase_options "prefill" {...};` supplies a complete option set for one phase.
 Unknown fields, duplicate declarations, missing references and trailing input
 fail explicitly.
@@ -66,9 +67,15 @@ round-tripping decimal. `real(-0.0)` retains its sign. `bits("7ff8000000000042")
 retains a nonfinite value's exact bits, including NaN payloads. These forms map
 to the existing `Real` type; the compiler's numerical validation still applies.
 
-The directory separates checked-in semantic metadata from externally acquired
-weights so weightless lowering/interface checks remain possible. It is a
-packaging convention, not a semantic distinction between two kinds of tensor.
+The migrated profiles currently track these numeric files in Git, separate from
+externally acquired weights, so lowering/interface checks need no downloads.
+This is a provisional distribution choice. Across 26 profiles the numeric files
+occupy 131,786,240 bytes, with 56,010,240 bytes of distinct payloads before Git
+compression. Chunking bounds individual files; it does not bound repository
+history as checkpoints and quantization variants accumulate. External asset
+distribution is a follow-up. The existing hash references permit fetching these
+payloads alongside weights without changing semantic lowering. Small synthetic
+fixtures should remain self-contained.
 
 ## Tools and package integrity
 
