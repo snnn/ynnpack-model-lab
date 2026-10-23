@@ -122,12 +122,12 @@ def main():
             print(f"Applied: {patch.name}", flush=True)
     if not shutil.which("cargo"):
         raise RuntimeError("Rust/Cargo is required for the model runners")
-    subprocess.run(
-        ["cargo", "fetch", "--locked", "--manifest-path",
-         str(ROOT / "rust/Cargo.toml")],
-        check=True,
-        env={**os.environ, "CARGO_HOME": str(args.directory.resolve() / "cargo")},
-    )
+    for manifest in ["rust/Cargo.toml", "rust/operations/Cargo.toml"]:
+        subprocess.run(
+            ["cargo", "fetch", "--locked", "--manifest-path", str(ROOT / manifest)],
+            check=True,
+            env={**os.environ, "CARGO_HOME": str(args.directory.resolve() / "cargo")},
+        )
 
 
 

@@ -23,6 +23,7 @@ pub mod gemma;
 mod io;
 mod plan;
 pub mod compiler;
+pub mod runtime;
 pub mod plan_text;
 #[cfg(all(feature = "vision", feature = "gemma"))]
 compile_error!("Vision and Gemma have separate application entry points; build them separately");

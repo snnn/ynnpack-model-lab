@@ -12,6 +12,8 @@ use std::path::{Path, PathBuf};
 struct Fixture {
     version: u32,
     graphs: BTreeMap<String, PathBuf>,
+    #[serde(default)]
+    program: Option<PathBuf>,
     #[serde(default = "one")]
     threads: usize,
     #[serde(default)]
@@ -151,6 +153,23 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         append_regions: BTreeMap::new(),
     };
     let mut setup_ms = BTreeMap::new();
+    let mut preparation = None;
+    if let Some(path) = &fixture.program {
+        let program: crate::compiler::Program = serde_json::from_slice(&std::fs::read(root.join(path))?)?;
+        if program.phases.keys().ne(fixture.graphs.keys()) {
+            return Err(Error::invalid("Fixture program phases differ"));
+        }
+        let prepared = crate::runtime::prepare(&program, crate::runtime::AssetStore { assets },
+            crate::runtime::PrepareOptions { threads: fixture.threads,
+                profile_execution: if fixture.profile { "all" } else { "none" },
+                output_dir: root.to_path_buf(), ..Default::default() })?;
+        preparation = Some(prepared.stats);
+        session.graphs = prepared.graphs;
+        for (name, graph) in &mut session.graphs {
+            let pipeline = root.join(format!("{name}.pipeline"));
+            graph.diagnostics(fixture.pipeline.then_some(pipeline.as_path()), fixture.memory)?;
+        }
+    } else {
     for (name, plan) in fixture.graphs {
         let start = std::time::Instant::now();
         let mut builder = ffi::GraphBuilder::from_plan(assets.clone(), &root.join(plan))?;
@@ -170,6 +189,7 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
             graph.profile_step("", 0, 0, 0, 0)?;
         }
         session.graphs.insert(name, graph);
+    }
     }
     for spec in fixture.buffers {
         if session.buffers.contains_key(&spec.name) || session.resources.contains_key(&spec.name) {
@@ -533,7 +553,8 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         records.last_mut().unwrap()["resources"] = json!(resource_status);
         let record = records.last_mut().unwrap();
         record["run_ms"] = json!(run_ms);
-        record["setup_ms"] = json!(setup_ms[&step.graph]);
+        record["setup_ms"] = json!(setup_ms.get(&step.graph));
+        record["preparation"] = json!(preparation);
         record["ynn_math"] = json!(ffi::math_mode()?);
         record["timings_valid_for_benchmark"] = json!(!fixture.profile && !fixture.memory);
         if fixture.memory {

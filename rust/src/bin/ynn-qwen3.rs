@@ -1,7 +1,7 @@
 // Copyright 2026 @snnn. SPDX-License-Identifier: Apache-2.0
 use serde_json::json;
 use sha2::{Digest, Sha256};
-use std::{collections::BTreeMap, path::PathBuf};
+use std::path::PathBuf;
 use ynnpack_lab::{compiler, models::qwen3::Assets, Error, Result};
 fn main() {
     if let Err(e) = run() {
@@ -63,13 +63,14 @@ fn run() -> Result<()> {
         }
         counts += 1;
     }
-    let mut graphs = BTreeMap::new();
+    let mut runner = serde_json::to_value(assets.execution(&program, capacity, rows)?)?;
     for phase in ["prefill", "decode"] {
-        let g = &compiled.graphs[phase];
-        graphs.insert(phase,json!({"file":format!("{phase}.ynn"),"sha256":format!("{:x}",Sha256::digest(compiled.plans[phase].as_bytes())),"logits":if phase=="decode"{g.outputs.first()}else{None},"row_policy":"padded","scalars":{"position":"position","valid_rows":"valid_rows"},"inputs":[{"name":"token_ids","dtype":"int32","shape":[1,"rows"],"recipe":{"kind":"tokens"}},{"name":"input_pos","dtype":"int32","shape":["rows"],"recipe":{"kind":"positions"}},{"name":"mask","dtype":"fp32","shape":[1,1,"rows","capacity"],"recipe":{"kind":"mask","window":null,"masked":"finite_min"}}]}));
+        runner["graphs"][phase]["file"] = json!(format!("{phase}.ynn"));
+        runner["graphs"][phase]["sha256"] = json!(format!("{:x}", Sha256::digest(compiled.plans[phase].as_bytes())));
     }
-    let resources=compiled.graphs["decode"].resources.iter().map(|r|json!({"name":r.owner,"axis":r.axis,"dtype":"fp32","shape":compiled.graphs["decode"].values[&r.owner].tensor.shape.iter().map(|d|d.literal().unwrap()).collect::<Vec<_>>()})).collect::<Vec<_>>();
-    let runner = json!({"format":"ynn-llm-execution","model":"qwen3-rust","capacity":capacity,"prefill_rows":rows,"vocabulary":assets.config["vocab_size"],"prefill_after_decode":false,"graphs":graphs,"resources":resources,"fixed_states":[],"embeddings":{}});
+    // Preserve the established offline JSON contract exactly.
+    runner.as_object_mut().unwrap().remove("contract");
+    runner.as_object_mut().unwrap().remove("compatibility");
     std::fs::write(
         stage.join("model.json"),
         serde_json::to_vec_pretty(

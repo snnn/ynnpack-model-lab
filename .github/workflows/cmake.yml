@@ -7,10 +7,16 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+      - name: Record CPU capabilities for kernel dispatch failures
+        run: lscpu
       - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
         with:
           version: "0.12.23"
           python-version: "3.11"
+      - name: Rust 1.97 minimum toolchain
+        run: |
+          rustup toolchain install 1.97.0 --profile minimal
+          rustup override set 1.97.0
       - run: uv sync --locked
       - run: uv run --locked python tools/check_publication.py
       - run: uv run --locked python -m unittest discover -s tests -p test_publication.py

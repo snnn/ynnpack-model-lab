@@ -12,7 +12,7 @@ use std::fs::{self, File};
 use std::io::{BufWriter, Write};
 use std::path::Path;
 pub(crate) mod package;
-mod session;
+pub(crate) mod session;
 use package::Package;
 use session::Session;
 use std::time::Instant;
@@ -67,6 +67,38 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
     } else {
         None
     };
+    fn take_option(args: &mut Vec<String>, name: &str) -> Result<Option<String>> {
+        let mut result = None;
+        let mut i = 1;
+        while i < args.len() {
+            let value = if args[i] == name {
+                args.remove(i);
+                if i == args.len() { return Err(Error::invalid(format!("Missing value for {name}"))); }
+                Some(args.remove(i))
+            } else if args[i].starts_with(&format!("{name}=")) {
+                Some(args.remove(i).split_once('=').unwrap().1.to_owned())
+            } else { None };
+            if let Some(value) = value {
+                if value.is_empty() || result.replace(value).is_some() {
+                    return Err(Error::invalid(format!("Empty/repeated {name}")));
+                }
+            } else { i += 1; }
+        }
+        Ok(result)
+    }
+    let prepare_drop = take_option(&mut arguments, "--prepare-drop")?
+        .map(|s| s.parse::<usize>().ok().filter(|n| (1..=16).contains(n))
+            .ok_or_else(|| Error::invalid("--prepare-drop must be 1..16"))).transpose()?;
+    let program_path = take_option(&mut arguments, "--program")?;
+    let qwen_assets = take_option(&mut arguments, "--qwen-assets")?;
+    let execution_path = take_option(&mut arguments, "--execution")?;
+    if (program_path.is_some() && qwen_assets.is_some()) ||
+        (execution_path.is_some() && program_path.is_none()) {
+        return Err(Error::invalid("Choose --program with --execution, or --qwen-assets"));
+    }
+    if arguments.iter().any(|s| s == "--help" || s == "-h") {
+        println!("Experimental preparation: --program=FILE [--execution=FILE] or --qwen-assets=FILE; mutually exclusive with --graph_dir");
+    }
     let Some(mut o) = Options::parse(&arguments, true)? else {
         return Ok(());
     };
@@ -76,7 +108,32 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         return Err(Error::invalid("Scoring requires zero warmups, one repetition and no diagnostics"));
     }
     let root = Path::new(o.graph_dir.as_deref().unwrap_or(&o.bundle_dir));
-    let package = Package::read(root)?;
+    if o.graph_dir.is_some() && (program_path.is_some() || qwen_assets.is_some()) {
+        return Err(Error::invalid("Runtime program input and --graph_dir are mutually exclusive"));
+    }
+    let load_start = Instant::now();
+    let mut program = None;
+    let mut offline = None;
+    let (package, source) = if let Some(path) = &program_path {
+        program = Some(serde_json::from_slice::<crate::compiler::Program>(&io::read_limited(Path::new(path), 128*1024*1024)?)?);
+        let default = Path::new(path).with_file_name("execution.json");
+        let spec = execution_path.as_ref().map(Path::new).unwrap_or(&default);
+        let spec: crate::runtime::ExecutionSpec = serde_json::from_slice(&io::read_limited(spec,16*1024*1024)?)?;
+        spec.validate()?;
+        (spec, "program")
+    } else if let Some(path) = &qwen_assets {
+        let assets: crate::models::qwen3::Assets = serde_json::from_slice(&io::read_limited(Path::new(path),128*1024*1024)?)?;
+        let p = assets.program(o.cache_capacity as i64, o.prefill_rows as i64)?;
+        let spec = assets.execution(&p, o.cache_capacity as i64, o.prefill_rows as i64)?;
+        program = Some(p);
+        (spec, "qwen-assets")
+    } else {
+        let p = Package::read(root)?;
+        let spec = p.spec.clone();
+        offline = Some(p);
+        (spec, "offline-plan")
+    };
+    let load_ms = load_start.elapsed().as_secs_f64()*1000.0;
     if !arguments.iter().any(|a| a.starts_with("--cache_capacity=")) {
         o.cache_capacity = package.capacity;
     }
@@ -106,20 +163,54 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         &output.join("run.json"),
         &json!({
             "runner": "ynn-llm", "graph_dir": root, "threads": o.num_threads,
+            "preparation_source": source, "program": program_path, "qwen_assets": qwen_assets,
             "cache_capacity": package.capacity, "prefill_rows": package.prefill_rows, "prefill_chunk_size": chunk_size,
             "warmups": o.warmup_runs, "repetitions": o.measured_runs,
             "ynn_math": ffi::math_mode()?,
             "profile_execution": o.profile_execution, "trace_plan": o.trace_plan,
-            "timings_valid_for_benchmark": !score_tokens && o.profile_execution == "none"
+            "timings_valid_for_benchmark": prepare_drop.is_none() && !score_tokens && o.profile_execution == "none"
                 && !o.report_memory && !o.dump_outputs && o.trace_plan.is_empty(),
         }),
     )?;
+    if let Some(repetitions) = prepare_drop {
+        let mut records = Vec::new();
+        for repetition in 0..repetitions {
+            let before = ffi::allocator_bytes();
+            let start = Instant::now();
+            let session = if let Some(program) = program.as_ref() {
+                let assets = crate::runtime::AssetStore::open(Path::new(&o.bundle_dir),Path::new(&o.parameter_dir))?;
+                let prepared = crate::runtime::prepare(program,assets,session::prepare_options(&o,&package))?;
+                Session::from_prepared(prepared,package.clone())?
+            } else {
+                Session::load(root,Path::new(&o.bundle_dir),Path::new(&o.parameter_dir),Package::read(root)?,&o)?
+            };
+            let mut record = json!({"repetition":repetition,"prepare_ms":start.elapsed().as_secs_f64()*1000.0,
+                "before_allocator":before,"prepared_rss":ffi::rss(),"prepared_allocator":ffi::allocator_bytes(),
+                "preparation":session.preparation});
+            drop(session);
+            record["after_drop_rss"] = json!(ffi::rss());
+            record["after_drop_allocator"] = json!(ffi::allocator_bytes());
+            records.push(record);
+            io::json(&output.join("preparation_lifecycle.json"),&records)?;
+        }
+        io::json(&output.join("completion.json"),&json!({"status":"completed","prepare_drop":repetitions}))?;
+        return Ok(());
+    }
     let start = Instant::now();
-    let mut session = Session::load(root, Path::new(&o.bundle_dir), Path::new(&o.parameter_dir), package, &o)?;
+    let mut session = if let Some(program) = program.take() {
+        let assets = crate::runtime::AssetStore::open(Path::new(&o.bundle_dir), Path::new(&o.parameter_dir))?;
+        let prepared = crate::runtime::prepare(&program, assets, session::prepare_options(&o, &package))?;
+        drop(program);
+        Session::from_prepared(prepared, package)?
+    } else {
+        Session::load(root, Path::new(&o.bundle_dir), Path::new(&o.parameter_dir), offline.take().unwrap(), &o)?
+    };
     io::json(
         &output.join("setup.json"),
         &json!({"model":session.package.model,
-        "setup_ms":start.elapsed().as_secs_f64()*1000.0,"threads":o.num_threads,
+        "setup_ms":load_ms+start.elapsed().as_secs_f64()*1000.0,"threads":o.num_threads,
+        "model_load_or_author_ms":load_ms,"preparation":session.preparation,
+        "allocator_bytes":ffi::allocator_bytes(),
         "rss_bytes":ffi::rss(),"peak_rss_bytes":ffi::peak_rss()}),
     )?;
     if score_tokens {

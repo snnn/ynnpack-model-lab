@@ -5,6 +5,12 @@ plans used by the existing runners. It owns YNNPACK decomposition, target views,
 packed representations, native function sharing, and construction serialization.
 The runtime and native kernels remain separate from model authoring. There is one
 compiler implementation, in `rust/src/compiler`, shared by every frontend.
+The experimental [runtime preparation API](RUNTIME_PREPARATION.md) invokes that
+same compiler in process and prepares reusable graphs without plan files.
+
+FC, attention, and selected graph rewrites use build-time generated Rust from
+[ISLE rules](ISLE_LOWERING.md). That guide describes rule ownership, extension,
+and regression checks.
 
 An importer translates source semantics into this program. It does not translate
 operations into native commands. A Rust model author builds the same program
@@ -117,6 +123,14 @@ cases and reports only the recorded signal separately. A successful execution
 must still pass every numerical check. Other failures fail the suite. Omit the
 flag to treat every backend failure as fatal. CTest uses the explicit baseline
 allowance; read its reported known-failure count as well as its exit status.
+
+The `blockwise_fc` CTest checks group-32 INT4 arithmetic under native and
+restricted CPU feature masks. The runtime uses unsigned VNNI dots when available,
+signed AVX2/NEON dots with equivalent activation zero-point recentering, or a
+portable dot with its own weight packing. AMX tiles are excluded because this
+adapter does not provide their padded row buffers. The test also checks AMX
+selection without executing unsupported instructions. CI records `lscpu` so
+kernel dispatch failures can be tied to the runner's actual capabilities.
 
 `ynn-plan compare LEFT.ynn RIGHT.ynn` expands native functions and compares
 normalized construction, public contracts, constants, state, and arithmetic. It

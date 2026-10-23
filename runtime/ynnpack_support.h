@@ -35,6 +35,7 @@
 #include <vector>
 
 #include "execution_profile.h"
+#include "rust/blockwise.h"
 #include "ynnpack_recurrent_cpu.h"
 #include "packed_routing.h"
 #include "checked_index.h"

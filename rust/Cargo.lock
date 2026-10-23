@@ -96,6 +96,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "cranelift-isle"
+version = "0.136.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9ea6526ebf9064fff8ce3b1e26afad7027f9e6bb0e45d2b9200e4cbab8343345"
+
+[[package]]
 name = "crossbeam-deque"
 version = "0.8.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -757,6 +763,7 @@ checksum = "1ebf944e87a7c253233ad6766e082e3cd714b5d03812acc24c318f549614536e"
 name = "ynnpack-lab"
 version = "0.1.0"
 dependencies = [
+ "cranelift-isle",
  "serde",
  "serde_json",
  "sha2",

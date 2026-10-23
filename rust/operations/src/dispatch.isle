@@ -1,0 +1,10 @@
+;; Copyright 2026 @snnn. SPDX-License-Identifier: Apache-2.0
+;; Ordered runtime policy. Backend facts are queried once for each row bucket.
+(type Strategy (enum (UnsignedK4) (SignedK4) (PortableK1)))
+(type Flag (primitive u8))
+(decl pure usable (Strategy) Flag)
+(extern constructor usable usable)
+(decl pure partial select () Strategy)
+(rule 30 (select) (if-let 1 (usable (Strategy.UnsignedK4))) (Strategy.UnsignedK4))
+(rule 20 (select) (if-let 1 (usable (Strategy.SignedK4))) (Strategy.SignedK4))
+(rule 10 (select) (if-let 1 (usable (Strategy.PortableK1))) (Strategy.PortableK1))

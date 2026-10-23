@@ -8,9 +8,12 @@ embedding arithmetic and resource-state contracts remain behind the private
 C ABI. Rust owns the shared benchmark input frontend and calls HF tokenizers
 directly; only the SentencePiece engine crosses its own small FFI. This is a research runtime, not a production framework.
 
+Semantic programs can also be [prepared in process](RUNTIME_PREPARATION.md).
+This opt-in path shares the public compiler and keeps offline loading as the default.
+
 ## Build and run
 
-Use CMake and Rust/Cargo 1.87+. Bootstrap fetches the locked crates; CMake builds
+Use CMake and Rust/Cargo 1.97+. Bootstrap fetches the locked crates; CMake builds
 with frozen offline Cargo. Rust is required even when tokenizers are disabled.
 An existing hash-verified dependency directory can be selected with `LAB_DEPS`,
 and `LAB_CARGO_HOME` selects an already populated Cargo cache.

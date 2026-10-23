@@ -26,7 +26,7 @@ if(BUILD_TESTING AND NOT CMAKE_CROSSCOMPILING)
   add_test(NAME compiler_numerics COMMAND ${Python3_EXECUTABLE}
     ${CMAKE_CURRENT_SOURCE_DIR}/tools/test_compiler_fixtures.py
     --compiler ${lab_compile_tool} --runner $<TARGET_FILE:plan_fixture>
-    --known-failures)
+    --known-failures --package-reference ${CMAKE_CURRENT_SOURCE_DIR}/tests/compiler/package_hashes.json)
 endif()
 
 if(BUILD_TESTING AND NOT CMAKE_CROSSCOMPILING)
@@ -34,4 +34,11 @@ if(BUILD_TESTING AND NOT CMAKE_CROSSCOMPILING)
     -s ${CMAKE_CURRENT_SOURCE_DIR}/tests -p test_compiler_packages.py)
   set_tests_properties(compiler_packages PROPERTIES
     ENVIRONMENT "YNNPACK_PLAN_TOOL=${CMAKE_CURRENT_BINARY_DIR}/ynn-plan;PYTHONDONTWRITEBYTECODE=1")
+endif()
+
+if(BUILD_TESTING AND NOT CMAKE_CROSSCOMPILING)
+  add_test(NAME runtime_compiler_numerics COMMAND ${Python3_EXECUTABLE}
+    ${CMAKE_CURRENT_SOURCE_DIR}/tools/test_compiler_fixtures.py
+    --compiler ${lab_compile_tool} --runner $<TARGET_FILE:plan_fixture>
+    --runtime --known-failures --package-reference ${CMAKE_CURRENT_SOURCE_DIR}/tests/compiler/package_hashes.json)
 endif()

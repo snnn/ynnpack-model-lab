@@ -2,7 +2,8 @@
 // Included inside lab_ynn::Graph. Per-row asymmetric A8, group-32 W4.
 // Packed weights stay packed; only a bounded tile is expanded for native dots.
   void BlockwiseFullyConnected(uint32_t input, uint32_t weight, uint32_t scales,
-                               uint32_t zero, uint32_t out, int64_t group) {
+                               uint32_t zero, uint32_t out, int64_t group,
+                               uint64_t dot_arch_flags = UINT64_MAX) {
     weight = ConstantSource(weight);
     scales = ConstantSource(scales);
     zero = ConstantSource(zero);
@@ -24,7 +25,7 @@
     node.op = ynn_node::opaque{"blockwise_fc_a8_w4_native_dot"};
     node.inputs = {input, weight, scales, zero};
     node.outputs = {out};
-    node.create = [shape](const ynn_node& node, ynn_runtime& runtime) {
+    node.create = [shape, dot_arch_flags](const ynn_node& node, ynn_runtime& runtime) {
       auto& y = runtime.value(node.outputs[0]);
       y.make_buffer(runtime, sizeof(float));
       auto dims = runtime.globals.make_dims(2);
@@ -38,7 +39,17 @@
       }
       slinky::call_stmt::attributes attrs;
       attrs.name = "blockwise_fc_a8_w4_native_dot";
-      auto callback = [](const slinky::call_stmt* call,
+      const auto n = slinky::as_constant(shape[0]);
+      const auto k = slinky::as_constant(shape[1]);
+      if (!n || !k || *n <= 0 || *k <= 0)
+        throw std::invalid_argument("Blockwise weights must have fixed positive shape");
+      const auto rows = slinky::as_constant(runtime.value(node.inputs[0]).extent(1));
+      const size_t max_rows = rows ? size_t(*rows) : std::min<size_t>(32768, (size_t(1) << 30) / *k);
+      void* raw = nullptr;
+      if (lab_blockwise_create(*n, *k, max_rows, dot_arch_flags, &raw))
+        throw std::runtime_error("Rust blockwise preparation failed");
+      auto operation = std::shared_ptr<void>(raw, lab_blockwise_delete);
+      auto callback = [operation](const slinky::call_stmt* call,
                          slinky::eval_context& context) -> slinky::index_t {
         const auto& x = context.lookup_buffer(call->inputs[0])->cast<const float>();
         const auto& w = context.lookup_buffer(call->inputs[1])->cast<const uint8_t>();
@@ -48,100 +59,26 @@
         const size_t n = slinky::evaluate(call->scalars[0], context);
         const size_t k = slinky::evaluate(call->scalars[1], context);
         const size_t rows = slinky::evaluate(call->scalars[2], context);
-        constexpr size_t reduction = 32, channels = 128, max_rows = 8;
-        if (!n || !k || k % 32 || x.dim(0).extent() != k || y.dim(0).extent() != n ||
-            w.dim(0).extent() != n * k / 2 || w.dim(0).stride() != 1 || w.dim(0).min() != 0 ||
-            scales.dim(0).extent() != k / 32 ||
-            scales.dim(1).extent() != n || zero(0, 0) != 0) return 1;
-        if (!rows) return 0;
-        const uint8_t* packed_codes = &w(0);
-        // Activation storage is proportional to the input, never the weights.
-        std::vector<uint8_t> a(rows * k);
-        std::vector<float> a_scale(rows);
-        std::vector<int32_t> a_zero(rows);
-        for (size_t m = 0; m < rows; ++m) {
-          float lo = 0, hi = 0;
-          for (size_t r = 0; r < k; ++r) {
-            const float v = x(r, m);
-            if (!std::isfinite(v)) return 1;
-            lo = std::min(lo, v); hi = std::max(hi, v);
+        auto view = [](const auto& buffer) -> LabBlockwiseView {
+          const size_t rank = buffer.rank;
+          if (rank != 1 && rank != 2) throw std::invalid_argument("Blockwise view rank");
+          for (size_t d = 0; d < rank; ++d) {
+            if (buffer.dim(d).min() != 0 || buffer.dim(d).extent() < 0 ||
+                (buffer.dim(d).stride() != 0 && buffer.dim(d).fold_factor() != slinky::dim::unfolded &&
+                 buffer.dim(d).fold_factor() < buffer.dim(d).extent()) ||
+                buffer.dim(d).stride() % buffer.elem_size != 0)
+              throw std::invalid_argument("Blockwise view layout: dim=" + std::to_string(d) + " min=" + std::to_string(buffer.dim(d).min()) + " fold=" + std::to_string(buffer.dim(d).fold_factor()) + " stride=" + std::to_string(buffer.dim(d).stride()) + " element=" + std::to_string(buffer.elem_size));
           }
-          const float range = hi - lo;
-          a_scale[m] = range == 0 ? 1.0f : range / 255.0f;
-          const float inverse = range == 0 ? 1.0f : 255.0f / range;
-          a_zero[m] = int32_t(std::clamp(-lo * inverse, 0.0f, 255.0f) + 0.5f);
-          const float quant_inverse = 1.0f / a_scale[m];
-          for (size_t r = 0; r < k; ++r)
-            a[m * k + r] = uint8_t(std::clamp(
-                std::nearbyint(x(r, m) * quant_inverse) + float(a_zero[m]), 0.0f, 255.0f));
-        }
-        const auto kernel = ynn::get_dot_kernel(
-            {ynn_type_uint8, ynn_type_int8, ynn_type_int32},
-#if __has_include("ynnpack/kernels/dot/cost_model/cost_model.h")
-            ynn::get_dot_cost_models(),
-#endif
-            {std::min(rows, max_rows), std::min(n, channels), reduction, 1, 1},
-            {0, 4}, 0, false);
-        if (!kernel.kernel || kernel.tile_k != 4 || kernel.tile_m != 1 ||
-            kernel.block_m <= 0 || kernel.tile_n <= 0 || channels % kernel.tile_n)
-          throw std::runtime_error("YNNPACK has no compatible U8/I8 group-32 dot kernel");
-        const size_t block_m = std::min(max_rows, size_t(kernel.block_m));
-        auto work = [&](size_t task) {
-          alignas(64) int8_t b_tile[reduction * channels];
-          alignas(64) int32_t sums[channels], c_tile[max_rows * channels];
-          ynn::dot_kernel_state state;
-          const size_t first_n = task * channels;
-          const size_t width = std::min(channels, n - first_n);
-          for (size_t g = 0; g < k / reduction; ++g) {
-            std::fill_n(b_tile, reduction * channels, 0);
-            std::fill_n(sums, channels, 0);
-            for (size_t c = 0; c < width; ++c) {
-              const float s = scales(g, first_n + c);
-              if (!std::isfinite(s) || s <= 0)
-                throw std::runtime_error("Invalid grouped weight scale");
-              for (size_t r = 0; r < reduction; r += 8) {
-                const size_t index = (first_n + c) * k + g * reduction + r;
-                // Spread eight little-endian nibbles into byte lanes, then
-                // sign-extend each lane. No full decoded matrix is retained.
-                const auto* source = packed_codes + index / 2;
-                uint64_t codes = uint64_t(source[0]) | (uint64_t(source[1]) << 8) |
-                                 (uint64_t(source[2]) << 16) | (uint64_t(source[3]) << 24);
-                codes = (codes | (codes << 16)) & UINT64_C(0x0000ffff0000ffff);
-                codes = (codes | (codes << 8)) & UINT64_C(0x00ff00ff00ff00ff);
-                codes = (codes | (codes << 4)) & UINT64_C(0x0f0f0f0f0f0f0f0f);
-                const uint64_t signs = codes & UINT64_C(0x0808080808080808);
-                constexpr uint64_t sum_lanes = UINT64_C(0x0101010101010101);
-                sums[c] += int((codes * sum_lanes) >> 56) - 16 * int(((signs >> 3) * sum_lanes) >> 56);
-                codes |= signs * 30;
-                // Canonical kernel tiles group four adjacent K codes per N.
-                for (size_t j = 0; j < 8; ++j)
-                  b_tile[((r + j) / 4) * channels * 4 + c * 4 + j % 4] =
-                      int8_t(uint8_t(codes >> (8 * j)));
-              }
-            }
-            for (size_t first_m = 0; first_m < rows; first_m += block_m) {
-              const size_t height = std::min(block_m, rows - first_m);
-              // B's reduction stride is per logical K element. The kernel
-              // multiplies it by tile_k=4 to advance one packed K quartet.
-              kernel.kernel(height, width, 1, 1, reduction,
-                  k, 0, 0, a.data() + first_m * k + g * reduction,
-                  0, 0, channels, b_tile, channels * sizeof(int32_t), nullptr,
-                  channels * sizeof(int32_t), c_tile, &state);
-              for (size_t m = 0; m < height; ++m)
-                for (size_t c = 0; c < width; ++c) {
-                  const int32_t acc = c_tile[m * channels + c] - a_zero[first_m + m] * sums[c];
-                  const float result = float(acc) * (a_scale[first_m + m] * scales(g, first_n + c));
-                  y(first_n + c, first_m + m) = result + (g ? y(first_n + c, first_m + m) : 0.0f);
-                }
-            }
-          }
+          return {buffer.base(), size_t(buffer.dim(0).extent()),
+                  rank == 2 ? size_t(buffer.dim(1).extent()) : 1,
+                  buffer.dim(0).stride() / ptrdiff_t(buffer.elem_size),
+                  rank == 2 ? buffer.dim(1).stride() / ptrdiff_t(buffer.elem_size) : 0};
         };
-        const size_t tasks = (n + channels - 1) / channels;
-        if (context.config && context.config->thread_pool && tasks > 1)
-          context.config->thread_pool->parallel_for(tasks, work);
-        else
-          for (size_t task = 0; task < tasks; ++task) work(task);
-        return 0;
+        (void)n;
+        (void)k;
+        LabBlockwiseCall invocation{view(x), view(w), view(scales), view(zero), view(y), rows,
+            context.config ? context.config->thread_pool : nullptr};
+        return lab_blockwise_run(operation.get(), &invocation);
       };
       std::vector<slinky::expr> sizes{shape[0], shape[1], runtime.value(node.inputs[0]).extent(1)};
       auto f = slinky::func(callback, std::move(sources), {{y.buffer, dims}}, sizes, attrs);

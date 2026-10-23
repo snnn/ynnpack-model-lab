@@ -1,0 +1,20 @@
+# Copyright 2026 @snnn. SPDX-License-Identifier: Apache-2.0
+[package]
+name = "ynnpack-operations"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.97"
+license = "Apache-2.0"
+publish = false
+
+[lib]
+crate-type = ["staticlib", "rlib"]
+
+[build-dependencies]
+cranelift-isle = { version = "=0.136.3", default-features = false }
+
+[profile.release]
+debug = 1
+
+[lints.rust]
+unsafe_op_in_unsafe_fn = "deny"

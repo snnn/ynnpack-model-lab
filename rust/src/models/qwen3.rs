@@ -504,3 +504,33 @@ impl Assets {
         Ok(a.b.graph)
     }
 }
+
+impl Assets {
+    /// Input/state roles for the public author, independent of a serialized plan.
+    pub fn execution(&self, program: &Program, capacity: i64, rows: i64) -> Result<crate::runtime::ExecutionSpec> {
+        use serde_json::json;
+        let mut phases = BTreeMap::new();
+        for phase in ["prefill", "decode"] {
+            let g = program.phases.get(phase).ok_or_else(|| Error::invalid("Missing Qwen phase"))?;
+            phases.insert(phase, json!({"logits":if phase=="decode"{g.outputs.first()}else{None},
+                "row_policy":"padded","scalars":{"position":"position","valid_rows":"valid_rows"},
+                "inputs":[{"name":"token_ids","dtype":"int32","shape":[1,"rows"],"recipe":{"kind":"tokens"}},
+                    {"name":"input_pos","dtype":"int32","shape":["rows"],"recipe":{"kind":"positions"}},
+                    {"name":"mask","dtype":"fp32","shape":[1,1,"rows","capacity"],
+                     "recipe":{"kind":"mask","window":null,"masked":"finite_min"}}]}));
+        }
+        let g = &program.phases["decode"];
+        let resources = g.resources.iter().map(|r| {
+            let shape = g.values[&r.owner].tensor.shape.iter().map(|d| d.literal()
+                .ok_or_else(|| Error::invalid("Qwen resource must have fixed capacity")))
+                .collect::<Result<Vec<_>>>()?;
+            Ok(json!({"name":r.owner,"axis":r.axis,"dtype":"fp32","shape":shape}))
+        }).collect::<Result<Vec<_>>>()?;
+        let spec: crate::runtime::ExecutionSpec = serde_json::from_value(json!({
+            "format":"ynn-llm-execution","model":"qwen3-rust","capacity":capacity,
+            "prefill_rows":rows,"vocabulary":self.config["vocab_size"],"prefill_after_decode":false,
+            "graphs":phases,"resources":resources,"fixed_states":[],"embeddings":{}}))?;
+        spec.validate()?;
+        Ok(spec)
+    }
+}
