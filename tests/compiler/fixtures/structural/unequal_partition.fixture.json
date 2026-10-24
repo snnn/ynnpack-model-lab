@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "unequal_partition.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -45,5 +42,6 @@
         "y": "actual/unequal_partition/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "unequal_partition.program.ynn"
 }

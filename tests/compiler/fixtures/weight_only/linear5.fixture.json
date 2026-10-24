@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "linear5.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -137,5 +134,6 @@
         "y": "actual/linear5/4_79.bin"
       }
     }
-  ]
+  ],
+  "program": "linear5.program.ynn"
 }

@@ -14,22 +14,23 @@ crate-type = ["rlib", "staticlib"]
 [[bin]]
 name = "ynn-plan"
 path = "src/bin/ynn-plan.rs"
-required-features = ["plan-tool"]
+required-features = ["diagnostic-tools"]
 
 [features]
 default = []
 vision = []
-gemma = ["input-frontend"]
+gemma = ["llm"]
 input-frontend = []
 tokenizers = ["dep:tokenizers"]
 tokenizer-probe = ["input-frontend"]
 frontend-tests = ["input-frontend"]
 native-tests = []
 fixture = []
-qwen = ["input-frontend"]
+qwen = ["llm"]
 llm = ["input-frontend"]
 llm-tests = ["llm"]
-plan-tool = []
+authoring-tools = []
+diagnostic-tools = []
 
 [dependencies]
 serde = { version = "=1.0.229", features = ["derive"] }
@@ -46,12 +47,17 @@ debug = 1
 [[bin]]
 name = "ynn-compile"
 path = "src/bin/ynn-compile.rs"
-required-features = ["plan-tool"]
+required-features = ["diagnostic-tools"]
 
 [[bin]]
 name = "ynn-qwen3"
 path = "src/bin/ynn-qwen3.rs"
-required-features = ["plan-tool"]
+required-features = ["authoring-tools"]
+
+[[bin]]
+name = "ynn-program"
+path = "src/bin/ynn-program.rs"
+required-features = ["authoring-tools"]
 
 [build-dependencies]
 cranelift-isle = { version = "=0.136.3", default-features = false }

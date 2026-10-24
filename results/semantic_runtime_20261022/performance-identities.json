@@ -1,0 +1,101 @@
+{
+  "qwen3_0_6b_generated-t1": {
+    "$CONTROL/build/qwen3": "0a484f1a779f58a6e72889e188dc0cb0f7f5323122600e0e3468a81c954bb740",
+    "$CONTROL/models/qwen3_0_6b/generated/model.json": "a3406cb073559b868e4d95228de9c0ab65a5eb4091c70817bb5f9d2b6804264c",
+    "$LAB/build/ynn-llm": "29e27bcb6418509364a01cc9f197823b494844648e4b99da3702b943edcb1c18",
+    "$LAB/models/qwen3_0_6b/fixtures/perf.tsv": "35e8d0d8126f89797d2687521494f739be8acb52e1d87d19278e8da60b239349",
+    "$LAB/models/qwen3_0_6b/generated/execution.json": "0165cf3aea42f3af83308672dc75bb805dd29cb62b2c0ea20d61d7c07ac57a2a",
+    "$LAB/models/qwen3_0_6b/generated/model.json": "588dd9d217671b1eb2b95227b8c4b3056b0899b4794d4d3b9d5f0a4a86157734"
+  },
+  "qwen3_0_6b_generated-t4": {
+    "$CONTROL/build/qwen3": "0a484f1a779f58a6e72889e188dc0cb0f7f5323122600e0e3468a81c954bb740",
+    "$CONTROL/models/qwen3_0_6b/generated/model.json": "a3406cb073559b868e4d95228de9c0ab65a5eb4091c70817bb5f9d2b6804264c",
+    "$LAB/build/ynn-llm": "29e27bcb6418509364a01cc9f197823b494844648e4b99da3702b943edcb1c18",
+    "$LAB/models/qwen3_0_6b/fixtures/perf.tsv": "35e8d0d8126f89797d2687521494f739be8acb52e1d87d19278e8da60b239349",
+    "$LAB/models/qwen3_0_6b/generated/execution.json": "0165cf3aea42f3af83308672dc75bb805dd29cb62b2c0ea20d61d7c07ac57a2a",
+    "$LAB/models/qwen3_0_6b/generated/model.json": "588dd9d217671b1eb2b95227b8c4b3056b0899b4794d4d3b9d5f0a4a86157734"
+  },
+  "gemma4_e2b_generated-t1": {
+    "$LAB/assets/gemma4_e2b/bundle/manifest.json": "e6a1f0c01def6569511d01c03c6da2bd528f7f08250d60e8561eef36d9aebbc3",
+    "$CONTROL/build/gemma4_e2b": "a39a75330b1e8dac961c6f875fa6f8fd4adb25a24e9aba5649ec29aeba391dce",
+    "$CONTROL/models/gemma4_e2b/generated/model.json": "804289bb12f4854bbd3938fa1b43e9b58ec0b11a4900b3cd31ae1ac63c75983e",
+    "$LAB/build/ynn-llm": "29e27bcb6418509364a01cc9f197823b494844648e4b99da3702b943edcb1c18",
+    "$LAB/models/gemma4_e2b/fixtures/performance.tsv": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "$LAB/models/gemma4_e2b/generated/execution.json": "c3c6e4f543d3d30ffcf0e30a40b130df99dec96bc684d3e31a943c65bee0f7e3",
+    "$LAB/models/gemma4_e2b/generated/model.json": "5942456d87fc77ffcb71a19413d77737ec94a9ad12d6d56c1a9e493ce5db8496"
+  },
+  "gemma4_e2b_generated-t4": {
+    "$LAB/assets/gemma4_e2b/bundle/manifest.json": "e6a1f0c01def6569511d01c03c6da2bd528f7f08250d60e8561eef36d9aebbc3",
+    "$CONTROL/build/gemma4_e2b": "a39a75330b1e8dac961c6f875fa6f8fd4adb25a24e9aba5649ec29aeba391dce",
+    "$CONTROL/models/gemma4_e2b/generated/model.json": "804289bb12f4854bbd3938fa1b43e9b58ec0b11a4900b3cd31ae1ac63c75983e",
+    "$LAB/build/ynn-llm": "29e27bcb6418509364a01cc9f197823b494844648e4b99da3702b943edcb1c18",
+    "$LAB/models/gemma4_e2b/fixtures/performance.tsv": "8f21f827d5629fe884b29ea3df3b8d27ff2ea9b478ae7b0c7ff43953a4250ec2",
+    "$LAB/models/gemma4_e2b/generated/execution.json": "c3c6e4f543d3d30ffcf0e30a40b130df99dec96bc684d3e31a943c65bee0f7e3",
+    "$LAB/models/gemma4_e2b/generated/model.json": "5942456d87fc77ffcb71a19413d77737ec94a9ad12d6d56c1a9e493ce5db8496"
+  },
+  "gemma4_e2b_hf_generated_hf_bf16-t1": {
+    "$HF_ASSET_MANIFEST": "8056757729653a6181cb0add38c0d819f96022d6ccdb8d599350ea0c56df2b9a",
+    "$CONTROL/build-hf/gemma4_e2b": "46b8aee17998c81aedae6597679b723293ac29a1e3eb23e9a64927650205b1da",
+    "$CONTROL/models/gemma4_e2b_hf/generated/hf_bf16/model.json": "293a4c305e6c80769b48322285c9fc86b2fe78e9b45adba6a221e7cba91975d5",
+    "$LAB/build-hf/ynn-llm": "e42897c0e444c2320a85d01130f8969b7bd32999f67f560830938b3f7d658662",
+    "$LAB/models/gemma4_e2b_hf/fixtures/performance.tsv": "600d8426a67d1f617657600ecc9ea69cf4006537d0ccda9a7c0732dc64ccd881",
+    "$LAB/models/gemma4_e2b_hf/generated/hf_bf16/execution.json": "c8098e82ca9f31722678491a3ed872fe1b0d845d34cfeb6a14b5f70270c7c676",
+    "$LAB/models/gemma4_e2b_hf/generated/hf_bf16/model.json": "17e82ca332ccca5cfe29eb849d905eb4970bbc8a13e4d023f2c80fb2d094db8a"
+  },
+  "gemma4_e2b_hf_generated_hf_bf16-t4": {
+    "$HF_ASSET_MANIFEST": "8056757729653a6181cb0add38c0d819f96022d6ccdb8d599350ea0c56df2b9a",
+    "$CONTROL/build-hf/gemma4_e2b": "46b8aee17998c81aedae6597679b723293ac29a1e3eb23e9a64927650205b1da",
+    "$CONTROL/models/gemma4_e2b_hf/generated/hf_bf16/model.json": "293a4c305e6c80769b48322285c9fc86b2fe78e9b45adba6a221e7cba91975d5",
+    "$LAB/build-hf/ynn-llm": "e42897c0e444c2320a85d01130f8969b7bd32999f67f560830938b3f7d658662",
+    "$LAB/models/gemma4_e2b_hf/fixtures/performance.tsv": "600d8426a67d1f617657600ecc9ea69cf4006537d0ccda9a7c0732dc64ccd881",
+    "$LAB/models/gemma4_e2b_hf/generated/hf_bf16/execution.json": "c8098e82ca9f31722678491a3ed872fe1b0d845d34cfeb6a14b5f70270c7c676",
+    "$LAB/models/gemma4_e2b_hf/generated/hf_bf16/model.json": "17e82ca332ccca5cfe29eb849d905eb4970bbc8a13e4d023f2c80fb2d094db8a"
+  },
+  "gemma4_e4b_generated-t4": {
+    "$LAB/assets/gemma4_e4b/bundle/manifest.json": "3958d2e209388fa21f666d5afca76df623b94ee1bd9a16902006de5e35ea5862",
+    "$CONTROL/build/gemma4_e4b": "357e2ecea23c5ba44350b1ebb8eac6cd6e8c5a946111eaf347717e3d55855279",
+    "$CONTROL/models/gemma4_e4b/generated/model.json": "e17654e67a1c74f89edd797172477cb9736f45d3f2f20597c97d2046cca7d10a",
+    "$LAB/build/ynn-llm": "29e27bcb6418509364a01cc9f197823b494844648e4b99da3702b943edcb1c18",
+    "$LAB/models/gemma4_e4b/fixtures/performance.tsv": "6d055a159fe26e025bf6e183cf14a23bcbbf0eea9bfebac87f09b6d93c932a24",
+    "$LAB/models/gemma4_e4b/generated/execution.json": "4b46b6b1dd4d82189bc3864885825479a0f502d46eaf143e543b9c13a2a9d8d8",
+    "$LAB/models/gemma4_e4b/generated/model.json": "4f120d082ea8530fcd2e2c15ccd53073f46efcc1d6dc791561a761553e8117be"
+  },
+  "qwen3_5_4b_profiles_int4_mlp_generated-t1": {
+    "$CONTROL/build/qwen3": "0a484f1a779f58a6e72889e188dc0cb0f7f5323122600e0e3468a81c954bb740",
+    "$CONTROL/models/qwen3_5_4b/profiles/int4_mlp/generated/model.json": "93e732c87dd79494f4358f3852054daf82f7c31dded50d5a7488ddf1892ae203",
+    "$LAB/build/ynn-llm": "29e27bcb6418509364a01cc9f197823b494844648e4b99da3702b943edcb1c18",
+    "$LAB/models/qwen3_5_4b/fixtures/perf.tsv": "6dd9bbdab8ab81f714e3019e6192cc6943ceb0ad688c238bf84de97e55ae0f02",
+    "$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/execution.json": "3f8f3fee1635c6e22190bf94cce40ef7c569a31bb6a816063fbc5ce6667ce19a",
+    "$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/model.json": "0789aecaf96f21a9a7df461d6c2827d95ba1e33877c8f22604881aea4fdf09c3"
+  },
+  "qwen3_5_4b_profiles_int4_mlp_generated-t4": {
+    "$CONTROL/build/qwen3": "0a484f1a779f58a6e72889e188dc0cb0f7f5323122600e0e3468a81c954bb740",
+    "$CONTROL/models/qwen3_5_4b/profiles/int4_mlp/generated/model.json": "93e732c87dd79494f4358f3852054daf82f7c31dded50d5a7488ddf1892ae203",
+    "$LAB/build/ynn-llm": "29e27bcb6418509364a01cc9f197823b494844648e4b99da3702b943edcb1c18",
+    "$LAB/models/qwen3_5_4b/fixtures/perf.tsv": "6dd9bbdab8ab81f714e3019e6192cc6943ceb0ad688c238bf84de97e55ae0f02",
+    "$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/execution.json": "3f8f3fee1635c6e22190bf94cce40ef7c569a31bb6a816063fbc5ce6667ce19a",
+    "$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/model.json": "0789aecaf96f21a9a7df461d6c2827d95ba1e33877c8f22604881aea4fdf09c3"
+  },
+  "vision_resnet18_generated-t1": {
+    "$LAB/assets/vision/resnet18/validation/input_0.bin": "c2c26d0a8001a6902714602496d2e99d80d29f8e382404ea66ab7836ab1e76a9",
+    "$LAB/assets/vision/resnet18/validation/input_1.bin": "648fc19b12ff9915113f471fdc3e8b039acc484be7b066f9e78648173d163eed",
+    "$LAB/assets/vision/resnet18/validation/input_2.bin": "495d669d832504332fad350894ff30e6ca1dd0ed93fd13f58cbdc64f7478e9e6",
+    "$CONTROL/build/vision": "8c71f520fcc89c83812a922a7dddd451ae15728c36612419b186dd6f1e9cffaa",
+    "$CONTROL/models/vision/resnet18/generated/graph.ynn": "1ae363600be3414d7e4e1fcaf6b69d3192c517f6319bcc4df0c09abf19c6c355",
+    "$CONTROL/models/vision/resnet18/generated/model.json": "60e5c5192f7b8a38ed401c57cd1f1f04ab88d01f12bb6960c66ee213888adffe",
+    "$LAB/build/vision": "3432060edee6ed57b942ff55f750c5cbac345a6b3845b68d98143177d7932f87",
+    "$LAB/models/vision/resnet18/generated/execution.json": "7d78b1d3c21e16339b36bc6ca6c3f0ddbc6a8576e91fe618e8651bbf77a08a4b",
+    "$LAB/models/vision/resnet18/generated/model.json": "69f940a4a742ae60362f255f5214808a3381cef98d8dea6299374d3c62910ac6"
+  },
+  "vision_resnet18_generated-t4": {
+    "$LAB/assets/vision/resnet18/validation/input_0.bin": "c2c26d0a8001a6902714602496d2e99d80d29f8e382404ea66ab7836ab1e76a9",
+    "$LAB/assets/vision/resnet18/validation/input_1.bin": "648fc19b12ff9915113f471fdc3e8b039acc484be7b066f9e78648173d163eed",
+    "$LAB/assets/vision/resnet18/validation/input_2.bin": "495d669d832504332fad350894ff30e6ca1dd0ed93fd13f58cbdc64f7478e9e6",
+    "$CONTROL/build/vision": "8c71f520fcc89c83812a922a7dddd451ae15728c36612419b186dd6f1e9cffaa",
+    "$CONTROL/models/vision/resnet18/generated/graph.ynn": "1ae363600be3414d7e4e1fcaf6b69d3192c517f6319bcc4df0c09abf19c6c355",
+    "$CONTROL/models/vision/resnet18/generated/model.json": "60e5c5192f7b8a38ed401c57cd1f1f04ab88d01f12bb6960c66ee213888adffe",
+    "$LAB/build/vision": "3432060edee6ed57b942ff55f750c5cbac345a6b3845b68d98143177d7932f87",
+    "$LAB/models/vision/resnet18/generated/execution.json": "7d78b1d3c21e16339b36bc6ca6c3f0ddbc6a8576e91fe618e8651bbf77a08a4b",
+    "$LAB/models/vision/resnet18/generated/model.json": "69f940a4a742ae60362f255f5214808a3381cef98d8dea6299374d3c62910ac6"
+  }
+}

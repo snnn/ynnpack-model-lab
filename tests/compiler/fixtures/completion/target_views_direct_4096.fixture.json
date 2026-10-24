@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "target_views_direct_4096_a.ynn",
-    "b": "target_views_direct_4096_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -431,5 +427,6 @@
         }
       ]
     }
-  ]
+  ],
+  "program": "target_views_direct_4096.program.ynn"
 }

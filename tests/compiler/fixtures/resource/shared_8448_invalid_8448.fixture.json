@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "shared_8448_invalid_8448_a.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -83,5 +80,6 @@
       "expect_error": "",
       "expect_unchanged": true
     }
-  ]
+  ],
+  "program": "shared_8448_invalid_8448.program.ynn"
 }

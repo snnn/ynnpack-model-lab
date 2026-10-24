@@ -1,0 +1,20 @@
+ynn_program 1 {
+  phase "model" {
+    symbol {binding: {name: "valid", source: "parameter", value: ""}, id: 1, lower: 0, upper: 7};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(7)};
+    value "history": f32[2, 3, 67];
+    value "joined": f32[2, 10, 67];
+    value "next": f32[2, 3, 67];
+    value "output": f32[2, 7, 1, 67];
+    value "spatial": f32[2, 10, 1, 67];
+    value "weights": f32[1, 4, 1, 67];
+    value "x": f32[2, 7, 67];
+    inputs ("x", "history", "weights");
+    outputs ("output", "next");
+    node concat ("history", "x") -> ("joined") attrs {axis: 1} scope "Compute";
+    node slice ("joined") -> ("next") attrs {lengths: [known(2), known(3), known(67)], starts: [known(0), symbol(1), known(0)]} scope "Compute";
+    node reshape ("joined") -> ("spatial") attrs {shape: [known(2), known(10), known(1), known(67)]} scope "Compute";
+    node depthwise_conv2d ("spatial", "weights") -> ("output") attrs {spatial: {dilations: [1, 1], kernel: [4, 1], multiplier: 1, same: false, strides: [1, 1]}} scope "Compute";
+  }
+}

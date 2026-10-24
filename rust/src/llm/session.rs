@@ -1,6 +1,8 @@
 // Copyright 2026 @snnn. SPDX-License-Identifier: Apache-2.0
-use super::package::{self, Package, Recipe};
-use crate::{ffi, runtime::{self, AssetStore, ExecutionSpec, PreparedProgram, PrepareOptions, PreparationStats}, Error, Result};
+use super::package::{self, Recipe};
+#[cfg(feature = "llm-tests")]
+use super::package::Package;
+use crate::{ffi, runtime::{AssetStore, ExecutionSpec, PreparedProgram, PrepareOptions, PreparationStats}, Error, Result};
 use crate::frontend::Options;
 use std::collections::BTreeMap;
 use std::ffi::CString;
@@ -14,7 +16,7 @@ pub(super) struct StateBuffers {
     pub current: ffi::Buffer<f32>,
     next: ffi::Buffer<f32>,
 }
-enum Buffer { Float(ffi::Buffer<f32>), Int(ffi::Buffer<i32>) }
+enum Buffer { Float(ffi::Buffer<f32>), Int(ffi::Buffer<i32>), Bf16(ffi::Buffer<u16>) }
 struct Input { spec: package::Input, name: CString, buffer: Buffer }
 pub struct Session {
     // Native graphs retain storage pointers. Always destroy them first.
@@ -34,10 +36,11 @@ pub struct Session {
     trace_call: usize,
 }
 impl Session {
+    #[cfg(feature = "llm-tests")]
     pub(crate) fn load(root:&Path, bundle:&Path, parameters:&Path, package:Package, options:&Options) -> Result<Self> {
-        let plans = package.plans(root)?;
-        let assets = AssetStore::open(bundle, parameters)?;
-        let prepared = runtime::prepare_plans(plans, assets, prepare_options(options, &package.spec), PreparationStats::default())?;
+        let _ = root;
+        let assets = open_assets(bundle, parameters, options, &package.metadata)?;
+        let prepared = crate::runtime::prepare(package.program, assets, prepare_options(options, &package.spec))?;
         Self::from_prepared(prepared, package.spec)
     }
     /// Consume the fully prepared phase set. No compilation or file loading occurs here.
@@ -56,7 +59,7 @@ impl Session {
             for spec in &package.graphs[*phase].inputs {
                 let n=package::count(&spec.dimensions(if i==0{package.prefill_rows}else{1},package.capacity)?)?;
                 inputs[i].push(Input{spec:spec.clone(),name:ffi::string(&spec.name)?,buffer:
-                    if spec.dtype=="int32"{Buffer::Int(ffi::Buffer::new(n,0))}else{Buffer::Float(ffi::Buffer::new(n,0.0))}});
+                    if spec.dtype=="int32"{Buffer::Int(ffi::Buffer::new(n,0))}else if spec.dtype=="bf16"{Buffer::Bf16(ffi::Buffer::new(n,0))}else{Buffer::Float(ffi::Buffer::new(n,0.0))}});
             }
         }
         let mut caches=Vec::new();
@@ -86,7 +89,7 @@ impl Session {
     pub fn logits(&self) -> &[f32] { &self.logits }
     pub fn position(&self) -> usize { self.position }
     /// Explicitly install a prepared larger variant of the same program.
-    /// `load` prepares all phases before this call. It never grows on invoke.
+    /// Prepare all replacement phases before this call. Invoke never grows capacity.
     pub fn reserve_capacity(&mut self, mut next: Self) -> Result<()> {
         if self.failed || next.failed || next.position != 0 || next.package.capacity <= self.package.capacity {
             return Err(Error::invalid("Invalid capacity replacement"));
@@ -140,6 +143,9 @@ impl Session {
                 (Recipe::Embedding{table,begin,columns},Buffer::Float(b))=>{
                     b.fill(0.0);self.embeddings[table].lookup(tokens,*begin,*columns,b)?;
                 },
+                (Recipe::Embedding{table,begin,columns},Buffer::Bf16(b))=>{
+                    b.fill(0);self.embeddings[table].lookup_bf16(tokens,*begin,*columns,b)?;
+                },
                 _=>return Err(Error::invalid("Input recipe type mismatch")),
             }
         }
@@ -153,6 +159,7 @@ impl Session {
                 match &x.buffer{
                     Buffer::Int(b)=>graph.bind_bytes(&x.name,b,bytes,&dims,false)?,
                     Buffer::Float(b)=>graph.bind_bytes(&x.name,b,bytes,&dims,false)?,
+                    Buffer::Bf16(b)=>graph.bind_bytes(&x.name,b,bytes/2,&dims,false)?,
                 }
             }
             for s in &self.states{graph.bind(&s.input,&s.current,&s.shape,false)?;graph.bind(&s.output,&s.next,&[],false)?;}
@@ -175,5 +182,24 @@ impl Session {
 pub(crate) fn prepare_options<'a>(options: &'a Options, execution: &'a ExecutionSpec) -> PrepareOptions<'a> {
     PrepareOptions { threads: options.num_threads, execution: Some(execution),
         trace_plan: (!options.trace_plan.is_empty()).then(|| PathBuf::from(&options.trace_plan)),
-        profile_execution: &options.profile_execution, output_dir: PathBuf::from(&options.output_dir) }
+        profile_execution: &options.profile_execution, output_dir: PathBuf::from(&options.output_dir), tensors: None }
+}
+
+pub(crate) fn open_assets(bundle: &Path, parameters: &Path, options: &Options,
+                          metadata: &serde_json::Value) -> Result<AssetStore> {
+    if options.hf_model_dir.is_empty() {
+        if metadata["execution"]["asset_source"] == "hf" {
+            return Err(Error::invalid("HF package requires source, manifest and cache options"));
+        }
+        AssetStore::open(bundle, parameters)
+    } else {
+        let e = &metadata["execution"];
+        if e["asset_source"] != "hf" {
+            return Err(Error::invalid("HF assets require a matching HF package"));
+        }
+        AssetStore::open_hf(Path::new(&options.hf_model_dir), Path::new(&options.asset_manifest),
+            Path::new(&options.cache_dir), parameters,
+            e["source_identity"].as_str().ok_or_else(|| Error::invalid("Missing HF identity"))?,
+            e["activation_dtype"] == "bf16")
+    }
 }

@@ -1,0 +1,9 @@
+ynn_program 1 {
+  phase "model" {
+    value "squared": f32[4];
+    value "x": f32[4];
+    inputs ("x");
+    outputs ("squared");
+    node mul ("x", "x") -> ("squared");
+  }
+}

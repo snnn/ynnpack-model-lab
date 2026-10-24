@@ -4,7 +4,7 @@ use super::{diagnostic, Span};
 use crate::Result;
 
 #[derive(Clone, Copy, Debug, PartialEq)]
-pub(super) enum Kind<'a> {
+pub(crate) enum Kind<'a> {
     Ident(&'a str),
     Number(&'a str),
     String(&'a str),
@@ -20,11 +20,11 @@ pub(super) enum Kind<'a> {
     Eof,
 }
 #[derive(Clone, Copy, Debug)]
-pub(super) struct Token<'a> {
+pub(crate) struct Token<'a> {
     pub kind: Kind<'a>,
     pub span: Span,
 }
-pub(super) struct Lexer<'a> {
+pub(crate) struct Lexer<'a> {
     source: &'a str,
     offset: usize,
 }

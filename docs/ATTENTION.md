@@ -1,14 +1,9 @@
 # Attention in the generated Gemma graphs
 
-The default E2B and E4B prefill/decode plans each define two reusable FP32
-attention functions near the top of the `.ynn` file. Layer bodies invoke them
-under a layer-specific scope. The function name identifies global or sliding
-attention, head count, KV-head count, width and phase.
-
-- `global_causal_attention_fp32_*` uses the complete initialized history with
-  a causal mask. It has no window argument.
-- `sliding_window_causal_w512_attention_fp32_*` uses the live window and applies
-  both the causal and 512-token limits to each query row.
+The semantic programs preserve global and sliding-window causal attention,
+including query/KV head geometry, width, position, live-history origin and
+numerical permissions. The shared Rust compiler selects its implementation and
+may share native functions. Operation scopes retain layer attribution.
 
 For query position `P`, query length `T` and history origin `B`, the live key
 length is `P + T - B`. Global attention uses `B = 0`. Sliding attention uses
@@ -35,15 +30,16 @@ projection remain in the layer. Function arguments are ordinary FP32 tensors;
 the body does not own or mutate cache state. This makes the attention computation
 visible without hiding layer-specific state updates.
 
-The Rust loader expands calls before native preparation, producing one graph.
-To inspect all primitive commands without changing the packaged source:
+Runtime preparation lowers those operations and prepares one graph per phase.
+To inspect a diagnostic construction stream:
 
 ```sh
-build/ynn-plan expand models/gemma4_e2b/generated/gemma4_decode.ynn -o out/decode-flat.ynn
-build/ynn-plan inspect models/gemma4_e4b/generated/gemma4_prefill.ynn -o out/prefill-inspection.json
+mkdir -p out/attention-inspect
+build/ynn-compile --request models/gemma4_e2b/generated/program.ynn --output out/attention-inspect/plans
+build/ynn-plan expand out/attention-inspect/plans/decode.ynn -o out/attention-inspect/decode-flat.ynn
 ```
 
-The format remains `ynn 1`. Formatting retains function hierarchy; model phase
-hashes cover the entire source. This change makes no performance claim. The
-experimental INT8/row-grouped and HF BF16 artifacts retain their separate
-representations and numerical contracts.
+The diagnostic format remains `ynn 1`. Model identities cover stored semantic
+program and execution bytes. Integer/row-grouped and HF BF16 profiles retain
+their distinct numerical contracts. Selecting a profile does not change the
+preparation boundary or add a separate runtime implementation.

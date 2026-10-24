@@ -15,7 +15,7 @@ from ynnpack_assets.fixture_runner import run
 from compare_compilers import files
 
 
-def validate(source, destination, compiler, runner, known_failures=False, package_reference=None, runtime=False):
+def validate(source, destination, compiler, runner, known_failures=False, package_reference=None):
     shutil.copytree(source, destination)
     for compressed in destination.rglob('*.bin.gz'):
         compressed.with_suffix('').write_bytes(gzip.decompress(compressed.read_bytes()))
@@ -25,9 +25,11 @@ def validate(source, destination, compiler, runner, known_failures=False, packag
         fixture = json.loads((destination / (name + '.fixture.json')).read_text())
         with tempfile.TemporaryDirectory(dir=destination) as temporary:
             compiled = Path(temporary) / 'compiled'
-            subprocess.run([str(compiler), '--request', str(destination / (name + '.program.json')),
+            subprocess.run([str(compiler), '--request', str(destination / (name + '.program.ynn')),
                             '--output', str(compiled)], check=True, stdout=subprocess.DEVNULL)
             if package_reference is not None:
+                # Historical labels identify frozen native outputs, not the
+                # current source encoding. Do not regenerate these fingerprints.
                 key = source.name + '/' + name + '.program.json'
                 expected = package_reference[key]
                 actual = files(compiled)
@@ -35,12 +37,9 @@ def validate(source, destination, compiler, runner, known_failures=False, packag
                     different = sorted(k for k in actual.keys() | expected.keys()
                                        if actual.get(k) != expected.get(k))
                     raise AssertionError(f'{key}: changed package files: {different}')
-            for phase, plan in fixture['graphs'].items():
-                (compiled / (phase + '.ynn')).replace(destination / plan)
-            shutil.copytree(compiled / 'parameters', destination / 'parameters', dirs_exist_ok=True)
-        if runtime:
-            fixture['program'] = name + '.program.json'
-            (destination / (name + '.fixture.json')).write_text(json.dumps(fixture) + '\n')
+        fixture.pop('graphs', None)
+        fixture['program'] = name + '.program.ynn'
+        (destination / (name + '.fixture.json')).write_text(json.dumps(fixture) + '\n')
     return run(destination, runner, known_failures=known_failures)
 
 
@@ -51,7 +50,6 @@ def main():
     parser.add_argument('--output', type=Path)
     parser.add_argument('--fixtures', type=Path, default=ROOT / 'tests/compiler/fixtures')
     parser.add_argument('--package-reference', type=Path)
-    parser.add_argument('--runtime', action='store_true', help='Prepare semantic programs inside the fixture runner')
     parser.add_argument('--known-failures', action='store_true')
     args = parser.parse_args()
     temporary = tempfile.TemporaryDirectory(prefix='ynn-compiler-tests-') if args.output is None else None
@@ -64,7 +62,7 @@ def main():
     for source in sorted(args.fixtures.iterdir()):
         if source.is_dir():
             results[source.name] = validate(source, args.output / source.name,
-                args.compiler.resolve(), args.runner.resolve(), args.known_failures, package_reference, args.runtime)
+                args.compiler.resolve(), args.runner.resolve(), args.known_failures, package_reference)
             (args.output / 'results.json').write_text(json.dumps(results, indent=2) + '\n')
 
 

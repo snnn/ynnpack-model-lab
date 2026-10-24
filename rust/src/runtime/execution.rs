@@ -3,6 +3,8 @@ use crate::{Error, Result};
 use serde::{Deserialize, Serialize};
 use std::collections::{BTreeMap, BTreeSet};
 use std::path::{Component, Path};
+#[cfg(test)]
+mod tests;
 
 #[derive(Clone, Serialize, Debug, Deserialize, PartialEq)]
 #[serde(untagged)]
@@ -117,18 +119,31 @@ pub struct Compatibility {
     pub parameter_encoding: String,
     pub required_features: Vec<String>,
 }
-fn legacy_contract() -> u32 {
-    1
+impl Compatibility {
+    /// Explicit declaration for authors targeting the current YNNPACK runtime.
+    pub fn ynnpack() -> Self {
+        Self {
+            backend: "ynnpack".into(),
+            backend_api: 1,
+            artifact_abi: "data-only-v1".into(),
+            parameter_encoding: "little-endian-typed-v1".into(),
+            required_features: [
+                "shape-preflight-v1", "resource-state-v1", "completion-v1", "fixed-state-v1",
+            ].map(String::from).into(),
+        }
+    }
 }
 #[derive(Clone, Serialize, Deserialize, PartialEq)]
 #[serde(deny_unknown_fields)]
 pub struct ExecutionSpec {
     pub format: String,
-    #[serde(default = "legacy_contract")]
     pub contract: u32,
-    pub compatibility: Option<Compatibility>,
+    pub compatibility: Compatibility,
     pub model: String, // Descriptive only; never selects execution behavior.
     pub capacity: usize,
+    /// Authored storage bounds. Absence means the package has fixed geometry.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub capacity_range: Option<[usize; 2]>,
     pub prefill_rows: usize,
     pub vocabulary: usize,
     pub prefill_after_decode: bool,
@@ -156,6 +171,17 @@ pub fn relative(s: &str) -> bool {
             .all(|p| matches!(p, Component::Normal(_)))
 }
 impl ExecutionSpec {
+    pub fn with_capacity(&self, capacity: usize) -> Result<Self> {
+        if capacity != self.capacity
+            && !self.capacity_range.is_some_and(|[lo, hi]| (lo..=hi).contains(&capacity))
+        {
+            return Err(Error::invalid("Capacity is outside the authored package range"));
+        }
+        let mut next = self.clone();
+        next.capacity = capacity;
+        next.validate()?;
+        Ok(next)
+    }
     // Interface validation is structural. The supplied variant must implement
     // the same logical program; model exporters own that semantic guarantee.
     pub fn validate_capacity_variant(&self, next: &Self) -> Result<()> {
@@ -163,6 +189,7 @@ impl ExecutionSpec {
             || self.contract != next.contract
             || self.compatibility != next.compatibility
             || self.model != next.model
+            || self.capacity_range != next.capacity_range
             || self.prefill_rows != next.prefill_rows
             || self.vocabulary != next.vocabulary
             || self.prefill_after_decode != next.prefill_after_decode
@@ -241,7 +268,7 @@ impl ExecutionSpec {
             plan.require_tensor(&state.name, &state.dtype, &dims, 1)?;
             expected.insert(state.name.as_str());
             let owner = plan.commands().iter().find_map(|c| match c {
-                Command::Tensor { id, name, .. } if name == &state.name => Some(id),
+                Command::Tensor { id, name, .. } | Command::PackedTensor { id, name, .. } if name == &state.name => Some(id),
                 _ => None,
             });
             if !plan.commands().iter().any(|c|matches!(c,Command::Resource{owner:id,axis,..} if Some(id)==owner&&*axis==state.axis as i64)) {
@@ -284,7 +311,7 @@ impl ExecutionSpec {
             .commands()
             .iter()
             .filter_map(|c| match c {
-                Command::Tensor { id, name, .. }
+                Command::Tensor { id, name, .. } | Command::PackedTensor { id, name, .. }
                     if self.resources.iter().any(|r| &r.name == name) =>
                 {
                     Some(id.0)
@@ -313,9 +340,7 @@ impl ExecutionSpec {
             .chain(g.logits.as_deref())
             .collect::<BTreeSet<_>>();
         for c in plan.commands() {
-            if let Command::Tensor {
-                id, name, flags, ..
-            } = c
+            if let Command::Tensor { id, name, flags, .. } | Command::PackedTensor { id, name, flags, .. } = c
             {
                 if flags & 2 != 0
                     && !outputs.contains(name.as_str())
@@ -332,7 +357,7 @@ impl ExecutionSpec {
             }
             if let Command::Resource { owner, .. } = c {
                 let name = plan.commands().iter().find_map(|c| match c {
-                    Command::Tensor { id, name, .. } if id == owner => Some(name),
+                    Command::Tensor { id, name, .. } | Command::PackedTensor { id, name, .. } if id == owner => Some(name),
                     _ => None,
                 });
                 if !self.resources.iter().any(|r| Some(&r.name) == name) {
@@ -348,9 +373,9 @@ impl ExecutionSpec {
                 "Runtime requires little-endian IEEE FP32 parameters",
             ));
         }
-        match (self.contract, &self.compatibility) {
-            (1, None) => {} // Qualified legacy packages retain their original semantics.
-            (2, Some(c)) => {
+        match self.contract {
+            2 => {
+                let c = &self.compatibility;
                 if c.backend != "ynnpack" || c.backend_api != 1 {
                     return Err(Error::invalid("Unsupported backend API contract"));
                 }
@@ -386,6 +411,7 @@ impl ExecutionSpec {
         }
         if self.format != "ynn-llm-execution"
             || !(1..=32768).contains(&self.capacity)
+            || self.capacity_range.is_some_and(|[lo, hi]| lo == 0 || lo > hi || hi > 32768 || !(lo..=hi).contains(&self.capacity))
             || !(1..=2048).contains(&self.prefill_rows)
             || self.prefill_rows > self.capacity
             || !(1..=2_097_152).contains(&self.vocabulary)
@@ -434,11 +460,20 @@ impl ExecutionSpec {
                 return Err(Error::invalid("Invalid packed embedding"));
             }
             for a in &e.assets {
-                if !relative(a.path.strip_prefix("@parameters/").unwrap_or(&a.path))
+                if !relative(a.path.strip_prefix("@parameters/").or_else(|| a.path.strip_prefix("@hf_raw/")).unwrap_or(&a.path))
                     || a.bytes == 0
                     || !hash(&a.sha256)
                 {
                     return Err(Error::invalid("Invalid embedding asset"));
+                }
+            }
+            if let Some(source) = e.record.get("source") {
+                let module = e.record["module"].as_str().unwrap_or("");
+                if source != "hf" || module.is_empty()
+                    || e.record["file"] != format!("@hf_raw/{module}.weight")
+                    || e.record["quantization"]["scales_file"] != format!("@hf_raw/{module}.weight_scale")
+                    || !e.record["multiplier"].as_f64().is_some_and(f64::is_finite) {
+                    return Err(Error::invalid("Invalid HF embedding contract"));
                 }
             }
             // All files used by the native record must be hash-verified first.
@@ -474,14 +509,14 @@ impl ExecutionSpec {
             for x in &g.inputs {
                 if x.name.is_empty()
                     || !names.insert(x.name.clone())
-                    || !["fp32", "int32"].contains(&x.dtype.as_str())
+                    || !["fp32", "int32", "bf16"].contains(&x.dtype.as_str())
                 {
                     return Err(Error::invalid("Invalid input binding"));
                 }
                 let n = count(&x.dimensions(rows, self.capacity)?)?;
                 let valid = match &x.recipe {
                     Recipe::Tokens => x.dtype == "int32" && n == rows,
-                    Recipe::Positions => n == rows,
+                    Recipe::Positions => x.dtype != "bf16" && n == rows,
                     Recipe::Controls { values } => x.dtype == "int32" && n == values.len(),
                     Recipe::Mask { window, masked } => {
                         x.dtype == "fp32"
@@ -494,7 +529,7 @@ impl ExecutionSpec {
                         begin,
                         columns,
                     } => {
-                        x.dtype == "fp32"
+                        ["fp32", "bf16"].contains(&x.dtype.as_str())
                             && *columns > 0
                             && self.embeddings.get(table).is_some_and(|e| {
                                 begin.checked_add(*columns).is_some_and(|n| n <= e.width)

@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "completion_only.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -29,5 +26,6 @@
       "outputs": {}
     }
   ],
-  "profile": true
+  "profile": true,
+  "program": "completion_only.program.ynn"
 }

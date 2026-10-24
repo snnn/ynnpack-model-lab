@@ -1,10 +1,10 @@
 # Preparing semantic programs in the runtime
 
-The experimental runtime entry point accepts the same public `Program` as
+The shared runtime entry point accepts the same public `Program` as
 `ynn-compile`. It lowers, verifies assets, constructs both phase graphs, and
 prepares them once in the calling process. Invocation reuses those graphs.
-Offline `.ynn` packages remain the default and remain useful for inspection,
-reproduction, and environments that do not need model authoring.
+Semantic packages are the deployment format. `.ynn` is retained as an internal
+construction representation and for diagnostic inspection/fingerprints.
 
 ```text
 source importer ─┐
@@ -19,8 +19,10 @@ Rust author ────┘                                      │
 
 `ExecutionSpec` describes phase inputs, token/position/mask recipes, logits,
 embeddings, persistent resources, and fixed state. It has no plan filenames or
-plan hashes. An offline package adds those artifact identities around the same
-execution metadata. Asset byte counts and hashes remain mandatory in both paths.
+plan hashes. `model.json` binds stored program/execution identities. Asset byte counts and
+hashes remain mandatory. Tensor-only sessions use `TensorExecutionSpec` with
+byte-aligned FP32/INT32/BF16/FP16/INT8/UINT8 bindings; packed persistent state
+uses the stateful resource interface.
 
 With the `llm` feature, a library caller can prepare and invoke a model as follows:
 
@@ -31,13 +33,12 @@ use ynnpack_lab::runtime::{self, AssetStore, PrepareOptions, Session};
 // `program` comes from a Rust author or a deserialized public Program.
 // `execution` describes this program's phase interface and state.
 let assets = AssetStore::open(Path::new("bundle"), Path::new("parameters"))?;
-let prepared = runtime::prepare(&program, assets, PrepareOptions {
+let prepared = runtime::prepare(program, assets, PrepareOptions {
     threads: 4,
     execution: Some(&execution),
     ..Default::default()
 })?;
 let mut session = Session::from_prepared(prepared, execution)?;
-drop(program);
 session.invoke(&[42], true, None)?;
 let logits = session.logits();
 ```
@@ -57,18 +58,23 @@ build/ynn-llm --qwen-assets=out/qwen-assets/assets.json \
   --output_dir=out/qwen-runtime --warmup_runs=1 --measured_runs=3
 ```
 
-For a serialized semantic input, substitute `--program=program.json` and
+For a serialized semantic input, substitute `--program=program.ynn` and
 `--execution=execution.json`. The latter defaults to a sibling `execution.json`.
-These inputs are mutually exclusive with `--graph_dir` and with each other.
-The original `--graph_dir` interface continues to load offline packages.
+Choose one input mode: `--program` (with its execution contract), `--qwen-assets`,
+or `--model_dir`.
+Normally select a complete semantic package with `--model_dir=DIR`.
 
 ## Ownership and preparation boundary
 
-There is one semantic compiler and one set of lowering rules. The prototype
+There is one semantic compiler and one set of lowering rules. Preparation
 reuses in-memory `.ynn` emission and parsing, so it requires no compiler
 subprocess or temporary plan files. It does not yet have a direct typed native
 builder or persistent preparation cache. Compilation reports, text, and temporary
-generated-constant vectors are released after preparation.
+generated-constant vectors are released before native graph construction.
+Runners pass an owned `Program` so its semantic allocations are released at that
+boundary too. This lets native construction reuse that storage and avoids
+interleaving freed source allocations with long-lived graph storage. Library
+callers can pass `&program` when retaining the source for reuse is intentional.
 
 Source weights use immutable mappings. Generated constants use owned, aligned
 storage with backend padding. Prepared graphs retain the asset owner and are
@@ -122,21 +128,19 @@ and no independently maintained C++ implementation of the operation.
 
 ## Validation and measurement
 
-CTest covers offline/runtime fixture equivalence, independent blockwise
+CTest covers semantic fixture execution and frozen compiler fingerprints, independent blockwise
 arithmetic, native and restricted-feature dispatch, output/resource interfaces,
 mapping and generated-constant lifetimes, later-phase failure cleanup, repeated
 prepare/drop, session transitions, and compile-time ownership restrictions.
-`tools/test_compiler_fixtures.py --runtime` executes semantic inputs while still
+`tools/test_compiler_fixtures.py` executes semantic inputs while still
 checking the frozen offline compiler artifacts. See the tool's help for paths.
 
 The Qwen3 recipe currently uses INT8 linears. A Qwen comparison alone therefore
 cannot validate or measure the W4 operation. Generate a separate, reproducible
-shape matrix with an archived baseline compiler:
+shape matrix without running a compiler:
 
 ```sh
-python tools/prepare_runtime_bench.py --compiler "$BASELINE/ynn-compile" \
-  --output out/blockwise-runtime
-"$BASELINE/plan_fixture" out/blockwise-runtime/offline-t4.json
+python tools/prepare_runtime_bench.py --output out/blockwise-runtime
 build/plan_fixture out/blockwise-runtime/runtime-t4.json
 ```
 
@@ -149,8 +153,14 @@ cost does not explain a warm execution improvement, and a higher startup cost
 alone does not reject the runtime boundary. See [BENCHMARKING.md](BENCHMARKING.md)
 for timing definitions and device controls.
 
-This interface remains experimental. Broader model/device coverage and the
-paired correctness, memory, and latency decision gates must precede a default
-change. Missing evidence or a confidence interval crossing a gate is inconclusive.
+This interface remains experimental. For each newly qualified family, compare
+identical computation against the retained control. The upper 95% paired-process
+latency ratio must be at most 1.05 for warm execution and 1.25 for setup. Retained
+RSS may increase by at most max(64 MiB, 5%) and peak RSS by max(256 MiB, 10%).
+An unresolved regression or confidence interval crossing a gate requires
+investigation. These are local experiment gates, not noisy shared-CI benchmarks.
 The [October 22 prototype report](../results/runtime_preparation_20261022/README.md)
-records the measured outcomes and the remaining qualification limits.
+records the earlier operation comparison. The
+[semantic-package baseline](../results/semantic_runtime_20261022/README.md)
+records model coverage, the shared-session comparison, and remaining qualification
+limits for the deployment-format change.

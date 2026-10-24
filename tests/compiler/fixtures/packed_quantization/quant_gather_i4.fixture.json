@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "quant_gather_i4.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -247,5 +244,6 @@
         "__quant/0/parameter_": "actual/quant_gather_i4/3_5f5f7175616e742f302f706172616d657465725f.bin"
       }
     }
-  ]
+  ],
+  "program": "quant_gather_i4.program.ynn"
 }

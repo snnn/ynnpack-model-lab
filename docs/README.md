@@ -34,6 +34,7 @@ does not imply model-execution support.
 | [Rust authoring and compiler](COMPILER.md) | Semantic graph API, shared lowering, Qwen3 checkpoint preparation and compiler validation |
 | [Model artifacts](AUTHORING.md) | Public package layout, asset identities and author/runtime responsibilities |
 | [Construction plans](GRAPH_PLANS.md) | Typed construction model, validation stages and execution limits |
+| [Program text](PROGRAM_TEXT.md) | Semantic DSL, exact numeric tables and source formatting |
 | [Plan text](PLAN_TEXT.md) | `.ynn` syntax, formatter, inspection tool and diagnostics |
 | [Rust runtime](RUST_RUNTIME.md) | Ownership, native boundary, request lifecycle and fixture harness |
 

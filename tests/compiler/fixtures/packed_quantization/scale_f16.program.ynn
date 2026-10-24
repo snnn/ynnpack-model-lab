@@ -1,0 +1,17 @@
+ynn_program 1 {
+  quant q0 {axis: -1, parameters: {axes: [], blocks: [], scales: "s", zeros: "z"}};
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "q": i4[5] quant q0;
+    value "r": i4[5] quant q0;
+    value "s": f16[];
+    value "x": i4[5];
+    value "y": f32[5];
+    value "z": i32[];
+    inputs ("x", "s", "z");
+    outputs ("y");
+    node with_quantization ("x", "s", "z") -> ("q") scope "Compute";
+    node reverse ("q") -> ("r") attrs {axes: [0]} scope "Compute";
+    node dequantize ("r") -> ("y") attrs {result_dtype: "f32"} scope "Compute";
+  }
+}

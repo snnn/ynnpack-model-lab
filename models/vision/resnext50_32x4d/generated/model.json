@@ -2655,12 +2655,18 @@
       "sha256": "ffcadfa38aeb3243a4a9710a72c4d16aa39b5fc80be1772a180661702c791d2f"
     }
   },
-  "execution": {
-    "format": "vision-execution",
-    "version": 1,
-    "graph": {
-      "file": "graph.ynn",
-      "sha256": "db77cadba6daf6aafe82b152749e058071ecb65b326f19679babebdbae96e467"
+  "package": {
+    "format": "ynn-semantic-package",
+    "version": 2,
+    "program.ynn": {
+      "file": "program.ynn",
+      "bytes": 510674,
+      "sha256": "7e25f9eb55a18039b0bb13ef0af169699480dc2c8686d019a0d9640951b3ef85"
+    },
+    "execution.json": {
+      "file": "execution.json",
+      "bytes": 455,
+      "sha256": "7d78b1d3c21e16339b36bc6ca6c3f0ddbc6a8576e91fe618e8651bbf77a08a4b"
     }
   }
 }

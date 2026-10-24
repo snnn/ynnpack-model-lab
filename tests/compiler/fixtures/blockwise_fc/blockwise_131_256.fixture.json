@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "blockwise_131_256.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -137,5 +134,6 @@
         "y": "actual/blockwise_131_256/4_79.bin"
       }
     }
-  ]
+  ],
+  "program": "blockwise_131_256.program.ynn"
 }

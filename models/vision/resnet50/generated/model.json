@@ -671,12 +671,18 @@
       "sha256": "ffb6fe620f88dc17ae418a2868269d30b12330960748b8b222da8ce39908de95"
     }
   },
-  "execution": {
-    "format": "vision-execution",
-    "version": 1,
-    "graph": {
-      "file": "graph.ynn",
-      "sha256": "e40cfc9fb7d893c98d93ce57750dbbfcfdb6f5267ed3a4be35056d0fa119919d"
+  "package": {
+    "format": "ynn-semantic-package",
+    "version": 2,
+    "program.ynn": {
+      "file": "program.ynn",
+      "bytes": 94756,
+      "sha256": "4224d9ca4afbf77d7dfd17033a1ac281cf1737a3612faaebb5b322dbe2c2590c"
+    },
+    "execution.json": {
+      "file": "execution.json",
+      "bytes": 455,
+      "sha256": "7d78b1d3c21e16339b36bc6ca6c3f0ddbc6a8576e91fe618e8651bbf77a08a4b"
     }
   }
 }

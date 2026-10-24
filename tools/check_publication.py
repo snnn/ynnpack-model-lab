@@ -5,6 +5,9 @@
 """Check the public file set without reading ignored local captures or Git identities."""
 
 import argparse
+import gzip
+import hashlib
+import io
 import json
 from pathlib import Path
 import re
@@ -74,6 +77,18 @@ def contains_email(text):
 
 def issues(name, data):
     """Return locations/categories, never the potentially private matched value."""
+    if name.endswith('.ynn') and len(data) > 32 << 20 and data.startswith(b'ynn_program '):
+        return [(0, 'oversized semantic source')]
+    if name.endswith('.json.gz'):
+        try:
+            # Inspect serialized content too; compression is not a privacy boundary.
+            with gzip.GzipFile(fileobj=io.BytesIO(data)) as stream:
+                decoded = stream.read((128 << 20) + 1)
+            if len(decoded) > 128 << 20:
+                return [(0, 'oversized compressed JSON')]
+            return issues(name[:-3], decoded)
+        except (OSError, EOFError):
+            return [(0, 'invalid compressed JSON')]
     path = Path(name)
     parts = path.parts
     problems = []
@@ -88,6 +103,11 @@ def issues(name, data):
         or path.suffix in {".litertlm", ".safetensors", ".gguf", ".tflite"}
     ):
         problems.append((0, "local/private artifact"))
+    if 'program-data' in parts:
+        if (path.name != hashlib.sha256(data).hexdigest() + '.bin'
+                or not data or len(data) > 8 << 20 or len(data) % 8):
+            problems.append((0, 'invalid semantic numeric chunk'))
+        return problems
     if b"\0" in data:
         return problems
     try:

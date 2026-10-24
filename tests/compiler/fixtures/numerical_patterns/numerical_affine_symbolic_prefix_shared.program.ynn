@@ -1,0 +1,17 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    symbol {binding: {axis: 0, source: "axis", value: "x"}, id: 1, lower: 0, upper: 8};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(8)};
+    const "__region/0/__affine/2/input_weight": f32[2, 3] data {bytes: 24, path: "@parameters/ff234550c751ba10f66a3ac2cbd207c64fe2f3cfff75a9ffdfbca52c3f0e5fef.bin", sha256: "ff234550c751ba10f66a3ac2cbd207c64fe2f3cfff75a9ffdfbca52c3f0e5fef"};
+    value "flat": f32[add(0, mul(2, s1)), 3];
+    const "w": f32[2, 3] floats [real(0.0), real(0.125), real(0.25), real(0.375), real(0.5), real(0.625)];
+    value "x": f32[s1, 2, 3];
+    value "y": f32[add(0, mul(2, s1)), 2];
+    inputs ("x");
+    outputs ("y", "w");
+    node reshape ("x") -> ("flat") attrs {shape: [add([known(0), mul([known(2), symbol(1)])]), known(3)]} scope "Compute";
+    node fully_connected ("flat", "__region/0/__affine/2/input_weight") -> ("y") scope "Compute";
+  }
+}

@@ -8,15 +8,26 @@ is the entry point for measurements; [benchmarking](../BENCHMARKING.md) defines 
 
 ## Current campaign coverage
 
-The refresh covers the i9-12900K host, TECNO LJ9 and Pixel 8, plus a
+The [semantic runtime baseline](../../results/semantic_runtime_20261022/README.md)
+records all 26 packages and distinguishes the earlier full-model matrix from
+the final DSL checks. All 423 migrated sources retain exact typed identities;
+all 26 model compiler outputs are byte-identical. Final DSL binaries pass 36
+host CTests, all 11 timing-configuration correctness checks, the public Qwen3
+author matrix, and 14 checks on Pixel 8/Pixel 11. All 11 paired host performance
+configurations pass the original setup, latency and memory gates. Android
+coverage includes native state, arithmetic and ResNet18; full-LLM qualification remains blocked
+by the frozen Qwen control's allocation failure during native compilation.
+
+The earlier October 21 refresh covers the i9-12900K host, TECNO LJ9 and Pixel 8, plus a
 [Samsung / Pixel 11 extension](../../results/2026-10-21-current/phone-expansion/README.md).
 The connected Google device reports Pixel 11 / Tensor G6, not Pixel 10. The Pixel 8 preflight found about 2.1 GiB free storage and 3.2 GiB
 available memory; larger-model skips must state their resource basis.
 
-All general-runner packages currently declare capacity 2048. They reject a
-mismatched capacity argument. Use matching exported packages for other capacities;
-the Gemma comparison runners provide the existing 2048/8448 capacity experiment.
-Do not mutate package metadata to bypass this contract.
+Gemma semantic packages declare a capacity range; the shared runner checks an
+override against that range and the authored tensor bounds. Fixed-capacity Qwen
+packages require matching exports for other capacities. The semantic baseline
+includes E2B/E4B comparisons at 2048 and 8448. Do not mutate package metadata to
+bypass these contracts.
 
 Complete coverage requires numerical/state comparisons, reset, nonzero position,
 partial final chunks, window crossings and capacity boundaries. Treat diagnostic

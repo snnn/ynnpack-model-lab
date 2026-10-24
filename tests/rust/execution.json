@@ -1,0 +1,1 @@
+{"format": "ynn-tensor-execution", "version": 1, "graphs": {"model": {"inputs": [{"name": "x", "dtype": "fp32", "shape": [4]}], "outputs": [{"name": "squared", "dtype": "fp32", "shape": [4]}]}}}

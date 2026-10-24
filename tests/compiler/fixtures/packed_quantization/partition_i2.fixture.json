@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "partition_i2.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -400,5 +397,6 @@
         "reshaped": "actual/partition_i2/3_7265736861706564.bin"
       }
     }
-  ]
+  ],
+  "program": "partition_i2.program.ynn"
 }

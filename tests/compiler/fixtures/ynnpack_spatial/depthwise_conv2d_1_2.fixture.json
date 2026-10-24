@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "depthwise_conv2d_1_2.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -101,5 +98,6 @@
         "y": "actual/depthwise_conv2d_1_2/2_79.bin"
       }
     }
-  ]
+  ],
+  "program": "depthwise_conv2d_1_2.program.ynn"
 }

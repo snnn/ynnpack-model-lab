@@ -2,7 +2,7 @@
 
 # Gemma4 E2B
 
-E2B uses the shared Gemma4 Rust runner with its own `.ynn` plans, asset recipes
+E2B uses the shared Gemma4 Rust runner with its own semantic programs, asset recipes
 and fixtures. Its executable is `gemma4_e2b`. Build with the repository
 [Linux](../README.md#build-and-test-on-linux) or
 [Android](../README.md#android-the-same-cmake-build) instructions;
@@ -28,7 +28,7 @@ python3 tools/prepare_gemma4.py --variant e2b \
   --model assets/download-e2b/gemma-4-E2B-it.litertlm \
   --output assets/gemma4_e2b
 ./build/gemma4_e2b \
-  --graph_dir=models/gemma4_e2b/generated \
+  --model_dir=models/gemma4_e2b/generated \
   --bundle_dir=assets/gemma4_e2b/bundle \
   --parameter_dir=assets/gemma4_e2b/parameters \
   --cases_file=models/gemma4_e2b/fixtures/performance.tsv \
@@ -95,7 +95,7 @@ adb -s "$ANDROID_SERIAL" push build-android/gemma4_e2b \
   models/gemma4_e2b/fixtures models/gemma4_e2b/generated \
   /data/local/tmp/ynnpack-model-lab/gemma4_e2b/
 adb -s "$ANDROID_SERIAL" shell 'cd /data/local/tmp/ynnpack-model-lab/gemma4_e2b && \
-  ./gemma4_e2b --graph_dir=generated \
+  ./gemma4_e2b --model_dir=generated \
   --bundle_dir=bundle --parameter_dir=parameters \
   --cases_file=fixtures/performance.tsv --output_dir=c2048-t4 \
   --cache_capacity=2048 --num_threads=4 --prefill_rows=128 \

@@ -1,0 +1,33 @@
+ynn_program 1 {
+  options {schedule_masks: false, target_views: false};
+  phase "a" {
+    symbol {binding: {name: "position", source: "parameter", value: ""}, id: 2, lower: 0, upper: 2048};
+    symbol {binding: {axis: 2, source: "axis", value: "fresh"}, id: 1, lower: 0, upper: 128};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 2 lower bound", relation: "le", rhs: symbol(2)};
+    guard {lhs: symbol(2), mode: "bounds", reason: "symbol 2 upper bound", relation: "le", rhs: known(2048)};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(128)};
+    guard {lhs: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])]), mode: "ordinary", reason: "append capacity", relation: "le", rhs: known(2048)};
+    guard {lhs: symbol(2), mode: "ordinary", reason: "view interval", relation: "le", rhs: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])])};
+    guard {lhs: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])]), mode: "ordinary", reason: "view reads uninitialized history", relation: "le", rhs: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])])};
+    resource {axis: 2, entry: symbol(2), name: "kv", owner: "cache", selected: false, strides: [known(24576), known(8192), known(4), known(1)]};
+    resource {axis: 2, entry: symbol(2), name: "second_state", owner: "second", selected: false, strides: [known(24576), known(8192), known(4), known(1)]};
+    value "active": i8[2, 3, s1, 4] resource {extent: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])]), generation: 1, name: "kv", origins: [known(0), known(0), symbol(2), known(0)], owner: false, strides: [known(24576), known(8192), known(4), known(1)]};
+    value "cache": i8[2, 3, 2048, 4] resource {extent: symbol(2), generation: 0, name: "kv", origins: [known(0), known(0), known(0), known(0)], owner: true, strides: [known(24576), known(8192), known(4), known(1)]};
+    value "float_fresh": f32[2, 3, s1, 4];
+    value "fresh": i8[2, 3, s1, 4];
+    value "out": i32[2, 3, s1, 4];
+    value "produced_fresh": i8[2, 3, s1, 4];
+    value "second": i8[2, 3, 2048, 4] resource {extent: symbol(2), generation: 0, name: "second_state", origins: [known(0), known(0), known(0), known(0)], owner: true, strides: [known(24576), known(8192), known(4), known(1)]};
+    value "second_updated": i8[2, 3, 2048, 4] resource {extent: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])]), generation: 1, name: "second_state", origins: [known(0), known(0), known(0), known(0)], owner: true, strides: [known(24576), known(8192), known(4), known(1)]};
+    value "updated": i8[2, 3, 2048, 4] resource {extent: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])]), generation: 1, name: "kv", origins: [known(0), known(0), known(0), known(0)], owner: true, strides: [known(24576), known(8192), known(4), known(1)]};
+    inputs ("cache", "fresh", "second");
+    outputs ("out");
+    node cast ("fresh") -> ("float_fresh") attrs {result_dtype: "f32"} scope "Compute";
+    node cast ("float_fresh") -> ("produced_fresh") attrs {result_dtype: "i8"} scope "Compute";
+    node resource_append ("cache", "produced_fresh") -> ("updated") attrs {axis: 2, position: symbol(2)} scope "Compute";
+    node resource_view ("updated") -> ("active") attrs {axis: 2, begin: symbol(2), end: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])])} scope "Compute";
+    node cast ("active") -> ("out") attrs {result_dtype: "i32"} scope "Compute";
+    node resource_append ("second", "produced_fresh") -> ("second_updated") attrs {axis: 2, position: symbol(2)} scope "Compute";
+  }
+}

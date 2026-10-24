@@ -47,12 +47,15 @@ pub(crate) fn main(args: &[String]) -> Result<()> { tests::run(args) }
 pub(crate) fn main(args: &[String]) -> Result<()> {
     if let Some(path)=args.iter().find_map(|s|s.strip_prefix("--check_package=")) {
         if args.len()!=2 {return Err(Error::invalid("--check_package requires only a package directory"));}
-        let root=Path::new(path);Package::read(root)?.validate_files(root)?;
+        crate::runtime::package::ModelPackage::read(Path::new(path))?.validate()?;
         println!("Package graphs and interfaces verified");return Ok(());
     }
     // Diagnostic chunking changes only valid rows, never the prepared shape.
     let mut arguments = args.to_vec();
     let score_tokens = if let Some(i) = arguments.iter().position(|s| s == "--score_tokens") {
+        arguments.remove(i); true
+    } else { false };
+    let dump_state_steps = if let Some(i) = arguments.iter().position(|s| s == "--dump_state_steps") {
         arguments.remove(i); true
     } else { false };
     let chunk_size = if let Some(i) = arguments
@@ -97,51 +100,58 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         return Err(Error::invalid("Choose --program with --execution, or --qwen-assets"));
     }
     if arguments.iter().any(|s| s == "--help" || s == "-h") {
-        println!("Experimental preparation: --program=FILE [--execution=FILE] or --qwen-assets=FILE; mutually exclusive with --graph_dir");
+        println!("Semantic preparation: --program=FILE [--execution=FILE] or --qwen-assets=FILE; mutually exclusive with --model_dir");
+        println!("--dump_state_steps adds per-decode state snapshots to --dump_outputs (potentially large)");
+    }
+    if arguments.iter().any(|s| s.starts_with("--graph_dir")) {
+        return Err(Error::invalid("Offline graph loading is retired; use --model_dir with a semantic package"));
+    }
+    if program_path.is_none() && qwen_assets.is_none() && !arguments.iter().any(|s| s.starts_with("--model_dir")) {
+        let name = Path::new(&arguments[0]).file_stem().and_then(|s| s.to_str()).unwrap_or("");
+        if ["gemma4_e2b", "gemma4_e4b"].contains(&name) {
+            arguments.push(format!("--model_dir=models/{name}/generated"));
+        }
     }
     let Some(mut o) = Options::parse(&arguments, true)? else {
         return Ok(());
     };
+    if dump_state_steps && !o.dump_outputs {
+        return Err(Error::invalid("--dump_state_steps requires --dump_outputs"));
+    }
     if score_tokens && (o.warmup_runs != 0 || o.measured_runs != 1 ||
         o.profile_execution != "none" || o.report_memory || o.dump_outputs ||
         !o.trace_plan.is_empty() || o.dump_pipeline) {
         return Err(Error::invalid("Scoring requires zero warmups, one repetition and no diagnostics"));
     }
-    let root = Path::new(o.graph_dir.as_deref().unwrap_or(&o.bundle_dir));
-    if o.graph_dir.is_some() && (program_path.is_some() || qwen_assets.is_some()) {
-        return Err(Error::invalid("Runtime program input and --graph_dir are mutually exclusive"));
+    let root = Path::new(o.model_dir.as_deref().unwrap_or(&o.bundle_dir)).to_path_buf();
+    if o.model_dir.is_some() && (program_path.is_some() || qwen_assets.is_some()) {
+        return Err(Error::invalid("Runtime program input and --model_dir are mutually exclusive"));
     }
     let load_start = Instant::now();
-    let mut program = None;
-    let mut offline = None;
-    let (package, source) = if let Some(path) = &program_path {
-        program = Some(serde_json::from_slice::<crate::compiler::Program>(&io::read_limited(Path::new(path), 128*1024*1024)?)?);
+    let mut metadata = serde_json::Value::Null;
+    let (program, package, source) = if let Some(path) = &program_path {
+        let program = crate::program_text::read(Path::new(path))?;
         let default = Path::new(path).with_file_name("execution.json");
         let spec = execution_path.as_ref().map(Path::new).unwrap_or(&default);
         let spec: crate::runtime::ExecutionSpec = serde_json::from_slice(&io::read_limited(spec,16*1024*1024)?)?;
         spec.validate()?;
-        (spec, "program")
+        (program, spec, "program")
     } else if let Some(path) = &qwen_assets {
         let assets: crate::models::qwen3::Assets = serde_json::from_slice(&io::read_limited(Path::new(path),128*1024*1024)?)?;
         let p = assets.program(o.cache_capacity as i64, o.prefill_rows as i64)?;
         let spec = assets.execution(&p, o.cache_capacity as i64, o.prefill_rows as i64)?;
-        program = Some(p);
-        (spec, "qwen-assets")
+        (p, spec, "qwen-assets")
     } else {
-        let p = Package::read(root)?;
+        let p = Package::read(&root)?;
         let spec = p.spec.clone();
-        offline = Some(p);
-        (spec, "offline-plan")
+        metadata = p.metadata;
+        (p.program, spec, "semantic-package")
     };
     let load_ms = load_start.elapsed().as_secs_f64()*1000.0;
-    if !arguments.iter().any(|a| a.starts_with("--cache_capacity=")) {
-        o.cache_capacity = package.capacity;
-    }
-    if !arguments.iter().any(|a| a.starts_with("--prefill_rows=")) {
-        o.prefill_rows = package.prefill_rows;
-    }
-    if o.cache_capacity != package.capacity || o.prefill_rows != package.prefill_rows {
-        return Err(Error::invalid("Capacity/prefill rows differ from package"));
+    o.apply_model_defaults(package.capacity, package.prefill_rows);
+    let package = package.with_capacity(o.cache_capacity)?;
+    if o.prefill_rows != package.prefill_rows {
+        return Err(Error::invalid("Prefill rows differ from package; use --prefill_chunk_size to select smaller chunks"));
     }
     let chunk_size = chunk_size.unwrap_or(package.prefill_rows);
     if score_tokens != package.graphs.get("prefill").is_some_and(|g| g.logits.is_some()) {
@@ -154,6 +164,7 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
     let output = Path::new(&o.output_dir);
     io::new_directory(output)?;
     frontend.save(output)?;
+    if !metadata.is_null() { io::json(&output.join("model.json"), &metadata)?; }
     let mut trace = DecodeTrace::open()?;
     if trace.0.is_some() && (score_tokens || o.profile_execution != "none" || o.report_memory || o.dump_outputs ||
                             !o.trace_plan.is_empty() || o.dump_pipeline) {
@@ -162,14 +173,17 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
     io::json(
         &output.join("run.json"),
         &json!({
-            "runner": "ynn-llm", "graph_dir": root, "threads": o.num_threads,
+            "runner": "ynn-llm", "model_dir": root, "threads": o.num_threads,
             "preparation_source": source, "program": program_path, "qwen_assets": qwen_assets,
+            "package_identity": metadata["package"],
+            "profile": metadata["profile"].as_str().or_else(|| metadata["execution"]["profile"].as_str()),
+            "source_identity": metadata["source_identity"].as_str().or_else(|| metadata["execution"]["source_identity"].as_str()),
             "cache_capacity": package.capacity, "prefill_rows": package.prefill_rows, "prefill_chunk_size": chunk_size,
             "warmups": o.warmup_runs, "repetitions": o.measured_runs,
             "ynn_math": ffi::math_mode()?,
             "profile_execution": o.profile_execution, "trace_plan": o.trace_plan,
             "timings_valid_for_benchmark": prepare_drop.is_none() && !score_tokens && o.profile_execution == "none"
-                && !o.report_memory && !o.dump_outputs && o.trace_plan.is_empty(),
+                && !o.report_memory && !o.dump_outputs && !o.dump_pipeline && o.trace_plan.is_empty(),
         }),
     )?;
     if let Some(repetitions) = prepare_drop {
@@ -177,13 +191,9 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         for repetition in 0..repetitions {
             let before = ffi::allocator_bytes();
             let start = Instant::now();
-            let session = if let Some(program) = program.as_ref() {
-                let assets = crate::runtime::AssetStore::open(Path::new(&o.bundle_dir),Path::new(&o.parameter_dir))?;
-                let prepared = crate::runtime::prepare(program,assets,session::prepare_options(&o,&package))?;
-                Session::from_prepared(prepared,package.clone())?
-            } else {
-                Session::load(root,Path::new(&o.bundle_dir),Path::new(&o.parameter_dir),Package::read(root)?,&o)?
-            };
+            let assets = session::open_assets(Path::new(&o.bundle_dir),Path::new(&o.parameter_dir), &o, &metadata)?;
+            let prepared = crate::runtime::prepare(&program,assets,session::prepare_options(&o,&package))?;
+            let session = Session::from_prepared(prepared,package.clone())?;
             let mut record = json!({"repetition":repetition,"prepare_ms":start.elapsed().as_secs_f64()*1000.0,
                 "before_allocator":before,"prepared_rss":ffi::rss(),"prepared_allocator":ffi::allocator_bytes(),
                 "preparation":session.preparation});
@@ -197,14 +207,9 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         return Ok(());
     }
     let start = Instant::now();
-    let mut session = if let Some(program) = program.take() {
-        let assets = crate::runtime::AssetStore::open(Path::new(&o.bundle_dir), Path::new(&o.parameter_dir))?;
-        let prepared = crate::runtime::prepare(&program, assets, session::prepare_options(&o, &package))?;
-        drop(program);
-        Session::from_prepared(prepared, package)?
-    } else {
-        Session::load(root, Path::new(&o.bundle_dir), Path::new(&o.parameter_dir), offline.take().unwrap(), &o)?
-    };
+    let assets = session::open_assets(Path::new(&o.bundle_dir), Path::new(&o.parameter_dir), &o, &metadata)?;
+    let prepared = crate::runtime::prepare(program, assets, session::prepare_options(&o, &package))?;
+    let mut session = Session::from_prepared(prepared, package)?;
     io::json(
         &output.join("setup.json"),
         &json!({"model":session.package.model,
@@ -255,6 +260,10 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
             g.diagnostics(o.dump_pipeline.then_some(path.as_path()), o.report_memory)?;
         }
     }
+    let mut memory = if o.report_memory {
+        Some(BufWriter::new(File::create(output.join("memory.jsonl"))?))
+    } else { None };
+    if let Some(out) = &mut memory { memory_record(&session, "setup", out)?; }
     let mut timings = BufWriter::new(File::create(output.join("timings.jsonl"))?);
     let mut windows = BufWriter::new(File::create(output.join("trace.jsonl"))?);
     for case in &frontend.cases {
@@ -275,6 +284,9 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
                 prefix_graph_ms += session.invoke(chunk, false, profile)?;
             }
             let prefix_ms = start.elapsed().as_secs_f64() * 1000.0;
+            if let Some(out) = &mut memory {
+                memory_record(&session, &format!("{}/{rep}/prefix", case.name), out)?;
+            }
             let mut trace_start = Instant::now();
             for (step, token) in case
                 .prompt
@@ -292,14 +304,13 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
                     && ["all", "decode"].contains(&o.profile_execution.as_str()))
                 .then_some((case.name.as_str(), rep, step));
                 let decode_ms = session.invoke(&[*token], true, profile)?;
-                let argmax = session
-                    .logits
-                    .iter()
-                    .enumerate()
-                    .max_by(|a, b| a.1.total_cmp(b.1))
-                    .unwrap()
-                    .0;
+                let argmax = greedy_argmax(&session.logits);
                 let token_ms = start.elapsed().as_secs_f64() * 1000.0;
+                if step == 0 {
+                    if let Some(out) = &mut memory {
+                        memory_record(&session, &format!("{}/{rep}/first_decode", case.name), out)?;
+                    }
+                }
                 if rep >= 0 {
                     writeln!(
                         timings,
@@ -313,6 +324,9 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
                             &output.join(format!("{}_r{rep}_s{step}.logits.bin", case.name)),
                             &session.logits,
                         )?;
+                        if dump_state_steps {
+                            dump_state(&session, output, &format!("{}_r{rep}_s{step}",case.name))?;
+                        }
                     }
                 }
             }
@@ -322,30 +336,7 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
                     "tokens":case.continuation.len(),"elapsed_ms":trace_start.elapsed().as_secs_f64()*1000.0}))?;
             }
             if rep >= 0 && o.dump_outputs {
-                for state in &session.states {
-                    io::write_f32(
-                        &output.join(format!(
-                            "{}_r{rep}_{}.bin", case.name, state.input.to_string_lossy()
-                        )),
-                        &state.current,
-                    )?;
-                }
-                for (name, cache) in &session.caches {
-                    let data = cache.data();
-                    // The resource exposes signed bytes; this changes only their
-                    // view, with the same allocation, alignment and length.
-                    let bytes = unsafe {
-                        std::slice::from_raw_parts(data.as_ptr().cast::<u8>(), data.len())
-                    };
-                    fs::write(
-                        output.join(format!(
-                            "{}_r{rep}_{}.bin",
-                            case.name,
-                            name.to_string_lossy()
-                        )),
-                        bytes,
-                    )?;
-                }
+                dump_state(&session, output, &format!("{}_r{rep}",case.name))?;
             }
         }
     }
@@ -360,6 +351,7 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
         &output.join("memory.json"),
         &json!({"rss_bytes":ffi::rss(),"peak_rss_bytes":ffi::peak_rss()}),
     )?;
+    if let Some(out) = &mut memory { out.flush()?; }
     timings.flush()?;
     windows.flush()?;
     io::json(&output.join("completion.json"), &json!({"status":"completed","cases":frontend.cases.len()}))?;
@@ -368,3 +360,75 @@ pub(crate) fn main(args: &[String]) -> Result<()> {
 
 #[cfg(feature="llm-tests")]
 mod tests;
+
+fn dump_state(session: &Session, output: &Path, prefix: &str) -> Result<()> {
+    for state in &session.states {
+        io::write_f32(&output.join(format!("{prefix}_{}.bin",state.input.to_string_lossy())), &state.current)?;
+    }
+    for (name, cache) in &session.caches {
+        let data = cache.data();
+        let bytes = unsafe { std::slice::from_raw_parts(data.as_ptr().cast::<u8>(), data.len()) };
+        fs::write(output.join(format!("{prefix}_{}.bin",name.to_string_lossy())),bytes)?;
+    }
+    Ok(())
+}
+
+fn greedy_argmax(logits: &[f32]) -> usize {
+    // Equal logits select the lowest token ID, including signed-zero ties.
+    let mut best = 0;
+    for (index, &value) in logits.iter().enumerate() {
+        if value > logits[best] { best = index; }
+    }
+    best
+}
+
+fn memory_record(session: &Session, phase: &str, out: &mut impl Write) -> Result<()> {
+    let mut record =
+        json!({"phase":phase, "rss_kib":ffi::rss()/1024, "peak_rss_kib":ffi::peak_rss()/1024});
+    for (i, name) in ["prefill", "decode"].iter().enumerate() {
+        let m = session.graphs[i].memory()?;
+        for (field, value) in [
+            ("root_scratch_bytes", m.root),
+            ("scratch_live_bytes", m.live),
+            ("scratch_peak_bytes", m.peak),
+            ("scratch_allocated_bytes", m.allocated),
+            ("scratch_allocation_calls", m.allocations),
+        ] {
+            record[format!("{name}_{field}")] = value.into();
+        }
+    }
+    if let Some(values) = ffi::allocator_bytes() {
+        for (key, value) in [
+            "libc_allocated_arena_bytes",
+            "libc_free_arena_bytes",
+            "libc_mmap_bytes",
+        ]
+        .iter()
+        .zip(values)
+        {
+            record[*key] = value.into();
+        }
+    }
+    if let Ok(smaps) = fs::read_to_string("/proc/self/smaps_rollup") {
+        for line in smaps.lines() {
+            let parts: Vec<_> = line.split_whitespace().collect();
+            if parts.len() == 3
+                && parts[2] == "kB"
+                && [
+                    "Anonymous:",
+                    "Private_Dirty:",
+                    "Private_Clean:",
+                    "Shared_Clean:",
+                    "Swap:",
+                ]
+                .contains(&parts[0])
+            {
+                if let Ok(value) = parts[1].parse::<u64>() {
+                    record[format!("{}_kib", parts[0].trim_end_matches(':'))] = value.into();
+                }
+            }
+        }
+    }
+    writeln!(out, "{}", record)?;
+    Ok(())
+}

@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "numerical_constant_transpose_f4_before.ynn"
-  },
   "buffers": [
     {
       "name": "y",
@@ -44,5 +41,6 @@
         "a": "actual/numerical_constant_transpose_f4_before/0_61.bin"
       }
     }
-  ]
+  ],
+  "program": "numerical_constant_transpose_f4_before.program.ynn"
 }

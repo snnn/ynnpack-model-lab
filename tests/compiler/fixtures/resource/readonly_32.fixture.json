@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "readonly_32_a.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -47,5 +44,6 @@
         "cache": "actual/readonly_32/0_6361636865.bin"
       }
     }
-  ]
+  ],
+  "program": "readonly_32.program.ynn"
 }

@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "numerical_activation_relu6_1_shared.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -88,5 +85,6 @@
         "positive": "actual/numerical_activation_relu6_1_shared/1_706f736974697665.bin"
       }
     }
-  ]
+  ],
+  "program": "numerical_activation_relu6_1_shared.program.ynn"
 }

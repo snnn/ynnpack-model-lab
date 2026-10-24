@@ -1,0 +1,49 @@
+{
+  "status": "interrupted_after_retained_memory_failure",
+  "source_format": "JSON/gzip",
+  "completed_jobs": 7,
+  "failed_gates": [
+    {
+      "job": "qwen3_0_6b_generated-t4",
+      "metric": "retained_bytes",
+      "summary": {
+        "ratio": 1.0496778046582662,
+        "upper95": 1.0498736386365124,
+        "max_increase_bytes": 122150912,
+        "pass": false
+      }
+    }
+  ],
+  "qwen_retained_pairs": [
+    {
+      "before": 2434531328,
+      "after": 2555117568
+    },
+    {
+      "before": 2434629632,
+      "after": 2555027456
+    },
+    {
+      "before": 2434314240,
+      "after": 2555179008
+    },
+    {
+      "before": 2432520192,
+      "after": 2554671104
+    },
+    {
+      "before": 2434334720,
+      "after": 2555183104
+    },
+    {
+      "before": 2434117632,
+      "after": 2554785792
+    }
+  ],
+  "response": "Owned semantic source is released before native construction; final DSL campaign retains all original gates.",
+  "candidate_implementation_ancestor": "3571957e2672a95366ab7ff64c2387c913691783",
+  "measured_binary_sha256": {
+    "qwen3": "0a484f1a779f58a6e72889e188dc0cb0f7f5323122600e0e3468a81c954bb740",
+    "ynn-llm": "a3071bb2c9cb0465c08651fc517fbd33602324077e73fa26649315d3b7ca30f7"
+  }
+}

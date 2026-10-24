@@ -1,0 +1,11 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    const "slopes": f32[3] data {bytes: 12, path: "@parameters/91fc3ea4024dd45dacc3cb728eec330b24cc8c501eb6c6b0a6003399e2ad8000.bin", sha256: "91fc3ea4024dd45dacc3cb728eec330b24cc8c501eb6c6b0a6003399e2ad8000"} floats [real(0.10000000149011612), real(0.30000001192092896), real(0.699999988079071)];
+    value "x": f32[2, 3];
+    value "y": f32[2, 3];
+    inputs ("x");
+    outputs ("y");
+    node prelu ("x", "slopes") -> ("y") attrs {result_dtype: "f32"} scope "Compute";
+  }
+}

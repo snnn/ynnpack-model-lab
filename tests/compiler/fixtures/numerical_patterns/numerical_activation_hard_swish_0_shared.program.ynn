@@ -1,0 +1,10 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "x": f32[2, 3];
+    value "y": f32[2, 3];
+    inputs ("x");
+    outputs ("y");
+    node hard_swish ("x") -> ("y") attrs {beta: real(0.0)} scope "Compute";
+  }
+}

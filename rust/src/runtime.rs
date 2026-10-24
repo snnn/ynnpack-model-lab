@@ -2,6 +2,8 @@
 //! Experimental preparation of semantic programs in the invoking process.
 //! Compilation happens once here; invocation only uses prepared native graphs.
 pub mod execution;
+pub mod package;
+pub mod tensor;
 #[cfg(feature = "native-tests")]
 pub(crate) mod tests;
 use crate::{
@@ -12,6 +14,7 @@ use crate::{
 pub use execution::ExecutionSpec;
 use serde::Serialize;
 use std::{
+    borrow::Borrow,
     collections::BTreeMap,
     path::{Path, PathBuf},
     rc::Rc,
@@ -29,11 +32,18 @@ impl AssetStore {
             assets: ffi::Assets::open(bundle, parameters)?,
         })
     }
+    #[cfg(feature = "llm")]
+    pub fn open_hf(source: &Path, manifest: &Path, cache: &Path, parameters: &Path,
+                   identity: &str, bf16: bool) -> Result<Self> {
+        Ok(Self { assets: ffi::Assets::open_hf(source, manifest, cache, parameters, identity, bf16)? })
+    }
+
 }
 
 pub struct PrepareOptions<'a> {
     pub threads: usize,
     pub execution: Option<&'a ExecutionSpec>,
+    pub tensors: Option<&'a tensor::TensorExecutionSpec>,
     pub trace_plan: Option<PathBuf>,
     pub profile_execution: &'a str,
     pub output_dir: PathBuf,
@@ -43,6 +53,7 @@ impl Default for PrepareOptions<'_> {
         Self {
             threads: 4,
             execution: None,
+            tensors: None,
             trace_plan: None,
             profile_execution: "none",
             output_dir: PathBuf::new(),
@@ -71,17 +82,22 @@ pub struct PreparedProgram {
     pub(crate) graphs: BTreeMap<String, ffi::PreparedGraph>,
     pub(crate) assets: Rc<ffi::Assets>,
     pub(crate) execution: Option<ExecutionSpec>,
+    pub(crate) tensors: Option<tensor::TensorExecutionSpec>,
     pub(crate) trace_output: Option<PathBuf>,
     pub stats: PreparationStats,
 }
 
+/// Pass an owned program for one-time preparation so its semantic allocations
+/// are released before native graph construction. Borrow it when retaining the
+/// source for another preparation or diagnostic inspection is intentional.
 pub fn prepare(
-    program: &compiler::Program,
+    program: impl Borrow<compiler::Program>,
     mut assets: AssetStore,
     options: PrepareOptions<'_>,
 ) -> Result<PreparedProgram> {
     let start = Instant::now();
-    let (mut compiled, compiler) = compiler::compile_measured(program)?;
+    let (mut compiled, compiler) = compiler::compile_measured(program.borrow())?;
+    drop(program);
     let mut stats = PreparationStats {
         compiler,
         compiler_calls: 1,
@@ -120,6 +136,10 @@ pub(crate) fn prepare_plans(
     }
     let start = Instant::now();
     let at = Instant::now();
+    if let Some(spec) = options.tensors {
+        if options.execution.is_some() { return Err(Error::invalid("Choose one execution contract")); }
+        spec.validate(&plans)?;
+    }
     if let Some(spec) = options.execution {
         spec.validate()?;
         if spec.graphs.keys().ne(plans.keys()) {
@@ -144,7 +164,7 @@ pub(crate) fn prepare_plans(
     if let Some(spec) = options.execution {
         for embedding in spec.embeddings.values() {
             for asset in &embedding.assets {
-                assets.assets.verify(&crate::plan::Data {
+                assets.assets.verify_embedding(&crate::plan::Data {
                     path: asset.path.clone(),
                     bytes: asset.bytes,
                     sha256: asset.sha256.clone(),
@@ -185,6 +205,7 @@ pub(crate) fn prepare_plans(
         graphs,
         assets: assets.assets,
         execution: options.execution.cloned(),
+        tensors: options.tensors.cloned(),
         trace_output: options.trace_plan.map(|_| options.output_dir.join("trace")),
         stats,
     })

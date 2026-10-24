@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "empty.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -45,5 +42,6 @@
         "y": "actual/empty/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "empty.program.ynn"
 }

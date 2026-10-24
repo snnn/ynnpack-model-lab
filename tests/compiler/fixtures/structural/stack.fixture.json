@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "stack.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -59,5 +56,6 @@
         "z": "actual/stack/0_7a.bin"
       }
     }
-  ]
+  ],
+  "program": "stack.program.ynn"
 }

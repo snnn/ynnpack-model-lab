@@ -1,0 +1,30 @@
+ynn_program 1 {
+  quant q0 {axis: -1, parameters: {axes: [0, 1], blocks: [1, 1], scales: "crop/scales", zeros: "crop/zero_points"}};
+  quant q1 {axis: -1, parameters: {axes: [0, 1], blocks: [1, 2], scales: "s", zeros: "z"}};
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "__quant/1/codes0": i4[3, 5];
+    value "__quant/1/p0/scale_full": f32[3, 5];
+    value "__quant/1/p0/zero_full": i32[3, 5];
+    value "crop": i4[3, 3] quant q0;
+    value "crop/codes": i4[3, 3];
+    value "crop/scales": f32[3, 3];
+    value "crop/zero_points": i32[3, 3];
+    value "q": i4[3, 5] quant q1;
+    value "s": f32[3, 3];
+    value "x": i4[3, 5];
+    value "y": f32[3, 3];
+    value "z": i32[3, 3];
+    inputs ("x", "s", "z");
+    outputs ("y");
+    node with_quantization ("x", "s", "z") -> ("q") attrs {axes: [0, 1], integers: [1, 2]} scope "Compute";
+    node quantization_codes ("q") -> ("__quant/1/codes0") scope "Compute";
+    node quantization_parameters ("s", "q") -> ("__quant/1/p0/scale_full") attrs {axes: [0, 1], integers: [1, 2]} scope "Compute";
+    node quantization_parameters ("z", "q") -> ("__quant/1/p0/zero_full") attrs {axes: [0, 1], integers: [1, 2]} scope "Compute";
+    node slice ("__quant/1/codes0") -> ("crop/codes") attrs {lengths: [known(3), known(3)], starts: [known(0), known(1)]} scope "Compute";
+    node slice ("__quant/1/p0/scale_full") -> ("crop/scales") attrs {lengths: [known(3), known(3)], starts: [known(0), known(1)]} scope "Compute";
+    node slice ("__quant/1/p0/zero_full") -> ("crop/zero_points") attrs {lengths: [known(3), known(3)], starts: [known(0), known(1)]} scope "Compute";
+    node with_quantization ("crop/codes", "crop/scales", "crop/zero_points") -> ("crop") attrs {axes: [0, 1], integers: [1, 1]} scope "Compute";
+    node dequantize ("crop") -> ("y") attrs {result_dtype: "f32"} scope "Compute";
+  }
+}

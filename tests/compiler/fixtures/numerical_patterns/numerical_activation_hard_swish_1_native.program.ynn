@@ -1,0 +1,16 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "offset": f32[2, 3];
+    value "positive": f32[2, 3];
+    const "three": f32[] data {bytes: 4, path: "@parameters/ea2845900b5856c9bf354b1aa9761b5aa6888e5ed61738fe9579ca42bc0f6054.bin", sha256: "ea2845900b5856c9bf354b1aa9761b5aa6888e5ed61738fe9579ca42bc0f6054"} floats [real(3.0)];
+    value "x": f32[2, 3];
+    value "y": f32[2, 3];
+    const "zero": f32[] data {bytes: 4, path: "@parameters/df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119.bin", sha256: "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"} floats [real(0.0)];
+    inputs ("x");
+    outputs ("y", "positive");
+    node add ("x", "three") -> ("offset") attrs {result_dtype: "f32"} scope "Compute";
+    node maximum ("offset", "zero") -> ("positive") attrs {result_dtype: "f32"} scope "Compute";
+    node hard_swish ("x") -> ("y") attrs {result_dtype: "f32"} scope "Compute";
+  }
+}

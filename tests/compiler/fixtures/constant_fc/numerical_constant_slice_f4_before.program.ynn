@@ -1,0 +1,12 @@
+ynn_program 1 {
+  blob "83e13c83f17cec9f8ab1cf1146ae28520e65812acb66b4e41c6945d196fc04fe" 192;
+  array a0 = r64(0, 24);
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    const "a": f32[2, 3, 4] data {bytes: 96, path: "@parameters/45a99655901702d55ab6284a18aed6a5e16677181d16c7a7517b68c2ae2c0c7a.bin", sha256: "45a99655901702d55ab6284a18aed6a5e16677181d16c7a7517b68c2ae2c0c7a"} floats @a0;
+    value "y": f32[2, 2, 2];
+    inputs ();
+    outputs ("y", "a");
+    node slice ("a") -> ("y") attrs {lengths: [known(2), known(2), known(2)], result_dtype: "f32", starts: [known(0), known(1), known(1)]} scope "Compute";
+  }
+}

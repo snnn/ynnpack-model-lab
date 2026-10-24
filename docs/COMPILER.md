@@ -1,12 +1,12 @@
 # Public Rust authoring and compiler
 
-The compiler consumes a deferred tensor program and emits the `.ynn` construction
-plans used by the existing runners. It owns YNNPACK decomposition, target views,
-packed representations, native function sharing, and construction serialization.
-The runtime and native kernels remain separate from model authoring. There is one
-compiler implementation, in `rust/src/compiler`, shared by every frontend.
-The experimental [runtime preparation API](RUNTIME_PREPARATION.md) invokes that
-same compiler in process and prepares reusable graphs without plan files.
+The compiler consumes a deferred tensor program and lowers it during runtime
+preparation. It owns YNNPACK decomposition, target views, packed representations,
+native function sharing and construction serialization. There is one compiler
+implementation in `rust/src/compiler`, shared by every frontend and by the
+optional diagnostic `ynn-compile` command. Normal authoring/export does not
+invoke that command. [runtime::prepare](RUNTIME_PREPARATION.md) lowers and prepares
+the program in process, then invocation reuses its native graphs.
 
 FC, attention, and selected graph rewrites use build-time generated Rust from
 [ISLE rules](ISLE_LOWERING.md). That guide describes rule ownership, extension,
@@ -18,7 +18,7 @@ directly. Adding a model does not require an importer or any other repository.
 
 ```text
 source importer ─┐
-                ├─> Program ─> Rust compiler ─> .ynn + assets ─> runner
+                ├─> Program + assets ─> runtime::prepare ─> prepared session
 Rust author ────┘
 ```
 
@@ -31,24 +31,30 @@ decomposition and representation choices belong to the compiler. Unsupported
 semantics fail explicitly; they are never replaced by maximum tensor dimensions.
 
 All phases are compiled together. Incompatible persistent storage contracts fail
-before publication. The report records public input/output types, packed storage,
+before native construction. The diagnostic report records public input/output types, packed storage,
 resolved resource strides and bindings, and completion roots. Logical history
 length never changes physical capacity strides. Numerical reassociation requires
 the operation's explicit permission.
 
-Build the host tools through CMake after the usual dependency bootstrap:
+Normal host builds include `ynn-program` and `ynn-qwen3` for semantic authoring.
+Offline diagnostics require an explicit CMake option after the usual bootstrap:
 
 ```sh
-cmake --build build --target ynn_compile ynn_qwen3 ynn_plan
-build/ynn-compile --request program.json --output out/new-package
+cmake -S . -B build -DLAB_BUILD_DIAGNOSTICS=ON
+cmake --build build --target ynn_compile ynn_plan
+build/ynn-compile --request program.ynn --output out/new-package
 build/ynn-plan check out/new-package/decode.ynn
 ```
 
 `ynn-compile` writes generated constants and plans atomically into a new directory.
+Direct Cargo builds use feature `authoring-tools` for `ynn-program`/`ynn-qwen3`,
+or `diagnostic-tools` for `ynn-compile`/`ynn-plan`. The latter also enables
+`CompiledPackage::write`; normal runtime builds have no file-plan loader.
+Native tests alone enable that loader for backend fixture coverage.
 External assets remain references with byte counts and SHA256 identities. The
 packaging frontend must provide those assets or a supported external asset
 provider. `ynnpack_assets.artifacts.publish` verifies packaged parameter identities
-and phase hashes before publishing a data-only package. It does not copy runtime
+and semantic program/execution identities before publishing a data-only package. It does not copy runtime
 source. Existing destinations are rejected.
 
 The Rust API is usable without the CLI:
@@ -63,8 +69,10 @@ graph.input("x", TensorType {
 graph.operation(Op::Square, &["x"], "y", Attributes::default())?;
 let mut program = ProgramBuilder::default();
 program.phase("evaluate", graph.finish(&["y"]))?;
-let compiled = compile(&program.finish())?;
-compiled.write(std::path::Path::new("out/square"))?;
+let program = program.finish();
+// Serialize `program` for a package, or pass it to runtime::prepare with
+// a TensorExecutionSpec binding x=[2,3] and y=[2,3].
+// compile(&program) is available for diagnostics, using the same rules.
 # Ok::<(), ynnpack_lab::Error>(())
 ```
 
@@ -87,7 +95,7 @@ PYTHONPATH=python python -m ynnpack_assets.qwen3 \
   --checkpoint /path/to/local/Qwen3-0.6B --output out/qwen-assets
 build/ynn-qwen3 --assets out/qwen-assets/assets.json \
   --output out/qwen-rust --capacity 2048 --prefill-rows 128
-build/ynn-llm --bundle_dir=out/qwen-rust --graph_dir=out/qwen-rust \
+build/ynn-llm --model_dir=out/qwen-rust \
   --parameter_dir=out/qwen-rust/parameters --output_dir=out/qwen-run \
   --cases_file=models/qwen3_0_6b/fixtures/matrix.tsv \
   --cache_capacity=2048 --prefill_rows=128 --num_threads=1 \
@@ -100,15 +108,15 @@ FP32 KV state. It is named `mixed_int8_int8_mlp_only` for consistency with its
 recorded recipe identity; the actual module map quantizes all linear layers.
 The asset manifest records source file hashes, dependency versions, roles,
 geometry, scales, and content hashes. Preparation is atomic. The Rust author
-checks architecture and recipe constraints before compiling.
+checks architecture and recipe constraints before writing a semantic package.
 
 ## Validation and diagnostics
 
 `tests/compiler/fixtures` contains semantic programs and independent numerical
 references, including state, completion, spatial, attention, packed quantization,
 fully connected layers, and recurrence. These are data, not importer code.
-Reference payloads use gzip to keep the repository small. To regenerate all plans
-and validate on one and four threads using only this checkout:
+Reference payloads use gzip to keep the repository small. To check diagnostic plan fingerprints and execute semantic programs
+against the numerical references on one and four threads using only this checkout:
 
 ```sh
 uv sync --frozen
@@ -121,7 +129,8 @@ Three symbolic FC cases have an intermittent SIGSEGV in the pinned backend's AVX
 dot kernel, also observed in the frozen baseline. `--known-failures` runs these
 cases and reports only the recorded signal separately. A successful execution
 must still pass every numerical check. Other failures fail the suite. Omit the
-flag to treat every backend failure as fatal. CTest uses the explicit baseline
+flag to treat every backend failure as fatal. With `LAB_BUILD_DIAGNOSTICS=ON`,
+CTest uses the explicit baseline
 allowance; read its reported known-failure count as well as its exit status.
 
 The `blockwise_fc` CTest checks group-32 INT4 arithmetic under native and

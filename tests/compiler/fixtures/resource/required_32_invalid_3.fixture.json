@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "required_32_invalid_3_a.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -83,5 +80,6 @@
       "expect_error": "",
       "expect_unchanged": true
     }
-  ]
+  ],
+  "program": "required_32_invalid_3.program.ynn"
 }

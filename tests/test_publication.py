@@ -3,6 +3,8 @@
 
 from contextlib import redirect_stdout
 import io
+import gzip
+import hashlib
 import json
 from pathlib import Path
 import subprocess
@@ -15,6 +17,20 @@ from tools.check_publication import candidates, issues, main
 
 
 class PublicationTest(unittest.TestCase):
+    def test_compressed_semantic_data_is_scanned(self):
+        source = json.dumps({'source': '/' + 'home' + '/sample/source'}).encode()
+        self.assertTrue(issues('models/test/program.json.gz', gzip.compress(source)))
+        self.assertFalse(issues('models/test/program.json.gz', gzip.compress(b'{"version":1}')))
+        self.assertTrue(issues('models/test/program.json.gz', b'not gzip'))
+    def test_semantic_numeric_chunks_are_bounded_and_content_addressed(self):
+        payload = bytes(range(32))
+        name = 'models/test/program-data/' + hashlib.sha256(payload).hexdigest() + '.bin'
+        self.assertFalse(issues(name, payload))
+        self.assertTrue(issues(name, payload + b'bad'))
+        self.assertTrue(issues(name.replace('models/test/', 'private/'), payload))
+        source = b'ynn_program 1 {} # /' + b'home/sample/source'
+        self.assertTrue(issues('models/test/program.ynn', source))
+
     def test_host_path_and_contact(self):
         path = "/" + "home" + "/sample/project/build"
         email = "sample" + "@" + "example.org"

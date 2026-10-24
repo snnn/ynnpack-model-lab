@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "required_transitive_4096_a.ynn",
-    "b": "required_transitive_4096_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -483,5 +479,6 @@
         }
       ]
     }
-  ]
+  ],
+  "program": "required_transitive_4096.program.ynn"
 }

@@ -51,7 +51,7 @@ Use the control's existing assets and parameters:
 
 ```sh
 ./build-attention/gemma4_e2b \
-  --graph_dir=models/gemma4_e2b/attention/int8_rows \
+  --model_dir=models/gemma4_e2b/attention/int8_rows \
   --bundle_dir=assets/gemma4_e2b/bundle \
   --parameter_dir=assets/gemma4_e2b/parameters \
   --cases_file=models/gemma4_e2b/fixtures/performance.tsv \
@@ -72,8 +72,8 @@ compacting its capacity-backed stride. Both phases still reuse their prepared
 graphs and append only newly produced K/V. These policies do not introduce a
 whole-graph copy for each history length or an online-softmax implementation.
 
-Use separate `--dump_outputs` runs and
-`tools/compare_outputs.py --reference=... --candidate=... --output=...` to compare
+Use separate `--dump_outputs --dump_state_steps` runs and
+`tools/compare_outputs.py --reference=... --candidate=... --execution=MODEL/execution.json --output=...` to compare
 finite logits, error, centered cosine, KL, greedy agreement and KV codes.
 Grouping can change FP32 accumulation and propagate through QAT thresholds;
 passing an isolated attention test does not guarantee full-model equivalence.

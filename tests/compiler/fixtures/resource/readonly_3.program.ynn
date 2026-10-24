@@ -1,0 +1,17 @@
+ynn_program 1 {
+  options {schedule_masks: false, target_views: false};
+  phase "a" {
+    symbol {binding: {name: "position", source: "parameter", value: ""}, id: 2, lower: 0, upper: 32};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 2 lower bound", relation: "le", rhs: symbol(2)};
+    guard {lhs: symbol(2), mode: "bounds", reason: "symbol 2 upper bound", relation: "le", rhs: known(32)};
+    guard {lhs: symbol(2), mode: "ordinary", reason: "view reads uninitialized history", relation: "le", rhs: symbol(2)};
+    resource {axis: 2, entry: symbol(2), name: "kv", owner: "cache", selected: false, strides: [known(384), known(128), known(4), known(1)]};
+    value "active": i8[2, 3, s2, 4] resource {extent: symbol(2), generation: 0, name: "kv", origins: [known(0), known(0), known(0), known(0)], owner: false, strides: [known(384), known(128), known(4), known(1)]};
+    value "cache": i8[2, 3, 32, 4] resource {extent: symbol(2), generation: 0, name: "kv", origins: [known(0), known(0), known(0), known(0)], owner: true, strides: [known(384), known(128), known(4), known(1)]};
+    value "out": i32[2, 3, s2, 4];
+    inputs ("cache");
+    outputs ("out");
+    node resource_view ("cache") -> ("active") attrs {axis: 2, end: symbol(2)} scope "Compute";
+    node cast ("active") -> ("out") attrs {result_dtype: "i32"} scope "Compute";
+  }
+}

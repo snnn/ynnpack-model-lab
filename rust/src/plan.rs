@@ -99,6 +99,7 @@ impl ValidatedPlan {
             std::str::from_utf8(bytes).map_err(|_| invalid("Graph source must be UTF-8"))?;
         crate::plan_text::parse(source)?.into_validated()
     }
+    #[cfg(feature = "native-tests")]
     pub(crate) fn read(path: &Path) -> Result<Self> {
         Plan::read(path)?.into_validated()
     }
@@ -124,27 +125,35 @@ impl ValidatedPlan {
         flags: i64,
     ) -> Result<()> {
         use types::{Dtype, Wire};
-        let expected_type = Dtype::decode(Arg::Dtype(dtype.into()))?;
+        let expected_type = if matches!(dtype, "int2" | "int4") { None }
+            else { Some(Dtype::decode(Arg::Dtype(dtype.into()))?) };
         for command in &self.commands {
-            if let Command::Tensor {
-                name: actual_name,
-                dtype,
-                dims: shape,
-                flags: actual_flags,
-                ..
-            } = command
-            {
-                if actual_name == name {
-                    return require(
-                        *dtype == expected_type
-                            && actual_flags & flags == flags
-                            && dims.len() == shape.len()
-                            && dims.iter().zip(shape).all(|(want, &got)| {
-                                want.is_none_or(|d| d >= 0 && d as usize == got)
-                            }),
-                        &format!("Plan tensor contract mismatch: {name}"),
-                    );
-                }
+            let (tensor, actual_name, shape, actual_flags, matches_type) = match command {
+                Command::Tensor { id, name, dtype: actual, dims, flags, .. } =>
+                    (id, name, dims, flags, Some(*actual) == expected_type),
+                Command::PackedTensor { id, name, bits, dims, flags, .. } =>
+                    (id, name, dims, flags, dtype == format!("int{bits}")),
+                _ => continue,
+            };
+            if actual_name == name {
+                return require(matches_type && actual_flags & flags == flags
+                    && dims.len() == shape.len()
+                    && dims.iter().zip(shape).enumerate().all(|(axis, (want, &got))| want.is_none_or(|d| {
+                        if d < 0 { return false; }
+                        if d as usize == got { return true; }
+                        // Zero is the native placeholder for a dynamic input axis.
+                        // Accept a declared input-axis symbol within its checked bounds.
+                        got == 0 && self.commands.iter().any(|c| match c {
+                            Command::InputShape { tensor: id, shape } if id == tensor => {
+                                if let Some(Expr::Symbol(symbol)) = shape.get(axis) {
+                                    self.commands.iter().any(|c| matches!(c,
+                                        Command::Symbol { id, lower, upper, source: types::SymbolSource::Axis { .. } }
+                                        if id.0 == *symbol && *lower <= d && d <= *upper))
+                                } else { false }
+                            }, _ => false,
+                        })
+                    })),
+                    &format!("Plan tensor contract mismatch: {name}"));
             }
         }
         Err(invalid(format!("Missing model tensor: {name}")))
@@ -476,7 +485,8 @@ impl Plan {
                 .collect::<Result<_>>()?,
         })
     }
-    pub fn read(path: &Path) -> Result<Self> {
+    #[cfg(feature = "native-tests")]
+    fn read(path: &Path) -> Result<Self> {
         use std::io::Read;
         let file = std::fs::File::open(path)?;
         let mut bytes = Vec::new();

@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "numerical_affine_symbolic_prefix_shared.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -151,5 +148,6 @@
         "w": "actual/numerical_affine_symbolic_prefix_shared/3_77.bin"
       }
     }
-  ]
+  ],
+  "program": "numerical_affine_symbolic_prefix_shared.program.ynn"
 }

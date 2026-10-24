@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "required_8448_continuity_a.ynn",
-    "b": "required_8448_continuity_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -715,5 +711,6 @@
         "second": "actual/required_8448_continuity/22_7365636f6e64.bin"
       }
     }
-  ]
+  ],
+  "program": "required_8448_continuity.program.ynn"
 }

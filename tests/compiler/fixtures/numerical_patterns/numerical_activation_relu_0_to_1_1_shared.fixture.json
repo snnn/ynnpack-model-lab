@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "numerical_activation_relu_0_to_1_1_shared.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -88,5 +85,6 @@
         "cap": "actual/numerical_activation_relu_0_to_1_1_shared/1_636170.bin"
       }
     }
-  ]
+  ],
+  "program": "numerical_activation_relu_0_to_1_1_shared.program.ynn"
 }

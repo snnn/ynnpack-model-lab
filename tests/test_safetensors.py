@@ -11,6 +11,10 @@ import unittest
 
 from tools.safetensors import Checkpoint
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'python'))
+from ynnpack_assets.artifacts import inspect_program
+
 
 class SafetensorsTest(unittest.TestCase):
     def test_generated_parameter_recipes_are_complete(self):
@@ -28,17 +32,11 @@ class SafetensorsTest(unittest.TestCase):
                         name,
                     )
                 references = set()
-                metadata = json.loads((path.parent / "model.json").read_text())
-                for phase in metadata['execution']['phases'].values():
-                    plan = path.parent / phase['file']
-                    self.assertEqual(hashlib.sha256(plan.read_bytes()).hexdigest(), phase['sha256'])
-                    tool = os.environ.get('YNNPACK_PLAN_TOOL', str(Path(__file__).resolve().parents[1] / 'build/ynn-plan'))
-                    report = json.loads(subprocess.check_output([tool, 'inspect', str(plan)], text=True))
-                    for data in report['constants']:
-                        if data['path'].startswith('@parameters/'):
-                            name = data['path'].removeprefix('@parameters/')
-                            references.add(name)
-                            self.assertEqual(hashlib.sha256(bytes.fromhex(parameters[name])).hexdigest(), data['sha256'])
+                for data in inspect_program(path.parent/'program.ynn')['source_assets']:
+                    if data['path'].startswith('@parameters/'):
+                        name = data['path'].removeprefix('@parameters/')
+                        references.add(name)
+                        self.assertEqual(hashlib.sha256(bytes.fromhex(parameters[name])).hexdigest(), data['sha256'])
                 self.assertFalse(list(path.parent.glob('*.cc')))
                 self.assertTrue(references)
                 self.assertLessEqual(references, parameters.keys())

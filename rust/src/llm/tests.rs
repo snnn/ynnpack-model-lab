@@ -4,9 +4,20 @@ use crate::{frontend::Options,Result};
 use std::path::Path;
 
 pub(super) fn run(args:&[String])->Result<()> {
+    assert_eq!(super::greedy_argmax(&[0., 2., 2., 1.]), 1);
+    assert_eq!(super::greedy_argmax(&[-0.0, 0.0]), 0);
+    assert_eq!(super::greedy_argmax(&[0.0, -0.0]), 0);
     runtime_session()?;
     resource_output_bindings()?;
     let root=Path::new(&args[1]);
+    let spec = Package::read(root)?.spec;
+    assert!(spec.with_capacity(spec.capacity + 1).is_err());
+    let mut dynamic = spec.clone();
+    dynamic.capacity_range = Some([spec.prefill_rows, 32]);
+    assert_eq!(dynamic.with_capacity(16)?.capacity, 16);
+    assert!(dynamic.with_capacity(33).is_err());
+    assert!(dynamic.with_capacity(0).is_err());
+    assert!(spec.validate_capacity_variant(&dynamic).is_err());
     let mut options=Options::parse(&["test".into(),format!("--bundle_dir={}",root.display()),
         format!("--parameter_dir={}/parameters",root.display()),"--cache_capacity=8".into(),
         "--prefill_rows=1".into(),"--cases_file=unused.tsv".into(),"--output_dir=unused-output".into(),"--num_threads=1".into()],true)?.unwrap();
@@ -15,6 +26,13 @@ pub(super) fn run(args:&[String])->Result<()> {
     session.invoke(&[1],true,None)?;
     assert_eq!(&*session.logits,&[3.,6.,9.,12.]);
     assert_eq!(session.position,2);
+    let mut memory = Vec::new();
+    super::memory_record(&session, "test", &mut memory)?;
+    let record: serde_json::Value = serde_json::from_slice(&memory)?;
+    assert_eq!(record["phase"], "test");
+    assert!(record["prefill_scratch_peak_bytes"].is_u64());
+    assert!(record["decode_scratch_peak_bytes"].is_u64());
+    assert!(record["rss_kib"].is_u64());
     if let Some(growth) = args.get(2) {
         let larger=Path::new(growth);
         let replacement=Session::load(larger,larger,&larger.join("parameters"),Package::read(larger)?,&options)?;
@@ -90,7 +108,8 @@ fn runtime_session() -> Result<()> {
     let program = Program { phases: BTreeMap::from([("prefill".into(),g.clone()),("decode".into(),g)]), ..Default::default() };
     let phase = serde_json::json!({"logits":null,"row_policy":"valid","scalars":{},
         "inputs":[{"name":"x","dtype":"fp32","shape":["rows"],"recipe":{"kind":"positions"}}]});
-    let mut value = serde_json::json!({"format":"ynn-llm-execution","model":"tiny-semantic",
+    let mut value = serde_json::json!({"format":"ynn-llm-execution","contract":2,
+        "compatibility":execution::Compatibility::ynnpack(),"model":"tiny-semantic",
         "capacity":8,"prefill_rows":1,"vocabulary":4,"prefill_after_decode":false,
         "graphs":{"prefill":phase,"decode":phase},"resources":[],"fixed_states":[],"embeddings":{}});
     value["graphs"]["decode"]["logits"] = serde_json::json!("logits");
@@ -134,7 +153,9 @@ fn resource_output_bindings() -> Result<()> {
     let phase = serde_json::json!({"logits":"logits","row_policy":"valid","scalars":{},
       "inputs":[{"name":"x","dtype":"fp32","shape":[1,4],"recipe":{"kind":"positions"}}]});
     let spec: ExecutionSpec = serde_json::from_value(serde_json::json!({
-      "format":"ynn-llm-execution","model":"resource-alias","capacity":8,"prefill_rows":1,
+      "format":"ynn-llm-execution","contract":2,
+      "compatibility":crate::runtime::execution::Compatibility::ynnpack(),
+      "model":"resource-alias","capacity":8,"prefill_rows":1,
       "vocabulary":4,"prefill_after_decode":false,"graphs":{"prefill":phase,"decode":phase},
       "resources":[{"name":"cache","dtype":"fp32","axis":0,"shape":["capacity",4]}],
       "fixed_states":[],"embeddings":{}}))?;

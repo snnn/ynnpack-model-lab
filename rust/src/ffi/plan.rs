@@ -52,6 +52,42 @@ extern "C" {
     ) -> i32;
 }
 impl Assets {
+    /// Embedding tables are accessed sparsely. Hash through a bounded read
+    /// buffer so validation does not fault the entire table into its mmap.
+    /// Source files, like all mapped model assets, must remain immutable.
+    pub(crate) fn verify_embedding(&self, d: &Data) -> Result<()> {
+        let Some((bundle, parameters)) = &self.source_dirs else {
+            #[cfg(feature = "llm")]
+            return self.verify_hf_embedding(d);
+            #[cfg(not(feature = "llm"))]
+            return Err(Error::invalid("Missing embedding source provider"));
+        };
+        if let Some((size, hash)) = self.verified.borrow().get(&d.path) {
+            return if *size == d.bytes && *hash == d.sha256 { Ok(()) }
+                else { Err(Error::invalid("Conflicting constant identities")) };
+        }
+        let (root, name) = d.path.strip_prefix("@parameters/").map_or((bundle, d.path.as_str()), |name| (parameters, name));
+        if !crate::runtime::execution::relative(name) {
+            return Err(Error::invalid("Invalid embedding asset path"));
+        }
+        use std::io::Read;
+        let mut file = std::fs::File::open(root.join(name))?;
+        if file.metadata()?.len() != d.bytes as u64 {
+            return Err(Error::invalid("Embedding asset size mismatch"));
+        }
+        let mut hash = Sha256::new();
+        let mut buffer = [0u8; 65536];
+        loop {
+            let size = file.read(&mut buffer)?;
+            if size == 0 { break; }
+            hash.update(&buffer[..size]);
+        }
+        if format!("{:x}", hash.finalize()) != d.sha256 {
+            return Err(Error::invalid("Embedding asset hash mismatch"));
+        }
+        self.verified.borrow_mut().insert(d.path.clone(), (d.bytes, d.sha256.clone()));
+        Ok(())
+    }
     pub(crate) fn verify(&self, d: &Data) -> Result<*const c_void> {
         let path = string(&d.path)?;
         let mut ptr = std::ptr::null();
@@ -234,6 +270,7 @@ impl Construction<'_> {
     }
 }
 impl GraphBuilder {
+    #[cfg(feature = "native-tests")]
     pub fn from_plan(assets: Rc<Assets>, path: &Path) -> Result<Self> {
         Self::from_validated_plan(assets, ValidatedPlan::read(path)?)
     }

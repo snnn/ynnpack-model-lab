@@ -1,0 +1,37 @@
+ynn_program 1 {
+  phase "model" {
+    symbol {binding: {name: "position", source: "parameter", value: ""}, id: 10, lower: 0, upper: 9};
+    symbol {binding: {name: "begin", source: "parameter", value: ""}, id: 11, lower: 0, upper: 9};
+    symbol {binding: {axis: 2, source: "axis", value: "q"}, id: 1, lower: 0, upper: 3};
+    symbol {binding: {name: "keys", source: "parameter", value: ""}, id: 12, lower: 0, upper: 9};
+    symbol {binding: {name: "queries", source: "parameter", value: ""}, id: 13, lower: 0, upper: 3};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 10 lower bound", relation: "le", rhs: symbol(10)};
+    guard {lhs: symbol(10), mode: "bounds", reason: "symbol 10 upper bound", relation: "le", rhs: known(9)};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 11 lower bound", relation: "le", rhs: symbol(11)};
+    guard {lhs: symbol(11), mode: "bounds", reason: "symbol 11 upper bound", relation: "le", rhs: known(9)};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(3)};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 12 lower bound", relation: "le", rhs: symbol(12)};
+    guard {lhs: symbol(12), mode: "bounds", reason: "symbol 12 upper bound", relation: "le", rhs: known(9)};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 13 lower bound", relation: "le", rhs: symbol(13)};
+    guard {lhs: symbol(13), mode: "bounds", reason: "symbol 13 upper bound", relation: "le", rhs: known(3)};
+    guard {lhs: symbol(11), mode: "ordinary", reason: "view interval", relation: "le", rhs: symbol(10)};
+    guard {lhs: symbol(10), mode: "ordinary", reason: "view reads uninitialized history", relation: "le", rhs: symbol(10)};
+    guard {lhs: symbol(13), mode: "ordinary", reason: "sdpa query length exceeds operand extent", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(12), mode: "ordinary", reason: "sdpa key length exceeds operand extent", relation: "le", rhs: add([known(0), mul([known(1), symbol(10)]), mul([known(-1), symbol(11)])])};
+    resource {axis: 2, entry: symbol(10), name: "k", owner: "k", selected: true, strides: []};
+    resource {axis: 2, entry: symbol(10), name: "v", owner: "v", selected: true, strides: []};
+    value "k": f32[1, 2, 9, 5] resource {extent: symbol(10), generation: 0, name: "k", origins: [known(0), known(0), known(0), known(0)], owner: true, strides: []};
+    value "k_view": f32[1, 2, add(0, mul(1, s10), mul(-1, s11)), 5] resource {extent: symbol(10), generation: 0, name: "k", origins: [known(0), known(0), symbol(11), known(0)], owner: false, strides: []};
+    value "mask": f32[1, 4, s13, s12];
+    value "q": f32[1, 4, s1, 5];
+    value "v": f32[1, 2, 9, 7] resource {extent: symbol(10), generation: 0, name: "v", origins: [known(0), known(0), known(0), known(0)], owner: true, strides: []};
+    value "v_view": f32[1, 2, add(0, mul(1, s10), mul(-1, s11)), 7] resource {extent: symbol(10), generation: 0, name: "v", origins: [known(0), known(0), symbol(11), known(0)], owner: false, strides: []};
+    value "y": f32[1, 4, s13, 7];
+    inputs ("q", "k", "v", "mask");
+    outputs ("y");
+    node resource_view ("k") -> ("k_view") attrs {axis: 2, begin: symbol(11), end: symbol(10)} scope "Compute";
+    node resource_view ("v") -> ("v_view") attrs {axis: 2, begin: symbol(11), end: symbol(10)} scope "Compute";
+    node sdpa ("q", "k_view", "v_view", "mask") -> ("y") attrs {attention: {all_masked_nan: true, causal: true, fp32: true, heads: [1, 0, 1, 0], key_length: symbol(12), key_position: symbol(11), mask: 2, masked_nonfinite: false, query_length: symbol(13), query_position: symbol(10), reassociate: false, reorder_reduction: false, scale: real(0.3), window: 4}} completes ("attention_done") scope "Compute";
+  }
+}

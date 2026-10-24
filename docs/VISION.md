@@ -1,6 +1,6 @@
 # FP32 vision models
 
-Standalone YNNPACK `.ynn` plans are available for these pretrained TorchVision
+Standalone semantic YNNPACK packages are available for these pretrained TorchVision
 classifiers:
 
 | Family | Models |
@@ -16,11 +16,11 @@ TorchVision weights named in its `model.json`. The models retain FP32 weights
 and activations. Convolution and pooling execute through native YNNPACK
 stencil, dot and reduction operations.
 
-Plans live in `models/vision/<model>/generated/`. Their `model.json` records
+Semantic packages live in `models/vision/<model>/generated/`. Their `model.json` records
 the checkpoint, input/output names and shapes, and parameter sizes and SHA-256
 hashes. Parameter blobs are local assets, excluded from Git; supply the
-`parameters/` directory matching that manifest. Execution needs no model
-compiler or PyTorch installation. The optional comparison harness uses NumPy,
+`parameters/` directory matching that manifest. Execution uses the embedded Rust compiler and needs no separate compiler
+executable or PyTorch installation. The optional comparison harness uses NumPy,
 LiteRT and previously generated PyTorch reference tensors.
 
 Supply parameters under `models/vision/<model>/generated/parameters/` and the

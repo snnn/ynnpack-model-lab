@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "i4_c8448_shared_a.ynn",
-    "b": "i4_c8448_shared_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -1103,5 +1099,6 @@
         }
       ]
     }
-  ]
+  ],
+  "program": "i4_c8448_shared.program.ynn"
 }

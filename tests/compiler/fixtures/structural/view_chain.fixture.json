@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "view_chain.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -48,5 +45,6 @@
         "y": "actual/view_chain/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "view_chain.program.ynn"
 }

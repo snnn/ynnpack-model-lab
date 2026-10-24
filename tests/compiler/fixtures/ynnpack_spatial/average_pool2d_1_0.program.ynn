@@ -1,0 +1,13 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    symbol {binding: {axis: 0, source: "axis", value: "x"}, id: 1, lower: 1, upper: 3};
+    guard {lhs: known(1), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(3)};
+    value "x": f32[s1, 7, 8, 3];
+    value "y": f32[s1, 7, 8, 3];
+    inputs ("x");
+    outputs ("y");
+    node average_pool2d ("x") -> ("y") attrs {spatial: {dilations: [1, 1], kernel: [1, 1], multiplier: 1, same: true, strides: [1, 1]}} scope "Compute";
+  }
+}

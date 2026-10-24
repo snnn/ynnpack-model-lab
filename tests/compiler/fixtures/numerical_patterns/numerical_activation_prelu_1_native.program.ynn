@@ -1,0 +1,14 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "negative": f32[2, 3];
+    const "slopes": f32[3] data {bytes: 12, path: "@parameters/91fc3ea4024dd45dacc3cb728eec330b24cc8c501eb6c6b0a6003399e2ad8000.bin", sha256: "91fc3ea4024dd45dacc3cb728eec330b24cc8c501eb6c6b0a6003399e2ad8000"} floats [real(0.10000000149011612), real(0.30000001192092896), real(0.699999988079071)];
+    value "x": f32[2, 3];
+    value "y": f32[2, 3];
+    const "zero": f32[] data {bytes: 4, path: "@parameters/df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119.bin", sha256: "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119"} floats [real(0.0)];
+    inputs ("x");
+    outputs ("y", "negative");
+    node minimum ("x", "zero") -> ("negative") attrs {result_dtype: "f32"} scope "Compute";
+    node prelu ("x", "slopes") -> ("y") attrs {result_dtype: "f32"} scope "Compute";
+  }
+}

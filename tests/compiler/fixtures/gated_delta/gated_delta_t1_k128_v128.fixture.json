@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "gated_delta_t1_k128_v128.ynn"
-  },
   "buffers": [
     {
       "name": "q",
@@ -269,5 +266,6 @@
         "next_state": "actual/gated_delta_t1_k128_v128/1_6e6578745f7374617465.bin"
       }
     }
-  ]
+  ],
+  "program": "gated_delta_t1_k128_v128.program.ynn"
 }

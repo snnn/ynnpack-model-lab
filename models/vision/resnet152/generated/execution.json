@@ -1,0 +1,30 @@
+{
+  "format": "ynn-tensor-execution",
+  "version": 1,
+  "graphs": {
+    "model": {
+      "inputs": [
+        {
+          "name": "x",
+          "dtype": "fp32",
+          "shape": [
+            1,
+            3,
+            224,
+            224
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "name": "linear",
+          "dtype": "fp32",
+          "shape": [
+            1,
+            1000
+          ]
+        }
+      ]
+    }
+  }
+}

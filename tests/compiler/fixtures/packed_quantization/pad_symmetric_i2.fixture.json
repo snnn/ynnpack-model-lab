@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "pad_symmetric_i2.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -45,5 +42,6 @@
         "y": "actual/pad_symmetric_i2/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "pad_symmetric_i2.program.ynn"
 }

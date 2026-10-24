@@ -1,0 +1,11 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "x": f32[2, 3];
+    value "y": f32[2, 3];
+    value "z": f32[2, 3];
+    inputs ("x");
+    outputs ("y", "z");
+    node copy ("x", "x") -> ("y", "z") scope "Compute";
+  }
+}

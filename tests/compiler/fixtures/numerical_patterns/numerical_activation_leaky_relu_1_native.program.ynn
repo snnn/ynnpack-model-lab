@@ -1,0 +1,13 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    const "alpha": f32[] data {bytes: 4, path: "@parameters/5d96a77c55b4ac1eea2d77815396c4349292b85e3b07beaca6aff933e7ef8752.bin", sha256: "5d96a77c55b4ac1eea2d77815396c4349292b85e3b07beaca6aff933e7ef8752"} floats [real(0.20000000298023224)];
+    value "negative": f32[2, 3];
+    value "x": f32[2, 3];
+    value "y": f32[2, 3];
+    inputs ("x");
+    outputs ("y", "negative");
+    node mul ("x", "alpha") -> ("negative") attrs {result_dtype: "f32"} scope "Compute";
+    node leaky_relu ("x") -> ("y") attrs {beta: real(0.20000000298023224), result_dtype: "f32"} scope "Compute";
+  }
+}

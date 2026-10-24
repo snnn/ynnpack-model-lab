@@ -1,0 +1,11 @@
+ynn_program 1 {
+  blob "83e13c83f17cec9f8ab1cf1146ae28520e65812acb66b4e41c6945d196fc04fe" 192;
+  array a0 = r64(0, 24);
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    const "a": f32[2, 3, 4] data {bytes: 96, path: "@parameters/45a99655901702d55ab6284a18aed6a5e16677181d16c7a7517b68c2ae2c0c7a.bin", sha256: "45a99655901702d55ab6284a18aed6a5e16677181d16c7a7517b68c2ae2c0c7a"} floats @a0;
+    const "y": f32[2, 2, 2] data {bytes: 32, path: "@parameters/17d21809c38dd50670f0c66415fe07f282fcda9823e08c591b2dd8206a0cf3cd.bin", sha256: "17d21809c38dd50670f0c66415fe07f282fcda9823e08c591b2dd8206a0cf3cd"} floats [real(5.0), real(6.0), real(9.0), real(10.0), real(17.0), real(18.0), real(21.0), real(22.0)];
+    inputs ();
+    outputs ("y", "a");
+  }
+}

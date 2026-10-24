@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "target_views_transitive_4096_boundary_a.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -194,5 +191,6 @@
         "extra_old_codes": "actual/target_views_transitive_4096_boundary/1_65787472615f6f6c645f636f646573.bin"
       }
     }
-  ]
+  ],
+  "program": "target_views_transitive_4096_boundary.program.ynn"
 }

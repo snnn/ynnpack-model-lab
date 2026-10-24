@@ -1,0 +1,13 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "a": i8[2, 3];
+    value "b": i2[3, 7];
+    value "w": i2[7, 3];
+    value "y": i32[2, 7];
+    inputs ("a", "w");
+    outputs ("y");
+    node transpose ("w") -> ("b") attrs {integers: [1, 0]} scope "Compute";
+    node dot ("a", "b") -> ("y") attrs {result_dtype: "i32"} scope "Compute";
+  }
+}

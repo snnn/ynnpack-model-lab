@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "i4_c8448_required_failure_a.ynn",
-    "b": "i4_c8448_required_failure_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -151,5 +147,6 @@
         "cache"
       ]
     }
-  ]
+  ],
+  "program": "i4_c8448_required_failure.program.ynn"
 }

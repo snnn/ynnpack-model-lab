@@ -8,11 +8,14 @@ use crate::{Error, Result};
 mod compile;
 mod functions;
 mod intern;
+#[cfg(any(test, feature = "diagnostic-tools"))]
 mod compare;
+#[cfg(any(test, feature = "diagnostic-tools"))]
 mod cpp;
+#[cfg(any(test, feature = "diagnostic-tools"))]
 pub use compare::compare;
 pub(crate) use intern::intern;
-mod lexer;
+pub(crate) mod lexer;
 mod parser;
 mod printer;
 mod resolve;
@@ -21,12 +24,12 @@ mod schema;
 mod tests;
 
 #[derive(Clone, Copy, Debug)]
-struct Span {
-    start: usize,
-    end: usize,
+pub(crate) struct Span {
+    pub(crate) start: usize,
+    pub(crate) end: usize,
 }
 
-fn diagnostic(source: &str, span: Span, message: impl std::fmt::Display) -> Error {
+pub(crate) fn diagnostic(source: &str, span: Span, message: impl std::fmt::Display) -> Error {
     // Synthetic invocations used to validate a closed function can carry spans
     // from a temporary document. Never let an error-reporting path panic.
     let mut offset = span.start.min(source.len());
@@ -82,6 +85,7 @@ pub fn format(source: &str) -> Result<String> {
 }
 
 /// Read-only diagnostic report. Reports are not accepted as executable graphs.
+#[cfg(any(test, feature = "diagnostic-tools"))]
 pub fn inspect(source: &str) -> Result<String> {
     let plan = parse(source)?;
     let doc = parser::document(source)?;
@@ -106,6 +110,7 @@ pub fn inspect(source: &str) -> Result<String> {
 }
 
 /// Standalone CLI shared with the Cargo binary. Output files must be new.
+#[cfg(feature = "diagnostic-tools")]
 pub fn main(args: &[String]) -> Result<()> {
     use std::io::{Read, Write};
     if args.len()==3 && args[0]=="compare" {

@@ -1,0 +1,11 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    completions ("done");
+    value "hidden": i32[4];
+    value "x": i8[4];
+    inputs ("x");
+    outputs ();
+    node cast ("x") -> ("hidden") attrs {result_dtype: "i32"} completes ("done") scope "Compute";
+  }
+}

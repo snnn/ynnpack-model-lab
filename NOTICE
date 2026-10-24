@@ -20,7 +20,7 @@ local C ABI. Original notices and LICENSE files remain in the bootstrapped
 sources and Cargo cache. SentencePiece retains its embedded protobuf-lite
 notices. The offline SentencePiece patch retains upstream file provenance.
 
-The Rust runtime uses fetched tokenizers, serde, serde_json, sha2, and their
+The Rust runtime uses fetched tokenizers, serde, serde_json, sha2, flate2, and their
 transitive dependencies. Versions and checksums are recorded in rust/Cargo.lock;
 original licenses and notices remain in the Cargo cache. These sources are not
 vendored.

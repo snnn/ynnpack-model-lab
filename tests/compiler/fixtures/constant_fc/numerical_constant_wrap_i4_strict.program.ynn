@@ -1,0 +1,11 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    const "a": i32[3] data {bytes: 12, path: "@parameters/5bb843989eee4400faf7189f28c2cfb36fbff747f2d45229d7fe92663d6d4498.bin", sha256: "5bb843989eee4400faf7189f28c2cfb36fbff747f2d45229d7fe92663d6d4498"} integers [2147483647, -2147483648, 7];
+    const "b": i32[3] data {bytes: 12, path: "@parameters/9a090ccdc5932685c6d3b0bdcd3a1318c74dcb1ae221b6c8ffd16b3cd0a60932.bin", sha256: "9a090ccdc5932685c6d3b0bdcd3a1318c74dcb1ae221b6c8ffd16b3cd0a60932"} integers [1, -1, 11];
+    value "y": i32[3];
+    inputs ();
+    outputs ("y", "a");
+    node add ("a", "b") -> ("y") attrs {result_dtype: "i32"} scope "Compute";
+  }
+}

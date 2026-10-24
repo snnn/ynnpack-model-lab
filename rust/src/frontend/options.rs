@@ -31,14 +31,16 @@ pub(crate) struct Options {
     pub hf_model_dir: String,
     pub asset_manifest: String,
     pub cache_dir: String,
-    pub graph_dir: Option<String>,
+    pub model_dir: Option<String>,
     pub trace_plan: String,
     pub output_dir: String,
     pub tokenizer_dir: String,
     pub input: Input,
     pub cache_capacity: usize,
+    cache_capacity_explicit: bool,
     pub num_threads: usize,
     pub prefill_rows: usize,
+    prefill_rows_explicit: bool,
     pub warmup_runs: i32,
     pub measured_runs: i32,
     pub dump_outputs: bool,
@@ -48,6 +50,15 @@ pub(crate) struct Options {
 }
 
 impl Options {
+    pub(crate) fn apply_model_defaults(&mut self, capacity: usize, prefill_rows: usize) {
+        if !self.cache_capacity_explicit {
+            self.cache_capacity = capacity;
+        }
+        if !self.prefill_rows_explicit {
+            self.prefill_rows = prefill_rows;
+        }
+    }
+
     // None means --help was printed. No process exit from library code.
     pub fn parse(args: &[String], require_model: bool) -> Result<Option<Self>> {
         let mut values = BTreeMap::new();
@@ -79,7 +90,7 @@ HF packages: replace --bundle_dir with --hf_model_dir=DIR --asset_manifest=FILE 
                 );
                 if require_model {
                     println!(
-                        "Model package: --graph_dir=DIR (both .ynn phases and model.json)\n\
+                        "Model package: --model_dir=DIR (program.ynn, execution.json and model.json)\n\
 Diagnostics: --trace_plan=DIR (changes graph outputs; do not use for performance measurements)"
                     );
                 }
@@ -111,13 +122,13 @@ Diagnostics: --trace_plan=DIR (changes graph outputs; do not use for performance
         let present: BTreeSet<_> = values.keys().cloned().collect();
         let mut take =
             |key: &str, default: &str| values.remove(key).unwrap_or_else(|| default.into());
-        let bundle_dir = take("--bundle_dir", "");
-        let parameter_dir = take("--parameter_dir", "");
+        let mut bundle_dir = take("--bundle_dir", "");
+        let mut parameter_dir = take("--parameter_dir", "");
         let hf_model_dir = take("--hf_model_dir", "");
         let asset_manifest = take("--asset_manifest", "");
         let cache_dir = take("--cache_dir", "");
-        let graph_dir = if require_model && present.contains("--graph_dir") {
-            Some(take("--graph_dir", ""))
+        let model_dir = if require_model && present.contains("--model_dir") {
+            Some(take("--model_dir", ""))
         } else {
             None
         };
@@ -179,6 +190,10 @@ Diagnostics: --trace_plan=DIR (changes graph outputs; do not use for performance
                 "Text input requires LAB_ENABLE_TOKENIZERS=ON",
             ));
         }
+        if let Some(root) = &model_dir {
+            if bundle_dir.is_empty() { bundle_dir = root.clone(); }
+            if parameter_dir.is_empty() { parameter_dir = format!("{root}/parameters"); }
+        }
         let hf = !hf_model_dir.is_empty() && !asset_manifest.is_empty() && !cache_dir.is_empty();
         if output_dir.is_empty()
             || (require_model && ((bundle_dir.is_empty() && !hf) || parameter_dir.is_empty()))
@@ -220,14 +235,16 @@ Diagnostics: --trace_plan=DIR (changes graph outputs; do not use for performance
             hf_model_dir,
             asset_manifest,
             cache_dir,
-            graph_dir,
+            model_dir,
             trace_plan,
             output_dir,
             tokenizer_dir,
             input,
             cache_capacity,
+            cache_capacity_explicit: has("--cache_capacity"),
             num_threads,
             prefill_rows,
+            prefill_rows_explicit: has("--prefill_rows"),
             warmup_runs,
             measured_runs,
             dump_outputs,

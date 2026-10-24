@@ -650,6 +650,7 @@ pub(super) fn expand(source: &str, doc: &Document<'_>) -> Result<String> {
     e.push(&tail, Span { start: 0, end: 0 })?;
     Ok(e.out)
 }
+#[cfg(any(test, feature = "diagnostic-tools"))]
 pub(super) fn inspect(doc: &Document<'_>) -> serde_json::Value {
     fn calls(ss: &[Statement<'_>], out: &mut Vec<String>) {
         for s in ss { match &s.kind {

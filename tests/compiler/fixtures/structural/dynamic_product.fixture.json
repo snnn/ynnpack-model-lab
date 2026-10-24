@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "dynamic_product.ynn"
-  },
   "buffers": [
     {
       "name": "x",
@@ -90,5 +87,6 @@
         "y": "actual/dynamic_product/2_79.bin"
       }
     }
-  ]
+  ],
+  "program": "dynamic_product.program.ynn"
 }

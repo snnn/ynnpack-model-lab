@@ -2,7 +2,7 @@
 use serde_json::json;
 use sha2::{Digest, Sha256};
 use std::path::PathBuf;
-use ynnpack_lab::{compiler, models::qwen3::Assets, Error, Result};
+use ynnpack_lab::{models::qwen3::Assets, Error, Result};
 fn main() {
     if let Err(e) = run() {
         eprintln!("{e}");
@@ -32,9 +32,8 @@ fn run() -> Result<()> {
     }
     let assets: Assets = serde_json::from_slice(&std::fs::read(&input)?)?;
     let program = assets.program(capacity, rows)?;
-    let compiled = compiler::compile(&program)?;
     let stage = output.with_extension(format!("stage-{}", std::process::id()));
-    compiled.write(&stage)?;
+    std::fs::create_dir_all(stage.join("parameters"))?;
     struct Cleanup(PathBuf);
     impl Drop for Cleanup {
         fn drop(&mut self) {
@@ -63,24 +62,17 @@ fn run() -> Result<()> {
         }
         counts += 1;
     }
-    let mut runner = serde_json::to_value(assets.execution(&program, capacity, rows)?)?;
-    for phase in ["prefill", "decode"] {
-        runner["graphs"][phase]["file"] = json!(format!("{phase}.ynn"));
-        runner["graphs"][phase]["sha256"] = json!(format!("{:x}", Sha256::digest(compiled.plans[phase].as_bytes())));
-    }
-    // Preserve the established offline JSON contract exactly.
-    runner.as_object_mut().unwrap().remove("contract");
-    runner.as_object_mut().unwrap().remove("compatibility");
-    std::fs::write(
-        stage.join("model.json"),
-        serde_json::to_vec_pretty(
-            &json!({"format":"qwen3-rust-author","recipe":assets.recipe,"runner":runner}),
-        )?,
-    )?;
-    std::fs::write(
-        stage.join("semantic-program.json"),
-        serde_json::to_vec(&program)?,
-    )?;
+    let execution = assets.execution(&program, capacity, rows)?;
+    ynnpack_lab::program_text::write(&stage.join("program.ynn"), &program)?;
+    let program = std::fs::read(stage.join("program.ynn"))?;
+    let execution = serde_json::to_vec(&execution)?;
+    std::fs::write(stage.join("execution.json"), &execution)?;
+    std::fs::write(stage.join("model.json"), serde_json::to_vec_pretty(&json!({
+        "format":"qwen3-rust-author", "recipe":assets.recipe,
+        "package":{"format":"ynn-semantic-package","version":2,
+            "program.ynn":{"bytes":program.len(),"sha256":format!("{:x}",Sha256::digest(&program))},
+            "execution.json":{"bytes":execution.len(),"sha256":format!("{:x}",Sha256::digest(&execution))}}
+    }))?)?;
     let tokenizer = base.join("tokenizer");
     if tokenizer.is_dir() {
         std::fs::create_dir(stage.join("tokenizer"))?;
@@ -97,12 +89,12 @@ fn run() -> Result<()> {
     }
     std::fs::copy(&input, stage.join("assets.json"))?;
     if output.exists() {
-        return Err(Error::invalid("Output appeared during compilation"));
+        return Err(Error::invalid("Output appeared during publication"));
     }
     std::fs::rename(stage, &output)?;
     println!(
         "{}",
-        json!({"output":output,"parameter_files":counts,"phases":compiled.report})
+        json!({"output":output,"parameter_files":counts,"phases":["prefill","decode"]})
     );
     Ok(())
 }

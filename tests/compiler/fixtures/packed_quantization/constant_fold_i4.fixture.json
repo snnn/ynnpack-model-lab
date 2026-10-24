@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "model": "constant_fold_i4.ynn"
-  },
   "buffers": [
     {
       "name": "y",
@@ -28,5 +25,6 @@
         "y": "actual/constant_fold_i4/0_79.bin"
       }
     }
-  ]
+  ],
+  "program": "constant_fold_i4.program.ynn"
 }

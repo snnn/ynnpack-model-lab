@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "shared_join_32_a.ynn",
-    "b": "shared_join_32_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -483,5 +479,6 @@
         }
       ]
     }
-  ]
+  ],
+  "program": "shared_join_32.program.ynn"
 }

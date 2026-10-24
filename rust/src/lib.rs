@@ -6,14 +6,10 @@
 mod ffi;
 #[cfg(feature = "llm")]
 mod llm;
-#[cfg(feature = "qwen")]
-mod qwen;
 #[cfg(feature = "fixture")]
 mod fixture;
 #[cfg(feature = "input-frontend")]
 mod frontend;
-#[cfg(feature = "gemma")]
-pub mod gemma;
 #[cfg(any(
     feature = "vision",
     feature = "gemma",
@@ -23,6 +19,7 @@ pub mod gemma;
 mod io;
 mod plan;
 pub mod compiler;
+pub mod program_text;
 pub mod runtime;
 pub mod plan_text;
 #[cfg(all(feature = "vision", feature = "gemma"))]
@@ -84,28 +81,20 @@ unsafe extern "C" fn lab_rust_main(argc: i32, argv: *const *const std::ffi::c_ch
         // SAFETY: C main supplies argc live NUL-terminated argv strings.
         let args = unsafe { ffi::arguments(argc, argv) }?;
         #[cfg(feature = "fixture")]
-        return fixture::main(&args);
+        return std::thread::Builder::new().name("fixture".into()).stack_size(64*1024*1024)
+            .spawn(move || fixture::main(&args))?.join().map_err(|_| Error::invalid("Fixture thread panicked"))?;
         #[cfg(feature = "llm")]
         return std::thread::Builder::new().name("llm".into()).stack_size(64*1024*1024)
             .spawn(move || llm::main(&args))?.join().map_err(|_| Error::invalid("Runner execution thread panicked"))?;
-        #[cfg(feature = "qwen")]
-        return std::thread::Builder::new().name("qwen".into()).stack_size(64*1024*1024)
-            .spawn(move || qwen::main(&args))?.join().map_err(|_| Error::invalid("Qwen execution thread panicked"))?;
         #[cfg(feature = "native-tests")]
         return native_tests::run(&args);
         #[cfg(all(feature = "vision", not(feature = "native-tests")))]
-        return vision::main(&args);
+        return std::thread::Builder::new().name("vision".into()).stack_size(64*1024*1024)
+            .spawn(move || vision::main(&args))?.join().map_err(|_| Error::invalid("Vision thread panicked"))?;
         #[cfg(feature = "tokenizer-probe")]
         return frontend::probe(&args);
         #[cfg(feature = "frontend-tests")]
         return frontend::tests::run(&args);
-        #[cfg(feature = "gemma")]
-        return std::thread::Builder::new()
-            .name("gemma".into())
-            .stack_size(64 * 1024 * 1024)
-            .spawn(move || gemma::main(&args))?
-            .join()
-            .map_err(|_| Error::invalid("Gemma execution thread panicked"))?;
         #[cfg(not(any(
             feature = "vision",
             feature = "gemma",

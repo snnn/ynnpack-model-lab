@@ -1,0 +1,339 @@
+{
+  "jobs": [
+    {
+      "name": "gemma4_e2b_generated-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b/generated",
+        "--parameter_dir=$LAB/assets/gemma4_e2b/parameters",
+        "--cases_file=$LAB/models/gemma4_e2b/fixtures/performance.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "$LAB/build/ynn-llm",
+        "--model_dir=$LAB/models/gemma4_e2b/generated",
+        "--parameter_dir=$LAB/models/gemma4_e2b/generated/parameters",
+        "--cases_file=$LAB/models/gemma4_e2b/fixtures/performance.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=1"
+      ],
+      "execution": "$LAB/models/gemma4_e2b/generated/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_generated-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b/generated",
+        "--parameter_dir=$LAB/assets/gemma4_e2b/parameters",
+        "--cases_file=$LAB/models/gemma4_e2b/fixtures/performance.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$LAB/build/ynn-llm",
+        "--model_dir=$LAB/models/gemma4_e2b/generated",
+        "--parameter_dir=$LAB/models/gemma4_e2b/generated/parameters",
+        "--cases_file=$LAB/models/gemma4_e2b/fixtures/performance.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e2b/bundle",
+        "--num_threads=4"
+      ],
+      "execution": "$LAB/models/gemma4_e2b/generated/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_hf_generated_hf_bf16-t1",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build-hf/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b_hf/generated/hf_bf16",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_bf16/parameters",
+        "--cases_file=$LAB/models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "$LAB/build-hf/ynn-llm",
+        "--model_dir=$LAB/models/gemma4_e2b_hf/generated/hf_bf16",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_bf16/parameters",
+        "--cases_file=$LAB/models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=1"
+      ],
+      "execution": "$LAB/models/gemma4_e2b_hf/generated/hf_bf16/execution.json"
+    },
+    {
+      "name": "gemma4_e2b_hf_generated_hf_bf16-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build-hf/gemma4_e2b",
+        "--graph_dir=$CONTROL/models/gemma4_e2b_hf/generated/hf_bf16",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_bf16/parameters",
+        "--cases_file=$LAB/models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$LAB/build-hf/ynn-llm",
+        "--model_dir=$LAB/models/gemma4_e2b_hf/generated/hf_bf16",
+        "--parameter_dir=$LAB/models/gemma4_e2b_hf/generated/hf_bf16/parameters",
+        "--cases_file=$LAB/models/gemma4_e2b_hf/fixtures/performance.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--hf_model_dir=$HF_MODEL_DIR",
+        "--asset_manifest=$HF_ASSET_MANIFEST",
+        "--cache_dir=$HF_CACHE_DIR",
+        "--num_threads=4"
+      ],
+      "execution": "$LAB/models/gemma4_e2b_hf/generated/hf_bf16/execution.json"
+    },
+    {
+      "name": "gemma4_e4b_generated-t4",
+      "kind": "gemma",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/gemma4_e4b",
+        "--graph_dir=$CONTROL/models/gemma4_e4b/generated",
+        "--parameter_dir=$LAB/assets/gemma4_e4b/parameters",
+        "--cases_file=$LAB/models/gemma4_e4b/fixtures/performance.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$LAB/build/ynn-llm",
+        "--model_dir=$LAB/models/gemma4_e4b/generated",
+        "--parameter_dir=$LAB/models/gemma4_e4b/generated/parameters",
+        "--cases_file=$LAB/models/gemma4_e4b/fixtures/performance.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--bundle_dir=$LAB/assets/gemma4_e4b/bundle",
+        "--num_threads=4"
+      ],
+      "execution": "$LAB/models/gemma4_e4b/generated/execution.json"
+    },
+    {
+      "name": "qwen3_0_6b_generated-t1",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_0_6b/generated",
+        "--parameter_dir=$LAB/models/qwen3_0_6b/generated/parameters",
+        "--cases_file=$LAB/models/qwen3_0_6b/fixtures/perf.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "$LAB/build/ynn-llm",
+        "--model_dir=$LAB/models/qwen3_0_6b/generated",
+        "--parameter_dir=$LAB/models/qwen3_0_6b/generated/parameters",
+        "--cases_file=$LAB/models/qwen3_0_6b/fixtures/perf.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "execution": "$LAB/models/qwen3_0_6b/generated/execution.json"
+    },
+    {
+      "name": "qwen3_0_6b_generated-t4",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_0_6b/generated",
+        "--parameter_dir=$LAB/models/qwen3_0_6b/generated/parameters",
+        "--cases_file=$LAB/models/qwen3_0_6b/fixtures/perf.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$LAB/build/ynn-llm",
+        "--model_dir=$LAB/models/qwen3_0_6b/generated",
+        "--parameter_dir=$LAB/models/qwen3_0_6b/generated/parameters",
+        "--cases_file=$LAB/models/qwen3_0_6b/fixtures/perf.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "execution": "$LAB/models/qwen3_0_6b/generated/execution.json"
+    },
+    {
+      "name": "qwen3_5_4b_profiles_int4_mlp_generated-t1",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_5_4b/profiles/int4_mlp/generated",
+        "--parameter_dir=$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/parameters",
+        "--cases_file=$LAB/models/qwen3_5_4b/fixtures/perf.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "$LAB/build/ynn-llm",
+        "--model_dir=$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated",
+        "--parameter_dir=$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/parameters",
+        "--cases_file=$LAB/models/qwen3_5_4b/fixtures/perf.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=1"
+      ],
+      "execution": "$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/execution.json"
+    },
+    {
+      "name": "qwen3_5_4b_profiles_int4_mlp_generated-t4",
+      "kind": "llm",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/qwen3",
+        "--bundle_dir=$CONTROL/models/qwen3_5_4b/profiles/int4_mlp/generated",
+        "--parameter_dir=$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/parameters",
+        "--cases_file=$LAB/models/qwen3_5_4b/fixtures/perf.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$LAB/build/ynn-llm",
+        "--model_dir=$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated",
+        "--parameter_dir=$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/parameters",
+        "--cases_file=$LAB/models/qwen3_5_4b/fixtures/perf.tsv",
+        "--cache_capacity=2048",
+        "--prefill_rows=128",
+        "--num_threads=4"
+      ],
+      "execution": "$LAB/models/qwen3_5_4b/profiles/int4_mlp/generated/execution.json"
+    },
+    {
+      "name": "vision_resnet18_generated-t1",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "8",
+        "$CONTROL/build/vision",
+        "--model_dir=$CONTROL/models/vision/resnet18/generated",
+        "--graph_file=$CONTROL/models/vision/resnet18/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "8",
+        "$LAB/build/vision",
+        "--model_dir=$LAB/models/vision/resnet18/generated",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_2.bin",
+        "--num_threads=1"
+      ],
+      "fixtures": "$LAB/assets/vision/resnet18/validation"
+    },
+    {
+      "name": "vision_resnet18_generated-t4",
+      "kind": "vision",
+      "before": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$CONTROL/build/vision",
+        "--model_dir=$CONTROL/models/vision/resnet18/generated",
+        "--graph_file=$CONTROL/models/vision/resnet18/generated/graph.ynn",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "after": [
+        "taskset",
+        "-c",
+        "0,2,4,6",
+        "$LAB/build/vision",
+        "--model_dir=$LAB/models/vision/resnet18/generated",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_0.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_1.bin",
+        "--input_file=$LAB/assets/vision/resnet18/validation/input_2.bin",
+        "--num_threads=4"
+      ],
+      "fixtures": "$LAB/assets/vision/resnet18/validation"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+ynn_program 1 {
+  options {schedule_masks: false, target_views: false};
+  phase "a" {
+    symbol {binding: {axis: 0, source: "axis", value: "fresh"}, id: 1, lower: 0, upper: 128};
+    symbol {binding: {name: "position", source: "parameter", value: ""}, id: 2, lower: 0, upper: 8448};
+    symbol {binding: {name: "begin", source: "parameter", value: ""}, id: 3, lower: 0, upper: 8448};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(128)};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 2 lower bound", relation: "le", rhs: symbol(2)};
+    guard {lhs: symbol(2), mode: "bounds", reason: "symbol 2 upper bound", relation: "le", rhs: known(8448)};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 3 lower bound", relation: "le", rhs: symbol(3)};
+    guard {lhs: symbol(3), mode: "bounds", reason: "symbol 3 upper bound", relation: "le", rhs: known(8448)};
+    guard {lhs: symbol(2), mode: "ordinary", reason: "view reads uninitialized history", relation: "le", rhs: symbol(2)};
+    guard {lhs: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])]), mode: "ordinary", reason: "append capacity", relation: "le", rhs: known(8448)};
+    guard {lhs: symbol(3), mode: "ordinary", reason: "view interval", relation: "le", rhs: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])])};
+    guard {lhs: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])]), mode: "ordinary", reason: "view reads uninitialized history", relation: "le", rhs: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])])};
+    guard {lhs: add([known(0), mul([known(2), symbol(1)]), mul([known(1), symbol(2)])]), mode: "ordinary", reason: "append capacity", relation: "le", rhs: known(8448)};
+    resource {axis: 0, entry: symbol(2), name: "codes", owner: "cache", selected: false, strides: [known(1)]};
+    completions ("second_write");
+    value "cache": i4[8448] resource {extent: symbol(2), generation: 0, name: "codes", origins: [known(0)], owner: true, strides: [known(1)]};
+    value "codes": i4[add(0, mul(1, s1), mul(1, s2), mul(-1, s3))];
+    value "fresh": i4[s1];
+    value "history": i4[add(0, mul(1, s1), mul(1, s2), mul(-1, s3))] resource {extent: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])]), generation: 1, name: "codes", origins: [symbol(3)], owner: false, strides: [known(1)]};
+    value "old": i4[s2] resource {extent: symbol(2), generation: 0, name: "codes", origins: [known(0)], owner: false, strides: [known(1)]};
+    value "old_codes": i4[s2];
+    value "updated": i4[8448] resource {extent: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])]), generation: 1, name: "codes", origins: [known(0)], owner: true, strides: [known(1)]};
+    value "updated_again": i4[8448] resource {extent: add([known(0), mul([known(2), symbol(1)]), mul([known(1), symbol(2)])]), generation: 2, name: "codes", origins: [known(0)], owner: true, strides: [known(1)]};
+    inputs ("cache", "fresh");
+    outputs ("old_codes", "codes");
+    node resource_view ("cache") -> ("old") attrs {end: symbol(2)} scope "Compute";
+    node copy ("old") -> ("old_codes") completes ("read_done") scope "Compute";
+    node resource_append ("cache", "fresh") -> ("updated") attrs {position: symbol(2)} waits ("read_done") completes ("write_done") scope "Compute";
+    node resource_view ("updated") -> ("history") attrs {begin: symbol(3), end: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])])} scope "Compute";
+    node copy ("history") -> ("codes") completes ("history_read_done") scope "Compute";
+    node resource_append ("updated", "fresh") -> ("updated_again") attrs {position: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])])} waits ("history_read_done") completes ("second_write") scope "Compute";
+  }
+  phase "b" {
+    symbol {binding: {axis: 0, source: "axis", value: "fresh"}, id: 1, lower: 0, upper: 128};
+    symbol {binding: {name: "position", source: "parameter", value: ""}, id: 2, lower: 0, upper: 8448};
+    symbol {binding: {name: "begin", source: "parameter", value: ""}, id: 3, lower: 0, upper: 8448};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(128)};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 2 lower bound", relation: "le", rhs: symbol(2)};
+    guard {lhs: symbol(2), mode: "bounds", reason: "symbol 2 upper bound", relation: "le", rhs: known(8448)};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 3 lower bound", relation: "le", rhs: symbol(3)};
+    guard {lhs: symbol(3), mode: "bounds", reason: "symbol 3 upper bound", relation: "le", rhs: known(8448)};
+    guard {lhs: symbol(2), mode: "ordinary", reason: "view reads uninitialized history", relation: "le", rhs: symbol(2)};
+    guard {lhs: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])]), mode: "ordinary", reason: "append capacity", relation: "le", rhs: known(8448)};
+    guard {lhs: symbol(3), mode: "ordinary", reason: "view interval", relation: "le", rhs: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])])};
+    guard {lhs: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])]), mode: "ordinary", reason: "view reads uninitialized history", relation: "le", rhs: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])])};
+    resource {axis: 0, entry: symbol(2), name: "codes", owner: "cache", selected: false, strides: [known(1)]};
+    completions ("write_done");
+    value "cache": i4[8448] resource {extent: symbol(2), generation: 0, name: "codes", origins: [known(0)], owner: true, strides: [known(1)]};
+    value "codes": i4[add(0, mul(1, s1), mul(1, s2), mul(-1, s3))];
+    value "fresh": i4[s1];
+    value "history": i4[add(0, mul(1, s1), mul(1, s2), mul(-1, s3))] resource {extent: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])]), generation: 1, name: "codes", origins: [symbol(3)], owner: false, strides: [known(1)]};
+    value "old": i4[s2] resource {extent: symbol(2), generation: 0, name: "codes", origins: [known(0)], owner: false, strides: [known(1)]};
+    value "old_codes": i4[s2];
+    value "updated": i4[8448] resource {extent: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])]), generation: 1, name: "codes", origins: [known(0)], owner: true, strides: [known(1)]};
+    inputs ("cache", "fresh");
+    outputs ("old_codes", "codes");
+    node resource_view ("cache") -> ("old") attrs {end: symbol(2)} scope "Compute";
+    node copy ("old") -> ("old_codes") completes ("read_done") scope "Compute";
+    node resource_append ("cache", "fresh") -> ("updated") attrs {position: symbol(2)} waits ("read_done") completes ("write_done") scope "Compute";
+    node resource_view ("updated") -> ("history") attrs {begin: symbol(3), end: add([known(0), mul([known(1), symbol(1)]), mul([known(1), symbol(2)])])} scope "Compute";
+    node copy ("history") -> ("codes") scope "Compute";
+  }
+}

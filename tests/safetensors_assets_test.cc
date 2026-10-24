@@ -49,6 +49,9 @@ void Test(const std::string& root, int bits) {
   for (int pass = 0; pass < 2; ++pass) {
     lab::TensorProvider p(root, root + "/manifest.json", cache, root);
     const auto* raw = p.Raw("w");
+    if (pass == 0) Expect(!std::filesystem::exists(name));
+    Expect(std::memcmp(raw, data.data(), data.size()) == 0);
+    Reject([&] { p.Get("@hf_raw/w", 256); });
     const auto* converted = static_cast<const uint8_t*>(p.Get("@hf/w", 256));
     Expect(p.Get("@hf/w", 256) == converted);
     for (int byte = 0; byte < 256; ++byte)

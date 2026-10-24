@@ -33,14 +33,8 @@
     "kv_element_bytes": 1,
     "prefill_rows": 128,
     "phases": {
-      "prefill": {
-        "file": "gemma4_prefill.ynn",
-        "sha256": "0e99844f2abe33daf1f7bc13c96c9e22b3f9977a2444a29e61c4f2befdbe7e80"
-      },
-      "decode": {
-        "file": "gemma4_decode.ynn",
-        "sha256": "5212f964fa983fa06b00abafdaeb5a09cd71e183b134a207b5d9bb48606d8d2f"
-      }
+      "prefill": {},
+      "decode": {}
     },
     "prefill_attention_profile": "fp32_batch",
     "decode_attention_profile": "int8_rows"
@@ -48,15 +42,11 @@
   "graphs": [
     {
       "phase": "prefill",
-      "ops": 4831,
-      "values": 5807,
-      "artifact_format": "ynnpack-construction-plan"
+      "source_operations": 39
     },
     {
       "phase": "decode",
-      "ops": 8494,
-      "values": 10093,
-      "artifact_format": "ynnpack-construction-plan"
+      "source_operations": 71
     }
   ],
   "source_bundle": {
@@ -1763,13 +1753,27 @@
   },
   "activation_mode": "published_static_qat_with_dynamic_head",
   "prefill_rows": 128,
-  "author_seconds": 5.915036117003183,
-  "adapter_contract": "resource-state-v1",
+  "author_seconds": 15.016284125042148,
+  "artifact_format": "ynn-semantic-package",
   "optimization": "target_views",
   "decode_matmul_row_grouping": true,
   "global_layout": true,
   "decode_transpose_cleanup": true,
   "decode_attention_profile": "int8_rows",
   "prefill_attention_profile": "fp32_batch",
-  "prefill_plan": "included"
+  "prefill_plan": "included",
+  "package": {
+    "format": "ynn-semantic-package",
+    "version": 2,
+    "program.ynn": {
+      "file": "program.ynn",
+      "bytes": 2300282,
+      "sha256": "8c7a69552778b611e044caf92001c92cf0b14cafabf89c590f5b098ea00d9273"
+    },
+    "execution.json": {
+      "file": "execution.json",
+      "bytes": 34372,
+      "sha256": "4b46b6b1dd4d82189bc3864885825479a0f502d46eaf143e543b9c13a2a9d8d8"
+    }
+  }
 }

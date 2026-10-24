@@ -220,10 +220,8 @@ pub(super) fn decode_rows(g: &mut Graph) -> Result<()> {
 mod tests {
     use super::*;
     fn causal() -> Graph {
-        let p: Program = serde_json::from_str(include_str!(
-            "../../../../tests/compiler/fixtures/causal_conv/causal_t7_c67.program.json"
-        ))
-        .unwrap();
+        let p = crate::program_text::read(&std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+            .join("../tests/compiler/fixtures/causal_conv/causal_t7_c67.program.ynn")).unwrap();
         p.phases.into_values().next().unwrap()
     }
     #[test]

@@ -1,8 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "shared_join_32_boundary_a.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -194,5 +191,6 @@
         "extra_old_codes": "actual/shared_join_32_boundary/1_65787472615f6f6c645f636f646573.bin"
       }
     }
-  ]
+  ],
+  "program": "shared_join_32_boundary.program.ynn"
 }

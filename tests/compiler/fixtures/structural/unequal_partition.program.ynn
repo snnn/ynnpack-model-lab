@@ -1,0 +1,14 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "a": f32[2, 1];
+    value "b": f32[2, 2];
+    value "c": f32[2, 3];
+    value "x": f32[2, 6];
+    value "y": f32[2, 6];
+    inputs ("x");
+    outputs ("y");
+    node split ("x") -> ("a", "b", "c") attrs {axis: 1, lengths: [known(1), known(2), known(3)]} scope "Compute";
+    node concat ("c", "a", "b") -> ("y") attrs {axis: 1} scope "Compute";
+  }
+}

@@ -26,7 +26,12 @@ fn run() -> Result<()> {
     if data.len() > 128 * 1024 * 1024 {
         return Err(Error::invalid("Compiler request exceeds 128 MiB"));
     }
-    let request: Program = serde_json::from_slice(&data)?;
+    // JSON remains an explicit diagnostic/frontend bridge, never a runner input.
+    let request: Program = if data.iter().find(|b| !b.is_ascii_whitespace()) == Some(&b'{') {
+        serde_json::from_slice(&data)?
+    } else {
+        ynnpack_lab::program_text::read(std::path::Path::new(&args[1]))?
+    };
     let result = compile(&request)?;
     result.write(&PathBuf::from(&args[3]))?;
     println!("{}", serde_json::to_string(&result.report)?);

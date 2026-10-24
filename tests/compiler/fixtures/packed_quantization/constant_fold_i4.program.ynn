@@ -1,0 +1,10 @@
+ynn_program 1 {
+  options {schedule_masks: false, target_views: false};
+  phase "model" {
+    const "weight": i4[3, 5] integers [-8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6];
+    value "y": i4[3, 5];
+    inputs ();
+    outputs ("y");
+    node reverse ("weight") -> ("y") attrs {axes: [1]} scope "Compute";
+  }
+}

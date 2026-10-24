@@ -1,0 +1,39 @@
+ynn_program 1 {
+  quant q0 {axis: -1, scales: [real(0.5)], zeros: [0]};
+  quant q1 {axis: -1, scales: [real(2.0)], zeros: [-1]};
+  quant q2 {axis: -1, parameters: {axes: [0], blocks: [1], scales: "q/scales", zeros: "q/zero_points"}};
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    value "__quant/0/codes1": i4[5];
+    value "__quant/0/codes2": i4[5];
+    const "__quant/0/p1/scale": f32[] floats [real(0.5)];
+    value "__quant/0/p1/scale_full": f32[5];
+    const "__quant/0/p1/zero": i32[] integers [0];
+    value "__quant/0/p1/zero_full": i32[5];
+    const "__quant/0/p2/scale": f32[] floats [real(2.0)];
+    value "__quant/0/p2/scale_full": f32[5];
+    const "__quant/0/p2/zero": i32[] integers [-1];
+    value "__quant/0/p2/zero_full": i32[5];
+    value "a": i4[5] quant q0;
+    value "b": i4[5] quant q1;
+    value "cond": bool[5];
+    value "q": i4[5] quant q2;
+    value "q/codes": i4[5];
+    value "q/scales": f32[5];
+    value "q/zero_points": i32[5];
+    value "y": f32[5];
+    inputs ("a", "b", "cond");
+    outputs ("y");
+    node quantization_codes ("a") -> ("__quant/0/codes1") scope "Compute";
+    node quantization_parameters ("__quant/0/p1/scale", "a") -> ("__quant/0/p1/scale_full") scope "Compute";
+    node quantization_parameters ("__quant/0/p1/zero", "a") -> ("__quant/0/p1/zero_full") scope "Compute";
+    node quantization_codes ("b") -> ("__quant/0/codes2") scope "Compute";
+    node quantization_parameters ("__quant/0/p2/scale", "b") -> ("__quant/0/p2/scale_full") scope "Compute";
+    node quantization_parameters ("__quant/0/p2/zero", "b") -> ("__quant/0/p2/zero_full") scope "Compute";
+    node select ("cond", "__quant/0/codes1", "__quant/0/codes2") -> ("q/codes") scope "Compute";
+    node select ("cond", "__quant/0/p1/scale_full", "__quant/0/p2/scale_full") -> ("q/scales") scope "Compute";
+    node select ("cond", "__quant/0/p1/zero_full", "__quant/0/p2/zero_full") -> ("q/zero_points") scope "Compute";
+    node with_quantization ("q/codes", "q/scales", "q/zero_points") -> ("q") attrs {axes: [0], integers: [1]} scope "Compute";
+    node dequantize ("q") -> ("y") attrs {result_dtype: "f32"} scope "Compute";
+  }
+}

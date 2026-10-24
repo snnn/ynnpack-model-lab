@@ -1,0 +1,9 @@
+ynn_program 1 {
+  options {cleanup: false, schedule_masks: false, target_views: false};
+  phase "model" {
+    const "a": bool[2, 3] data {bytes: 6, path: "@parameters/720f38c53dc2c0bd04f77ab4f1e2876b59a4c2db97c8fb75758818b6d73919b5.bin", sha256: "720f38c53dc2c0bd04f77ab4f1e2876b59a4c2db97c8fb75758818b6d73919b5"};
+    const "y": i32[2, 3] data {bytes: 24, path: "@parameters/f57a05d5bfb20c8804d0e7f6e7665642aae470831905ab9f8afa17eef578f339.bin", sha256: "f57a05d5bfb20c8804d0e7f6e7665642aae470831905ab9f8afa17eef578f339"} integers [1, 0, 1, 1, 1, 1];
+    inputs ();
+    outputs ("y", "a");
+  }
+}

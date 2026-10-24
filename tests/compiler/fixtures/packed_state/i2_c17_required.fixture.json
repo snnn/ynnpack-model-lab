@@ -1,9 +1,5 @@
 {
   "version": 1,
-  "graphs": {
-    "a": "i2_c17_required_a.ynn",
-    "b": "i2_c17_required_b.ynn"
-  },
   "buffers": [
     {
       "name": "cache",
@@ -474,5 +470,6 @@
         }
       ]
     }
-  ]
+  ],
+  "program": "i2_c17_required.program.ynn"
 }

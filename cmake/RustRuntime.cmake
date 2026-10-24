@@ -64,15 +64,15 @@ function(lab_add_rust_library target features)
   endif()
 endfunction()
 
-# Offline authoring utility: a host Rust binary with no native backend linkage.
-if(NOT CMAKE_CROSSCOMPILING)
+# Diagnostic plan utility: a host Rust binary with no native backend linkage.
+if(LAB_BUILD_DIAGNOSTICS AND NOT CMAKE_CROSSCOMPILING)
   set(lab_plan_tool "${CMAKE_CURRENT_BINARY_DIR}/ynn-plan${CMAKE_EXECUTABLE_SUFFIX}")
   set(lab_plan_cargo_dir "${CMAKE_CURRENT_BINARY_DIR}/cargo-ynn-plan")
   add_custom_command(OUTPUT "${lab_plan_tool}"
     COMMAND ${CMAKE_COMMAND} -E env "CARGO_HOME=${LAB_CARGO_HOME}"
             "CARGO_TARGET_DIR=${lab_plan_cargo_dir}" ${LAB_CARGO} build --release --frozen
             --manifest-path "${CMAKE_CURRENT_SOURCE_DIR}/rust/Cargo.toml"
-            --features plan-tool --bin ynn-plan
+            --features diagnostic-tools --bin ynn-plan
     COMMAND ${CMAKE_COMMAND} -E copy
             "${lab_plan_cargo_dir}/release/ynn-plan${CMAKE_EXECUTABLE_SUFFIX}" "${lab_plan_tool}"
     DEPENDS ${lab_rust_sources} rust/Cargo.toml rust/Cargo.lock
@@ -87,15 +87,12 @@ add_executable(vision runtime/rust/main.cc runtime/rust/vision.cc
 target_compile_options(vision PRIVATE -O1)
 target_link_libraries(vision PRIVATE lab_rust_vision lab_runtime)
 
-set(lab_gemma_features "gemma")
 set(lab_probe_features "tokenizer-probe")
 set(lab_frontend_test_features "frontend-tests")
 if(LAB_ENABLE_TOKENIZERS)
-  string(APPEND lab_gemma_features ",tokenizers")
   string(APPEND lab_probe_features ",tokenizers")
   string(APPEND lab_frontend_test_features ",tokenizers")
 endif()
-lab_add_rust_library(lab_rust_gemma "${lab_gemma_features}")
 lab_add_rust_library(lab_rust_probe "${lab_probe_features}")
 add_executable(tokenizer_probe runtime/rust/main.cc)
 target_include_directories(tokenizer_probe PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}")
@@ -105,34 +102,28 @@ add_executable(plan_fixture runtime/rust/main.cc runtime/rust/fixture.cc
   runtime/rust/bridge.cc runtime/rust/plan.cc third_party/minijson.cc)
 target_compile_options(plan_fixture PRIVATE -O1)
 target_link_libraries(plan_fixture PRIVATE lab_rust_plan_fixture lab_runtime)
-set(lab_qwen_features "qwen")
-if(LAB_ENABLE_TOKENIZERS)
-  string(APPEND lab_qwen_features ",tokenizers")
-endif()
-lab_add_rust_library(lab_rust_qwen "${lab_qwen_features}")
 add_executable(qwen3 runtime/rust/main.cc runtime/rust/fixture.cc
+  runtime/rust/embedding.cc runtime/rust/hf.cc
   runtime/rust/bridge.cc runtime/rust/plan.cc third_party/minijson.cc)
 target_compile_options(qwen3 PRIVATE -O1)
-target_link_libraries(qwen3 PRIVATE lab_rust_qwen lab_runtime)
+target_link_libraries(qwen3 PRIVATE lab_rust_llm lab_runtime)
 set(lab_llm_features "llm")
 if(LAB_ENABLE_TOKENIZERS)
   string(APPEND lab_llm_features ",tokenizers")
 endif()
 lab_add_rust_library(lab_rust_llm "${lab_llm_features}")
 add_executable(ynn-llm runtime/rust/main.cc runtime/rust/fixture.cc
-  runtime/rust/embedding.cc runtime/rust/bridge.cc runtime/rust/plan.cc third_party/minijson.cc)
+  runtime/rust/embedding.cc runtime/rust/hf.cc runtime/rust/bridge.cc runtime/rust/plan.cc third_party/minijson.cc)
 target_compile_options(ynn-llm PRIVATE -O1)
 target_compile_definitions(ynn-llm PRIVATE LAB_ENABLE_VALUE_TRACE=1)
 target_link_libraries(ynn-llm PRIVATE lab_rust_llm lab_runtime)
 foreach(variant e2b e4b)
-  add_executable(gemma4_${variant} runtime/rust/main.cc runtime/rust/gemma.cc
+  add_executable(gemma4_${variant} runtime/rust/main.cc runtime/rust/fixture.cc
+    runtime/rust/embedding.cc runtime/rust/hf.cc
     runtime/rust/bridge.cc runtime/rust/plan.cc third_party/minijson.cc)
-  if(variant STREQUAL "e4b")
-    target_compile_definitions(gemma4_${variant} PRIVATE LAB_GEMMA4_E4B=1)
-  endif()
   target_compile_options(gemma4_${variant} PRIVATE -O1)
   target_compile_definitions(gemma4_${variant} PRIVATE LAB_ENABLE_VALUE_TRACE=1)
-  target_link_libraries(gemma4_${variant} PRIVATE lab_rust_gemma lab_runtime)
+  target_link_libraries(gemma4_${variant} PRIVATE lab_rust_llm lab_runtime)
 endforeach()
 
 if(BUILD_TESTING)
@@ -156,9 +147,11 @@ if(BUILD_TESTING)
   target_compile_options(rust_native_test PRIVATE -O1)
   add_test(NAME state_views COMMAND rust_native_test "${CMAKE_CURRENT_SOURCE_DIR}/tests/rust")
   if(NOT CMAKE_CROSSCOMPILING)
-    add_test(NAME plan_text COMMAND ${Python3_EXECUTABLE}
-      "${CMAKE_CURRENT_SOURCE_DIR}/tests/rust/check_plan_text.py"
-      --tool "${lab_plan_tool}" --state-runner "$<TARGET_FILE:rust_native_test>")
+    if(LAB_BUILD_DIAGNOSTICS)
+      add_test(NAME plan_text COMMAND ${Python3_EXECUTABLE}
+        "${CMAKE_CURRENT_SOURCE_DIR}/tests/rust/check_plan_text.py"
+        --tool "${lab_plan_tool}" --state-runner "$<TARGET_FILE:rust_native_test>")
+    endif()
     find_program(LAB_RUSTC rustc REQUIRED)
     add_test(NAME rust_borrow_contracts COMMAND ${Python3_EXECUTABLE}
       "${CMAKE_CURRENT_SOURCE_DIR}/tests/rust/check_types.py" --rustc "${LAB_RUSTC}"
@@ -174,10 +167,10 @@ if(BUILD_TESTING)
   endif()
 endif()
 
-# Backend-independent model names and state lifecycle, using a tiny .ynn fixture.
+# Backend-independent model names and state lifecycle, using a tiny semantic fixture.
 lab_add_rust_library(lab_rust_llm_tests "llm-tests")
 add_executable(llm_session_test runtime/rust/main.cc runtime/rust/fixture.cc
-  runtime/rust/embedding.cc runtime/rust/bridge.cc runtime/rust/plan.cc third_party/minijson.cc)
+  runtime/rust/embedding.cc runtime/rust/hf.cc runtime/rust/bridge.cc runtime/rust/plan.cc third_party/minijson.cc)
 target_compile_options(llm_session_test PRIVATE -O1)
 target_link_libraries(llm_session_test PRIVATE lab_rust_llm_tests lab_runtime)
 if(BUILD_TESTING)

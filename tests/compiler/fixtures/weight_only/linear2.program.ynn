@@ -1,0 +1,16 @@
+ynn_program 1 {
+  blob "b4fde0a5e61c7eedd5af4703eba21c60b54331e103a3a7ac0dde55a642d45002" 1048;
+  array a0 = r64(0, 131);
+  quant q0 {axis: 0, scales: @a0, zeros: [0]};
+  phase "model" {
+    symbol {binding: {axis: 0, source: "axis", value: "x"}, id: 1, lower: 0, upper: 17};
+    guard {lhs: known(0), mode: "bounds", reason: "symbol 1 lower bound", relation: "le", rhs: symbol(1)};
+    guard {lhs: symbol(1), mode: "bounds", reason: "symbol 1 upper bound", relation: "le", rhs: known(17)};
+    const "weight": i8[131, 257] quant q0 data {bytes: 33667, path: "@parameters/ac5fd4abd43846549de0b1b42f1693e1310132d5a8d08fc40b6daecabb7f2c4c.bin", sha256: "ac5fd4abd43846549de0b1b42f1693e1310132d5a8d08fc40b6daecabb7f2c4c"};
+    value "x": f32[s1, 257];
+    value "y": f32[s1, 131];
+    inputs ("x");
+    outputs ("y");
+    node weight_only_linear ("x", "weight") -> ("y") scope "Compute";
+  }
+}

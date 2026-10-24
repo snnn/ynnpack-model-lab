@@ -13,6 +13,21 @@ fn program(g: Graph) -> Program {
         ..Program::default()
     }
 }
+#[test]
+fn phase_options_are_local_and_reject_unknown_phases() {
+    let mut b = GraphBuilder::default();
+    b.input("x", ty(&[2, 3, 4])).unwrap();
+    b.operation(Op::Reshape, &["x"], "y", Attributes { shape: ty(&[6, 4]).shape, ..Default::default() }).unwrap();
+    let graph = b.finish(&["y"]);
+    let mut p = Program { phases: BTreeMap::from([("prefill".into(), graph.clone()), ("decode".into(), graph)]), ..Default::default() };
+    let original = compile(&p).unwrap();
+    p.phase_options.insert("prefill".into(), CompileOptions { target_views: false, ..Default::default() });
+    let changed = compile(&p).unwrap();
+    assert_eq!(original.plans["decode"], changed.plans["decode"]);
+    assert_ne!(original.plans["prefill"], changed.plans["prefill"]);
+    p.phase_options.insert("typo".into(), CompileOptions::default());
+    assert!(compile(&p).is_err());
+}
 fn simple(op: Op) -> Graph {
     let mut b = GraphBuilder::default();
     b.input("x", ty(&[2, 3])).unwrap();
@@ -454,11 +469,10 @@ fn low_precision_extended_activations_fail_before_emission() {
 }
 #[test]
 fn native_linear_parameters_cannot_diverge_from_quantization() {
-    for text in [
-        include_str!("../../../tests/compiler/fixtures/blockwise_fc/blockwise_7_64.program.json"),
-        include_str!("../../../tests/compiler/fixtures/weight_only/linear4.program.json"),
-    ] {
-        let p: Program = serde_json::from_str(text).unwrap();
+    for name in ["blockwise_fc/blockwise_7_64", "weight_only/linear4"] {
+        let path = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+            .join(format!("../tests/compiler/fixtures/{name}.program.ynn"));
+        let p = crate::program_text::read(&path).unwrap();
         let c = compile(&p).unwrap();
         let mut p = Program {
             phases: c.graphs,
@@ -481,10 +495,8 @@ fn native_linear_parameters_cannot_diverge_from_quantization() {
 }
 #[test]
 fn quantized_results_publish_parameter_companions() {
-    let p: Program = serde_json::from_str(include_str!(
-        "../../../tests/compiler/fixtures/packed_quantization/quant_gather_i4.program.json"
-    ))
-    .unwrap();
+    let p = crate::program_text::read(&std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+        .join("../tests/compiler/fixtures/packed_quantization/quant_gather_i4.program.ynn")).unwrap();
     let c = compile(&p).unwrap();
     let g = &c.graphs["model"];
     let q = g.values["q"]
