@@ -45,7 +45,7 @@ prefill and prefill after decode.
 Build the shared runner with the repository's pinned dependencies:
 
 ```sh
-cmake --build build --target qwen3 ynn_plan --parallel 8
+cmake --build build --target qwen3 --parallel 8
 LAB_YNN_MATH=no_excess_precision build/ynn-llm \
   --model_dir=models/qwen3_5_4b/generated \
   --parameter_dir=models/qwen3_5_4b/generated/parameters \

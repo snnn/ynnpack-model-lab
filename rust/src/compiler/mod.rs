@@ -12,7 +12,9 @@ use crate::{Error, Result};
 pub use builder::*;
 pub use model::*;
 use serde::Serialize;
-use std::{collections::BTreeMap, path::Path};
+use std::collections::BTreeMap;
+#[cfg(any(test, feature = "diagnostic-tools"))]
+use std::path::Path;
 
 #[derive(Debug, Serialize)]
 pub struct CompiledPackage {
@@ -146,8 +148,9 @@ pub fn compile_measured(program: &Program) -> Result<(CompiledPackage, CompileTi
     Ok((result, timings))
 }
 
+#[cfg(any(test, feature = "diagnostic-tools"))]
 impl CompiledPackage {
-    /// Publish only after every phase has compiled and validated successfully.
+    /// Write diagnostic artifacts after every phase has compiled and validated.
     pub fn write(&self, output: &Path) -> Result<()> {
         if output.exists() {
             return Err(Error::invalid("Compiler output directory already exists"));

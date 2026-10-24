@@ -99,6 +99,7 @@ impl ValidatedPlan {
             std::str::from_utf8(bytes).map_err(|_| invalid("Graph source must be UTF-8"))?;
         crate::plan_text::parse(source)?.into_validated()
     }
+    #[cfg(feature = "native-tests")]
     pub(crate) fn read(path: &Path) -> Result<Self> {
         Plan::read(path)?.into_validated()
     }
@@ -484,7 +485,8 @@ impl Plan {
                 .collect::<Result<_>>()?,
         })
     }
-    pub fn read(path: &Path) -> Result<Self> {
+    #[cfg(feature = "native-tests")]
+    fn read(path: &Path) -> Result<Self> {
         use std::io::Read;
         let file = std::fs::File::open(path)?;
         let mut bytes = Vec::new();

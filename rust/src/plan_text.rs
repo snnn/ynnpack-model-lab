@@ -8,8 +8,11 @@ use crate::{Error, Result};
 mod compile;
 mod functions;
 mod intern;
+#[cfg(any(test, feature = "diagnostic-tools"))]
 mod compare;
+#[cfg(any(test, feature = "diagnostic-tools"))]
 mod cpp;
+#[cfg(any(test, feature = "diagnostic-tools"))]
 pub use compare::compare;
 pub(crate) use intern::intern;
 pub(crate) mod lexer;
@@ -82,6 +85,7 @@ pub fn format(source: &str) -> Result<String> {
 }
 
 /// Read-only diagnostic report. Reports are not accepted as executable graphs.
+#[cfg(any(test, feature = "diagnostic-tools"))]
 pub fn inspect(source: &str) -> Result<String> {
     let plan = parse(source)?;
     let doc = parser::document(source)?;
@@ -106,6 +110,7 @@ pub fn inspect(source: &str) -> Result<String> {
 }
 
 /// Standalone CLI shared with the Cargo binary. Output files must be new.
+#[cfg(feature = "diagnostic-tools")]
 pub fn main(args: &[String]) -> Result<()> {
     use std::io::{Read, Write};
     if args.len()==3 && args[0]=="compare" {

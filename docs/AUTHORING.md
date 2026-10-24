@@ -19,6 +19,11 @@ A deployed model directory contains:
   identity binding the stored program and execution files by byte count/SHA-256.
 - Immutable source parameters, or an asset recipe/provider for obtaining them.
 
+LLM execution metadata requires explicit `contract: 2` and a `compatibility`
+declaration. Rust authors can use `runtime::execution::Compatibility::ynnpack()`.
+Missing declarations and contract 1 are rejected. Tensor execution uses its
+separate current version 1; the semantic DSL also remains `ynn_program 1`.
+
 The DSL keeps small attributes inline, shares repeated quantization descriptions,
 and stores large exact numeric arrays in binary tables. The runtime verifies all
 source identities; no decompression is needed. Generated constants are produced

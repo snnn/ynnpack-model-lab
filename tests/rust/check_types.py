@@ -15,6 +15,12 @@ def main():
     args = parser.parse_args()
     prelude = 'use ynnpack_lab::vision::{VisionBuilder, VisionSession};\n'
     examples = [
+        ('offline_output_requires_diagnostics', 'E0599', '''
+fn example(package: ynnpack_lab::compiler::CompiledPackage) {
+    package.write(std::path::Path::new("offline-plans"));
+}'''),
+        ('plan_file_cli_requires_diagnostics', 'E0425', '''
+fn example(args: &[String]) { ynnpack_lab::plan_text::main(args); }'''),
         ('prepared_program_not_send', 'E0277', '''
 fn require_send<T: Send>() {}
 fn example() { require_send::<ynnpack_lab::runtime::PreparedProgram>(); }'''),

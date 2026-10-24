@@ -270,6 +270,7 @@ impl Construction<'_> {
     }
 }
 impl GraphBuilder {
+    #[cfg(feature = "native-tests")]
     pub fn from_plan(assets: Rc<Assets>, path: &Path) -> Result<Self> {
         Self::from_validated_plan(assets, ValidatedPlan::read(path)?)
     }

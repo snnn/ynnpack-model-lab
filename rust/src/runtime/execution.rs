@@ -3,6 +3,8 @@ use crate::{Error, Result};
 use serde::{Deserialize, Serialize};
 use std::collections::{BTreeMap, BTreeSet};
 use std::path::{Component, Path};
+#[cfg(test)]
+mod tests;
 
 #[derive(Clone, Serialize, Debug, Deserialize, PartialEq)]
 #[serde(untagged)]
@@ -117,16 +119,26 @@ pub struct Compatibility {
     pub parameter_encoding: String,
     pub required_features: Vec<String>,
 }
-fn legacy_contract() -> u32 {
-    1
+impl Compatibility {
+    /// Explicit declaration for authors targeting the current YNNPACK runtime.
+    pub fn ynnpack() -> Self {
+        Self {
+            backend: "ynnpack".into(),
+            backend_api: 1,
+            artifact_abi: "data-only-v1".into(),
+            parameter_encoding: "little-endian-typed-v1".into(),
+            required_features: [
+                "shape-preflight-v1", "resource-state-v1", "completion-v1", "fixed-state-v1",
+            ].map(String::from).into(),
+        }
+    }
 }
 #[derive(Clone, Serialize, Deserialize, PartialEq)]
 #[serde(deny_unknown_fields)]
 pub struct ExecutionSpec {
     pub format: String,
-    #[serde(default = "legacy_contract")]
     pub contract: u32,
-    pub compatibility: Option<Compatibility>,
+    pub compatibility: Compatibility,
     pub model: String, // Descriptive only; never selects execution behavior.
     pub capacity: usize,
     /// Authored storage bounds. Absence means the package has fixed geometry.
@@ -361,9 +373,9 @@ impl ExecutionSpec {
                 "Runtime requires little-endian IEEE FP32 parameters",
             ));
         }
-        match (self.contract, &self.compatibility) {
-            (1, None) => {} // Qualified legacy packages retain their original semantics.
-            (2, Some(c)) => {
+        match self.contract {
+            2 => {
+                let c = &self.compatibility;
                 if c.backend != "ynnpack" || c.backend_api != 1 {
                     return Err(Error::invalid("Unsupported backend API contract"));
                 }

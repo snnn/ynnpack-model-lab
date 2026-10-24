@@ -65,14 +65,14 @@ function(lab_add_rust_library target features)
 endfunction()
 
 # Diagnostic plan utility: a host Rust binary with no native backend linkage.
-if(NOT CMAKE_CROSSCOMPILING)
+if(LAB_BUILD_DIAGNOSTICS AND NOT CMAKE_CROSSCOMPILING)
   set(lab_plan_tool "${CMAKE_CURRENT_BINARY_DIR}/ynn-plan${CMAKE_EXECUTABLE_SUFFIX}")
   set(lab_plan_cargo_dir "${CMAKE_CURRENT_BINARY_DIR}/cargo-ynn-plan")
   add_custom_command(OUTPUT "${lab_plan_tool}"
     COMMAND ${CMAKE_COMMAND} -E env "CARGO_HOME=${LAB_CARGO_HOME}"
             "CARGO_TARGET_DIR=${lab_plan_cargo_dir}" ${LAB_CARGO} build --release --frozen
             --manifest-path "${CMAKE_CURRENT_SOURCE_DIR}/rust/Cargo.toml"
-            --features plan-tool --bin ynn-plan
+            --features diagnostic-tools --bin ynn-plan
     COMMAND ${CMAKE_COMMAND} -E copy
             "${lab_plan_cargo_dir}/release/ynn-plan${CMAKE_EXECUTABLE_SUFFIX}" "${lab_plan_tool}"
     DEPENDS ${lab_rust_sources} rust/Cargo.toml rust/Cargo.lock
@@ -147,9 +147,11 @@ if(BUILD_TESTING)
   target_compile_options(rust_native_test PRIVATE -O1)
   add_test(NAME state_views COMMAND rust_native_test "${CMAKE_CURRENT_SOURCE_DIR}/tests/rust")
   if(NOT CMAKE_CROSSCOMPILING)
-    add_test(NAME plan_text COMMAND ${Python3_EXECUTABLE}
-      "${CMAKE_CURRENT_SOURCE_DIR}/tests/rust/check_plan_text.py"
-      --tool "${lab_plan_tool}" --state-runner "$<TARGET_FILE:rust_native_test>")
+    if(LAB_BUILD_DIAGNOSTICS)
+      add_test(NAME plan_text COMMAND ${Python3_EXECUTABLE}
+        "${CMAKE_CURRENT_SOURCE_DIR}/tests/rust/check_plan_text.py"
+        --tool "${lab_plan_tool}" --state-runner "$<TARGET_FILE:rust_native_test>")
+    endif()
     find_program(LAB_RUSTC rustc REQUIRED)
     add_test(NAME rust_borrow_contracts COMMAND ${Python3_EXECUTABLE}
       "${CMAKE_CURRENT_SOURCE_DIR}/tests/rust/check_types.py" --rustc "${LAB_RUSTC}"

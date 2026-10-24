@@ -527,7 +527,9 @@ impl Assets {
             Ok(json!({"name":r.owner,"axis":r.axis,"dtype":"fp32","shape":shape}))
         }).collect::<Result<Vec<_>>>()?;
         let spec: crate::runtime::ExecutionSpec = serde_json::from_value(json!({
-            "format":"ynn-llm-execution","model":"qwen3-rust","capacity":capacity,
+            "format":"ynn-llm-execution","contract":2,
+            "compatibility":crate::runtime::execution::Compatibility::ynnpack(),
+            "model":"qwen3-rust","capacity":capacity,
             "prefill_rows":rows,"vocabulary":self.config["vocab_size"],"prefill_after_decode":false,
             "graphs":phases,"resources":resources,"fixed_states":[],"embeddings":{}}))?;
         spec.validate()?;

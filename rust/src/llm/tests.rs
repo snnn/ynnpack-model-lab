@@ -108,7 +108,8 @@ fn runtime_session() -> Result<()> {
     let program = Program { phases: BTreeMap::from([("prefill".into(),g.clone()),("decode".into(),g)]), ..Default::default() };
     let phase = serde_json::json!({"logits":null,"row_policy":"valid","scalars":{},
         "inputs":[{"name":"x","dtype":"fp32","shape":["rows"],"recipe":{"kind":"positions"}}]});
-    let mut value = serde_json::json!({"format":"ynn-llm-execution","model":"tiny-semantic",
+    let mut value = serde_json::json!({"format":"ynn-llm-execution","contract":2,
+        "compatibility":execution::Compatibility::ynnpack(),"model":"tiny-semantic",
         "capacity":8,"prefill_rows":1,"vocabulary":4,"prefill_after_decode":false,
         "graphs":{"prefill":phase,"decode":phase},"resources":[],"fixed_states":[],"embeddings":{}});
     value["graphs"]["decode"]["logits"] = serde_json::json!("logits");
@@ -152,7 +153,9 @@ fn resource_output_bindings() -> Result<()> {
     let phase = serde_json::json!({"logits":"logits","row_policy":"valid","scalars":{},
       "inputs":[{"name":"x","dtype":"fp32","shape":[1,4],"recipe":{"kind":"positions"}}]});
     let spec: ExecutionSpec = serde_json::from_value(serde_json::json!({
-      "format":"ynn-llm-execution","model":"resource-alias","capacity":8,"prefill_rows":1,
+      "format":"ynn-llm-execution","contract":2,
+      "compatibility":crate::runtime::execution::Compatibility::ynnpack(),
+      "model":"resource-alias","capacity":8,"prefill_rows":1,
       "vocabulary":4,"prefill_after_decode":false,"graphs":{"prefill":phase,"decode":phase},
       "resources":[{"name":"cache","dtype":"fp32","axis":0,"shape":["capacity",4]}],
       "fixed_states":[],"embeddings":{}}))?;

@@ -1,1 +1,69 @@
-{"format": "ynn-llm-execution", "model": "unrecognized-name-is-descriptive", "capacity": 8, "prefill_rows": 1, "vocabulary": 4, "prefill_after_decode": false, "graphs": {"prefill": {"logits": null, "row_policy": "valid", "scalars": {}, "inputs": [{"name": "ids", "dtype": "int32", "shape": ["rows"], "recipe": {"kind": "tokens"}}]}, "decode": {"logits": "scores", "row_policy": "valid", "scalars": {}, "inputs": [{"name": "ids", "dtype": "int32", "shape": ["rows"], "recipe": {"kind": "tokens"}}]}}, "resources": [], "fixed_states": [{"input": "memory", "output": "next", "shape": [1, 4]}], "embeddings": {}}
+{
+  "format": "ynn-llm-execution",
+  "contract": 2,
+  "compatibility": {
+    "backend": "ynnpack",
+    "backend_api": 1,
+    "artifact_abi": "data-only-v1",
+    "parameter_encoding": "little-endian-typed-v1",
+    "required_features": [
+      "shape-preflight-v1",
+      "resource-state-v1",
+      "completion-v1",
+      "fixed-state-v1"
+    ]
+  },
+  "model": "unrecognized-name-is-descriptive",
+  "capacity": 8,
+  "prefill_rows": 1,
+  "vocabulary": 4,
+  "prefill_after_decode": false,
+  "graphs": {
+    "prefill": {
+      "logits": null,
+      "row_policy": "valid",
+      "scalars": {},
+      "inputs": [
+        {
+          "name": "ids",
+          "dtype": "int32",
+          "shape": [
+            "rows"
+          ],
+          "recipe": {
+            "kind": "tokens"
+          }
+        }
+      ]
+    },
+    "decode": {
+      "logits": "scores",
+      "row_policy": "valid",
+      "scalars": {},
+      "inputs": [
+        {
+          "name": "ids",
+          "dtype": "int32",
+          "shape": [
+            "rows"
+          ],
+          "recipe": {
+            "kind": "tokens"
+          }
+        }
+      ]
+    }
+  },
+  "resources": [],
+  "fixed_states": [
+    {
+      "input": "memory",
+      "output": "next",
+      "shape": [
+        1,
+        4
+      ]
+    }
+  ],
+  "embeddings": {}
+}

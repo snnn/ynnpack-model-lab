@@ -1,5 +1,18 @@
 {
   "format": "ynn-llm-execution",
+  "contract": 2,
+  "compatibility": {
+    "backend": "ynnpack",
+    "backend_api": 1,
+    "artifact_abi": "data-only-v1",
+    "parameter_encoding": "little-endian-typed-v1",
+    "required_features": [
+      "shape-preflight-v1",
+      "resource-state-v1",
+      "completion-v1",
+      "fixed-state-v1"
+    ]
+  },
   "model": "qwen3",
   "capacity": 2048,
   "prefill_rows": 128,

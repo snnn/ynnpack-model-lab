@@ -49,6 +49,7 @@ else()
 endif()
 # The benchmark frontend is shared by model runners and the weights-free probe.
 option(LAB_ENABLE_TOKENIZERS "Enable native HF/SentencePiece text inputs" ON)
+option(LAB_BUILD_DIAGNOSTICS "Build offline compiler/plan tools and their integration tests" OFF)
 if(LAB_ENABLE_TOKENIZERS)
   include(cmake/Tokenizers.cmake)
 endif()

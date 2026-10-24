@@ -96,6 +96,12 @@ and `-DLAB_ENABLE_TOKENIZERS=OFF` for a token-ID-only build. Rust remains requir
 Dependencies live in the ignored `.deps/` directory. The repository and runtime
 dependencies are public.
 
+Normal host builds include the semantic authoring tools `ynn-program` and
+`ynn-qwen3`. Offline construction diagnostics (`ynn-compile`, `ynn-plan`) are
+disabled by default. Enable `-DLAB_BUILD_DIAGNOSTICS=ON` to build them and run
+their CTest integration checks; CI enables this option. Model runners always
+prepare semantic packages in process, regardless of that build option.
+
 `runtime/ynnpack_capacity.h` provides explicit capacity migration between
 prepared variants. Each variant owns both phases, compatible resource handles,
 allocation lifetimes and unchanged fixed-state bindings. `ReserveCapacity`

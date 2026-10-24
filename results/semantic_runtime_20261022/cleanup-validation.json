@@ -1,0 +1,109 @@
+{
+  "date_utc": "2026-10-24T03:32:18.794696+00:00",
+  "baseline_revision": "2a439efbb734a4c6ef519694fdd22875885c1b6d",
+  "scope": "Require explicit LLM execution contract 2 and gate offline construction diagnostics; semantic sources, lowering rules and kernels unchanged.",
+  "source_files": {
+    ".github/workflows/cmake.yml": "eaaebd7a8f965f2934b9bd1b0a66cfd981dbada524853645290f87c16a007c38",
+    "CMakeLists.txt": "c9dae2d33bb6434900e7df5e607813698b16657f4a7574e79a4bdf30787c9594",
+    "cmake/Compiler.cmake": "db71826e55d8fe4554b01010bdfda4996e2adb48b591ee3359a9f5563eb8f3b3",
+    "cmake/RustRuntime.cmake": "044e9cd67c608ecb92358b8e4e3643185688b0ae38e50c0cfa7be43b11f375b5",
+    "models/qwen3_0_6b/generated/execution.json": "1c156034d5d7870ad98d691d5303d36e5f68a8cfce55dd0101410e09829ae7c5",
+    "models/qwen3_0_6b/generated/model.json": "320dfcf21bac80ce470c8f5330daae4a14c69b4bb84b7e2f0742a0357ee9ac11",
+    "models/qwen3_4b/generated/execution.json": "d08b451368a7fc6044d9957a7d53c0fa021f0116e9f688cca22d49ab9d16f92e",
+    "models/qwen3_4b/generated/model.json": "546b533d893a68f3ba3d0274c14bf2e8a006efbe1a0697d78567540e7327c155",
+    "models/qwen3_5_4b/profiles/int8/generated/execution.json": "52da12c38781a7261b42cc9eb46eba1863b7aa01874ed7800b91ddc51fa56d43",
+    "models/qwen3_5_4b/profiles/int8/generated/model.json": "9ad52b109eaf336c637f5bfc032fdfda2dac86a94e3b4a1412c0e241d7801919",
+    "rust/Cargo.toml": "f5b8c9d6d5993ff8218c98c79d5c564b9be37d2829dc36acec0acbfdef715223",
+    "rust/src/compiler/mod.rs": "28f030ddf48246801f94a6a87d3b1e6d456fcc7110eadecf23a4be471c96655e",
+    "rust/src/ffi/plan.rs": "6adaa116571b9dca7adc07f1959f1591924b72c41470a2daa98e1f815fd11d90",
+    "rust/src/llm/tests.rs": "4efc981c05cc6aaea9428723e99139f721c87ddb688c47820744509b331a7b8a",
+    "rust/src/models/qwen3.rs": "e9241e26b78ae629b1a6491841ca21649e22e7ac3a820bfe8d4a88462203e812",
+    "rust/src/plan.rs": "212d3daa3f0cec048a8b61382a17097a7ad5c638d6d399d9e206f1175daa751b",
+    "rust/src/plan_text.rs": "1df3f74e8966d9b5273b7abe1c06116cdbb468dc18a5c12b5308091098fe2222",
+    "rust/src/plan_text/functions.rs": "437ff72ac87799a33e73eabfd49344a41b9ea9d6a81c0dcf8a47854a08bb63f7",
+    "rust/src/runtime/execution.rs": "011ddc553e4a943469882d81cb50d4520999c0bfe2feb37e34c4831ae0c626f0",
+    "rust/src/runtime/execution/tests.rs": "3227a96ac31d1931d7608c16a489fd6444e7d0a6e4e5fb243e2aad93eab6339e",
+    "tests/llm_session/execution.json": "84c28e9dbb4b70843be534a941fcf0bc7a1613800e431092356d26f9bfc38350",
+    "tests/llm_session/model.json": "9f342c0bb8f0bbf8b7fc3e46b8c64d760e7b2d42d7853179ae43508ad14d6960",
+    "tests/rust/check_types.py": "d232496835116394b06fe5ba8ee7615fc13c1c1cddd13fe2282714231d2405df"
+  },
+  "model_execution_contracts": {
+    "ynn-llm-execution": 18,
+    "ynn-tensor-execution": 8
+  },
+  "migrated_packages": [
+    {
+      "package": "models/qwen3_0_6b/generated",
+      "before": "0165cf3aea42f3af83308672dc75bb805dd29cb62b2c0ea20d61d7c07ac57a2a",
+      "after": "1c156034d5d7870ad98d691d5303d36e5f68a8cfce55dd0101410e09829ae7c5"
+    },
+    {
+      "package": "models/qwen3_4b/generated",
+      "before": "670d25c35a49091a9852c331e541fa9a19442bcf737d8a202e3da5fcdc868125",
+      "after": "d08b451368a7fc6044d9957a7d53c0fa021f0116e9f688cca22d49ab9d16f92e"
+    },
+    {
+      "package": "models/qwen3_5_4b/profiles/int8/generated",
+      "before": "35902751621885a6e016f5f4870376fa0ecf81762436818dc4beaf2cc5496bca",
+      "after": "52da12c38781a7261b42cc9eb46eba1863b7aa01874ed7800b91ddc51fa56d43"
+    },
+    {
+      "package": "tests/llm_session",
+      "before": "b556b65b9864953366ca354b8a2560bcb49a95792934b441c7a9aea6ae055372",
+      "after": "84c28e9dbb4b70843be534a941fcf0bc7a1613800e431092356d26f9bfc38350"
+    }
+  ],
+  "validation": {
+    "host_ctest": {
+      "passed": 36,
+      "failed": 0,
+      "compiler_fingerprints": 386,
+      "numerical_requests": 2196,
+      "unchanged_backend_sigsegv_allowances": 3
+    },
+    "rust_unit_tests": 60,
+    "negative_contract_cases": true,
+    "production_api_compile_rejections": true,
+    "default_cmake": {
+      "diagnostics": false,
+      "offline_targets_present": false,
+      "authoring_tools_built": [
+        "ynn-program",
+        "ynn-qwen3"
+      ]
+    },
+    "public_qwen_author": {
+      "semantic_files_identical": 2,
+      "execution_changes": {
+        "contract": {
+          "before": 1,
+          "after": 2
+        },
+        "compatibility": {
+          "before": null,
+          "after": {
+            "backend": "ynnpack",
+            "backend_api": 1,
+            "artifact_abi": "data-only-v1",
+            "parameter_encoding": "little-endian-typed-v1",
+            "required_features": [
+              "shape-preflight-v1",
+              "resource-state-v1",
+              "completion-v1",
+              "fixed-state-v1"
+            ]
+          }
+        }
+      }
+    },
+    "public_qwen_package_check": "passed"
+  },
+  "reproduction": [
+    "cmake -S . -B build -DLAB_BUILD_DIAGNOSTICS=ON",
+    "cmake --build build --parallel 8",
+    "ctest --test-dir build --output-on-failure",
+    "cmake -S . -B build-default -DLAB_BUILD_DIAGNOSTICS=OFF",
+    "cmake --build build-default --target ynn_program ynn_qwen3"
+  ],
+  "limitations": "No new latency, full-model numeric campaign or Android qualification. Earlier measurements retain their recorded revisions; this cleanup changes metadata validation and diagnostic availability."
+}

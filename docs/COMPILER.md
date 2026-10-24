@@ -36,15 +36,21 @@ resolved resource strides and bindings, and completion roots. Logical history
 length never changes physical capacity strides. Numerical reassociation requires
 the operation's explicit permission.
 
-Build the host tools through CMake after the usual dependency bootstrap:
+Normal host builds include `ynn-program` and `ynn-qwen3` for semantic authoring.
+Offline diagnostics require an explicit CMake option after the usual bootstrap:
 
 ```sh
-cmake --build build --target ynn_compile ynn_qwen3 ynn_plan
+cmake -S . -B build -DLAB_BUILD_DIAGNOSTICS=ON
+cmake --build build --target ynn_compile ynn_plan
 build/ynn-compile --request program.ynn --output out/new-package
 build/ynn-plan check out/new-package/decode.ynn
 ```
 
 `ynn-compile` writes generated constants and plans atomically into a new directory.
+Direct Cargo builds use feature `authoring-tools` for `ynn-program`/`ynn-qwen3`,
+or `diagnostic-tools` for `ynn-compile`/`ynn-plan`. The latter also enables
+`CompiledPackage::write`; normal runtime builds have no file-plan loader.
+Native tests alone enable that loader for backend fixture coverage.
 External assets remain references with byte counts and SHA256 identities. The
 packaging frontend must provide those assets or a supported external asset
 provider. `ynnpack_assets.artifacts.publish` verifies packaged parameter identities
@@ -123,7 +129,8 @@ Three symbolic FC cases have an intermittent SIGSEGV in the pinned backend's AVX
 dot kernel, also observed in the frozen baseline. `--known-failures` runs these
 cases and reports only the recorded signal separately. A successful execution
 must still pass every numerical check. Other failures fail the suite. Omit the
-flag to treat every backend failure as fatal. CTest uses the explicit baseline
+flag to treat every backend failure as fatal. With `LAB_BUILD_DIAGNOSTICS=ON`,
+CTest uses the explicit baseline
 allowance; read its reported known-failure count as well as its exit status.
 
 The `blockwise_fc` CTest checks group-32 INT4 arithmetic under native and

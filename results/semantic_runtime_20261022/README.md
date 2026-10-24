@@ -11,6 +11,20 @@ two kernel implementations: both sides already use the same Rust blockwise
 operation. The [earlier prototype](../runtime_preparation_20261022/README.md)
 records the native-to-Rust operation comparison and its limitations.
 
+The [2026-10-24 cleanup checks](cleanup-validation.json) cover the subsequent
+removal of LLM execution contract 1 and default offline diagnostic tools. All
+18 LLM profiles now explicitly declare contract 2 and compatibility; the eight
+tensor profiles retain their separate current version 1. Three model manifests
+and the LLM fixture were resealed. Rust Qwen authoring emits contract 2, with
+byte-identical DSL and numeric data compared with its previous output.
+All 36 host CTests pass again, including 386 frozen compiler fingerprints,
+2,196 numerical requests and the same three backend failure allowances.
+Normal host builds retain semantic authoring tools; offline tools require
+`LAB_BUILD_DIAGNOSTICS=ON`. Offline file-writing APIs require the Cargo
+diagnostic feature; native plan file loading is test-only.
+This follow-up does not remeasure the performance or Android results below;
+those retain their original implementation and artifact identities.
+
 ## Implementation and scope
 
 - Version-2 `model.json` seals the compact semantic `program.ynn` and
@@ -42,7 +56,8 @@ source from 1,008,887,738 raw JSON bytes (275,242,308 gzip bytes) to 35,967,226
 text bytes plus 131,786,240 numeric bytes, without compression. The largest text
 file is 4,052,675 bytes and numeric files are at most 8,388,608 bytes. There are
 56,010,240 bytes of distinct numeric payloads before Git compression. Execution
-contracts are unchanged. Native control plans totaled 67,917,587 bytes; they
+contracts were unchanged by that DSL migration; the later cleanup above updates
+their version declarations. Native control plans totaled 67,917,587 bytes; they
 represent a different compiler stage and exclude generated constant payloads.
 
 [dsl-migration.json](dsl-migration.json) records all 423 lossless typed-program

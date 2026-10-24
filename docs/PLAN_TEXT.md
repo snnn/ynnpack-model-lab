@@ -14,10 +14,11 @@ parser serves diagnostic tools; runners accept semantic packages, not plan files
 
 ## Build and use
 
-After the normal bootstrap and host CMake configuration:
+After the normal bootstrap, explicitly enable host diagnostics:
 
 ```sh
-cmake --build build --target ynn_plan --parallel 4
+cmake -S . -B build -DLAB_BUILD_DIAGNOSTICS=ON
+cmake --build build --target ynn_plan ynn_compile --parallel 4
 mkdir -p out/plan-text
 
 build/ynn-plan check tests/rust/square.ynn
